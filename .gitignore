@@ -3,6 +3,10 @@ lighthouse-report.report.html
 lighthouse-report.report.json
 *.log
 
+# Raw multi-MB image generations (we commit only the optimized web versions)
+assets/img/Abstract_*.jpeg
+assets/img/Elegant_*.jpeg
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
