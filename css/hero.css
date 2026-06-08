@@ -58,12 +58,13 @@
   .brand__word { display: none; }   /* icon-only logo when the bar gets tight */
 }
 @media (max-width: 560px) {
-  /* Keep the logo AND the name on mobile — just sized down to fit beside the menu */
-  .brand__word { font-size: 0.58rem; letter-spacing: 0.06em; }
-  .brand__icon { height: 30px; width: 38px; }
+  /* Logo + name on mobile — larger & bolder so it reads clearly */
+  .brand__word { font-size: 0.74rem; letter-spacing: 0.03em; font-weight: 700; }
+  .brand__icon { height: 34px; width: 42px; }
+  .brand { gap: var(--space-2); }
 }
 @media (max-width: 360px) {
-  .brand__word { font-size: 0.5rem; letter-spacing: 0.04em; }
+  .brand__word { font-size: 0.62rem; letter-spacing: 0.02em; }
 }
 
 /* Desktop: flatten nav so links + actions sit directly in the header grid
