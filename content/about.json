@@ -1,0 +1,19 @@
+{
+  "_comment": "Content model for §02 Who We Are. Mirrors markup in index.html.",
+  "overline": "Who we are",
+  "heading": ["Independent by design.", "<em>Fiduciary by commitment.</em>"],
+  "lede": [
+    "Founded in 2010, Vann Equity Management is an independent, SEC-registered investment advisory firm built on a single principle: <strong>the client's interest comes first</strong>. So strong is our commitment that we have adopted fiduciary standards across the entire firm.",
+    "We manage multiple equity and tactical asset-allocation portfolios for high-net-worth individuals, institutions, endowments, foundations, and family offices &mdash; each guided by the same disciplined, proprietary process."
+  ],
+  "vision": {
+    "quote": "We combine the intellectual rigor of institutional investing with the personal accountability of a boutique firm. Our goal is straightforward — protect, grow, and deliver on the trust our clients place in us, quarter after quarter, year after year.",
+    "caption": "Our vision"
+  },
+  "facts": [
+    { "num": "2010", "label": "Founded" },
+    { "num": "SEC", "label": "Registered Investment Adviser" },
+    { "num": "Fiduciary", "label": "Standard, firm-wide" },
+    { "num": "7", "label": "Equity & asset-allocation portfolios" }
+  ]
+}

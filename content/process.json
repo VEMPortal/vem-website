@@ -1,0 +1,48 @@
+{
+  "_comment": "Content model for §05 Investment Process. From brochure p.5–13 (Equity Portfolios process). Counts are the brochure's own funnel figures.",
+  "overline": "Our process",
+  "heading": ["From nine thousand names", "<em>to forty.</em>"],
+  "intro": "Every equity portfolio is distilled through a five-stage process — quantitative, fundamental, and continuous — that narrows a global universe to the few dozen companies we choose to own.",
+  "stages": [
+    {
+      "num": "01",
+      "name": "Universe of Equity Securities",
+      "desc": "We begin with the full global universe of publicly traded equities.",
+      "count": "Global universe",
+      "width": "100%",
+      "kind": "count"
+    },
+    {
+      "num": "02",
+      "name": "Quantitative Analysis",
+      "desc": "Proprietary screens filter for structural constraints, growth and value characteristics, and a multi-factor ranking.",
+      "count": "≈ 1,000 ranked",
+      "width": "62%",
+      "kind": "count"
+    },
+    {
+      "num": "03",
+      "name": "Fundamental Analysis",
+      "desc": "The investment committee validates earnings growth and sustainability — business and peer analysis, SWOT, cash flow, and management quality.",
+      "count": "150–250 semi-finalists",
+      "width": "38%",
+      "kind": "count"
+    },
+    {
+      "num": "04",
+      "name": "Portfolio Construction",
+      "desc": "We build a diversified portfolio of 40–60 holdings, subject to country, sector, industry, and position-size risk controls.",
+      "count": "40–60 holdings",
+      "width": "20%",
+      "kind": "count"
+    },
+    {
+      "num": "05",
+      "name": "Sell Discipline",
+      "desc": "Active risk management runs continuously — quantitative, technical, and qualitative triggers govern when we trim or exit.",
+      "count": "Continuous",
+      "width": "100%",
+      "kind": "ongoing"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "_comment": "Content model for §06 The Difference. From brochure p.18 (Our Strengths / The Difference). Aaron portrait used as a parallax feature.",
+  "overline": "The Difference",
+  "heading": ["Built around you,", "<em>not a template.</em>"],
+  "lead": "We believe that since every client is unique, every client portfolio should be unique. That conviction shapes how we work — and the two ways we serve.",
+  "models": [
+    {
+      "title": "Custom-designed portfolios",
+      "body": "Managed by your personal advisor and built to your life — integrating tax planning, your risk tolerance, and even your social and ethical priorities into the portfolio's design."
+    },
+    {
+      "title": "Company-sponsored SMA portfolios",
+      "body": "For those best served by institutional scale, three separately managed strategies run by VEM's founding partners — with twenty-plus years of institutional portfolio management."
+    }
+  ],
+  "note": "Both are held to the same fiduciary standard — your best interest, above all else.",
+  "figure": {
+    "src": "assets/img/aaron-vann-office.jpg",
+    "alt": "Aaron J. Vann in the VEM office at dusk, city skyline beyond",
+    "caption": "Aaron J. Vann · Chief Investment Officer"
+  }
+}

@@ -1,0 +1,9 @@
+# Audit / working artifacts (kept locally, not part of the site)
+lighthouse-report.report.html
+lighthouse-report.report.json
+*.log
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini

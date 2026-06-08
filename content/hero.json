@@ -1,0 +1,42 @@
+{
+  "_comment": "Content model for Header + Hero (§01). Markup in index.html mirrors this. Kept separate so copy ports cleanly into WordPress (ACF / block attributes / theme.json).",
+  "header": {
+    "logo": {
+      "iconWhite": "assets/brand/vann-icon-white.png",
+      "fallbackText": "VEM",
+      "wordmark": "Vann Equity Management",
+      "homeHref": "#top"
+    },
+    "nav": [
+      { "label": "Portfolios", "href": "#portfolios" },
+      { "label": "Process", "href": "#process" },
+      { "label": "Performance", "href": "#performance" },
+      { "label": "The Difference", "href": "#difference" },
+      { "label": "Team", "href": "#team" }
+    ],
+    "cta": { "label": "Schedule a consultation", "href": "#contact" }
+  },
+  "hero": {
+    "eyebrow": "Established 2010 · SEC-Registered Investment Adviser",
+    "headlineLines": [
+      "The client's interest,",
+      "<em>above all else.</em>"
+    ],
+    "lead": "An independent, fiduciary equity manager for individuals, institutions, endowments, and family offices — built on a disciplined, proprietary investment process.",
+    "ctaPrimary": { "label": "Schedule a consultation", "href": "#contact" },
+    "ctaSecondary": { "label": "Explore our portfolios", "href": "#portfolios" },
+    "trust": [
+      "Fiduciary firm-wide",
+      "High-net-worth & institutional",
+      "Plano, Texas"
+    ],
+    "scrollCue": "Scroll",
+    "media": {
+      "type": "image",
+      "imageWebp": "assets/img/hero-arch.webp",
+      "imageJpg": "assets/img/hero-arch.jpg",
+      "alt": "Classical limestone colonnade at blue hour, warm light raking the columns",
+      "_videoPending": "Animated loop to be rendered from this still when credits available; swap into .hero__media."
+    }
+  }
+}

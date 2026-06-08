@@ -1,0 +1,171 @@
+{
+  "_source": "Vann Equity GIPS Report through 12.31.2025 (Updated 2.2.2026). Figures transcribed verbatim from the official GIPS Composite Reports. AUTHORITATIVE source for any performance shown on the site.",
+  "_compliance": "All performance is from the firm's GIPS Composite Reports. Show net-of-fee alongside gross, with the benchmark and the standard trailing periods (1Y/3Y/5Y/Since-Inception). Always pair with 'Past performance is not indicative of future results' and a link to the full GIPS report. CCO (Dharani) must approve any figure shown publicly.",
+  "asOf": "2025-12-31",
+  "verification": "Vann Equity has been independently verified for the periods June 1, 2018 through December 31, 2024.",
+  "claimStatement": "Vann Equity claims compliance with the Global Investment Performance Standards (GIPS®) and has prepared and presented this report in compliance with the GIPS standards.",
+  "managementFeePct": 1.25,
+  "firmAssetsUSD_Millions": {
+    "2025": 229.64,
+    "2024": 790.04,
+    "_note": "Total Firm Assets fell from $790.04M (2024) to $229.64M (2025) per the report. DO NOT feature firm AUM on the site until Dharani explains this change."
+  },
+  "_discrepancies": [
+    "US Large Cap Growth 2025 net: annual table row shows 19.23%, the trailing 1-Year summary shows 19.22% (1 bp). Reconcile with Dharani before publishing a 1-year figure.",
+    "Minor 1 bp differences exist between the 2024 and 2025 report versions on a few historical annual rows (e.g., Value 2020 net 7.69%→7.68%, REIT 2021 gross 19.74%→19.73%). The 2025 report values are used here as the most current."
+  ],
+  "composites": [
+    {
+      "key": "us-large-cap-growth",
+      "name": "US Large Cap Growth Equity",
+      "inception": "2018-06-01",
+      "minimumUSD": 100000,
+      "primaryBenchmark": "Russell 1000 Growth (TR)",
+      "secondaryBenchmark": "S&P 500 (TR)",
+      "trailing": {
+        "1Y":  { "gross": 20.49, "net": 19.22, "russell1000Growth": 18.56, "sp500": 17.88 },
+        "3Y":  { "gross": 28.23, "net": 26.91, "russell1000Growth": 31.15, "sp500": 23.01 },
+        "5Y":  { "gross": 14.55, "net": 13.39, "russell1000Growth": 15.32, "sp500": 14.42 },
+        "SI":  { "gross": 18.43, "net": 17.33, "russell1000Growth": 18.28, "sp500": 14.87 }
+      },
+      "annual": {
+        "2025": { "gross": 20.49, "net": 19.23, "russell1000Growth": 18.56, "sp500": 17.88 },
+        "2024": { "gross": 31.01, "net": 29.68, "russell1000Growth": 33.36, "sp500": 25.02 },
+        "2023": { "gross": 33.57, "net": 32.20, "russell1000Growth": 42.68, "sp500": 26.29 },
+        "2022": { "gross": -25.42, "net": -26.22, "russell1000Growth": -29.14, "sp500": -18.11 },
+        "2021": { "gross": 25.43, "net": 24.30, "russell1000Growth": 27.60, "sp500": 28.71 },
+        "2020": { "gross": 38.90, "net": 37.79, "russell1000Growth": 38.49, "sp500": 18.40 },
+        "2019": { "gross": 34.61, "net": 33.47, "russell1000Growth": 36.39, "sp500": 31.49 },
+        "2018*": { "gross": -2.24, "net": -2.51, "russell1000Growth": -7.29, "sp500": -6.28 }
+      },
+      "marketingNote": "Net of fees, beats the S&P 500 over 1Y, 3Y, and Since-Inception (SI net 17.33% vs S&P 14.87%). Trails the Russell 1000 Growth over 5Y/SI. Strongest 'vs S&P 500' story — the flagship."
+    },
+    {
+      "key": "us-large-cap-value",
+      "name": "US Large Cap Value Equity",
+      "inception": "2018-06-01",
+      "minimumUSD": 100000,
+      "primaryBenchmark": "Russell 1000 Value",
+      "secondaryBenchmark": "S&P 500 (TR)",
+      "trailing": {
+        "1Y": { "gross": 18.17, "net": 16.92, "russell1000Value": 15.91, "sp500": 17.88 },
+        "3Y": { "gross": 14.38, "net": 13.18, "russell1000Value": 13.90, "sp500": 23.01 },
+        "5Y": { "gross": 12.00, "net": 10.87, "russell1000Value": 11.33, "sp500": 14.42 },
+        "SI": { "gross": 11.71, "net": 10.67, "russell1000Value": 10.14, "sp500": 14.87 }
+      },
+      "annual": {
+        "2025": { "gross": 18.17, "net": 16.92, "russell1000Value": 15.91, "sp500": 17.88 },
+        "2024": { "gross": 17.73, "net": 16.51, "russell1000Value": 14.37, "sp500": 25.02 },
+        "2023": { "gross": 7.57, "net": 6.44, "russell1000Value": 11.46, "sp500": 26.29 },
+        "2022": { "gross": -5.72, "net": -6.71, "russell1000Value": -7.54, "sp500": -18.11 },
+        "2021": { "gross": 24.94, "net": 23.84, "russell1000Value": 25.16, "sp500": 28.71 },
+        "2020": { "gross": 8.61, "net": 7.68, "russell1000Value": 2.80, "sp500": 18.40 },
+        "2019": { "gross": 24.72, "net": 23.65, "russell1000Value": 26.54, "sp500": 31.49 },
+        "2018*": { "gross": -3.04, "net": -3.29, "russell1000Value": -6.46, "sp500": -6.28 }
+      },
+      "marketingNote": "Net of fees, beats the Russell 1000 Value over 1Y and Since-Inception (SI net 10.67% vs 10.14%). Trails the S&P 500."
+    },
+    {
+      "key": "international-adr",
+      "name": "International ADR Equity",
+      "inception": "2018-06-01",
+      "minimumUSD": 100000,
+      "primaryBenchmark": "MSCI EAFE (TR Net)",
+      "trailing": {
+        "1Y": { "gross": 29.25, "net": 27.90, "msciEAFE": 31.22 },
+        "3Y": { "gross": 20.38, "net": 19.12, "msciEAFE": 17.22 },
+        "5Y": { "gross": 10.23, "net": 9.10, "msciEAFE": 8.92 },
+        "SI": { "gross": 11.40, "net": 10.33, "msciEAFE": 7.79 }
+      },
+      "annual": {
+        "2025": { "gross": 29.25, "net": 27.90, "msciEAFE": 31.22 },
+        "2024": { "gross": 13.46, "net": 12.27, "msciEAFE": 3.82 },
+        "2023": { "gross": 18.95, "net": 17.71, "msciEAFE": 18.24 },
+        "2022": { "gross": -14.99, "net": -15.90, "msciEAFE": -14.45 },
+        "2021": { "gross": 9.74, "net": 8.72, "msciEAFE": 11.26 },
+        "2020": { "gross": 17.89, "net": 16.88, "msciEAFE": 7.82 },
+        "2019": { "gross": 27.36, "net": 26.17, "msciEAFE": 22.01 },
+        "2018*": { "gross": -7.21, "net": -7.50, "msciEAFE": -12.44 }
+      },
+      "marketingNote": "Net of fees, beats MSCI EAFE over 3Y, 5Y, and Since-Inception by a wide margin (SI net 10.33% vs 7.79%). Trails only the 1-year (2025 EAFE rally). Strong international outperformance story."
+    },
+    {
+      "key": "structured-notes",
+      "name": "Structured Notes",
+      "inception": "2018-10-01",
+      "minimumUSD": 1000,
+      "primaryBenchmark": "Custom Blend (40% S&P 500 TR / 30% Bloomberg 1-3M T-Bill / 30% Bloomberg US Agg Bond)",
+      "trailing": {
+        "1Y": { "gross": 18.34, "net": 17.10, "blend": 10.64 },
+        "3Y": { "gross": 20.05, "net": 18.85, "blend": 11.92 },
+        "5Y": { "gross": 9.25, "net": 8.21, "blend": 6.71 },
+        "SI": { "gross": 9.03, "net": 8.08, "blend": 7.39 }
+      },
+      "annual": {
+        "2025": { "gross": 18.34, "net": 17.10, "blend": 10.64 },
+        "2024": { "gross": 7.07, "net": 6.00, "blend": 11.64 },
+        "2023": { "gross": 36.56, "net": 35.25, "blend": 13.51 },
+        "2022": { "gross": -16.17, "net": -16.98, "blend": -10.58 },
+        "2021": { "gross": 7.31, "net": 6.45, "blend": 10.34 },
+        "2020": { "gross": -0.81, "net": -1.64, "blend": 10.34 },
+        "2019": { "gross": 19.85, "net": 19.22, "blend": 15.46 },
+        "2018*": { "gross": 1.15, "net": 0.94, "blend": -4.84 }
+      },
+      "marketingNote": "Net of fees, beats its custom blended benchmark over every trailing period (SI net 8.08% vs 7.39%; 3Y net 18.85% vs 11.92%). Note: benchmark is a custom blend, not a single index."
+    },
+    {
+      "key": "index-advantage-global-etf",
+      "name": "Index Advantage Global ETF",
+      "inception": "2018-06-01",
+      "minimumUSD": 10000,
+      "primaryBenchmark": "MSCI ACWI (TR Net)",
+      "trailing": {
+        "1Y": { "gross": 20.10, "net": 18.80, "msciACWI": 22.34 },
+        "3Y": { "gross": 16.13, "net": 14.89, "msciACWI": 20.65 },
+        "5Y": { "gross": 9.67, "net": 8.55, "msciACWI": 11.19 },
+        "SI": { "gross": 10.24, "net": 9.21, "msciACWI": 11.37 }
+      },
+      "marketingNote": "Tactical / fully diversified ETF sleeve. Trails MSCI ACWI across periods — do NOT frame as 'beating the market'; frame as diversified, lower-cost core exposure."
+    },
+    {
+      "key": "index-advantage-international-etf",
+      "name": "Index Advantage International ETF",
+      "inception": "2018-06-01",
+      "minimumUSD": 10000,
+      "primaryBenchmark": "MSCI EAFE (TR Net)",
+      "trailing": {
+        "1Y": { "gross": 28.06, "net": 26.74, "msciEAFE": 31.22 },
+        "3Y": { "gross": 12.86, "net": 11.72, "msciEAFE": 17.22 },
+        "5Y": { "gross": 6.57, "net": 5.52, "msciEAFE": 8.92 },
+        "SI": { "gross": 6.83, "net": 5.80, "msciEAFE": 7.79 }
+      },
+      "marketingNote": "Tactical ETF sleeve. Trails MSCI EAFE — frame as diversified ex-US exposure, not outperformance."
+    },
+    {
+      "key": "index-advantage-small-mid-etf",
+      "name": "Index Advantage Small/Mid ETF",
+      "inception": "2021-02-01",
+      "minimumUSD": 10000,
+      "primaryBenchmark": "Russell 2500",
+      "trailing": {
+        "1Y": { "gross": 7.71, "net": 6.52, "russell2500": 11.91 },
+        "3Y": { "gross": 10.93, "net": 9.73, "russell2500": 13.75 },
+        "SI": { "gross": 6.28, "net": 5.18, "russell2500": 6.86 }
+      },
+      "marketingNote": "Tactical ETF sleeve. Trails Russell 2500. No 5Y (inception Feb 2021)."
+    },
+    {
+      "key": "reit-equity",
+      "name": "REIT Equity",
+      "inception": "2021-05-01",
+      "minimumUSD": 100000,
+      "primaryBenchmark": "MSCI US REIT Index (grs)",
+      "trailing": {
+        "1Y": { "gross": 1.58, "net": 0.45, "msciUsReit": 2.95 },
+        "3Y": { "gross": 3.82, "net": 2.72, "msciUsReit": 8.39 },
+        "SI": { "gross": 0.37, "net": -0.69, "msciUsReit": 3.43 }
+      },
+      "marketingNote": "Trails its REIT benchmark; modest/negative net SI. Do not feature for performance."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "_comment": "Content model for §04 — three stages: Conviction, Clarity, Commitment. Condensed from brochure (philosophy/edge) in VEM voice.",
+  "overline": "Our Approach",
+  "heading": ["Conviction. Clarity.", "<em>Commitment.</em>"],
+  "lead": "Three principles guide every decision we make — and every portfolio we build.",
+  "feature": {
+    "src": "assets/img/philosophy-study.jpg",
+    "alt": "A quiet private study at golden hour — books, a globe, warm light"
+  },
+  "stages": [
+    {
+      "num": "01",
+      "title": "Conviction",
+      "body": "We own companies while their earnings and revenues exceed the market's expectations — capitalizing on the inefficiencies of traditional Wall Street forecasting, and holding that conviction through a full market cycle."
+    },
+    {
+      "num": "02",
+      "title": "Clarity",
+      "body": "Every position is the output of a disciplined, repeatable process: proprietary quantitative screens, fundamental validation, and visible risk controls. No black boxes, no story stocks."
+    },
+    {
+      "num": "03",
+      "title": "Commitment",
+      "body": "We are fiduciaries firm-wide, with the personal accountability of a boutique. We measure ourselves by the trust you place in us — protected and grown, quarter after quarter."
+    }
+  ]
+}

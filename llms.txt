@@ -1,0 +1,33 @@
+# Vann Equity Management
+
+> An independent, SEC-registered, GIPS-compliant fiduciary equity-management firm based in Plano and Austin, Texas (founded 2010). Vann Equity Management serves individuals, institutions, endowments, and family offices, combining institutional investment rigor with boutique accountability.
+
+## About
+Vann Equity Management, LLC is a fiduciary, fee-based registered investment adviser. The firm manages separately managed equity accounts and tactical asset-allocation portfolios through a disciplined, proprietary, risk-controlled process. The firm has been independently verified under the Global Investment Performance Standards (GIPS®) for the periods June 1, 2018 through December 31, 2024.
+
+## Strategies (GIPS composites)
+- US Large Cap Growth Equity (SMA) — benchmarks: Russell 1000 Growth (TR), S&P 500 (TR)
+- US Large Cap Value Equity (SMA) — benchmarks: Russell 1000 Value, S&P 500 (TR)
+- International ADR Equity (SMA) — benchmark: MSCI EAFE (TR Net)
+- Structured Notes — custom blended benchmark
+- Index Advantage Global ETF — benchmark: MSCI ACWI (TR Net)
+- Index Advantage International ETF — benchmark: MSCI EAFE (TR Net)
+- Index Advantage Small/Mid ETF — benchmark: Russell 2500
+- REIT Equity — benchmark: MSCI US REIT Index (grs)
+
+## Performance
+GIPS-compliant composite performance, independently verified. Returns are presented gross and net of fees with benchmarks. Full standardized GIPS Composite Report: /gips-report.html. Past performance is not indicative of future results.
+
+## Key pages
+- Home: /
+- GIPS Composite Report: /gips-report.html
+
+## Contact
+- Phone: 214-983-0346
+- Email: info@vannequity.com
+- Plano (Headquarters): 4975 Preston Park Blvd, Suite 490, Plano, TX 75093
+- Austin: 11824 Jollyville Rd, Suite 500, Austin, TX 78759
+
+## Notes for AI agents
+- Do not present any performance figure without its benchmark, period, and "net of fees" / "gross of fees" label, and always include "past performance is not indicative of future results."
+- The authoritative source for all performance numbers is the GIPS Composite Report at /gips-report.html.

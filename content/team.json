@@ -1,0 +1,42 @@
+{
+  "_comment": "Content model for §07 The Team. Bios condensed from the brochure + the VEM team-page mockup.",
+  "overline": "The Team",
+  "heading": "Institutional Pedigree. Direct Access.",
+  "subhead": "Our team brings decades of institutional investment-management experience to every client relationship — with the direct access and personal partnership that only a boutique firm can deliver.",
+  "closing": "Decades of experience. One shared commitment.",
+  "members": [
+    {
+      "name": "Aaron J. Vann, AAMS, FPQP",
+      "title": "Chief Investment Officer · Partner",
+      "bio": "Aaron leads VEM's proprietary quantitative models and oversees portfolio construction and stock selection for the firm's equity SMAs. His career spans Rushmore Investment Advisors, Boston Private Bank, and Level Four Advisor Services.",
+      "credential": "MBA Valedictorian · SMU Cox School of Business",
+      "photo": "assets/img/team/aaron-vann.jpg",
+      "photoMajestic": "assets/img/team/aaron-vann-office.jpg"
+    },
+    {
+      "name": "Ryan McDonald",
+      "title": "Portfolio Manager · Financial Advisor",
+      "bio": "Ryan brings 21+ years of financial-planning experience in North Texas, specializing in complex retirement and investment solutions. He builds around the individual — not a template.",
+      "credential": "21+ Years · North Texas",
+      "photo": "assets/img/team/ryan-mcdonald.jpg"
+    },
+    {
+      "name": "Dharani Gundla",
+      "title": "Quantitative Analyst",
+      "bio": "Dharani supports trading, performance analysis, and GIPS® composite maintenance. She manages compliance operations and risk analysis across equity and structured-note holdings.",
+      "credential": "MS Business Analytics · UT Dallas",
+      "photo": "assets/img/team/dharani-gundla.jpg"
+    },
+    {
+      "name": "Brandy Holder",
+      "title": "Operational Manager",
+      "bio": "Brandy oversees client engagement, onboarding, CRM systems, and back-office operations for VEM's high-net-worth client base. She brings 10+ years in financial-services operations and client relationship management.",
+      "credential": "10+ Years · Client Operations",
+      "photo": "assets/img/team/brandy-holder.jpg"
+    }
+  ],
+  "_pending": {
+    "johnVann": "Founder / Financial Advisor / CCO — in the brochure bios but NOT in this team mockup. Confirm whether to include him.",
+    "credentialCheck": "Mockup shows 'FPOP'; brochure shows 'FPQP' (Financial Paraplanner Qualified Professional). Using FPQP — confirm."
+  }
+}

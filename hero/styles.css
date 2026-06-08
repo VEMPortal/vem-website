@@ -1,0 +1,19 @@
+/* Custom styles for the hero demo */
+html,body{height:100%}
+body{font-family:Source Sans 3, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+
+/* subtle grain overlay using CSS approach */
+.grain::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><filter id='n'><feTurbulence baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.03' fill='black'/></svg>");
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* small utility for the display font fallback */
+.font-display{font-family: 'Playfair Display', serif}
+
+/* ensure the hero's stat cards have consistent min-height */
+.stat-card{min-height:88px}

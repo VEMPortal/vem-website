@@ -1,0 +1,28 @@
+{
+  "_comment": "Content model for §03 What We Manage. Strategies from brochure p.3. Descriptors are concise/neutral (no performance claims).",
+  "overline": "What we manage",
+  "heading": ["Two ways to invest with us.", "<em>One disciplined process.</em>"],
+  "intro": "Every VEM portfolio — built security by security or through cost-efficient ETFs — runs through the same proprietary, risk-controlled process.",
+  "pillars": [
+    {
+      "label": "Equity Portfolios",
+      "sub": "Separately managed accounts — security-level conviction",
+      "strategies": [
+        { "idx": "01", "name": "US Large Cap Growth Equity", "desc": "Large-cap U.S. companies with accelerating earnings, sales, and margins." },
+        { "idx": "02", "name": "US Large Cap Value Equity", "desc": "Quality large-caps trading below intrinsic value, with improving fundamentals." },
+        { "idx": "03", "name": "Non-US International ADR", "desc": "International leaders held through U.S.-listed American Depositary Receipts." }
+      ]
+    },
+    {
+      "label": "Tactical Asset Allocation",
+      "sub": "ETF-based — fully diversified, optimized to the cycle",
+      "strategies": [
+        { "idx": "04", "name": "Index Advantage Fixed Income", "desc": "Cost-efficient bond ETFs positioned for the rate and credit cycle." },
+        { "idx": "05", "name": "Index Advantage Domestic ETF", "desc": "Diversified U.S. equity exposure, selected by multi-factor scoring." },
+        { "idx": "06", "name": "Index Advantage International ETF", "desc": "Global ex-U.S. exposure across developed and emerging markets." },
+        { "idx": "07", "name": "Index Advantage Global ETF", "desc": "A complete allocation of equity, fixed income, and alternatives." }
+      ]
+    }
+  ],
+  "cta": { "label": "See how the process works", "href": "#process" }
+}
