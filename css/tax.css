@@ -1,0 +1,274 @@
+/* VEM — Tax Resources Center
+   Extends tokens.css + gips.css. Uses the same report-header / report-hero /
+   report-footer shell as the GIPS and ADV pages. */
+
+.tax-page { background: var(--vem-white); color: var(--vem-navy-dark); }
+
+/* ===================================================================
+   PAGE SECTIONS — alternating background rhythm
+   =================================================================== */
+
+.tax-section {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+.tax-section--alt {
+  background: var(--vem-gray);
+}
+
+.tax-section__head {
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.tax-section__title {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tight);
+  color: var(--vem-navy-dark);
+}
+.tax-section__title em { font-style: italic; color: var(--accent); }
+.tax-section__lead {
+  margin-top: var(--space-4);
+  max-width: 72ch;
+  font-size: var(--fs-300);
+  line-height: 1.65;
+  color: var(--vem-gray-text);
+}
+
+/* Category divider within the forms grid */
+.tax-cat-head {
+  grid-column: 1 / -1;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(11,31,68,0.12);
+  margin-top: var(--space-5);
+  font-size: var(--fs-100);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--vem-gray-text);
+}
+.tax-cat-head:first-child { margin-top: 0; }
+
+/* ===================================================================
+   FORMS GRID
+   =================================================================== */
+
+.tax-forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.tax-form-card {
+  background: var(--vem-white);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+  padding: clamp(18px, 2vw, 26px);
+  box-shadow: 0 4px 18px -8px rgba(11,31,68,0.18);
+  transition: transform var(--dur-fast) var(--ease-soft),
+              box-shadow var(--dur-fast) var(--ease-soft);
+}
+.tax-form-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -8px rgba(11,31,68,0.22);
+}
+.tax-form-card__number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-600);
+  line-height: 1.1;
+  color: var(--vem-navy-dark);
+}
+.tax-form-card__desc {
+  margin-top: var(--space-2);
+  font-size: var(--fs-200);
+  line-height: 1.65;
+  color: var(--vem-gray-text);
+  flex: 1;
+}
+.tax-form-card__actions {
+  margin-top: var(--space-4);
+}
+
+/* ===================================================================
+   PUBLICATIONS GRID
+   =================================================================== */
+
+.tax-pubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.tax-pub-card {
+  background: var(--vem-white);
+  border-radius: var(--radius-md);
+  padding: clamp(18px, 2vw, 26px);
+  box-shadow: 0 4px 18px -8px rgba(11,31,68,0.16);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dur-fast) var(--ease-soft),
+              box-shadow var(--dur-fast) var(--ease-soft);
+}
+.tax-pub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -8px rgba(11,31,68,0.22);
+}
+.tax-pub-card__title {
+  font-weight: 600;
+  font-size: var(--fs-300);
+  color: var(--vem-navy-dark);
+  line-height: 1.35;
+}
+.tax-pub-card__desc {
+  margin-top: var(--space-2);
+  font-size: var(--fs-200);
+  line-height: 1.65;
+  color: var(--vem-gray-text);
+  flex: 1;
+}
+.tax-pub-card__actions {
+  margin-top: var(--space-4);
+}
+
+/* ===================================================================
+   TAX CALENDAR
+   =================================================================== */
+
+.tax-calendar {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tax-cal-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-4) var(--space-6);
+  align-items: start;
+  padding: clamp(16px, 2vw, 24px);
+  background: var(--vem-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 18px -8px rgba(11,31,68,0.14);
+  border-left: 3px solid var(--accent);
+}
+.tax-cal-item--past {
+  opacity: 0.55;
+  border-left-color: var(--vem-gray-text);
+}
+.tax-cal-item__date {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-400);
+  color: var(--accent-deep);
+  line-height: 1.2;
+  padding-top: 2px;
+}
+.tax-cal-item--past .tax-cal-item__date {
+  color: var(--vem-gray-text);
+}
+.tax-cal-item__label {
+  font-weight: 600;
+  font-size: var(--fs-300);
+  color: var(--vem-navy-dark);
+  margin-bottom: var(--space-2);
+}
+.tax-cal-item__body {
+  font-size: var(--fs-200);
+  line-height: 1.65;
+  color: var(--vem-gray-text);
+}
+.tax-cal-badge {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: var(--fs-100);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+.tax-cal-badge--past { background: var(--vem-gray); color: var(--vem-gray-text); }
+.tax-cal-badge--upcoming { background: rgba(92,124,184,0.12); color: var(--accent-deep); }
+
+@media (max-width: 560px) {
+  .tax-cal-item { grid-template-columns: 1fr; gap: var(--space-2); }
+}
+
+/* ===================================================================
+   TAX RATE TABLES
+   =================================================================== */
+
+.tax-rates-group {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.tax-rates-group__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-600);
+  color: var(--vem-navy-dark);
+  margin-bottom: var(--space-4);
+}
+
+/* Inherits .gips-table styling — add small override for the rate column */
+.tax-rate-table .col-rate {
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+.tax-rate-table thead { background: none; }
+.tax-rate-table thead th {
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vem-gray-text);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(11,31,68,0.20);
+  padding: 10px 14px;
+}
+.tax-rate-table td { font-variant-numeric: tabular-nums; }
+
+/* ===================================================================
+   DISCLAIMER / NOTE BLOCK
+   =================================================================== */
+
+.tax-note {
+  margin-top: var(--space-6);
+  padding: clamp(16px, 2vw, 24px);
+  background: var(--vem-gray);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+.tax-note p {
+  font-size: var(--fs-200);
+  line-height: 1.7;
+  color: var(--vem-gray-text);
+}
+.tax-note p + p { margin-top: var(--space-2); }
+.tax-note strong { color: var(--vem-navy-dark); font-weight: 600; }
+
+/* ===================================================================
+   SCROLL-REVEAL
+   =================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 640px) {
+  .tax-forms-grid,
+  .tax-pubs-grid {
+    grid-template-columns: 1fr;
+  }
+  .tax-cat-head { grid-column: 1; }
+}
