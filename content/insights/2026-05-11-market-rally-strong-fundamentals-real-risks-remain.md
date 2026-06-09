@@ -34,6 +34,11 @@ disclosure: |
 
 **Key Support Range:** 7235 – 7126
 
+<figure>
+  <img src="/assets/img/insights/sp500-weekly-candle-may-2026.png?v=2" alt="S&amp;P 500 weekly candle chart: the index has rallied to new record highs, with the primary trend bullish since the week of April 13, 2026." />
+  <figcaption>S&amp;P 500 &mdash; Weekly Candle Chart</figcaption>
+</figure>
+
 ## Market Rally: Strong Fundamentals, But Real Risks Remain
 
 The market rally over the past six weeks has been impressive, not only because of its size, with the S&P 500 rising nearly 20% from its recent low, but also because the rally has had fundamental support behind it.
@@ -166,10 +171,10 @@ Despite ongoing concerns that artificial intelligence could eventually pressure 
 
 | Indicator | Current Level | Level That Implies a Weakening Labor Market |
 | --- | --- | --- |
-| JOLTS | 6.8 million | &lt; 6 million |
-| U-3 Unemployment Rate | 4.3% | &gt; 5.0% |
-| U-6 Unemployment Rate | 8.0% | &gt; 10.0% |
-| Jobless Claims | 189k | &gt; 300k |
+| JOLTS | <span class="lvl-ok">6.8 million</span> | <span class="lvl-warn">&lt; 6 million</span> |
+| U-3 Unemployment Rate | <span class="lvl-ok">4.3%</span> | <span class="lvl-warn">&gt; 5.0%</span> |
+| U-6 Unemployment Rate | <span class="lvl-ok">8.0%</span> | <span class="lvl-warn">&gt; 10.0%</span> |
+| Jobless Claims | <span class="lvl-ok">189k</span> | <span class="lvl-warn">&gt; 300k</span> |
 
 Job openings, as measured by JOLTS, are well below the post-pandemic highs, but they remain stable at 6.8 million. That is not a booming labor market, but it is also not a labor market in trouble. Importantly, job openings remain comfortably above the sub-6 million level that would suggest employers are moving toward a hiring freeze.
 
