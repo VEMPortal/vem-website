@@ -39,6 +39,7 @@ SECTIONS = {
         "url":       "/blog/",
         "category":  "Blog",
         "title":     "Blog",
+        "section_class": "blog-listing",
         "overline":  "Vann Equity Management",
         "hero":      "Notes on Markets &amp; <em>Discipline</em>",
         "lead":      "Perspective from our team on long-term, fiduciary equity investing "
@@ -68,13 +69,14 @@ SECTIONS = {
         "url":       "/insights/",
         "category":  "Financial Market Insight",
         "title":     "Financial Market Insights",
+        "section_class": "insights-listing",
         "overline":  "Financial Market Insights",
         "hero":      "Financial <em>Market Insights</em>",
         "lead":      "Timely commentary on markets, the economy, and what it means for "
                      "long-term investors &mdash; written by Vann Equity Management.",
         "meta":      "Financial Market Insights from Vann Equity Management — timely commentary "
                      "on markets and the economy for long-term investors.",
-        "listing_hero": "",   # placeholder — hero image coming
+        "listing_hero": "assets/img/insights/insights-listing-hero.jpg",
     },
 }
 
@@ -321,6 +323,7 @@ def build_listing(sec_key, sec, articles, validate_list):
         "HERO_TITLE":  sec["hero"],
         "HERO_LEAD":   sec["lead"],
         "HERO_MEDIA":  hero_media(listing_hero_img),
+        "SECTION_CLASS": sec.get("section_class", ""),
         "LIST_EYEBROW": eyebrow,
         "LIST_COUNT":  count,
         "CARDS":       cards,
