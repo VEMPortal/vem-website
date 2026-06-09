@@ -40,13 +40,20 @@ institutional and restrained. Plain HTML/CSS/vanilla JS, token-driven design sys
 index.html              Homepage (rotating hero, sections, performance highlights, footer)
 gips-report.html        GIPS Composite Report (8 composites, interactive Chart.js bars)
 adv-part-2a.html        Form ADV Part 2A brochure (19 items, fee tables, PDF download)
+privacy-policy.html     Privacy Policy (10 sections)
+blog/  insights/        GENERATED listing + article pages (do not hand-edit — rebuilt)
+content/blog/*.md       Blog article SOURCES (Markdown + YAML front-matter)
+content/insights/*.md   Financial Market Insight article SOURCES
+templates/              article.html + listing.html (blog system templates)
+build_content.py        Static generator: Markdown -> branded HTML + listings
 css/
   tokens.css            Design tokens — SINGLE SOURCE OF TRUTH (colors, type, spacing).
                         --accent currently = blue; flip block at top to go gold.
   hero.css, sections.css, nav.css   Homepage styles
   gips.css              GIPS page + SHARED primitives (.container/.btn/.overline/
                         .report-header/.report-hero/.report-footer/.report__claim)
-  adv.css               ADV page doc-body typography (loads tokens.css + gips.css too)
+  adv.css               ADV + Privacy doc-body typography (loads tokens.css + gips.css too)
+  blog.css              Blog/Insights: listing grid + cards + article prose + disclosure
 js/
   hero.js               Hero rotator (desktop only >760px), scrolled header, parallax
   nav.js                Dropdowns + mobile hamburger menu
@@ -126,23 +133,53 @@ serving THIS folder on **port 8754**. Use the Claude_Preview MCP: `preview_start
 `preview_screenshot` can time out on the homepage (autoplaying hero video) — prefer
 `preview_eval`/`preview_inspect`; other pages screenshot fine.
 
-## Deploy (isolated preview only)
-Stable preview URL Aaron uses: **https://vann-equity-management.vercel.app**
-(Vercel project `vann-equity-management`, account `diesel1974`). Pure-static deploy — no
-`vercel.json`. Steps:
-1. Stage a clean copy to `/tmp/vem-deploy` (copy html/assets/css/js/content + robots/
-   sitemap/llms). Drop the raw `Abstract_*.jpeg` / `Elegant_*.jpeg` from staged assets.
-2. In the STAGED copy: flip each page's robots meta to `noindex, nofollow`, and write
-   `robots.txt` = `User-agent: *\nDisallow: /`.
-3. `cd /tmp/vem-deploy && rm -rf .vercel && npx vercel link --yes --project
-   vann-equity-management && npx vercel deploy --prod --yes`
-   (Linking each time avoids it creating a new project from the temp folder name.)
-4. Verify live: curl the pages/assets for `200`, confirm robots says noindex.
+## Blog & Financial Market Insights system
+Auto-populating `/blog` and `/insights`, built by **`build_content.py`** (a small static
+generator — NOT a framework; output is plain static HTML, so it respects the no-framework
+rule). Articles are Markdown files; the script stamps each into a branded page and rebuilds
+the listing pages + sitemap.
+
+**Add / edit an article:**
+1. Create `content/blog/<YYYY-MM-DD-slug>.md` (or `content/insights/...`) with YAML
+   front-matter: `title, slug, date, author, summary, category, status` (+ optional
+   `role, hero, read_time`). AI writing tools output this format cleanly.
+2. Run `python build_content.py --validate` (rebuilds everything, asserts 0 HTML5 errors).
+3. Commit + push → Vercel auto-deploys.
+
+**Compliance gate (SEC Marketing Rule):** `status: draft` → page builds as `noindex` with a
+red "Draft preview" banner, and is EXCLUDED from the public listing + sitemap (reachable
+only by direct URL, for CCO review). `status: published` → goes live; the git commit that
+flips it is the dated sign-off record. Every article auto-gets a marketing-disclosure footer.
+Filenames starting with `_` are ignored entirely (scratch).
+Blog assets cache version: `CACHE` constant in `build_content.py` (currently 1) — bump on
+blog.css change. NEVER hand-edit files in `blog/` or `insights/` — they're regenerated.
+
+## Deploy — now GitHub → Vercel auto-deploy
+Repo: **https://github.com/VEMPortal/vem-website** (Private→Public; org `VEMPortal` hides the
+personal handle; all commits authored `Vann Equity Management <vannequities@gmail.com>`).
+Connected to Vercel project `vann-equity-management` → **every `git push origin master`
+auto-deploys** to **https://vann-equity-management.vercel.app** in ~30s. No more manual CLI/
+`/tmp` staging.
+
+Preview-safety is now baked into the repo (not a staging transform):
+- `robots.txt` = `Disallow: /` keeps the preview out of search. Production version is saved
+  as `robots.production.txt`.
+- `.vercelignore` strips sources (`content/`, `templates/`, `build_content.py`, `*.md`,
+  `.claude/`) from the public deployment — verified: source `.md`/`.py` return 404 live.
+
+**LAUNCH CHECKLIST (when CCO signs off + going truly public):**
+1. Replace `robots.txt` with the contents of `robots.production.txt` (Allow + Sitemap).
+2. Add `gips-report.html` (and any noindex pages) back into `sitemap.xml`; confirm each
+   public page's meta robots = `index, follow`.
+3. Push. Verify `robots.txt` now allows crawling and pages are indexable.
+
+Fallback manual deploy (rarely needed): `cd <repo> && npx vercel deploy --prod --yes`.
 
 ## Git
-Local repo (no GitHub remote yet — back up via OneDrive + zip + Vercel). Commit at clean
-checkpoints with: `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`. To add
-GitHub later: install `gh` or create an empty repo and push.
+GitHub remote `origin` = VEMPortal/vem-website (see Deploy). Commit at clean checkpoints,
+on `master`, ending messages with `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`.
+History was rewritten once to scrub the personal identity — keep it that way (never commit
+as `ecapo116@gmail.com` / `Diesel1974`).
 
 ---
 
