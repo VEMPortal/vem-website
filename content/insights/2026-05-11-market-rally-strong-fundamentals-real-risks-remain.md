@@ -35,7 +35,10 @@ disclosure: |
 **Key Support Range:** 7235 – 7126
 
 <figure>
-  <img src="/assets/img/insights/sp500-weekly-candle-may-2026.png?v=2" alt="S&amp;P 500 weekly candle chart: the index has rallied to new record highs, with the primary trend bullish since the week of April 13, 2026." />
+  <div class="img-placeholder" role="img" aria-label="Placeholder for the S&amp;P 500 weekly candle chart image">
+    <span class="img-placeholder__label">S&amp;P 500 &mdash; Weekly Candle Chart</span>
+    <span class="img-placeholder__hint">Refined image to be added</span>
+  </div>
   <figcaption>S&amp;P 500 &mdash; Weekly Candle Chart</figcaption>
 </figure>
 

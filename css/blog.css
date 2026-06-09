@@ -133,6 +133,44 @@
 .post { padding-block: clamp(28px, 4vw, 56px) clamp(36px, 5vw, 64px); }
 .post > .container { max-width: 760px; }
 
+/* ---- Jump-link table of contents ("site map") ---- */
+.post-toc {
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  padding: clamp(18px, 2.4vw, 26px) clamp(20px, 2.6vw, 28px);
+  background: var(--vem-gray); border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+.post-toc__title {
+  font-size: var(--fs-100); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--vem-gray-text); font-weight: 700;
+}
+.post-toc ol {
+  margin-top: var(--space-3); padding: 0; list-style: none; counter-reset: toc;
+  columns: 2; column-gap: clamp(20px, 4vw, 44px);
+}
+.post-toc li { break-inside: avoid; margin-bottom: 4px; counter-increment: toc; }
+.post-toc a {
+  display: flex; gap: 10px; padding: 7px 10px; border-radius: var(--radius-sm);
+  font-size: var(--fs-200); font-weight: 600; color: var(--vem-navy); line-height: 1.35;
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+}
+.post-toc a::before { content: counter(toc) "."; color: var(--accent-deep); font-weight: 700; flex-shrink: 0; }
+.post-toc a:hover { background: var(--accent); color: #fff; }
+.post-toc a:hover::before { color: #fff; }
+@media (max-width: 620px) { .post-toc ol { columns: 1; } }
+
+/* ---- Image placeholder (awaiting a supplied/refined graphic) ---- */
+.img-placeholder {
+  aspect-ratio: 16 / 9; width: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  padding: 24px; text-align: center;
+  background: linear-gradient(135deg, var(--vem-navy) 0%, var(--vem-navy-dark) 100%);
+  border: 1px dashed rgba(255, 255, 255, 0.32); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+.img-placeholder__label { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: var(--fs-500); color: #fff; }
+.img-placeholder__hint { font-size: var(--fs-100); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-soft); }
+
 /* Lead paragraph (first paragraph of the body) */
 .post-body > p:first-of-type {
   font-size: var(--fs-500); line-height: 1.55; color: var(--vem-navy);
