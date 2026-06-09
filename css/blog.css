@@ -27,7 +27,7 @@
    to guarantee white text contrast on the left while the image reads through. */
 .insights-listing .listing-hero .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.55) 0%, rgba(7,16,34,0.30) 52%, rgba(7,16,34,0.10) 100%);
+    linear-gradient(115deg, rgba(7,16,34,0.70) 0%, rgba(7,16,34,0.44) 52%, rgba(7,16,34,0.18) 100%);
 }
 
 .listing { padding-block: clamp(40px, 6vw, 88px); }
