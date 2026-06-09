@@ -45,6 +45,7 @@ SECTIONS = {
                      "&mdash; the philosophy, the process, and the principles that guide how we manage capital.",
         "meta":      "The Vann Equity Management blog — perspective on disciplined, long-term, "
                      "fiduciary equity investing from our team.",
+        "listing_hero": "assets/img/blog/blog-listing-hero.jpg",
         # Standard disclaimer applied to EVERY blog post (company-name reference
         # generalized so it is correct on any topic). A post may override it with
         # a `disclosure:` front-matter field.
@@ -73,6 +74,7 @@ SECTIONS = {
                      "long-term investors &mdash; written by Vann Equity Management.",
         "meta":      "Financial Market Insights from Vann Equity Management — timely commentary "
                      "on markets and the economy for long-term investors.",
+        "listing_hero": "",   # placeholder — hero image coming
     },
 }
 
@@ -303,6 +305,9 @@ def build_listing(sec_key, sec, articles, validate_list):
         "isPartOf": {"@type": "WebSite", "name": "Vann Equity Management", "url": SITE + "/"},
     }
 
+    listing_hero_img = sec.get("listing_hero", "")
+    og_image = ('<meta property="og:image" content="%s/%s" />' % (SITE, listing_hero_img.lstrip("/"))) if listing_hero_img else ""
+
     page = fill(tpl("listing.html"), {
         "TITLE":       esc(sec["title"]),
         "META_DESC":   sec["meta"],
@@ -310,10 +315,12 @@ def build_listing(sec_key, sec, articles, validate_list):
         "ROBOTS":      "index, follow, max-image-preview:large, max-snippet:-1",
         "CACHE":       CACHE,
         "OG_TITLE":    esc(sec["title"]),
+        "OG_IMAGE":    og_image,
         "JSONLD":      json.dumps(ld, indent=2, ensure_ascii=False),
         "OVERLINE":    sec["overline"],
         "HERO_TITLE":  sec["hero"],
         "HERO_LEAD":   sec["lead"],
+        "HERO_MEDIA":  hero_media(listing_hero_img),
         "LIST_EYEBROW": eyebrow,
         "LIST_COUNT":  count,
         "CARDS":       cards,
