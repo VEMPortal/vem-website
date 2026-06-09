@@ -150,6 +150,14 @@ def build_article(sec_key, sec, fm, body, validate_list):
 
     body_html = MD.reset().convert(body)
 
+    # Per-article disclosure override (verbatim text from the source document).
+    disc = fm.get("disclosure")
+    if disc:
+        paras = [p.strip() for p in re.split(r"\n\s*\n", str(disc).strip()) if p.strip()]
+        disclosure_html = "\n".join("        <p>%s</p>" % html.escape(p, quote=False) for p in paras)
+    else:
+        disclosure_html = DISCLOSURE
+
     author_type = "Organization" if author.strip().lower().startswith("vann equity") else "Person"
     ld = {
         "@context": "https://schema.org",
@@ -192,7 +200,7 @@ def build_article(sec_key, sec, fm, body, validate_list):
         "DATE_HUMAN":   date_h,
         "READ_TIME":    rt,
         "BODY":         body_html,
-        "DISCLOSURE":   DISCLOSURE,
+        "DISCLOSURE":   disclosure_html,
         "YEAR":         YEAR,
     })
 
