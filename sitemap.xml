@@ -6,6 +6,12 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://www.vannequitymanagement.com/adv-part-2a.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- Add gips-report.html here once it is approved for public indexing
        (it is currently set to noindex pending CCO sign-off). -->
 </urlset>
