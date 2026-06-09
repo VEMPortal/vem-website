@@ -25,7 +25,7 @@ import markdown
 
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 SITE       = "https://www.vannequitymanagement.com"
-CACHE      = "4"                       # asset ?v= for blog assets; bump on CSS change
+CACHE      = "5"                       # asset ?v= for blog assets; bump on CSS change
 YEAR       = datetime.datetime.now().year
 TPL_DIR    = os.path.join(ROOT, "templates")
 
@@ -117,11 +117,22 @@ def esc(s):
 
 
 def hero_media(hero):
+    """Full-bleed hero background. Auto-uses a sibling .webp and a -mobile.jpg
+    crop if those files exist next to the given image (same pattern as the
+    GIPS/ADV/Privacy hero pages)."""
     if not hero:
         return ""
-    src = hero if hero.startswith("/") else "/" + hero.lstrip("/")
-    return ('<div class="report-hero__media" aria-hidden="true">'
-            '<img src="%s?v=%s" alt="" /></div>' % (src, CACHE))
+    rel = hero.lstrip("/")
+    base, _ext = os.path.splitext(rel)
+    webp = base + ".webp"
+    mobile = base + "-mobile.jpg"
+    sources = ""
+    if os.path.exists(os.path.join(ROOT, mobile)):
+        sources += '<source media="(max-width: 600px)" srcset="/%s?v=%s" />' % (mobile, CACHE)
+    if os.path.exists(os.path.join(ROOT, webp)):
+        sources += '<source type="image/webp" srcset="/%s?v=%s" />' % (webp, CACHE)
+    return ('<div class="report-hero__media" aria-hidden="true"><picture>%s'
+            '<img src="/%s?v=%s" alt="" /></picture></div>' % (sources, rel, CACHE))
 
 
 def card_media(hero, title):
