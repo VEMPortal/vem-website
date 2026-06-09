@@ -12,6 +12,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.vannequitymanagement.com/privacy-policy.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
   <!-- Add gips-report.html here once it is approved for public indexing
        (it is currently set to noindex pending CCO sign-off). -->
 </urlset>
