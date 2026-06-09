@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule a Consultation &mdash; Vann Equity Management</title>
+  <meta name="description" content="Request an unhurried, no-obligation consultation with Vann Equity Management — a disciplined, fiduciary equity manager serving individuals, institutions, endowments, and family offices in Plano and Austin, Texas." />
+  <link rel="canonical" href="https://www.vannequitymanagement.com/contact.html" />
+  <!-- Placeholder page — not yet linked from the live site. Keep noindex until launch. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="assets/brand/vann-icon-navy.png?v=7" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Schedule a Consultation &mdash; Vann Equity Management" />
+  <meta property="og:description" content="Begin the conversation. Request a consultation with a disciplined, fiduciary equity manager." />
+  <meta property="og:url" content="https://www.vannequitymanagement.com/contact.html" />
+  <meta property="og:site_name" content="Vann Equity Management" />
+  <meta property="og:image" content="https://www.vannequitymanagement.com/assets/img/cta-office.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css?v=7" />
+  <link rel="stylesheet" href="css/gips.css?v=7" />
+  <link rel="stylesheet" href="css/contact.css?v=7" />
+</head>
+<body class="contact-page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="report-header" id="top">
+    <a class="brand" href="index.html" aria-label="Vann Equity Management — home">
+      <img src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+    </a>
+    <a class="report-back" href="index.html">&larr; Back to home</a>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header class="report-hero">
+      <div class="report-hero__media" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/img/cta-office.webp?v=7" />
+          <img src="assets/img/cta-office.jpg?v=7" alt="" />
+        </picture>
+      </div>
+      <div class="report-hero__scrim" aria-hidden="true"></div>
+      <div class="container report-hero__inner">
+        <p class="overline report-hero__overline">Begin the conversation</p>
+        <h1 class="report-hero__title">Schedule a <em>Consultation</em></h1>
+        <p class="report-hero__lead">An unhurried, no-obligation conversation about your goals &mdash; and how a disciplined, fiduciary process can serve them. Tell us a little about yourself and we&rsquo;ll be in touch within one business day.</p>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         FORM + SIDEBAR
+         ============================================================ -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- FORM -->
+          <div class="contact-main">
+            <div class="contact-intro">
+              <h2>Request a <em>consultation</em></h2>
+              <p>Fields marked with <span style="color:var(--vem-gold)">&lowast;</span> are required. We use this information solely to prepare for and follow up on your inquiry &mdash; never sold or shared. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <!--
+              ============================================================
+              BACKEND WIRING (do this at launch):
+              Set data-endpoint to your form handler URL (Formspree,
+              Web3Forms, GoHighLevel inbound webhook, etc.). When empty,
+              the form gracefully falls back to opening the visitor's email
+              client pre-addressed to info@vannequity.com.
+              ============================================================
+            -->
+            <form class="contact-form" id="consultForm" novalidate
+                  data-endpoint=""
+                  data-fallback-email="info@vannequity.com">
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="firstName">First name <span class="req" aria-hidden="true">&lowast;</span></label>
+                  <input type="text" id="firstName" name="first_name" autocomplete="given-name" placeholder="Jane" required />
+                  <span class="error-text">Please enter your first name.</span>
+                </div>
+                <div class="field">
+                  <label for="lastName">Last name <span class="req" aria-hidden="true">&lowast;</span></label>
+                  <input type="text" id="lastName" name="last_name" autocomplete="family-name" placeholder="Doe" required />
+                  <span class="error-text">Please enter your last name.</span>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">&lowast;</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@example.com" required />
+                  <span class="error-text">Please enter a valid email address.</span>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone <span class="opt">(optional)</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(214) 555-0123" />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field field--select">
+                  <label for="interest">I&rsquo;m interested in <span class="opt">(optional)</span></label>
+                  <select id="interest" name="interest">
+                    <option value="" selected>Select an option&hellip;</option>
+                    <option value="Equity SMA">Equity separately managed account</option>
+                    <option value="Tactical allocation">Tactical asset allocation</option>
+                    <option value="Financial planning">Financial planning</option>
+                    <option value="Institutional / endowment">Institutional / endowment mandate</option>
+                    <option value="Family office">Family office</option>
+                    <option value="General inquiry">General inquiry</option>
+                  </select>
+                </div>
+                <div class="field field--select">
+                  <label for="preferred">Preferred contact <span class="opt">(optional)</span></label>
+                  <select id="preferred" name="preferred_contact">
+                    <option value="" selected>No preference</option>
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field field--select field--full">
+                <label for="assets">Approximate investable assets <span class="opt">(optional)</span></label>
+                <select id="assets" name="investable_assets">
+                  <option value="" selected>Prefer not to say</option>
+                  <option value="Under $250k">Under $250,000</option>
+                  <option value="$250k–$1M">$250,000 &ndash; $1,000,000</option>
+                  <option value="$1M–$5M">$1,000,000 &ndash; $5,000,000</option>
+                  <option value="$5M–$25M">$5,000,000 &ndash; $25,000,000</option>
+                  <option value="Over $25M">Over $25,000,000</option>
+                </select>
+              </div>
+
+              <div class="field field--full">
+                <label for="message">How can we help? <span class="opt">(optional)</span></label>
+                <textarea id="message" name="message" placeholder="Briefly tell us about your goals, timeline, or any questions you have."></textarea>
+              </div>
+
+              <div class="field field--consent">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">I understand that submitting this form does not create an advisory relationship and is not a request for personalized investment advice. I consent to be contacted by Vann Equity Management regarding my inquiry. <span class="req" aria-hidden="true">&lowast;</span></label>
+              </div>
+
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+              <div class="contact-actions">
+                <button type="submit" class="btn btn--gold">Schedule Consultation</button>
+                <p class="contact-form__note">Prefer to talk now? Call <a href="tel:+12149830346">214-983-0346</a>, Mon&ndash;Fri 8:30&ndash;5:00 CT.</p>
+              </div>
+
+            </form>
+          </div><!-- /.contact-main -->
+
+          <!-- SIDEBAR -->
+          <aside class="contact-aside">
+            <div class="contact-card">
+              <h3>Talk to us directly</h3>
+              <p class="lead">However you prefer to begin, we&rsquo;re glad to help.</p>
+              <ul class="contact-card__list">
+                <li class="contact-card__item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5c0 8.3 7.7 16 16 16l2.5-2.5-4.5-3-2.5 2a14 14 0 0 1-5-5l2-2.5-3-4.5L5.5 3z"/></svg>
+                  <span><span class="k">Phone</span><a href="tel:+12149830346">214-983-0346</a></span>
+                </li>
+                <li class="contact-card__item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3z"/><path stroke-linecap="round" stroke-linejoin="round" d="m3.5 7 8.5 6 8.5-6"/></svg>
+                  <span><span class="k">Email</span><a href="mailto:info@vannequity.com">info@vannequity.com</a></span>
+                </li>
+                <li class="contact-card__item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 2"/></svg>
+                  <span><span class="k">Hours</span><span>Mon&ndash;Fri &middot; 8:30&ndash;5:00 CT</span></span>
+                </li>
+              </ul>
+              <div class="contact-card__cta">
+                <a class="btn btn--ghost" href="https://login.orionadvisor.com/login.html?g=3fdf2732-eb7b-49bb-adb7-77f8efb3243c" target="_blank" rel="noopener noreferrer">Client Login</a>
+              </div>
+            </div>
+
+            <div class="contact-offices">
+              <div class="contact-office">
+                <p class="contact-office__city">Plano <em>HQ</em></p>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=4975+Preston+Park+Blvd+Suite+490+Plano+TX+75093" target="_blank" rel="noopener noreferrer">4975 Preston Park Blvd, Suite 490<br />Plano, TX 75093</a>
+              </div>
+              <div class="contact-office">
+                <p class="contact-office__city">Austin</p>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=11824+Jollyville+Rd+Suite+500+Austin+TX+78759" target="_blank" rel="noopener noreferrer">11824 Jollyville Rd, Suite 500<br />Austin, TX 78759</a>
+              </div>
+            </div>
+          </aside>
+
+        </div><!-- /.contact-grid -->
+
+        <p class="contact-fineprint">
+          Vann Equity Management, LLC is an investment adviser registered with the U.S. Securities and Exchange Commission. Registration does not imply a certain level of skill or training. This page is for general informational purposes and does not constitute investment, legal, or tax advice, nor an offer or solicitation in any jurisdiction where it would be unlawful. Submitting this form does not create an advisory relationship.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="report-footer">
+    <div class="container">
+      <img src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+      <p>&copy; 2026 Vann Equity Management, LLC &middot; 4975 Preston Park Blvd., Suite 490, Plano, TX 75093 &middot; <a href="index.html">vannequity.com</a></p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FORM HANDLER — validation + submit
+       - If data-endpoint is set, POSTs JSON via fetch and shows status.
+       - If empty, falls back to a pre-filled mailto so the form still works
+         before a backend is connected.
+       ============================================================ -->
+  <script>
+  (function () {
+    var form = document.getElementById('consultForm');
+    if (!form) return;
+    var statusEl = document.getElementById('formStatus');
+
+    function setStatus(kind, msg) {
+      statusEl.className = 'form-status is-visible form-status--' + kind;
+      statusEl.textContent = msg;
+    }
+    function clearFieldErrors() {
+      form.querySelectorAll('.field.has-error').forEach(function (f) { f.classList.remove('has-error'); });
+    }
+    function markError(input) {
+      var field = input.closest('.field');
+      if (field) field.classList.add('has-error');
+    }
+
+    function validate() {
+      clearFieldErrors();
+      var ok = true, firstBad = null;
+      form.querySelectorAll('[required]').forEach(function (el) {
+        var bad = (el.type === 'checkbox') ? !el.checked : !String(el.value).trim();
+        if (!bad && el.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (bad) { ok = false; markError(el); if (!firstBad) firstBad = el; }
+      });
+      if (firstBad) firstBad.focus();
+      return ok;
+    }
+
+    function collect() {
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      data.consent = form.querySelector('#consent').checked ? 'Yes' : 'No';
+      return data;
+    }
+
+    function mailtoFallback(data) {
+      var to = form.getAttribute('data-fallback-email') || 'info@vannequity.com';
+      var subject = 'Consultation request — ' + (data.first_name || '') + ' ' + (data.last_name || '');
+      var lines = [
+        'Name: ' + (data.first_name || '') + ' ' + (data.last_name || ''),
+        'Email: ' + (data.email || ''),
+        'Phone: ' + (data.phone || ''),
+        'Interest: ' + (data.interest || ''),
+        'Preferred contact: ' + (data.preferred_contact || ''),
+        'Investable assets: ' + (data.investable_assets || ''),
+        '',
+        'Message:',
+        (data.message || '')
+      ];
+      window.location.href = 'mailto:' + to +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) {
+        setStatus('err', 'Please complete the required fields highlighted above.');
+        return;
+      }
+      var data = collect();
+      var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+
+      if (!endpoint) {
+        // No backend connected yet — open the visitor's email client.
+        setStatus('ok', 'Opening your email app to send your request. If nothing happens, email us at ' + (form.getAttribute('data-fallback-email') || 'info@vannequity.com') + '.');
+        mailtoFallback(data);
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      var label = btn.textContent; btn.textContent = 'Sending…';
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Bad status ' + r.status);
+        form.reset();
+        setStatus('ok', 'Thank you — your request has been received. A member of our team will be in touch within one business day.');
+      }).catch(function () {
+        setStatus('err', 'Something went wrong sending your request. Please call 214-983-0346 or email info@vannequity.com and we&rsquo;ll take care of you.');
+      }).finally(function () {
+        btn.disabled = false; btn.textContent = label;
+      });
+    });
+  }());
+  </script>
+
+</body>
+</html>
