@@ -1,0 +1,181 @@
+/* VEM — Form CRS (Customer Relationship Summary)
+   Extends tokens.css + gips.css. Same report-header/hero/footer shell
+   as the GIPS, ADV, and Tax Resources pages. */
+
+.crs-page { background: var(--vem-white); color: var(--vem-navy-dark); }
+
+/* ===================================================================
+   PAGE SECTIONS
+   =================================================================== */
+
+.crs-section {
+  padding-block: clamp(48px, 6vw, 88px);
+}
+.crs-section--alt {
+  background: var(--vem-gray);
+}
+
+/* ===================================================================
+   ARTICLE BODY — prose width, heading rhythm
+   =================================================================== */
+
+.crs-body {
+  max-width: 82ch;
+}
+
+.crs-body h2 {
+  margin-top: clamp(36px, 4vw, 56px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--vem-navy-dark);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(11,31,68,0.10);
+}
+.crs-body h2 em { font-style: italic; color: var(--accent); }
+
+.crs-body h3 {
+  margin-top: var(--space-6);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  color: var(--vem-navy-dark);
+}
+
+.crs-body p {
+  margin-top: var(--space-4);
+  font-size: var(--fs-300);
+  line-height: 1.75;
+  color: var(--vem-gray-text);
+}
+.crs-body p strong { color: var(--vem-navy-dark); font-weight: 600; }
+
+.crs-body ul {
+  margin-top: var(--space-3);
+  padding-left: var(--space-5);
+}
+.crs-body ul li {
+  position: relative;
+  margin-top: var(--space-3);
+  font-size: var(--fs-300);
+  line-height: 1.7;
+  color: var(--vem-gray-text);
+  padding-left: var(--space-3);
+  list-style: none;
+}
+.crs-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.crs-body a {
+  color: var(--accent-deep);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(52,81,140,0.30);
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-soft),
+              text-decoration-color var(--dur-fast) var(--ease-soft);
+}
+.crs-body a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ===================================================================
+   CALLOUT BOXES
+   =================================================================== */
+
+/* Conversation Starter — accent-left, light blue tint */
+.crs-callout {
+  margin-top: var(--space-6);
+  padding: clamp(18px, 2vw, 28px);
+  border-left: 3px solid var(--accent);
+  background: rgba(92,124,184,0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.crs-callout__label {
+  font-size: var(--fs-100);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: var(--space-3);
+}
+.crs-callout ul { margin-top: var(--space-2); padding-left: var(--space-4); }
+
+/* Additional Info box — gray card */
+.crs-infobox {
+  margin-top: var(--space-6);
+  padding: clamp(18px, 2vw, 26px);
+  background: var(--vem-gray);
+  border-left: 3px solid var(--vem-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.crs-infobox__label {
+  font-size: var(--fs-100);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--vem-gray-text);
+  margin-bottom: var(--space-3);
+}
+
+/* Emphasis / warning paragraph */
+.crs-body .crs-warn {
+  color: var(--vem-navy-dark);
+  font-weight: 600;
+}
+
+/* ===================================================================
+   DOWNLOAD BAR
+   =================================================================== */
+
+.crs-download-bar {
+  padding: clamp(24px, 3vw, 36px) 0;
+  border-bottom: 1px solid rgba(11,31,68,0.10);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.crs-download-bar__text {
+  font-size: var(--fs-200);
+  color: var(--vem-gray-text);
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ===================================================================
+   LAST UPDATED
+   =================================================================== */
+
+.crs-updated {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(11,31,68,0.10);
+  font-size: var(--fs-200);
+  font-style: italic;
+  color: var(--vem-gray-text);
+  text-align: right;
+}
+
+/* ===================================================================
+   SCROLL-REVEAL
+   =================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
