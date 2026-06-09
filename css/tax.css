@@ -4,6 +4,14 @@
 
 .tax-page { background: var(--vem-white); color: var(--vem-navy-dark); }
 
+/* Hero scrim — eased slightly lighter than the default so the brass-lamp desk
+   image reads through, while the dark left edge keeps the headline legible. */
+.tax-page .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.86) 0%, rgba(7,16,34,0.66) 48%, rgba(7,16,34,0.40) 100%),
+    radial-gradient(120% 110% at 88% -10%, rgba(92,124,184,0.20), transparent 60%);
+}
+
 /* ===================================================================
    PAGE SECTIONS — alternating background rhythm
    =================================================================== */
