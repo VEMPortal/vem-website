@@ -4,6 +4,7 @@ slug: "what-spacex-openai-anthropic-ipos-may-signal-about-todays-market"
 date: 2026-06-09
 author: "Vann Equity Management"
 category: "Blog"
+hero: assets/img/blog/blog-hero-2026-06-09.jpg
 status: published
 summary: "SpaceX, OpenAI, and Anthropic sit at the center of AI, infrastructure, and aerospace. Their potential IPOs may become reference points for how markets value innovation at scale. Educational only — not a recommendation."
 ---
