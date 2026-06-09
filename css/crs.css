@@ -155,6 +155,16 @@
   min-width: 200px;
 }
 
+/* Placeholder state while the hosted PDF is pending */
+.crs-download-bar .btn.is-disabled {
+  background: var(--vem-gray);
+  color: var(--vem-gray-text);
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
 /* ===================================================================
    LAST UPDATED
    =================================================================== */
