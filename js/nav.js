@@ -5,6 +5,15 @@
   var header = document.querySelector(".site-header");
   var toggle = document.querySelector(".nav__toggle");
   var triggers = Array.prototype.slice.call(document.querySelectorAll(".nav__trigger"));
+  var subTriggers = Array.prototype.slice.call(document.querySelectorAll(".nav__subtrigger"));
+
+  function closeAllSubmenus(except) {
+    subTriggers.forEach(function (btn) {
+      if (btn === except) return;
+      btn.closest(".has-submenu").classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  }
 
   function closeAllDropdowns(except) {
     triggers.forEach(function (btn) {
@@ -12,6 +21,7 @@
       btn.closest(".has-dropdown").classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
     });
+    closeAllSubmenus();
   }
 
   function closeMobile() {
@@ -38,6 +48,19 @@
       e.preventDefault();
       var willOpen = !item.classList.contains("is-open");
       closeAllDropdowns(btn);
+      item.classList.toggle("is-open", willOpen);
+      btn.setAttribute("aria-expanded", String(willOpen));
+    });
+  });
+
+  /* Nested submenu triggers ("Disclosures") — toggle the flyout/accordion */
+  subTriggers.forEach(function (btn) {
+    var item = btn.closest(".has-submenu");
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var willOpen = !item.classList.contains("is-open");
+      closeAllSubmenus(btn);
       item.classList.toggle("is-open", willOpen);
       btn.setAttribute("aria-expanded", String(willOpen));
     });

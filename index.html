@@ -12,8 +12,8 @@
   <meta name="author" content="Vann Equity Management, LLC" />
 
   <!-- Favicon (navy V on light) -->
-  <link rel="icon" type="image/png" href="assets/brand/vann-icon-navy.png?v=50" />
-  <link rel="apple-touch-icon" href="assets/brand/vann-icon-navy.png?v=50" />
+  <link rel="icon" type="image/png" href="assets/brand/vann-icon-navy.png?v=51" />
+  <link rel="apple-touch-icon" href="assets/brand/vann-icon-navy.png?v=51" />
   <meta name="theme-color" content="#0B1F44" />
 
   <!-- Open Graph / social -->
@@ -34,16 +34,16 @@
   <meta name="twitter:image" content="https://www.vannequitymanagement.com/assets/video/hero-poster.jpg" />
 
   <!-- Preload the LCP hero image so it paints fast -->
-  <link rel="preload" as="image" href="assets/img/hero-arch.webp?v=50" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-arch.webp?v=51" type="image/webp" fetchpriority="high" />
 
   <!-- Fonts: Cinzel (logo) · Cormorant (display) · Hanken Grotesk (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/tokens.css?v=50" />
-  <link rel="stylesheet" href="css/hero.css?v=50" />
-  <link rel="stylesheet" href="css/sections.css?v=50" />
+  <link rel="stylesheet" href="css/tokens.css?v=51" />
+  <link rel="stylesheet" href="css/hero.css?v=51" />
+  <link rel="stylesheet" href="css/sections.css?v=51" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
        understand VEM as an entity. Add "sameAs" social URLs once they're live. -->
@@ -108,8 +108,8 @@
   <header class="site-header" data-section="header">
     <a class="brand" href="#top" aria-label="Vann Equity Management — home">
       <span class="brand__icons" aria-hidden="true">
-        <img class="brand__icon brand__icon--navy" src="assets/brand/vann-icon-navy.png?v=50" alt="" width="38" height="38" />
-        <img class="brand__icon brand__icon--white" src="assets/brand/vann-icon-white.png?v=50" alt="" width="38" height="38" />
+        <img class="brand__icon brand__icon--navy" src="assets/brand/vann-icon-navy.png?v=51" alt="" width="38" height="38" />
+        <img class="brand__icon brand__icon--white" src="assets/brand/vann-icon-white.png?v=51" alt="" width="38" height="38" />
       </span>
       <span class="brand__word">Vann Equity Management</span>
     </a>
@@ -160,10 +160,18 @@
               <li><a href="/blog">Blogs</a></li>
               <li><a href="tax-resources.html">Tax Resources</a></li>
               <li><a href="gips-report.html">GIPS&reg; Composite Report</a></li>
-              <li><a href="adv-part-2a.html">Form ADV Part 2A</a></li>
-              <li><a href="form-crs.html">Form CRS</a></li>
-              <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="https://adviserinfo.sec.gov/" target="_blank" rel="noopener noreferrer">Investment Advisor Public Disclosure</a></li>
+              <li class="nav__subitem has-submenu">
+                <button class="nav__subtrigger" type="button" aria-expanded="false" aria-haspopup="true">
+                  Disclosures
+                  <svg class="nav__chev nav__chev--sub" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="nav__submenu">
+                  <li><a href="adv-part-2a.html">Form ADV Part 2A</a></li>
+                  <li><a href="form-crs.html">Form CRS</a></li>
+                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="https://adviserinfo.sec.gov/" target="_blank" rel="noopener noreferrer">Investment Advisor Public Disclosure</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
 
@@ -864,9 +872,9 @@
     </div>
   </footer>
 
-  <script src="js/nav.js?v=50" defer></script>
-  <script src="js/hero.js?v=50" defer></script>
-  <script src="js/sections.js?v=50" defer></script>
-  <script src="js/process.js?v=50" defer></script>
+  <script src="js/nav.js?v=51" defer></script>
+  <script src="js/hero.js?v=51" defer></script>
+  <script src="js/sections.js?v=51" defer></script>
+  <script src="js/process.js?v=51" defer></script>
 </body>
 </html>
