@@ -45,6 +45,21 @@ SECTIONS = {
                      "&mdash; the philosophy, the process, and the principles that guide how we manage capital.",
         "meta":      "The Vann Equity Management blog — perspective on disciplined, long-term, "
                      "fiduciary equity investing from our team.",
+        # Standard disclaimer applied to EVERY blog post (company-name reference
+        # generalized so it is correct on any topic). A post may override it with
+        # a `disclosure:` front-matter field.
+        "disclosure":
+            "This material is provided for informational and educational purposes only and "
+            "should not be considered investment, legal, or tax advice. The information does not "
+            "constitute a recommendation to buy, sell, participate in, or avoid any IPO, security, "
+            "company, sector, asset class, or investment strategy. Any companies, securities, or "
+            "strategies referenced are mentioned for educational market commentary only and should "
+            "not be interpreted as a recommendation. Investing involves risk, including the possible "
+            "loss of principal. IPOs and newly public companies may involve additional risks, "
+            "including limited public operating history, valuation uncertainty, liquidity constraints, "
+            "volatility, and changes in market conditions. Past performance does not guarantee future "
+            "results. Vann Equity Management does not provide tax or legal advice. Investors should "
+            "consult their financial, tax, or legal professional regarding their individual circumstances.",
     },
     "insights": {
         "src":       os.path.join(ROOT, "content", "insights"),
@@ -176,7 +191,7 @@ def build_article(sec_key, sec, fm, body, validate_list):
         toc_html = ""
 
     # Per-article disclosure override (verbatim text from the source document).
-    disc = fm.get("disclosure")
+    disc = fm.get("disclosure") or sec.get("disclosure")
     if disc:
         paras = [p.strip() for p in re.split(r"\n\s*\n", str(disc).strip()) if p.strip()]
         disclosure_html = "\n".join("        <p>%s</p>" % html.escape(p, quote=False) for p in paras)
