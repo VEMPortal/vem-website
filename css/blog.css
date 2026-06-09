@@ -1,0 +1,246 @@
+/* VEM — Blog & Financial Market Insights.
+   Editorial layer for the auto-generated /blog and /insights sections.
+   Loads tokens.css + gips.css for the shared primitives (.container, .btn,
+   .report-header, .report-hero, .report-footer, .overline). This file adds:
+   the listing grid + cards, the article hero meta, the article prose body,
+   and the marketing disclosure block. Output is plain static HTML (no JS). */
+
+.blog-page { background: var(--vem-white); color: var(--vem-navy-dark); }
+
+/* ===================================================================
+   LISTING PAGE — hero, grid, cards
+   =================================================================== */
+
+/* The listing hero is a touch shorter than a document hero. */
+.listing-hero { min-height: clamp(300px, 42vh, 460px); }
+.listing-hero .report-hero__lead { max-width: 60ch; }
+
+.listing { padding-block: clamp(40px, 6vw, 88px); }
+
+/* Section eyebrow above the grid (e.g. "Latest" / count) */
+.listing__head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--space-3); margin-bottom: clamp(22px, 3vw, 36px);
+}
+.listing__count { font-size: var(--fs-200); color: var(--vem-gray-text); }
+
+.post-grid {
+  display: grid; gap: clamp(20px, 2.6vw, 34px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+
+/* ---- Card ---- */
+.post-card {
+  display: flex; flex-direction: column;
+  background: var(--vem-white);
+  border: 1px solid rgba(11, 31, 68, 0.10);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: 0 1px 2px rgba(11, 31, 68, 0.04);
+  transition: transform var(--dur-mid) var(--ease-out),
+              box-shadow var(--dur-mid) var(--ease-out),
+              border-color var(--dur-mid) var(--ease-out);
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(92, 124, 184, 0.35);
+}
+.post-card:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.post-card__media {
+  position: relative; aspect-ratio: 16 / 10; overflow: hidden;
+  background: var(--vem-navy-dark);
+}
+.post-card__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.post-card:hover .post-card__media img { transform: scale(1.04); }
+
+/* Placeholder media when an article has no hero image */
+.post-card__media--ph {
+  display: grid; place-items: center;
+  background:
+    linear-gradient(135deg, var(--vem-navy) 0%, var(--vem-navy-dark) 100%);
+}
+.post-card__media--ph::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 120% at 85% -10%, rgba(92,124,184,0.28), transparent 60%);
+}
+.post-card__phmark {
+  position: relative; z-index: 1; height: 38px; width: auto; opacity: 0.9;
+}
+
+.post-card__body {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  padding: clamp(18px, 2.2vw, 26px);
+  flex: 1;
+}
+.post-card__cat {
+  font-size: var(--fs-100); font-weight: 600; letter-spacing: var(--tracking-wide);
+  text-transform: uppercase; color: var(--accent-deep);
+}
+.post-card__title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-600); line-height: 1.12; letter-spacing: var(--tracking-tight);
+  color: var(--vem-navy-dark);
+}
+.post-card a.post-card__link { color: inherit; }
+.post-card a.post-card__link::after { content: ""; position: absolute; inset: 0; }
+.post-card__media + .post-card__body .post-card__title { position: static; }
+.post-card__summary {
+  font-size: var(--fs-200); line-height: 1.6; color: var(--vem-gray-text);
+  margin-top: -2px;
+}
+.post-card__meta {
+  margin-top: auto; padding-top: var(--space-3);
+  display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  font-size: var(--fs-100); color: var(--vem-gray-text);
+  border-top: 1px solid rgba(11, 31, 68, 0.08);
+}
+.post-card__meta .dot { width: 3px; height: 3px; border-radius: 999px; background: currentColor; opacity: 0.5; }
+
+/* The whole card is a link target; keep title positioned for the ::after overlay */
+.post-card { position: relative; }
+.post-card__title { position: relative; }
+
+/* ---- Empty state (no published posts yet) ---- */
+.listing-empty {
+  text-align: center; padding: clamp(48px, 8vw, 96px) var(--gutter);
+  border: 1px dashed rgba(11, 31, 68, 0.18); border-radius: var(--radius-lg);
+  background: rgba(229, 230, 232, 0.35);
+}
+.listing-empty h2 {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-600);
+  color: var(--vem-navy-dark);
+}
+.listing-empty p { margin-top: var(--space-3); color: var(--vem-gray-text); max-width: 52ch; margin-inline: auto; }
+
+/* ===================================================================
+   ARTICLE PAGE — hero meta + prose body
+   =================================================================== */
+
+/* Meta row under the hero title (date · author · read time) */
+.post-hero__meta {
+  margin-top: var(--space-5);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  font-size: var(--fs-200); color: var(--on-dark-80);
+}
+.post-hero__meta .dot { width: 3px; height: 3px; border-radius: 999px; background: currentColor; opacity: 0.55; }
+.post-hero__author { color: #fff; font-weight: 600; }
+
+/* Article body wrapper */
+.post { padding-block: clamp(28px, 4vw, 56px) clamp(36px, 5vw, 64px); }
+.post > .container { max-width: 760px; }
+
+/* Lead paragraph (first paragraph of the body) */
+.post-body > p:first-of-type {
+  font-size: var(--fs-500); line-height: 1.55; color: var(--vem-navy);
+}
+
+/* Prose */
+.post-body h2 {
+  margin-top: clamp(34px, 4.5vw, 52px);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-700); line-height: 1.14; letter-spacing: var(--tracking-tight);
+  color: var(--vem-navy-dark); scroll-margin-top: 84px;
+}
+.post-body h2::after {
+  content: ""; display: block; width: 44px; height: 3px; margin-top: var(--space-3);
+  background: var(--accent); border-radius: 2px;
+}
+.post-body h3 {
+  margin-top: clamp(26px, 3.2vw, 38px);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-600); line-height: 1.2; color: var(--vem-navy);
+  scroll-margin-top: 84px;
+}
+.post-body p {
+  margin-top: var(--space-4);
+  font-size: var(--fs-400); line-height: 1.75; color: var(--vem-ink);
+}
+.post-body h2 + p, .post-body h3 + p { margin-top: var(--space-3); }
+.post-body strong { color: var(--vem-navy-dark); font-weight: 700; }
+.post-body em { font-style: italic; }
+.post-body a {
+  color: var(--accent-deep); font-weight: 600;
+  text-decoration: underline; text-decoration-color: rgba(52,81,140,0.35);
+  text-underline-offset: 2px; transition: text-decoration-color var(--dur-fast) var(--ease-soft);
+}
+.post-body a:hover { text-decoration-color: var(--accent-deep); }
+
+.post-body ul, .post-body ol { margin-top: var(--space-4); padding-left: 0; display: grid; gap: 10px; }
+.post-body ul { list-style: none; }
+.post-body ul li { position: relative; padding-left: 26px; font-size: var(--fs-400); line-height: 1.65; color: var(--vem-ink); }
+.post-body ul li::before {
+  content: ""; position: absolute; left: 4px; top: 0.7em;
+  width: 7px; height: 7px; border-radius: 999px; background: var(--accent);
+}
+.post-body ol { list-style: none; counter-reset: postol; }
+.post-body ol li {
+  position: relative; padding-left: 34px; font-size: var(--fs-400); line-height: 1.65; color: var(--vem-ink);
+  counter-increment: postol;
+}
+.post-body ol li::before {
+  content: counter(postol); position: absolute; left: 0; top: 0.05em;
+  width: 22px; height: 22px; display: grid; place-items: center;
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+  color: #fff; background: var(--accent-deep); border-radius: 999px;
+}
+
+.post-body blockquote {
+  margin: clamp(24px, 3vw, 36px) 0; padding: clamp(16px, 2.2vw, 24px) clamp(20px, 2.6vw, 28px);
+  background: var(--vem-gray); border-left: 3px solid var(--accent); border-radius: var(--radius-md);
+  font-family: var(--font-display); font-style: italic; font-weight: 600;
+  font-size: var(--fs-500); line-height: 1.4; color: var(--vem-navy-dark);
+}
+.post-body blockquote p { margin: 0; font: inherit; color: inherit; }
+.post-body blockquote p + p { margin-top: var(--space-3); }
+
+.post-body figure { margin: clamp(24px, 3.2vw, 40px) 0; }
+.post-body img { width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+.post-body figcaption { margin-top: var(--space-3); font-size: var(--fs-100); color: var(--vem-gray-text); text-align: center; }
+
+.post-body hr { margin: clamp(30px, 4vw, 48px) 0; border: 0; border-top: 1px solid rgba(11, 31, 68, 0.14); }
+
+.post-body table { width: 100%; border-collapse: collapse; margin-top: var(--space-5); font-size: var(--fs-200); }
+.post-body th, .post-body td { text-align: left; padding: 10px 14px; border-bottom: 1px solid rgba(11, 31, 68, 0.10); }
+.post-body thead th { color: var(--vem-navy-dark); font-weight: 700; border-bottom-color: rgba(11, 31, 68, 0.22); }
+
+/* ---- Author / footer of article ---- */
+.post-foot {
+  margin-top: clamp(36px, 5vw, 60px); padding-top: var(--space-6);
+  border-top: 1px solid rgba(11, 31, 68, 0.14);
+  display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between;
+}
+.post-foot__by { font-size: var(--fs-200); color: var(--vem-gray-text); }
+.post-foot__by b { color: var(--vem-navy-dark); font-weight: 700; }
+.post-back a { font-size: var(--fs-200); font-weight: 600; color: var(--accent-deep); }
+
+/* ---- Marketing disclosure (SEC Marketing Rule safe) ---- */
+.post-disclosure {
+  margin-top: clamp(30px, 4vw, 48px);
+  padding: clamp(18px, 2.4vw, 26px);
+  background: rgba(229, 230, 232, 0.45);
+  border: 1px solid rgba(11, 31, 68, 0.10); border-radius: var(--radius-md);
+}
+.post-disclosure h2 {
+  margin: 0; font-size: var(--fs-100); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--vem-gray-text); font-weight: 700;
+}
+.post-disclosure h2::after { display: none; }
+.post-disclosure p { margin-top: var(--space-3); font-size: var(--fs-100); line-height: 1.65; color: var(--vem-gray-text); max-width: none; }
+.post-disclosure p:first-of-type { margin-top: var(--space-4); }
+
+/* ---- More from this section ---- */
+.post-more { padding-block: clamp(36px, 5vw, 64px); background: rgba(229, 230, 232, 0.4); border-top: 1px solid rgba(11,31,68,0.08); }
+.post-more h2 {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-600);
+  color: var(--vem-navy-dark); margin-bottom: clamp(18px, 2.4vw, 28px);
+}
+
+/* Draft banner — only rendered on draft preview pages */
+.draft-banner {
+  background: #7A2E2E; color: #fff; text-align: center;
+  padding: 10px var(--gutter); font-size: var(--fs-200); font-weight: 600; letter-spacing: 0.02em;
+}

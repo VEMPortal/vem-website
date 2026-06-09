@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}} &mdash; Vann Equity Management</title>
+  <meta name="description" content="{{META_DESC}}" />
+  <link rel="canonical" href="{{CANONICAL}}" />
+  <meta name="robots" content="{{ROBOTS}}" />
+  <link rel="icon" type="image/png" href="/assets/brand/vann-icon-navy.png?v={{CACHE}}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{OG_TITLE}}" />
+  <meta property="og:description" content="{{META_DESC}}" />
+  <meta property="og:url" content="{{CANONICAL}}" />
+  <meta property="og:site_name" content="Vann Equity Management" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/tokens.css?v={{CACHE}}" />
+  <link rel="stylesheet" href="/css/gips.css?v={{CACHE}}" />
+  <link rel="stylesheet" href="/css/blog.css?v={{CACHE}}" />
+
+  <script type="application/ld+json">
+{{JSONLD}}
+  </script>
+</head>
+<body class="blog-page">
+
+  <header class="report-header" id="top">
+    <a class="brand" href="/" aria-label="Vann Equity Management — home">
+      <img src="/assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+    </a>
+    <a class="report-back" href="/">&larr; Back to home</a>
+  </header>
+
+  <main class="report">
+    <header class="report-hero listing-hero">
+      <div class="report-hero__scrim" aria-hidden="true"></div>
+      <div class="container report-hero__inner">
+        <p class="overline report-hero__overline">{{OVERLINE}}</p>
+        <h1 class="report-hero__title">{{HERO_TITLE}}</h1>
+        <p class="report-hero__lead">{{HERO_LEAD}}</p>
+      </div>
+    </header>
+
+    <section class="listing">
+      <div class="container">
+        <div class="listing__head">
+          <p class="overline">{{LIST_EYEBROW}}</p>
+          <p class="listing__count">{{LIST_COUNT}}</p>
+        </div>
+{{CARDS}}
+      </div>
+    </section>
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <img src="/assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+      <p>&copy; {{YEAR}} Vann Equity Management, LLC &middot; 4975 Preston Park Blvd., Suite 490, Plano, TX 75093 &middot; <a href="/">vannequity.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
