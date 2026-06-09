@@ -24,22 +24,11 @@ disclosure: |
 - **What is Outperforming:** Defensive sectors, energy.
 - **What is Underperforming:** AI-related tech, cyclical sectors.
 
-### S&P 500
-
-**Technical View:** The S&P 500 surged to new record highs in mid-April, shifting the primary trend back to bullish but amid a sense of caution regarding sustainability.
-
-**Primary Trend:** Bullish (since the week of April 13, 2026)
-
-**Key Resistance Range:** 7440 – 7540
-
-**Key Support Range:** 7235 – 7126
-
 <figure>
-  <div class="img-placeholder" role="img" aria-label="Placeholder for the S&amp;P 500 weekly candle chart image">
-    <span class="img-placeholder__label">S&amp;P 500 &mdash; Weekly Candle Chart</span>
-    <span class="img-placeholder__hint">Refined image to be added</span>
-  </div>
-  <figcaption>S&amp;P 500 &mdash; Weekly Candle Chart</figcaption>
+  <picture>
+    <source type="image/webp" srcset="/assets/img/insights/sp500-may-2026.webp?v=4" />
+    <img src="/assets/img/insights/sp500-may-2026.png?v=4" alt="S&amp;P 500 technical summary. Technical View: the S&amp;P 500 surged to new record highs in mid-April, shifting the primary trend back to bullish but amid a sense of caution regarding sustainability. Primary Trend: bullish since the week of April 13, 2026. Key Resistance Range: 7440 to 7540. Key Support Range: 7235 to 7126. The panel includes a weekly candlestick chart showing the rally toward a recent high near 7,401." />
+  </picture>
 </figure>
 
 ## Market Rally: Strong Fundamentals, But Real Risks Remain
