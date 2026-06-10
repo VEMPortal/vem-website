@@ -1,10 +1,11 @@
 ---
 title: "Market Rally: Strong Fundamentals, But Real Risks Remain"
 slug: "market-rally-strong-fundamentals-but-real-risks-remain"
-date: 2026-05-11
+date: 2026-05-12
 author: "Vann Equity Management"
 category: "Financial Market Insight"
 hero: assets/img/insights/insights-hero-2026-05-11.jpg
+pdf: assets/docs/VEM-Financial-Market-Insight-2026-05-12.pdf
 status: published
 summary: "The six-week rally has real fundamental support — strong earnings and resilient growth — but three risks could still change the outlook: stagflation, a forced Fed rate hike, and a slowdown in the AI boom."
 disclosure: |
