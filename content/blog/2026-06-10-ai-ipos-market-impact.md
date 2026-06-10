@@ -5,7 +5,7 @@ date: 2026-06-10
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-06-10.jpg
-status: draft
+status: published
 summary: "The potential IPOs of SpaceX, OpenAI, and Anthropic may become market-structure signals as much as company stories. What the next wave of AI and space listings could mean for investors — educational only, not a recommendation."
 disclosure: >
   This material is provided for informational and educational purposes only and should not be
