@@ -4,6 +4,7 @@ slug: "global-energy-markets-2026"
 date: 2026-06-10
 author: "Vann Equity Management"
 category: "Market Commentary"
+hero: assets/img/blog/blog-hero-2026-06-10-energy.jpg
 status: draft
 summary: "Oil supply risk, natural gas, surging electricity demand, AI data centers, and renewable growth are pulling global energy in several directions at once. A look at the forces shaping energy markets in 2026 — educational only, not a recommendation."
 disclosure: >
