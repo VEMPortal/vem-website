@@ -4,7 +4,8 @@ slug: "iran-strait-of-hormuz-markets"
 date: 2026-06-10
 author: "Vann Equity Management"
 category: "Market Commentary"
-status: draft
+hero: assets/img/blog/blog-hero-2026-06-10-iran.jpg
+status: published
 summary: "Tensions involving Iran and the Strait of Hormuz can ripple through oil, LNG, shipping, inflation, interest rates, and equity volatility. A look at how geopolitical energy risk travels through markets — educational only, not a recommendation."
 disclosure: >
   This material is provided for informational and educational purposes only and should not be
