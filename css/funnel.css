@@ -65,8 +65,11 @@
 /* Active band tracks the open accordion stage */
 .pband-g.is-active .pband { stroke: var(--accent-soft); stroke-width: 2.4; }
 
-/* Falling particles — names drifting through the filter (JS-driven) */
-.pgrain { fill: var(--accent-soft); pointer-events: none; }
+/* Falling particles — names drifting through the filter (JS-driven).
+   Near-white with a soft glow so they read on the dark top AND the bright
+   lower bands; the group's single drop-shadow halos every dot at once. */
+.pgrains { filter: drop-shadow(0 0 2px rgba(173, 196, 232, 0.9)); }
+.pgrain { fill: #eaf2fb; pointer-events: none; }
 
 /* ---------- Stage accordion ---------- */
 .pfunnel__stages { display: flex; flex-direction: column; gap: 10px; }

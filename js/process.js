@@ -136,7 +136,7 @@
      stream visibly thins from a crowd at the top to a trickle at the tip. */
   var EDGES = [[0, 172], [68, 128], [147, 89], [226, 58], [305, 39], [384, 34]];
   var CULL_Y = [68, 147, 226, 305];       /* boundaries where names drop out */
-  var SURVIVE = [0.42, 0.38, 0.34, 0.55]; /* share that advances per boundary */
+  var SURVIVE = [0.55, 0.5, 0.48, 0.62];  /* share that advances per boundary */
   var CX = 180, BOTTOM = 384;
 
   function halfW(y) {
@@ -185,7 +185,9 @@
       if (!p.alive || p.y > BOTTOM + 4) { resetParticle(p); continue; }
       var x = CX + p.lane * (halfW(p.y) - 7);
       var fadeIn = Math.min(1, (p.y + 4) / 26);
-      p.el.setAttribute("opacity", (0.5 * fadeIn).toFixed(2));
+      var depth = Math.min(1, p.y / BOTTOM);          /* brighter as it falls */
+      var op = Math.min(0.96, (0.55 + 0.41 * depth) * fadeIn);
+      p.el.setAttribute("opacity", op.toFixed(2));
       p.el.setAttribute("cx", x.toFixed(1));
       p.el.setAttribute("cy", p.y.toFixed(1));
     }
@@ -197,9 +199,11 @@
     if (!particles.length) {
       var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
       group.setAttribute("aria-hidden", "true");
-      /* insert beneath the band shapes so dots pass behind the labels */
-      svg.insertBefore(group, svg.firstChild);
-      for (var i = 0; i < 26; i++) particles.push(makeParticle(group, true));
+      group.setAttribute("class", "pgrains");
+      /* render ON TOP of the bands so dots stay visible on the bright lower
+         fills (behind them they'd get occluded as the funnel narrows) */
+      svg.appendChild(group);
+      for (var i = 0; i < 34; i++) particles.push(makeParticle(group, true));
     }
     particlesOn = true;
     rafId = requestAnimationFrame(stepParticles);
