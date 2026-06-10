@@ -5,7 +5,7 @@ consistent without depending on chat memory. Pair it with the two skills below.
 
 ## What this is
 A **hand-coded** (no framework, no page builder) marketing website for **Vann Equity
-Management, LLC (VEM)** — an independent, SEC-registered, GIPS-compliant fiduciary
+Management, LLC (VEM)** — an independent, SEC-registered, GIPS-verified fiduciary
 equity firm (Plano & Austin, TX; founded 2010). Quality bar: a **$10,000 custom build**,
 institutional and restrained. Plain HTML/CSS/vanilla JS, token-driven design system.
 
