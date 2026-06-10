@@ -469,6 +469,36 @@
 /* ===================== §05b — Performance ===================== */
 .perf__intro { margin-top: var(--space-5); max-width: 70ch; font-size: var(--fs-400); line-height: 1.6; color: var(--vem-gray-text); }
 
+/* Complete composite table — every composite, shown against its own benchmark */
+.perf-table-wrap { margin-top: clamp(26px, 3.5vw, 44px); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.perf-table__cap {
+  font-size: var(--fs-100); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--vem-gray-text); font-weight: 600; margin-bottom: var(--space-3);
+}
+.perf-table {
+  width: 100%; min-width: 660px; border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.perf-table thead th {
+  text-align: left; padding: 10px 16px;
+  font-size: var(--fs-100); letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 600; color: var(--vem-gray-text);
+  border-bottom: 1.5px solid rgba(11, 31, 68, 0.22);
+  white-space: nowrap;
+}
+.perf-table thead th span { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.perf-table tbody th,
+.perf-table tbody td { padding: 15px 16px; border-bottom: 1px solid rgba(11, 31, 68, 0.10); vertical-align: baseline; }
+.perf-table tbody tr:hover { background: rgba(92, 124, 184, 0.05); }
+.perf-table tbody th {
+  text-align: left; font-weight: 600; font-size: var(--fs-300);
+  color: var(--vem-navy-dark);
+}
+.perf-table__num { text-align: left; white-space: nowrap; }
+.perf-table__num b { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-500); color: var(--vem-navy); }
+.perf-table__bench { font-size: var(--fs-200); line-height: 1.5; color: var(--vem-gray-text); }
+.perf-table__incep { font-size: var(--fs-200); color: var(--vem-gray-text); white-space: nowrap; }
+
 /* Highlight cards — only true, net-of-fee outperformance, each vs the benchmark it beats */
 .perf__highlights {
   margin-top: clamp(28px, 4vw, 48px);
