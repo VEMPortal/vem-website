@@ -320,3 +320,15 @@ body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
   background: #7A2E2E; color: #fff; text-align: center;
   padding: 10px var(--gutter); font-size: var(--fs-200); font-weight: 600; letter-spacing: 0.02em;
 }
+
+/* ===================================================================
+   FINANCIAL MARKET INSIGHT — verbatim report transfer
+   Yellow highlight for any text highlighted yellow in the source report.
+   (Structure otherwise reuses the standard insight prose: blockquote +
+   figure for the S&P panel, exactly like every other insight.)
+   =================================================================== */
+.fmi-hl {
+  background: #fff24a; color: var(--vem-navy-dark);
+  padding: 0 .12em; border-radius: 2px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
