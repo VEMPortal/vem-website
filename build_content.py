@@ -25,7 +25,7 @@ import markdown
 
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 SITE       = "https://www.vannequitymanagement.com"
-CACHE      = "7"                       # asset ?v= for blog assets; bump on CSS change
+CACHE      = "9"                       # asset ?v= for blog assets; bump on CSS change
 YEAR       = datetime.datetime.now().year
 TPL_DIR    = os.path.join(ROOT, "templates")
 
@@ -223,6 +223,7 @@ def build_article(sec_key, sec, fm, body, validate_list):
     og_image = ('<meta property="og:image" content="%s/%s" />' % (SITE, hero.lstrip("/"))) if hero else ""
 
     page = fill(tpl("article.html"), {
+        "SLUG":         slug,
         "TITLE":        esc(title),
         "META_DESC":    esc(summary),
         "CANONICAL":    canonical,

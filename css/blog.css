@@ -39,6 +39,13 @@ body.blog-page:not(.blog-listing):not(.insights-listing) .report-hero__scrim {
     radial-gradient(120% 110% at 88% -10%, rgba(92,124,184,0.18), transparent 60%);
 }
 
+/* Per-post hero tuning — this image is already very dark, so it gets a much
+   lighter scrim (the navy sea on the left still carries the white title). */
+body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.62) 0%, rgba(7,16,34,0.38) 50%, rgba(7,16,34,0.16) 100%);
+}
+
 .listing { padding-block: clamp(40px, 6vw, 88px); }
 
 /* Section eyebrow above the grid (e.g. "Latest" / count) */
