@@ -43,7 +43,8 @@
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
   <link rel="stylesheet" href="css/hero.css?v=52" />
-  <link rel="stylesheet" href="css/sections.css?v=51" />
+  <link rel="stylesheet" href="css/sections.css?v=52" />
+  <link rel="stylesheet" href="css/funnel.css?v=8" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
        understand VEM as an entity. Add "sameAs" social URLs once they're live. -->
@@ -457,102 +458,113 @@
         universe to the few dozen companies we choose to own.
       </p>
 
-      <div class="pdash reveal" data-process data-delay="1">
-        <!-- Stage selector -->
-        <div class="pdash__steps" role="tablist" aria-label="Investment process stages" aria-orientation="vertical">
-          <button class="pstep is-active" type="button" role="tab" aria-selected="true" id="pstep-0" aria-controls="ppanel"
-            data-stage="0"
-            data-eyebrow="Stage 01 · Universe"
-            data-pill="100% of universe"
-            data-big="9000" data-prefix="" data-suffix="+"
-            data-cap="Global universe of listed equities"
-            data-dots="144" data-live="0"
-            data-chips="Global listed equities|All sectors|All market caps"
-            data-desc="We begin with the full global universe of publicly traded equities — every name on the board, before a single filter is applied.">
-            <span class="pstep__num tnum">01</span>
-            <span class="pstep__name">Universe of Equity Securities</span>
-            <span class="pstep__count tnum">9,000+</span>
-          </button>
+      <div class="pfunnel reveal" data-process data-delay="1">
 
-          <button class="pstep" type="button" role="tab" aria-selected="false" id="pstep-1" aria-controls="ppanel" tabindex="-1"
-            data-stage="1"
-            data-eyebrow="Stage 02 · Quantitative"
-            data-pill="≈ 11% advance"
-            data-big="1000" data-prefix="≈ " data-suffix=""
-            data-cap="Top-decile, multi-factor ranked"
-            data-dots="34" data-live="0"
-            data-chips="Liquidity &amp; structure|Growth + value factors|Multi-factor rank"
-            data-desc="Proprietary screens filter for structural constraints, growth and value characteristics, and a multi-factor ranking — narrowing thousands of names to the top decile.">
-            <span class="pstep__num tnum">02</span>
-            <span class="pstep__name">Quantitative Analysis</span>
-            <span class="pstep__count tnum">≈ 1,000</span>
-          </button>
-
-          <button class="pstep" type="button" role="tab" aria-selected="false" id="pstep-2" aria-controls="ppanel" tabindex="-1"
-            data-stage="2"
-            data-eyebrow="Stage 03 · Fundamental"
-            data-pill="≈ 2% advance"
-            data-big="200" data-prefix="" data-suffix=""
-            data-cap="≈ 150–250 semi-finalists"
-            data-dots="12" data-live="0"
-            data-chips="Earnings durability|SWOT &amp; peer analysis|Cash flow|Management quality"
-            data-desc="The investment committee validates earnings growth and sustainability — business and peer analysis, SWOT, cash flow, and management quality.">
-            <span class="pstep__num tnum">03</span>
-            <span class="pstep__name">Fundamental Analysis</span>
-            <span class="pstep__count tnum">150–250</span>
-          </button>
-
-          <button class="pstep" type="button" role="tab" aria-selected="false" id="pstep-3" aria-controls="ppanel" tabindex="-1"
-            data-stage="3"
-            data-eyebrow="Stage 04 · Construction"
-            data-pill="&lt; 1% advance"
-            data-big="50" data-prefix="" data-suffix=""
-            data-cap="≈ 40–60 diversified holdings"
-            data-dots="5" data-live="0"
-            data-chips="Country &amp; sector limits|Industry caps|Position sizing"
-            data-desc="We build a diversified portfolio of 40–60 holdings, subject to country, sector, industry, and position-size risk controls.">
-            <span class="pstep__num tnum">04</span>
-            <span class="pstep__name">Portfolio Construction</span>
-            <span class="pstep__count tnum">40–60</span>
-          </button>
-
-          <button class="pstep" type="button" role="tab" aria-selected="false" id="pstep-4" aria-controls="ppanel" tabindex="-1"
-            data-stage="4"
-            data-eyebrow="Stage 05 · Sell Discipline"
-            data-pill="Always on"
-            data-big="50" data-prefix="" data-suffix=""
-            data-cap="Holdings under continuous review"
-            data-dots="5" data-live="1"
-            data-chips="Quantitative triggers|Technical signals|Qualitative review"
-            data-desc="Active risk management runs continuously — quantitative, technical, and qualitative triggers govern when we trim or exit.">
-            <span class="pstep__num tnum">05</span>
-            <span class="pstep__name">Sell Discipline</span>
-            <span class="pstep__count">Continuous</span>
-          </button>
+        <!-- Funnel visual — pours downward on scroll-in -->
+        <div class="pfunnel__viz">
+          <svg class="pfunnel__svg" viewBox="0 0 360 412" role="img"
+               aria-label="A funnel narrowing roughly 9,000 equities through five stages to a portfolio of 40 to 60 holdings under continuous review.">
+            <g class="pband-g" data-i="0">
+              <polygon class="pband" points="8,0 352,0 308,68 52,68"></polygon>
+              <text class="pband-label" x="180" y="44" text-anchor="middle">9,000+</text>
+            </g>
+            <g class="pband-g" data-i="1">
+              <polygon class="pband" points="52,79 308,79 269,147 91,147"></polygon>
+              <text class="pband-label" x="180" y="123" text-anchor="middle">&#8776; 1,000</text>
+            </g>
+            <g class="pband-g" data-i="2">
+              <polygon class="pband" points="91,158 269,158 238,226 122,226"></polygon>
+              <text class="pband-label" x="180" y="202" text-anchor="middle">150&#8211;250</text>
+            </g>
+            <g class="pband-g" data-i="3">
+              <polygon class="pband" points="122,237 238,237 219,305 141,305"></polygon>
+              <text class="pband-label" x="180" y="281" text-anchor="middle">40&#8211;60</text>
+            </g>
+            <g class="pband-g" data-i="4">
+              <polygon class="pband" points="141,316 219,316 214,384 146,384"></polygon>
+            </g>
+            <text class="pband-caption" x="180" y="406" text-anchor="middle">Continuous</text>
+          </svg>
         </div>
 
-        <!-- Live readout -->
-        <div class="pdash__panel" id="ppanel" role="tabpanel" aria-live="polite" tabindex="0">
-          <div class="ppanel__top">
-            <p class="ppanel__eyebrow">Stage 01 · Universe</p>
-            <span class="ppanel__pill">100% of universe</span>
+        <!-- Stage accordion — click a stage to reveal what it means -->
+        <div class="pfunnel__stages">
+          <div class="pstage is-open" data-stage="0">
+            <button class="pstage__head" type="button" aria-expanded="true" aria-controls="pstage-body-0">
+              <span class="pstage__num tnum">01</span>
+              <span class="pstage__name">Universe of Equity Securities</span>
+              <span class="pstage__count tnum">9,000+</span>
+              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pstage__body" id="pstage-body-0" role="region">
+              <div class="pstage__body-inner">
+                <p>We start with the entire field &mdash; roughly 9,000 publicly traded companies across every sector, country, and market capitalization. No watchlist, no benchmark, no inherited positions. Before a single filter is applied, every name is on the board and eligible for consideration.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="ppanel__metric">
-            <span class="ppanel__big tnum">9,000</span>
-            <span class="ppanel__live" aria-hidden="true"><i></i>Monitoring</span>
-            <span class="ppanel__cap">Global universe of listed equities</span>
+          <div class="pstage" data-stage="1">
+            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-1">
+              <span class="pstage__num tnum">02</span>
+              <span class="pstage__name">Quantitative Analysis</span>
+              <span class="pstage__count tnum">&#8776; 1,000</span>
+              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pstage__body" id="pstage-body-1" role="region">
+              <div class="pstage__body-inner">
+                <p>Proprietary, rules-based screens rank the universe on liquidity and structure, growth and value characteristics, and a multi-factor score. The math is repeatable and free of emotion &mdash; it narrows roughly 9,000 names to the top decile, about 1,000 candidates that merit a closer look.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="ppanel__grid" aria-hidden="true"></div>
+          <div class="pstage" data-stage="2">
+            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-2">
+              <span class="pstage__num tnum">03</span>
+              <span class="pstage__name">Fundamental Analysis</span>
+              <span class="pstage__count tnum">150&#8211;250</span>
+              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pstage__body" id="pstage-body-2" role="region">
+              <div class="pstage__body-inner">
+                <p>Our investment committee examines the survivors by hand: the durability of earnings, business and competitive (SWOT) analysis, cash-flow quality, and the caliber of management. Judgment is applied where numbers alone fall short, leaving roughly 150&ndash;250 semi-finalists.</p>
+              </div>
+            </div>
+          </div>
 
-          <p class="ppanel__chips-label">Filters applied at this stage</p>
-          <ul class="ppanel__chips">
-            <li>Global listed equities</li><li>All sectors</li><li>All market caps</li>
-          </ul>
+          <div class="pstage" data-stage="3">
+            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-3">
+              <span class="pstage__num tnum">04</span>
+              <span class="pstage__name">Portfolio Construction</span>
+              <span class="pstage__count tnum">40&#8211;60</span>
+              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pstage__body" id="pstage-body-3" role="region">
+              <div class="pstage__body-inner">
+                <p>We assemble our highest-conviction names into a diversified portfolio of 40&ndash;60 holdings, governed by country, sector, industry, and position-size limits so no single decision can dominate the outcome. Conviction is always balanced against risk.</p>
+              </div>
+            </div>
+          </div>
 
-          <p class="ppanel__desc">We begin with the full global universe of publicly traded equities — every name on the board, before a single filter is applied.</p>
+          <div class="pstage" data-stage="4">
+            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-4">
+              <span class="pstage__num tnum">05</span>
+              <span class="pstage__name">Sell Discipline</span>
+              <span class="pstage__count pstage__count--live"><span class="pstage__livedot" aria-hidden="true"></span>Continuous</span>
+              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pstage__body" id="pstage-body-4" role="region">
+              <div class="pstage__body-inner">
+                <p>Most managers fall in love with their winners. Discipline is knowing when to let go. Quantitative triggers, technical signals, and qualitative review run continuously &mdash; governing when we trim or exit a position &mdash; so every holding stays under active review for as long as we own it.</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- What this means -->
+      <div class="pfunnel__summary reveal" data-delay="1">
+        <p class="pfunnel__summary-eyebrow">What this means for you</p>
+        <p class="pfunnel__summary-text">You own a focused portfolio of 40&ndash;60 companies &mdash; each one the survivor of a disciplined, repeatable process of quantitative rigor, fundamental conviction, and continuous risk control. No story stocks, no black boxes. Every position has earned its place.</p>
       </div>
 
       <p class="pdash__note reveal">Figures are representative of the firm&rsquo;s equity-selection process and will vary by strategy and market conditions.</p>
@@ -875,6 +887,6 @@
   <script src="js/nav.js?v=51" defer></script>
   <script src="js/hero.js?v=51" defer></script>
   <script src="js/sections.js?v=51" defer></script>
-  <script src="js/process.js?v=51" defer></script>
+  <script src="js/process.js?v=55" defer></script>
 </body>
 </html>

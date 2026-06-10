@@ -1,0 +1,181 @@
+/* VEM — §05 Investment Process
+   A narrowing funnel that pours downward on scroll-in, paired with a
+   click-to-expand stage accordion and a closing "what this means" summary.
+   Replaces the old .pdash dashboard. Lives on the dark navy section. */
+
+.pfunnel {
+  margin-top: clamp(34px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .pfunnel { grid-template-columns: 1fr; gap: clamp(22px, 5vw, 38px); }
+}
+
+/* ---------- Funnel visual ---------- */
+.pfunnel__viz { display: flex; justify-content: center; }
+.pfunnel__svg { width: 100%; max-width: 360px; height: auto; display: block; overflow: visible; }
+
+.pband-g .pband {
+  fill: rgba(255, 255, 255, 0.045);
+  stroke: rgba(255, 255, 255, 0.10);
+  stroke-width: 1;
+  transition: fill 0.6s var(--ease-soft), stroke 0.35s var(--ease-soft), stroke-width 0.35s var(--ease-soft);
+}
+.pband-g .pband-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  fill: rgba(255, 255, 255, 0.28);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  transition: fill 0.55s var(--ease-soft);
+}
+/* "Continuous" sits just below the funnel tip — full width, legible */
+.pband-caption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  fill: var(--accent-soft);
+  letter-spacing: 0.01em;
+}
+
+/* Poured state — the universe concentrates from faint to a bright accent
+   blue at the tip; intensity (not hue) carries the "narrowing" story. */
+.pband-g.is-filled[data-i="0"] .pband { fill: rgba(148, 171, 214, 0.18); }
+.pband-g.is-filled[data-i="1"] .pband { fill: rgba(148, 171, 214, 0.32); }
+.pband-g.is-filled[data-i="2"] .pband { fill: rgba(148, 171, 214, 0.52); }
+.pband-g.is-filled[data-i="3"] .pband { fill: rgba(124, 152, 208, 0.78); }
+.pband-g.is-filled[data-i="4"] .pband { fill: var(--accent-soft); }
+
+.pband-g.is-filled .pband-label { fill: var(--vem-white); }
+.pband-g.is-filled[data-i="4"] .pband-label { fill: var(--vem-navy-dark); }
+
+/* The "Continuous" tip is always-on — a soft pulsing halo signals it */
+.pband-g.is-filled[data-i="4"] .pband {
+  animation: bandPulse 2s var(--ease-soft) infinite;
+}
+@keyframes bandPulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(148, 171, 214, 0)); }
+  50%      { filter: drop-shadow(0 0 7px rgba(148, 171, 214, 0.75)); }
+}
+
+/* Active band tracks the open accordion stage */
+.pband-g.is-active .pband { stroke: var(--accent-soft); stroke-width: 2.4; }
+
+/* Falling particles — names drifting through the filter (JS-driven) */
+.pgrain { fill: var(--accent-soft); pointer-events: none; }
+
+/* ---------- Stage accordion ---------- */
+.pfunnel__stages { display: flex; flex-direction: column; gap: 10px; }
+
+.pstage {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  transition: border-color var(--dur-fast) var(--ease-soft),
+              background var(--dur-fast) var(--ease-soft),
+              box-shadow var(--dur-base) var(--ease-soft);
+}
+/* Static shine on hover — shows what you're pointing at, no animation */
+.pstage:hover {
+  border-color: rgba(148, 171, 214, 0.30);
+  box-shadow: 0 0 0 1px rgba(148, 171, 214, 0.12), 0 14px 30px -22px rgba(0, 0, 0, 0.7);
+}
+.pstage.is-open {
+  border-color: rgba(148, 171, 214, 0.55);
+  background: linear-gradient(120deg, rgba(92, 124, 184, 0.20), rgba(92, 124, 184, 0.04));
+  box-shadow: 0 0 0 1px rgba(148, 171, 214, 0.22), 0 18px 40px -24px rgba(92, 124, 184, 0.85);
+}
+
+.pstage__head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: clamp(13px, 1.6vw, 16px) clamp(15px, 1.8vw, 19px);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+.pstage__head:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
+
+.pstage__num {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-400);
+  line-height: 1; color: var(--on-dark-40); font-variant-numeric: tabular-nums;
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+.pstage__name { font-size: var(--fs-300); font-weight: 600; line-height: 1.2; color: var(--on-dark-80); }
+.pstage__count { font-size: var(--fs-200); color: var(--on-dark-70); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Sell Discipline is the one always-on stage — a live pulse sets it apart,
+   even before the row is opened. Mirrors the pulsing funnel tip. */
+.pstage__count--live { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-soft); }
+.pstage__livedot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent-soft);
+  box-shadow: 0 0 9px rgba(148, 171, 214, 0.85);
+  animation: liveDot 1.7s var(--ease-soft) infinite;
+}
+@keyframes liveDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.66); }
+}
+.pstage__chev {
+  color: var(--on-dark-40); flex-shrink: 0;
+  transition: transform var(--dur-base) var(--ease-out), color var(--dur-fast) var(--ease-soft);
+}
+
+.pstage.is-open .pstage__num   { color: var(--accent-soft); }
+.pstage.is-open .pstage__name  { color: var(--vem-white); }
+.pstage.is-open .pstage__count { color: var(--accent-soft); }
+.pstage.is-open .pstage__chev  { transform: rotate(180deg); color: var(--accent-soft); }
+
+/* Collapsible body — grid-rows 0fr → 1fr for a smooth height transition */
+.pstage__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-base) var(--ease-out);
+}
+.pstage.is-open .pstage__body { grid-template-rows: 1fr; }
+.pstage__body-inner { overflow: hidden; }
+.pstage__body p {
+  margin: 0;
+  padding: 2px clamp(15px, 1.8vw, 19px) clamp(16px, 1.9vw, 18px);
+  font-size: var(--fs-300); line-height: 1.65; color: var(--on-dark-70);
+  max-width: 64ch;
+}
+
+/* ---------- What this means ---------- */
+.pfunnel__summary {
+  margin-top: clamp(28px, 4vw, 48px);
+  padding: clamp(20px, 2.6vw, 30px) clamp(22px, 3vw, 34px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--accent-soft);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+.pfunnel__summary-eyebrow {
+  font-size: var(--fs-100); letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-soft); margin: 0 0 var(--space-3);
+}
+.pfunnel__summary-text {
+  margin: 0; max-width: 84ch;
+  font-family: var(--font-display); font-style: italic;
+  font-size: var(--fs-500); line-height: 1.45;
+  color: var(--vem-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pband-g .pband,
+  .pband-g .pband-label,
+  .pstage__body { transition: none; }
+  .pband-g.is-filled[data-i="4"] .pband,
+  .pstage__livedot { animation: none; }
+}
