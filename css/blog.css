@@ -332,3 +332,10 @@ body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
   padding: 0 .12em; border-radius: 2px;
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
+
+/* March 2 insight hero — the orbital image is already near-black on the left,
+   so a lighter scrim lets the gold Earth read while the title stays crisp. */
+body.post-financial-market-insight-2026-03-02 .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.74) 0%, rgba(7,16,34,0.48) 50%, rgba(7,16,34,0.20) 100%);
+}
