@@ -55,16 +55,19 @@
    blue-on-blue, with a subtle, heavily-darkened background image for depth. */
 .process.section--navy {
   background:
-    linear-gradient(180deg, rgba(6, 14, 32, 0.88) 0%, rgba(7, 15, 34, 0.94) 55%, rgba(4, 10, 24, 0.985) 100%),
+    linear-gradient(180deg, rgba(6, 14, 32, 0.80) 0%, rgba(7, 15, 34, 0.86) 55%, rgba(4, 10, 24, 0.94) 100%),
     url("../assets/img/process-bg.jpg") center center / cover no-repeat,
     #07112A;
 }
 .process.section--navy::before {
   background:
-    radial-gradient(115% 80% at 88% -10%, rgba(92, 124, 184, 0.20), transparent 58%),
+    radial-gradient(52% 56% at 23% 54%, rgba(92, 124, 184, 0.17), transparent 70%),
+    radial-gradient(115% 80% at 88% -10%, rgba(92, 124, 184, 0.22), transparent 58%),
     radial-gradient(90% 70% at -5% 110%, rgba(148, 171, 214, 0.05), transparent 55%);
 }
-.process.section--navy::after { opacity: 0.32; }
+/* The photo already carries a blueprint grid — fade the CSS grid so they
+   don't clash, and keep just a whisper of it for evenness. */
+.process.section--navy::after { opacity: 0.14; }
 
 /* ------------------------- Section header ------------------------- */
 .overline {
