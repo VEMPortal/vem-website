@@ -764,15 +764,15 @@
 .light-hero .hero__scrim {
   background:
     linear-gradient(90deg,
-      rgba(245, 247, 250, 0.95) 0%,
-      rgba(245, 247, 250, 0.82) 42%,
-      rgba(245, 247, 250, 0.46) 78%,
-      rgba(245, 247, 250, 0.34) 100%),
+      rgba(245, 247, 250, 0.82) 0%,
+      rgba(245, 247, 250, 0.62) 42%,
+      rgba(245, 247, 250, 0.28) 78%,
+      rgba(245, 247, 250, 0.16) 100%),
     linear-gradient(180deg,
       rgba(245, 247, 250, 0.00) 55%,
-      rgba(245, 247, 250, 0.55) 100%);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+      rgba(245, 247, 250, 0.42) 100%);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 .light-hero .hero__grain { mix-blend-mode: multiply; opacity: 0.04; }
 
