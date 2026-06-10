@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News &amp; Insights &mdash; Coming Soon &mdash; Vann Equity Management</title>
+  <meta name="description" content="Market commentary, portfolio perspectives, and firm updates from Vann Equity Management are coming soon." />
+  <link rel="canonical" href="https://www.vannequitymanagement.com/news.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="icon" type="image/png" href="assets/brand/vann-icon-navy.png?v=6" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="News &amp; Insights &mdash; Coming Soon" />
+  <meta property="og:description" content="Market commentary, portfolio perspectives, and firm updates from Vann Equity Management are coming soon." />
+  <meta property="og:url" content="https://www.vannequitymanagement.com/news.html" />
+  <meta property="og:site_name" content="Vann Equity Management" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css?v=6" />
+  <link rel="stylesheet" href="css/gips.css?v=6" />
+
+  <style>
+    /* Coming-soon centered block — scoped to this one page */
+    .soon { padding-block: clamp(56px, 9vw, 120px); }
+    .soon__inner { max-width: 60ch; margin-inline: auto; text-align: center; }
+    .soon__badge {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: var(--fs-100); letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-soft); font-weight: 600;
+      padding: 8px 16px; border-radius: 999px;
+      background: rgba(92, 124, 184, 0.12);
+      border: 1px solid rgba(148, 171, 214, 0.30);
+    }
+    .soon__dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--vem-gold);
+      box-shadow: 0 0 0 0 rgba(185, 155, 95, 0.55);
+      animation: soonPulse 1.9s ease-in-out infinite;
+    }
+    @keyframes soonPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(185, 155, 95, 0.5); }
+      70%  { box-shadow: 0 0 0 9px rgba(185, 155, 95, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(185, 155, 95, 0); }
+    }
+    .soon h2 {
+      margin-top: var(--space-5);
+      font-family: var(--font-display); font-weight: 600;
+      font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1.06;
+      letter-spacing: var(--tracking-tight); color: var(--vem-white);
+    }
+    .soon h2 em { font-style: italic; color: var(--accent-soft); }
+    .soon p {
+      margin-top: var(--space-5); font-size: var(--fs-400);
+      line-height: 1.7; color: var(--on-dark-70);
+    }
+    .soon__rule {
+      width: 64px; height: 2px; margin: clamp(28px, 4vw, 40px) auto 0;
+      background: var(--vem-gold); border: 0;
+    }
+    .soon__actions {
+      margin-top: clamp(28px, 4vw, 40px);
+      display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;
+    }
+    @media (prefers-reduced-motion: reduce) { .soon__dot { animation: none; } }
+  </style>
+</head>
+<body class="report-page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="report-header" id="top">
+    <a class="brand" href="index.html" aria-label="Vann Equity Management — home">
+      <img src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+    </a>
+    <a class="report-back" href="index.html">&larr; Back to home</a>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header class="report-hero">
+      <div class="report-hero__scrim" aria-hidden="true"></div>
+      <div class="container report-hero__inner">
+        <p class="overline report-hero__overline">News &amp; Insights</p>
+        <h1 class="report-hero__title">Coming <em>soon</em></h1>
+        <p class="report-hero__lead">We&rsquo;re preparing a home for market commentary, portfolio perspectives, and firm updates &mdash; written with the same discipline we bring to managing capital.</p>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         COMING SOON
+         ============================================================ -->
+    <section class="soon">
+      <div class="container">
+        <div class="soon__inner reveal">
+          <span class="soon__badge"><span class="soon__dot" aria-hidden="true"></span>In progress</span>
+
+          <h2>Insights worth the <em>wait.</em></h2>
+
+          <p>This is where you&rsquo;ll find our perspective on the markets, the thinking behind our portfolios, and updates from the firm. We&rsquo;re building it now &mdash; check back shortly.</p>
+
+          <hr class="soon__rule" aria-hidden="true" />
+
+          <div class="soon__actions">
+            <a class="btn btn--gold" href="contact.html">Schedule a consultation</a>
+            <a class="btn btn--ghost" href="index.html">Return home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="report-footer">
+    <div class="container">
+      <img src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+      <p>&copy; 2026 Vann Equity Management, LLC &middot; 4975 Preston Park Blvd., Suite 490, Plano, TX 75093 &middot; <a href="index.html">vannequity.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll-reveal -->
+  <script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }());
+  </script>
+
+</body>
+</html>
