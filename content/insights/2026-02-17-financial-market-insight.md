@@ -6,7 +6,7 @@ author: "Vann Equity Management"
 category: "Financial Market Insight"
 hero: assets/img/insights/insights-hero-2026-02-17.jpg
 pdf: assets/docs/VEM-Financial-Market-Insight-2026-02-17.pdf
-status: draft
+status: published
 summary: "How AI turned from a tailwind into a headwind — the three 'AI problems' driving the volatility, a Goldilocks read on the latest economic data, and the most important industry to watch right now."
 disclosure: >
   Disclaimer: The Financial Market Insight is protected by federal and international copyright laws. Vann
