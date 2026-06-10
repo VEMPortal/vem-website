@@ -337,9 +337,10 @@ body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
 .post-download { margin: clamp(18px, 2.6vw, 28px) 0 0; }
 .post-download .btn { display: inline-flex; align-items: center; }
 
-/* March 2 insight hero — the orbital image is already near-black on the left,
-   so a lighter scrim lets the gold Earth read while the title stays crisp. */
-body.post-financial-market-insight-2026-03-02 .report-hero__scrim {
+/* FMI insight heroes — dark images, so a lighter scrim lets the art read
+   while the navy-left keeps the white title crisp. */
+body.post-financial-market-insight-2026-03-02 .report-hero__scrim,
+body.post-financial-market-insight-2026-02-17 .report-hero__scrim {
   background:
     linear-gradient(115deg, rgba(7,16,34,0.74) 0%, rgba(7,16,34,0.48) 50%, rgba(7,16,34,0.20) 100%);
 }
