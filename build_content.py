@@ -25,7 +25,7 @@ import markdown
 
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 SITE       = "https://www.vannequitymanagement.com"
-CACHE      = "14"                      # asset ?v= for blog assets; bump on CSS change
+CACHE      = "15"                      # asset ?v= for blog assets; bump on CSS change
 YEAR       = datetime.datetime.now().year
 TPL_DIR    = os.path.join(ROOT, "templates")
 
@@ -222,6 +222,25 @@ def build_article(sec_key, sec, fm, body, validate_list):
         ld["image"] = SITE + "/" + hero.lstrip("/")
     og_image = ('<meta property="og:image" content="%s/%s" />' % (SITE, hero.lstrip("/"))) if hero else ""
 
+    # Optional PDF download button — set `pdf:` in front-matter to a file in
+    # assets/docs/ and a branded download button renders below the TOC.
+    pdf = fm.get("pdf", "")
+    if pdf:
+        pdf_src = pdf if pdf.startswith("/") else "/" + pdf.lstrip("/")
+        pdf_button = (
+            '        <div class="post-download">\n'
+            '          <a class="btn btn--gold" href="%s?v=%s" download>\n'
+            '            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" '
+            'fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" '
+            'style="vertical-align:-3px;margin-right:8px"><path stroke-linecap="round" stroke-linejoin="round" '
+            'd="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 4v11"/></svg>\n'
+            '            Download this report (PDF)\n'
+            '          </a>\n'
+            '        </div>' % (pdf_src, CACHE)
+        )
+    else:
+        pdf_button = ""
+
     page = fill(tpl("article.html"), {
         "SLUG":         slug,
         "TITLE":        esc(title),
@@ -245,6 +264,7 @@ def build_article(sec_key, sec, fm, body, validate_list):
         "DATE_HUMAN":   date_h,
         "READ_TIME":    rt,
         "TOC":          toc_html,
+        "PDF_BUTTON":   pdf_button,
         "BODY":         body_html,
         "DISCLOSURE":   disclosure_html,
         "YEAR":         YEAR,

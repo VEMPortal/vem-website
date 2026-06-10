@@ -5,6 +5,7 @@ date: 2026-03-02
 author: "Vann Equity Management"
 category: "Financial Market Insight"
 hero: assets/img/insights/insights-hero-2026-03-02.jpg
+pdf: assets/docs/VEM-Financial-Market-Insight-2026-03-02.pdf
 status: published
 summary: "Our immediate take on what the U.S./Iran conflict means for markets — plus an important week of economic data, the two sources of AI anxiety, and monitoring private credit risk through credit spreads."
 disclosure: >
