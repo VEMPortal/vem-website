@@ -302,7 +302,7 @@
   grid-template-columns: 0.82fr 1.18fr;
   gap: clamp(28px, 4vw, 56px);
   margin-top: clamp(28px, 4vw, 48px);
-  align-items: stretch;
+  align-items: start;          /* photo keeps its 4:5 size; dropdowns push down, don't stretch it */
 }
 @media (max-width: 860px) { .explorer__body { grid-template-columns: 1fr; } }
 
