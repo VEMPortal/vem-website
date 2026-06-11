@@ -418,6 +418,7 @@
     }
 
     .ticker-layer {
+      display: none;
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -1015,7 +1016,7 @@
     const ringRadii = [12.4, 9.0, 6.0, 3.35, 1.35];
     const ringWidth = [1.45, 0.95, 0.7, 0.52, 0.3];
     const stageSurvival = [1, 0.42, 0.18, 0.085, 0.02];
-    const stageHeight = [4.4, 2.7, 1.65, 0.95, 0.48];
+    const stageHeight = [0.5, 0.42, 0.32, 0.22, 0.12];
     const stageSizeBoost = [1, 1.1, 1.28, 1.5, 2.05];
     const labelMax = [24, 16, 10, 7, 5];
     const labelRadius = [12.15, 9.0, 6.0, 3.45, 2.45];
@@ -1138,6 +1139,28 @@
     gravityField.renderOrder = -2;
     gravityField.userData.radius = ringRadii[0] + ringWidth[0] * 1.1;
     root.add(gravityField);
+
+    /* Four persistent concentric rings around the star. They lie flat in the
+       same band plane as the dots; the active one lights up, the rest dim. */
+    const stageRingMeshes = [];
+    for (let i = 0; i < 4; i += 1) {
+      const ringGeo = new THREE.RingGeometry(0.99, 1.016, 220);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: stageColors[i],
+        transparent: true,
+        opacity: 0.12,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide,
+        depthWrite: false
+      });
+      const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+      ringMesh.rotation.x = -Math.PI / 2;
+      ringMesh.position.y = -0.14;
+      ringMesh.scale.set(ringRadii[i], ringRadii[i] * ellipseZ, 1);
+      ringMesh.renderOrder = -1;
+      root.add(ringMesh);
+      stageRingMeshes.push(ringMesh);
+    }
 
     const coreGeometry = new THREE.SphereGeometry(1.08, 48, 48);
     const coreMaterial = new THREE.MeshPhysicalMaterial({
@@ -1454,6 +1477,14 @@
       gravityMaterial.uniforms.uPulse.value = pulse * 0.78 + gravityImpulse * 0.44;
       gravityMaterial.uniforms.uStrength.value = activeStage === 4 ? 1.36 : 0.9 + activeStage * 0.08;
 
+      stageRingMeshes.forEach((ringMesh, i) => {
+        const isActive = i === activeStage && activeStage < 4;
+        const targetOp = isActive ? 0.85 : 0.1;
+        ringMesh.material.opacity += (targetOp - ringMesh.material.opacity) * 0.12;
+        const s = isActive ? 1 + pulse * 0.012 : 1;
+        ringMesh.scale.set(ringRadii[i] * s, ringRadii[i] * ellipseZ * s, 1);
+      });
+
       const attr = pointsGeometry.getAttribute("position");
       const sizeAttr = pointsGeometry.getAttribute("size");
       const colorAttr = pointsGeometry.getAttribute("color");
@@ -1466,7 +1497,7 @@
         /* Final stage: the survivors collapse INTO the star (everything ends
            inside the core), instead of orbiting a small ring around it. */
         const targetRadius = activeStage === 4
-          ? 0.18 + record.lane * 0.55
+          ? 0.05 + record.lane * 0.32
           : ringRadii[activeStage] + record.lane * ringWidth[activeStage] * (activeStage === 0 ? 0.92 : 0.62);
         const targetHeight = activeStage === 4
           ? record.heightSeed * 0.4
@@ -1476,7 +1507,7 @@
 
         const angle = record.angle + time * record.speed * (activeStage === 0 ? 1 : 0.45);
         attr.array[offset] = Math.cos(angle) * record.currentRadius;
-        attr.array[offset + 1] = record.currentHeight + Math.sin(time * 1.1 + record.phase) * 0.025;
+        attr.array[offset + 1] = -0.14 + record.currentHeight + Math.sin(time * 1.1 + record.phase) * 0.02;
         attr.array[offset + 2] = Math.sin(angle) * record.currentRadius * ellipseZ;
         sizeAttr.array[index] = record.baseSize * record.visible * stageSizeBoost[activeStage];
 
@@ -1495,7 +1526,6 @@
       sizeAttr.needsUpdate = true;
       colorAttr.needsUpdate = true;
 
-      updateTickers(time);
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
