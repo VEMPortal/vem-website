@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Firm Brochure — Vann Equity Management</title>
+  <meta name="description" content="Vann Equity Management — a fiduciary, quantitatively driven asset manager. An interactive overview of our philosophy, process, strategy platform, and GIPS-verified performance context." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=60" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/tokens.css?v=60" />
+  <link rel="stylesheet" href="../css/brochure.css?v=60" />
+</head>
+<body class="bro">
+
+  <!-- ============ Deck chrome ============ -->
+  <div class="bro-top">
+    <a class="bro-top__brand" href="../index.html" aria-label="Vann Equity Management — home">
+      <img src="../assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+    </a>
+    <a class="bro-top__exit" href="../index.html">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 2 2 8l4 6M2 8h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to site
+    </a>
+  </div>
+
+  <nav class="bro-rail" aria-label="Brochure sections"></nav>
+
+  <div class="bro-foot">
+    <div class="bro-arrows">
+      <button class="bro-arrow" id="broPrev" type="button" aria-label="Previous section">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="bro-arrow" id="broNext" type="button" aria-label="Next section">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="bro-progress"><div class="bro-progress__bar" id="broBar"></div></div>
+    <div class="bro-count tnum" id="broCount">01 / 12</div>
+  </div>
+
+  <!-- ============ Deck ============ -->
+  <main class="deck" id="deck">
+
+    <!-- 01 — COVER -->
+    <section class="slide slide--cover" data-label="Cover" aria-label="Cover">
+      <div class="slide__media" aria-hidden="true">
+        <img src="../assets/img/process-bg.jpg?v=60" alt="" />
+      </div>
+      <div class="slide__scrim" aria-hidden="true"></div>
+      <div class="slide__inner">
+        <img class="cover__brand" src="../assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+        <h1 class="cover__title">Quantitatively Driven<br /><em>Asset Management</em></h1>
+        <p class="cover__sub">Built for confidence, clarity &amp; long-term growth — active portfolio management guided by a quantitative discipline, fiduciary oversight, and a repeatable investment process.</p>
+        <div class="cover__callouts">
+          <span class="cover__chip">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l6 2v4c0 4-2.6 6.6-6 8-3.4-1.4-6-4-6-8V3l6-2z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+            Independent SEC-Registered Investment Adviser
+          </span>
+          <span class="cover__chip">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            GIPS&reg; Verified Performance
+          </span>
+        </div>
+        <span class="cover__hint">
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v11M4.5 9.5 9 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Scroll or use arrow keys to continue
+        </span>
+      </div>
+    </section>
+
+    <!-- 02 — WHO WE ARE -->
+    <section class="slide slide--light" data-label="Who We Are" aria-label="Who We Are">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Who We Are</p>
+        <h2 class="bro-h">A Fiduciary <em>Asset Manager</em></h2>
+        <p class="bro-lead">Vann Equity Management is an asset manager focused on actively managed portfolios for high-net-worth individuals and families, advisors, and institutions. Every portfolio is built and overseen under a fiduciary standard — the client's best interest comes first, across the entire firm.</p>
+        <div class="bro-two">
+          <div class="bro-defcard">
+            <h3>What fiduciary means</h3>
+            <p>We are legally and ethically bound to act in your best interest at all times — in how we select securities, construct portfolios, manage risk, and disclose what we do. It is the standard we hold across every account.</p>
+          </div>
+          <div class="bro-defcard">
+            <h3>How we differ from a broker</h3>
+            <p>Rather than transacting to a suitability bar, we manage portfolios on an ongoing, discretionary basis through a defined, repeatable process — with continuous oversight and GIPS&reg; performance reporting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — WHAT SETS VEM APART -->
+    <section class="slide slide--navy2" data-label="What Sets Us Apart" aria-label="What Sets VEM Apart">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">What Sets VEM Apart</p>
+        <h2 class="bro-h">Built for Active <em>Capital Stewardship</em></h2>
+        <div class="bro-diff">
+          <div class="bro-diff__row">
+            <span class="bro-diff__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.4" fill="currentColor"/></svg></span>
+            <span><span class="bro-diff__t">Asset-manager focus</span><span class="bro-diff__d">Portfolio management is the business — not an add-on to product sales.</span></span>
+          </div>
+          <div class="bro-diff__row">
+            <span class="bro-diff__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14l5-5 4 4 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><span class="bro-diff__t">Active management</span><span class="bro-diff__d">Continuous oversight and a disciplined sell process, not set-and-forget allocation.</span></span>
+          </div>
+          <div class="bro-diff__row">
+            <span class="bro-diff__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M10 10v10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <span><span class="bro-diff__t">Institutional models</span><span class="bro-diff__d">SMA portfolios managed by partners with 20+ years of institutional experience.</span></span>
+          </div>
+          <div class="bro-diff__row">
+            <span class="bro-diff__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M10 19V5M15 19v-7M20 19v-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <span><span class="bro-diff__t">Quantitative-driven process</span><span class="bro-diff__d">A proprietary, repeatable screening and ranking discipline underpins every decision.</span></span>
+          </div>
+          <div class="bro-diff__row">
+            <span class="bro-diff__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 2.5V11c0 5-3 7.8-7 9-4-1.2-7-4-7-9V5.5L12 3z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 12l2.3 2.3L15.5 9.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><span class="bro-diff__t">GIPS&reg; verified performance</span><span class="bro-diff__d">Performance presented through a GIPS&reg; framework, independently verified.</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — INVESTMENT PHILOSOPHY (5-part framework) -->
+    <section class="slide slide--navy" data-label="Philosophy" aria-label="Investment Philosophy">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Investment Philosophy</p>
+        <h2 class="bro-h">Disciplined Investing, <em>Built Around Evidence</em></h2>
+        <p class="bro-lead">A repeatable process combining quantitative analysis, portfolio-construction discipline, ongoing risk monitoring, and a defined sell discipline.</p>
+        <div class="bro-frame">
+          <div class="frame__node">
+            <span class="frame__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.5 15.5 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <p class="frame__n">01</p><p class="frame__name">Screen</p>
+            <p class="frame__desc">Filter a global universe through proprietary quantitative screens.</p>
+          </div>
+          <div class="frame__node">
+            <span class="frame__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16M8 16l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p class="frame__n">02</p><p class="frame__name">Back Test</p>
+            <p class="frame__desc">Validate signals and rankings against historical evidence.</p>
+          </div>
+          <div class="frame__node">
+            <span class="frame__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M10 10v10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <p class="frame__n">03</p><p class="frame__name">Construct</p>
+            <p class="frame__desc">Build diversified portfolios subject to defined risk controls.</p>
+          </div>
+          <div class="frame__node">
+            <span class="frame__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p class="frame__n">04</p><p class="frame__name">Monitor</p>
+            <p class="frame__desc">Track risk, earnings, and technicals on an ongoing basis.</p>
+          </div>
+          <div class="frame__node">
+            <span class="frame__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p class="frame__n">05</p><p class="frame__name">Sell</p>
+            <p class="frame__desc">Act on a rules-based sell discipline when characteristics deteriorate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — EQUITY PROCESS (narrowing) -->
+    <section class="slide slide--navy2" data-label="Equity Process" aria-label="Equity Process">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">How We Do It — Equity Process</p>
+        <h2 class="bro-h">From Broad Universe <em>to Managed Portfolio</em></h2>
+        <div class="bro-steps">
+          <div class="pstep" data-w="0">
+            <div><p class="pstep__t">Universe</p><p class="pstep__s">Global publicly traded equity securities</p></div>
+            <p class="pstep__n">Global</p>
+          </div>
+          <div class="pstep" data-w="1">
+            <div><p class="pstep__t">Quantitative screens</p><p class="pstep__s">Structural &amp; growth/value constraints</p></div>
+            <p class="pstep__n">~8,000–9,000</p>
+          </div>
+          <div class="pstep" data-w="2">
+            <div><p class="pstep__t">Multi-factor ranking</p><p class="pstep__s">Proprietary growth score, valuation, EPS trends</p></div>
+            <p class="pstep__n">~900–1,000</p>
+          </div>
+          <div class="pstep" data-w="3">
+            <div><p class="pstep__t">Fundamental validation</p><p class="pstep__s">Semi-finalist review by the Investment Committee</p></div>
+            <p class="pstep__n">~150 per strategy</p>
+          </div>
+          <div class="pstep" data-w="4">
+            <div><p class="pstep__t">Portfolio &amp; sell discipline</p><p class="pstep__s">Constructed, monitored, and managed continuously</p></div>
+            <p class="pstep__n">40–60 holdings</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — STRATEGY PLATFORM (model-lineup funnel) -->
+    <section class="slide slide--navy" data-label="Strategy Platform" aria-label="Strategy Platform">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">What We Offer — Strategy Platform</p>
+        <h2 class="bro-h">A Model Lineup Built for <em>Portfolio Management</em></h2>
+        <div class="bro-funnel">
+          <div class="bro-funnel__viz">
+            <svg class="bro-funnel__svg" viewBox="0 0 340 300" role="img" aria-label="VEM strategy platform funnel: Platform, Equity Portfolios, ETF Strategies, Structured Notes, Customized Client Portfolios">
+              <polygon class="bfunnel-band" data-i="0" points="10,8 330,8 300,58 40,58" />
+              <text class="bfunnel-label" data-i="0" x="170" y="38" text-anchor="middle">VEM Platform</text>
+              <polygon class="bfunnel-band" data-i="1" points="44,66 296,66 270,116 70,116" />
+              <text class="bfunnel-label" data-i="1" x="170" y="96" text-anchor="middle">Equity Portfolios</text>
+              <polygon class="bfunnel-band" data-i="2" points="74,124 266,124 240,174 100,174" />
+              <text class="bfunnel-label" data-i="2" x="170" y="154" text-anchor="middle">ETF Strategies</text>
+              <polygon class="bfunnel-band" data-i="3" points="104,182 236,182 210,232 130,232" />
+              <text class="bfunnel-label" data-i="3" x="170" y="212" text-anchor="middle">Structured Notes</text>
+              <polygon class="bfunnel-band" data-i="4" points="134,240 206,240 182,290 158,290" />
+              <text class="bfunnel-label" data-i="4" x="170" y="268" text-anchor="middle" font-size="12">Customized</text>
+            </svg>
+          </div>
+          <div class="bro-funnel__list">
+            <div class="bro-funnel__item"><h4>Equity Portfolios</h4><p>US Large Cap Growth, US Large Cap Value, and International ADR.</p></div>
+            <div class="bro-funnel__item"><h4>ETF Strategies</h4><p>Global ETF and Small/Mid ETF strategies, with additional models added only when approved and sourced.</p></div>
+            <div class="bro-funnel__item"><h4>Structured Notes</h4><p>Income and growth notes used selectively where the risk/reward profile fits the client mandate.</p></div>
+            <div class="bro-funnel__item"><h4>Customized Client Portfolios</h4><p>Designed around a client's objectives, risk tolerance, and tax considerations.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — EQUITY MODELS (style boxes) -->
+    <section class="slide slide--light" data-label="Equity Models" aria-label="Equity Models">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Equity Models</p>
+        <h2 class="bro-h">Three Distinct <em>Equity Strategies</em></h2>
+        <div class="bro-models">
+          <div class="model">
+            <h3>Large Cap Growth</h3>
+            <p class="model__tag">US Large Cap</p>
+            <div class="sbox" role="img" aria-label="Style-box illustration: US large-cap growth">
+              <span class="sbox__cell"></span><span class="sbox__cell"></span><span class="sbox__cell is-hot"></span>
+              <span class="sbox__cell"></span><span class="sbox__cell"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell"></span><span class="sbox__cell"></span><span class="sbox__cell"></span>
+            </div>
+            <p>US large-cap growth strategy focused on competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+            <span class="model__cap">Style-box illustration — not a Morningstar rating.</span>
+          </div>
+          <div class="model">
+            <h3>Large Cap Value</h3>
+            <p class="model__tag">US Large Cap</p>
+            <div class="sbox" role="img" aria-label="Style-box illustration: US large-cap value">
+              <span class="sbox__cell is-hot"></span><span class="sbox__cell"></span><span class="sbox__cell"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell"></span><span class="sbox__cell"></span>
+              <span class="sbox__cell"></span><span class="sbox__cell"></span><span class="sbox__cell"></span>
+            </div>
+            <p>US large-cap value strategy seeking high-quality businesses at attractive valuations with overlooked upside potential.</p>
+            <span class="model__cap">Style-box illustration — not a Morningstar rating.</span>
+          </div>
+          <div class="model">
+            <h3>International ADR</h3>
+            <p class="model__tag">Non-US Equity</p>
+            <div class="sbox" role="img" aria-label="Style-box illustration: international ADR, broad exposure">
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-hot"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span>
+            </div>
+            <p>Non-US ADR strategy designed for geographically and economically diversified international equity exposure.</p>
+            <span class="model__cap">Broad exposure shown — illustrative, not equal weighting.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 — ETF MODELS (style boxes) -->
+    <section class="slide slide--navy2" data-label="ETF Models" aria-label="ETF Models">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">ETF Models</p>
+        <h2 class="bro-h">Strategic &amp; Tactical <em>ETF Strategies</em></h2>
+        <div class="bro-models bro-models--two">
+          <div class="model">
+            <h3>Global ETF</h3>
+            <p class="model__tag">US &amp; Non-US</p>
+            <div class="sbox" role="img" aria-label="Style-box illustration: global ETF, broad exposure">
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-hot"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span>
+            </div>
+            <p>Global ETF strategy using strategic and tactical exposure across US and non-US equity markets.</p>
+            <span class="model__cap">Broad exposure shown — illustrative, not equal weighting.</span>
+          </div>
+          <div class="model">
+            <h3>Small / Mid ETF</h3>
+            <p class="model__tag">Small &amp; Mid Cap</p>
+            <div class="sbox" role="img" aria-label="Style-box illustration: small and mid cap ETF">
+              <span class="sbox__cell"></span><span class="sbox__cell"></span><span class="sbox__cell"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-hot"></span><span class="sbox__cell is-on"></span>
+              <span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span><span class="sbox__cell is-on"></span>
+            </div>
+            <p>Small- and mid-cap ETF strategy designed to capture growth opportunities beyond the large-cap universe.</p>
+            <span class="model__cap">Style-box illustration — not a Morningstar rating.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 — GIPS PERFORMANCE CONTEXT -->
+    <section class="slide slide--navy" data-label="GIPS Context" aria-label="GIPS Performance Context">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">GIPS&reg; Performance Context</p>
+        <h2 class="bro-h">Performance, Presented the <em>Right Way</em></h2>
+        <div class="bro-gips">
+          <div class="bro-gips__claim">
+            <p><strong>Vann Equity Management claims compliance with the Global Investment Performance Standards (GIPS&reg;)</strong> and presents strategy performance through GIPS&reg; composite reporting.</p>
+            <p>The firm has been <strong>independently verified for the periods June&nbsp;1, 2018 through December&nbsp;31, 2024.</strong> The verification report is available upon request.</p>
+            <p>Composite returns are presented gross and net of fees, annualized for periods greater than one year, alongside their benchmarks. Past performance is no guarantee of future results; investing involves risk, including possible loss of principal.</p>
+            <p style="margin-top:18px"><a class="btn btn--gold" href="../gips-report.html">View the GIPS&reg; Composite Report</a></p>
+          </div>
+          <div class="bro-statgrid">
+            <div class="bro-stat"><b>GIPS&reg;</b><span>Compliant &amp; Verified</span></div>
+            <div class="bro-stat"><b>2018–2024</b><span>Verified Periods</span></div>
+            <div class="bro-stat"><b>Gross &amp; Net</b><span>Of Fees, w/ Benchmarks</span></div>
+            <div class="bro-stat"><b>On Request</b><span>Full Composite Reports</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 — STRUCTURED NOTES -->
+    <section class="slide slide--navy2" data-label="Structured Notes" aria-label="Structured Notes">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Structured Notes</p>
+        <h2 class="bro-h">Used Selectively, <em>Reviewed Rigorously</em></h2>
+        <div class="bro-notes">
+          <div class="note">
+            <h3>Income Notes</h3>
+            <p>Structured investments designed to provide periodic income potential, typically linked to the performance of one or more underlying reference assets.</p>
+            <ul>
+              <li>Issuer and credit exposure</li>
+              <li>Underlying reference assets</li>
+              <li>Coupon structure and payment conditions</li>
+              <li>Call features and no-call periods</li>
+              <li>Barriers, buffers, and downside exposure</li>
+              <li>Liquidity and suitability considerations</li>
+            </ul>
+            <p class="note__risk">Structured notes involve risks, including issuer credit risk, market risk, liquidity risk, call risk, complexity risk, and possible loss of principal. They are not suitable for all investors.</p>
+          </div>
+          <div class="note">
+            <h3>Growth Notes</h3>
+            <p>Structured investments designed to provide market-participation potential, often linked to one or more indices, securities, or baskets.</p>
+            <ul>
+              <li>Upside participation structure</li>
+              <li>Downside exposure and barrier/buffer terms</li>
+              <li>Issuer and credit exposure</li>
+              <li>Tenor and call schedule</li>
+              <li>Reference asset composition</li>
+              <li>Fit within the broader portfolio</li>
+            </ul>
+            <p class="note__risk">Structured notes involve risks, including issuer credit risk, market risk, liquidity risk, call risk, complexity risk, and possible loss of principal. They are not suitable for all investors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 — TEAM -->
+    <section class="slide slide--light" data-label="Our Team" aria-label="Our Team">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Our Team</p>
+        <h2 class="bro-h">The People Behind <em>the Process</em></h2>
+        <div class="bro-team">
+          <div class="tm">
+            <picture>
+              <source type="image/webp" srcset="../assets/img/team/aaron-vann.webp?v=60" />
+              <img class="tm__photo" src="../assets/img/team/aaron-vann.jpg?v=60" alt="Aaron Vann" width="116" height="116" loading="lazy" />
+            </picture>
+            <p class="tm__name">Aaron Vann</p>
+            <p class="tm__role">Chief Investment Officer, Partner</p>
+            <p class="tm__bio">Oversees the firm's proprietary quantitative models and their translation into portfolio management; a leading contributor to the Investment Committee.</p>
+          </div>
+          <div class="tm">
+            <picture>
+              <source type="image/webp" srcset="../assets/img/team/brandy-holder.webp?v=60" />
+              <img class="tm__photo" src="../assets/img/team/brandy-holder.jpg?v=60" alt="Brandy Holder" width="116" height="116" loading="lazy" />
+            </picture>
+            <p class="tm__name">Brandy Holder</p>
+            <p class="tm__role">Operational Manager</p>
+            <p class="tm__bio">Leads client engagement, onboarding, and back-office operations, partnering with custodians to deliver precise, efficient service.</p>
+          </div>
+          <div class="tm">
+            <picture>
+              <source type="image/webp" srcset="../assets/img/team/ryan-mcdonald.webp?v=60" />
+              <img class="tm__photo" src="../assets/img/team/ryan-mcdonald.jpg?v=60" alt="Ryan McDonald" width="116" height="116" loading="lazy" />
+            </picture>
+            <p class="tm__name">Ryan McDonald</p>
+            <p class="tm__role">Portfolio Manager, Financial Advisor</p>
+            <p class="tm__bio">A North Texas financial planner for 20+ years, focused on complex planning and disciplined strategies to help clients reach their goals.</p>
+          </div>
+          <div class="tm">
+            <picture>
+              <source type="image/webp" srcset="../assets/img/team/dharani-gundla.webp?v=60" />
+              <img class="tm__photo" src="../assets/img/team/dharani-gundla.jpg?v=60" alt="Dharani Gundla" width="116" height="116" loading="lazy" />
+            </picture>
+            <p class="tm__name">Dharani Gundla</p>
+            <p class="tm__role">Quantitative Analyst</p>
+            <p class="tm__bio">Supports trading, risk analysis, and the firm's GIPS&reg; compliance — including composite maintenance, outlier review, and verification support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 — CLOSING / CONTACT -->
+    <section class="slide slide--navy" data-label="Contact" aria-label="Closing and Contact">
+      <div class="slide__inner">
+        <p class="bro-eyebrow">Let's Talk</p>
+        <h2 class="bro-h">Built for Clients Who Want Their Portfolio <em>Actively Managed</em></h2>
+        <p class="bro-lead">A disciplined asset-management partner with a defined process, active oversight, fiduciary commitment, institutional model discipline, and GIPS&reg; reporting — for investors and advisors who want more than generic allocation.</p>
+        <div class="bro-cta">
+          <a class="btn btn--gold" href="../index.html#contact">Schedule a portfolio management conversation</a>
+          <a class="btn btn--ghost" href="../gips-report.html">View GIPS&reg; Composite Report</a>
+        </div>
+        <div class="bro-contact">
+          <address>
+            <strong>Vann Equity Management, LLC</strong><br />
+            4975 Preston Park Blvd., Suite 490<br />
+            Plano, TX 75093<br />
+            <a href="tel:+12149830346">214-983-0346</a><br />
+            <a href="mailto:info@vannequity.com">info@vannequity.com</a><br />
+            www.vannequitymanagement.com
+          </address>
+          <div class="bro-disc">
+            <p>Advisory services offered through Vann Equity Management, LLC, an SEC-registered investment adviser. SEC registration does not imply a certain level of skill or training. This material is for informational purposes only and should not be considered individualized investment, tax, or legal advice. Investing involves risk, including possible loss of principal. Past performance is no guarantee of future results.</p>
+            <p>GIPS&reg; is a registered trademark owned by CFA Institute. CFA Institute does not endorse or promote this organization, nor does it warrant the accuracy or quality of the content contained herein.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../js/brochure.js?v=60" defer></script>
+</body>
+</html>
