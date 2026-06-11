@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strategy Fact Sheets &mdash; Vann Equity Management</title>
+  <meta name="description" content="Quarterly equity strategy fact sheets for Vann Equity Management — Large Cap Growth, Large Cap Value, and International ADR. View and download." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant:ital,wght@1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #223168;
+      --navy-dark: #0B1F44;
+      --blue: #5C7CB8;
+      --blue-soft: #94ABD6;
+      --blue-deep: #34518C;
+      --ink: #0B1F44;
+      --white: #fff;
+      --on-dark-80: rgba(255,255,255,0.82);
+      --on-dark-60: rgba(255,255,255,0.64);
+      --on-dark-45: rgba(255,255,255,0.46);
+      --font-display: "Cinzel", Georgia, serif;
+      --font-accent: "Cormorant", Georgia, serif;
+      --font-body: "Hanken Grotesk", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: var(--font-body);
+      color: var(--white);
+      background:
+        radial-gradient(120% 90% at 80% -10%, rgba(52,81,140,0.22), transparent 55%),
+        linear-gradient(160deg, #07101f 0%, #0a1830 55%, #060e1c 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+
+    /* ---- Top chrome ---- */
+    .fs-top {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px clamp(16px, 4vw, 46px);
+      background: linear-gradient(180deg, rgba(7,16,31,0.92), rgba(7,16,31,0.0));
+      backdrop-filter: blur(6px);
+    }
+    .fs-top__brand img { height: 26px; width: auto; display: block; }
+    .fs-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; font-weight: 600; text-decoration: none;
+      color: var(--on-dark-80); padding: 8px 15px; border-radius: 999px;
+      border: 1px solid rgba(148,171,214,0.4); background: rgba(7,16,34,0.5);
+      backdrop-filter: blur(10px); transition: border-color .18s, color .18s, background .18s;
+    }
+    .fs-back:hover { color: #fff; border-color: var(--blue-soft); background: rgba(69,128,202,0.2); }
+
+    /* ---- Hero ---- */
+    .fs-hero {
+      position: relative; overflow: hidden;
+      min-height: clamp(280px, 42vh, 420px);
+      display: flex; align-items: center;
+      margin-top: -64px; padding-top: 64px;
+    }
+    .fs-hero__media { position: absolute; inset: 0; z-index: 0; }
+    .fs-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+    .fs-hero__scrim {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(100deg, rgba(7,16,31,0.92) 0%, rgba(7,16,31,0.66) 42%, rgba(7,16,31,0.3) 72%, rgba(7,16,31,0.5) 100%);
+    }
+    .fs-hero__inner {
+      position: relative; z-index: 2;
+      width: 100%; max-width: 1180px; margin: 0 auto;
+      padding: clamp(28px, 5vh, 60px) clamp(20px, 4vw, 46px);
+    }
+    .fs-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin: 0 0 16px; font-size: 0.74rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-soft);
+    }
+    .fs-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--blue-soft); }
+    .fs-hero h1 {
+      margin: 0; font-family: var(--font-display); font-weight: 600;
+      font-size: clamp(2rem, 1rem + 3.4vw, 3.3rem); line-height: 1.05; letter-spacing: -0.01em;
+    }
+    .fs-hero h1 em { font-style: italic; font-family: var(--font-accent); color: var(--blue-soft); }
+    .fs-hero__sub {
+      margin: 16px 0 0; max-width: 54ch;
+      font-size: clamp(1rem, 0.94rem + 0.4vw, 1.18rem); line-height: 1.55; color: var(--on-dark-80);
+    }
+    .fs-asof {
+      margin-top: 18px; display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+      color: #dcecff; padding: 7px 14px; border-radius: 999px;
+      border: 1px solid rgba(118,174,238,0.4); background: rgba(69,128,202,0.14);
+    }
+
+    /* ---- Cards ---- */
+    .fs-wrap { max-width: 1180px; margin: 0 auto; padding: clamp(36px, 6vh, 70px) clamp(20px, 4vw, 46px) 60px; }
+    .fs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: clamp(18px, 2.4vw, 28px);
+    }
+    @media (max-width: 880px){ .fs-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; } }
+
+    .fs-card {
+      display: flex; flex-direction: column;
+      padding: clamp(22px, 2.4vw, 30px);
+      border-radius: 16px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+      border: 1px solid rgba(148,171,214,0.18);
+      border-top: 2px solid var(--blue);
+      box-shadow: 0 26px 60px -34px rgba(0,0,0,0.7);
+      transition: transform .25s cubic-bezier(0.16,1,0.3,1), border-color .25s, box-shadow .25s;
+    }
+    .fs-card:hover { transform: translateY(-4px); border-color: rgba(148,171,214,0.5); box-shadow: 0 34px 70px -34px rgba(0,0,0,0.8); }
+    .fs-card__bench {
+      align-self: flex-start; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-soft);
+      padding: 5px 11px; border-radius: 999px; border: 1px solid rgba(148,171,214,0.32);
+      background: rgba(92,124,184,0.12);
+    }
+    .fs-card__name {
+      margin: 16px 0 0; font-family: var(--font-display); font-weight: 600;
+      font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem); line-height: 1.08;
+    }
+    .fs-card__desc { margin: 10px 0 0; font-size: 0.94rem; line-height: 1.55; color: var(--on-dark-60); }
+    .fs-card__meta {
+      margin: 16px 0 0; padding-top: 14px; border-top: 1px solid rgba(148,171,214,0.14);
+      font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--on-dark-45);
+    }
+    .fs-card__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+    .fs-btn {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.84rem;
+      padding: 11px 18px; border-radius: 999px; border: 1px solid transparent;
+      text-decoration: none; white-space: nowrap;
+      transition: background .18s, border-color .18s, transform .18s, color .18s;
+    }
+    .fs-btn svg { width: 15px; height: 15px; }
+    .fs-btn--primary { background: var(--blue-deep); color: #fff; box-shadow: 0 10px 26px -12px rgba(92,124,184,0.6); }
+    .fs-btn--primary:hover { background: #43649c; transform: translateY(-1px); }
+    .fs-btn--ghost { background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.28); }
+    .fs-btn--ghost:hover { background: rgba(255,255,255,0.12); border-color: var(--blue-soft); }
+
+    .fs-disc {
+      margin: clamp(34px, 5vh, 56px) 0 0; max-width: 92ch;
+      font-size: 0.74rem; line-height: 1.6; color: var(--on-dark-45);
+    }
+    .fs-disc strong { color: var(--on-dark-60); }
+
+    /* ---- Preview modal ---- */
+    .fs-modal[hidden] { display: none; }
+    .fs-modal {
+      position: fixed; inset: 0; z-index: 60;
+      display: flex; align-items: center; justify-content: center;
+      padding: clamp(10px, 3vw, 40px);
+    }
+    .fs-modal__backdrop { position: absolute; inset: 0; background: rgba(4,9,18,0.82); backdrop-filter: blur(4px); }
+    .fs-modal__panel {
+      position: relative; z-index: 1;
+      width: min(960px, 100%); height: min(88vh, 1000px);
+      display: flex; flex-direction: column;
+      border-radius: 14px; overflow: hidden;
+      background: #0b1424; border: 1px solid rgba(148,171,214,0.3);
+      box-shadow: 0 50px 100px -40px rgba(0,0,0,0.9);
+    }
+    .fs-modal__bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 16px; border-bottom: 1px solid rgba(148,171,214,0.18);
+      background: rgba(7,16,31,0.7);
+    }
+    .fs-modal__title { font-family: var(--font-display); font-weight: 600; font-size: 0.96rem; }
+    .fs-modal__actions { display: flex; align-items: center; gap: 8px; }
+    .fs-modal__close {
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+      display: grid; place-items: center; font-size: 1.4rem; line-height: 1;
+      color: #fff; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18);
+      transition: background .18s, border-color .18s;
+    }
+    .fs-modal__close:hover { background: rgba(255,255,255,0.14); border-color: var(--blue-soft); }
+    .fs-modal__frame { flex: 1; width: 100%; border: 0; background: #fff; }
+    @media (max-width: 560px){
+      .fs-modal__actions .fs-btn span { display: none; }
+      .fs-modal__title { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="fs-top">
+    <a class="fs-top__brand" href="./index.html" aria-label="Vann Equity Management — brochure">
+      <img src="../assets/brand/vann-lockup-white.png?v=1" alt="Vann Equity Management" />
+    </a>
+    <a class="fs-back" href="./index.html">
+      <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6 2 2 8l4 6M2 8h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to brochure
+    </a>
+  </header>
+
+  <section class="fs-hero">
+    <div class="fs-hero__media" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="../assets/img/factsheet-hero.webp?v=1" />
+        <img src="../assets/img/factsheet-hero.jpg?v=1" alt="" />
+      </picture>
+    </div>
+    <div class="fs-hero__scrim" aria-hidden="true"></div>
+    <div class="fs-hero__inner">
+      <p class="fs-eyebrow">Strategy Fact Sheets</p>
+      <h1>Equity Strategy <em>Fact Sheets</em></h1>
+      <p class="fs-hero__sub">Composition, characteristics, and positioning for Vann Equity Management&rsquo;s three equity model strategies. Click to view a sheet, or download the PDF.</p>
+      <span class="fs-asof">As of March 31, 2026 &middot; Q1 2026</span>
+    </div>
+  </section>
+
+  <main class="fs-wrap">
+    <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h2 class="fs-card__name">Large Cap Growth</h2>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-1q-2026.pdf" data-title="Large Cap Growth — Q1 2026">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-1q-2026.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h2 class="fs-card__name">Large Cap Value</h2>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-1q-2026.pdf" data-title="Large Cap Value — Q1 2026">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-1q-2026.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h2 class="fs-card__name">International ADR</h2>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-1q-2026.pdf" data-title="International ADR — Q1 2026">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-1q-2026.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="fs-disc">
+      <strong>For Advisor Use Only.</strong> Source: FactSet Research Systems, Inc. Holdings, characteristics, and
+      sector weights are as of March&nbsp;31,&nbsp;2026 and are subject to change without notice. Past performance is not a
+      guarantee of future results; investing involves risk, including the possible loss of principal. This material is for
+      informational purposes only and is not investment, tax, or legal advice, nor an offer or solicitation. Performance is
+      presented through Vann Equity Management&rsquo;s GIPS&reg;-verified composites; the full GIPS&reg; Composite Report is
+      available upon request. Benchmarks (Russell&nbsp;1000 Growth, Russell&nbsp;1000 Value, MSCI&nbsp;EAFE) are shown for
+      comparison only; indices are unmanaged and cannot be invested in directly. Advisory services offered through Vann
+      Equity Management, LLC, an SEC-registered investment adviser.
+    </p>
+  </main>
+
+  <div class="fs-modal" id="fsModal" hidden role="dialog" aria-modal="true" aria-label="Fact sheet preview">
+    <div class="fs-modal__backdrop" data-close></div>
+    <div class="fs-modal__panel">
+      <div class="fs-modal__bar">
+        <span class="fs-modal__title" id="fsModalTitle">Fact sheet</span>
+        <div class="fs-modal__actions">
+          <a class="fs-btn fs-btn--ghost" id="fsModalNew" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>New tab</span>
+          </a>
+          <a class="fs-btn fs-btn--ghost" id="fsModalDownload" href="#" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Download</span>
+          </a>
+          <button class="fs-modal__close" type="button" data-close aria-label="Close preview">&times;</button>
+        </div>
+      </div>
+      <iframe class="fs-modal__frame" id="fsModalFrame" title="Fact sheet preview"></iframe>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById("fsModal");
+      var frame = document.getElementById("fsModalFrame");
+      var titleEl = document.getElementById("fsModalTitle");
+      var newTab = document.getElementById("fsModalNew");
+      var dl = document.getElementById("fsModalDownload");
+
+      function open(pdf, title) {
+        titleEl.textContent = title;
+        newTab.href = pdf;
+        dl.href = pdf;
+        frame.src = pdf + "#view=FitH";
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+      }
+      function close() {
+        modal.hidden = true;
+        frame.src = "";
+        document.body.style.overflow = "";
+      }
+      Array.prototype.forEach.call(document.querySelectorAll("[data-pdf]"), function (btn) {
+        btn.addEventListener("click", function () {
+          open(btn.getAttribute("data-pdf"), btn.getAttribute("data-title"));
+        });
+      });
+      Array.prototype.forEach.call(modal.querySelectorAll("[data-close]"), function (el) {
+        el.addEventListener("click", close);
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.hidden) close();
+      });
+    })();
+  </script>
+</body>
+</html>
