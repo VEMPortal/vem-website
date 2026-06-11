@@ -417,6 +417,49 @@
       text-transform: uppercase;
     }
 
+    .ring-callout {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .ring-callout__path {
+      fill: none;
+      stroke: var(--blue-2);
+      stroke-width: 1.6;
+      opacity: 0.92;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .ring-callout__dot {
+      fill: var(--blue-2);
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+
+    .ring-tag {
+      position: absolute;
+      z-index: 4;
+      transform: translate(-50%, -50%);
+      padding: 6px 14px;
+      border: 1.5px solid var(--blue-2);
+      border-radius: 999px;
+      background: rgba(7, 14, 28, 0.74);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      pointer-events: none;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+      transition: opacity 200ms ease;
+    }
+
     .ticker-layer {
       display: none;
       position: absolute;
@@ -853,6 +896,12 @@
         </div>
       </div>
 
+      <svg class="ring-callout" id="ringCallout" aria-hidden="true">
+        <path id="ringCalloutPath" class="ring-callout__path" d=""></path>
+        <circle id="ringCalloutDot" class="ring-callout__dot" r="3.4" cx="-60" cy="-60"></circle>
+      </svg>
+      <div class="ring-tag" id="ringTag" aria-hidden="true">Universe</div>
+
       <div class="rail">
       <article class="hero-copy">
         <p class="eyebrow">How We Do It | Equity Process</p>
@@ -966,6 +1015,37 @@
       body: document.getElementById("stageBody"),
       evidence: document.getElementById("stageEvidence")
     };
+
+    /* Leader-line callout: a line runs up-and-over from the active ring to a
+       labelled button, so you can see which stage you're on. */
+    const stageTags = ["Universe", "Quant", "Fundamental", "Selection", "Portfolio"];
+    const calloutPath = document.getElementById("ringCalloutPath");
+    const calloutDot = document.getElementById("ringCalloutDot");
+    const ringTag = document.getElementById("ringTag");
+    const calloutAnchor = new THREE.Vector3();
+    function updateCallout() {
+      const rect = card.getBoundingClientRect();
+      const r = activeStage === 4 ? 1.9 : ringRadii[activeStage];
+      const a = Math.PI * 1.16;                 /* anchor on the upper-left of the band */
+      calloutAnchor.set(Math.cos(a) * r, -0.14, Math.sin(a) * r * ellipseZ);
+      root.updateMatrixWorld();
+      calloutAnchor.applyMatrix4(root.matrixWorld);
+      calloutAnchor.project(camera);
+      const ax = (calloutAnchor.x * 0.5 + 0.5) * rect.width;
+      const ay = (-calloutAnchor.y * 0.5 + 0.5) * rect.height;
+      const ey = ay - 52;                        /* up */
+      const bx = Math.max(74, ax - 70);          /* over (left), kept on-screen */
+      calloutPath.setAttribute("d", `M ${ax.toFixed(1)} ${ay.toFixed(1)} L ${ax.toFixed(1)} ${ey.toFixed(1)} L ${bx.toFixed(1)} ${ey.toFixed(1)}`);
+      calloutDot.setAttribute("cx", ax.toFixed(1));
+      calloutDot.setAttribute("cy", ay.toFixed(1));
+      const col = stageCssColors[activeStage];
+      calloutPath.style.stroke = col;
+      calloutDot.style.fill = col;
+      ringTag.style.left = `${bx.toFixed(1)}px`;
+      ringTag.style.top = `${ey.toFixed(1)}px`;
+      ringTag.style.borderColor = col;
+      ringTag.textContent = stageTags[activeStage];
+    }
 
     const tickerSymbols = [
       "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "JPM", "V", "MA", "COST", "HD", "UNH",
@@ -1523,6 +1603,7 @@
       sizeAttr.needsUpdate = true;
       colorAttr.needsUpdate = true;
 
+      updateCallout();
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
