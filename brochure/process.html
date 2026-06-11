@@ -992,7 +992,7 @@
     camera.position.set(0, 9.6, 23);
 
     const root = new THREE.Group();
-    root.rotation.x = -0.62;
+    root.rotation.x = 0.62;
     scene.add(root);
 
     const ambient = new THREE.AmbientLight(0xd8eaff, 0.58);
@@ -1216,9 +1216,9 @@
     const activeColor = new THREE.Color();
     const dimColor = new THREE.Color();
     const view = {
-      rotX: -0.62,
+      rotX: 0.62,
       rotY: 0.04,
-      targetRotX: -0.62,
+      targetRotX: 0.62,
       targetRotY: 0.04,
       distance: 24,
       targetDistance: 24,
@@ -1247,7 +1247,7 @@
 
     function resetView() {
       view.userControlled = false;
-      view.targetRotX = -0.62;
+      view.targetRotX = 0.62;
       view.targetRotY = 0.04;
       view.targetDistance = view.defaultDistance;
     }
@@ -1331,7 +1331,7 @@
       const dy = event.clientY - dragStart.y;
       /* Constrained to a slight tilt only — never a full 360 spin. */
       view.targetRotY = clamp(dragStart.rotY + dx * 0.005, -0.16, 0.16);
-      view.targetRotX = clamp(dragStart.rotX + dy * 0.005, -0.78, -0.46);
+      view.targetRotX = clamp(dragStart.rotX + dy * 0.005, 0.46, 0.78);
     });
 
     function finishPointer(event) {
