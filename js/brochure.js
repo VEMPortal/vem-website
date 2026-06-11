@@ -449,18 +449,24 @@
   slides[0].classList.add("is-in");
   setActive(0);
 
-  /* ---- Deep-link: land on a specific slide via #hash (e.g. "Back to Brochure"
-     from the full-screen universe returns here, to the start of that slide) ---- */
-  (function () {
+  /* ---- Deep-link: land on a specific slide via #hash. "Back to Brochure" from
+     the universe (#process) and the fact sheets (#equity-models) returns the
+     viewer to the slide they launched from — never the start. Runs on load,
+     on hashchange, and on bfcache restore (pageshow) so back-navigation lands
+     on the right slide regardless of how the browser restores the page. ---- */
+  function jumpToHash() {
     var id = (window.location.hash || "").replace(/^#/, "");
     if (!id) return;
     var target = document.getElementById(id);
     var idx = target ? slides.indexOf(target) : -1;
-    if (idx > 0) {
+    if (idx >= 0) {
       deck.scrollTo({ left: idx * deck.clientWidth, behavior: "auto" });
       activate(idx);
     }
-  })();
+  }
+  jumpToHash();
+  window.addEventListener("hashchange", jumpToHash);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) jumpToHash(); });
 
   /* keep alignment on resize */
   var rT = null;

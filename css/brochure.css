@@ -111,8 +111,22 @@
   font-size: clamp(2rem, 1rem + 3.4vw, 3.5rem);
   margin: 0;
 }
-.bro-h em { font-style: italic; color: var(--accent-soft); }
-.slide--light .bro-h em { color: var(--accent-deep); }
+/* Light-blue heading accents carry the same animated "shine" sweep as the cover. */
+.bro-h em {
+  font-style: italic;
+  background: linear-gradient(100deg, var(--vem-blue-soft) 20%, #DCE7F7 40%, var(--vem-blue) 55%, var(--vem-blue-soft) 75%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  animation: blueSweep 7s var(--ease-soft) infinite;
+}
+.slide--light .bro-h em {
+  /* deeper blues so the shine still reads on white slides.
+     NB: the `background` shorthand resets background-clip, so re-assert it here. */
+  background: linear-gradient(100deg, var(--accent-deep) 20%, var(--vem-blue) 50%, var(--accent-deep) 80%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+}
 
 .bro-lead {
   margin: clamp(16px, 2.4vh, 26px) 0 0; max-width: 62ch;
@@ -871,7 +885,7 @@
   .deck { scroll-behavior: auto; }
   .slide__inner > * { opacity: 1; transform: none; }
   .sbox__cell { opacity: 1; transform: none; transition: none; }
-  .cover__hint svg, .cover__title em,
+  .cover__hint svg, .cover__title em, .bro-h em,
   .orbit__stage.is-active .oc-bars rect { animation: none; }
   .cover__line { transform: scaleX(1); }
   .oc-bars rect { transform: scaleY(1); }
@@ -899,6 +913,7 @@
   }
   .slide__scrim { background: linear-gradient(180deg, rgba(12,16,24,0.30) 0%, rgba(12,16,24,0.58) 100%) !important; }
   .cover__title em { background: none; -webkit-background-clip: initial; background-clip: initial; color: var(--vem-blue-soft) !important; animation: none; }
+  .bro-h em { background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important; animation: none !important; }
   .cover__line { transform: scaleX(1) !important; animation: none; }
   .slide__inner > * { opacity: 1 !important; transform: none !important; }
   .bro-lead, .defcard__teaser, .defcard__more > p, .model p, .model__p, .note > p, .tm__bio, .frame__desc,
