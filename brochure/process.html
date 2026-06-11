@@ -1088,14 +1088,14 @@
 
     /* Heat ramp: red universe -> orange -> yellow -> green -> bright-blue core.
        Surviving dots (and each ring) take the active stage's color. */
-    const stageColors = [0xff3b30, 0xff9500, 0xffd60a, 0x34c759, 0x6db8ff];
+    const stageColors = [0xff3b30, 0xff9500, 0xffd60a, 0x34c759, 0x8fd0ff];
     const dimStageColors = [0x3a1411, 0x3a2410, 0x3a3410, 0x123a1f, 0x18334f];
-    const stageCssColors = ["#ff3b30", "#ff9500", "#ffd60a", "#34c759", "#6db8ff"];
+    const stageCssColors = ["#ff3b30", "#ff9500", "#ffd60a", "#34c759", "#8fd0ff"];
     const ringRadii = [12.4, 9.0, 6.0, 3.35, 1.35];
     const ringWidth = [1.45, 0.95, 0.7, 0.52, 0.3];
     const stageSurvival = [1, 0.2, 0.057, 0.017, 0.008];
     const stageHeight = [0.5, 0.42, 0.32, 0.22, 0.12];
-    const stageSizeBoost = [1, 1.3, 1.7, 2.2, 2.9];
+    const stageSizeBoost = [1, 1.3, 1.7, 2.2, 3.3];
     const labelMax = [24, 16, 10, 7, 5];
     const labelRadius = [12.15, 9.0, 6.0, 3.45, 2.45];
     const ellipseZ = 0.72;
@@ -1147,6 +1147,7 @@
     const pointsMaterial = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
+      depthTest: false,
       blending: THREE.AdditiveBlending,
       vertexColors: true,
       uniforms: { uPixelRatio: { value: renderer.getPixelRatio() } },
@@ -1172,7 +1173,7 @@
     });
 
     const stockPoints = new THREE.Points(pointsGeometry, pointsMaterial);
-    stockPoints.renderOrder = 1;
+    stockPoints.renderOrder = 4;
     root.add(stockPoints);
 
     const gravityGeometry = new THREE.CircleGeometry(1, 192);
@@ -1535,8 +1536,12 @@
       core.scale.setScalar(core.scale.x + (coreScaleTarget - core.scale.x) * 0.06);
 
       const pulse = (Math.sin(time * 2.3) + 1) * 0.5;
-      const coreBoost = activeStage === 4 ? 1.35 : 0.45;
-      coreMaterial.emissiveIntensity = 1.65 + pulse * 1.9 + coreBoost;
+      const atomMode = activeStage === 4;
+      const coreBoost = atomMode ? 1.35 : 0.45;
+      /* Final stage: the sphere becomes a translucent containment vessel so the
+         atoms bouncing inside read clearly; otherwise it's a bright star. */
+      coreMaterial.emissiveIntensity = (atomMode ? 0.85 : 1.65) + pulse * (atomMode ? 0.5 : 1.9) + (atomMode ? 0 : coreBoost);
+      coreMaterial.opacity = atomMode ? 0.3 : 0.96;
       haloMaterial.opacity = 0.24 + pulse * 0.36 + coreBoost * 0.09;
       halo.scale.setScalar(1.12 + pulse * 0.42 + coreBoost * 0.1);
       activeColor.setHex(stageColors[activeStage]);
@@ -1568,25 +1573,69 @@
       particleRecords.forEach((record, index) => {
         const offset = index * 3;
         const survives = record.score <= stageSurvival[activeStage];
-        const targetVisible = survives ? 1 : 0;
-        record.visible += (targetVisible - record.visible) * 0.07;
 
-        /* Final stage: the survivors collapse INTO the star (everything ends
-           inside the core), instead of orbiting a small ring around it. */
-        const targetRadius = activeStage === 4
-          ? 0.05 + record.lane * 0.32
-          : ringRadii[activeStage] + record.lane * ringWidth[activeStage] * (activeStage === 0 ? 0.92 : 0.62);
-        const targetHeight = activeStage === 4
-          ? record.heightSeed * 0.4
-          : record.heightSeed * stageHeight[activeStage] * 0.5;
-        record.currentRadius += (targetRadius - record.currentRadius) * 0.05;
-        record.currentHeight += (targetHeight - record.currentHeight) * 0.055;
+        let px, py, pz, sz;
+        if (activeStage === 4 && survives) {
+          /* Final stage: survivors are sucked into the sphere by its gravity,
+             then bounce around inside it forever, like atoms in a container. */
+          if (!record.atom) {
+            record.ax = attr.array[offset];
+            record.ay = attr.array[offset + 1];
+            record.az = attr.array[offset + 2];
+            const d0 = Math.hypot(record.ax, record.ay, record.az) || 1;
+            const sp = 0.055;
+            record.avx = -record.ax / d0 * sp + (Math.random() - 0.5) * 0.03;
+            record.avy = -record.ay / d0 * sp + (Math.random() - 0.5) * 0.03;
+            record.avz = -record.az / d0 * sp + (Math.random() - 0.5) * 0.03;
+            record.contained = false;
+            record.atom = true;
+          }
+          const R = 1.06; /* inner wall, just inside the visible sphere */
+          let d = Math.hypot(record.ax, record.ay, record.az) || 0.0001;
+          if (!record.contained) {
+            record.avx += -record.ax / d * 0.006; /* gravitational pull inward */
+            record.avy += -record.ay / d * 0.006;
+            record.avz += -record.az / d * 0.006;
+            if (d < R) record.contained = true;
+          }
+          record.ax += record.avx;
+          record.ay += record.avy;
+          record.az += record.avz;
+          d = Math.hypot(record.ax, record.ay, record.az);
+          if (record.contained && d > R) {
+            const nx = record.ax / d, ny = record.ay / d, nz = record.az / d;
+            const dot = record.avx * nx + record.avy * ny + record.avz * nz;
+            record.avx -= 2 * dot * nx; /* elastic bounce off the inner wall */
+            record.avy -= 2 * dot * ny;
+            record.avz -= 2 * dot * nz;
+            record.ax = nx * R; record.ay = ny * R; record.az = nz * R;
+            const s = Math.hypot(record.avx, record.avy, record.avz) || 1;
+            const ts = 0.05; /* keep a steady, lively speed */
+            record.avx = record.avx / s * ts;
+            record.avy = record.avy / s * ts;
+            record.avz = record.avz / s * ts;
+          }
+          record.visible += (1 - record.visible) * 0.1;
+          px = record.ax; py = record.ay; pz = record.az;
+          sz = record.baseSize * record.visible * stageSizeBoost[4];
+        } else {
+          record.atom = false;
+          record.visible += ((survives ? 1 : 0) - record.visible) * 0.07;
+          const targetRadius = ringRadii[activeStage] + record.lane * ringWidth[activeStage] * (activeStage === 0 ? 0.92 : 0.62);
+          const targetHeight = record.heightSeed * stageHeight[activeStage] * 0.5;
+          record.currentRadius += (targetRadius - record.currentRadius) * 0.05;
+          record.currentHeight += (targetHeight - record.currentHeight) * 0.055;
+          const angle = record.angle + time * record.speed * (activeStage === 0 ? 1 : 0.45);
+          px = Math.cos(angle) * record.currentRadius;
+          py = -0.14 + record.currentHeight + Math.sin(time * 1.1 + record.phase) * 0.02;
+          pz = Math.sin(angle) * record.currentRadius * ellipseZ;
+          sz = record.baseSize * record.visible * stageSizeBoost[activeStage];
+        }
 
-        const angle = record.angle + time * record.speed * (activeStage === 0 ? 1 : 0.45);
-        attr.array[offset] = Math.cos(angle) * record.currentRadius;
-        attr.array[offset + 1] = -0.14 + record.currentHeight + Math.sin(time * 1.1 + record.phase) * 0.02;
-        attr.array[offset + 2] = Math.sin(angle) * record.currentRadius * ellipseZ;
-        sizeAttr.array[index] = record.baseSize * record.visible * stageSizeBoost[activeStage];
+        attr.array[offset] = px;
+        attr.array[offset + 1] = py;
+        attr.array[offset + 2] = pz;
+        sizeAttr.array[index] = sz;
 
         const mix = record.visible;
         const targetR = dimColor.r * (1 - mix) + activeColor.r * mix;
