@@ -1257,21 +1257,6 @@
     core.renderOrder = 3;
     root.add(core);
 
-    /* White center that pulses INSIDE the glass sphere (the pulse lives in the
-       circle now, not in a big band outside it). Hidden once atoms take over. */
-    const innerCoreGeometry = new THREE.SphereGeometry(0.42, 32, 32);
-    const innerCoreMaterial = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
-      transparent: true,
-      opacity: 0.85,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      depthTest: false
-    });
-    const innerCore = new THREE.Mesh(innerCoreGeometry, innerCoreMaterial);
-    innerCore.renderOrder = 5;
-    root.add(innerCore);
-
     const haloGeometry = new THREE.SphereGeometry(1.82, 48, 48);
     const haloMaterial = new THREE.MeshBasicMaterial({
       color: 0x65b5ff,
@@ -1551,37 +1536,32 @@
       const coreScaleTarget = activeStage === 4 ? 1.32 : 1.0;
       core.scale.setScalar(core.scale.x + (coreScaleTarget - core.scale.x) * 0.06);
 
-      const pulse = (Math.sin(time * 2.0) + 1) * 0.5;
+      const pulse = (Math.sin(time * 1.6) + 1) * 0.5;
       const atomMode = activeStage === 4;
       activeColor.setHex(stageColors[activeStage]);
       dimColor.setHex(dimStageColors[activeStage]);
 
-      /* The pulse now lives INSIDE the glass sphere — a glassy shell with a
-         white center that breathes. At Portfolio it clears into the atom vessel. */
-      coreMaterial.opacity = atomMode ? 0.22 : (0.44 + pulse * 0.12);
-      coreMaterial.emissiveIntensity = atomMode ? 0.28 : (0.36 + pulse * 0.55);
-      coreMaterial.transmission = atomMode ? 0.62 : 0.9;
+      /* Clean, steady cool-blue glass sphere — a premium crystal core that does
+         NOT pick up the red/stage color of the surrounding rings (no white center,
+         no colored reflection). It only clears into the atom vessel at Portfolio. */
+      coreMaterial.opacity = atomMode ? 0.22 : 0.62;
+      coreMaterial.emissiveIntensity = atomMode ? 0.28 : (0.4 + pulse * 0.16);
+      coreMaterial.transmission = atomMode ? 0.6 : 0.42;
 
-      innerCore.visible = !atomMode;            /* atoms replace it at the end */
-      const innerPulse = (Math.sin(time * 2.0) + 1) * 0.5;
-      innerCore.scale.setScalar(0.82 + innerPulse * 0.5);
-      innerCoreMaterial.opacity = 0.45 + innerPulse * 0.42;
-      innerCore.material.color.lerp(activeColor.clone().lerp(new THREE.Color(0xffffff), 0.72), 0.06);
+      /* Halo stays small, steady, cool — no big glow outside the circle. */
+      haloMaterial.opacity = 0.11 + pulse * 0.05;
+      halo.scale.setScalar(1.03 + pulse * 0.04);
 
-      /* Halo stays small and steady — no big pulse OUTSIDE the circle. */
-      haloMaterial.opacity = 0.14 + pulse * 0.10;
-      halo.scale.setScalar(1.05 + pulse * 0.10);
-
-      /* Gravity band reduced to a faint, static floor glow under the sphere;
-         it gently tracks the stage color but no longer does the large pulse. */
+      /* Faint, static, NEUTRAL floor glow under the sphere — fixed cool blue,
+         never tinted by the active (red/orange/…) stage color. */
       gravityImpulse *= 0.9;
       const targetGravityRadius = atomMode ? 1.7 : 2.05;
       gravityField.userData.radius += (targetGravityRadius - gravityField.userData.radius) * 0.06;
       const gravityRadius = gravityField.userData.radius;
       gravityField.scale.set(gravityRadius, gravityRadius * ellipseZ, 1);
-      gravityMaterial.uniforms.uPulse.value = 0.12;
-      gravityMaterial.uniforms.uStrength.value = 0.5;
-      gravityMaterial.uniforms.uColor.value.lerp(activeColor, 0.06);
+      gravityMaterial.uniforms.uPulse.value = 0.1;
+      gravityMaterial.uniforms.uStrength.value = 0.4;
+      gravityMaterial.uniforms.uColor.value.setHex(0x3a6ea5);
 
       stageRingMeshes.forEach((ringMesh, i) => {
         const isActive = i === activeStage && activeStage < 4;

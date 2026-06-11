@@ -659,29 +659,32 @@
 .model__back .model__p { color: var(--on-dark-80); }
 .model__bench { display: block; margin: 12px 0 0; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-500); color: var(--vem-white); line-height: 1.3; }
 
-/* Size axis (Large / Mid / Small, top→bottom) beside the style-box illustration */
+/* Size axis (Large / Mid / Small, top→bottom) beside the style-box illustration.
+   Grid rows mirror the box's 3 rows (same 5px gap) so L / M / S line up exactly
+   with each row; left-aligned so the first letters form a clean vertical line. */
 .sboxw { display: inline-grid; grid-template-columns: auto auto; align-items: stretch; gap: 9px; }
 .sbox-yax {
-  display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;
-  padding: 1px 0; line-height: 1; white-space: nowrap;
+  display: grid; grid-template-rows: repeat(3, 1fr); gap: 5px;
+  align-items: center; justify-items: start;
+  line-height: 1; white-space: nowrap;
   font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
   color: #5b6479;
 }
 .sbox-yax i { font-style: normal; }
 .model--static .sbox-yax, .slide--light .sbox-yax { color: #5b6479; }
 .sbox { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 132px; }
-/* Dark navy fills the whole grid; the captured squares light up blue. */
+/* Morningstar-style: empty squares are light; the captured square fills DARK navy. */
 .sbox__cell {
-  aspect-ratio: 1; border-radius: 3px; background: var(--vem-navy);
+  aspect-ratio: 1; border-radius: 3px; background: #E2E7F0;
   opacity: 0; transform: scale(0.55);
   transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out), background 0.45s var(--ease-soft);
 }
 .sbox__cell.is-on,
-.sbox__cell.is-hot { background: var(--accent-soft); }
-.sbox__cell.is-hot { box-shadow: 0 0 0 1px rgba(148,171,214,0.55), 0 0 14px -2px var(--accent-glow); }
-.model--static .sbox__cell { background: var(--vem-navy); }
+.sbox__cell.is-hot { background: var(--vem-navy); }
+.sbox__cell.is-hot { box-shadow: 0 2px 9px -3px rgba(11,31,68,0.55), 0 0 0 1px rgba(34,49,104,0.2); }
+.model--static .sbox__cell { background: #E2E7F0; }
 .model--static .sbox__cell.is-on,
-.model--static .sbox__cell.is-hot { background: var(--accent-soft); }
+.model--static .sbox__cell.is-hot { background: var(--vem-navy); }
 .slide.is-in .sbox__cell { opacity: 1; transform: scale(1); }
 .slide.is-in .sbox__cell:nth-child(1){ transition-delay: 0.30s; }
 .slide.is-in .sbox__cell:nth-child(2){ transition-delay: 0.36s; }
@@ -950,9 +953,9 @@
     background: #fff !important; color: #111 !important; }
   .model__back .model__bench { color: #0B1F44 !important; }
   .model.is-flipped .model__front { transform: none !important; }
-  .sbox__cell { opacity: 1 !important; transform: none !important; background: #223168 !important; }
-  .sbox__cell.is-on  { background: #5C7CB8 !important; }
-  .sbox__cell.is-hot { background: #5C7CB8 !important; box-shadow: none !important; }
+  .sbox__cell { opacity: 1 !important; transform: none !important; background: #E2E7F0 !important; }
+  .sbox__cell.is-on  { background: #223168 !important; }
+  .sbox__cell.is-hot { background: #223168 !important; box-shadow: none !important; }
   .pband { fill: rgba(92,124,184,0.3) !important; animation: none !important; filter: none !important; }
   .pband-g[data-i="3"] .pband, .pband-g[data-i="4"] .pband { fill: #5C7CB8 !important; }
   .pband-label { fill: #0B1F44 !important; }
