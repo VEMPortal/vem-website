@@ -89,7 +89,8 @@
 .slide__media img { width: 100%; height: 100%; object-fit: cover; }
 .slide__scrim {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(115deg, rgba(7,16,34,0.78) 0%, rgba(7,16,34,0.50) 48%, rgba(7,16,34,0.22) 100%);
+  /* Lighter, more neutral scrim so the Dallas skyline reads through; only a hint of blue. */
+  background: linear-gradient(115deg, rgba(12,16,24,0.52) 0%, rgba(12,16,24,0.28) 48%, rgba(12,16,24,0.08) 100%);
 }
 .slide--cover .slide__inner { position: relative; z-index: 2; }
 
@@ -302,6 +303,86 @@
    THE PROCESS ORBIT — 3D concentric scene
    ===================================================================== */
 .bro-orbit-cta { margin: clamp(10px, 1.6vh, 18px) 0 0; }
+
+/* ---------- Universe launch gateway (replaces the in-deck canvas orbit) ---- */
+.uni-gate {
+  margin-top: clamp(16px, 2.6vh, 30px);
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  gap: clamp(22px, 3.4vw, 52px); align-items: center;
+}
+@media (max-width: 960px){ .uni-gate { grid-template-columns: 1fr; gap: 20px; } }
+
+.uni-launch {
+  position: relative; display: flex; align-items: center;
+  gap: clamp(18px, 2.4vw, 32px);
+  padding: clamp(20px, 2.6vw, 34px);
+  border-radius: 18px; text-decoration: none;
+  background:
+    radial-gradient(120% 140% at 18% 30%, rgba(92,124,184,0.20), rgba(11,31,68,0) 60%),
+    rgba(8,16,34,0.42);
+  border: 1px solid rgba(148,171,214,0.22);
+  box-shadow: 0 24px 60px -32px rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: border-color 220ms var(--ease-soft), transform 220ms var(--ease-soft), box-shadow 220ms var(--ease-soft);
+}
+.uni-launch:hover, .uni-launch:focus-visible {
+  border-color: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 30px 70px -30px rgba(0,0,0,0.78);
+  outline: none;
+}
+
+/* concentric rings + glowing core — a faithful echo of the WebGL universe */
+.uni-rings {
+  position: relative; flex: 0 0 auto;
+  width: clamp(96px, 11vw, 132px); aspect-ratio: 1; display: grid; place-items: center;
+}
+.uni-ring {
+  position: absolute; border-radius: 50%;
+  border: 1.5px solid currentColor; opacity: 0.5;
+  /* squash to a 3/4 tilt, like the real orbit */
+  transform: rotateX(62deg);
+}
+.uni-ring--1 { inset: 0;                color: #ff5a4f; }
+.uni-ring--2 { inset: 13%;              color: #ff9f2e; }
+.uni-ring--3 { inset: 27%;              color: #ffd750; }
+.uni-ring--4 { inset: 41%;              color: #5fd57e; }
+.uni-core {
+  width: 30%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #d6ecff, #8fd0ff 45%, #2f6bd0 100%);
+  box-shadow: 0 0 24px 6px rgba(143,208,255,0.55), 0 0 60px 14px rgba(92,124,184,0.30);
+}
+.uni-launch:hover .uni-core { box-shadow: 0 0 30px 8px rgba(143,208,255,0.7), 0 0 78px 18px rgba(92,124,184,0.42); }
+
+.uni-launch__copy { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.uni-launch__k {
+  font-size: var(--fs-100); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent-soft); font-weight: 600;
+}
+.uni-launch__t {
+  font-family: var(--font-display, "Cormorant", serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.1;
+  color: var(--vem-white);
+}
+.uni-launch__cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: var(--fs-200); color: var(--accent-soft); font-weight: 600; margin-top: 2px;
+}
+.uni-launch__cta span { transition: transform 220ms var(--ease-soft); }
+.uni-launch:hover .uni-launch__cta span { transform: translateX(4px); }
+
+/* five-stage narrowing ladder */
+.uni-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(8px, 1.2vh, 14px); }
+.uni-step { display: flex; align-items: baseline; gap: 14px; }
+.uni-step__n {
+  flex: 0 0 auto; font-size: var(--fs-100); font-weight: 700; letter-spacing: 0.08em;
+  color: var(--accent-soft); opacity: 0.85; padding-top: 2px;
+}
+.uni-step__body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.uni-step__name { color: var(--vem-white); font-weight: 600; font-size: var(--fs-300); }
+.uni-step__count { color: var(--vem-blue-soft); font-size: var(--fs-200); line-height: 1.4; }
+.uni-step--core .uni-step__name { color: #bfe0ff; }
+
 .orbit {
   margin-top: clamp(14px, 2.2vh, 26px);
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
@@ -806,7 +887,7 @@
     background: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
     border: 0 !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important;
   }
-  .slide__scrim { background: rgba(11,31,68,0.78) !important; }
+  .slide__scrim { background: linear-gradient(180deg, rgba(12,16,24,0.30) 0%, rgba(12,16,24,0.58) 100%) !important; }
   .cover__title em { background: none; -webkit-background-clip: initial; background-clip: initial; color: var(--vem-blue-soft) !important; animation: none; }
   .cover__line { transform: scaleX(1) !important; animation: none; }
   .slide__inner > * { opacity: 1 !important; transform: none !important; }

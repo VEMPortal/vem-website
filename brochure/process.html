@@ -1541,15 +1541,17 @@
       /* Final stage: the sphere becomes a translucent containment vessel so the
          atoms bouncing inside read clearly; otherwise it's a bright star. */
       coreMaterial.emissiveIntensity = (atomMode ? 0.85 : 1.65) + pulse * (atomMode ? 0.5 : 1.9) + (atomMode ? 0 : coreBoost);
-      coreMaterial.opacity = atomMode ? 0.3 : 0.96;
+      coreMaterial.opacity = atomMode ? 0.24 : 0.96; /* clearer vessel so atoms read */
       haloMaterial.opacity = 0.24 + pulse * 0.36 + coreBoost * 0.09;
       halo.scale.setScalar(1.12 + pulse * 0.42 + coreBoost * 0.1);
       activeColor.setHex(stageColors[activeStage]);
       dimColor.setHex(dimStageColors[activeStage]);
 
+      /* Band tucks right at the active ring's edge — out to the red ring at
+         stage 0, shrinking in to orange/yellow/green, then inside the sphere. */
       const targetGravityRadius = activeStage === 4
-        ? 1.85
-        : ringRadii[activeStage] + ringWidth[activeStage] * (activeStage === 0 ? 1.12 : 0.85);
+        ? 1.7
+        : ringRadii[activeStage] + ringWidth[activeStage] * (activeStage === 0 ? 0.98 : 0.7);
       gravityImpulse *= 0.925;
       gravityField.userData.radius += (targetGravityRadius - gravityField.userData.radius) * 0.065;
       const gravityThump = 1 + pulse * 0.028 + gravityImpulse * 0.065;
@@ -1583,10 +1585,10 @@
             record.ay = attr.array[offset + 1];
             record.az = attr.array[offset + 2];
             const d0 = Math.hypot(record.ax, record.ay, record.az) || 1;
-            const sp = 0.055;
-            record.avx = -record.ax / d0 * sp + (Math.random() - 0.5) * 0.03;
-            record.avy = -record.ay / d0 * sp + (Math.random() - 0.5) * 0.03;
-            record.avz = -record.az / d0 * sp + (Math.random() - 0.5) * 0.03;
+            const sp = 0.044;
+            record.avx = -record.ax / d0 * sp + (Math.random() - 0.5) * 0.024;
+            record.avy = -record.ay / d0 * sp + (Math.random() - 0.5) * 0.024;
+            record.avz = -record.az / d0 * sp + (Math.random() - 0.5) * 0.024;
             record.contained = false;
             record.atom = true;
           }
@@ -1608,9 +1610,14 @@
             record.avx -= 2 * dot * nx; /* elastic bounce off the inner wall */
             record.avy -= 2 * dot * ny;
             record.avz -= 2 * dot * nz;
+            /* small random kick on each bounce — atoms ricochet into the
+               "corners" of the vessel instead of settling into dull orbits */
+            record.avx += (Math.random() - 0.5) * 0.012;
+            record.avy += (Math.random() - 0.5) * 0.012;
+            record.avz += (Math.random() - 0.5) * 0.012;
             record.ax = nx * R; record.ay = ny * R; record.az = nz * R;
             const s = Math.hypot(record.avx, record.avy, record.avz) || 1;
-            const ts = 0.05; /* keep a steady, lively speed */
+            const ts = 0.036; /* calmer, steady drift speed */
             record.avx = record.avx / s * ts;
             record.avy = record.avy / s * ts;
             record.avz = record.avz / s * ts;
