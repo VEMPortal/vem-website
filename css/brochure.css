@@ -301,8 +301,9 @@
 /* =====================================================================
    THE PROCESS ORBIT — 3D concentric scene
    ===================================================================== */
+.bro-orbit-cta { margin: clamp(10px, 1.6vh, 18px) 0 0; }
 .orbit {
-  margin-top: clamp(18px, 3vh, 34px);
+  margin-top: clamp(14px, 2.2vh, 26px);
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
   gap: clamp(24px, 3.6vw, 56px); align-items: center;
 }

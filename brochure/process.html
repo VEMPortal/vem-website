@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Broad Universe to Managed Portfolio | Vann Equity Management</title>
+  <meta name="description" content="A visually enhanced 3D brochure card for Vann Equity Management's broad universe to managed portfolio process." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant:ital,wght@0,600;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4f8ff;
+      --muted: #b8c7df;
+      --soft: rgba(232, 242, 255, 0.74);
+      --line: rgba(132, 174, 226, 0.22);
+      --glass: rgba(8, 20, 38, 0.6);
+      --glass-strong: rgba(5, 16, 34, 0.78);
+      --blue: #4f8fd7;
+      --blue-2: #b9d7ff;
+      --cyan: #7ed6ff;
+      --aqua: #a8dadc;
+      --card: #06111f;
+      --coal: #030912;
+      --shadow: rgba(0, 0, 0, 0.46);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgb(3, 9, 18) 0%, rgb(7, 20, 38) 48%, rgb(5, 15, 31) 100%);
+      color: var(--ink);
+      font-family: "Hanken Grotesk", Arial, sans-serif;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      min-height: 640px;
+      padding: 0;
+      isolation: isolate;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(91, 145, 212, 0.12) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(232, 242, 255, 0.055) 0 1px, transparent 1px 100%);
+      background-size: 88px 88px;
+      mask-image: linear-gradient(to bottom, transparent, black 18%, black 80%, transparent);
+      opacity: 0.42;
+      z-index: -2;
+    }
+
+    .brochure-card {
+      --rail-width: clamp(380px, 32vw, 500px);
+      --rail-right: clamp(26px, 4vw, 62px);
+      --rail-top: 104px;
+      --scene-center-x: calc((100% - var(--rail-width) - (var(--rail-right) * 2)) / 2);
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      min-height: 640px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background:
+        radial-gradient(circle at 37% 48%, rgba(73, 130, 202, 0.24), transparent 36%),
+        linear-gradient(140deg, rgba(3, 10, 22, 0.96), rgba(7, 21, 42, 0.76) 48%, rgba(6, 16, 32, 0.9)),
+        var(--card);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .universe-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0.98;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    .brochure-card.is-dragging .universe-canvas {
+      cursor: grabbing;
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(3, 9, 18, 0.28), rgba(3, 9, 18, 0.02) 34%, rgba(3, 9, 18, 0.18) 63%, rgba(3, 9, 18, 0.91)),
+        linear-gradient(0deg, rgba(3, 9, 18, 0.72), transparent 22%, transparent 74%, rgba(3, 9, 18, 0.58));
+    }
+
+    .brandbar {
+      position: absolute;
+      top: 26px;
+      left: 38px;
+      right: var(--rail-right);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brandbar img {
+      width: 204px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.36));
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 36px;
+      padding: 0 13px;
+      border: 1px solid rgba(118, 174, 238, 0.5);
+      border-radius: 999px;
+      background: rgba(6, 18, 38, 0.58);
+      color: var(--blue-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .brandbar__right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      height: 36px;
+      padding: 0 14px;
+      border: 1px solid rgba(118, 174, 238, 0.5);
+      border-radius: 999px;
+      background: rgba(6, 18, 38, 0.58);
+      color: var(--blue-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      backdrop-filter: blur(18px);
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      border-color: rgba(118, 174, 238, 0.85);
+      background: rgba(69, 128, 202, 0.2);
+      color: #fff;
+    }
+
+    /* Right rail — a flex column so the hero, the stage card, and the tabs
+       flow and size themselves; the card can never overflow or collide. */
+    .rail {
+      position: absolute;
+      right: var(--rail-right);
+      top: var(--rail-top);
+      bottom: 28px;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: var(--rail-width);
+    }
+
+    .hero-copy {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 22px 24px 18px;
+      border: 1px solid rgba(132, 174, 226, 0.18);
+      border-radius: 8px;
+      background: linear-gradient(160deg, rgba(7, 20, 42, 0.72), rgba(7, 20, 42, 0.38));
+      backdrop-filter: blur(20px) saturate(130%);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    }
+
+    .eyebrow,
+    .stage-kicker {
+      margin: 0;
+      color: var(--blue-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 10px 0 14px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(2rem, 2.35vw, 2.7rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 em {
+      color: var(--blue-2);
+      font-family: "Cormorant", Georgia, serif;
+      font-size: 1.08em;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 1.02rem;
+      line-height: 1.56;
+    }
+
+    .metric-row {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(132, 174, 226, 0.16);
+    }
+
+    .metric {
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.98rem;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      line-height: 1.18;
+    }
+
+    .stage-panel {
+      flex: 1 1 auto;
+      width: 100%;
+      min-height: 0;
+      overflow: auto;
+      padding: 22px 24px;
+      border: 1px solid rgba(132, 174, 226, 0.18);
+      border-radius: 8px;
+      background: linear-gradient(160deg, rgba(7, 20, 42, 0.7), rgba(7, 20, 42, 0.4));
+      backdrop-filter: blur(22px) saturate(125%);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
+    }
+
+    .stage-kicker {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--blue-2);
+    }
+
+    .stage-title {
+      margin: 10px 0 8px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.46rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .stage-count {
+      display: block;
+      margin: 4px 0 13px;
+      padding: 8px 12px;
+      border: 1px solid rgba(118, 174, 238, 0.4);
+      border-radius: 12px;
+      background: rgba(69, 128, 202, 0.12);
+      color: #dcecff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.32;
+    }
+
+    .stage-body {
+      margin: 0;
+      color: var(--soft);
+      font-size: 0.99rem;
+      line-height: 1.48;
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .evidence span {
+      min-height: 0;
+      padding: 8px 9px;
+      border-left: 2px solid rgba(118, 174, 238, 0.78);
+      background: rgba(132, 174, 226, 0.08);
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.22;
+    }
+
+    .stage-tabs {
+      flex: 0 0 auto;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .stage-tabs button {
+      min-width: 0;
+      height: 48px;
+      border: 1px solid rgba(132, 174, 226, 0.16);
+      border-radius: 7px;
+      background: rgba(8, 18, 18, 0.5);
+      color: var(--muted);
+      cursor: pointer;
+      text-align: left;
+      backdrop-filter: blur(14px);
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .stage-tabs button[aria-selected="true"] {
+      border-color: rgba(118, 174, 238, 0.76);
+      background: rgba(69, 128, 202, 0.2);
+      color: var(--ink);
+    }
+
+    .tab-index {
+      display: block;
+      float: none;
+      min-width: 0;
+      padding: 7px 7px 0;
+      color: var(--blue-2);
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .tab-label {
+      display: block;
+      padding: 1px 7px 7px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .core-label {
+      position: absolute;
+      left: var(--scene-center-x);
+      top: 50%;
+      z-index: 3;
+      width: 188px;
+      min-height: 82px;
+      display: grid;
+      place-items: center;
+      translate: -50% -50%;
+      pointer-events: none;
+      text-align: center;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    .core-label strong {
+      display: block;
+      color: #f7fbff;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.04rem;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .core-label span {
+      display: block;
+      margin-top: 7px;
+      color: var(--blue-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .ticker-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ticker {
+      position: absolute;
+      min-width: 44px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      padding: 0 8px;
+      border: 1px solid rgba(132, 174, 226, 0.22);
+      border-radius: 999px;
+      background: rgba(8, 18, 18, 0.58);
+      color: #eaf4ff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      transition: opacity 160ms linear;
+    }
+
+    .ticker.inner {
+      color: #d4ecff;
+      border-color: rgba(118, 174, 238, 0.34);
+    }
+
+    .legend {
+      display: none;
+    }
+
+    .legend-intro,
+    .legend-step {
+      min-height: 66px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(8, 18, 18, 0.62);
+      backdrop-filter: blur(18px);
+    }
+
+    .legend-intro {
+      padding: 13px 14px;
+    }
+
+    .legend-intro strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 0.92rem;
+      line-height: 1.12;
+    }
+
+    .legend-intro span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.2;
+    }
+
+    .legend-step {
+      position: relative;
+      overflow: hidden;
+      padding: 12px 12px 10px;
+    }
+
+    .legend-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: var(--step-color);
+      opacity: 0.9;
+    }
+
+    .legend-step strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.84rem;
+      line-height: 1.1;
+    }
+
+    .legend-step span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.15;
+    }
+
+    .hint {
+      position: absolute;
+      left: var(--scene-center-x);
+      bottom: 44px;
+      z-index: 4;
+      translate: -50% 0;
+      color: rgba(232, 242, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+    }
+
+    .view-controls {
+      position: absolute;
+      left: var(--scene-center-x);
+      bottom: 78px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      translate: -50% 0;
+    }
+
+    .view-controls button {
+      min-width: 34px;
+      height: 34px;
+      border: 1px solid rgba(132, 174, 226, 0.2);
+      border-radius: 7px;
+      background: rgba(8, 18, 18, 0.5);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1;
+      backdrop-filter: blur(14px);
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .view-controls button:hover,
+    .view-controls button:focus-visible {
+      border-color: rgba(118, 174, 238, 0.76);
+      background: rgba(69, 128, 202, 0.2);
+      color: var(--blue-2);
+    }
+
+    .view-controls button[data-view="reset"] {
+      min-width: 58px;
+      padding: 0 10px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1180px) {
+      .page {
+        min-height: 560px;
+        padding: 0;
+      }
+
+      .brochure-card {
+        --rail-width: 330px;
+        --rail-right: 20px;
+        --rail-top: 82px;
+        width: 100vw;
+        height: 100dvh;
+        min-height: 560px;
+      }
+
+      .brandbar {
+        top: 18px;
+        left: 20px;
+        right: var(--rail-right);
+      }
+
+      .brandbar img {
+        width: 168px;
+      }
+
+      .badge {
+        height: 32px;
+        font-size: 0.72rem;
+      }
+
+      .hero-copy {
+        right: var(--rail-right);
+        top: var(--rail-top);
+        width: var(--rail-width);
+        padding: 16px 18px;
+      }
+
+      h1 {
+        font-size: 1.62rem;
+      }
+
+      .hero-copy p,
+      .stage-body {
+        font-size: 0.82rem;
+        line-height: 1.36;
+      }
+
+      .metric-row {
+        display: none;
+      }
+
+      .metric {
+        min-height: 0;
+        padding: 0;
+      }
+
+      .stage-panel {
+        top: calc(var(--rail-top) + 242px);
+        right: var(--rail-right);
+        width: var(--rail-width);
+        min-height: 0;
+        padding: 17px 18px;
+      }
+
+      .stage-title {
+        font-size: 1.24rem;
+      }
+
+      .evidence {
+        display: none;
+      }
+
+      .evidence span {
+        min-height: 0;
+        font-size: 0.7rem;
+      }
+
+      .stage-tabs {
+        right: var(--rail-right);
+        bottom: 22px;
+        width: var(--rail-width);
+      }
+
+      .stage-tabs button {
+        height: 44px;
+      }
+
+      .tab-label {
+        font-size: 0.7rem;
+      }
+
+      .hint {
+        display: none;
+      }
+
+      .view-controls {
+        bottom: 22px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        min-height: 680px;
+        padding: 0;
+      }
+
+      .brochure-card {
+        --rail-width: calc(100% - 28px);
+        --rail-right: 14px;
+        --rail-top: 62px;
+        --scene-center-x: 50%;
+        width: 100vw;
+        height: 100dvh;
+        min-height: 660px;
+      }
+
+      .rail {
+        top: auto;
+        bottom: 14px;
+        max-height: 76%;
+      }
+
+      .brandbar {
+        top: 14px;
+        left: 14px;
+        right: 14px;
+      }
+
+      .brandbar img {
+        width: 142px;
+      }
+
+      .badge {
+        display: none;
+      }
+
+      .hero-copy {
+        left: 14px;
+        right: 14px;
+        top: var(--rail-top);
+        width: auto;
+        padding: 13px 14px;
+      }
+
+      h1 {
+        margin-bottom: 9px;
+        font-size: 1.42rem;
+      }
+
+      .hero-copy p {
+        font-size: 0.78rem;
+      }
+
+      .metric-row {
+        display: none;
+      }
+
+      .metric {
+        min-height: 52px;
+        padding: 7px 6px;
+      }
+
+      .metric strong {
+        font-size: 0.82rem;
+      }
+
+      .metric span {
+        margin-top: 3px;
+        font-size: 0.62rem;
+      }
+
+      .stage-panel {
+        left: 14px;
+        right: 14px;
+        top: auto;
+        bottom: 76px;
+        width: auto;
+        min-height: 0;
+        padding: 14px;
+      }
+
+      .stage-title {
+        margin: 7px 0 4px;
+        font-size: 1.12rem;
+      }
+
+      .stage-kicker {
+        display: block;
+      }
+
+      .stage-kicker span {
+        display: block;
+      }
+
+      .stage-kicker span + span {
+        margin-top: 3px;
+      }
+
+      .stage-count {
+        margin-bottom: 7px;
+        min-height: 28px;
+        font-size: 0.68rem;
+      }
+
+      .stage-body {
+        font-size: 0.78rem;
+        line-height: 1.34;
+      }
+
+      .evidence {
+        display: none;
+      }
+
+      .stage-tabs {
+        left: 14px;
+        right: 14px;
+        bottom: 16px;
+        width: auto;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+      }
+
+      .stage-tabs button {
+        height: 42px;
+      }
+
+      .tab-index {
+        float: none;
+        min-width: 0;
+        padding: 6px 6px 0;
+        font-size: 0.58rem;
+      }
+
+      .tab-label {
+        padding: 2px 6px 5px;
+        font-size: 0.62rem;
+      }
+
+      .ticker {
+        height: 20px;
+        min-width: 38px;
+        font-size: 0.62rem;
+      }
+
+      .core-label {
+        top: 48%;
+      }
+
+      .core-label strong {
+        font-size: 0.86rem;
+      }
+
+      .hint {
+        display: none;
+      }
+
+      .view-controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Vann Equity Management enhanced brochure concept">
+    <section class="brochure-card" aria-label="Broad Universe to Managed Portfolio">
+      <canvas class="universe-canvas" id="universeCanvas" aria-label="3D universe of stocks being filtered into a fundamentals-centered managed portfolio"></canvas>
+      <div class="ticker-layer" id="tickerLayer" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="brandbar">
+        <img src="../assets/brand/vann-lockup-white.png?v=1" alt="Vann Equity Management">
+        <div class="brandbar__right">
+          <a class="back-link" href="./index.html">&larr; Brochure</a>
+          <div class="badge">Independent SEC-Registered Investment Adviser</div>
+        </div>
+      </header>
+
+      <div class="core-label" aria-hidden="true">
+        <div>
+          <strong>Fundamentals<br>Core</strong>
+          <span>quality, growth, risk</span>
+        </div>
+      </div>
+
+      <div class="rail">
+      <article class="hero-copy">
+        <p class="eyebrow">How We Do It | Equity Process</p>
+        <h1>From Broad Universe <em>to Managed Portfolio</em></h1>
+        <p>Thousands of public equities begin on the outside. Evidence pulls the field inward: quantitative screens, fundamentals, committee review, and finally a risk-controlled portfolio.</p>
+        <div class="metric-row" aria-label="Portfolio process metrics">
+          <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
+          <div class="metric"><strong>900-1,000</strong><span>pass financial tests</span></div>
+          <div class="metric"><strong>40-60</strong><span>managed holdings</span></div>
+        </div>
+      </article>
+
+      <article class="stage-panel" id="stagePanel" aria-live="polite">
+        <p class="stage-kicker"><span id="stageNumber">01</span><span id="stageKicker">The starting point</span></p>
+        <h2 class="stage-title" id="stageTitle">Universe of Equity Securities</h2>
+        <p class="stage-count" id="stageCount">Global | every publicly traded candidate</p>
+        <p class="stage-body" id="stageBody">Every listed equity starts as a candidate until evidence says otherwise. More names live on the outer edge; none are owned by default.</p>
+        <div class="evidence" id="stageEvidence" aria-label="Evidence checks">
+          <span>Structural constraints</span>
+          <span>Risk constraints</span>
+          <span>Growth/value traits</span>
+          <span>Multi-factor ranking</span>
+        </div>
+      </article>
+
+      <nav class="stage-tabs" aria-label="Portfolio process stages">
+        <button type="button" data-stage="0" aria-selected="true" aria-label="Universe of equity securities"><span class="tab-index">01</span><span class="tab-label">Univ.</span></button>
+        <button type="button" data-stage="1" aria-selected="false" aria-label="Quantitative analysis"><span class="tab-index">02</span><span class="tab-label">Quant</span></button>
+        <button type="button" data-stage="2" aria-selected="false" aria-label="Fundamental analysis"><span class="tab-index">03</span><span class="tab-label">Fund.</span></button>
+        <button type="button" data-stage="3" aria-selected="false" aria-label="Stock selection"><span class="tab-index">04</span><span class="tab-label">Select</span></button>
+        <button type="button" data-stage="4" aria-selected="false" aria-label="Managed portfolio"><span class="tab-index">05</span><span class="tab-label">Port.</span></button>
+      </nav>
+      </div>
+
+      <div class="view-controls" aria-label="3D view controls">
+        <button type="button" data-view="zoom-out" aria-label="Zoom out">-</button>
+        <button type="button" data-view="reset" aria-label="Reset 3D view">Reset</button>
+        <button type="button" data-view="zoom-in" aria-label="Zoom in">+</button>
+      </div>
+
+      <p class="hint">Drag to spin or tilt. Wheel or pinch to zoom. Select a stage to contract the field.</p>
+
+      <footer class="legend" aria-label="Density narrows as the process moves inward">
+        <div class="legend-intro">
+          <strong>Density falls inward</strong>
+          <span>More stocks orbit outside; fewer survive each evidence layer.</span>
+        </div>
+        <div class="legend-step" style="--step-color:#d9a94e"><strong>Universe</strong><span>Every candidate</span></div>
+        <div class="legend-step" style="--step-color:#65b5ff"><strong>Quant</strong><span>Screen and rank</span></div>
+        <div class="legend-step" style="--step-color:#55d68b"><strong>Fundamentals</strong><span>Business quality</span></div>
+        <div class="legend-step" style="--step-color:#2f7fd2"><strong>Selection</strong><span>Strongest names</span></div>
+        <div class="legend-step" style="--step-color:#b9d7ff"><strong>Portfolio</strong><span>40-60 holdings</span></div>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module">
+    import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js";
+
+    const canvas = document.getElementById("universeCanvas");
+    const card = document.querySelector(".brochure-card");
+    const tickerLayer = document.getElementById("tickerLayer");
+    const tabs = Array.from(document.querySelectorAll(".stage-tabs button"));
+
+    const stages = [
+      {
+        number: "01",
+        kicker: "The starting point",
+        title: "Universe of Equity Securities",
+        count: "Global | every publicly traded candidate",
+        body: "Every listed equity starts as a candidate until evidence says otherwise. More names live on the outer edge; none are owned by default.",
+        evidence: ["Global public equities", "No default ownership", "Full candidate field", "Outer orbit density"]
+      },
+      {
+        number: "02",
+        kicker: "The evidence filter",
+        title: "Quantitative Analysis",
+        count: "About 8,000-9,000 pass structure | 900-1,000 pass financial tests",
+        body: "Proprietary screens filter for structure, risk, growth/value characteristics, and multi-factor ranking before judgment enters the process.",
+        evidence: ["Earnings and sales", "Margins", "Estimates", "Relative ranking"]
+      },
+      {
+        number: "03",
+        kicker: "The human test",
+        title: "Fundamental Analysis",
+        count: "Semi-finalists: Growth about 150 | Value about 150 | Intl ADR about 250",
+        body: "The Investment Committee validates earnings potential and sustainability through business analysis, peer comparison, growth durability, and management evaluation.",
+        evidence: ["Business quality", "Economic analysis", "Peer comparison", "Management review"]
+      },
+      {
+        number: "04",
+        kicker: "The final cut",
+        title: "Stock Selection",
+        count: "Growth 50-60 | Value 40-50 | Intl ADR 55-65",
+        body: "Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.",
+        evidence: ["Growth vs value", "Domestic vs ADR", "New candidate pressure", "Portfolio fit"]
+      },
+      {
+        number: "05",
+        kicker: "The destination and discipline",
+        title: "Managed Portfolio",
+        count: "40-60 holdings | risk-controlled | continuously monitored",
+        body: "A diversified portfolio holds companies that possess and maintain competitive financial characteristics, with sector, industry, and position-size limits.",
+        evidence: ["Risk controls", "Position sizing", "Sector limits", "Sell discipline"]
+      }
+    ];
+
+    const stageEls = {
+      number: document.getElementById("stageNumber"),
+      kicker: document.getElementById("stageKicker"),
+      title: document.getElementById("stageTitle"),
+      count: document.getElementById("stageCount"),
+      body: document.getElementById("stageBody"),
+      evidence: document.getElementById("stageEvidence")
+    };
+
+    const tickerSymbols = [
+      "AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "JPM", "V", "MA", "COST", "HD", "UNH",
+      "LLY", "AVGO", "XOM", "PG", "ORCL", "ADBE", "CRM", "NFLX", "AMD", "INTU", "NOW", "TXN",
+      "SAP", "ASML", "NVO", "TM", "AZN", "SHEL", "UL", "RY", "SHOP", "SONY", "SNY", "BHP",
+      "CAT", "GE", "AMAT", "ISRG", "BKNG", "LIN", "HON", "MS", "BX", "SCHW", "UBER", "PANW",
+      "TSM", "MRK", "ABBV", "PEP", "KO", "MCD", "TMO", "LOW", "DE", "BLK", "GS", "SPGI",
+      "LRCX", "KLAC", "MU", "SNPS", "CDNS", "ADI", "QCOM", "PFE", "RTX", "BA", "NEE", "DHR",
+      "PLD", "ETN", "TJX", "ELV", "CMG", "MAR", "MCO", "ICE", "ZTS", "REGN", "VRTX", "ADP"
+    ];
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true,
+      powerPreference: "high-performance"
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x06101f, 0.018);
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 160);
+    camera.position.set(0, 9.6, 23);
+
+    const root = new THREE.Group();
+    root.rotation.x = -0.62;
+    scene.add(root);
+
+    const ambient = new THREE.AmbientLight(0xd8eaff, 0.58);
+    scene.add(ambient);
+
+    const key = new THREE.PointLight(0xb9d7ff, 14, 64);
+    key.position.set(-8, 8, 8);
+    scene.add(key);
+
+    const rim = new THREE.PointLight(0x7ed6ff, 11, 58);
+    rim.position.set(9, -2, -10);
+    scene.add(rim);
+
+    /* All-blue institutional ramp (no gold, no green) — dim outer universe
+       brightening inward to a near-white star core. */
+    const stageColors = [0x6e8fc9, 0x5c9be0, 0x7fc0e8, 0xa9cef5, 0xeaf3ff];
+    const dimStageColors = [0x243a63, 0x22406b, 0x274c63, 0x2c4d72, 0x33506f];
+    const stageCssColors = ["#6e8fc9", "#5c9be0", "#7fc0e8", "#a9cef5", "#eaf3ff"];
+    const ringRadii = [12.4, 9.0, 6.0, 3.35, 1.35];
+    const ringWidth = [1.45, 0.95, 0.7, 0.52, 0.3];
+    const stageSurvival = [1, 0.42, 0.18, 0.085, 0.02];
+    const stageHeight = [4.4, 2.7, 1.65, 0.95, 0.48];
+    const stageSizeBoost = [1, 1.1, 1.28, 1.5, 2.05];
+    const labelMax = [24, 16, 10, 7, 5];
+    const labelRadius = [12.15, 9.0, 6.0, 3.45, 2.45];
+    const ellipseZ = 0.72;
+    const totalCandidates = 3200;
+    const particleRecords = [];
+    const pointsGeometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(totalCandidates * 3);
+    const colors = new Float32Array(totalCandidates * 3);
+    const sizes = new Float32Array(totalCandidates);
+    const color = new THREE.Color();
+
+    for (let i = 0; i < totalCandidates; i += 1) {
+      const score = Math.random();
+      const angle = Math.random() * Math.PI * 2;
+      const lane = Math.random() * 2 - 1;
+      const heightSeed = Math.random() * 2 - 1;
+      const baseSize = 0.052 + Math.random() * 0.05;
+      const radius = ringRadii[0] + lane * ringWidth[0] * 0.9;
+      const height = heightSeed * stageHeight[0] * 0.5;
+      color.setHex(stageColors[0]).offsetHSL(0, 0, (Math.random() - 0.5) * 0.18);
+      positions[i * 3] = Math.cos(angle) * radius;
+      positions[i * 3 + 1] = height;
+      positions[i * 3 + 2] = Math.sin(angle) * radius * ellipseZ;
+      colors[i * 3] = color.r;
+      colors[i * 3 + 1] = color.g;
+      colors[i * 3 + 2] = color.b;
+      sizes[i] = baseSize;
+      particleRecords.push({
+        angle,
+        lane,
+        score,
+        heightSeed,
+        baseSize,
+        currentRadius: radius,
+        currentHeight: height,
+        visible: 1,
+        colorR: color.r,
+        colorG: color.g,
+        colorB: color.b,
+        speed: 0.018 + Math.random() * 0.035,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+
+    pointsGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    pointsGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    pointsGeometry.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
+
+    const pointsMaterial = new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      vertexColors: true,
+      uniforms: { uPixelRatio: { value: renderer.getPixelRatio() } },
+      vertexShader: `
+        attribute float size;
+        varying vec3 vColor;
+        void main() {
+          vColor = color;
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = size * 520.0 * (1.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        varying vec3 vColor;
+        void main() {
+          vec2 uv = gl_PointCoord.xy - 0.5;
+          float d = length(uv);
+          float alpha = smoothstep(0.5, 0.06, d);
+          gl_FragColor = vec4(vColor, alpha * 0.92);
+        }
+      `
+    });
+
+    const stockPoints = new THREE.Points(pointsGeometry, pointsMaterial);
+    stockPoints.renderOrder = 1;
+    root.add(stockPoints);
+
+    const gravityGeometry = new THREE.CircleGeometry(1, 192);
+    const gravityMaterial = new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+      uniforms: {
+        uColor: { value: new THREE.Color(0x4abfff) },
+        uPulse: { value: 0 },
+        uStrength: { value: 1 }
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform vec3 uColor;
+        uniform float uPulse;
+        uniform float uStrength;
+        varying vec2 vUv;
+        void main() {
+          vec2 p = (vUv - 0.5) * 2.0;
+          float d = length(p);
+          float mask = 1.0 - smoothstep(0.98, 1.04, d);
+          float fill = (1.0 - smoothstep(0.08, 1.0, d)) * 0.09;
+          float rim = smoothstep(0.56, 0.86, d) * (1.0 - smoothstep(0.86, 1.02, d));
+          float thump = smoothstep(0.72 + uPulse * 0.08, 0.94, d) * (1.0 - smoothstep(0.94, 1.04, d));
+          float alpha = (fill + rim * 0.18 + thump * 0.26) * mask * uStrength;
+          gl_FragColor = vec4(uColor, alpha);
+        }
+      `
+    });
+    const gravityField = new THREE.Mesh(gravityGeometry, gravityMaterial);
+    gravityField.rotation.x = -Math.PI / 2;
+    gravityField.position.y = -0.14;
+    gravityField.renderOrder = -2;
+    gravityField.userData.radius = ringRadii[0] + ringWidth[0] * 1.1;
+    root.add(gravityField);
+
+    const coreGeometry = new THREE.SphereGeometry(1.08, 48, 48);
+    const coreMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xdcecff,
+      emissive: 0x2564a8,
+      emissiveIntensity: 1.1,
+      roughness: 0.22,
+      metalness: 0.1,
+      transmission: 0.38,
+      transparent: true,
+      opacity: 0.96
+    });
+    const core = new THREE.Mesh(coreGeometry, coreMaterial);
+    core.renderOrder = 3;
+    root.add(core);
+
+    const haloGeometry = new THREE.SphereGeometry(1.82, 48, 48);
+    const haloMaterial = new THREE.MeshBasicMaterial({
+      color: 0x65b5ff,
+      transparent: true,
+      opacity: 0.2,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const halo = new THREE.Mesh(haloGeometry, haloMaterial);
+    halo.renderOrder = 2;
+    root.add(halo);
+
+    function sceneFocusX() {
+      return card.getBoundingClientRect().width < 760 ? 0 : -3.7;
+    }
+
+    const labelRecords = tickerSymbols.map((symbol, index) => {
+      const el = document.createElement("span");
+      el.className = "ticker";
+      el.textContent = symbol;
+      tickerLayer.appendChild(el);
+      return {
+        symbol,
+        el,
+        rank: index,
+        currentRadius: labelRadius[0],
+        currentAngle: ((index % labelMax[0]) / labelMax[0]) * Math.PI * 2,
+        currentHeight: 0,
+        visible: 0,
+        speed: 0.006 + (index % 5) * 0.001
+      };
+    });
+
+    const mouse = { x: 0, y: 0 };
+    let activeStage = 0;
+    let targetStage = 0;
+    let gravityImpulse = 0;
+    const projection = new THREE.Vector3();
+    const activeColor = new THREE.Color();
+    const dimColor = new THREE.Color();
+    const view = {
+      rotX: -0.62,
+      rotY: 0.04,
+      targetRotX: -0.62,
+      targetRotY: 0.04,
+      distance: 24,
+      targetDistance: 24,
+      defaultDistance: 24,
+      minDistance: 7,
+      maxDistance: 62,
+      dragging: false,
+      userControlled: false
+    };
+    const activePointers = new Map();
+    let dragStart = null;
+    let pinchStart = null;
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function defaultDistanceForWidth(width) {
+      return width < 760 ? 31 : width < 1180 ? 27 : 24;
+    }
+
+    function setZoomDistance(distance) {
+      view.userControlled = true;
+      view.targetDistance = clamp(distance, view.minDistance, view.maxDistance);
+    }
+
+    function resetView() {
+      view.userControlled = false;
+      view.targetRotX = -0.62;
+      view.targetRotY = 0.04;
+      view.targetDistance = view.defaultDistance;
+    }
+
+    function pointerDistance() {
+      const pointers = Array.from(activePointers.values());
+      if (pointers.length < 2) return 0;
+      const dx = pointers[0].x - pointers[1].x;
+      const dy = pointers[0].y - pointers[1].y;
+      return Math.hypot(dx, dy);
+    }
+
+    function setStage(index) {
+      targetStage = index;
+      activeStage = index;
+      const data = stages[index];
+      stageEls.number.textContent = data.number;
+      stageEls.kicker.textContent = data.kicker;
+      stageEls.title.textContent = data.title;
+      stageEls.count.textContent = data.count;
+      stageEls.body.textContent = data.body;
+      stageEls.evidence.innerHTML = "";
+      data.evidence.forEach((item) => {
+        const span = document.createElement("span");
+        span.textContent = item;
+        stageEls.evidence.appendChild(span);
+      });
+      tabs.forEach((tab) => {
+        tab.setAttribute("aria-selected", String(Number(tab.dataset.stage) === index));
+      });
+      gravityImpulse = 1;
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => setStage(Number(tab.dataset.stage)));
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      mouse.x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      mouse.y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    });
+
+    canvas.addEventListener("pointerdown", (event) => {
+      if (event.button !== undefined && event.button !== 0) return;
+      event.preventDefault();
+      canvas.setPointerCapture(event.pointerId);
+      activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      view.dragging = true;
+      view.userControlled = true;
+      card.classList.add("is-dragging");
+      if (activePointers.size === 1) {
+        dragStart = {
+          x: event.clientX,
+          y: event.clientY,
+          rotX: view.targetRotX,
+          rotY: view.targetRotY
+        };
+        pinchStart = null;
+      } else if (activePointers.size === 2) {
+        pinchStart = {
+          distance: pointerDistance(),
+          zoom: view.targetDistance
+        };
+      }
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!activePointers.has(event.pointerId)) return;
+      event.preventDefault();
+      activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (activePointers.size >= 2 && pinchStart) {
+        const distance = pointerDistance();
+        if (distance > 0) {
+          view.targetDistance = clamp(pinchStart.zoom * (pinchStart.distance / distance), view.minDistance, view.maxDistance);
+        }
+        return;
+      }
+      if (!dragStart) return;
+      const dx = event.clientX - dragStart.x;
+      const dy = event.clientY - dragStart.y;
+      view.targetRotY = dragStart.rotY + dx * 0.008;
+      view.targetRotX = dragStart.rotX + dy * 0.008;
+    });
+
+    function finishPointer(event) {
+      activePointers.delete(event.pointerId);
+      if (event.pointerId !== undefined) {
+        try {
+          canvas.releasePointerCapture(event.pointerId);
+        } catch {
+          // The browser may have already released capture after a cancelled pointer.
+        }
+      }
+      if (activePointers.size === 0) {
+        view.dragging = false;
+        dragStart = null;
+        pinchStart = null;
+        card.classList.remove("is-dragging");
+      } else {
+        const next = Array.from(activePointers.values())[0];
+        dragStart = {
+          x: next.x,
+          y: next.y,
+          rotX: view.targetRotX,
+          rotY: view.targetRotY
+        };
+        pinchStart = activePointers.size >= 2 ? { distance: pointerDistance(), zoom: view.targetDistance } : null;
+      }
+    }
+
+    canvas.addEventListener("pointerup", finishPointer);
+    canvas.addEventListener("pointercancel", finishPointer);
+    canvas.addEventListener("pointerleave", (event) => {
+      if (activePointers.has(event.pointerId)) finishPointer(event);
+    });
+
+    canvas.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      setZoomDistance(view.targetDistance + event.deltaY * 0.025);
+    }, { passive: false });
+
+    canvas.addEventListener("dblclick", resetView);
+
+    document.querySelectorAll("[data-view]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const action = button.dataset.view;
+        if (action === "zoom-in") setZoomDistance(view.targetDistance - 4);
+        if (action === "zoom-out") setZoomDistance(view.targetDistance + 4);
+        if (action === "reset") resetView();
+      });
+    });
+
+    function resize() {
+      const rect = card.getBoundingClientRect();
+      renderer.setSize(rect.width, rect.height, false);
+      camera.aspect = rect.width / rect.height;
+      camera.updateProjectionMatrix();
+      const focusX = sceneFocusX();
+      root.position.x = focusX;
+      view.defaultDistance = defaultDistanceForWidth(rect.width);
+      if (!view.userControlled) {
+        view.distance = view.defaultDistance;
+        view.targetDistance = view.defaultDistance;
+      } else {
+        view.targetDistance = clamp(view.targetDistance, view.minDistance, view.maxDistance);
+      }
+      camera.position.z = view.distance;
+      camera.position.y = rect.width < 760 ? 10.8 : 9.3;
+      camera.lookAt(0, 0, 0);
+    }
+    window.addEventListener("resize", resize, { passive: true });
+    resize();
+
+    function updateTickers(time) {
+      const rect = card.getBoundingClientRect();
+      const maxLabels = labelMax[activeStage];
+      labelRecords.forEach((record, index) => {
+        const slot = index % maxLabels;
+        const targetVisible = index < maxLabels ? 1 : 0;
+        const slotAngle = (slot / maxLabels) * Math.PI * 2 + time * record.speed;
+        const ringOffset = ((slot % 3) - 1) * ringWidth[activeStage] * 0.18;
+        const targetRadius = labelRadius[activeStage] + ringOffset;
+        const targetHeight = ((slot % 5) - 2) * stageHeight[activeStage] * 0.08;
+
+        record.visible += (targetVisible - record.visible) * 0.12;
+        record.currentRadius += (targetRadius - record.currentRadius) * 0.08;
+        record.currentAngle += (slotAngle - record.currentAngle) * 0.08;
+        record.currentHeight += (targetHeight - record.currentHeight) * 0.08;
+
+        projection.set(
+          Math.cos(record.currentAngle) * record.currentRadius,
+          record.currentHeight,
+          Math.sin(record.currentAngle) * record.currentRadius * ellipseZ
+        );
+        projection.applyAxisAngle(new THREE.Vector3(1, 0, 0), root.rotation.x);
+        projection.applyAxisAngle(new THREE.Vector3(0, 1, 0), root.rotation.y);
+        projection.add(root.position);
+        projection.project(camera);
+
+        const x = (projection.x * 0.5 + 0.5) * rect.width;
+        const y = (-projection.y * 0.5 + 0.5) * rect.height;
+        const onScreen = projection.z < 1 && x > 18 && x < rect.width - 18 && y > 18 && y < rect.height - 18;
+        const depthFade = 0.45 + Math.max(0, 1 - Math.abs(projection.z)) * 0.55;
+        record.el.style.left = `${x}px`;
+        record.el.style.top = `${y}px`;
+        record.el.style.opacity = onScreen && record.visible > 0.05 ? String(Math.min(0.9, depthFade) * record.visible) : "0";
+        record.el.style.transform = `translate(-50%, -50%) scale(${0.76 + record.visible * 0.24})`;
+        record.el.style.borderColor = `${stageCssColors[activeStage]}88`;
+        record.el.style.color = "#eaf4ff";
+        record.el.classList.toggle("inner", activeStage >= 2);
+      });
+    }
+
+    function animate(now) {
+      const time = now * 0.001;
+      view.rotX += (view.targetRotX - view.rotX) * 0.12;
+      view.rotY += (view.targetRotY - view.rotY) * 0.12;
+      view.distance += (view.targetDistance - view.distance) * 0.12;
+      camera.position.z = view.distance;
+      const idleSpin = view.userControlled ? 0 : time * 0.035;
+      root.rotation.y = view.rotY + idleSpin;
+      root.rotation.x = view.rotX;
+      camera.lookAt(0, 0, 0);
+      core.rotation.y = time * 0.18;
+      const coreScaleTarget = activeStage === 4 ? 1.32 : 1.0;
+      core.scale.setScalar(core.scale.x + (coreScaleTarget - core.scale.x) * 0.06);
+
+      const pulse = (Math.sin(time * 2.3) + 1) * 0.5;
+      const coreBoost = activeStage === 4 ? 1.35 : 0.45;
+      coreMaterial.emissiveIntensity = 1.65 + pulse * 1.9 + coreBoost;
+      haloMaterial.opacity = 0.24 + pulse * 0.36 + coreBoost * 0.09;
+      halo.scale.setScalar(1.12 + pulse * 0.42 + coreBoost * 0.1);
+      activeColor.setHex(stageColors[activeStage]);
+      dimColor.setHex(dimStageColors[activeStage]);
+
+      const targetGravityRadius = activeStage === 4
+        ? 1.85
+        : ringRadii[activeStage] + ringWidth[activeStage] * (activeStage === 0 ? 1.12 : 0.85);
+      gravityImpulse *= 0.925;
+      gravityField.userData.radius += (targetGravityRadius - gravityField.userData.radius) * 0.065;
+      const gravityThump = 1 + pulse * 0.028 + gravityImpulse * 0.065;
+      const gravityRadius = gravityField.userData.radius * gravityThump;
+      gravityField.scale.set(gravityRadius, gravityRadius * ellipseZ, 1);
+      gravityMaterial.uniforms.uPulse.value = pulse * 0.78 + gravityImpulse * 0.44;
+      gravityMaterial.uniforms.uStrength.value = activeStage === 4 ? 1.36 : 0.9 + activeStage * 0.08;
+
+      const attr = pointsGeometry.getAttribute("position");
+      const sizeAttr = pointsGeometry.getAttribute("size");
+      const colorAttr = pointsGeometry.getAttribute("color");
+      particleRecords.forEach((record, index) => {
+        const offset = index * 3;
+        const survives = record.score <= stageSurvival[activeStage];
+        const targetVisible = survives ? 1 : 0;
+        record.visible += (targetVisible - record.visible) * 0.07;
+
+        /* Final stage: the survivors collapse INTO the star (everything ends
+           inside the core), instead of orbiting a small ring around it. */
+        const targetRadius = activeStage === 4
+          ? 0.18 + record.lane * 0.55
+          : ringRadii[activeStage] + record.lane * ringWidth[activeStage] * (activeStage === 0 ? 0.92 : 0.62);
+        const targetHeight = activeStage === 4
+          ? record.heightSeed * 0.4
+          : record.heightSeed * stageHeight[activeStage] * 0.5;
+        record.currentRadius += (targetRadius - record.currentRadius) * 0.05;
+        record.currentHeight += (targetHeight - record.currentHeight) * 0.055;
+
+        const angle = record.angle + time * record.speed * (activeStage === 0 ? 1 : 0.45);
+        attr.array[offset] = Math.cos(angle) * record.currentRadius;
+        attr.array[offset + 1] = record.currentHeight + Math.sin(time * 1.1 + record.phase) * 0.025;
+        attr.array[offset + 2] = Math.sin(angle) * record.currentRadius * ellipseZ;
+        sizeAttr.array[index] = record.baseSize * record.visible * stageSizeBoost[activeStage];
+
+        const mix = record.visible;
+        const targetR = dimColor.r * (1 - mix) + activeColor.r * mix;
+        const targetG = dimColor.g * (1 - mix) + activeColor.g * mix;
+        const targetB = dimColor.b * (1 - mix) + activeColor.b * mix;
+        record.colorR += (targetR - record.colorR) * 0.08;
+        record.colorG += (targetG - record.colorG) * 0.08;
+        record.colorB += (targetB - record.colorB) * 0.08;
+        colorAttr.array[offset] = record.colorR;
+        colorAttr.array[offset + 1] = record.colorG;
+        colorAttr.array[offset + 2] = record.colorB;
+      });
+      attr.needsUpdate = true;
+      sizeAttr.needsUpdate = true;
+      colorAttr.needsUpdate = true;
+
+      updateTickers(time);
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+
+    setStage(0);
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
