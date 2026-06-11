@@ -181,7 +181,16 @@
       transition: background .18s, border-color .18s;
     }
     .fs-modal__close:hover { background: rgba(255,255,255,0.14); border-color: var(--blue-soft); }
-    .fs-modal__frame { flex: 1; width: 100%; border: 0; background: #fff; }
+    .fs-modal__doc {
+      flex: 1; width: 100%; overflow: auto; background: #4a4f57;
+      -webkit-overflow-scrolling: touch;
+      padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 14px;
+    }
+    .fs-modal__doc canvas {
+      max-width: 100%; height: auto; border-radius: 2px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.45); background: #fff;
+    }
+    .fs-modal__status { color: #e8edf6; font-size: 0.92rem; padding: 28px 16px; text-align: center; margin: auto; }
     @media (max-width: 560px){
       .fs-modal__actions .fs-btn span { display: none; }
       .fs-modal__title { font-size: 0.82rem; }
@@ -300,29 +309,87 @@
           <button class="fs-modal__close" type="button" data-close aria-label="Close preview">&times;</button>
         </div>
       </div>
-      <iframe class="fs-modal__frame" id="fsModalFrame" title="Fact sheet preview"></iframe>
+      <div class="fs-modal__doc" id="fsModalDoc" tabindex="0">
+        <p class="fs-modal__status">Loading fact sheet&hellip;</p>
+      </div>
     </div>
   </div>
 
+  <!-- PDF.js renders the fact sheets to canvas so they display on every device,
+       including mobile (where an <iframe> PDF shows blank). Same-origin only —
+       the advisor-only PDFs are never sent to a third-party viewer. -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
   <script>
     (function () {
       var modal = document.getElementById("fsModal");
-      var frame = document.getElementById("fsModalFrame");
+      var doc = document.getElementById("fsModalDoc");
       var titleEl = document.getElementById("fsModalTitle");
       var newTab = document.getElementById("fsModalNew");
       var dl = document.getElementById("fsModalDownload");
+      var pdfjsLib = window.pdfjsLib || null;
+      if (pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
+      }
+      var token = 0; /* cancels an in-flight render when the user switches/closes */
+
+      function status(msg) {
+        doc.innerHTML = '<p class="fs-modal__status">' + msg + "</p>";
+      }
+
+      function render(url) {
+        var mine = ++token;
+        if (!pdfjsLib) {
+          status('Preview unavailable here &mdash; use &ldquo;New tab&rdquo; or &ldquo;Download&rdquo; above.');
+          return;
+        }
+        status("Loading fact sheet&hellip;");
+        pdfjsLib.getDocument(url).promise.then(function (pdf) {
+          if (mine !== token) return;
+          doc.innerHTML = "";
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          var avail = Math.max(280, doc.clientWidth - 28);
+          var chain = Promise.resolve();
+          for (var i = 1; i <= pdf.numPages; i++) {
+            (function (pageNum) {
+              chain = chain.then(function () {
+                if (mine !== token) return;
+                return pdf.getPage(pageNum).then(function (page) {
+                  if (mine !== token) return;
+                  var base = page.getViewport({ scale: 1 });
+                  var scale = avail / base.width;
+                  var vp = page.getViewport({ scale: scale * dpr });
+                  var canvas = document.createElement("canvas");
+                  canvas.width = vp.width;
+                  canvas.height = vp.height;
+                  canvas.style.width = vp.width / dpr + "px";
+                  canvas.style.height = vp.height / dpr + "px";
+                  doc.appendChild(canvas);
+                  return page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+                });
+              });
+            })(i);
+          }
+          chain.catch(function () {});
+        }).catch(function () {
+          if (mine !== token) return;
+          status('Couldn&rsquo;t display the preview &mdash; use &ldquo;New tab&rdquo; or &ldquo;Download&rdquo; above.');
+        });
+      }
 
       function open(pdf, title) {
         titleEl.textContent = title;
         newTab.href = pdf;
         dl.href = pdf;
-        frame.src = pdf + "#view=FitH";
         modal.hidden = false;
         document.body.style.overflow = "hidden";
+        doc.scrollTop = 0;
+        render(pdf);
       }
       function close() {
+        token++; /* cancel any in-flight render */
         modal.hidden = true;
-        frame.src = "";
+        doc.innerHTML = "";
         document.body.style.overflow = "";
       }
       Array.prototype.forEach.call(document.querySelectorAll("[data-pdf]"), function (btn) {
