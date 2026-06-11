@@ -563,8 +563,8 @@
     }
 
     .view-controls button[data-view="reset"] {
-      min-width: 58px;
-      padding: 0 10px;
+      min-width: 84px;
+      padding: 0 14px;
       font-size: 0.68rem;
       text-transform: uppercase;
     }
@@ -887,13 +887,11 @@
       </nav>
       </div>
 
-      <div class="view-controls" aria-label="3D view controls">
-        <button type="button" data-view="zoom-out" aria-label="Zoom out">-</button>
-        <button type="button" data-view="reset" aria-label="Reset 3D view">Reset</button>
-        <button type="button" data-view="zoom-in" aria-label="Zoom in">+</button>
+      <div class="view-controls" aria-label="View controls">
+        <button type="button" data-view="reset" aria-label="Recenter view">Recenter</button>
       </div>
 
-      <p class="hint">Drag to spin or tilt. Wheel or pinch to zoom. Select a stage to contract the field.</p>
+      <p class="hint">Drag to tilt slightly &middot; select a stage to contract the field</p>
 
       <footer class="legend" aria-label="Density narrows as the process moves inward">
         <div class="legend-intro">
@@ -1331,8 +1329,9 @@
       if (!dragStart) return;
       const dx = event.clientX - dragStart.x;
       const dy = event.clientY - dragStart.y;
-      view.targetRotY = dragStart.rotY + dx * 0.008;
-      view.targetRotX = dragStart.rotX + dy * 0.008;
+      /* Constrained to a slight tilt only — never a full 360 spin. */
+      view.targetRotY = clamp(dragStart.rotY + dx * 0.005, -0.16, 0.16);
+      view.targetRotX = clamp(dragStart.rotX + dy * 0.005, -0.78, -0.46);
     });
 
     function finishPointer(event) {
@@ -1368,8 +1367,7 @@
     });
 
     canvas.addEventListener("wheel", (event) => {
-      event.preventDefault();
-      setZoomDistance(view.targetDistance + event.deltaY * 0.025);
+      event.preventDefault(); /* size is locked — swallow wheel, no zoom */
     }, { passive: false });
 
     canvas.addEventListener("dblclick", resetView);
@@ -1390,13 +1388,12 @@
       camera.updateProjectionMatrix();
       const focusX = sceneFocusX();
       root.position.x = focusX;
+      /* Size is locked — zoom inputs all clamp to this fixed distance. */
       view.defaultDistance = defaultDistanceForWidth(rect.width);
-      if (!view.userControlled) {
-        view.distance = view.defaultDistance;
-        view.targetDistance = view.defaultDistance;
-      } else {
-        view.targetDistance = clamp(view.targetDistance, view.minDistance, view.maxDistance);
-      }
+      view.minDistance = view.defaultDistance;
+      view.maxDistance = view.defaultDistance;
+      view.distance = view.defaultDistance;
+      view.targetDistance = view.defaultDistance;
       camera.position.z = view.distance;
       camera.position.y = rect.width < 760 ? 10.8 : 9.3;
       camera.lookAt(0, 0, 0);
@@ -1450,8 +1447,7 @@
       view.rotY += (view.targetRotY - view.rotY) * 0.12;
       view.distance += (view.targetDistance - view.distance) * 0.12;
       camera.position.z = view.distance;
-      const idleSpin = view.userControlled ? 0 : time * 0.035;
-      root.rotation.y = view.rotY + idleSpin;
+      root.rotation.y = view.rotY;
       root.rotation.x = view.rotX;
       camera.lookAt(0, 0, 0);
       core.rotation.y = time * 0.18;
