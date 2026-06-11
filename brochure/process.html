@@ -1088,14 +1088,14 @@
 
     /* Heat ramp: red universe -> orange -> yellow -> green -> bright-blue core.
        Surviving dots (and each ring) take the active stage's color. */
-    const stageColors = [0xff3b30, 0xff9500, 0xffd60a, 0x34c759, 0x8fd0ff];
+    const stageColors = [0xff5848, 0xff9500, 0xffd60a, 0x34c759, 0x8fd0ff];
     const dimStageColors = [0x3a1411, 0x3a2410, 0x3a3410, 0x123a1f, 0x18334f];
     const stageCssColors = ["#ff3b30", "#ff9500", "#ffd60a", "#34c759", "#8fd0ff"];
     const ringRadii = [12.4, 9.0, 6.0, 3.35, 1.35];
     const ringWidth = [1.45, 0.95, 0.7, 0.52, 0.3];
     const stageSurvival = [1, 0.2, 0.057, 0.017, 0.008];
     const stageHeight = [0.5, 0.42, 0.32, 0.22, 0.12];
-    const stageSizeBoost = [1, 1.3, 1.7, 2.2, 3.3];
+    const stageSizeBoost = [1.85, 1.5, 1.7, 2.2, 3.3];
     const labelMax = [24, 16, 10, 7, 5];
     const labelRadius = [12.15, 9.0, 6.0, 3.45, 2.45];
     const ellipseZ = 0.72;
@@ -1167,7 +1167,7 @@
           vec2 uv = gl_PointCoord.xy - 0.5;
           float d = length(uv);
           float alpha = smoothstep(0.5, 0.06, d);
-          gl_FragColor = vec4(vColor, alpha * 0.92);
+          gl_FragColor = vec4(vColor * 1.25, alpha);
         }
       `
     });
@@ -1217,6 +1217,7 @@
     gravityField.position.y = -0.14;
     gravityField.renderOrder = -2;
     gravityField.userData.radius = ringRadii[0] + ringWidth[0] * 1.1;
+    gravityField.visible = false; /* no glowing disc engulfing the orb */
     root.add(gravityField);
 
     /* Four persistent concentric rings around the star. They lie flat in the
@@ -1267,6 +1268,7 @@
     });
     const halo = new THREE.Mesh(haloGeometry, haloMaterial);
     halo.renderOrder = 2;
+    halo.visible = false; /* no pulsing glow shell around the orb */
     root.add(halo);
 
     function sceneFocusX() {
