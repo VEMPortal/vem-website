@@ -449,6 +449,19 @@
   slides[0].classList.add("is-in");
   setActive(0);
 
+  /* ---- Deep-link: land on a specific slide via #hash (e.g. "Back to Brochure"
+     from the full-screen universe returns here, to the start of that slide) ---- */
+  (function () {
+    var id = (window.location.hash || "").replace(/^#/, "");
+    if (!id) return;
+    var target = document.getElementById(id);
+    var idx = target ? slides.indexOf(target) : -1;
+    if (idx > 0) {
+      deck.scrollTo({ left: idx * deck.clientWidth, behavior: "auto" });
+      activate(idx);
+    }
+  })();
+
   /* keep alignment on resize */
   var rT = null;
   window.addEventListener("resize", function () {
