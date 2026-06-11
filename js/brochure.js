@@ -105,31 +105,121 @@
     });
   });
 
-  /* funnel hover sync: band <-> lineup item (shared data-k) */
-  (function bindFunnelSync() {
-    var pairs = {};
-    Array.prototype.forEach.call(document.querySelectorAll("[data-k]"), function (el) {
-      var k = el.getAttribute("data-k");
-      (pairs[k] = pairs[k] || []).push(el);
-    });
-    Object.keys(pairs).forEach(function (k) {
-      pairs[k].forEach(function (el) {
-        el.addEventListener("mouseenter", function () {
-          pairs[k].forEach(function (o) { o.classList.add("is-hot"); });
-        });
-        el.addEventListener("mouseleave", function () {
-          pairs[k].forEach(function (o) { o.classList.remove("is-hot"); });
-        });
-        // clicking a funnel band opens its lineup item
-        if (el.classList.contains("bfunnel-band")) {
-          el.addEventListener("click", function () {
-            pairs[k].forEach(function (o) {
-              if (o.hasAttribute("data-expand")) o.setAttribute("aria-expanded", "true");
-            });
-          });
-        }
+  /* =====================================================================
+     STRATEGY-PLATFORM FUNNEL (website engine, ported)
+     Clamped-particle funnel: every dot is constrained to the funnel's
+     half-width at its current height, so nothing falls outside.
+     ===================================================================== */
+  var funnel = (function () {
+    var root = document.querySelector("[data-process]");
+    if (!root) return null;
+    var bands  = Array.prototype.slice.call(root.querySelectorAll(".pband-g"));
+    var stages = Array.prototype.slice.call(root.querySelectorAll(".pstage"));
+    var svg    = root.querySelector(".pfunnel__svg");
+    if (!bands.length || !stages.length) return null;
+    var maxFilled = -1;
+
+    function fillTo(n) {
+      for (var i = 0; i <= n && i < bands.length; i++) bands[i].classList.add("is-filled");
+      if (n > maxFilled) maxFilled = n;
+    }
+    function setActiveBand(k) { bands.forEach(function (b, i) { b.classList.toggle("is-active", i === k); }); }
+    function openIndex() { for (var i = 0; i < stages.length; i++) if (stages[i].classList.contains("is-open")) return i; return -1; }
+    function openStage(k) {
+      stages.forEach(function (s, i) {
+        var on = i === k;
+        s.classList.toggle("is-open", on);
+        s.querySelector(".pstage__head").setAttribute("aria-expanded", String(on));
       });
+      setActiveBand(k); fillTo(k);
+    }
+    stages.forEach(function (s, k) {
+      var head = s.querySelector(".pstage__head");
+      head.addEventListener("click", function () {
+        if (s.classList.contains("is-open")) {
+          s.classList.remove("is-open"); head.setAttribute("aria-expanded", "false"); setActiveBand(-1);
+        } else { openStage(k); }
+      });
+      s.addEventListener("mouseenter", function () { setActiveBand(k); });
+      s.addEventListener("mouseleave", function () { setActiveBand(openIndex()); });
     });
+    /* clicking a funnel band opens its matching stage */
+    bands.forEach(function (b, k) {
+      b.querySelector(".pband").addEventListener("click", function () { openStage(k); });
+    });
+    setActiveBand(0);
+
+    function pour() {
+      var i = 0; fillTo(0);
+      var t = setInterval(function () { i++; if (i >= bands.length) { clearInterval(t); return; } fillTo(i); }, 430);
+    }
+
+    /* ---- clamped falling particles ---- */
+    var EDGES = [[0,172],[68,128],[147,89],[226,58],[305,39],[384,34]];
+    var CULL_Y = [68,147,226,305];
+    var SURVIVE = [0.55,0.5,0.48,0.62];
+    var CX = 180, BOTTOM = 384;
+    function halfW(y) {
+      for (var i = 1; i < EDGES.length; i++) {
+        if (y <= EDGES[i][0]) { var a = EDGES[i-1], b = EDGES[i]; var p = (y-a[0])/(b[0]-a[0]); return a[1]+(b[1]-a[1])*p; }
+      }
+      return EDGES[EDGES.length-1][1];
+    }
+    var particles = [], particlesOn = false, prafId = null;
+    function resetParticle(p, randomY) {
+      p.y = randomY ? Math.random()*BOTTOM : -4 - Math.random()*60;
+      p.lane = (Math.random()*2-1)*0.92;
+      p.speed = 0.22 + Math.random()*0.3;
+      p.alive = true; p.nextCull = 0;
+      while (p.nextCull < CULL_Y.length && p.y > CULL_Y[p.nextCull]) p.nextCull++;
+      p.el.setAttribute("opacity", "0");
+    }
+    function makeParticle(group, randomY) {
+      var el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      el.setAttribute("r", (1.4 + Math.random()*1.1).toFixed(2));
+      el.setAttribute("class", "pgrain");
+      group.appendChild(el);
+      var p = { el: el, y: 0, lane: 0, speed: 0, alive: true, nextCull: 0 };
+      resetParticle(p, randomY); return p;
+    }
+    function stepParticles() {
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.y += p.speed;
+        if (p.nextCull < CULL_Y.length && p.y >= CULL_Y[p.nextCull]) {
+          if (Math.random() > SURVIVE[p.nextCull]) p.alive = false;
+          p.nextCull++;
+        }
+        if (!p.alive || p.y > BOTTOM + 4) { resetParticle(p); continue; }
+        var x = CX + p.lane * (halfW(p.y) - 7);
+        var fadeIn = Math.min(1, (p.y + 4) / 26);
+        var depth = Math.min(1, p.y / BOTTOM);
+        var op = Math.min(0.96, (0.55 + 0.41 * depth) * fadeIn);
+        p.el.setAttribute("opacity", op.toFixed(2));
+        p.el.setAttribute("cx", x.toFixed(1));
+        p.el.setAttribute("cy", p.y.toFixed(1));
+      }
+      if (particlesOn) prafId = requestAnimationFrame(stepParticles);
+    }
+    function startParticles() {
+      if (particlesOn || reduced || !svg) return;
+      if (!particles.length) {
+        var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        group.setAttribute("aria-hidden", "true"); group.setAttribute("class", "pgrains");
+        svg.appendChild(group);
+        for (var i = 0; i < 34; i++) particles.push(makeParticle(group, true));
+      }
+      particlesOn = true; prafId = requestAnimationFrame(stepParticles);
+    }
+    function stopParticles() { particlesOn = false; if (prafId) { cancelAnimationFrame(prafId); prafId = null; } }
+
+    var poured = false;
+    return {
+      el: root.closest(".slide"),
+      start: function () { if (!poured) { poured = true; if (reduced) fillTo(bands.length - 1); else pour(); } startParticles(); },
+      stop: stopParticles,
+      finalize: function () { fillTo(bands.length - 1); }
+    };
   })();
 
   /* =====================================================================
@@ -149,6 +239,7 @@
     var activeStage = 0;
     var running = false;
     var raf = null;
+    var zoomed = false; /* zoom mode: brighter, freer rotation */
 
     /* ---- particles: orbiting dots that drift inward; most are filtered ---- */
     var P = [];
@@ -194,29 +285,46 @@
         ctx.arc(CX, CY, B[z + 1], 0, Math.PI * 2, true);
         ctx.fillStyle = fills[z]; ctx.fill();
       }
-      /* core glow */
-      var g = ctx.createRadialGradient(CX, CY, 4, CX, CY, B[4]);
-      g.addColorStop(0, "rgba(148,171,214,0.95)");
-      g.addColorStop(0.55, "rgba(92,124,184,0.55)");
-      g.addColorStop(1, "rgba(92,124,184,0.10)");
-      ctx.beginPath(); ctx.arc(CX, CY, B[4], 0, Math.PI * 2);
-      ctx.fillStyle = g; ctx.fill();
       /* ring strokes */
       for (var k = 0; k < 5; k++) {
         ctx.beginPath(); ctx.arc(CX, CY, B[k], 0, Math.PI * 2);
         var isActive = (k === activeStage) || (activeStage === 4 && k === 4);
         ctx.strokeStyle = isActive ? "rgba(148,171,214,0.95)" : "rgba(148,171,214," + (0.16 + k * 0.07) + ")";
-        ctx.lineWidth = isActive ? 2.6 : 1.1;
-        if (isActive) { ctx.shadowColor = "rgba(148,171,214,0.8)"; ctx.shadowBlur = 14; }
+        ctx.lineWidth = isActive ? (zoomed ? 3.2 : 2.6) : 1.1;
+        if (isActive) { ctx.shadowColor = "rgba(148,171,214," + (zoomed ? 0.95 : 0.8) + ")"; ctx.shadowBlur = zoomed ? 22 : 14; }
         ctx.stroke();
         ctx.shadowBlur = 0;
       }
-      /* particles */
+      /* ---- the portfolio core: a lit 3D sphere (the sun/planet) ---- */
+      var cr = B[4];
+      var lx = CX - cr * 0.34, ly = CY - cr * 0.34;   /* light from upper-left */
+      /* outer atmosphere glow */
+      var halo = ctx.createRadialGradient(CX, CY, cr * 0.7, CX, CY, cr * (zoomed ? 2.1 : 1.7));
+      halo.addColorStop(0, "rgba(148,171,214," + (zoomed ? 0.6 : 0.45) + ")");
+      halo.addColorStop(1, "rgba(148,171,214,0)");
+      ctx.beginPath(); ctx.arc(CX, CY, cr * (zoomed ? 2.1 : 1.7), 0, Math.PI * 2);
+      ctx.fillStyle = halo; ctx.fill();
+      /* the sphere body — offset radial gradient = shaded ball */
+      var sph = ctx.createRadialGradient(lx, ly, cr * 0.12, CX, CY, cr * 1.05);
+      sph.addColorStop(0, "rgba(234,243,255,0.99)");
+      sph.addColorStop(0.34, "rgba(160,184,224,0.96)");
+      sph.addColorStop(0.72, "rgba(78,108,168,0.92)");
+      sph.addColorStop(1, "rgba(26,42,82,0.96)");
+      ctx.beginPath(); ctx.arc(CX, CY, cr, 0, Math.PI * 2);
+      ctx.fillStyle = sph; ctx.fill();
+      /* rim light on the shadow side */
+      ctx.beginPath(); ctx.arc(CX, CY, cr, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(148,171,214,0.5)"; ctx.lineWidth = 1; ctx.stroke();
+      /* specular highlight */
+      ctx.beginPath(); ctx.arc(lx, ly, cr * 0.2, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255,255,255,0.55)"; ctx.fill();
+      /* particles — flowing in toward the sphere */
+      var boost = zoomed ? 1 : 0;
       for (var i = 0; i < P.length; i++) {
         var p = P[i];
-        var a = p.alpha * (p.dying > 0 ? p.dying : 1);
+        var a = Math.min(1, p.alpha * (p.dying > 0 ? p.dying : 1) + boost * 0.28);
         var x = CX + Math.cos(p.a) * p.r, y = CY + Math.sin(p.a) * p.r;
-        ctx.beginPath(); ctx.arc(x, y, p.size, 0, Math.PI * 2);
+        ctx.beginPath(); ctx.arc(x, y, p.size + boost * 0.5, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(234,242,251," + a.toFixed(3) + ")";
         ctx.fill();
       }
@@ -231,26 +339,48 @@
     }
     function stop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = null; } }
 
-    /* ---- pointer tilt: the scene morphs under the mouse ---- */
-    var tilt = { x: 58, z: 0 }, target = { x: 58, z: 0 }, tiltRaf = null;
+    /* ---- pointer tilt + zoom: the scene morphs and can spin ---- */
+    var orbitEl = scene.closest(".orbit");
+    var tilt = { x: 58, z: 0 }, target = { x: 58, z: 0 }, spin = 0, tiltRaf = null;
+    function applyTransform() {
+      var scale = zoomed ? 1.16 : 1;
+      plane.style.transform = "translate(-50%,-50%) scale(" + scale + ") rotateX(" + tilt.x.toFixed(2) + "deg) rotateZ(" + (tilt.z + spin).toFixed(2) + "deg)";
+    }
     function tiltLoop() {
       tilt.x += (target.x - tilt.x) * 0.08;
       tilt.z += (target.z - tilt.z) * 0.08;
-      plane.style.transform = "translate(-50%,-50%) rotateX(" + tilt.x.toFixed(2) + "deg) rotateZ(" + tilt.z.toFixed(2) + "deg)";
-      if (Math.abs(target.x - tilt.x) > 0.05 || Math.abs(target.z - tilt.z) > 0.05) {
-        tiltRaf = requestAnimationFrame(tiltLoop);
-      } else { tiltRaf = null; }
+      if (zoomed) spin += 0.16;          /* zoom mode slowly rotates the disc */
+      applyTransform();
+      var moving = zoomed || Math.abs(target.x - tilt.x) > 0.05 || Math.abs(target.z - tilt.z) > 0.05;
+      if (moving && !reduced) { tiltRaf = requestAnimationFrame(tiltLoop); } else { tiltRaf = null; }
     }
     function kickTilt() { if (!tiltRaf && !reduced) tiltRaf = requestAnimationFrame(tiltLoop); }
     scene.addEventListener("pointermove", function (e) {
       var r = scene.getBoundingClientRect();
       var nx = (e.clientX - r.left) / r.width - 0.5;   /* -0.5 .. 0.5 */
       var ny = (e.clientY - r.top) / r.height - 0.5;
-      target.x = 58 - ny * 14;   /* 51 .. 65 */
-      target.z = nx * 9;         /* -4.5 .. 4.5 */
+      var range = zoomed ? 30 : 14;
+      target.x = 58 - ny * range;
+      if (!zoomed) target.z = nx * 9;    /* in zoom mode, auto-spin owns Z */
       kickTilt();
     });
-    scene.addEventListener("pointerleave", function () { target.x = 58; target.z = 0; kickTilt(); });
+    scene.addEventListener("pointerleave", function () { target.x = 58; if (!zoomed) target.z = 0; kickTilt(); });
+
+    /* ---- zoom toggle: click the button (or the universe) to zoom in ---- */
+    var zoomBtn = document.getElementById("orbitZoom");
+    function setZoom(on) {
+      zoomed = on;
+      if (orbitEl) orbitEl.classList.toggle("is-zoomed", zoomed);
+      if (zoomBtn) {
+        zoomBtn.setAttribute("aria-pressed", String(zoomed));
+        var lbl = zoomBtn.querySelector(".orbit__zoomlabel");
+        if (lbl) lbl.textContent = zoomed ? "Reset view" : "Zoom in";
+      }
+      if (!zoomed) { target.x = 58; target.z = 0; spin = spin % 360; }
+      if (reduced) draw();
+      kickTilt();
+    }
+    if (zoomBtn) zoomBtn.addEventListener("click", function () { setZoom(!zoomed); });
 
     /* ---- stage activation ---- */
     var stages = Array.prototype.slice.call(document.querySelectorAll(".orbit__stage"));
@@ -276,21 +406,6 @@
      ===================================================================== */
   var played = new WeakSet();
 
-  function pourFunnel(slide) {
-    var svg = slide.querySelector(".bro-funnel__svg");
-    if (!svg) return;
-    var bands = Array.prototype.slice.call(svg.querySelectorAll(".bfunnel-band"));
-    var labels = Array.prototype.slice.call(svg.querySelectorAll(".bfunnel-label"));
-    bands.forEach(function (b, i) {
-      setTimeout(function () {
-        b.classList.add("is-poured");
-        if (labels[i]) labels[i].classList.add("is-poured");
-      }, reduced ? 0 : 240 * i + 250);
-    });
-    setTimeout(function () { svg.classList.add("grains-on"); },
-      reduced ? 0 : 240 * bands.length + 500);
-  }
-
   function igniteFrame(slide) {
     var nodes = Array.prototype.slice.call(slide.querySelectorAll(".frame__node"));
     nodes.forEach(function (n, i) {
@@ -302,13 +417,11 @@
   function playSlide(slide) {
     if (!played.has(slide)) {
       played.add(slide);
-      pourFunnel(slide);
       igniteFrame(slide);
     }
-    /* orbit runs while visible, pauses when not */
-    if (orbit) {
-      if (slide === orbit.el) orbit.start(); else orbit.stop();
-    }
+    /* orbit + funnel run while visible, pause when not */
+    if (orbit) { if (slide === orbit.el) orbit.start(); else orbit.stop(); }
+    if (funnel) { if (slide === funnel.el) funnel.start(); else funnel.stop(); }
   }
 
   /* ---- Track active slide ---- */
@@ -346,9 +459,12 @@
   /* ---- Print: open everything, draw orbit once ---- */
   function finalizeForPrint() {
     slides.forEach(function (s) { s.classList.add("is-in"); played.add(s); });
-    Array.prototype.forEach.call(document.querySelectorAll(".bfunnel-band, .bfunnel-label"), function (el) { el.classList.add("is-poured"); });
     Array.prototype.forEach.call(document.querySelectorAll(".frame__node"), function (el) { el.classList.add("is-lit"); });
     Array.prototype.forEach.call(document.querySelectorAll("[data-expand]"), function (el) { el.setAttribute("aria-expanded", "true"); });
+    Array.prototype.forEach.call(document.querySelectorAll(".pstage"), function (el) {
+      el.classList.add("is-open"); var h = el.querySelector(".pstage__head"); if (h) h.setAttribute("aria-expanded", "true");
+    });
+    if (funnel) funnel.finalize();
     if (orbit) orbit.draw();
   }
   window.addEventListener("beforeprint", finalizeForPrint);

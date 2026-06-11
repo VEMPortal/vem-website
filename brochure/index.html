@@ -6,14 +6,14 @@
   <title>Firm Brochure â€” Vann Equity Management</title>
   <meta name="description" content="Vann Equity Management â€” a fiduciary, quantitatively driven asset manager. An interactive overview of our philosophy, process, strategy platform, and GIPS-verified performance context." />
   <meta name="robots" content="noindex" />
-  <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=65" />
+  <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=66" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../css/tokens.css?v=65" />
-  <link rel="stylesheet" href="../css/brochure.css?v=65" />
+  <link rel="stylesheet" href="../css/tokens.css?v=66" />
+  <link rel="stylesheet" href="../css/brochure.css?v=66" />
 </head>
 <body class="bro">
 
@@ -49,8 +49,8 @@
     <section class="slide slide--cover" data-label="Cover" aria-label="Cover">
       <div class="slide__media" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="../assets/img/hero-arch.webp?v=65" />
-          <img src="../assets/img/hero-arch.jpg?v=65" alt="" />
+          <source type="image/webp" srcset="../assets/img/hero-arch.webp?v=66" />
+          <img src="../assets/img/hero-arch.jpg?v=66" alt="" />
         </picture>
       </div>
       <div class="slide__scrim" aria-hidden="true"></div>
@@ -99,8 +99,8 @@
           </div>
           <figure class="bro-portrait">
             <picture>
-              <source type="image/webp" srcset="../assets/img/aaron-feature.webp?v=65" />
-              <img src="../assets/img/aaron-feature.jpg?v=65" alt="Aaron Vann, Chief Investment Officer of Vann Equity Management" width="1100" height="1375" loading="lazy" />
+              <source type="image/webp" srcset="../assets/img/aaron-feature.webp?v=66" />
+              <img src="../assets/img/aaron-feature.jpg?v=66" alt="Aaron Vann, Chief Investment Officer of Vann Equity Management" width="1100" height="1375" loading="lazy" />
             </picture>
             <figcaption><b>Aaron Vann</b> &middot; Chief Investment Officer</figcaption>
           </figure>
@@ -111,7 +111,7 @@
     <!-- 03 â€” WHAT SETS VEM APART -->
     <section class="slide slide--navy2" data-label="What Sets Us Apart" aria-label="What Sets VEM Apart">
       <div class="slide__bg" aria-hidden="true">
-        <img src="../assets/img/manage-equity.jpg?v=65" alt="" loading="lazy" />
+        <img src="../assets/img/manage-equity.jpg?v=66" alt="" loading="lazy" />
       </div>
       <div class="slide__inner">
         <p class="bro-eyebrow">What Sets VEM Apart</p>
@@ -155,8 +155,8 @@
     <section class="slide slide--navy" data-label="Philosophy" aria-label="Investment Philosophy">
       <div class="slide__bg" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="../assets/img/philosophy-study.webp?v=65" />
-          <img src="../assets/img/philosophy-study.jpg?v=65" alt="" loading="lazy" />
+          <source type="image/webp" srcset="../assets/img/philosophy-study.webp?v=66" />
+          <img src="../assets/img/philosophy-study.jpg?v=66" alt="" loading="lazy" />
         </picture>
       </div>
       <div class="slide__inner">
@@ -196,7 +196,7 @@
     <!-- 05 â€” INVESTMENT PROCESS: 3D ORBIT -->
     <section class="slide slide--navy" data-label="Investment Process" aria-label="Investment Process">
       <div class="slide__bg" aria-hidden="true">
-        <img src="../assets/img/process-bg.jpg?v=65" alt="" loading="lazy" />
+        <img src="../assets/img/process-bg.jpg?v=66" alt="" loading="lazy" />
       </div>
       <div class="slide__inner slide__inner--wide">
         <p class="bro-eyebrow">How We Do It â€” Equity Process</p>
@@ -212,13 +212,19 @@
               <button class="orbit__hit" data-stage="3" style="--hr:37%" type="button" aria-label="Stock selection"></button>
               <button class="orbit__hit orbit__hit--core" data-stage="4" style="--hr:17%" type="button" aria-label="Portfolio"></button>
             </div>
-            <!-- billboard labels (click = same as ring) -->
-            <button class="orbit__tag" data-stage="0" type="button" style="--ty:18.5%">Universe</button>
-            <button class="orbit__tag" data-stage="1" type="button" style="--ty:25.5%">Quantitative</button>
-            <button class="orbit__tag" data-stage="2" type="button" style="--ty:32%">Fundamental</button>
-            <button class="orbit__tag" data-stage="3" type="button" style="--ty:38.5%">Selection</button>
-            <button class="orbit__tag orbit__tag--core" data-stage="4" type="button" style="--ty:50%">Portfolio</button>
-            <p class="orbit__hint">Move &middot; hover &middot; click the rings</p>
+            <!-- leader-line callouts: labels sit outside, lines point to the rings -->
+            <div class="orbit__tags">
+              <button class="orbit__tag" data-stage="0" type="button" style="--ty:9%;  --lead:34px;  --ang:32deg">Universe of Securities</button>
+              <button class="orbit__tag" data-stage="1" type="button" style="--ty:27%; --lead:64px;  --ang:20deg">Quantitative</button>
+              <button class="orbit__tag" data-stage="2" type="button" style="--ty:45%; --lead:96px;  --ang:6deg">Fundamental</button>
+              <button class="orbit__tag" data-stage="3" type="button" style="--ty:63%; --lead:120px; --ang:-8deg">Selection</button>
+              <button class="orbit__tag orbit__tag--core" data-stage="4" type="button" style="--ty:81%; --lead:150px; --ang:-20deg">Portfolio</button>
+            </div>
+            <button class="orbit__zoom" id="orbitZoom" type="button" aria-pressed="false" aria-label="Zoom into the process">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span class="orbit__zoomlabel">Zoom in</span>
+            </button>
+            <p class="orbit__hint">Move &middot; click the rings &middot; zoom in</p>
           </div>
 
           <div class="orbit__panel" id="orbitPanel" aria-live="polite">
@@ -289,55 +295,110 @@
     <!-- 06 â€” STRATEGY PLATFORM (model-lineup funnel) -->
     <section class="slide slide--navy2" data-label="Strategy Platform" aria-label="Strategy Platform">
       <div class="slide__bg" aria-hidden="true">
-        <img src="../assets/img/manage-tactical.jpg?v=65" alt="" loading="lazy" />
+        <img src="../assets/img/manage-tactical.jpg?v=66" alt="" loading="lazy" />
       </div>
       <div class="slide__inner">
         <p class="bro-eyebrow">What We Offer â€” Strategy Platform</p>
         <h2 class="bro-h">A Model Lineup Built for <em>Portfolio Management</em></h2>
-        <div class="bro-funnel">
-          <div class="bro-funnel__viz">
-            <svg class="bro-funnel__svg" viewBox="0 0 340 300" role="img" aria-label="VEM strategy platform funnel: Platform, Equity Portfolios, ETF Strategies, Structured Notes, Customized Client Portfolios">
-              <g class="bgrains" aria-hidden="true">
-                <circle cx="120" cy="0" r="2.4" />
-                <circle cx="170" cy="0" r="2" />
-                <circle cx="215" cy="0" r="2.6" />
-                <circle cx="145" cy="0" r="1.9" />
-                <circle cx="195" cy="0" r="2.2" />
-                <circle cx="168" cy="0" r="1.7" />
+        <div class="pfunnel" data-process>
+          <!-- Funnel visual — same clamped-particle engine as the website -->
+          <div class="pfunnel__viz">
+            <svg class="pfunnel__svg" viewBox="0 0 360 412" role="img"
+                 aria-label="The VEM strategy platform narrowing from the full platform through equity portfolios, ETF strategies, and structured notes to a customized client portfolio.">
+              <g class="pband-g" data-i="0">
+                <polygon class="pband" points="8,0 352,0 308,68 52,68"></polygon>
+                <text class="pband-label" x="180" y="44" text-anchor="middle">Platform</text>
               </g>
-              <polygon class="bfunnel-band" data-i="0" points="10,8 330,8 300,58 40,58" />
-              <text class="bfunnel-label" data-i="0" x="170" y="38" text-anchor="middle">VEM Platform</text>
-              <polygon class="bfunnel-band" data-i="1" data-k="equity" points="44,66 296,66 270,116 70,116" />
-              <text class="bfunnel-label" data-i="1" x="170" y="96" text-anchor="middle">Equity Portfolios</text>
-              <polygon class="bfunnel-band" data-i="2" data-k="etf" points="74,124 266,124 240,174 100,174" />
-              <text class="bfunnel-label" data-i="2" x="170" y="154" text-anchor="middle">ETF Strategies</text>
-              <polygon class="bfunnel-band" data-i="3" data-k="notes" points="104,182 236,182 210,232 130,232" />
-              <text class="bfunnel-label" data-i="3" x="170" y="212" text-anchor="middle">Structured Notes</text>
-              <polygon class="bfunnel-band" data-i="4" data-k="custom" points="134,240 206,240 182,290 158,290" />
-              <text class="bfunnel-label" data-i="4" x="170" y="268" text-anchor="middle" font-size="12">Customized</text>
+              <g class="pband-g" data-i="1" data-k="equity">
+                <polygon class="pband" points="52,79 308,79 269,147 91,147"></polygon>
+                <text class="pband-label" x="180" y="123" text-anchor="middle">Equity</text>
+              </g>
+              <g class="pband-g" data-i="2" data-k="etf">
+                <polygon class="pband" points="91,158 269,158 238,226 122,226"></polygon>
+                <text class="pband-label" x="180" y="202" text-anchor="middle">ETF</text>
+              </g>
+              <g class="pband-g" data-i="3" data-k="notes">
+                <polygon class="pband" points="122,237 238,237 219,305 141,305"></polygon>
+                <text class="pband-label" x="180" y="281" text-anchor="middle">Notes</text>
+              </g>
+              <g class="pband-g" data-i="4" data-k="custom">
+                <polygon class="pband" points="141,316 219,316 214,384 146,384"></polygon>
+              </g>
+              <text class="pband-caption" x="180" y="406" text-anchor="middle">Customized</text>
             </svg>
           </div>
-          <div class="bro-funnel__list">
-            <button class="bro-funnel__item" type="button" data-expand data-k="equity" aria-expanded="false">
-              <span class="bro-funnel__head"><span class="bro-funnel__t">Equity Portfolios</span><span class="bro-diff__chev" aria-hidden="true"></span></span>
-              <p>US Large Cap Growth, US Large Cap Value, and International ADR.</p>
-              <span class="bro-funnel__more">Stock-by-stock SMA portfolios built through the firm's quantitative-plus-fundamental process â€” typically 40&ndash;65 holdings per strategy, benchmarked to the Russell 1000 Growth, Russell 1000 Value, and MSCI EAFE respectively.</span>
-            </button>
-            <button class="bro-funnel__item" type="button" data-expand data-k="etf" aria-expanded="false">
-              <span class="bro-funnel__head"><span class="bro-funnel__t">ETF Strategies</span><span class="bro-diff__chev" aria-hidden="true"></span></span>
-              <p>Global ETF and Small/Mid ETF strategies.</p>
-              <span class="bro-funnel__more">Cost-efficient exchange-traded funds scored on efficiency, tradability, fit, raw and risk-adjusted performance, and downside/tail risk â€” additional models added only when approved and sourced.</span>
-            </button>
-            <button class="bro-funnel__item" type="button" data-expand data-k="notes" aria-expanded="false">
-              <span class="bro-funnel__head"><span class="bro-funnel__t">Structured Notes</span><span class="bro-diff__chev" aria-hidden="true"></span></span>
-              <p>Income and growth notes used selectively.</p>
-              <span class="bro-funnel__more">Considered only where the risk/reward profile fits the client mandate â€” each note reviewed for issuer credit, reference assets, barriers and buffers, call features, and liquidity. Not suitable for all investors.</span>
-            </button>
-            <button class="bro-funnel__item" type="button" data-expand data-k="custom" aria-expanded="false">
-              <span class="bro-funnel__head"><span class="bro-funnel__t">Customized Client Portfolios</span><span class="bro-diff__chev" aria-hidden="true"></span></span>
-              <p>Designed around each client's objectives.</p>
-              <span class="bro-funnel__more">Portfolios shaped to a client's risk tolerance, tax considerations, and preferences â€” built on the same disciplined process that drives the firm's model strategies.</span>
-            </button>
+
+          <!-- Stage accordion — click a tier to reveal what it means -->
+          <div class="pfunnel__stages">
+            <div class="pstage is-open" data-stage="0">
+              <button class="pstage__head" type="button" aria-expanded="true" aria-controls="bstage-body-0">
+                <span class="pstage__num tnum">01</span>
+                <span class="pstage__name">The VEM Platform</span>
+                <span class="pstage__count">Foundation</span>
+                <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pstage__body" id="bstage-body-0" role="region">
+                <div class="pstage__body-inner">
+                  <p>One disciplined process feeds every strategy we offer. The platform spans active equity SMAs, rules-based ETF models, selectively used structured notes, and fully customized client portfolios &mdash; all governed by the same quantitative-plus-fundamental approach and fiduciary oversight.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pstage" data-stage="1" data-k="equity">
+              <button class="pstage__head" type="button" aria-expanded="false" aria-controls="bstage-body-1">
+                <span class="pstage__num tnum">02</span>
+                <span class="pstage__name">Equity Portfolios</span>
+                <span class="pstage__count tnum">40&ndash;65</span>
+                <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pstage__body" id="bstage-body-1" role="region">
+                <div class="pstage__body-inner">
+                  <p>Stock-by-stock SMA portfolios &mdash; US Large Cap Growth, US Large Cap Value, and International ADR &mdash; built through the firm's quantitative-plus-fundamental process, typically 40&ndash;65 holdings per strategy, benchmarked to the Russell 1000 Growth, Russell 1000 Value, and MSCI EAFE respectively.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pstage" data-stage="2" data-k="etf">
+              <button class="pstage__head" type="button" aria-expanded="false" aria-controls="bstage-body-2">
+                <span class="pstage__num tnum">03</span>
+                <span class="pstage__name">ETF Strategies</span>
+                <span class="pstage__count">Global &middot; Sm/Mid</span>
+                <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pstage__body" id="bstage-body-2" role="region">
+                <div class="pstage__body-inner">
+                  <p>Cost-efficient exchange-traded funds scored on efficiency, tradability, fit, raw and risk-adjusted performance, and downside/tail risk &mdash; additional models added only when approved and sourced.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pstage" data-stage="3" data-k="notes">
+              <button class="pstage__head" type="button" aria-expanded="false" aria-controls="bstage-body-3">
+                <span class="pstage__num tnum">04</span>
+                <span class="pstage__name">Structured Notes</span>
+                <span class="pstage__count">Selective</span>
+                <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pstage__body" id="bstage-body-3" role="region">
+                <div class="pstage__body-inner">
+                  <p>Income and growth notes used only where the risk/reward profile fits the client mandate &mdash; each note reviewed for issuer credit, reference assets, barriers and buffers, call features, and liquidity. Not suitable for all investors.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pstage" data-stage="4" data-k="custom">
+              <button class="pstage__head" type="button" aria-expanded="false" aria-controls="bstage-body-4">
+                <span class="pstage__num tnum">05</span>
+                <span class="pstage__name">Customized Client Portfolios</span>
+                <span class="pstage__count pstage__count--live"><span class="pstage__livedot" aria-hidden="true"></span>Tailored</span>
+                <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pstage__body" id="bstage-body-4" role="region">
+                <div class="pstage__body-inner">
+                  <p>Every engagement narrows to one outcome: a portfolio shaped to the client's risk tolerance, tax considerations, and preferences &mdash; built on the same disciplined process that drives the firm's model strategies.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -415,7 +476,7 @@
     </section>
 
     <!-- 08 â€” ETF MODELS (style boxes) -->
-    <section class="slide slide--navy2" data-label="ETF Models" aria-label="ETF Models">
+    <section class="slide slide--light" data-label="ETF Models" aria-label="ETF Models">
       <div class="slide__inner">
         <p class="bro-eyebrow">ETF Models</p>
         <h2 class="bro-h">Strategic &amp; Tactical <em>ETF Strategies</em></h2>
@@ -450,8 +511,8 @@
     <section class="slide slide--navy" data-label="GIPS Context" aria-label="GIPS Performance Context">
       <div class="slide__bg" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="../assets/img/gips-hero.webp?v=65" />
-          <img src="../assets/img/gips-hero.jpg?v=65" alt="" loading="lazy" />
+          <source type="image/webp" srcset="../assets/img/gips-hero.webp?v=66" />
+          <img src="../assets/img/gips-hero.jpg?v=66" alt="" loading="lazy" />
         </picture>
       </div>
       <div class="slide__inner">
@@ -475,7 +536,7 @@
     </section>
 
     <!-- 10 â€” STRUCTURED NOTES -->
-    <section class="slide slide--navy2" data-label="Structured Notes" aria-label="Structured Notes">
+    <section class="slide slide--light" data-label="Structured Notes" aria-label="Structured Notes">
       <div class="slide__inner">
         <p class="bro-eyebrow">Structured Notes</p>
         <h2 class="bro-h">Used Selectively, <em>Reviewed Rigorously</em></h2>
@@ -520,8 +581,8 @@
         <div class="bro-team">
           <div class="tm">
             <picture>
-              <source type="image/webp" srcset="../assets/img/team/aaron-vann-studio.webp?v=65" />
-              <img class="tm__photo" src="../assets/img/team/aaron-vann-studio.jpg?v=65" alt="Aaron Vann" width="116" height="116" loading="lazy" />
+              <source type="image/webp" srcset="../assets/img/team/aaron-vann-studio.webp?v=66" />
+              <img class="tm__photo" src="../assets/img/team/aaron-vann-studio.jpg?v=66" alt="Aaron Vann" width="116" height="116" loading="lazy" />
             </picture>
             <p class="tm__name">Aaron Vann</p>
             <p class="tm__role">Chief Investment Officer, Partner</p>
@@ -529,8 +590,8 @@
           </div>
           <div class="tm">
             <picture>
-              <source type="image/webp" srcset="../assets/img/team/brandy-holder.webp?v=65" />
-              <img class="tm__photo" src="../assets/img/team/brandy-holder.jpg?v=65" alt="Brandy Holder" width="116" height="116" loading="lazy" />
+              <source type="image/webp" srcset="../assets/img/team/brandy-holder.webp?v=66" />
+              <img class="tm__photo" src="../assets/img/team/brandy-holder.jpg?v=66" alt="Brandy Holder" width="116" height="116" loading="lazy" />
             </picture>
             <p class="tm__name">Brandy Holder</p>
             <p class="tm__role">Operational Manager</p>
@@ -538,8 +599,8 @@
           </div>
           <div class="tm">
             <picture>
-              <source type="image/webp" srcset="../assets/img/team/ryan-mcdonald.webp?v=65" />
-              <img class="tm__photo" src="../assets/img/team/ryan-mcdonald.jpg?v=65" alt="Ryan McDonald" width="116" height="116" loading="lazy" />
+              <source type="image/webp" srcset="../assets/img/team/ryan-mcdonald.webp?v=66" />
+              <img class="tm__photo" src="../assets/img/team/ryan-mcdonald.jpg?v=66" alt="Ryan McDonald" width="116" height="116" loading="lazy" />
             </picture>
             <p class="tm__name">Ryan McDonald</p>
             <p class="tm__role">Portfolio Manager, Financial Advisor</p>
@@ -547,8 +608,8 @@
           </div>
           <div class="tm">
             <picture>
-              <source type="image/webp" srcset="../assets/img/team/dharani-gundla.webp?v=65" />
-              <img class="tm__photo" src="../assets/img/team/dharani-gundla.jpg?v=65" alt="Dharani Gundla" width="116" height="116" loading="lazy" />
+              <source type="image/webp" srcset="../assets/img/team/dharani-gundla.webp?v=66" />
+              <img class="tm__photo" src="../assets/img/team/dharani-gundla.jpg?v=66" alt="Dharani Gundla" width="116" height="116" loading="lazy" />
             </picture>
             <p class="tm__name">Dharani Gundla</p>
             <p class="tm__role">Quantitative Analyst</p>
@@ -562,8 +623,8 @@
     <section class="slide slide--navy" data-label="Contact" aria-label="Closing and Contact">
       <div class="slide__bg" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="../assets/img/cta-office.webp?v=65" />
-          <img src="../assets/img/cta-office.jpg?v=65" alt="" loading="lazy" />
+          <source type="image/webp" srcset="../assets/img/cta-office.webp?v=66" />
+          <img src="../assets/img/cta-office.jpg?v=66" alt="" loading="lazy" />
         </picture>
       </div>
       <div class="slide__inner">
@@ -593,6 +654,6 @@
 
   </main>
 
-  <script src="../js/brochure.js?v=65" defer></script>
+  <script src="../js/brochure.js?v=66" defer></script>
 </body>
 </html>
