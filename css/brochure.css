@@ -149,7 +149,9 @@
 @media (max-width: 880px){ .bro-who { grid-template-columns: 1fr; gap: 30px; } }
 .bro-portrait { margin: 0; }
 .bro-portrait img {
-  width: 100%; height: auto; border-radius: var(--radius-lg);
+  width: 100%; height: auto; max-height: min(62vh, 600px);
+  object-fit: cover; object-position: top;
+  border-radius: var(--radius-lg);
   border: 1px solid rgba(185,155,95,0.45);
   box-shadow: 0 24px 60px -28px rgba(11,31,68,0.55);
 }
