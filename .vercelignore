@@ -13,3 +13,7 @@ robots.production.txt
 .claude/
 .gitignore
 .vercelignore
+
+# Stray files — keep in repo, but must NOT be served publicly
+hero/
+lighthouse-report.report.html
