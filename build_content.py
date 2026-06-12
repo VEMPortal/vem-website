@@ -155,10 +155,13 @@ def hero_media(hero):
 
 
 def card_media(hero, title):
+    # The thumbnail is decorative: each card's <h2> title link already names the
+    # destination, so a titled alt here would make a screen reader announce the
+    # headline twice. Empty alt keeps the image out of the accessibility tree.
     if hero:
         src = hero if hero.startswith("/") else "/" + hero.lstrip("/")
-        return ('<div class="post-card__media"><img src="%s?v=%s" alt="%s" loading="lazy" /></div>'
-                % (src, CACHE, esc(title)))
+        return ('<div class="post-card__media"><img src="%s?v=%s" alt="" loading="lazy" /></div>'
+                % (src, CACHE))
     return ('<div class="post-card__media post-card__media--ph">'
             '<img class="post-card__phmark" src="/assets/brand/vann-icon-white.png?v=%s" alt="" /></div>'
             % CACHE)
