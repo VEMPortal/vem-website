@@ -205,20 +205,20 @@ def build_article(sec_key, sec, fm, body, validate_list):
     else:
         disclosure_html = DISCLOSURE
 
-    author_type = "Organization" if author.strip().lower().startswith("vann equity") else "Person"
+    # Author + publisher both reference the single canonical organization entity
+    # (defined on the homepage) by @id instead of re-declaring partial details.
+    org_ref = {"@type": "FinancialService", "@id": SITE + "/#organization", "name": "Vann Equity Management"}
+    is_org_author = author.strip().lower().startswith("vann equity")
     ld = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
+        "@id": canonical + "#article",
         "headline": title,
         "description": summary,
         "datePublished": date_iso,
         "dateModified": date_iso,
-        "author": {"@type": author_type, "name": author},
-        "publisher": {
-            "@type": "FinancialService",
-            "name": "Vann Equity Management, LLC",
-            "url": SITE + "/",
-        },
+        "author": dict(org_ref) if is_org_author else {"@type": "Person", "name": author},
+        "publisher": dict(org_ref),
         "mainEntityOfPage": canonical,
     }
     if hero:
@@ -325,11 +325,21 @@ def build_listing(sec_key, sec, articles, validate_list):
     ld = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "@id": canonical + "#webpage",
         "name": sec["title"],
         "description": re.sub("<[^>]+>", "", sec["meta"]),
         "url": canonical,
         "isPartOf": {"@type": "WebSite", "name": "Vann Equity Management", "url": SITE + "/"},
     }
+    # ItemList of the listed article URLs so crawlers/AI see the collection members.
+    if pub:
+        ld["mainEntity"] = {
+            "@type": "ItemList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": i + 1, "url": SITE + a["url"]}
+                for i, a in enumerate(pub)
+            ],
+        }
 
     listing_hero_img = sec.get("listing_hero", "")
     og_image = ('<meta property="og:image" content="%s/%s" />' % (SITE, listing_hero_img.lstrip("/"))) if listing_hero_img else ""
