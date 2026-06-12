@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/disclosure", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/disclosures", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/adv-part-2a", "destination": "/adv-part-2a.html", "permanent": true },
+    { "source": "/privacy-statement", "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/customer-relationship-summary", "destination": "/form-crs.html", "permanent": true }
+  ]
+}

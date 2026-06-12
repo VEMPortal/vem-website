@@ -1,0 +1,157 @@
+/* VEM — Disclosures hub
+   Extends tokens.css + gips.css. Same report-header/hero/footer shell
+   as the GIPS, ADV, CRS, and Tax Resources pages. */
+
+.disc-page { background: var(--vem-white); color: var(--vem-navy-dark); }
+
+/* ===================================================================
+   PAGE SECTIONS
+   =================================================================== */
+
+.disc-section {
+  padding-block: clamp(48px, 6vw, 88px);
+}
+.disc-section--alt {
+  background: var(--vem-gray);
+}
+
+.disc-intro {
+  max-width: 72ch;
+}
+.disc-intro p {
+  margin-top: var(--space-4);
+  font-size: var(--fs-400);
+  line-height: 1.75;
+  color: var(--vem-gray-text);
+}
+
+/* ===================================================================
+   DISCLOSURE CARD GRID
+   =================================================================== */
+
+.disc-grid {
+  margin-top: clamp(28px, 4vw, 44px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(18px, 2.2vw, 28px);
+}
+
+.disc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(22px, 2.4vw, 30px);
+  background: var(--vem-white);
+  border: 1px solid rgba(11,31,68,0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-soft),
+              border-color var(--dur-fast) var(--ease-soft),
+              box-shadow var(--dur-fast) var(--ease-soft);
+}
+.disc-card:hover,
+.disc-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(52,81,140,0.45);
+  box-shadow: 0 26px 50px -28px rgba(11,31,68,0.6);
+}
+
+.disc-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(92,124,184,0.10);
+  color: var(--accent-deep);
+  margin-bottom: var(--space-4);
+}
+.disc-card__icon svg { width: 22px; height: 22px; }
+
+.disc-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-tight);
+  color: var(--vem-navy-dark);
+}
+
+.disc-card__desc {
+  margin-top: var(--space-3);
+  font-size: var(--fs-300);
+  line-height: 1.7;
+  color: var(--vem-gray-text);
+  flex: 1;
+}
+
+.disc-card__cta {
+  margin-top: var(--space-5);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-200);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-deep);
+}
+.disc-card__cta svg {
+  width: 15px;
+  height: 15px;
+  transition: transform var(--dur-fast) var(--ease-soft);
+}
+.disc-card:hover .disc-card__cta svg,
+.disc-card:focus-within .disc-card__cta svg {
+  transform: translateX(3px);
+}
+
+/* Stretched link — whole card is clickable, text stays the named link */
+.disc-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.disc-card__link:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+/* External card variant — gold accent on the icon to flag off-site */
+.disc-card--external .disc-card__icon {
+  background: rgba(185,155,95,0.12);
+  color: var(--accent-deep);
+}
+
+/* ===================================================================
+   CLOSING NOTE
+   =================================================================== */
+
+.disc-note {
+  margin-top: clamp(32px, 4vw, 48px);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(11,31,68,0.10);
+  max-width: 72ch;
+  font-size: var(--fs-200);
+  line-height: 1.7;
+  color: var(--vem-gray-text);
+}
+.disc-note a {
+  color: var(--accent-deep);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.disc-note a:hover { color: var(--accent); }
+
+/* ===================================================================
+   SCROLL-REVEAL
+   =================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
