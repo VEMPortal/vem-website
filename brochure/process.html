@@ -884,7 +884,7 @@
       <header class="brandbar">
         <img src="../assets/brand/vann-lockup-white.png?v=1" alt="Vann Equity Management">
         <div class="brandbar__right">
-          <a class="back-link" href="./index.html#process">&larr; Brochure</a>
+          <a class="back-link" href="./index.html#process">&larr; Overview</a>
           <div class="badge">Independent SEC-Registered Investment Adviser</div>
         </div>
       </header>
@@ -1359,6 +1359,8 @@
     const activePointers = new Map();
     let dragStart = null;
     let pinchStart = null;
+    let tapMoved = false;   /* did this press move enough to be a drag? */
+    let tapMulti = false;   /* was it a multi-touch (pinch) gesture? */
 
     function clamp(value, min, max) {
       return Math.min(max, Math.max(min, value));
@@ -1413,6 +1415,35 @@
       tab.addEventListener("click", () => setStage(Number(tab.dataset.stage)));
     });
 
+    /* ---- Click a ring (or the core) to jump straight to that stage, instead of
+       only the 01–05 buttons. A flat invisible pick-plane sits in the band; we
+       raycast the click onto it, measure the ring-space radius, and pick the
+       matching stage. ---- */
+    const pickPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(140, 140),
+      new THREE.MeshBasicMaterial({ visible: false })
+    );
+    pickPlane.rotation.x = -Math.PI / 2;
+    pickPlane.position.y = -0.14;
+    root.add(pickPlane);
+    const ringRaycaster = new THREE.Raycaster();
+    const pickNdc = new THREE.Vector2();
+    function stageFromPoint(event) {
+      const rect = canvas.getBoundingClientRect();
+      pickNdc.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      pickNdc.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      ringRaycaster.setFromCamera(pickNdc, camera);
+      const hit = ringRaycaster.intersectObject(pickPlane)[0];
+      if (!hit) return null;
+      const local = root.worldToLocal(hit.point.clone());
+      const r = Math.hypot(local.x, local.z / ellipseZ); /* ring-space radius */
+      if (r < 2.35) return 4;     /* core / portfolio */
+      if (r < 4.675) return 3;
+      if (r < 7.5) return 2;
+      if (r < 10.7) return 1;
+      return 0;                   /* outer universe ring */
+    }
+
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
       mouse.x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -1435,7 +1466,10 @@
           rotY: view.targetRotY
         };
         pinchStart = null;
+        tapMoved = false;
+        tapMulti = false;
       } else if (activePointers.size === 2) {
+        tapMulti = true;
         pinchStart = {
           distance: pointerDistance(),
           zoom: view.targetDistance
@@ -1457,6 +1491,7 @@
       if (!dragStart) return;
       const dx = event.clientX - dragStart.x;
       const dy = event.clientY - dragStart.y;
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) tapMoved = true;
       /* Constrained to a slight tilt only — never a full 360 spin. */
       view.targetRotY = clamp(dragStart.rotY + dx * 0.005, -0.16, 0.16);
       view.targetRotX = clamp(dragStart.rotX + dy * 0.005, 0.46, 0.78);
@@ -1472,6 +1507,11 @@
         }
       }
       if (activePointers.size === 0) {
+        /* A click (no drag, single pointer) on a ring jumps to that stage. */
+        if (!tapMoved && !tapMulti && event && event.clientX !== undefined) {
+          const s = stageFromPoint(event);
+          if (s !== null) setStage(s);
+        }
         view.dragging = false;
         dragStart = null;
         pinchStart = null;
