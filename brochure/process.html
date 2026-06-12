@@ -1064,9 +1064,45 @@
       powerPreference: "high-performance"
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
 
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x06101f, 0.018);
+
+    /* Procedural studio environment (a soft sky-to-floor gradient with a bright
+       key highlight) baked through PMREM, so the central glass sphere catches
+       real reflections and refraction — the ray-traced "solid glass" look.
+       Built on a canvas (no jsm addon imports, which break the module). */
+    function makeStudioEquirect() {
+      const c = document.createElement("canvas");
+      c.width = 1024; c.height = 512;
+      const ctx = c.getContext("2d");
+      const g = ctx.createLinearGradient(0, 0, 0, 512);
+      g.addColorStop(0.0, "#eaf3ff");   /* bright sky / softbox above */
+      g.addColorStop(0.4, "#7ba2d8");
+      g.addColorStop(0.62, "#2c4f86");
+      g.addColorStop(1.0, "#070f1f");   /* dark floor below */
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 1024, 512);
+      /* bright soft key reflection (upper-left) */
+      const k = ctx.createRadialGradient(300, 120, 8, 300, 120, 230);
+      k.addColorStop(0, "rgba(255,255,255,0.95)");
+      k.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = k; ctx.fillRect(0, 0, 1024, 512);
+      /* cooler fill reflection (right) */
+      const f = ctx.createRadialGradient(760, 200, 6, 760, 200, 180);
+      f.addColorStop(0, "rgba(150,200,255,0.55)");
+      f.addColorStop(1, "rgba(150,200,255,0)");
+      ctx.fillStyle = f; ctx.fillRect(0, 0, 1024, 512);
+      const tex = new THREE.CanvasTexture(c);
+      tex.mapping = THREE.EquirectangularReflectionMapping;
+      tex.colorSpace = THREE.SRGBColorSpace;
+      return tex;
+    }
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    const _equirect = makeStudioEquirect();
+    scene.environment = pmrem.fromEquirectangular(_equirect).texture;
+    _equirect.dispose();
 
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 160);
     camera.position.set(0, 9.6, 23);
@@ -1231,7 +1267,8 @@
         opacity: 0.12,
         blending: THREE.AdditiveBlending,
         side: THREE.DoubleSide,
-        depthWrite: false
+        depthWrite: false,
+        toneMapped: false
       });
       const ringMesh = new THREE.Mesh(ringGeo, ringMat);
       ringMesh.rotation.x = -Math.PI / 2;
@@ -1242,17 +1279,24 @@
       stageRingMeshes.push(ringMesh);
     }
 
-    const coreGeometry = new THREE.SphereGeometry(1.08, 48, 48);
+    const coreGeometry = new THREE.SphereGeometry(1.08, 64, 64);
     const coreMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xbfe0ff,
-      emissive: 0x1c4f8c,
-      emissiveIntensity: 0.5,
-      roughness: 0.12,
+      color: 0xffffff,
       metalness: 0.0,
-      transmission: 0.9,
-      thickness: 1.2,
+      roughness: 0.03,
+      transmission: 1.0,
+      thickness: 2.4,
+      ior: 1.5,
+      attenuationColor: new THREE.Color(0x6fa8ff),
+      attenuationDistance: 1.5,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.06,
+      specularIntensity: 1.0,
+      envMapIntensity: 1.25,
+      emissive: 0x0a2e5c,
+      emissiveIntensity: 0.22,
       transparent: true,
-      opacity: 0.5
+      opacity: 1.0
     });
     const core = new THREE.Mesh(coreGeometry, coreMaterial);
     core.renderOrder = 3;
@@ -1543,12 +1587,15 @@
       activeColor.setHex(stageColors[activeStage]);
       dimColor.setHex(dimStageColors[activeStage]);
 
-      /* Clean, steady cool-blue glass sphere — a premium crystal core that does
-         NOT pick up the red/stage color of the surrounding rings (no white center,
-         no colored reflection). It only clears into the atom vessel at Portfolio. */
-      coreMaterial.opacity = atomMode ? 0.22 : 0.62;
-      coreMaterial.emissiveIntensity = atomMode ? 0.28 : (0.4 + pulse * 0.16);
-      coreMaterial.transmission = atomMode ? 0.6 : 0.42;
+      /* Solid glass crystal sphere — reflective/refractive via the studio env map.
+         A cool-blue tint with depth (attenuation) keeps it on-brand and stops the
+         red rings showing through. At Portfolio it thins into a clear vessel so the
+         atoms inside read. */
+      coreMaterial.opacity = 1.0;
+      coreMaterial.transmission = 1.0;
+      coreMaterial.thickness = atomMode ? 0.7 : 2.4;
+      coreMaterial.attenuationDistance = atomMode ? 6.0 : 1.5;
+      coreMaterial.emissiveIntensity = atomMode ? 0.08 : (0.2 + pulse * 0.1);
 
       /* Halo stays small, steady, cool — no big glow outside the circle. */
       haloMaterial.opacity = 0.11 + pulse * 0.05;
