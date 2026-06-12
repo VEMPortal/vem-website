@@ -3,6 +3,19 @@
    Reused by every content section below the hero.
    ===================================================================== */
 
+/* Skip link — first focusable element; off-screen until keyboard focus,
+   then slides in at top-left so keyboard/AT users can jump past the nav. */
+.skip-link {
+  position: fixed; top: 8px; left: 8px; z-index: 1000;
+  padding: 10px 16px; border-radius: 8px;
+  background: var(--vem-navy-dark, #0B1F44); color: #fff;
+  font: 600 0.9rem/1 var(--font-body, system-ui, sans-serif); text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(calc(-100% - 16px));
+  transition: transform 0.15s ease;
+}
+.skip-link:focus { transform: translateY(0); outline: 2px solid var(--accent, #5C7CB8); outline-offset: 2px; }
+
 /* ----------------------- Layout primitives ------------------------ */
 .container {
   width: 100%;
