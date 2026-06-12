@@ -97,6 +97,25 @@
     });
   });
 
+  /* Team: tap a person to open their detail panel (one at a time) */
+  var teamPeople = document.querySelectorAll(".person");
+  if (teamPeople.length) {
+    var teamPanels = document.querySelectorAll(".member-panel");
+    Array.prototype.forEach.call(teamPeople, function (btn) {
+      btn.addEventListener("click", function () {
+        var key = btn.getAttribute("data-key");
+        var alreadyOpen = btn.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(teamPeople, function (p) { p.setAttribute("aria-expanded", "false"); });
+        Array.prototype.forEach.call(teamPanels, function (pa) { pa.hidden = true; });
+        if (!alreadyOpen) {
+          btn.setAttribute("aria-expanded", "true");
+          var panel = document.getElementById("panel-" + key);
+          if (panel) panel.hidden = false;
+        }
+      });
+    });
+  }
+
   /* model flip cards */
   Array.prototype.forEach.call(document.querySelectorAll(".model[data-flip]"), function (el) {
     el.addEventListener("click", function () {

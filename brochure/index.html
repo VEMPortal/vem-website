@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../css/tokens.css?v=70" />
-  <link rel="stylesheet" href="../css/brochure.css?v=76" />
+  <link rel="stylesheet" href="../css/brochure.css?v=77" />
 </head>
 <body class="bro">
 
@@ -569,43 +569,68 @@
       <div class="slide__inner">
         <p class="bro-eyebrow">Our Team</p>
         <h2 class="bro-h">The People Behind <em>the Process</em></h2>
-        <div class="bro-team">
-          <div class="tm">
-            <picture>
-              <source type="image/webp" srcset="../assets/img/team/aaron-vann-studio.webp?v=70" />
-              <img class="tm__photo" src="../assets/img/team/aaron-vann-studio.jpg?v=70" alt="Aaron Vann" width="116" height="116" loading="lazy" />
-            </picture>
-            <p class="tm__name">Aaron Vann</p>
-            <p class="tm__role">Chief Investment Officer, Partner</p>
-            <p class="tm__bio">Oversees the firm's proprietary quantitative models and their translation into portfolio management; a leading contributor to the Investment Committee.</p>
-          </div>
-          <div class="tm">
-            <picture>
-              <source type="image/webp" srcset="../assets/img/team/brandy-holder.webp?v=70" />
-              <img class="tm__photo" src="../assets/img/team/brandy-holder.jpg?v=70" alt="Brandy Holder" width="116" height="116" loading="lazy" />
-            </picture>
-            <p class="tm__name">Brandy Holder</p>
-            <p class="tm__role">Operational Manager</p>
-            <p class="tm__bio">Leads client engagement, onboarding, and back-office operations, partnering with custodians to deliver precise, efficient service.</p>
-          </div>
-          <div class="tm">
-            <picture>
-              <source type="image/webp" srcset="../assets/img/team/ryan-mcdonald.webp?v=70" />
-              <img class="tm__photo" src="../assets/img/team/ryan-mcdonald.jpg?v=70" alt="Ryan McDonald" width="116" height="116" loading="lazy" />
-            </picture>
-            <p class="tm__name">Ryan McDonald</p>
-            <p class="tm__role">Portfolio Manager, Financial Advisor</p>
-            <p class="tm__bio">A North Texas financial planner for 20+ years, focused on complex planning and disciplined strategies to help clients reach their goals.</p>
-          </div>
-          <div class="tm">
-            <picture>
-              <source type="image/webp" srcset="../assets/img/team/dharani-gundla.webp?v=70" />
-              <img class="tm__photo" src="../assets/img/team/dharani-gundla.jpg?v=70" alt="Dharani Gundla" width="116" height="116" loading="lazy" />
-            </picture>
-            <p class="tm__name">Dharani Gundla</p>
-            <p class="tm__role">Quantitative Analyst</p>
-            <p class="tm__bio">Supports trading, risk analysis, and the firm's GIPS&reg; compliance — including composite maintenance, outlier review, and verification support.</p>
-          </div>
+
+        <!-- People circles — tap a person to open their detail panel (cloned from the site) -->
+        <div class="team__people">
+          <button class="person" type="button" data-key="aaron" aria-expanded="true" aria-controls="panel-aaron">
+            <span class="person__photo" data-initials="AV"><img src="../assets/img/team/aaron-vann.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
+            <span class="person__name">Aaron J. Vann</span>
+            <span class="person__role">Chief Investment Officer &middot; Partner</span>
+          </button>
+          <button class="person" type="button" data-key="ryan" aria-expanded="false" aria-controls="panel-ryan">
+            <span class="person__photo" data-initials="RM"><img src="../assets/img/team/ryan-mcdonald.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
+            <span class="person__name">Ryan McDonald</span>
+            <span class="person__role">Portfolio Manager &middot; Financial Advisor</span>
+          </button>
+          <button class="person" type="button" data-key="dharani" aria-expanded="false" aria-controls="panel-dharani">
+            <span class="person__photo" data-initials="DG"><img src="../assets/img/team/dharani-gundla.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
+            <span class="person__name">Dharani Gundla</span>
+            <span class="person__role">Quantitative Analyst</span>
+          </button>
+          <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
+            <span class="person__photo" data-initials="BH"><img src="../assets/img/team/brandy-holder.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
+            <span class="person__name">Brandy Holder</span>
+            <span class="person__role">Operational Manager</span>
+          </button>
+        </div>
+
+        <div class="team__panels">
+          <article class="member-panel is-open" id="panel-aaron" data-key="aaron">
+            <div class="member-panel__photo"><img src="../assets/img/team/aaron-vann.jpg?v=76" alt="Aaron J. Vann" /></div>
+            <div class="member-panel__body">
+              <h3>Aaron J. Vann, AAMS, FPQP</h3>
+              <p class="member-panel__role">Chief Investment Officer &middot; Partner</p>
+              <p class="member-panel__bio">Aaron leads VEM&rsquo;s proprietary quantitative models and oversees portfolio construction and stock selection for the firm&rsquo;s equity SMAs. His career spans Rushmore Investment Advisors, Boston Private Bank, and Level Four Advisor Services.</p>
+              <p class="member-panel__cred">MBA Valedictorian &middot; SMU Cox School of Business</p>
+            </div>
+          </article>
+          <article class="member-panel" id="panel-ryan" data-key="ryan" hidden>
+            <div class="member-panel__photo"><img src="../assets/img/team/ryan-mcdonald.jpg?v=76" alt="Ryan McDonald" /></div>
+            <div class="member-panel__body">
+              <h3>Ryan McDonald</h3>
+              <p class="member-panel__role">Portfolio Manager &middot; Financial Advisor</p>
+              <p class="member-panel__bio">Ryan brings 21+ years of financial-planning experience in North Texas, specializing in complex retirement and investment solutions. He builds around the individual &mdash; not a template.</p>
+              <p class="member-panel__cred">21+ Years &middot; North Texas</p>
+            </div>
+          </article>
+          <article class="member-panel" id="panel-dharani" data-key="dharani" hidden>
+            <div class="member-panel__photo"><img src="../assets/img/team/dharani-gundla.jpg?v=76" alt="Dharani Gundla" /></div>
+            <div class="member-panel__body">
+              <h3>Dharani Gundla</h3>
+              <p class="member-panel__role">Quantitative Analyst</p>
+              <p class="member-panel__bio">Dharani supports trading, performance analysis, and GIPS&reg; compliance maintenance. She manages compliance operations and risk analysis across equity and structured-note holdings.</p>
+              <p class="member-panel__cred">MS Business Analytics &middot; UT Dallas</p>
+            </div>
+          </article>
+          <article class="member-panel" id="panel-brandy" data-key="brandy" hidden>
+            <div class="member-panel__photo"><img src="../assets/img/team/brandy-holder.jpg?v=76" alt="Brandy Holder" /></div>
+            <div class="member-panel__body">
+              <h3>Brandy Holder</h3>
+              <p class="member-panel__role">Operational Manager</p>
+              <p class="member-panel__bio">Brandy oversees client engagement, onboarding, CRM systems, and back-office operations for VEM&rsquo;s high-net-worth client base. She brings 10+ years in financial-services operations and client relationship management.</p>
+              <p class="member-panel__cred">10+ Years &middot; Client Operations</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -645,6 +670,6 @@
 
   </main>
 
-  <script src="../js/brochure.js?v=73" defer></script>
+  <script src="../js/brochure.js?v=77" defer></script>
 </body>
 </html>
