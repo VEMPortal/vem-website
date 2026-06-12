@@ -27,7 +27,10 @@
   function closeMobile() {
     if (!header) return;
     header.classList.remove("menu-open");
-    if (toggle) toggle.setAttribute("aria-expanded", "false");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
     document.body.style.overflow = "";
   }
 
@@ -36,6 +39,9 @@
     toggle.addEventListener("click", function () {
       var open = header.classList.toggle("menu-open");
       toggle.setAttribute("aria-expanded", String(open));
+      /* Keep the accessible NAME in sync with state, not just aria-expanded —
+         otherwise a screen reader still says "Open menu" while it's open. */
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.body.style.overflow = open ? "hidden" : "";
       if (!open) closeAllDropdowns();
     });
