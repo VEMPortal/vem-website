@@ -10,11 +10,17 @@
 .adv-content > .container { max-width: 980px; }
 
 .adv-doc-head { padding-bottom: clamp(8px, 2vw, 18px); }
-.adv-doc-head h1 {
+/* Document title (h1 historically; now an h2 since the page H1 lives in the hero).
+   Scoped override so it keeps the original look and does NOT pick up the
+   Item-section h2 styling (top border, gold bar, large top margin). */
+.adv-doc-head h1,
+.adv-content .adv-doc-head h2 {
+  margin-top: 0; padding-top: 0; border-top: 0;
   font-family: var(--font-display); font-weight: 600;
   font-size: var(--fs-700); line-height: 1.05; letter-spacing: var(--tracking-tight);
   color: var(--vem-navy-dark);
 }
+.adv-content .adv-doc-head h2::after { display: none; }
 .adv-doc-date { margin-top: var(--space-2); font-size: var(--fs-200); font-style: italic; color: var(--vem-gray-text); }
 
 /* Section headings (Item 1 … Item 19) */
