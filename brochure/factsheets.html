@@ -151,6 +151,27 @@
     }
     .fs-disc strong { color: var(--on-dark-60); }
 
+    /* ---- Year sections ---- */
+    .fs-year-sec { margin-top: clamp(38px, 5vh, 60px); }
+    .fs-year-sec:first-of-type { margin-top: 0; }
+    .fs-year-head {
+      display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px;
+      margin: 0 0 clamp(16px, 2.4vw, 24px); padding-bottom: 12px;
+      border-bottom: 1px solid rgba(148,171,214,0.18);
+    }
+    .fs-year {
+      margin: 0; font-family: var(--font-display); font-weight: 600;
+      font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); letter-spacing: -0.01em; color: #fff;
+    }
+    .fs-year-tag {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--on-dark-45); padding: 4px 11px; border-radius: 999px;
+      border: 1px solid rgba(148,171,214,0.2);
+    }
+    .fs-year-tag--current {
+      color: #dcecff; border-color: rgba(118,174,238,0.4); background: rgba(69,128,202,0.14);
+    }
+
     /* ---- Preview modal ---- */
     .fs-modal[hidden] { display: none; }
     .fs-modal {
@@ -219,17 +240,22 @@
     <div class="fs-hero__inner">
       <p class="fs-eyebrow">Strategy Fact Sheets</p>
       <h1>Equity Strategy <em>Fact Sheets</em></h1>
-      <p class="fs-hero__sub">Composition, characteristics, and positioning for Vann Equity Management&rsquo;s three equity model strategies. Click to view a sheet, or download the PDF.</p>
-      <span class="fs-asof">As of March 31, 2026 &middot; Q1 2026</span>
+      <p class="fs-hero__sub">Composition, characteristics, and positioning for Vann Equity Management&rsquo;s three equity model strategies &mdash; Large Cap Growth, Large Cap Value, and International ADR &mdash; from 2021 through the current quarter. Click to view a sheet, or download the PDF.</p>
+      <span class="fs-asof">Current &middot; Q1 2026 &middot; full-year archive 2021&ndash;2025</span>
     </div>
   </section>
 
   <main class="fs-wrap">
-    <div class="fs-grid">
+    <section class="fs-year-sec" aria-labelledby="yr-2026">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2026">2026</h2>
+        <span class="fs-year-tag fs-year-tag--current">Q1 2026 &middot; Current</span>
+      </div>
+      <div class="fs-grid">
 
       <article class="fs-card">
         <span class="fs-card__bench">Russell 1000 Growth</span>
-        <h2 class="fs-card__name">Large Cap Growth</h2>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
         <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
         <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
         <div class="fs-card__actions">
@@ -246,7 +272,7 @@
 
       <article class="fs-card">
         <span class="fs-card__bench">Russell 1000 Value</span>
-        <h2 class="fs-card__name">Large Cap Value</h2>
+        <h3 class="fs-card__name">Large Cap Value</h3>
         <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
         <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
         <div class="fs-card__actions">
@@ -263,7 +289,7 @@
 
       <article class="fs-card">
         <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
-        <h2 class="fs-card__name">International ADR</h2>
+        <h3 class="fs-card__name">International ADR</h3>
         <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
         <p class="fs-card__meta">SMA &middot; Q1 2026 &middot; USD</p>
         <div class="fs-card__actions">
@@ -278,11 +304,317 @@
         </div>
       </article>
 
-    </div>
+      </div>
+    </section>
+
+    <section class="fs-year-sec" aria-labelledby="yr-2025">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2025">2025</h2>
+        <span class="fs-year-tag">Full Year</span>
+      </div>
+      <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2025 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-fy-2025.pdf" data-title="Large Cap Growth — Full Year 2025">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-fy-2025.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h3 class="fs-card__name">Large Cap Value</h3>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2025 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-fy-2025.pdf" data-title="Large Cap Value — Full Year 2025">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-fy-2025.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h3 class="fs-card__name">International ADR</h3>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2025 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-fy-2025.pdf" data-title="International ADR — Full Year 2025">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-fy-2025.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="fs-year-sec" aria-labelledby="yr-2024">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2024">2024</h2>
+        <span class="fs-year-tag">Full Year</span>
+      </div>
+      <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2024 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-fy-2024.pdf" data-title="Large Cap Growth — Full Year 2024">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-fy-2024.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h3 class="fs-card__name">Large Cap Value</h3>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2024 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-fy-2024.pdf" data-title="Large Cap Value — Full Year 2024">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-fy-2024.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h3 class="fs-card__name">International ADR</h3>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2024 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-fy-2024.pdf" data-title="International ADR — Full Year 2024">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-fy-2024.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="fs-year-sec" aria-labelledby="yr-2023">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2023">2023</h2>
+        <span class="fs-year-tag">Full Year</span>
+      </div>
+      <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2023 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-fy-2023.pdf" data-title="Large Cap Growth — Full Year 2023">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-fy-2023.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h3 class="fs-card__name">Large Cap Value</h3>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2023 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-fy-2023.pdf" data-title="Large Cap Value — Full Year 2023">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-fy-2023.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h3 class="fs-card__name">International ADR</h3>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2023 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-fy-2023.pdf" data-title="International ADR — Full Year 2023">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-fy-2023.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="fs-year-sec" aria-labelledby="yr-2022">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2022">2022</h2>
+        <span class="fs-year-tag">Full Year</span>
+      </div>
+      <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2022 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-fy-2022.pdf" data-title="Large Cap Growth — Full Year 2022">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-fy-2022.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h3 class="fs-card__name">Large Cap Value</h3>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2022 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-fy-2022.pdf" data-title="Large Cap Value — Full Year 2022">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-fy-2022.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h3 class="fs-card__name">International ADR</h3>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2022 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-fy-2022.pdf" data-title="International ADR — Full Year 2022">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-fy-2022.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="fs-year-sec" aria-labelledby="yr-2021">
+      <div class="fs-year-head">
+        <h2 class="fs-year" id="yr-2021">2021</h2>
+        <span class="fs-year-tag">Full Year</span>
+      </div>
+      <div class="fs-grid">
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Growth</span>
+        <h3 class="fs-card__name">Large Cap Growth</h3>
+        <p class="fs-card__desc">US large-cap growth &mdash; competitively advantaged companies with durable earnings and cash-flow growth potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2021 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-growth-fy-2021.pdf" data-title="Large Cap Growth — Full Year 2021">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-growth-fy-2021.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">Russell 1000 Value</span>
+        <h3 class="fs-card__name">Large Cap Value</h3>
+        <p class="fs-card__desc">US large-cap value &mdash; high-quality businesses at attractive valuations with overlooked upside potential.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2021 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/large-cap-value-fy-2021.pdf" data-title="Large Cap Value — Full Year 2021">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/large-cap-value-fy-2021.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="fs-card">
+        <span class="fs-card__bench">iShares MSCI EAFE ETF</span>
+        <h3 class="fs-card__name">International ADR</h3>
+        <p class="fs-card__desc">Non-US ADR strategy &mdash; geographically and economically diversified international equity exposure.</p>
+        <p class="fs-card__meta">SMA &middot; Full Year 2021 &middot; USD</p>
+        <div class="fs-card__actions">
+          <button class="fs-btn fs-btn--primary" type="button" data-pdf="../assets/factsheets/international-adr-fy-2021.pdf" data-title="International ADR — Full Year 2021">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            View fact sheet
+          </button>
+          <a class="fs-btn fs-btn--ghost" href="../assets/factsheets/international-adr-fy-2021.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </article>
+
+      </div>
+    </section>
 
     <p class="fs-disc">
       <strong>For Advisor Use Only.</strong> Source: FactSet Research Systems, Inc. Holdings, characteristics, and
-      sector weights are as of March&nbsp;31,&nbsp;2026 and are subject to change without notice. Past performance is not a
+      sector weights are as of each fact sheet&rsquo;s stated period and are subject to change without notice. Past performance is not a
       guarantee of future results; investing involves risk, including the possible loss of principal. This material is for
       informational purposes only and is not investment, tax, or legal advice, nor an offer or solicitation. Performance is
       presented through Vann Equity Management&rsquo;s GIPS&reg;-verified composites; the full GIPS&reg; Verified Report is
