@@ -40,10 +40,16 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: grid;
+  /* `safe center` centers content that fits, but falls back to top-alignment
+     when a slide is taller than the screen — otherwise the centered overflow
+     pushes the top out of reach and it can't be scrolled to (the mobile
+     cut-off-at-top bug). The plain `center` is the fallback for old engines. */
   align-content: center;
+  align-content: safe center;
   padding: clamp(64px, 8vh, 104px) clamp(56px, 6vw, 96px) clamp(64px, 9vh, 104px);
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;   /* momentum scroll inside tall slides on iOS */
 }
 .slide__inner { width: 100%; max-width: 1180px; margin-inline: auto; }
 .slide__inner--wide { max-width: 1280px; }
@@ -863,6 +869,13 @@
 .bro-contact strong { color: var(--vem-white); }
 .bro-disc { font-size: var(--fs-100); color: var(--on-dark-50); line-height: 1.55; max-width: 70ch; }
 .bro-disc p { margin: 0 0 8px; }
+
+/* Phones: the 56px slide side-padding squeezes content (and wraps the contact
+   email). Tighten the gutters so slides have room, and keep the email on one line. */
+@media (max-width: 560px) {
+  .slide { padding-left: 20px; padding-right: 20px; }
+  .bro-contact address a[href^="mailto:"] { white-space: nowrap; }
+}
 
 /* ---------- Buttons (site blue, mirrors gips.css) --------------------- */
 .btn {
