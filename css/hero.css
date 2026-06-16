@@ -730,6 +730,34 @@
 }
 @media (max-width: 880px) { .hero__cue { display: none; } }
 
+/* ---- Mobile hero: let the video read ----------------------------------
+   On a tall portrait phone the full-bleed 16:9 video gets cropped to an
+   unrecognizable center sliver AND is buried under stacked content (headline +
+   lead + CTAs + credentials card). Fix: hide the supplementary card and trust
+   strip, keep the hero to one screen, and bottom-align the text over a bottom-up
+   navy gradient — so the upper screen is clean, readable footage and the
+   headline stays legible at the bottom. */
+@media (max-width: 760px) {
+  .hero { min-height: 100svh; align-items: flex-end; }
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding-top: clamp(84px, 15vh, 120px);
+    padding-bottom: clamp(40px, 8vh, 72px);
+    gap: 0;
+  }
+  .hero__card  { display: none; }   /* AUM/credentials live in the stats bar below */
+  .hero__trust { display: none; }   /* declutter so the footage breathes */
+  .hero__content { max-width: none; }
+  /* Clear at the top (video shows), darkening toward the bottom (text reads). */
+  .hero__scrim {
+    background: linear-gradient(180deg,
+      rgba(11, 31, 68, 0.34) 0%,
+      rgba(11, 31, 68, 0.10) 26%,
+      rgba(11, 31, 68, 0.52) 66%,
+      rgba(11, 31, 68, 0.90) 100%);
+  }
+}
+
 /* ------------------------- Entrance motion ------------------------- */
 /* Headline flight: each line starts off to the RIGHT, lands LEFT. */
 .hero__title .line > span {
