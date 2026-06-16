@@ -731,7 +731,7 @@
       .rail {
         top: auto;
         bottom: 14px;
-        max-height: 76%;
+        max-height: 62%;
       }
 
       .brandbar {
@@ -871,6 +871,26 @@
       .view-controls {
         display: none;
       }
+    }
+
+    /* Phones: the boxes were covering most of the screen and squishing the
+       universe. Shrink them to a compact bottom sheet so the graphic gets the
+       top ~half; the universe is lifted + zoomed slightly in JS so the core
+       sits in the clear area above. Tap a ring or a stage tab to drill inward. */
+    @media (max-width: 560px) {
+      .rail {
+        bottom: 10px;
+        max-height: 47%;
+        gap: 8px;
+      }
+      .hero-copy { display: none; }
+      .core-label { display: none; }      /* would misalign once the scene is lifted */
+      .stage-panel { padding: 12px 14px; }
+      .stage-kicker { font-size: 0.66rem; }
+      .stage-title { margin: 5px 0 4px; font-size: 1.02rem; }
+      .stage-count { margin-bottom: 6px; min-height: 0; padding: 6px 10px; }
+      .stage-body { font-size: 0.78rem; line-height: 1.34; }
+      .stage-tabs button { height: 40px; }
     }
   </style>
 </head>
@@ -1367,7 +1387,7 @@
     }
 
     function defaultDistanceForWidth(width) {
-      return width < 760 ? 31 : width < 1180 ? 27 : 24;
+      return width < 560 ? 34 : width < 760 ? 31 : width < 1180 ? 27 : 24;
     }
 
     function setZoomDistance(distance) {
@@ -1556,6 +1576,9 @@
       camera.updateProjectionMatrix();
       const focusX = sceneFocusX();
       root.position.x = focusX;
+      /* Phones: lift the universe so the core clears the bottom sheet (the
+         core-label is hidden on phones to avoid misalignment). */
+      root.position.y = rect.width < 560 ? 4.2 : 0;
       /* Size is locked — zoom inputs all clamp to this fixed distance. */
       view.defaultDistance = defaultDistanceForWidth(rect.width);
       view.minDistance = view.defaultDistance;
