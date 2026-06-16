@@ -15,21 +15,20 @@
     else header.classList.remove("is-scrolled");
   }
 
-  /* --- Parallax: video drifts slower than the page while hero is in view --- */
+  /* --- Parallax: the background drifts slower than the page on scroll while the
+         hero is in view. Scroll-only (no cursor reactivity), reduced-motion safe.
+         Transform/opacity only, scheduled on rAF — no layout thrash. --- */
   var ticking = false;
   function applyParallax() {
     ticking = false;
     if (!media || !hero || prefersReduced) return;
     var rect = hero.getBoundingClientRect();
     if (rect.bottom < 0 || rect.top > window.innerHeight) return; // off-screen
-    var offset = window.scrollY * 0.35;       // back layer moves at 35%
-    media.style.transform = "translate3d(0," + offset + "px,0)";
+    var offset = window.scrollY * 0.35;          // back layer moves at 35%
+    media.style.transform = "translate3d(0," + offset.toFixed(2) + "px,0)";
   }
   function requestParallax() {
-    if (!ticking) {
-      window.requestAnimationFrame(applyParallax);
-      ticking = true;
-    }
+    if (!ticking) { window.requestAnimationFrame(applyParallax); ticking = true; }
   }
 
   function onScroll() {
@@ -42,13 +41,44 @@
   onScrollHeader();
   applyParallax();
 
-  /* --- Ensure autoplay actually starts (some browsers need a nudge) --- */
-  var video = document.querySelector(".hero__video");
-  if (video && !prefersReduced) {
-    var p = video.play();
-    if (p && typeof p.catch === "function") {
-      p.catch(function () { /* poster remains — acceptable fallback */ });
+  /* Cursor halo is now a site-wide effect — see js/halo.js. */
+
+  /* --- Forward-only crossfade loop -------------------------------------
+     Two stacked copies of the clip dissolve into each other at the seam, so the
+     footage always plays FORWARD (no boomerang rewind) with no visible jump.
+     The standby copy starts from frame 0 and fades in on top a moment before the
+     visible copy ends; once it's fully in, the old copy pauses and becomes the
+     next standby. Reduced-motion users keep the still poster (we never play). */
+  var vidA = document.querySelector(".hero__video--a");
+  var vidB = document.querySelector(".hero__video--b");
+  if (vidA && vidB && !prefersReduced) {
+    var FADE = 0.9;                 // seconds of dissolve
+    var vis = vidA, hid = vidB;     // vis = visible/playing, hid = standby @ frame 0
+    var fading = false;
+
+    vis.style.zIndex = 2; vis.style.opacity = 1;
+    hid.style.zIndex = 1; hid.style.opacity = 0;
+
+    function onTick() {
+      if (fading) return;
+      var d = vis.duration;
+      if (!d || isNaN(d) || vis.currentTime < d - FADE) return;
+      fading = true;
+      hid.currentTime = 0;
+      var pr = hid.play(); if (pr && pr.catch) pr.catch(function () {});
+      hid.style.zIndex = 2; hid.style.opacity = 1;   // dissolve in on top
+      vis.style.zIndex = 1;                          // outgoing drops behind
+      window.setTimeout(function () {
+        vis.pause();
+        vis.style.opacity = 0;        // hide outgoing (already covered → invisible)
+        var t = vis; vis = hid; hid = t;             // swap roles
+        fading = false;
+      }, FADE * 1000);
     }
+    vidA.addEventListener("timeupdate", onTick);
+    vidB.addEventListener("timeupdate", onTick);
+
+    var p0 = vidA.play(); if (p0 && p0.catch) p0.catch(function () { /* poster stays */ });
   }
 
   /* --- Rotating hero headline: crossfade only. The container is LOCKED to a

@@ -33,8 +33,8 @@
   <meta name="twitter:description" content="An independent, SEC-registered, GIPS-verified fiduciary equity manager. The client's interest, above all else." />
   <meta name="twitter:image" content="https://www.vannequitymanagement.com/assets/video/hero-poster.jpg" />
 
-  <!-- Preload the LCP hero image so it paints fast -->
-  <link rel="preload" as="image" href="assets/img/hero-arch.webp?v=51" type="image/webp" fetchpriority="high" />
+  <!-- Preload the LCP hero poster (video's first frame) so it paints fast -->
+  <link rel="preload" as="image" href="assets/img/hero-colonnade.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Fonts: Cinzel (logo) · Cormorant (display) · Hanken Grotesk (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,8 +42,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
-  <link rel="stylesheet" href="css/hero.css?v=52" />
-  <link rel="stylesheet" href="css/sections.css?v=57" />
+  <link rel="stylesheet" href="css/hero.css?v=63" />
+  <link rel="stylesheet" href="css/sections.css?v=60" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
@@ -61,7 +61,7 @@
     "description": "Vann Equity Management is an independent, SEC-registered, GIPS-verified fiduciary managing equity and tactical asset-allocation portfolios for individuals, institutions, endowments, and family offices.",
     "slogan": "The client's interest, above all else.",
     "foundingDate": "2015",
-    "email": "info@vannequity.com",
+    "email": "info@vannequitymanagement.com",
     "telephone": "+1-214-983-0346",
     "priceRange": "$$$",
     "areaServed": { "@type": "Country", "name": "United States" },
@@ -95,7 +95,7 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-214-983-0346",
-      "email": "info@vannequity.com",
+      "email": "info@vannequitymanagement.com",
       "contactType": "customer service",
       "areaServed": "US",
       "availableLanguage": "English"
@@ -103,7 +103,7 @@
   }
   </script>
 </head>
-<body id="top" class="light-hero">
+<body id="top">
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -198,13 +198,25 @@
   <section class="hero" data-section="hero" aria-label="Introduction">
 
     <div class="hero__media" aria-hidden="true">
-      <!-- Static cinematic still (Direction A / v2). Swap to <video> here when
-           an animated loop is rendered — markup/scrim already support it. -->
+      <!-- Poster still = the video's first frame. It shows until the loop is
+           ready, and is the reduced-motion / no-autoplay fallback. -->
       <picture>
-        <source srcset="assets/img/hero-arch.webp" type="image/webp" />
-        <img class="hero__poster" src="assets/img/hero-arch.jpg"
-             alt="" width="1920" height="1071" fetchpriority="high" />
+        <source srcset="assets/img/hero-colonnade.webp" type="image/webp" />
+        <img class="hero__poster" src="assets/img/hero-colonnade.jpg"
+             alt="" width="1280" height="720" fetchpriority="high" />
       </picture>
+      <!-- Cinematic loop — two stacked copies that crossfade at the seam so the
+           clip always plays FORWARD with no jump (no boomerang rewind). No `loop`
+           and no `autoplay`: js/hero.js drives playback + the dissolve, and only
+           when prefers-reduced-motion is NOT set (else the poster still shows).
+           Muted + playsinline for mobile autoplay. -->
+      <video class="hero__video hero__video--a" muted playsinline preload="auto"
+             poster="assets/img/hero-colonnade.jpg" aria-hidden="true">
+        <source src="assets/video/hero-colonnade.mp4" type="video/mp4" />
+      </video>
+      <video class="hero__video hero__video--b" muted playsinline preload="auto" aria-hidden="true">
+        <source src="assets/video/hero-colonnade.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <div class="hero__scrim" aria-hidden="true"></div>
@@ -624,7 +636,7 @@
         principal. A complete list of the firm&rsquo;s composites and their standardized performance &mdash;
         gross and net, every period, each against its benchmark &mdash; is published in our
         <a href="gips-report.html">GIPS Verified Report</a> or available on request at
-        <a href="mailto:info@vannequity.com">info@vannequity.com</a>.
+        <a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a>.
       </p>
     </div>
   </section>
@@ -822,7 +834,7 @@
             <h3>Contact</h3>
             <ul>
               <li><a href="tel:+12149830346">214-983-0346</a></li>
-              <li><a href="mailto:info@vannequity.com">info@vannequity.com</a></li>
+              <li><a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a></li>
               <li class="footer__hours">Mon&ndash;Fri · 8:30&ndash;5:00 CT</li>
             </ul>
           </div>
@@ -850,7 +862,7 @@
         periods June 1, 2018 through December 31, 2024. The verification report is available upon
         request. A complete list and description of the firm&rsquo;s composites and a presentation
         that adheres to the GIPS standards are available upon request at
-        <a href="mailto:info@vannequity.com">info@vannequity.com</a>.
+        <a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a>.
       </p>
       <p class="footer__disc">
         Advisory services offered through Vann Equity Management, LLC, an SEC-registered
@@ -881,7 +893,8 @@
   </footer>
 
   <script src="js/nav.js?v=52" defer></script>
-  <script src="js/hero.js?v=51" defer></script>
+  <script src="js/hero.js?v=63" defer></script>
+  <script src="js/halo.js?v=3" defer></script>
   <script src="js/sections.js?v=51" defer></script>
   <script src="js/process.js?v=56" defer></script>
 </body>

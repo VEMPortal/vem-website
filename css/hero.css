@@ -434,8 +434,25 @@
   object-position: center;
 }
 .hero__poster { z-index: 0; }
-.hero__video  { z-index: 1; }
+/* Two stacked video layers crossfade at the loop seam (js/hero.js manages the
+   z-index swap; this just gives the dissolve its timing). */
+.hero__video  { z-index: 1; opacity: 1; transition: opacity 0.9s linear; }
+.hero__video--b { opacity: 0; }
 /* When reduced motion or no-video, the poster shows through */
+
+/* Ken-Burns: the still breathes — a very slow, barely-there push so the hero
+   never looks frozen. Lives on the poster (inner layer) so it composes cleanly
+   with the JS scroll/cursor parallax written to .hero__media. Whisper, not zoom. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__poster {
+    transform-origin: 58% 42%;
+    animation: heroKenBurns 32s var(--ease-soft) infinite alternate;
+  }
+}
+@keyframes heroKenBurns {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to   { transform: scale(1.09) translate3d(-1.4%, -1%, 0); }
+}
 
 /* Scrim stack: directional left-dark for the headline landing zone,
    plus a navy multiply to bind the footage to the brand, plus bottom vignette. */
@@ -445,15 +462,15 @@
   z-index: 2;
   background:
     linear-gradient(90deg,
-      rgba(11,31,68,0.88) 0%,
-      rgba(11,31,68,0.66) 30%,
-      rgba(11,31,68,0.30) 62%,
-      rgba(11,31,68,0.16) 100%),
+      rgba(11,31,68,0.82) 0%,
+      rgba(11,31,68,0.56) 32%,
+      rgba(11,31,68,0.22) 64%,
+      rgba(11,31,68,0.10) 100%),
     linear-gradient(180deg,
-      rgba(11,31,68,0.45) 0%,
-      rgba(11,31,68,0.06) 38%,
-      rgba(11,31,68,0.70) 100%),
-    rgba(34,49,104,0.12);  /* faint navy unify */
+      rgba(11,31,68,0.42) 0%,
+      rgba(11,31,68,0.05) 40%,
+      rgba(11,31,68,0.64) 100%),
+    rgba(34,49,104,0.10);  /* faint navy unify */
   pointer-events: none;
 }
 /* Faint grain for depth (no extra request — pure CSS) */
@@ -589,13 +606,13 @@
   font-size: var(--fs-100);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-soft);   /* lighter blue — readable on the dark hero scrim */
   margin-bottom: var(--space-5);
 }
 .hero__eyebrow::before {
   content: "";
   width: 34px; height: 1px;
-  background: var(--accent);
+  background: var(--accent-soft);
   display: inline-block;
 }
 
@@ -667,7 +684,8 @@
 /* GIPS mark — the strongest credibility signal, given quiet emphasis */
 .hero__trust-mark {
   font-weight: 700;
-  color: var(--accent-deep);
+  color: var(--vem-white);                 /* crisp on the dark hero (was dark blue) */
+  background: rgba(92, 124, 184, 0.18);    /* faint blue fill so the pill reads as a mark */
   padding: 5px 11px;
   border: 1px solid var(--accent-soft);
   border-radius: 999px;
@@ -764,15 +782,15 @@
 .light-hero .hero__scrim {
   background:
     linear-gradient(90deg,
-      rgba(245, 247, 250, 0.82) 0%,
-      rgba(245, 247, 250, 0.62) 42%,
-      rgba(245, 247, 250, 0.28) 78%,
-      rgba(245, 247, 250, 0.16) 100%),
+      rgba(245, 247, 250, 0.68) 0%,
+      rgba(245, 247, 250, 0.44) 40%,
+      rgba(245, 247, 250, 0.14) 74%,
+      rgba(245, 247, 250, 0.04) 100%),
     linear-gradient(180deg,
-      rgba(245, 247, 250, 0.00) 55%,
-      rgba(245, 247, 250, 0.42) 100%);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+      rgba(245, 247, 250, 0.00) 58%,
+      rgba(245, 247, 250, 0.26) 100%);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
 }
 .light-hero .hero__grain { mix-blend-mode: multiply; opacity: 0.04; }
 

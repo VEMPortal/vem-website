@@ -28,7 +28,18 @@
   padding-block: clamp(64px, 10vw, 128px);
 }
 .section--light { background: var(--vem-white); color: var(--vem-ink); }
-.section--gray  { background: var(--vem-gray);  color: var(--vem-ink); }
+.section--gray  {
+  background-color: var(--vem-gray);
+  color: var(--vem-ink);
+  /* Subtle texture so the flat gray reads as a material, not a block: a faint
+     navy hairline grid (echoes the navy sections' blueprint) + fine grain.
+     Layered into the background, so it always sits behind the content. */
+  background-image:
+    linear-gradient(rgba(11, 31, 68, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 31, 68, 0.035) 1px, transparent 1px),
+    radial-gradient(rgba(11, 31, 68, 0.05) 0.5px, transparent 0.6px);
+  background-size: 64px 64px, 64px 64px, 5px 5px;
+}
 .section--navy  {
   background: var(--vem-navy-dark);
   color: var(--on-dark-100);
@@ -908,7 +919,9 @@
   gap: clamp(40px, 6vw, 84px);
   padding-block: clamp(56px, 7vw, 96px);
 }
-@media (max-width: 860px) { .footer__top { grid-template-columns: 1fr; gap: var(--space-8); } }
+/* Stack the brand above the nav earlier (≤1024) so the nav columns get the full
+   width — that's what gives the Contact column room to hold the email on one line. */
+@media (max-width: 1024px) { .footer__top { grid-template-columns: 1fr; gap: var(--space-8); } }
 
 .footer__logo { height: 62px; width: auto; }
 .footer__tagline {
@@ -924,10 +937,22 @@
 .footer__main { display: flex; flex-direction: column; gap: clamp(26px, 3.4vw, 44px); }
 .footer__nav {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Contact column (3rd) sizes to its content so the email fits on one line;
+     the other two share the remaining space. */
+  grid-template-columns: 1fr 1fr auto;
   gap: clamp(24px, 4vw, 48px);
 }
 @media (max-width: 560px) { .footer__nav { grid-template-columns: repeat(2, 1fr); gap: var(--space-7) var(--space-5); } }
+/* Grid/flex items default to min-width:auto, so the long, unbreakable email
+   string forced the footer wider than the screen (then overflow:clip hid the
+   cut-off). Let the columns shrink, let long links wrap, and stack to a single
+   column on small phones so nothing is clipped. */
+.footer__main, .footer__nav, .footer__col { min-width: 0; }
+.footer__col a { overflow-wrap: break-word; }
+/* Keep the email on ONE line from tablet up (its auto-sized column gives it the
+   room); only let it wrap on the narrow 1–2 column phone layouts below. */
+@media (min-width: 561px) { .footer__col a[href^="mailto:"] { white-space: nowrap; overflow-wrap: normal; } }
+@media (max-width: 440px) { .footer__nav { grid-template-columns: 1fr; gap: var(--space-6); } }
 
 /* Offices — one compact horizontal row, addresses side by side (no map) */
 .footer__offices {

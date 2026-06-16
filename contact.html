@@ -30,11 +30,11 @@
     "@id": "https://www.vannequitymanagement.com/#organization",
     "name": "Vann Equity Management",
     "telephone": "+1-214-983-0346",
-    "email": "info@vannequity.com",
+    "email": "info@vannequitymanagement.com",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-214-983-0346",
-      "email": "info@vannequity.com",
+      "email": "info@vannequitymanagement.com",
       "contactType": "customer service",
       "areaServed": "US",
       "availableLanguage": "English"
@@ -123,12 +123,12 @@
               Set data-endpoint to your form handler URL (Formspree,
               Web3Forms, GoHighLevel inbound webhook, etc.). When empty,
               the form gracefully falls back to opening the visitor's email
-              client pre-addressed to info@vannequity.com.
+              client pre-addressed to info@vannequitymanagement.com.
               ============================================================
             -->
             <form class="contact-form" id="consultForm" novalidate
                   data-endpoint=""
-                  data-fallback-email="info@vannequity.com">
+                  data-fallback-email="info@vannequitymanagement.com">
 
               <div class="field-row">
                 <div class="field">
@@ -222,7 +222,7 @@
                 </li>
                 <li class="contact-card__item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3z"/><path stroke-linecap="round" stroke-linejoin="round" d="m3.5 7 8.5 6 8.5-6"/></svg>
-                  <span><span class="k">Email</span><a href="mailto:info@vannequity.com">info@vannequity.com</a></span>
+                  <span><span class="k">Email</span><a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a></span>
                 </li>
                 <li class="contact-card__item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 2"/></svg>
@@ -310,7 +310,7 @@
     }
 
     function mailtoFallback(data) {
-      var to = form.getAttribute('data-fallback-email') || 'info@vannequity.com';
+      var to = form.getAttribute('data-fallback-email') || 'info@vannequitymanagement.com';
       var subject = 'Consultation request — ' + (data.first_name || '') + ' ' + (data.last_name || '');
       var lines = [
         'Name: ' + (data.first_name || '') + ' ' + (data.last_name || ''),
@@ -339,7 +339,7 @@
 
       if (!endpoint) {
         // No backend connected yet — open the visitor's email client.
-        setStatus('ok', 'Opening your email app to send your request. If nothing happens, email us at ' + (form.getAttribute('data-fallback-email') || 'info@vannequity.com') + '.');
+        setStatus('ok', 'Opening your email app to send your request. If nothing happens, email us at ' + (form.getAttribute('data-fallback-email') || 'info@vannequitymanagement.com') + '.');
         mailtoFallback(data);
         return;
       }
@@ -357,7 +357,7 @@
         form.reset();
         setStatus('ok', 'Thank you — your request has been received. A member of our team will be in touch within one business day.');
       }).catch(function () {
-        setStatus('err', 'Something went wrong sending your request. Please call 214-983-0346 or email info@vannequity.com and we&rsquo;ll take care of you.');
+        setStatus('err', 'Something went wrong sending your request. Please call 214-983-0346 or email info@vannequitymanagement.com and we&rsquo;ll take care of you.');
       }).finally(function () {
         btn.disabled = false; btn.textContent = label;
       });
@@ -365,5 +365,6 @@
   }());
   </script>
 
+  <script src="js/halo.js?v=3" defer></script>
 </body>
 </html>
