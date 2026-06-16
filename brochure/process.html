@@ -1681,7 +1681,12 @@
       coreMaterial.transmission = 1.0;
       coreMaterial.thickness = atomMode ? 0.7 : 2.4;
       coreMaterial.attenuationDistance = atomMode ? 6.0 : 1.5;
-      coreMaterial.emissiveIntensity = atomMode ? 0.08 : (0.2 + pulse * 0.1);
+      /* Zoomed far out (mobile stage 1) the small glass globe reads dark — lift
+         its inner glow + reflections the farther the camera sits so it stays
+         visible on a phone; no change up close. */
+      const zoomBoost = clamp((view.distance - 30) / 55, 0, 1);
+      coreMaterial.emissiveIntensity = (atomMode ? 0.08 : (0.2 + pulse * 0.1)) + zoomBoost * 0.55;
+      coreMaterial.envMapIntensity = 1.25 + zoomBoost * 0.9;
 
       /* Halo stays small, steady, cool — no big glow outside the circle. */
       haloMaterial.opacity = 0.11 + pulse * 0.05;

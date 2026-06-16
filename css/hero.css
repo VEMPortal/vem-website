@@ -748,6 +748,9 @@
   .hero__card  { display: none; }   /* AUM/credentials live in the stats bar below */
   .hero__trust { display: none; }   /* declutter so the footage breathes */
   .hero__content { max-width: none; }
+  /* Portrait crop favors the right of the frame so the bright atrium windows
+     stay in view instead of being cut off. */
+  .hero__video, .hero__poster { object-position: 68% center; }
   /* Clear at the top (video shows), darkening toward the bottom (text reads). */
   .hero__scrim {
     background: linear-gradient(180deg,
