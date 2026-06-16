@@ -7,6 +7,7 @@
   <meta name="description" content="A visually enhanced 3D brochure card for Vann Equity Management's broad universe to managed portfolio process." />
   <meta name="robots" content="noindex" />
   <link rel="icon" type="image/png" href="../assets/brand/vann-icon-navy.png?v=1" />
+  <script>if (window.self !== window.top) document.documentElement.classList.add("is-embedded");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant:ital,wght@0,600;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -611,6 +612,11 @@
       font-size: 0.68rem;
       text-transform: uppercase;
     }
+
+    /* Embedded (iframe) on the homepage: drop the page chrome + cursor halo so
+       it reads as a clean inline graphic, not a full page. */
+    .is-embedded .brandbar { display: none; }
+    .is-embedded .vem-halo { display: none !important; }
 
     @media (max-width: 1180px) {
       .page {

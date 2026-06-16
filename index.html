@@ -43,7 +43,7 @@
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
   <link rel="stylesheet" href="css/hero.css?v=65" />
-  <link rel="stylesheet" href="css/sections.css?v=60" />
+  <link rel="stylesheet" href="css/sections.css?v=61" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
@@ -476,107 +476,11 @@
         universe to the few dozen companies we choose to own.
       </p>
 
-      <div class="pfunnel reveal" data-process data-delay="1">
-
-        <!-- Funnel visual — pours downward on scroll-in -->
-        <div class="pfunnel__viz">
-          <svg class="pfunnel__svg" viewBox="0 0 360 412" role="img"
-               aria-label="A funnel narrowing roughly 9,000 equities through five stages to a portfolio of 40 to 60 holdings under continuous review.">
-            <g class="pband-g" data-i="0">
-              <polygon class="pband" points="8,0 352,0 308,68 52,68"></polygon>
-              <text class="pband-label" x="180" y="44" text-anchor="middle">9,000+</text>
-            </g>
-            <g class="pband-g" data-i="1">
-              <polygon class="pband" points="52,79 308,79 269,147 91,147"></polygon>
-              <text class="pband-label" x="180" y="123" text-anchor="middle">&#8776; 1,000</text>
-            </g>
-            <g class="pband-g" data-i="2">
-              <polygon class="pband" points="91,158 269,158 238,226 122,226"></polygon>
-              <text class="pband-label" x="180" y="202" text-anchor="middle">150&#8211;250</text>
-            </g>
-            <g class="pband-g" data-i="3">
-              <polygon class="pband" points="122,237 238,237 219,305 141,305"></polygon>
-              <text class="pband-label" x="180" y="281" text-anchor="middle">40&#8211;60</text>
-            </g>
-            <g class="pband-g" data-i="4">
-              <polygon class="pband" points="141,316 219,316 214,384 146,384"></polygon>
-            </g>
-            <text class="pband-caption" x="180" y="406" text-anchor="middle">Continuous</text>
-          </svg>
-        </div>
-
-        <!-- Stage accordion — click a stage to reveal what it means -->
-        <div class="pfunnel__stages">
-          <div class="pstage is-open" data-stage="0">
-            <button class="pstage__head" type="button" aria-expanded="true" aria-controls="pstage-body-0">
-              <span class="pstage__num tnum">01</span>
-              <span class="pstage__name">Universe of Equity Securities</span>
-              <span class="pstage__count tnum">9,000+</span>
-              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="pstage__body" id="pstage-body-0" role="region">
-              <div class="pstage__body-inner">
-                <p>We start with the entire field &mdash; roughly 9,000 publicly traded companies across every sector, country, and market capitalization. No watchlist, no benchmark, no inherited positions. Before a single filter is applied, every name is on the board and eligible for consideration.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pstage" data-stage="1">
-            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-1">
-              <span class="pstage__num tnum">02</span>
-              <span class="pstage__name">Quantitative Analysis</span>
-              <span class="pstage__count tnum">&#8776; 1,000</span>
-              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="pstage__body" id="pstage-body-1" role="region">
-              <div class="pstage__body-inner">
-                <p>Proprietary, rules-based screens rank the universe on liquidity and structure, growth and value characteristics, and a multi-factor score. The math is repeatable and free of emotion &mdash; it narrows roughly 9,000 names to the top decile, about 1,000 candidates that merit a closer look.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pstage" data-stage="2">
-            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-2">
-              <span class="pstage__num tnum">03</span>
-              <span class="pstage__name">Fundamental Analysis</span>
-              <span class="pstage__count tnum">150&#8211;250</span>
-              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="pstage__body" id="pstage-body-2" role="region">
-              <div class="pstage__body-inner">
-                <p>Our investment committee examines the survivors by hand: the durability of earnings, business and competitive (SWOT) analysis, cash-flow quality, and the caliber of management. Judgment is applied where numbers alone fall short, leaving roughly 150&ndash;250 semi-finalists.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pstage" data-stage="3">
-            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-3">
-              <span class="pstage__num tnum">04</span>
-              <span class="pstage__name">Portfolio Construction</span>
-              <span class="pstage__count tnum">40&#8211;60</span>
-              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="pstage__body" id="pstage-body-3" role="region">
-              <div class="pstage__body-inner">
-                <p>We assemble our highest-conviction names into a diversified portfolio of 40&ndash;60 holdings, governed by country, sector, industry, and position-size limits so no single decision can dominate the outcome. Conviction is always balanced against risk.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pstage" data-stage="4">
-            <button class="pstage__head" type="button" aria-expanded="false" aria-controls="pstage-body-4">
-              <span class="pstage__num tnum">05</span>
-              <span class="pstage__name">Sell Discipline</span>
-              <span class="pstage__count pstage__count--live"><span class="pstage__livedot" aria-hidden="true"></span>Continuous</span>
-              <svg class="pstage__chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="pstage__body" id="pstage-body-4" role="region">
-              <div class="pstage__body-inner">
-                <p>Most managers fall in love with their winners. Discipline is knowing when to let go. Quantitative triggers, technical signals, and qualitative review run continuously &mdash; governing when we trim or exit a position &mdash; so every holding stays under active review for as long as we own it.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Interactive 3D process universe (embedded; tap a band or a stage to explore) -->
+      <div class="process-embed reveal" data-delay="1">
+        <iframe class="process-embed__frame" src="brochure/process.html"
+                title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
+                loading="lazy"></iframe>
       </div>
 
       <!-- What this means -->

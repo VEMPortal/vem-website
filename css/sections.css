@@ -488,6 +488,26 @@
 /* §05 process — the funnel + stage accordion now live in css/funnel.css.
    Only the closing figures note below remains shared with that section. */
 
+/* Embedded interactive 3D process universe (iframe of brochure/process.html) */
+.process-embed {
+  margin-top: clamp(28px, 4vw, 52px);
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-card);
+}
+.process-embed__frame {
+  display: block;
+  width: 100%;
+  height: clamp(600px, 74vh, 780px);
+  border: 0;
+}
+@media (max-width: 760px) {
+  .process-embed__frame { height: min(86vh, 720px); }
+}
+
 .pdash__note { margin-top: clamp(16px, 2vw, 24px); font-size: var(--fs-100); color: var(--on-dark-40); }
 
 /* ===================== §05b — Performance ===================== */
