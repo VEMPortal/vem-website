@@ -1429,6 +1429,12 @@
         tab.setAttribute("aria-selected", String(Number(tab.dataset.stage) === index));
       });
       gravityImpulse = 1;
+      /* Mobile: zoom to fit the selected stage (wide for the universe, tighter as
+         you drill toward the core); the animate loop eases the distance. */
+      const fitRect = card.getBoundingClientRect();
+      if (fitRect.width < 760) {
+        view.targetDistance = fitDistanceForStage(index, fitRect);
+      }
     }
 
     tabs.forEach((tab) => {
@@ -1569,24 +1575,41 @@
       });
     });
 
+    function fitDistanceForStage(stage, rect) {
+      /* Distance at which this stage's ring spans the (portrait) width without
+         being cut off. Rings are widest on the X axis, so fit X — the vertical
+         then fits easily. The view naturally zooms in as you drill toward the
+         core (the inner rings are smaller). */
+      const aspect = rect.width / rect.height;
+      const fovHalf = (camera.fov * Math.PI) / 360;            /* vertical half-FOV (rad) */
+      const R = stage === 4 ? 2.3 : (ringRadii[stage] + ringWidth[stage]);
+      const margin = 0.86;                                      /* a little breathing room */
+      return clamp(R / (Math.tan(fovHalf) * aspect * margin), 12, 150);
+    }
+
     function resize() {
       const rect = card.getBoundingClientRect();
       renderer.setSize(rect.width, rect.height, false);
       camera.aspect = rect.width / rect.height;
       camera.updateProjectionMatrix();
-      const focusX = sceneFocusX();
-      root.position.x = focusX;
-      /* Phones: lift the universe so the core clears the bottom sheet (the
-         core-label is hidden on phones to avoid misalignment). */
-      root.position.y = rect.width < 560 ? 4.2 : 0;
-      /* Size is locked — zoom inputs all clamp to this fixed distance. */
-      view.defaultDistance = defaultDistanceForWidth(rect.width);
-      view.minDistance = view.defaultDistance;
-      view.maxDistance = view.defaultDistance;
+      root.position.x = sceneFocusX();
+      root.position.y = 0;
+      const narrow = rect.width < 760;
+      if (narrow) {
+        /* Mobile: fit the active stage to the screen width so nothing is cut off
+           on the sides; it zooms in as you move toward the core. */
+        view.minDistance = 12;
+        view.maxDistance = 150;
+        view.defaultDistance = fitDistanceForStage(activeStage, rect);
+      } else {
+        view.defaultDistance = defaultDistanceForWidth(rect.width);
+        view.minDistance = view.defaultDistance;
+        view.maxDistance = view.defaultDistance;
+      }
       view.distance = view.defaultDistance;
       view.targetDistance = view.defaultDistance;
       camera.position.z = view.distance;
-      camera.position.y = rect.width < 760 ? 10.8 : 9.3;
+      camera.position.y = narrow ? 10.8 : 9.3;
       camera.lookAt(0, 0, 0);
     }
     window.addEventListener("resize", resize, { passive: true });
