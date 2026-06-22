@@ -237,6 +237,39 @@
       line-height: 1.56;
     }
 
+    /* Prominent, heavy-pulsing "Play guided tour" CTA, sitting under the title. */
+    .hero-copy .tour-btn {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 17px 34px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #eaf4ff;
+      cursor: pointer;
+      border: 1.5px solid rgba(132, 182, 246, 0.9);
+      border-radius: 999px;
+      background: rgba(69, 128, 202, 0.34);
+      backdrop-filter: blur(14px);
+      animation: tourPulse 1.8s ease-in-out infinite;
+      transition: background 180ms ease, border-color 180ms ease;
+    }
+    .hero-copy .tour-btn:hover,
+    .hero-copy .tour-btn:focus-visible {
+      background: rgba(69, 128, 202, 0.5);
+      border-color: #b6d6ff;
+    }
+    .hero-copy .tour-btn[aria-pressed="true"] {
+      animation: none;
+      background: rgba(69, 128, 202, 0.44);
+      border-color: rgba(160, 200, 245, 0.9);
+    }
+    @media (prefers-reduced-motion: reduce) { .hero-copy .tour-btn { animation: none; } }
+
     .metric-row {
       display: none;
       flex-wrap: wrap;
@@ -633,45 +666,23 @@
     /* Embedded (iframe) on the homepage: drop the page chrome + cursor halo so
        it reads as a clean inline graphic, not a full page. */
     .is-embedded .brandbar { display: none; }
-    .is-embedded .hero-copy { display: none; }   /* homepage shows its own "Our Process" header overlay */
+    /* Embedded on the homepage: hide the title-card text (the homepage has its own
+       "Our Process" header), but KEEP the Play CTA — it shows at the top of the
+       embed's panel. */
+    .is-embedded .hero-copy {
+      padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none;
+    }
+    .is-embedded .hero-copy .eyebrow,
+    .is-embedded .hero-copy h1,
+    .is-embedded .hero-copy > p,
+    .is-embedded .hero-copy .metric-row { display: none; }
+    .is-embedded .hero-copy .tour-btn { margin-top: 0; }
 
-    /* Embedded homepage: a prominent, pulsing Play CTA up under the "Our Process"
-       header (top-left) instead of the small bottom control — grabs attention. */
-    /* Move the whole control cluster to the top-left, under the header. The
-       button stays in normal flow inside it (so it can't fly off-screen). */
-    .is-embedded .view-controls {
-      top: auto;
-      bottom: clamp(76px, 13vh, 134px);
-      left: clamp(20px, 5vw, 64px);
-      translate: none;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      z-index: 6;
-    }
-    .is-embedded #tourToggle {
-      min-width: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      line-height: 1;
-      padding: 16px 30px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      border-radius: 999px;
-      color: #eaf4ff;
-      border-color: rgba(118, 174, 238, 0.7);
-      background: rgba(69, 128, 202, 0.28);
-      animation: tourPulse 2.4s ease-in-out infinite;
-    }
-    .is-embedded #tourToggle[aria-pressed="true"] { animation: none; background: rgba(69, 128, 202, 0.34); }
+    /* Heavy pulse for the Play CTA — a strong ring + scale so it's impossible to miss. */
     @keyframes tourPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(92, 124, 184, 0.55), 0 0 16px rgba(92, 124, 184, 0.45); }
-      50%      { box-shadow: 0 0 0 12px rgba(92, 124, 184, 0), 0 0 34px rgba(120, 170, 240, 0.9); transform: scale(1.04); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(92, 124, 184, 0.65), 0 0 18px rgba(92, 124, 184, 0.5); transform: scale(1); }
+      50%      { box-shadow: 0 0 0 18px rgba(92, 124, 184, 0), 0 0 46px rgba(120, 170, 240, 1); transform: scale(1.07); }
     }
-    @media (prefers-reduced-motion: reduce) { .is-embedded #tourToggle { animation: none; } }
 
     /* Embedded: tighten the stage card to its content (no empty stretch) and
        enlarge the text + evidence chips so the panel reads bold, not sparse. */
@@ -962,7 +973,10 @@
         max-height: 47%;
         gap: 8px;
       }
-      .hero-copy { display: none; }
+      /* Hide the title text but keep the Play CTA at the top of the bottom sheet. */
+      .hero-copy { padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none; }
+      .hero-copy .eyebrow, .hero-copy h1, .hero-copy > p, .hero-copy .metric-row { display: none; }
+      .hero-copy .tour-btn { margin-top: 0; width: 100%; padding: 13px 20px; font-size: 0.84rem; }
       .core-label { display: none; }      /* would misalign once the scene is lifted */
       .stage-panel { padding: 12px 14px; }
       .stage-kicker { font-size: 0.66rem; }
@@ -1006,6 +1020,7 @@
         <p class="eyebrow">How We Do It | Equity Process</p>
         <h1>From Broad Universe <em>to Managed Portfolio</em></h1>
         <p>Thousands of public equities begin on the outside. Evidence pulls the field inward: quantitative screens, fundamentals, committee review, and finally a risk-controlled portfolio.</p>
+        <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
         <div class="metric-row" aria-label="Portfolio process metrics">
           <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
           <div class="metric"><strong>900-1,000</strong><span>pass financial tests</span></div>
@@ -1036,7 +1051,6 @@
       </div>
 
       <div class="view-controls" aria-label="View controls">
-        <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
         <button type="button" data-view="reset" aria-label="Recenter view">Recenter</button>
       </div>
 
