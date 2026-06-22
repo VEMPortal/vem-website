@@ -270,6 +270,45 @@
     }
     @media (prefers-reduced-motion: reduce) { .hero-copy .tour-btn { animation: none; } }
 
+    /* Play + Recenter sit side by side; the hint sits directly under them. */
+    .hero-actions {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .hero-actions .tour-btn { margin-top: 0; }
+    .recenter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #cfe0f5;
+      cursor: pointer;
+      border: 1.4px solid rgba(132, 174, 226, 0.42);
+      border-radius: 999px;
+      background: rgba(7, 20, 42, 0.5);
+      backdrop-filter: blur(14px);
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+    .recenter-btn:hover,
+    .recenter-btn:focus-visible {
+      border-color: rgba(150, 190, 240, 0.9);
+      background: rgba(69, 128, 202, 0.22);
+      color: #fff;
+    }
+    .hero-hint {
+      margin: 12px 0 0;
+      color: rgba(210, 225, 245, 0.66);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
     .metric-row {
       display: none;
       flex-wrap: wrap;
@@ -711,7 +750,7 @@
     }
     .is-embedded .hero-copy .eyebrow,
     .is-embedded .hero-copy h1,
-    .is-embedded .hero-copy > p,
+    .is-embedded .hero-copy .lead,
     .is-embedded .hero-copy .metric-row { display: none; }
     .is-embedded .hero-copy .tour-btn { margin-top: 0; }
 
@@ -992,11 +1031,13 @@
         font-size: 0.86rem;
       }
 
-      .hint {
+      .hint,
+      .hero-hint {
         display: none;
       }
 
-      .view-controls {
+      .view-controls,
+      .recenter-btn {
         display: none;
       }
     }
@@ -1013,7 +1054,8 @@
       }
       /* Hide the title text but keep the Play CTA at the top of the bottom sheet. */
       .hero-copy { padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none; }
-      .hero-copy .eyebrow, .hero-copy h1, .hero-copy > p, .hero-copy .metric-row { display: none; }
+      .hero-copy .eyebrow, .hero-copy h1, .hero-copy .lead, .hero-copy .metric-row { display: none; }
+      .hero-actions { margin-top: 0; }
       .hero-copy .tour-btn { margin-top: 0; width: 100%; padding: 13px 20px; font-size: 0.84rem; }
       .core-label,
       .core-leader { display: none; }      /* would misalign once the scene is lifted */
@@ -1060,8 +1102,12 @@
       <article class="hero-copy">
         <p class="eyebrow">How We Do It | Equity Process</p>
         <h1>From Broad Universe <em>to Managed Portfolio</em></h1>
-        <p>Thousands of public equities begin on the outside. Evidence pulls the field inward: quantitative screens, fundamentals, committee review, and finally a risk-controlled portfolio.</p>
-        <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
+        <p class="lead">Thousands of public equities begin on the outside. Evidence pulls the field inward: quantitative screens, fundamentals, committee review, and finally a risk-controlled portfolio.</p>
+        <div class="hero-actions">
+          <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
+          <button type="button" class="recenter-btn" data-view="reset" aria-label="Recenter view">Recenter</button>
+        </div>
+        <p class="hero-hint">Press play for the guided tour &middot; or drag to explore &amp; tap a stage</p>
         <div class="metric-row" aria-label="Portfolio process metrics">
           <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
           <div class="metric"><strong>900-1,000</strong><span>pass financial tests</span></div>
@@ -1091,11 +1137,7 @@
       </nav>
       </div>
 
-      <div class="view-controls" aria-label="View controls">
-        <button type="button" data-view="reset" aria-label="Recenter view">Recenter</button>
-      </div>
-
-      <p class="hint">Press play for the guided tour &middot; or drag to explore &amp; tap a stage</p>
+      <!-- Recenter + hint now live inside the hero card, grouped with the Play CTA. -->
 
       <footer class="legend" aria-label="Density narrows as the process moves inward">
         <div class="legend-intro">
