@@ -1713,10 +1713,14 @@
     let tourVoice = null;
     const tourAudio = new Audio();   /* plays ElevenLabs clips when present */
 
-    /* Ambient music bed — loops quietly UNDER the narration, fades with the tour. */
-    const tourBed = new Audio("../assets/audio/tour-bed.mp3");
+    /* Ambient music bed — loops quietly UNDER the narration, fades with the tour.
+       On the homepage embed, don't preload the ~7 MB bed (it would download as soon
+       as the section scrolls into view); load it only when the tour is started.
+       The standalone universe page preloads it as before. */
+    const tourBed = new Audio();
     tourBed.loop = true;
-    tourBed.preload = "auto";
+    tourBed.preload = document.documentElement.classList.contains("is-embedded") ? "none" : "auto";
+    tourBed.src = "../assets/audio/tour-bed.mp3";
     const BED_VOL = 0.18;            /* low enough to sit beneath Daniel's voice */
     let bedFade = null;
     let tourEndTimer = null;         /* delays the music fade after the narration ends */
