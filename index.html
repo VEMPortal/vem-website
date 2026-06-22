@@ -43,7 +43,7 @@
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
   <link rel="stylesheet" href="css/hero.css?v=65" />
-  <link rel="stylesheet" href="css/sections.css?v=61" />
+  <link rel="stylesheet" href="css/sections.css?v=62" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
@@ -464,25 +464,27 @@
   </section>
 
   <!-- ================== §05 — INVESTMENT PROCESS ================== -->
-  <section id="process" class="section section--navy process" data-section="process" aria-labelledby="process-title">
-    <div class="container">
-      <div class="section-head reveal">
+  <section id="process" class="section section--navy process process--immersive" data-section="process" aria-labelledby="process-title">
+
+    <!-- Full-bleed interactive 3D process universe (drag to explore; tap a stage) -->
+    <div class="process-stage reveal">
+      <iframe class="process-stage__frame" src="brochure/process.html"
+              title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
+              loading="lazy"></iframe>
+
+      <!-- Section heading overlaid in the upper-left, large -->
+      <div class="process-stage__head">
         <p class="overline">Our process</p>
         <h2 id="process-title">From nine thousand names<br /><em>to forty.</em></h2>
+        <p class="process-stage__intro">
+          A global universe of public equities, distilled through five
+          disciplined stages &mdash; quantitative, fundamental, and continuous
+          &mdash; to the few dozen companies we choose to own.
+        </p>
       </div>
-      <p class="process__intro reveal" data-delay="1">
-        Every equity portfolio is distilled through a five-stage process &mdash;
-        quantitative, fundamental, and continuous &mdash; that narrows a global
-        universe to the few dozen companies we choose to own.
-      </p>
+    </div>
 
-      <!-- Interactive 3D process universe (embedded; tap a band or a stage to explore) -->
-      <div class="process-embed reveal" data-delay="1">
-        <iframe class="process-embed__frame" src="brochure/process.html"
-                title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
-                loading="lazy"></iframe>
-      </div>
-
+    <div class="container">
       <!-- What this means -->
       <div class="pfunnel__summary reveal" data-delay="1">
         <p class="pfunnel__summary-eyebrow">What this means for you</p>
