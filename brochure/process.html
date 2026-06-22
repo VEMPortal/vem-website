@@ -2832,7 +2832,7 @@
         { body: "This is where the funnel is widest. Thousands of names crowd the outer edge, and the vast majority will never be owned — by design. Every stage that follows removes more than it keeps.", audio: "card-1-4.mp3" }
       ],
       [ /* Quant */
-        { title: "Multi-Factor Analysis", body: "A multi-factor model is a disciplined ranking engine — it doesn't guess, it reads the signals. It scores every company across value (is it cheap?), quality (is it a good business?), momentum (is the market already rewarding it?), growth (is it expanding?), and risk (how steady?), then weights them by strategy and folds them into one composite score. The field is ranked, strongest to weakest. The model is the engine; the portfolio manager is still the pilot — setting sector and position limits, liquidity checks, and a sell discipline.", audio: "card-2-1.mp3" },
+        { title: "Multi-Factor Analysis", body: "A multi-factor model is a disciplined ranking engine — it doesn't guess, it reads the signals. It scores every company across value (is it cheap?), quality (is it a good business?), momentum (is the market already rewarding it?), growth (is it expanding?), and risk (how steady?), then weights them by strategy and folds them into one composite score. The field is ranked, strongest to weakest. The model is the engine; the portfolio manager is still the pilot — setting sector and position limits, liquidity checks, and a sell discipline.", audio: "" },
         { body: "Two of the core factors. Value asks whether a stock is cheap against its earnings, cash flow, and sales. Growth asks whether the business is actually expanding — rising revenue and earnings. Together they separate real bargains from value traps.", audio: "" },
         { body: "Quality looks for durable businesses — strong margins, healthy balance sheets, steady profits. Momentum asks whether the market has already begun rewarding the name. In short: a good business the market is starting to notice.", audio: "" },
         { body: "Every candidate is also scored on risk — volatility, downside exposure, balance-sheet strength. The model favors names whose opportunity outweighs their risk, not simply the highest raw return.", audio: "" }
@@ -2968,7 +2968,7 @@
       if (activeEvBtn === btn && !evidenceAudio.paused) { stopEvidenceAudio(); return; }
       resetEvBtn(activeEvBtn);
       evidenceAudio.pause();
-      evidenceAudio.src = "../assets/audio/" + file;
+      evidenceAudio.src = "../assets/audio/" + file + "?cb=2";   /* bump on re-record so cache doesn't serve the old clip */
       evidenceAudio.play().catch(function () {});
       btn.setAttribute("aria-pressed", "true");
       btn.innerHTML = "&#10074;&#10074;";
