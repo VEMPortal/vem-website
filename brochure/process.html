@@ -613,10 +613,83 @@
       text-transform: uppercase;
     }
 
+    .view-controls button.tour-btn {
+      min-width: 0;
+      padding: 0 16px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--blue-2);
+      border-color: rgba(118, 174, 238, 0.5);
+      background: rgba(69, 128, 202, 0.18);
+    }
+    .view-controls button.tour-btn[aria-pressed="true"] {
+      background: rgba(69, 128, 202, 0.34);
+      border-color: rgba(150, 190, 240, 0.85);
+      color: #eaf4ff;
+    }
+
     /* Embedded (iframe) on the homepage: drop the page chrome + cursor halo so
        it reads as a clean inline graphic, not a full page. */
     .is-embedded .brandbar { display: none; }
-    .is-embedded .vem-halo { display: none !important; }
+    .is-embedded .hero-copy { display: none; }   /* homepage shows its own "Our Process" header overlay */
+
+    /* Embedded homepage: a prominent, pulsing Play CTA up under the "Our Process"
+       header (top-left) instead of the small bottom control — grabs attention. */
+    /* Move the whole control cluster to the top-left, under the header. The
+       button stays in normal flow inside it (so it can't fly off-screen). */
+    .is-embedded .view-controls {
+      top: auto;
+      bottom: clamp(76px, 13vh, 134px);
+      left: clamp(20px, 5vw, 64px);
+      translate: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      z-index: 6;
+    }
+    .is-embedded #tourToggle {
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      line-height: 1;
+      padding: 16px 30px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 999px;
+      color: #eaf4ff;
+      border-color: rgba(118, 174, 238, 0.7);
+      background: rgba(69, 128, 202, 0.28);
+      animation: tourPulse 2.4s ease-in-out infinite;
+    }
+    .is-embedded #tourToggle[aria-pressed="true"] { animation: none; background: rgba(69, 128, 202, 0.34); }
+    @keyframes tourPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(92, 124, 184, 0.55), 0 0 16px rgba(92, 124, 184, 0.45); }
+      50%      { box-shadow: 0 0 0 12px rgba(92, 124, 184, 0), 0 0 34px rgba(120, 170, 240, 0.9); transform: scale(1.04); }
+    }
+    @media (prefers-reduced-motion: reduce) { .is-embedded #tourToggle { animation: none; } }
+
+    /* Embedded: tighten the stage card to its content (no empty stretch) and
+       enlarge the text + evidence chips so the panel reads bold, not sparse. */
+    .is-embedded .stage-panel { flex: 0 0 auto; overflow: visible; padding: 26px 28px; }
+    .is-embedded .stage-tabs { margin-top: auto; }
+    .is-embedded .stage-kicker { font-size: 0.84rem; }
+    .is-embedded .stage-title { font-size: 1.74rem; margin-bottom: 10px; }
+    .is-embedded .stage-count { font-size: 0.94rem; padding: 10px 13px; }
+    .is-embedded .stage-body { font-size: 1.12rem; line-height: 1.5; }
+    .is-embedded .evidence { gap: 9px; margin-top: 16px; }
+    .is-embedded .evidence span { font-size: 0.86rem; padding: 11px 12px; }
+
+    /* During the cinematic intro zoom, hide the flat HUD overlays so only the
+       3D scene reads; they fade back in once the universe settles. */
+    .is-intro .ticker-layer,
+    .is-intro .ring-callout,
+    .is-intro .ring-tag,
+    .is-intro .core-label { opacity: 0 !important; transition: opacity 240ms ease; }
 
     @media (max-width: 1180px) {
       .page {
@@ -963,10 +1036,11 @@
       </div>
 
       <div class="view-controls" aria-label="View controls">
+        <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
         <button type="button" data-view="reset" aria-label="Recenter view">Recenter</button>
       </div>
 
-      <p class="hint">Drag to tilt slightly &middot; select a stage to contract the field</p>
+      <p class="hint">Press play for the guided tour &middot; or drag to explore &amp; tap a stage</p>
 
       <footer class="legend" aria-label="Density narrows as the process moves inward">
         <div class="legend-intro">
@@ -1005,7 +1079,7 @@
         title: "Quantitative Analysis",
         count: "About 8,000-9,000 pass structure | 900-1,000 pass financial tests",
         body: "Proprietary screens filter for structure, risk, growth/value characteristics, and multi-factor ranking before judgment enters the process.",
-        evidence: ["Earnings and sales", "Margins", "Estimates", "Relative ranking"]
+        evidence: ["Multi-factor model", "Value & growth", "Quality & momentum", "Risk ranking"]
       },
       {
         number: "03",
@@ -1130,11 +1204,11 @@
     scene.environment = pmrem.fromEquirectangular(_equirect).texture;
     _equirect.dispose();
 
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 160);
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 700); /* far bumped for the deep-space backdrop */
     camera.position.set(0, 9.6, 23);
 
     const root = new THREE.Group();
-    root.rotation.x = 0.62;
+    root.rotation.x = 0.78;
     scene.add(root);
 
     const ambient = new THREE.AmbientLight(0xd8eaff, 0.58);
@@ -1147,6 +1221,171 @@
     const rim = new THREE.PointLight(0x7ed6ff, 11, 58);
     rim.position.set(9, -2, -10);
     scene.add(rim);
+
+    /* ---------- Deep-space backdrop: parallax starfield + faint nebula ----------
+       Two fog-exempt star shells sit far behind the universe; the near layer
+       drifts more than the far layer (and both ease toward the cursor) so the
+       graphic reads as real depth out in space, not a flat field. The same code
+       improves the standalone firm-overview page too. */
+    const STAR_REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const starParallax = { x: 0, y: 0 };
+
+    function makeStarTex() {
+      const c = document.createElement("canvas");
+      c.width = c.height = 64;
+      const ctx = c.getContext("2d");
+      const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      g.addColorStop(0, "rgba(255,255,255,1)");
+      g.addColorStop(0.35, "rgba(220,235,255,0.65)");
+      g.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+      const t = new THREE.CanvasTexture(c);
+      t.colorSpace = THREE.SRGBColorSpace;
+      return t;
+    }
+    const _starTex = makeStarTex();
+
+    function makeStarLayer(count, radius, size, opacity, tint) {
+      const geo = new THREE.BufferGeometry();
+      const pos = new Float32Array(count * 3);
+      const col = new Float32Array(count * 3);
+      const base = new THREE.Color(tint);
+      const c = new THREE.Color();
+      for (let i = 0; i < count; i += 1) {
+        /* distribute on a sphere shell (radius lightly jittered) so no star
+           ever sits close enough to the camera to bloom into a giant blob */
+        const u = Math.random() * 2 - 1;
+        const theta = Math.random() * Math.PI * 2;
+        const r = radius * (0.85 + Math.random() * 0.3);
+        const s = Math.sqrt(1 - u * u);
+        pos[i * 3] = r * s * Math.cos(theta);
+        pos[i * 3 + 1] = r * u * 0.7;           /* flatten vertically a touch */
+        pos[i * 3 + 2] = r * s * Math.sin(theta);
+        c.copy(base).offsetHSL((Math.random() - 0.5) * 0.06, 0, (Math.random() - 0.5) * 0.4);
+        col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+      }
+      geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+      geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+      const mat = new THREE.PointsMaterial({
+        size, map: _starTex, vertexColors: true, transparent: true,
+        opacity, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true
+      });
+      mat.fog = false;                          /* exempt from FogExp2 or they vanish */
+      const pts = new THREE.Points(geo, mat);
+      pts.frustumCulled = false;
+      scene.add(pts);
+      return pts;
+    }
+
+    const starFar  = makeStarLayer(3400, 400, 1.9, 0.78, 0xcfe0ff);
+    const starNear = makeStarLayer(1800, 165, 2.7, 0.96, 0xf2f7ff);
+
+    /* Faint nebula dome — brand navy core fading to near-black, for color depth
+       (so the field isn't flat black). Surrounds the camera (BackSide). */
+    let nebula = null;
+    {
+      const nc = document.createElement("canvas");
+      nc.width = nc.height = 512;
+      const nx = nc.getContext("2d");
+      nx.fillStyle = "#04060b"; nx.fillRect(0, 0, 512, 512);
+      const ng1 = nx.createRadialGradient(256, 220, 16, 256, 220, 300);
+      ng1.addColorStop(0, "rgba(36,49,104,0.55)");    /* --vem-navy */
+      ng1.addColorStop(0.5, "rgba(20,30,64,0.24)");
+      ng1.addColorStop(1, "rgba(4,6,11,0)");
+      nx.fillStyle = ng1; nx.fillRect(0, 0, 512, 512);
+      const ng2 = nx.createRadialGradient(150, 360, 8, 150, 360, 210);
+      ng2.addColorStop(0, "rgba(92,124,184,0.20)");   /* --vem-blue accent */
+      ng2.addColorStop(1, "rgba(92,124,184,0)");
+      nx.fillStyle = ng2; nx.fillRect(0, 0, 512, 512);
+      const ntex = new THREE.CanvasTexture(nc);
+      ntex.colorSpace = THREE.SRGBColorSpace;
+      const nmat = new THREE.MeshBasicMaterial({ map: ntex, side: THREE.BackSide, depthWrite: false });
+      nmat.fog = false;
+      nebula = new THREE.Mesh(new THREE.SphereGeometry(520, 32, 32), nmat);
+      nebula.frustumCulled = false;
+      scene.add(nebula);
+    }
+
+    /* ---------- Distant galaxies + cinematic intro state ----------
+       A few faint galaxy sprites sit far out. On tour start the camera punches
+       in from deep space, the universe blooms from a pinpoint, and the galaxies
+       recede — a movie-style "find our galaxy, dive in" open. */
+    function makeGalaxyTex() {
+      const c = document.createElement("canvas"); c.width = c.height = 256;
+      const x = c.getContext("2d");
+      const CX = 128, CY = 128;
+      /* faint elliptical halo */
+      x.save(); x.translate(CX, CY); x.scale(1, 0.6);
+      const halo = x.createRadialGradient(0, 0, 2, 0, 0, 122);
+      halo.addColorStop(0, "rgba(180,205,255,0.50)");
+      halo.addColorStop(0.5, "rgba(110,140,210,0.16)");
+      halo.addColorStop(1, "rgba(70,100,170,0)");
+      x.fillStyle = halo; x.beginPath(); x.arc(0, 0, 122, 0, Math.PI * 2); x.fill();
+      x.restore();
+      /* two logarithmic spiral arms drawn as fine star-dots -> reads as a galaxy */
+      x.save(); x.translate(CX, CY); x.scale(1, 0.6);
+      for (let arm = 0; arm < 2; arm++) {
+        const base = arm * Math.PI;
+        for (let i = 0; i < 240; i++) {
+          const t = i / 240;
+          const ang = base + t * 6.1;                 /* ~3 turns */
+          const rad = 8 + t * 116;
+          const px = Math.cos(ang) * rad + (Math.random() - 0.5) * 7;
+          const py = Math.sin(ang) * rad + (Math.random() - 0.5) * 7;
+          x.fillStyle = "rgba(212,226,255," + ((1 - t) * 0.8).toFixed(2) + ")";
+          x.beginPath(); x.arc(px, py, 1.0 + Math.random() * 1.1, 0, Math.PI * 2); x.fill();
+        }
+      }
+      x.restore();
+      /* bright core (keeps the "bright light" look from a distance) */
+      const core = x.createRadialGradient(CX, CY, 0, CX, CY, 44);
+      core.addColorStop(0, "rgba(255,255,255,0.98)");
+      core.addColorStop(0.4, "rgba(232,240,255,0.50)");
+      core.addColorStop(1, "rgba(255,255,255,0)");
+      x.fillStyle = core; x.fillRect(0, 0, 256, 256);
+      const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+    }
+    const GAL_REST = 0.22;                 /* faint resting visibility */
+    const galaxyGroup = new THREE.Group();
+    const _galaxyTex = makeGalaxyTex();
+    [
+      { pos: [-260, 120, -360], scale: 240, op: 0.9 },
+      { pos: [320, -80, -420],  scale: 300, op: 0.7 },
+      { pos: [120, 200, -300],  scale: 180, op: 0.6 },
+      { pos: [-360, -200, -320], scale: 230, op: 0.8 },
+      { pos: [-210, -280, -260], scale: 165, op: 0.6 },
+      { pos: [20, -60, -580],    scale: 110, op: 0.5 },   /* deep, small, far behind the universe */
+      { pos: [380, 210, -330],   scale: 250, op: 0.85 },  /* upper-right corner */
+      { pos: [300, 70, -230],    scale: 330, op: 0.7 },   /* bigger, closer, right side */
+      { pos: [-120, 250, -600],  scale: 90,  op: 0.45 },  /* small, far */
+      { pos: [430, -240, -620],  scale: 100, op: 0.4 }    /* small, far */
+    ].forEach((d) => {
+      const m = new THREE.SpriteMaterial({ map: _galaxyTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: d.op * GAL_REST });
+      m.fog = false;
+      const s = new THREE.Sprite(m);
+      s.position.set(d.pos[0], d.pos[1], d.pos[2]);
+      s.scale.set(d.scale, d.scale, 1);
+      s.userData.baseOp = d.op;
+      galaxyGroup.add(s);
+    });
+    galaxyGroup.frustumCulled = false;
+    scene.add(galaxyGroup);
+
+    /* Hero galaxy for the fly-past: sits off to the side along the camera's
+       approach path, so the intro dolly sweeps past it before the solar system
+       blooms. Only visible during the intro (it's behind the camera at rest). */
+    const heroGalaxy = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: _galaxyTex, transparent: true, depthWrite: false,
+      blending: THREE.AdditiveBlending, opacity: 0
+    }));
+    heroGalaxy.material.fog = false;
+    heroGalaxy.position.set(110, 40, 120);
+    heroGalaxy.scale.set(300, 300, 1);
+    heroGalaxy.frustumCulled = false;
+    scene.add(heroGalaxy);
+
+    const intro = { active: false, t: 0, dur: 8.5 };   /* cinematic zoom-in */
+    let lastNow = 0;
 
     /* Heat ramp: red universe -> orange -> yellow -> green -> bright-blue core.
        Surviving dots (and each ring) take the active stage's color. */
@@ -1370,13 +1609,14 @@
     const activeColor = new THREE.Color();
     const dimColor = new THREE.Color();
     const view = {
-      rotX: 0.62,
+      rotX: 0.78,
       rotY: 0.04,
-      targetRotX: 0.62,
+      targetRotX: 0.78,
       targetRotY: 0.04,
       distance: 24,
       targetDistance: 24,
       defaultDistance: 24,
+      baseY: 9.3,
       minDistance: 7,
       maxDistance: 62,
       dragging: false,
@@ -1395,6 +1635,8 @@
     function defaultDistanceForWidth(width) {
       return width < 560 ? 34 : width < 760 ? 31 : width < 1180 ? 27 : 24;
     }
+    /* Desktop staged descent: each stage zooms a step closer, ending on the core. */
+    const STAGE_ZOOM = [1.0, 0.82, 0.66, 0.5, 0.36];
 
     function setZoomDistance(distance) {
       view.userControlled = true;
@@ -1403,7 +1645,7 @@
 
     function resetView() {
       view.userControlled = false;
-      view.targetRotX = 0.62;
+      view.targetRotX = 0.78;
       view.targetRotY = 0.04;
       view.targetDistance = view.defaultDistance;
     }
@@ -1440,12 +1682,155 @@
       const fitRect = card.getBoundingClientRect();
       if (fitRect.width < 760) {
         view.targetDistance = fitDistanceForStage(index, fitRect);
+      } else {
+        /* Desktop: descend a step closer each stage -> the tour is one continuous
+           zoom inward, ending on the Fundamentals Core sphere. */
+        view.targetDistance = view.defaultDistance * STAGE_ZOOM[index];
       }
     }
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => setStage(Number(tab.dataset.stage)));
     });
+
+    /* ---------- Guided narrated tour (proof-of-concept) ----------
+       POC voice = the browser's built-in Web Speech API (free, no account).
+       To upgrade to ElevenLabs later: pre-generate one MP3 per stage into
+       assets/audio/, and replace speakStage()'s body with an <audio> play +
+       'ended' handler — the timeline/controls below stay identical. */
+    const TOUR = [
+      "Look up. A hundred billion stars burn in our galaxy alone - and beyond it, a hundred billion galaxies more. To the eye, it is chaos: a vast, undifferentiated field of light. The markets are no different. Nine thousand public companies, each a distant star, each burning with its own promise - and at the start, not one of them is ours. At Vann Equity Management, every name begins exactly here: a candidate, and nothing more. The discipline is knowing which lights are worth the journey.",
+      "No astronomer maps the whole sky by eye. They build instruments, and let the evidence narrow the field - and so do we. Proprietary quantitative screens weigh every name across multiple factors - value, growth, quality, momentum, and risk - and fuse them into a single composite score, narrowing nine thousand names to about one thousand. Repeatable. Unsentimental. Free of emotion.",
+      "But numbers can only take you so far. Where they end, judgment begins. Our investment committee examines each survivor by hand - the durability of its earnings, the quality of its business, the character of the people who run it - until only one to two hundred remain. The ones with real gravity.",
+      "Then, the rarest thing of all - conviction. When the doubt has burned away, only the strongest earn a place: chosen one by one, opportunity weighed against risk at every step. Nothing is owned by default. Everything is earned.",
+      "And so, a constellation takes shape - forty to sixty holdings, risk-controlled and continuously monitored. Each has survived the full passage: a universe of thousands, distilled through discipline and evidence into a focused, fundamentally-driven portfolio. Not chosen by chance - chosen by process. At Vann Equity Management, the client's interest, above all else."
+    ];
+
+    const tourBtn = document.getElementById("tourToggle");
+    const synth = window.speechSynthesis;
+    let tourPlaying = false;
+    let tourStage = 0;
+    let tourVoice = null;
+    const tourAudio = new Audio();   /* plays ElevenLabs clips when present */
+
+    /* Ambient music bed — loops quietly UNDER the narration, fades with the tour. */
+    const tourBed = new Audio("../assets/audio/tour-bed.mp3");
+    tourBed.loop = true;
+    tourBed.preload = "auto";
+    const BED_VOL = 0.18;            /* low enough to sit beneath Daniel's voice */
+    let bedFade = null;
+    let tourEndTimer = null;         /* delays the music fade after the narration ends */
+    function fadeBed(target, ms) {
+      if (bedFade) { clearInterval(bedFade); bedFade = null; }
+      const steps = 24, start = tourBed.volume;
+      let n = 0;
+      bedFade = setInterval(() => {
+        n += 1;
+        tourBed.volume = Math.max(0, Math.min(1, start + (target - start) * (n / steps)));
+        if (n >= steps) {
+          clearInterval(bedFade); bedFade = null;
+          if (target === 0) tourBed.pause();
+        }
+      }, Math.max(16, ms / steps));
+    }
+
+    function pickTourVoice() {
+      if (!synth) return;
+      const voices = synth.getVoices() || [];
+      tourVoice =
+        voices.find((v) => /en[-_]US/i.test(v.lang) && /(Google US English|Samantha|Aria|Jenny|Guy|Daniel)/i.test(v.name)) ||
+        voices.find((v) => /^en/i.test(v.lang)) ||
+        voices[0] || null;
+    }
+    if (synth) { pickTourVoice(); synth.onvoiceschanged = pickTourVoice; }
+
+    function setTourBtn(playing) {
+      if (!tourBtn) return;
+      tourBtn.setAttribute("aria-pressed", String(playing));
+      tourBtn.innerHTML = playing ? "&#10074;&#10074; Pause tour" : "&#9654; Play guided tour";
+    }
+
+    /* Play this stage's narration, then advance. Prefers a pre-generated
+       ElevenLabs clip at assets/audio/tour-N.mp3; if it isn't there yet, falls
+       back to the browser voice (and, failing that, a timed advance) so the
+       tour always runs. Dropping the MP3s in "upgrades" the voice — no other
+       change needed. */
+    function advanceFrom(i) {
+      if (!tourPlaying) return;
+      if (i < TOUR.length - 1) { tourStage = i + 1; setStage(tourStage); speakStage(tourStage); }
+      else { endTour(); }
+    }
+    function speakBrowser(i) {
+      if (!synth) { setTimeout(() => advanceFrom(i), 6500); return; }
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(TOUR[i]);
+      if (tourVoice) u.voice = tourVoice;
+      u.rate = 0.95;
+      u.pitch = 1.0;
+      u.onend = () => advanceFrom(i);
+      synth.speak(u);
+    }
+    function speakStage(i) {
+      if (synth) synth.cancel();
+      tourAudio.pause();
+      tourAudio.onended = () => advanceFrom(i);
+      tourAudio.onerror = () => speakBrowser(i);   /* no MP3 yet -> browser voice */
+      tourAudio.src = `../assets/audio/tour-${i + 1}.mp3`;
+      const p = tourAudio.play();
+      if (p && p.catch) p.catch(() => speakBrowser(i));   /* blocked/missing -> browser voice */
+    }
+
+    function startTour() {
+      tourPlaying = true;
+      if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
+      setTourBtn(true);
+      card.classList.add("is-touring");
+      try { tourBed.currentTime = 0; } catch (e) {}   /* music restarts with the tour */
+      tourBed.volume = 0;
+      tourBed.play().catch(() => {});   /* user-gesture allowed; ignore if missing */
+      fadeBed(BED_VOL, 1200);
+      /* Play ALWAYS restarts the whole show from the beginning, with the full
+         cinematic open — just like the first click. */
+      tourStage = 0;
+      if (!STAR_REDUCE) {
+        intro.active = true; intro.t = 0; lastNow = 0;
+        card.classList.add("is-intro");
+      }
+      setStage(0);
+      speakStage(0);
+    }
+    function pauseTour() {           /* user paused — drop into manual mode */
+      tourPlaying = false;
+      if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
+      setTourBtn(false);
+      card.classList.remove("is-touring");
+      if (synth) synth.cancel();
+      tourAudio.pause();
+      fadeBed(0, 600);
+      intro.active = false; root.scale.setScalar(1); card.classList.remove("is-intro");
+    }
+    function endTour() {             /* reached the portfolio — reset to start */
+      tourPlaying = false;
+      setTourBtn(false);
+      card.classList.remove("is-touring");
+      if (synth) synth.cancel();
+      tourAudio.pause();
+      /* keep the music going a beat after the narration, then fade out gently */
+      if (tourEndTimer) clearTimeout(tourEndTimer);
+      tourEndTimer = setTimeout(() => fadeBed(0, 7000), 4500);
+      tourStage = 0;
+    }
+
+    /* MP3 clips drive the tour, so it no longer depends on the browser voice. */
+    if (tourBtn) {
+      tourBtn.addEventListener("click", () => { tourPlaying ? pauseTour() : startTour(); });
+    }
+
+    /* Any manual interaction during the tour pauses it so the user takes over. */
+    tabs.forEach((t) => t.addEventListener("click", () => { if (tourPlaying) pauseTour(); }));
+    canvas.addEventListener("pointerdown", () => { if (tourPlaying) pauseTour(); });
+    /* Stop narration if the user navigates away (esp. inside the homepage iframe). */
+    window.addEventListener("pagehide", () => { if (synth) synth.cancel(); tourAudio.pause(); tourBed.pause(); });
 
     /* ---- Click a ring (or the core) to jump straight to that stage, instead of
        only the 01–05 buttons. A flat invisible pick-plane sits in the band; we
@@ -1526,7 +1911,7 @@
       if (Math.abs(dx) > 5 || Math.abs(dy) > 5) tapMoved = true;
       /* Constrained to a slight tilt only — never a full 360 spin. */
       view.targetRotY = clamp(dragStart.rotY + dx * 0.005, -0.16, 0.16);
-      view.targetRotX = clamp(dragStart.rotX + dy * 0.005, 0.46, 0.78);
+      view.targetRotX = clamp(dragStart.rotX + dy * 0.005, 0.5, 1.0);
     });
 
     function finishPointer(event) {
@@ -1566,9 +1951,9 @@
       if (activePointers.has(event.pointerId)) finishPointer(event);
     });
 
-    canvas.addEventListener("wheel", (event) => {
-      event.preventDefault(); /* size is locked — swallow wheel, no zoom */
-    }, { passive: false });
+    /* Wheel intentionally NOT captured — let the mouse wheel scroll the PAGE
+       normally when the cursor is over the universe (zoom is locked anyway).
+       Swallowing it here was trapping page scroll over the graphic. */
 
     canvas.addEventListener("dblclick", resetView);
 
@@ -1615,7 +2000,8 @@
       view.distance = view.defaultDistance;
       view.targetDistance = view.defaultDistance;
       camera.position.z = view.distance;
-      camera.position.y = narrow ? 10.8 : 9.3;
+      view.baseY = narrow ? 10.8 : 9.3;
+      camera.position.y = view.baseY;
       camera.lookAt(0, 0, 0);
     }
     window.addEventListener("resize", resize, { passive: true });
@@ -1666,9 +2052,49 @@
       view.rotX += (view.targetRotX - view.rotX) * 0.12;
       view.rotY += (view.targetRotY - view.rotY) * 0.12;
       view.distance += (view.targetDistance - view.distance) * 0.12;
-      camera.position.z = view.distance;
+
+      /* --- Cinematic intro: punch in from deep space; the universe blooms from
+             a pinpoint and the distant galaxies recede. Plays once at start. --- */
+      const dt = lastNow ? Math.min(0.05, (now - lastNow) / 1000) : 0.016;
+      lastNow = now;
+      let galVis = GAL_REST;
+      if (intro.active) {
+        intro.t += dt;
+        const p = Math.min(intro.t / intro.dur, 1);
+        /* camera glides in (easeInOut): we fly through deep space, then arrive */
+        const ce = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        const farZ = view.distance + 240;
+        camera.position.z = farZ + (view.distance - farZ) * ce;
+        /* The solar system stays invisible at first (just galaxies + twinkling
+           stars); it blooms from a pinpoint only in the back half of the intro. */
+        const b = Math.max(0, (p - 0.4) / 0.6);
+        const be = b * b * (3 - 2 * b);                   /* smoothstep */
+        root.scale.setScalar(0.0008 + (1 - 0.0008) * be); /* ~invisible -> full */
+        galVis = 1 - (1 - GAL_REST) * be;                 /* galaxies recede as it blooms */
+        if (p >= 1) { intro.active = false; root.scale.setScalar(1); card.classList.remove("is-intro"); }
+      } else {
+        camera.position.z = view.distance;
+        if (root.scale.x !== 1) root.scale.setScalar(1);
+      }
+      /* Distant galaxies: fade per the intro, and slowly swirl in place. */
+      galaxyGroup.children.forEach((s, gi) => {
+        s.material.opacity = s.userData.baseOp * galVis;
+        s.material.rotation += dt * (0.05 + gi * 0.025);
+      });
+      heroGalaxy.material.opacity = intro.active ? 0.95 : 0;   /* only during the fly-past */
+      heroGalaxy.material.rotation += dt * 0.035;
+      /* Background stars gently flicker brighter/dimmer (two layers, offset). */
+      if (starNear) starNear.material.opacity = 0.90 + Math.sin(time * 1.7) * 0.10;
+      if (starFar)  starFar.material.opacity  = 0.74 + Math.sin(time * 1.15 + 2.0) * 0.16;
+
       root.rotation.y = view.rotY;
-      root.rotation.x = view.rotX;
+      /* gentle idle rock — the disk tilts slightly up then down for living depth,
+         paused while the user is dragging or during the intro */
+      const idleRock = (view.dragging || intro.active) ? 0 : Math.sin(time * 0.22) * 0.06;
+      root.rotation.x = view.rotX + idleRock;
+      /* scale camera height with distance so the descent keeps a constant angle
+         (a true dolly-in) instead of tipping more top-down as it zooms */
+      if (view.defaultDistance) camera.position.y = view.baseY * (view.distance / view.defaultDistance);
       camera.lookAt(0, 0, 0);
       core.rotation.y = time * 0.18;
       const coreScaleTarget = activeStage === 4 ? 1.32 : 1.0;
@@ -1806,6 +2232,19 @@
       attr.needsUpdate = true;
       sizeAttr.needsUpdate = true;
       colorAttr.needsUpdate = true;
+
+      /* Parallax backdrop — near layer drifts more than far; both ease toward
+         the cursor so depth reads as you move. Static under reduced-motion. */
+      if (!STAR_REDUCE) {
+        starParallax.x += ((mouse.x || 0) - starParallax.x) * 0.04;
+        starParallax.y += ((mouse.y || 0) - starParallax.y) * 0.04;
+        starFar.rotation.y  = time * 0.006 - starParallax.x * 0.05;
+        starFar.rotation.x  = -starParallax.y * 0.03;
+        starNear.rotation.y = time * 0.012 - starParallax.x * 0.13;
+        starNear.rotation.x = -starParallax.y * 0.07;
+        if (nebula) nebula.rotation.y = time * 0.003;
+        if (galaxyGroup) galaxyGroup.rotation.y = -starParallax.x * 0.03;
+      }
 
       updateCallout();
       renderer.render(scene, camera);
