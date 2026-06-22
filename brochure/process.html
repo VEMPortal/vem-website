@@ -376,8 +376,9 @@
       transition: border-color 180ms ease, background 180ms ease;
     }
     .cb-card.is-expanded { border-color: rgba(132, 182, 246, 0.55); background: rgba(14, 30, 58, 0.7); }
-    .cb-card__header {
-      width: 100%;
+    .cb-card__head { display: flex; align-items: stretch; }
+    .cb-card__toggle {
+      flex: 1 1 auto;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
       padding: 16px 18px;
       background: none; border: 0; cursor: pointer;
@@ -407,20 +408,23 @@
       color: var(--soft);
       font-size: 0.92rem; line-height: 1.6;
     }
+    /* Play button lives on the card header, so any card can be heard without expanding. */
     .cb-listen {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin: 0 18px 18px;
-      padding: 9px 16px;
+      flex: 0 0 auto;
+      align-self: center;
+      margin-right: 14px;
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
       border: 1px solid rgba(132, 182, 246, 0.7);
-      border-radius: 999px;
+      border-radius: 50%;
       background: rgba(69, 128, 202, 0.22);
       color: #eaf4ff;
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      font-size: 0.82rem; line-height: 1;
       cursor: pointer;
       transition: background 180ms ease, border-color 180ms ease;
     }
-    .cb-listen:hover { background: rgba(69, 128, 202, 0.4); border-color: #b6d6ff; }
-    .cb-listen[aria-pressed="true"] { background: rgba(69, 128, 202, 0.5); }
+    .cb-listen:hover { background: rgba(69, 128, 202, 0.42); border-color: #b6d6ff; }
+    .cb-listen[aria-pressed="true"] { background: rgba(69, 128, 202, 0.6); border-color: #b6d6ff; }
 
     @media (prefers-reduced-motion: reduce) {
       .card-board, .cb-card__body, .cb-card__chev { transition: none; }
@@ -2839,7 +2843,8 @@
       const chev = '<svg viewBox="0 0 12 12" width="12" height="12" fill="none"><path d="M2 4.5 6 8.5 10 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       const boardAudio = new Audio();
       let activeListen = null;
-      function resetListen(btn) { if (btn) { btn.setAttribute("aria-pressed", "false"); btn.innerHTML = "&#9654; Listen"; } }
+      const PLAY = "&#9654;", PAUSE = "&#10074;&#10074;";
+      function resetListen(btn) { if (btn) { btn.setAttribute("aria-pressed", "false"); btn.innerHTML = PLAY; } }
 
       stages.forEach(function (stage, si) {
         const group = document.createElement("div");
@@ -2854,18 +2859,50 @@
           const card = document.createElement("div");
           card.className = "cb-card";
 
-          const header = document.createElement("button");
-          header.type = "button";
-          header.className = "cb-card__header";
-          header.setAttribute("aria-expanded", "false");
+          const head = document.createElement("div");
+          head.className = "cb-card__head";
+
+          const toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "cb-card__toggle";
+          toggle.setAttribute("aria-expanded", "false");
           const titleSpan = document.createElement("span");
           titleSpan.textContent = detail.title || evName;
-          header.appendChild(titleSpan);
+          toggle.appendChild(titleSpan);
           const chevSpan = document.createElement("span");
           chevSpan.className = "cb-card__chev";
           chevSpan.setAttribute("aria-hidden", "true");
           chevSpan.innerHTML = chev;
-          header.appendChild(chevSpan);
+          toggle.appendChild(chevSpan);
+          toggle.addEventListener("click", function () {
+            const open = card.classList.toggle("is-expanded");
+            toggle.setAttribute("aria-expanded", String(open));
+          });
+          head.appendChild(toggle);
+
+          /* Play button on the header — hear the card without expanding it. */
+          if (detail.audio) {
+            const listen = document.createElement("button");
+            listen.type = "button";
+            listen.className = "cb-listen";
+            listen.setAttribute("aria-pressed", "false");
+            listen.setAttribute("aria-label", "Listen to " + (detail.title || evName));
+            listen.innerHTML = PLAY;
+            listen.addEventListener("click", function (e) {
+              e.stopPropagation();
+              if (activeListen === listen && !boardAudio.paused) {
+                boardAudio.pause(); resetListen(listen); activeListen = null; return;
+              }
+              resetListen(activeListen);
+              boardAudio.pause();
+              boardAudio.src = "../assets/audio/" + detail.audio;
+              boardAudio.play().catch(function () {});
+              listen.setAttribute("aria-pressed", "true");
+              listen.innerHTML = PAUSE;
+              activeListen = listen;
+            });
+            head.appendChild(listen);
+          }
 
           const body = document.createElement("div");
           body.className = "cb-card__body";
@@ -2875,35 +2912,9 @@
           text.className = "cb-card__text";
           text.textContent = detail.body;
           inner.appendChild(text);
-
-          if (detail.audio) {
-            const listen = document.createElement("button");
-            listen.type = "button";
-            listen.className = "cb-listen";
-            listen.setAttribute("aria-pressed", "false");
-            listen.innerHTML = "&#9654; Listen";
-            listen.addEventListener("click", function () {
-              if (activeListen === listen && !boardAudio.paused) {
-                boardAudio.pause(); resetListen(listen); activeListen = null; return;
-              }
-              resetListen(activeListen);
-              boardAudio.pause();
-              boardAudio.src = "../assets/audio/" + detail.audio;
-              boardAudio.play().catch(function () {});
-              listen.setAttribute("aria-pressed", "true");
-              listen.innerHTML = "&#10074;&#10074; Stop";
-              activeListen = listen;
-            });
-            inner.appendChild(listen);
-          }
           body.appendChild(inner);
 
-          header.addEventListener("click", function () {
-            const open = card.classList.toggle("is-expanded");
-            header.setAttribute("aria-expanded", String(open));
-          });
-
-          card.appendChild(header);
+          card.appendChild(head);
           card.appendChild(body);
           group.appendChild(card);
         });
