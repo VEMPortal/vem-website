@@ -418,18 +418,22 @@
       font-weight: 700;
     }
 
+    /* The core label sits OUTSIDE the sphere — pushed to the right of the core and
+       vertically centred on it, with a thin accent rule so it reads as a callout
+       pinned beside the glass globe (never overlapping it). */
     .core-label {
       position: absolute;
       left: var(--scene-center-x);
       top: 50%;
       z-index: 3;
-      width: 188px;
-      min-height: 82px;
-      display: grid;
-      place-items: center;
-      translate: -50% -50%;
+      width: max-content;
+      max-width: 200px;
+      display: block;
+      translate: clamp(150px, 24vw, 340px) -50%;
+      padding-left: 14px;
+      border-left: 2px solid var(--blue-2);
       pointer-events: none;
-      text-align: center;
+      text-align: left;
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
     }
 
@@ -481,7 +485,9 @@
       padding: 6px 14px;
       border: 1.5px solid var(--blue-2);
       border-radius: 999px;
-      background: rgba(7, 14, 28, 0.74);
+      /* Solid navy fill (no backdrop-filter) — a glass blur here double-blurs the
+         glass core when the tag lands near it, which looks unreal. */
+      background: rgba(7, 14, 28, 0.9);
       color: #fff;
       font-size: 0.78rem;
       font-weight: 700;
@@ -489,7 +495,6 @@
       text-transform: uppercase;
       white-space: nowrap;
       pointer-events: none;
-      backdrop-filter: blur(10px);
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
       transition: opacity 200ms ease;
     }
@@ -1159,6 +1164,13 @@
       ringTag.style.top = `${ey.toFixed(1)}px`;
       ringTag.style.borderColor = col;
       ringTag.textContent = stageTags[activeStage];
+      /* Final stage: the ring has collapsed into the core, so the callout + tag
+         would sit on the glass sphere. Hide them (the right panel already names
+         "Managed Portfolio"); the core label beside the globe carries the label. */
+      const hideCallout = activeStage === 4 ? "0" : "";
+      ringTag.style.opacity = hideCallout;
+      calloutPath.style.opacity = hideCallout;
+      calloutDot.style.opacity = hideCallout;
     }
 
     const tickerSymbols = [
