@@ -1170,33 +1170,21 @@
        top ~half; the universe is lifted + zoomed slightly in JS so the core
        sits in the clear area above. Tap a ring or a stage tab to drill inward. */
     @media (max-width: 560px) {
-      .rail {
-        bottom: 10px;
-        max-height: 47%;
-        gap: 8px;
-      }
-      /* Hide the title text but keep the Play CTA at the top of the bottom sheet. */
+      /* Phones: drop the big stage card entirely and pin a compact strip
+         (Play + progress tabs) at the very bottom, so the universe gets the
+         whole screen. The card was 77% of the frame — it buried the dots and
+         pushed the tabs off-screen. The tabs label the stages and the tour
+         narration carries the detail. */
+      .rail { top: auto; bottom: 10px; max-height: none; gap: 10px; }
       .hero-copy { padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none; }
       .hero-copy .eyebrow, .hero-copy h1, .hero-copy .lead, .hero-copy .metric-row { display: none; }
       .hero-actions { margin-top: 0; }
       .hero-copy .tour-btn { margin-top: 0; width: 100%; padding: 13px 20px; font-size: 0.84rem; }
       .core-label,
       .core-leader,
-      .explore-hint { display: none; }      /* would misalign once the scene is lifted */
-      .stage-panel { padding: 12px 14px; }
-      .stage-kicker { font-size: 0.66rem; }
-      .stage-title { margin: 5px 0 4px; font-size: 1.02rem; }
-      .stage-count { margin-bottom: 6px; min-height: 0; padding: 6px 10px; }
-      .stage-body { font-size: 0.78rem; line-height: 1.34; }
+      .explore-hint { display: none; }
+      .stage-panel { display: none; }      /* the big card is the clutter — gone on phones */
       .stage-tabs button { height: 40px; }
-
-      /* While the guided tour plays on a phone, the big stage card otherwise
-         covers the core. Drop it and shrink the rail to a compact strip pinned
-         at the very bottom (Stop button + progress tabs), so the universe plays
-         full-screen and centred. The narration carries the stage detail. */
-      .is-touring .stage-panel { display: none; }
-      .is-touring .rail { top: auto; max-height: none; bottom: 10px; gap: 8px; }
-      .is-touring .stage-tabs { margin-top: 8px; }
     }
   </style>
 </head>
@@ -1771,14 +1759,15 @@
       depthTest: false,
       blending: THREE.AdditiveBlending,
       vertexColors: true,
-      uniforms: { uPixelRatio: { value: renderer.getPixelRatio() } },
+      uniforms: { uPixelRatio: { value: renderer.getPixelRatio() }, uPointScale: { value: 1.0 } },
       vertexShader: `
         attribute float size;
+        uniform float uPointScale;
         varying vec3 vColor;
         void main() {
           vColor = color;
           vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-          gl_PointSize = size * 520.0 * (1.0 / -mvPosition.z);
+          gl_PointSize = size * 520.0 * uPointScale * (1.0 / -mvPosition.z);
           gl_Position = projectionMatrix * mvPosition;
         }
       `,
@@ -2399,6 +2388,10 @@
       view.baseY = narrow ? 10.8 : 9.3;
       camera.position.y = view.baseY;
       camera.lookAt(0, 0, 0);
+      /* Phones fit the whole ring to the screen, which pushes the camera far and
+         shrinks the stock dots to nothing. Enlarge the points on small screens so
+         the "stars" stay visible at the zoomed-out distance. */
+      pointsMaterial.uniforms.uPointScale.value = rect.width < 560 ? 1.9 : (narrow ? 1.4 : 1.0);
     }
     window.addEventListener("resize", resize, { passive: true });
     resize();
