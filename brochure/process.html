@@ -1721,7 +1721,7 @@
     tourBed.loop = true;
     tourBed.preload = document.documentElement.classList.contains("is-embedded") ? "none" : "auto";
     tourBed.src = "../assets/audio/tour-bed.mp3";
-    const BED_VOL = 0.18;            /* low enough to sit beneath Daniel's voice */
+    const BED_VOL = 0.45;            /* clearly audible under the narration (was 0.18 — too faint) */
     let bedFade = null;
     let tourEndTimer = null;         /* delays the music fade after the narration ends */
     function fadeBed(target, ms) {
