@@ -302,6 +302,129 @@
       background: rgba(69, 128, 202, 0.22);
       color: #fff;
     }
+
+    /* ============ Detail "card board" (post-tour deep-dive) ============ */
+    .detail-btn { white-space: nowrap; }
+
+    .card-board {
+      position: absolute;
+      inset: 0;
+      z-index: 9;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, rgba(5, 12, 26, 0.92), rgba(5, 12, 26, 0.97));
+      backdrop-filter: blur(16px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    }
+    .card-board.is-open { opacity: 1; visibility: visible; transform: none; }
+
+    .card-board__bar {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(16px, 3vw, 26px) clamp(18px, 4vw, 40px);
+      border-bottom: 1px solid rgba(132, 174, 226, 0.16);
+    }
+    .card-board__title {
+      margin: 0;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #eaf4ff;
+    }
+    .card-board__close {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border: 1px solid rgba(132, 174, 226, 0.35);
+      border-radius: 50%;
+      background: rgba(7, 20, 42, 0.5);
+      color: #d6e4f8;
+      font-size: 1.5rem; line-height: 1;
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .card-board__close:hover { border-color: rgba(150, 190, 240, 0.9); background: rgba(69, 128, 202, 0.22); }
+
+    .card-board__scroll {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: clamp(16px, 3vw, 32px) clamp(18px, 4vw, 40px) clamp(40px, 6vw, 64px);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: clamp(12px, 1.6vw, 20px);
+      align-content: start;
+    }
+    .cb-stage { grid-column: 1 / -1; margin-top: clamp(10px, 2vw, 22px); }
+    .cb-stage:first-child { margin-top: 0; }
+    .cb-stage__title {
+      margin: 0 0 4px;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue-2);
+    }
+
+    .cb-card {
+      border: 1px solid rgba(132, 174, 226, 0.2);
+      border-radius: 12px;
+      background: rgba(10, 22, 44, 0.55);
+      overflow: hidden;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .cb-card.is-expanded { border-color: rgba(132, 182, 246, 0.55); background: rgba(14, 30, 58, 0.7); }
+    .cb-card__header {
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 18px;
+      background: none; border: 0; cursor: pointer;
+      text-align: left;
+      color: #eaf4ff;
+      font-size: 1rem; font-weight: 700;
+      font-family: "Cormorant", Georgia, serif;
+    }
+    .cb-card__chev {
+      flex: 0 0 auto;
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      color: var(--blue-2);
+      transition: transform 220ms ease;
+    }
+    .cb-card.is-expanded .cb-card__chev { transform: rotate(180deg); }
+    .cb-card__body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 280ms ease;
+    }
+    .cb-card.is-expanded .cb-card__body { grid-template-rows: 1fr; }
+    .cb-card__bodyinner { overflow: hidden; }
+    .cb-card__text {
+      margin: 0;
+      padding: 0 18px 16px;
+      color: var(--soft);
+      font-size: 0.92rem; line-height: 1.6;
+    }
+    .cb-listen {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin: 0 18px 18px;
+      padding: 9px 16px;
+      border: 1px solid rgba(132, 182, 246, 0.7);
+      border-radius: 999px;
+      background: rgba(69, 128, 202, 0.22);
+      color: #eaf4ff;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease;
+    }
+    .cb-listen:hover { background: rgba(69, 128, 202, 0.4); border-color: #b6d6ff; }
+    .cb-listen[aria-pressed="true"] { background: rgba(69, 128, 202, 0.5); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-board, .cb-card__body, .cb-card__chev { transition: none; }
+    }
     /* Scoped to .hero-copy so it beats the base `.hero-copy p { margin:0 }` rule. */
     .hero-copy .hero-hint {
       margin: 22px 0 0;
@@ -1238,6 +1361,7 @@
         <div class="hero-actions">
           <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
           <button type="button" class="recenter-btn" data-view="reset" aria-label="Recenter view">Recenter</button>
+          <button type="button" class="recenter-btn detail-btn" id="detailBtn">Break it down</button>
         </div>
         <div class="metric-row" aria-label="Portfolio process metrics">
           <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
@@ -1296,6 +1420,16 @@
         <div class="legend-step" style="--step-color:#2f7fd2"><strong>Selection</strong><span>Strongest names</span></div>
         <div class="legend-step" style="--step-color:#b9d7ff"><strong>Portfolio</strong><span>40-60 holdings</span></div>
       </footer>
+
+      <!-- Detail board: built in JS from the stage data + CARD_DETAIL. Opens after
+           the tour (or via "Break it down"); each card expands and can be played. -->
+      <aside class="card-board" id="cardBoard" aria-hidden="true">
+        <div class="card-board__bar">
+          <p class="card-board__title">The process, in detail</p>
+          <button type="button" class="card-board__close" id="cardBoardClose" aria-label="Close detail view">&times;</button>
+        </div>
+        <div class="card-board__scroll" id="cardBoardScroll"></div>
+      </aside>
     </section>
   </main>
 
@@ -2218,6 +2352,8 @@
       if (tourEndTimer) clearTimeout(tourEndTimer);
       tourEndTimer = setTimeout(() => fadeBed(0, 7000), 4500);
       tourStage = 0;
+      /* "Throw the cards up" once the tour finishes (desktop only). */
+      setTimeout(function () { if (window.__vemOpenBoard) window.__vemOpenBoard(); }, 1400);
     }
 
     /* MP3 clips drive the tour, so it no longer depends on the browser voice. */
@@ -2656,6 +2792,137 @@
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
+
+    /* ===================== Detail card board ===================== */
+    /* Per-card "lowdown" text + optional Daniel voice clip, aligned to each stage's
+       evidence chips. audio: "" => no Listen button yet (drop the MP3 in to enable). */
+    const CARD_DETAIL = [
+      [ /* Universe */
+        { body: "The starting field: the investable universe of public equities across the major global markets — roughly 9,000 names. Nothing is excluded by opinion. The field begins as wide as the market itself.", audio: "card-1-1.mp3" },
+        { body: "No stock earns a place simply for being large, famous, or in an index. Every name starts as a candidate and must earn its way inward through evidence. The portfolio is built, never inherited.", audio: "card-1-2.mp3" },
+        { body: "Starting from the entire field — every sector, size, and geography — keeps the process honest. It removes the bias of only looking where winners are expected to be. Nothing promising is ruled out before it has been measured.", audio: "card-1-3.mp3" },
+        { body: "This is where the funnel is widest. Thousands of names crowd the outer edge, and the vast majority will never be owned — by design. Every stage that follows removes more than it keeps.", audio: "card-1-4.mp3" }
+      ],
+      [ /* Quant */
+        { title: "Multi-Factor Analysis", body: "A multi-factor model is a disciplined ranking engine — it doesn't guess, it reads the signals. It scores every company across value (is it cheap?), quality (is it a good business?), momentum (is the market already rewarding it?), growth (is it expanding?), and risk (how steady?), then weights them by strategy and folds them into one composite score. The field is ranked, strongest to weakest. The model is the engine; the portfolio manager is still the pilot — setting sector and position limits, liquidity checks, and a sell discipline.", audio: "card-2-1.mp3" },
+        { body: "Two of the core factors. Value asks whether a stock is cheap against its earnings, cash flow, and sales. Growth asks whether the business is actually expanding — rising revenue and earnings. Together they separate real bargains from value traps.", audio: "" },
+        { body: "Quality looks for durable businesses — strong margins, healthy balance sheets, steady profits. Momentum asks whether the market has already begun rewarding the name. In short: a good business the market is starting to notice.", audio: "" },
+        { body: "Every candidate is also scored on risk — volatility, downside exposure, balance-sheet strength. The model favors names whose opportunity outweighs their risk, not simply the highest raw return.", audio: "" }
+      ],
+      [ /* Fundamental */
+        { body: "Where the numbers end, judgment begins. The Investment Committee studies each survivor by hand — the durability of its earnings, its competitive position, and whether the business can sustain what the screens flagged.", audio: "" },
+        { body: "Each company is weighed against its industry and the broader economy — demand trends, pricing power, and how it behaves across cycles. A strong company in a failing market is still a risk.", audio: "" },
+        { body: "No company is judged in isolation. It is measured against its direct competitors — growth, margins, valuation, and execution — to confirm it is a leader, not just a passenger in a rising sector.", audio: "" },
+        { body: "Finally, the people. The committee evaluates leadership's track record, capital discipline, and credibility. Good businesses can be run poorly; this step asks whether management can be trusted to compound value.", audio: "" }
+      ],
+      [ /* Selection */
+        { body: "Survivors are sorted by strategy — Large Cap Growth, Large Cap Value, and International ADR — so each name competes only against the right peers for the right portfolio.", audio: "" },
+        { body: "U.S. names and international ADRs are judged on their own terms — different benchmarks, currencies, and disclosure — so global opportunities are weighed fairly, not forced into a domestic mold.", audio: "" },
+        { body: "Selection never closes. Semi-finalists are continually re-tested against fresh names moving up through the model — a position is held only as long as it still out-ranks the alternatives.", audio: "" },
+        { body: "A great stock is not always a great addition. Each finalist is checked for how it fits the existing portfolio — diversification, overlap, and balance — before it earns a place.", audio: "" }
+      ],
+      [ /* Portfolio */
+        { body: "The finished portfolio is governed by defined risk limits. Exposure is monitored continuously, and the process acts when a holding's risk profile deteriorates — rather than waiting for conviction to fade.", audio: "" },
+        { body: "No single name can dominate. Position sizes are capped so conviction is expressed without letting one stock's outcome decide the portfolio's. Winners are trimmed; risk is spread.", audio: "" },
+        { body: "Exposure to any one sector or industry is bounded, so the portfolio is never quietly making a single macro bet. Diversification is enforced by rule, not left to drift.", audio: "" },
+        { body: "Selling is as disciplined as buying. When a holding's fundamentals, ranking, or risk characteristics cross defined thresholds, a clear sell discipline removes it — no story, no hoping.", audio: "" }
+      ]
+    ];
+
+    (function buildCardBoard() {
+      const board = document.getElementById("cardBoard");
+      const scroll = document.getElementById("cardBoardScroll");
+      const closeBtn = document.getElementById("cardBoardClose");
+      const detailBtn = document.getElementById("detailBtn");
+      if (!board || !scroll) return;
+      const STAGE_NAMES = ["Universe", "Quantitative Analysis", "Fundamental Analysis", "Stock Selection", "Managed Portfolio"];
+      const chev = '<svg viewBox="0 0 12 12" width="12" height="12" fill="none"><path d="M2 4.5 6 8.5 10 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      const boardAudio = new Audio();
+      let activeListen = null;
+      function resetListen(btn) { if (btn) { btn.setAttribute("aria-pressed", "false"); btn.innerHTML = "&#9654; Listen"; } }
+
+      stages.forEach(function (stage, si) {
+        const group = document.createElement("div");
+        group.className = "cb-stage";
+        const gt = document.createElement("p");
+        gt.className = "cb-stage__title";
+        gt.textContent = "0" + (si + 1) + " · " + STAGE_NAMES[si];
+        group.appendChild(gt);
+
+        stage.evidence.forEach(function (evName, ci) {
+          const detail = (CARD_DETAIL[si] && CARD_DETAIL[si][ci]) || { body: "", audio: "" };
+          const card = document.createElement("div");
+          card.className = "cb-card";
+
+          const header = document.createElement("button");
+          header.type = "button";
+          header.className = "cb-card__header";
+          header.setAttribute("aria-expanded", "false");
+          const titleSpan = document.createElement("span");
+          titleSpan.textContent = detail.title || evName;
+          header.appendChild(titleSpan);
+          const chevSpan = document.createElement("span");
+          chevSpan.className = "cb-card__chev";
+          chevSpan.setAttribute("aria-hidden", "true");
+          chevSpan.innerHTML = chev;
+          header.appendChild(chevSpan);
+
+          const body = document.createElement("div");
+          body.className = "cb-card__body";
+          const inner = document.createElement("div");
+          inner.className = "cb-card__bodyinner";
+          const text = document.createElement("p");
+          text.className = "cb-card__text";
+          text.textContent = detail.body;
+          inner.appendChild(text);
+
+          if (detail.audio) {
+            const listen = document.createElement("button");
+            listen.type = "button";
+            listen.className = "cb-listen";
+            listen.setAttribute("aria-pressed", "false");
+            listen.innerHTML = "&#9654; Listen";
+            listen.addEventListener("click", function () {
+              if (activeListen === listen && !boardAudio.paused) {
+                boardAudio.pause(); resetListen(listen); activeListen = null; return;
+              }
+              resetListen(activeListen);
+              boardAudio.pause();
+              boardAudio.src = "../assets/audio/" + detail.audio;
+              boardAudio.play().catch(function () {});
+              listen.setAttribute("aria-pressed", "true");
+              listen.innerHTML = "&#10074;&#10074; Stop";
+              activeListen = listen;
+            });
+            inner.appendChild(listen);
+          }
+          body.appendChild(inner);
+
+          header.addEventListener("click", function () {
+            const open = card.classList.toggle("is-expanded");
+            header.setAttribute("aria-expanded", String(open));
+          });
+
+          card.appendChild(header);
+          card.appendChild(body);
+          group.appendChild(card);
+        });
+
+        scroll.appendChild(group);
+      });
+
+      boardAudio.addEventListener("ended", function () { resetListen(activeListen); activeListen = null; });
+
+      function openBoard() { board.classList.add("is-open"); board.setAttribute("aria-hidden", "false"); }
+      function closeBoard() { board.classList.remove("is-open"); board.setAttribute("aria-hidden", "true"); boardAudio.pause(); resetListen(activeListen); activeListen = null; }
+      if (detailBtn) detailBtn.addEventListener("click", openBoard);
+      if (closeBtn) closeBtn.addEventListener("click", closeBoard);
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeBoard(); });
+      /* Let endTour pop the board open on desktop once the tour finishes. */
+      window.__vemOpenBoard = function () {
+        if (window.matchMedia && window.matchMedia("(min-width: 761px)").matches) openBoard();
+      };
+    })();
 
     setStage(0);
     requestAnimationFrame(animate);
