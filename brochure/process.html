@@ -497,6 +497,7 @@
     }
 
     .stage-tabs button {
+      position: relative;
       min-width: 0;
       height: 48px;
       border: 1px solid rgba(132, 174, 226, 0.16);
@@ -508,6 +509,21 @@
       backdrop-filter: blur(14px);
       transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
     }
+
+    /* Per-stage accent dot (colour set in JS from stageCssColors). */
+    .tab-dot {
+      position: absolute;
+      right: 8px;
+      bottom: 9px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 6px currentColor;
+      opacity: 0.55;
+      transition: opacity 180ms ease;
+    }
+    .stage-tabs button[aria-selected="true"] .tab-dot { opacity: 1; }
 
     .stage-tabs button[aria-selected="true"] {
       border-color: rgba(118, 174, 238, 0.76);
@@ -760,6 +776,34 @@
       pointer-events: none;
     }
 
+    /* Bottom-left interaction hint with a mouse glyph (per the concept render). */
+    .explore-hint {
+      position: absolute;
+      left: clamp(16px, 3vw, 36px);
+      bottom: clamp(16px, 3vh, 30px);
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: rgba(214, 228, 248, 0.62);
+      pointer-events: none;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+      transition: opacity 240ms ease;
+    }
+    .explore-hint__mouse { width: 21px; height: 32px; flex: 0 0 auto; opacity: 0.8; }
+    .explore-hint__text strong {
+      display: block;
+      color: rgba(232, 242, 255, 0.85);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .explore-hint__text > span {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.72rem;
+    }
+
     .view-controls {
       position: absolute;
       left: var(--scene-center-x);
@@ -855,6 +899,7 @@
     .is-intro .ring-callout,
     .is-intro .ring-tag,
     .is-intro .core-leader,
+    .is-intro .explore-hint,
     .is-intro .core-label { opacity: 0 !important; transition: opacity 240ms ease; }
 
     @media (max-width: 1180px) {
@@ -1136,7 +1181,8 @@
       .hero-actions { margin-top: 0; }
       .hero-copy .tour-btn { margin-top: 0; width: 100%; padding: 13px 20px; font-size: 0.84rem; }
       .core-label,
-      .core-leader { display: none; }      /* would misalign once the scene is lifted */
+      .core-leader,
+      .explore-hint { display: none; }      /* would misalign once the scene is lifted */
       .stage-panel { padding: 12px 14px; }
       .stage-kicker { font-size: 0.66rem; }
       .stage-title { margin: 5px 0 4px; font-size: 1.02rem; }
@@ -1176,6 +1222,18 @@
       </svg>
       <div class="ring-tag" id="ringTag" aria-hidden="true">Universe</div>
 
+      <!-- Bottom-left interaction hint with a mouse glyph. -->
+      <div class="explore-hint" aria-hidden="true">
+        <svg class="explore-hint__mouse" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.6" y="1.6" width="20.8" height="32.8" rx="10.4" stroke="currentColor" stroke-width="1.7"/>
+          <line x1="12" y1="8" x2="12" y2="14.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span class="explore-hint__text">
+          <strong>Drag to explore</strong>
+          <span>Tap a stage to drill in</span>
+        </span>
+      </div>
+
       <div class="rail">
       <article class="hero-copy">
         <p class="eyebrow">How We Do It | Equity Process</p>
@@ -1185,7 +1243,6 @@
           <button type="button" id="tourToggle" class="tour-btn" aria-pressed="false">&#9654; Play guided tour</button>
           <button type="button" class="recenter-btn" data-view="reset" aria-label="Recenter view">Recenter</button>
         </div>
-        <p class="hero-hint">Press play for the guided tour &middot; or drag to explore &amp; tap a stage</p>
         <div class="metric-row" aria-label="Portfolio process metrics">
           <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
           <div class="metric"><strong>900-1,000</strong><span>pass financial tests</span></div>
@@ -1222,11 +1279,11 @@
       </article>
 
       <nav class="stage-tabs" aria-label="Portfolio process stages">
-        <button type="button" data-stage="0" aria-selected="true" aria-label="Universe of equity securities"><span class="tab-index">01</span><span class="tab-label">Univ.</span></button>
-        <button type="button" data-stage="1" aria-selected="false" aria-label="Quantitative analysis"><span class="tab-index">02</span><span class="tab-label">Quant</span></button>
-        <button type="button" data-stage="2" aria-selected="false" aria-label="Fundamental analysis"><span class="tab-index">03</span><span class="tab-label">Fund.</span></button>
-        <button type="button" data-stage="3" aria-selected="false" aria-label="Stock selection"><span class="tab-index">04</span><span class="tab-label">Select</span></button>
-        <button type="button" data-stage="4" aria-selected="false" aria-label="Managed portfolio"><span class="tab-index">05</span><span class="tab-label">Port.</span></button>
+        <button type="button" data-stage="0" aria-selected="true" aria-label="Universe of equity securities"><span class="tab-index">01</span><span class="tab-label">Univ.</span><span class="tab-dot" aria-hidden="true"></span></button>
+        <button type="button" data-stage="1" aria-selected="false" aria-label="Quantitative analysis"><span class="tab-index">02</span><span class="tab-label">Quant</span><span class="tab-dot" aria-hidden="true"></span></button>
+        <button type="button" data-stage="2" aria-selected="false" aria-label="Fundamental analysis"><span class="tab-index">03</span><span class="tab-label">Fund.</span><span class="tab-dot" aria-hidden="true"></span></button>
+        <button type="button" data-stage="3" aria-selected="false" aria-label="Stock selection"><span class="tab-index">04</span><span class="tab-label">Select</span><span class="tab-dot" aria-hidden="true"></span></button>
+        <button type="button" data-stage="4" aria-selected="false" aria-label="Managed portfolio"><span class="tab-index">05</span><span class="tab-label">Port.</span><span class="tab-dot" aria-hidden="true"></span></button>
       </nav>
       </div>
 
@@ -1968,6 +2025,12 @@
     /* "Next" footer advances one stage (it's hidden on the final stage). */
     document.getElementById("stageNext").addEventListener("click", () => {
       if (activeStage < stages.length - 1) setStage(activeStage + 1);
+    });
+
+    /* Colour each tab's accent dot from the per-stage palette. */
+    tabs.forEach((tab, i) => {
+      const dot = tab.querySelector(".tab-dot");
+      if (dot) dot.style.color = stageCssColors[i];
     });
 
     /* ---------- Guided narrated tour (proof-of-concept) ----------
