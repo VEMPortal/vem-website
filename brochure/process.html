@@ -418,30 +418,33 @@
       font-weight: 700;
     }
 
-    /* The core label sits OUTSIDE the sphere — pushed to the right of the core and
-       vertically centred on it, with a thin accent rule so it reads as a callout
-       pinned beside the glass globe (never overlapping it). */
+    /* The core label sits OUTSIDE the sphere, beside it, with a leader line back to
+       the glass core. JS positions it each frame: it tracks the sphere's right edge,
+       scales up as the camera zooms in, and pulls in closer to the globe — so it
+       reads as a callout that grows toward you, never overlapping the sphere. */
     .core-label {
       position: absolute;
-      left: var(--scene-center-x);
-      top: 50%;
+      left: 0;
+      top: 0;
       z-index: 3;
       width: max-content;
-      max-width: 200px;
+      max-width: 240px;
       display: block;
-      translate: clamp(150px, 24vw, 340px) -50%;
-      padding-left: 14px;
-      border-left: 2px solid var(--blue-2);
+      transform-origin: left center;
+      transform: translateY(-50%);   /* JS appends scale() */
       pointer-events: none;
       text-align: left;
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+      opacity: 0;                    /* fades in once JS first places it */
+      transition: opacity 240ms ease;
     }
+    .core-label.is-placed { opacity: 1; }
 
     .core-label strong {
       display: block;
       color: #f7fbff;
       font-family: "Cinzel", Georgia, serif;
-      font-size: 1.04rem;
+      font-size: 1.18rem;
       line-height: 1.06;
       letter-spacing: 0;
     }
@@ -450,9 +453,38 @@
       display: block;
       margin-top: 7px;
       color: var(--blue-2);
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
+    }
+
+    /* Leader line: a thin rule from the sphere's edge to the label, with a dot on
+       the sphere end so it clearly points back at what's being labelled. */
+    .core-leader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      height: 0;
+      border-top: 1.5px solid var(--blue-2);
+      transform: translateY(-50%);
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+      transition: opacity 240ms ease;
+    }
+    .core-leader.is-placed { opacity: 0.85; }
+    .core-leader__dot {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      color: var(--blue-2);
+      background: var(--blue-2);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 7px currentColor;
     }
 
     .ring-callout {
@@ -705,6 +737,7 @@
     .is-intro .ticker-layer,
     .is-intro .ring-callout,
     .is-intro .ring-tag,
+    .is-intro .core-leader,
     .is-intro .core-label { opacity: 0 !important; transition: opacity 240ms ease; }
 
     @media (max-width: 1180px) {
@@ -982,7 +1015,8 @@
       .hero-copy { padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none; }
       .hero-copy .eyebrow, .hero-copy h1, .hero-copy > p, .hero-copy .metric-row { display: none; }
       .hero-copy .tour-btn { margin-top: 0; width: 100%; padding: 13px 20px; font-size: 0.84rem; }
-      .core-label { display: none; }      /* would misalign once the scene is lifted */
+      .core-label,
+      .core-leader { display: none; }      /* would misalign once the scene is lifted */
       .stage-panel { padding: 12px 14px; }
       .stage-kicker { font-size: 0.66rem; }
       .stage-title { margin: 5px 0 4px; font-size: 1.02rem; }
@@ -1007,7 +1041,9 @@
         </div>
       </header>
 
-      <div class="core-label" aria-hidden="true">
+      <!-- Leader line from the glass core out to the label (JS-positioned). -->
+      <div class="core-leader" id="coreLeader" aria-hidden="true"><span class="core-leader__dot"></span></div>
+      <div class="core-label" id="coreLabel" aria-hidden="true">
         <div>
           <strong>Fundamentals<br>Core</strong>
           <span>quality, growth, risk</span>
@@ -1142,6 +1178,54 @@
     const calloutDot = document.getElementById("ringCalloutDot");
     const ringTag = document.getElementById("ringTag");
     const calloutAnchor = new THREE.Vector3();
+
+    /* Live core label: tracks the glass sphere's right edge, scales up as the camera
+       zooms in, and pulls in closer to the globe — a callout that grows toward you. */
+    const coreLabel = document.getElementById("coreLabel");
+    const coreLeader = document.getElementById("coreLeader");
+    const railEl = document.querySelector(".rail");
+    const _coreC = new THREE.Vector3();   /* core centre (world)    */
+    const _coreE = new THREE.Vector3();   /* core edge (world)      */
+    const _camRight = new THREE.Vector3();/* camera right axis      */
+    let corePlaced = false;
+    function updateCoreLabel() {
+      if (!coreLabel) return;
+      const rect = card.getBoundingClientRect();
+      if (rect.width < 561) return;       /* hidden on phones (CSS) */
+      core.getWorldPosition(_coreC);
+      _camRight.set(1, 0, 0).applyQuaternion(camera.quaternion);
+      const worldR = 1.08 * core.scale.x * 1.12;   /* a hair beyond the glass edge */
+      _coreE.copy(_coreC).addScaledVector(_camRight, worldR);
+      _coreC.project(camera);
+      _coreE.project(camera);
+      const cx = (_coreC.x * 0.5 + 0.5) * rect.width;
+      const cy = (-_coreC.y * 0.5 + 0.5) * rect.height;
+      const ex = (_coreE.x * 0.5 + 0.5) * rect.width;
+      const screenR = Math.abs(ex - cx);
+      const edgeX = cx + screenR;          /* sphere's right edge on screen */
+      /* Closer (smaller distance) -> bigger text + smaller gap. */
+      const zoomRatio = view.defaultDistance ? view.defaultDistance / Math.max(view.distance, 1) : 1;
+      const fontScale = clamp(0.92 + (zoomRatio - 1) * 0.30, 0.92, 1.5);
+      const gap = clamp(46 - (zoomRatio - 1) * 16, 20, 46);
+      let labelX = edgeX + gap;
+      /* Keep clear of the right rail / panel. */
+      const labelW = coreLabel.offsetWidth * fontScale;
+      const railLeft = railEl ? (railEl.getBoundingClientRect().left - rect.left) : rect.width;
+      labelX = Math.min(labelX, railLeft - labelW - 16);
+      labelX = Math.max(labelX, edgeX + 12);
+      coreLabel.style.left = labelX.toFixed(1) + "px";
+      coreLabel.style.top = cy.toFixed(1) + "px";
+      coreLabel.style.transform = "translateY(-50%) scale(" + fontScale.toFixed(3) + ")";
+      coreLeader.style.left = edgeX.toFixed(1) + "px";
+      coreLeader.style.top = cy.toFixed(1) + "px";
+      coreLeader.style.width = Math.max(0, labelX - edgeX).toFixed(1) + "px";
+      if (!corePlaced) {
+        corePlaced = true;
+        coreLabel.classList.add("is-placed");
+        coreLeader.classList.add("is-placed");
+      }
+    }
+
     function updateCallout() {
       const rect = card.getBoundingClientRect();
       const r = activeStage === 4 ? 1.9 : ringRadii[activeStage];
@@ -2279,6 +2363,7 @@
       }
 
       updateCallout();
+      updateCoreLabel();
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
