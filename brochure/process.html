@@ -1127,10 +1127,6 @@
         font-size: 1.24rem;
       }
 
-      .evidence {
-        display: none;
-      }
-
       .ev-chip {
         min-height: 0;
         font-size: 0.7rem;
@@ -1160,6 +1156,10 @@
     }
 
     @media (max-width: 760px) {
+      /* Phones: keep the panel compact — the evidence chips stay hidden here, but
+         now show on every desktop/laptop width (>760), incl. the home page embed. */
+      .evidence { display: none; }
+
       .page {
         min-height: 680px;
         padding: 0;
