@@ -2051,6 +2051,17 @@
       "And so, a constellation takes shape - forty to sixty holdings, risk-controlled and continuously monitored. Each has survived the full passage: a universe of thousands, distilled through discipline and evidence into a focused, fundamentally-driven portfolio. Not chosen by chance - chosen by process. At Vann Equity Management, the client's interest, above all else."
     ];
 
+    /* A quick "multi-factor ranking" beat that plays on the Quant ring after the
+       Quant narration, then hands off to Fundamental. Its own optional clip
+       (tour-2b.mp3); falls back to the browser voice until that's recorded. */
+    const MULTIFACTOR = {
+      text: "From that composite, a ranking - every one of the thousand ordered, strongest to weakest. Not a verdict, but a queue: the names worth a human's time, sorted so judgment begins where the evidence is strongest.",
+      audio: "../assets/audio/tour-2b.mp3",
+      kicker: "The ranking",
+      title: "Multi-Factor Ranking",
+      count: "Composite score | every survivor ordered, strongest to weakest"
+    };
+
     const tourBtn = document.getElementById("tourToggle");
     const synth = window.speechSynthesis;
     let tourPlaying = false;
@@ -2106,8 +2117,44 @@
        change needed. */
     function advanceFrom(i) {
       if (!tourPlaying) return;
+      /* After Quant (stage 1), play the multi-factor beat before Fundamental. */
+      if (i === 1) { playMultiFactor(); return; }
       if (i < TOUR.length - 1) { tourStage = i + 1; setStage(tourStage); speakStage(tourStage); }
       else { endTour(); }
+    }
+
+    /* ---- Multi-factor ranking beat (stays on the Quant ring) ---- */
+    function toFundamental() {
+      if (!tourPlaying) return;
+      tourStage = 2; setStage(2); speakStage(2);
+    }
+    function speakMultiFactorBrowser() {
+      if (!tourPlaying) return;
+      if (!synth) { setTimeout(toFundamental, 6500); return; }
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(MULTIFACTOR.text);
+      if (tourVoice) u.voice = tourVoice;
+      u.rate = 0.95; u.pitch = 1.0;
+      u.onend = toFundamental;
+      synth.speak(u);
+    }
+    function playMultiFactor() {
+      if (!tourPlaying) return;
+      /* Relabel the panel and nudge a little deeper, but keep the Quant ring. */
+      stageEls.kicker.textContent = MULTIFACTOR.kicker;
+      stageEls.title.textContent = MULTIFACTOR.title;
+      stageEls.count.textContent = MULTIFACTOR.count;
+      gravityImpulse = 1;
+      if (card.getBoundingClientRect().width >= 760) {
+        view.targetDistance = view.defaultDistance * 0.74;   /* between Quant and Fundamental */
+      }
+      if (synth) synth.cancel();
+      tourAudio.pause();
+      tourAudio.onended = toFundamental;
+      tourAudio.onerror = speakMultiFactorBrowser;   /* no clip yet -> browser voice */
+      tourAudio.src = MULTIFACTOR.audio;
+      const p = tourAudio.play();
+      if (p && p.catch) p.catch(speakMultiFactorBrowser);
     }
     function speakBrowser(i) {
       if (!synth) { setTimeout(() => advanceFrom(i), 6500); return; }
