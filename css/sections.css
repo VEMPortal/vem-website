@@ -515,7 +515,11 @@
   z-index: 3;
   max-width: min(44ch, 40vw);
   pointer-events: none; /* let drags pass through to the universe */
+  transition: opacity 0.8s ease;
 }
+/* While the guided tour runs, fade the heading out so it doesn't sit over the
+   core; it returns on stop / recenter (toggled via postMessage from the iframe). */
+.process-stage__head.tour-hidden { opacity: 0; }
 .process-stage__head .overline { color: var(--accent-soft, #94abd6); }
 .process-stage__head h2 {
   margin: 0.35em 0 0;

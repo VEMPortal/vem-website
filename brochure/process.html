@@ -1954,6 +1954,7 @@
 
     function resetView() {
       view.userControlled = false;
+      postTour("stop");   /* Recenter brings the homepage heading back */
       view.targetRotX = 0.88;
       view.targetRotY = 0.04;
       view.targetDistance = view.defaultDistance;
@@ -2165,8 +2166,19 @@
       if (p && p.catch) p.catch(() => speakBrowser(i));   /* blocked/missing -> browser voice */
     }
 
+    /* Tell the parent (homepage embed) when the tour runs, so it can fade its
+       overlaid heading out of the way and bring it back on stop / recenter. */
+    function postTour(state) {
+      try {
+        if (window.parent && window.parent !== window) {
+          window.parent.postMessage({ type: "vem-tour", state: state }, location.origin);
+        }
+      } catch (e) {}
+    }
+
     function startTour() {
       tourPlaying = true;
+      postTour("start");
       if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
       setTourBtn(true);
       card.classList.add("is-touring");
@@ -2186,6 +2198,7 @@
     }
     function pauseTour() {           /* user paused — drop into manual mode */
       tourPlaying = false;
+      postTour("stop");
       if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
       setTourBtn(false);
       card.classList.remove("is-touring");
@@ -2196,6 +2209,7 @@
     }
     function endTour() {             /* reached the portfolio — reset to start */
       tourPlaying = false;
+      postTour("stop");
       setTourBtn(false);
       card.classList.remove("is-touring");
       if (synth) synth.cancel();

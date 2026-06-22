@@ -43,7 +43,7 @@
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
   <link rel="stylesheet" href="css/hero.css?v=65" />
-  <link rel="stylesheet" href="css/sections.css?v=63" />
+  <link rel="stylesheet" href="css/sections.css?v=64" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
@@ -468,9 +468,9 @@
 
     <!-- Full-bleed interactive 3D process universe (drag to explore; tap a stage) -->
     <div class="process-stage reveal">
-      <iframe class="process-stage__frame" src="brochure/process.html?v=13"
+      <iframe class="process-stage__frame" src="brochure/process.html?v=14"
               title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
-              loading="lazy"></iframe>
+              allow="autoplay; fullscreen" loading="lazy"></iframe>
 
       <!-- Section heading overlaid in the upper-left (desktop); hidden on phones -->
       <div class="process-stage__head">
@@ -803,5 +803,20 @@
   <script src="js/halo.js?v=4" defer></script>
   <script src="js/sections.js?v=51" defer></script>
   <script src="js/process.js?v=56" defer></script>
+  <script>
+    /* Fade the overlaid "Our Process" heading out while the embedded tour runs
+       (it otherwise sits over the core at the final stage); bring it back when the
+       tour stops or the user hits Recenter. Desktop only — the heading is hidden on
+       phones anyway, so this is a no-op there. */
+    (function () {
+      var head = document.querySelector('.process-stage__head');
+      if (!head) return;
+      window.addEventListener('message', function (e) {
+        if (e.origin !== location.origin) return;
+        if (!e.data || e.data.type !== 'vem-tour') return;
+        head.classList.toggle('tour-hidden', e.data.state === 'start');
+      });
+    })();
+  </script>
 </body>
 </html>
