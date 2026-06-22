@@ -407,6 +407,83 @@
       line-height: 1.22;
     }
 
+    /* "At this stage" stat trio + "Next" footer (richer panel, per the concept). */
+    .stage-meta {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(132, 174, 226, 0.16);
+    }
+    .stage-meta__eyebrow {
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .stage-meta__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .stage-meta__grid strong {
+      display: block;
+      color: #eaf4ff;
+      font-family: "Cormorant", Georgia, serif;
+      font-size: 1.34rem;
+      font-weight: 600;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+    .stage-meta__grid span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.64rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .stage-next {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border: 1px solid rgba(132, 174, 226, 0.24);
+      border-radius: 10px;
+      background: rgba(7, 20, 42, 0.42);
+      color: #d6e4f8;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .stage-next:hover,
+    .stage-next:focus-visible {
+      border-color: rgba(150, 190, 240, 0.7);
+      background: rgba(69, 128, 202, 0.18);
+    }
+    .stage-next__text { font-size: 0.84rem; }
+    .stage-next__text strong { color: #fff; font-weight: 700; }
+    .stage-next__names {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+    .stage-next__arrow {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(132, 174, 226, 0.4);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
     .stage-tabs {
       flex: 0 0 auto;
       z-index: 5;
@@ -1127,6 +1204,21 @@
           <span>Growth/value traits</span>
           <span>Multi-factor ranking</span>
         </div>
+
+        <div class="stage-meta" aria-label="At this stage">
+          <p class="stage-meta__eyebrow">At this stage</p>
+          <div class="stage-meta__grid">
+            <div><strong id="statCount">~9,000</strong><span>Companies</span></div>
+            <div><strong id="statShare">100%</strong><span>of universe</span></div>
+            <div><strong id="statConv">Screening</strong><span>Conviction</span></div>
+          </div>
+        </div>
+
+        <button type="button" class="stage-next" id="stageNext" aria-label="Advance to the next stage">
+          <span class="stage-next__text">Next: <strong id="nextName">Quant</strong>
+            <span class="stage-next__names" id="nextNames">~900 names</span></span>
+          <span class="stage-next__arrow" aria-hidden="true">&#8250;</span>
+        </button>
       </article>
 
       <nav class="stage-tabs" aria-label="Portfolio process stages">
@@ -1169,7 +1261,9 @@
         title: "Universe of Equity Securities",
         count: "Global | every publicly traded candidate",
         body: "Every listed equity starts as a candidate until evidence says otherwise. More names live on the outer edge; none are owned by default.",
-        evidence: ["Global public equities", "No default ownership", "Full candidate field", "Outer orbit density"]
+        evidence: ["Global public equities", "No default ownership", "Full candidate field", "Outer orbit density"],
+        stat: { count: "~9,000", share: "100%", conviction: "Screening" },
+        next: { name: "Quant", names: "~900 names" }
       },
       {
         number: "02",
@@ -1177,7 +1271,9 @@
         title: "Quantitative Analysis",
         count: "About 8,000-9,000 pass structure | 900-1,000 pass financial tests",
         body: "Proprietary screens filter for structure, risk, growth/value characteristics, and multi-factor ranking before judgment enters the process.",
-        evidence: ["Multi-factor model", "Value & growth", "Quality & momentum", "Risk ranking"]
+        evidence: ["Multi-factor model", "Value & growth", "Quality & momentum", "Risk ranking"],
+        stat: { count: "~900", share: "~10%", conviction: "Ranking" },
+        next: { name: "Fundamental", names: "~150 names" }
       },
       {
         number: "03",
@@ -1185,7 +1281,9 @@
         title: "Fundamental Analysis",
         count: "Semi-finalists: Growth about 150 | Value about 150 | Intl ADR about 250",
         body: "The Investment Committee validates earnings potential and sustainability through business analysis, peer comparison, growth durability, and management evaluation.",
-        evidence: ["Business quality", "Economic analysis", "Peer comparison", "Management review"]
+        evidence: ["Business quality", "Economic analysis", "Peer comparison", "Management review"],
+        stat: { count: "~150", share: "~1.7%", conviction: "Building" },
+        next: { name: "Selection", names: "~40 names" }
       },
       {
         number: "04",
@@ -1193,7 +1291,9 @@
         title: "Stock Selection",
         count: "Growth 50-60 | Value 40-50 | Intl ADR 55-65",
         body: "Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.",
-        evidence: ["Growth vs value", "Domestic vs ADR", "New candidate pressure", "Portfolio fit"]
+        evidence: ["Growth vs value", "Domestic vs ADR", "New candidate pressure", "Portfolio fit"],
+        stat: { count: "~40-60", share: "~0.6%", conviction: "High" },
+        next: { name: "Portfolio", names: "40-60 held" }
       },
       {
         number: "05",
@@ -1201,7 +1301,9 @@
         title: "Managed Portfolio",
         count: "40-60 holdings | risk-controlled | continuously monitored",
         body: "A diversified portfolio holds companies that possess and maintain competitive financial characteristics, with sector, industry, and position-size limits.",
-        evidence: ["Risk controls", "Position sizing", "Sector limits", "Sell discipline"]
+        evidence: ["Risk controls", "Position sizing", "Sector limits", "Sell discipline"],
+        stat: { count: "40-60", share: "~0.6%", conviction: "Held" },
+        next: null
       }
     ];
 
@@ -1542,9 +1644,12 @@
 
     /* Heat ramp: red universe -> orange -> yellow -> green -> bright-blue core.
        Surviving dots (and each ring) take the active stage's color. */
-    const stageColors = [0xff5848, 0xff9500, 0xffd60a, 0x34c759, 0x8fd0ff];
-    const dimStageColors = [0x3a1411, 0x3a2410, 0x3a3410, 0x123a1f, 0x18334f];
-    const stageCssColors = ["#ff3b30", "#ff9500", "#ffd60a", "#34c759", "#8fd0ff"];
+    /* Warm "stardust" palette — golden rings narrowing to a cool-blue core, like a
+       galaxy disk. Dust + ring meshes use stageColors; the small per-stage accents
+       (chips, tabs, callout) use stageCssColors. */
+    const stageColors = [0xe8932e, 0xf5b942, 0xffce5e, 0xffe08a, 0x9cc4ff];
+    const dimStageColors = [0x3a2810, 0x3a2f12, 0x3a3414, 0x3a3a22, 0x18334f];
+    const stageCssColors = ["#ff5a52", "#ff9f43", "#39c46b", "#5ea8ff", "#bd8cff"];
     const ringRadii = [12.4, 9.0, 6.0, 3.35, 1.35];
     const ringWidth = [1.45, 0.95, 0.7, 0.52, 0.3];
     const stageSurvival = [1, 0.2, 0.057, 0.017, 0.008];
@@ -1826,6 +1931,20 @@
         span.textContent = item;
         stageEls.evidence.appendChild(span);
       });
+      /* "At this stage" stats + "Next" footer. */
+      if (data.stat) {
+        document.getElementById("statCount").textContent = data.stat.count;
+        document.getElementById("statShare").textContent = data.stat.share;
+        document.getElementById("statConv").textContent = data.stat.conviction;
+      }
+      const nextBtn = document.getElementById("stageNext");
+      if (data.next) {
+        document.getElementById("nextName").textContent = data.next.name;
+        document.getElementById("nextNames").textContent = data.next.names;
+        nextBtn.style.display = "";
+      } else {
+        nextBtn.style.display = "none";
+      }
       tabs.forEach((tab) => {
         tab.setAttribute("aria-selected", String(Number(tab.dataset.stage) === index));
       });
@@ -1844,6 +1963,11 @@
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => setStage(Number(tab.dataset.stage)));
+    });
+
+    /* "Next" footer advances one stage (it's hidden on the final stage). */
+    document.getElementById("stageNext").addEventListener("click", () => {
+      if (activeStage < stages.length - 1) setStage(activeStage + 1);
     });
 
     /* ---------- Guided narrated tour (proof-of-concept) ----------
