@@ -1189,6 +1189,14 @@
       .stage-count { margin-bottom: 6px; min-height: 0; padding: 6px 10px; }
       .stage-body { font-size: 0.78rem; line-height: 1.34; }
       .stage-tabs button { height: 40px; }
+
+      /* While the guided tour plays on a phone, the big stage card otherwise
+         covers the core. Drop it and shrink the rail to a compact strip pinned
+         at the very bottom (Stop button + progress tabs), so the universe plays
+         full-screen and centred. The narration carries the stage detail. */
+      .is-touring .stage-panel { display: none; }
+      .is-touring .rail { top: auto; max-height: none; bottom: 10px; gap: 8px; }
+      .is-touring .stage-tabs { margin-top: 8px; }
     }
   </style>
 </head>
@@ -2037,7 +2045,7 @@
        'ended' handler — the timeline/controls below stay identical. */
     const TOUR = [
       "Look up. A hundred billion stars burn in our galaxy alone - and beyond it, a hundred billion galaxies more. To the eye, it is chaos: a vast, undifferentiated field of light. The markets are no different. Nine thousand public companies, each a distant star, each burning with its own promise - and at the start, not one of them is ours. At Vann Equity Management, every name begins exactly here: a candidate, and nothing more. The discipline is knowing which lights are worth the journey.",
-      "No astronomer maps the whole sky by eye. They build instruments, and let the evidence narrow the field - and so do we. Proprietary quantitative screens weigh every name across multiple factors - value, growth, quality, momentum, and risk - and fuse them into a single composite score, narrowing nine thousand names to about one thousand. Repeatable. Unsentimental. Free of emotion.",
+      "No astronomer trusts the naked eye. Against a field of nine thousand burning names, the eye sees only chaos - so we reach for instruments, and let the evidence do the narrowing. The lens turns three times. First, it resolves for structure: only names of true size, a real share price, and genuine analyst coverage hold their light; the faint and the thinly traded fall dark. Then it sharpens on motion - accelerating earnings and sales, widening margins, analyst estimates revising upward - and the living businesses pull away from the still, until nine thousand become a thousand. Last, it ranks what remains: a proprietary growth score, opportunity weighed against risk, relative valuation, and the trend of earnings - fused into a single brightness that orders every survivor, strongest to weakest. No hunches. No stories. Only evidence, sorted - and made ready for human eyes.",
       "But numbers can only take you so far. Where they end, judgment begins. Our investment committee examines each survivor by hand - the durability of its earnings, the quality of its business, the character of the people who run it - until only one to two hundred remain. The ones with real gravity.",
       "Then, the rarest thing of all - conviction. When the doubt has burned away, only the strongest earn a place: chosen one by one, opportunity weighed against risk at every step. Nothing is owned by default. Everything is earned.",
       "And so, a constellation takes shape - forty to sixty holdings, risk-controlled and continuously monitored. Each has survived the full passage: a universe of thousands, distilled through discipline and evidence into a focused, fundamentally-driven portfolio. Not chosen by chance - chosen by process. At Vann Equity Management, the client's interest, above all else."
