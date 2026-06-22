@@ -302,8 +302,9 @@
       background: rgba(69, 128, 202, 0.22);
       color: #fff;
     }
-    .hero-hint {
-      margin: 12px 0 0;
+    /* Scoped to .hero-copy so it beats the base `.hero-copy p { margin:0 }` rule. */
+    .hero-copy .hero-hint {
+      margin: 22px 0 0;
       color: rgba(210, 225, 245, 0.66);
       font-size: 0.8rem;
       line-height: 1.45;
