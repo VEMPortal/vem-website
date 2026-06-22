@@ -15,6 +15,11 @@
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!window.matchMedia("(pointer: fine)").matches) return;   // no cursor → skip
+  // Only ever run in the top-level page. If this file is also loaded inside an
+  // embedded iframe (e.g. the process universe on the homepage), skip it there —
+  // otherwise the parent's halo and the iframe's halo both render and "double up"
+  // at the iframe edge. The parent halo handles the whole viewport instead.
+  if (window.self !== window.top) return;
 
   var css =
     ".vem-halo{position:fixed;inset:0;z-index:49;pointer-events:none;opacity:0;" +
@@ -93,6 +98,11 @@
 
     window.addEventListener("pointermove", function (e) {
       hx = e.clientX; hy = e.clientY;
+      // Over an embedded iframe (the process universe), fade the halo out cleanly
+      // instead of leaving it frozen at the boundary. The halo is pointer-events:
+      // none, so elementFromPoint returns the real element underneath it.
+      var elAt = document.elementFromPoint(hx, hy);
+      if (elAt && elAt.tagName === "IFRAME") { if (active) hide(); return; }
       if (!active) {            // first move: snap in so it fades up in place
         cx = tx = hx; cy = ty = hy;
         active = true;

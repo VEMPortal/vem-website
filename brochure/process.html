@@ -1623,9 +1623,9 @@
     const activeColor = new THREE.Color();
     const dimColor = new THREE.Color();
     const view = {
-      rotX: 0.78,
+      rotX: 0.88,
       rotY: 0.04,
-      targetRotX: 0.78,
+      targetRotX: 0.88,
       targetRotY: 0.04,
       distance: 24,
       targetDistance: 24,
@@ -1659,7 +1659,7 @@
 
     function resetView() {
       view.userControlled = false;
-      view.targetRotX = 0.78;
+      view.targetRotX = 0.88;
       view.targetRotY = 0.04;
       view.targetDistance = view.defaultDistance;
     }
@@ -2069,7 +2069,9 @@
       const time = now * 0.001;
       view.rotX += (view.targetRotX - view.rotX) * 0.12;
       view.rotY += (view.targetRotY - view.rotY) * 0.12;
-      view.distance += (view.targetDistance - view.distance) * 0.12;
+      /* Slow, cinematic glide between stages — the camera eases deeper toward each
+         ring rather than snapping (~1.5s settle), so the tour feels continuous. */
+      view.distance += (view.targetDistance - view.distance) * 0.045;
 
       /* --- Cinematic intro: punch in from deep space; the universe blooms from
              a pinpoint and the distant galaxies recede. Plays once at start. --- */
@@ -2272,6 +2274,6 @@
     setStage(0);
     requestAnimationFrame(animate);
   </script>
-  <script src="../js/halo.js?v=3" defer></script>
+  <script src="../js/halo.js?v=4" defer></script>
 </body>
 </html>
