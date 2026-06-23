@@ -91,14 +91,24 @@
 
 /* Cover slide with image */
 .slide--cover { padding-block: 0; }
-.slide__media { position: absolute; inset: 0; z-index: 0; }
+.slide__media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .slide__media img { width: 100%; height: 100%; object-fit: cover; }
+/* Zoom the cover photo up from the left edge so the recognizable skyline
+   cluster (Reunion Tower + the green-lit tower, which sit center-left of the
+   frame) slides into the OPEN right half of the slide — clear of the text
+   column on the left. */
+.slide--cover .slide__media img { transform: scale(1.42); transform-origin: left bottom; }
 .slide__scrim {
   position: absolute; inset: 0; z-index: 1;
   /* Lighter, more neutral scrim so the Dallas skyline reads through; only a hint of blue. */
   background: linear-gradient(115deg, rgba(12,16,24,0.40) 0%, rgba(12,16,24,0.20) 48%, rgba(12,16,24,0.04) 100%);
 }
-.slide--cover .slide__inner { position: relative; z-index: 2; }
+.slide--cover .slide__inner {
+  position: relative; z-index: 2;
+  /* Left-anchored text column so the right half of the slide stays open for
+     the skyline. */
+  max-width: 540px; margin-inline: 0;
+}
 
 /* ---------- Shared type --------------------------------------------- */
 .bro-eyebrow {
@@ -161,8 +171,8 @@
 }
 .cover__title {
   font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(2.4rem, 1.2rem + 4.4vw, 4.6rem); line-height: 1.02;
-  letter-spacing: var(--tracking-tight); margin: 0; max-width: 18ch;
+  font-size: clamp(2.2rem, 1.2rem + 3.1vw, 3.7rem); line-height: 1.04;
+  letter-spacing: var(--tracking-tight); margin: 0; max-width: 14ch;
   text-shadow: 0 2px 18px rgba(4,10,22,0.55);
 }
 .cover__title em {
@@ -879,6 +889,14 @@
 @media (max-width: 560px) {
   .slide { padding-left: 20px; padding-right: 20px; }
   .bro-contact address a[href^="mailto:"] { white-space: nowrap; }
+}
+
+/* On phones the slide is tall and narrow, so the left-column + zoomed-from-left
+   framing of the cover doesn't apply — let the panel span the width and show
+   the skyline centered. */
+@media (max-width: 760px) {
+  .slide--cover .slide__inner { max-width: 100%; }
+  .slide--cover .slide__media img { transform: none; }
 }
 
 /* ---------- Buttons (site blue, mirrors gips.css) --------------------- */
