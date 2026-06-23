@@ -249,6 +249,14 @@
     transition: transform var(--dur-mid) var(--ease-out);
     overflow-y: auto;
     z-index: 60;
+    /* Give the off-screen drawer its own compositing layer from the start.
+       Without this, mobile browsers (esp. iOS Safari) sometimes fail to PAINT
+       the first slide-in — the menu looks like it "only does the top" until a
+       later reflow (closing/re-opening) forces a repaint. Promoting the layer
+       up front makes the very first open paint correctly. */
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .menu-open .nav__panel { transform: none; }
   .nav__links { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
