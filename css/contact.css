@@ -110,7 +110,18 @@
   gap: var(--space-3);
   align-items: start;
 }
-.field--consent input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent-deep); }
+/* Restore the NATIVE checkbox here — the shared `.field input` reset above sets
+   `appearance:none` (for text fields), which on a checkbox strips the box AND
+   the checkmark, so it looked unclickable. Re-enable native rendering and clear
+   the inherited text-input styling so the accent-color check shows. */
+.field--consent input {
+  width: 18px; height: 18px; margin-top: 3px; flex: none;
+  -webkit-appearance: auto; appearance: auto;
+  accent-color: var(--accent-deep);
+  border: 0; border-radius: 0; padding: 0; background: none;
+  cursor: pointer;
+}
+.field--consent label { cursor: pointer; }
 .field--consent label {
   font-weight: 400;
   font-size: var(--fs-200);
