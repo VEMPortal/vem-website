@@ -96,7 +96,7 @@
 .slide__scrim {
   position: absolute; inset: 0; z-index: 1;
   /* Lighter, more neutral scrim so the Dallas skyline reads through; only a hint of blue. */
-  background: linear-gradient(115deg, rgba(12,16,24,0.52) 0%, rgba(12,16,24,0.28) 48%, rgba(12,16,24,0.08) 100%);
+  background: linear-gradient(115deg, rgba(12,16,24,0.40) 0%, rgba(12,16,24,0.20) 48%, rgba(12,16,24,0.04) 100%);
 }
 .slide--cover .slide__inner { position: relative; z-index: 2; }
 
@@ -151,8 +151,11 @@
   display: inline-block; max-width: min(680px, 94%);
   padding: clamp(22px, 3vw, 40px) clamp(24px, 3.2vw, 46px);
   border-radius: 22px;
-  background: linear-gradient(150deg, rgba(8,16,32,0.62), rgba(8,16,32,0.40));
-  backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%);
+  /* Lighter glass: the skyline reads clearly through the panel. The stronger
+     blur (not opacity) is what keeps the headline legible over the brighter
+     parts of the city, plus a soft text-shadow on the title below. */
+  background: linear-gradient(150deg, rgba(8,16,32,0.34), rgba(8,16,32,0.18));
+  backdrop-filter: blur(20px) saturate(120%); -webkit-backdrop-filter: blur(20px) saturate(120%);
   border: 1px solid rgba(148,171,214,0.16);
   box-shadow: 0 34px 80px -40px rgba(0,0,0,0.85);
 }
@@ -160,6 +163,7 @@
   font-family: var(--font-display); font-weight: 600;
   font-size: clamp(2.4rem, 1.2rem + 4.4vw, 4.6rem); line-height: 1.02;
   letter-spacing: var(--tracking-tight); margin: 0; max-width: 18ch;
+  text-shadow: 0 2px 18px rgba(4,10,22,0.55);
 }
 .cover__title em {
   font-style: italic;
