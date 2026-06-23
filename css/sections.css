@@ -1027,7 +1027,10 @@
    cut-off). Let the columns shrink, let long links wrap, and stack to a single
    column on small phones so nothing is clipped. */
 .footer__main, .footer__nav, .footer__col { min-width: 0; }
-.footer__col a { overflow-wrap: break-word; }
+/* Short nav labels (e.g. "Performance") must NOT break mid-word; only the long,
+   unbreakable email needs to wrap, and only on the narrow phone layouts. */
+.footer__col a { overflow-wrap: normal; }
+.footer__col a[href^="mailto:"] { overflow-wrap: anywhere; }
 /* Keep the email on ONE line from tablet up (its auto-sized column gives it the
    room); only let it wrap on the narrow 1–2 column phone layouts below. */
 @media (min-width: 561px) { .footer__col a[href^="mailto:"] { white-space: nowrap; overflow-wrap: normal; } }
