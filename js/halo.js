@@ -37,11 +37,13 @@
     /* LIGHT surfaces — a crisp, saturated azure halo (tighter + brighter core
        than the dark-mode glow, so multiply reads as a cool crystal tint, not a
        dull shadow). */
+    /* On white we want it VERY faint — just a whisper of cool blue, far softer
+       than the dark-surface glow (which is the prominent, "cool" one). */
     ".vem-halo.is-light{mix-blend-mode:multiply}" +
-    ".vem-halo.is-light .vem-halo__trail{filter:blur(12px);background:radial-gradient(circle closest-side," +
-      "rgba(58,108,202,.42),rgba(42,80,166,.27) 44%,rgba(30,56,126,.12) 66%,transparent 82%)}" +
+    ".vem-halo.is-light .vem-halo__trail{filter:blur(13px);background:radial-gradient(circle closest-side," +
+      "rgba(70,120,205,.10),rgba(48,85,170,.06) 44%,rgba(34,60,130,.025) 66%,transparent 82%)}" +
     ".vem-halo.is-light .vem-halo__core{filter:blur(5px);background:radial-gradient(circle closest-side," +
-      "rgba(78,138,230,.58),rgba(50,102,200,.36) 38%,rgba(36,76,160,.16) 62%,transparent 78%)}";
+      "rgba(95,150,235,.14),rgba(60,110,205,.08) 38%,rgba(40,80,165,.03) 60%,transparent 78%)}";
 
   var style = document.createElement("style");
   style.textContent = css;
