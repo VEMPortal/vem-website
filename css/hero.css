@@ -259,6 +259,18 @@
     backface-visibility: hidden;
   }
   .menu-open .nav__panel { transform: none; }
+  /* CRITICAL: while the drawer is open, drop the header's backdrop-filter.
+     Once scrolled, `.is-scrolled` adds `backdrop-filter: blur()`, and a
+     backdrop-filtered element becomes the CONTAINING BLOCK for its fixed
+     descendants — which clips the fixed drawer to the header's height, so the
+     menu shows only the top item or two. Removing the filter while open lets
+     the drawer anchor to the viewport again and show the full nav. The header
+     sits behind the drawer + scrim here, so dropping the blur isn't visible. */
+  .site-header.menu-open,
+  .site-header.is-scrolled.menu-open {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
   .nav__links { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
   .nav__links > li { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
   .nav__link, .nav__trigger {
