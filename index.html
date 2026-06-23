@@ -620,7 +620,7 @@
         <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
           <span class="person__photo" data-initials="BH"><img src="assets/img/team/brandy-holder.jpg?v=78" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Brandy Holder</span>
-          <span class="person__role">Operational Manager</span>
+          <span class="person__role">Director of Client Operations &amp; Compliance</span>
         </button>
       </div>
 
@@ -656,8 +656,8 @@
           <div class="member-panel__photo"><img src="assets/img/team/brandy-holder.jpg?v=78" alt="Brandy Holder" /></div>
           <div class="member-panel__body">
             <h3>Brandy Holder</h3>
-            <p class="member-panel__role">Operational Manager</p>
-            <p class="member-panel__bio">Brandy oversees client engagement, onboarding, CRM systems, and back-office operations for VEM&rsquo;s high-net-worth client base. She brings 10+ years in financial-services operations and client relationship management.</p>
+            <p class="member-panel__role">Director of Client Operations &amp; Compliance</p>
+            <p class="member-panel__bio">Brandy supports Vann Equity Management&rsquo;s client service, operations, and compliance functions. She helps coordinate account administration, documentation, internal workflows, and regulatory processes to ensure clients receive organized, professional, and consistent service.</p>
             <p class="member-panel__cred">10+ Years · Client Operations</p>
           </div>
         </article>
@@ -800,6 +800,84 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================== STICKY CTA PROTOTYPE =======================
+       Quiet, persistent "Schedule a consultation" pill. Fades in once you've
+       scrolled past the hero, tucks away again near the footer, and can be
+       dismissed for the session. Desktop only (mobile stays clean). This whole
+       block is self-contained — delete from here to the closing comment to
+       remove it entirely. -->
+  <style>
+    .vem-sticky-cta {
+      position: fixed; right: clamp(16px, 2vw, 28px); bottom: clamp(16px, 2vw, 28px);
+      z-index: 48; display: inline-flex; align-items: center; gap: 12px;
+      padding: 12px 14px 12px 18px; border-radius: 999px;
+      background: rgba(11, 31, 68, 0.92);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border: 1px solid rgba(185, 155, 95, 0.55);
+      box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.65);
+      opacity: 0; transform: translateY(14px); pointer-events: none;
+      transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .vem-sticky-cta.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+    .vem-sticky-cta__link {
+      display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+      font-family: var(--font-body, system-ui, sans-serif);
+      font-size: .92rem; font-weight: 600; letter-spacing: .01em; color: #fff;
+      white-space: nowrap;
+    }
+    .vem-sticky-cta__link svg { width: 16px; height: 16px; color: #B99B5F; flex: none; }
+    .vem-sticky-cta__eyebrow {
+      display: block; font-size: .62rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: #B99B5F; margin-bottom: 1px;
+    }
+    .vem-sticky-cta__close {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 50%; border: 0; cursor: pointer;
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7);
+      transition: background .2s, color .2s;
+    }
+    .vem-sticky-cta__close:hover { background: rgba(255,255,255,0.16); color: #fff; }
+    .vem-sticky-cta__close svg { width: 11px; height: 11px; }
+    @media (max-width: 760px) { .vem-sticky-cta { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .vem-sticky-cta { transition: opacity .3s linear; transform: none; } }
+  </style>
+  <aside class="vem-sticky-cta" id="stickyCta" aria-label="Schedule a consultation">
+    <a class="vem-sticky-cta__link" href="contact.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+      <span><span class="vem-sticky-cta__eyebrow">Ready when you are</span>Schedule a consultation</span>
+    </a>
+    <button class="vem-sticky-cta__close" type="button" aria-label="Dismiss">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </aside>
+  <script>
+    (function () {
+      var cta = document.getElementById('stickyCta');
+      if (!cta) return;
+      if (sessionStorage.getItem('vemCtaDismissed') === '1') return;
+      var footer = document.querySelector('.site-footer, footer');
+      var dismissed = false;
+      function update() {
+        if (dismissed) return;
+        var pastHero = window.scrollY > window.innerHeight * 0.85;
+        var nearFooter = false;
+        if (footer) {
+          var fr = footer.getBoundingClientRect();
+          nearFooter = fr.top < window.innerHeight - 40;   // footer entering view
+        }
+        cta.classList.toggle('is-shown', pastHero && !nearFooter);
+      }
+      cta.querySelector('.vem-sticky-cta__close').addEventListener('click', function () {
+        dismissed = true; cta.classList.remove('is-shown');
+        try { sessionStorage.setItem('vemCtaDismissed', '1'); } catch (e) {}
+      });
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    })();
+  </script>
+  <!-- ===================== /STICKY CTA PROTOTYPE ====================== -->
 
   <script src="js/nav.js?v=52" defer></script>
   <script src="js/hero.js?v=63" defer></script>
