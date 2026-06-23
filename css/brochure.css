@@ -922,7 +922,8 @@
   pointer-events: none;
 }
 .bro-top a { pointer-events: auto; }
-.bro-top__brand img { height: 28px; width: auto; }
+.bro-top__brand img { height: 46px; width: auto; }
+@media (max-width: 560px){ .bro-top__brand img { height: 38px; } }
 .bro-top__exit {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: var(--fs-200); color: var(--on-dark-70);
