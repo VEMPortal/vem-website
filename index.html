@@ -54,8 +54,11 @@
   <meta name="twitter:description" content="An independent, SEC-registered, GIPS-verified fiduciary equity manager. The client's interest, above all else." />
   <meta name="twitter:image" content="https://www.vannequitymanagement.com/assets/video/hero-poster.jpg" />
 
-  <!-- Preload the LCP hero poster (video's first frame) so it paints fast -->
-  <link rel="preload" as="image" href="assets/img/hero-colonnade.webp" type="image/webp" fetchpriority="high" />
+  <!-- Preload the LCP hero image, scoped by viewport so each only fetches what it
+       shows. Desktop (>=761px) = colonnade poster (video's first frame). Mobile
+       (<=760px) = the first crossfade slide (Dallas skyline). -->
+  <link rel="preload" as="image" href="assets/img/hero-colonnade.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-dallas.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high" />
 
   <!-- Fonts: Cinzel (logo) · Cormorant (display) · Hanken Grotesk (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +66,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
-  <link rel="stylesheet" href="css/hero.css?v=67" />
+  <link rel="stylesheet" href="css/hero.css?v=69" />
   <link rel="stylesheet" href="css/sections.css?v=69" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
@@ -238,6 +241,18 @@
       <video class="hero__video hero__video--b" muted playsinline preload="none" aria-hidden="true">
         <source src="assets/video/hero-colonnade.mp4" type="video/mp4" />
       </video>
+      <!-- Mobile-only hero crossfade (<=760px). Desktop is untouched: these slides
+           are display:none above 760px and the video above handles desktop. The
+           first slide is the LCP (preloaded); the other two lazy-load after first
+           paint (data-src) so they never compete with it. Dallas -> Arch -> Colonnade. -->
+      <div class="hero__bgslides" aria-hidden="true">
+        <img class="hero__bgslide is-active" src="assets/img/hero-dallas.webp"
+             alt="" width="1280" height="694" fetchpriority="high" decoding="async" />
+        <img class="hero__bgslide" data-src="assets/img/hero-arch.webp"
+             alt="" width="1280" height="694" decoding="async" />
+        <img class="hero__bgslide" data-src="assets/img/hero-colonnade.webp"
+             alt="" width="1280" height="720" decoding="async" />
+      </div>
     </div>
 
     <div class="hero__scrim" aria-hidden="true"></div>
@@ -901,7 +916,7 @@
   <!-- ===================== /STICKY CTA PROTOTYPE ====================== -->
 
   <script src="js/nav.js?v=52" defer></script>
-  <script src="js/hero.js?v=64" defer></script>
+  <script src="js/hero.js?v=66" defer></script>
   <script src="js/halo.js?v=6" defer></script>
   <script src="js/sections.js?v=51" defer></script>
   <script src="js/process.js?v=56" defer></script>

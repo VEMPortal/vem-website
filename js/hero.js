@@ -83,6 +83,30 @@
     var p0 = vidA.play(); if (p0 && p0.catch) p0.catch(function () { /* poster stays */ });
   }
 
+  /* --- Mobile hero crossfade (<=760px) ---------------------------------
+     Desktop is untouched (it uses the video above). On phones we dissolve
+     between three stills. The first slide is the LCP (preloaded); slides 2+3
+     carry data-src and are loaded only AFTER first paint so they never compete
+     with the LCP image. Reduced-motion users keep the single first slide. */
+  var slides = document.querySelectorAll(".hero__bgslide");
+  if (slides.length > 1 && window.innerWidth <= 760 && !prefersReduced) {
+    var loadRest = function () {
+      for (var s = 0; s < slides.length; s++) {
+        var ds = slides[s].getAttribute("data-src");
+        if (ds && !slides[s].getAttribute("src")) slides[s].setAttribute("src", ds);
+      }
+    };
+    if (document.readyState === "complete") loadRest();
+    else window.addEventListener("load", loadRest);
+
+    var si = 0;
+    window.setInterval(function () {
+      slides[si].classList.remove("is-active");
+      si = (si + 1) % slides.length;
+      slides[si].classList.add("is-active");
+    }, 5000);
+  }
+
   /* --- Rotating hero headline: crossfade only. The container is LOCKED to a
          fixed height (the tallest slide) and never animates, so rotating the
          headline produces ZERO page movement — no jitter, ever. --- */

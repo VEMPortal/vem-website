@@ -460,6 +460,11 @@
 .hero__video--b { opacity: 0; }
 /* When reduced motion or no-video, the poster shows through */
 
+/* Mobile-only image crossfade. Hidden on desktop — the video handles it there.
+   Turned on inside the max-width:760px block below. (Distinct class from the
+   headline rotator's .hero__slide — do not merge the two.) */
+.hero__bgslides { display: none; }
+
 /* Ken-Burns: the still breathes — a very slow, barely-there push so the hero
    never looks frozen. Lives on the poster (inner layer) so it composes cleanly
    with the JS scroll/cursor parallax written to .hero__media. Whisper, not zoom. */
@@ -771,6 +776,19 @@
   /* Portrait crop favors the right of the frame so the bright atrium windows
      stay in view instead of being cut off. */
   .hero__video, .hero__poster { object-position: 68% center; }
+
+  /* Mobile hero = lightweight image crossfade (no video). Hide the desktop
+     video + poster here; three slides dissolve Dallas -> Arch -> Colonnade.
+     Absolutely positioned + fixed hero height = zero layout shift (no CLS). */
+  .hero__video, .hero__poster { display: none; }
+  .hero__bgslides { display: block; position: absolute; inset: 0; z-index: 1; }
+  .hero__bgslide {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    opacity: 0; transition: opacity 1.2s ease-in-out;
+  }
+  .hero__bgslide.is-active { opacity: 1; }
   /* Clear at the top (video shows), darkening toward the bottom (text reads). */
   .hero__scrim {
     background: linear-gradient(180deg,
