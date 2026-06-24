@@ -789,13 +789,14 @@
     opacity: 0; transition: opacity 1.2s ease-in-out;
   }
   .hero__bgslide.is-active { opacity: 1; }
-  /* Clear at the top (video shows), darkening toward the bottom (text reads). */
+  /* Keep the image clean — only the very bottom darkens, just enough for the
+     headline/CTAs to read. No blue wash over the upper image. */
   .hero__scrim {
     background: linear-gradient(180deg,
-      rgba(11, 31, 68, 0.34) 0%,
-      rgba(11, 31, 68, 0.10) 26%,
-      rgba(11, 31, 68, 0.52) 66%,
-      rgba(11, 31, 68, 0.90) 100%);
+      rgba(11, 31, 68, 0) 0%,
+      rgba(11, 31, 68, 0) 44%,
+      rgba(11, 31, 68, 0.28) 72%,
+      rgba(11, 31, 68, 0.72) 100%);
   }
 }
 
