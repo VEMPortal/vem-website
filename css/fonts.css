@@ -1,0 +1,86 @@
+/* Self-hosted fonts (latin subset). Replaces the render-blocking Google
+   Fonts stylesheet. Keeps the brand faces; no external request. */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/cinzel-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/cinzel-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/cinzel-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-500-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-600-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/cormorant-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/hanken-grotesk-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/hanken-grotesk-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/hanken-grotesk-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/hanken-grotesk-700.woff2') format('woff2');
+}

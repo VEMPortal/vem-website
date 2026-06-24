@@ -60,13 +60,19 @@
   <link rel="preload" as="image" href="assets/img/hero-colonnade.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/img/hero-dallas-skyline.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high" />
 
-  <!-- Fonts: Cinzel (logo) · Cormorant (display) · Hanken Grotesk (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Fonts: self-hosted (Cinzel logo · Cormorant display · Hanken Grotesk body).
+       The external Google Fonts stylesheet was the ONLY render-blocking resource
+       (818ms on mobile) and the cause of the late text-LCP + font-swap CLS. Now
+       served same-origin; the two above-the-fold faces are preloaded. -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-700.woff2" media="(max-width: 760px)" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-600.woff2" media="(min-width: 761px)" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-600.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-600-italic.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-400.woff2" crossorigin />
+  <link rel="stylesheet" href="css/fonts.css?v=1" />
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
-  <link rel="stylesheet" href="css/hero.css?v=71" />
+  <link rel="stylesheet" href="css/hero.css?v=72" />
   <link rel="stylesheet" href="css/sections.css?v=69" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
@@ -916,7 +922,7 @@
   <!-- ===================== /STICKY CTA PROTOTYPE ====================== -->
 
   <script src="js/nav.js?v=52" defer></script>
-  <script src="js/hero.js?v=68" defer></script>
+  <script src="js/hero.js?v=69" defer></script>
   <script src="js/halo.js?v=6" defer></script>
   <script src="js/sections.js?v=51" defer></script>
   <script src="js/process.js?v=56" defer></script>

@@ -786,15 +786,13 @@
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover; object-position: center;
-    opacity: 0; transition: opacity 1.2s ease-in-out;
+    opacity: 0;
   }
   .hero__bgslide.is-active { opacity: 1; }
-  /* First slide is a <picture>; size its inner <img> to fill the same box. */
-  .hero__bgslide img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-    display: block;
-  }
+  /* The fade transition is added ONLY once the carousel starts (after first paint,
+     on interaction). That keeps the first/LCP slide a static, non-animating element
+     so Chrome counts the hero image as the LCP instead of falling back to text. */
+  .hero__bgslides--animating .hero__bgslide { transition: opacity 1.2s ease-in-out; }
   /* Keep the image clean — only the very bottom darkens, just enough for the
      headline/CTAs to read. No blue wash over the upper image. */
   .hero__scrim {

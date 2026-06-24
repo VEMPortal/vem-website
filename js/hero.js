@@ -99,9 +99,12 @@
     var startCarousel = function () {
       if (started) return;
       started = true;
-      // Load the deferred slides (those with data-src). The first slide is a
-      // <picture> with a media-scoped source, so it loads itself in HTML on
-      // mobile and not at all on desktop - it has no data-src and is skipped.
+      // Enable the fade transition now (after the LCP has been recorded), so the
+      // first slide stayed a static element for LCP eligibility.
+      var box = document.querySelector(".hero__bgslides");
+      if (box) box.classList.add("hero__bgslides--animating");
+      // Load the deferred slides (those with data-src). The first slide already
+      // has a real src in the HTML, so it has no data-src and is skipped here.
       for (var s = 0; s < slides.length; s++) {
         var ds = slides[s].getAttribute("data-src");
         if (ds && !slides[s].getAttribute("src")) slides[s].setAttribute("src", ds);
