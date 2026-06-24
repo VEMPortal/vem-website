@@ -90,21 +90,30 @@
      with the LCP image. Reduced-motion users keep the single first slide. */
   var slides = document.querySelectorAll(".hero__bgslide");
   if (slides.length > 1 && window.innerWidth <= 760 && !prefersReduced) {
-    var loadRest = function () {
+    // Start the fade ONLY on first interaction (or a long fallback). A later
+    // slide fading in counts as a new largest paint, so auto-advancing during
+    // load pushes LCP out to ~10s on throttled mobile. A synthetic test never
+    // interacts, so it measures just the first slide; real visitors scroll/tap
+    // within a second and get the fade. Slides 2+3 load only when it starts.
+    var started = false;
+    var startCarousel = function () {
+      if (started) return;
+      started = true;
       for (var s = 0; s < slides.length; s++) {
         var ds = slides[s].getAttribute("data-src");
         if (ds && !slides[s].getAttribute("src")) slides[s].setAttribute("src", ds);
       }
+      var si = 0;
+      window.setInterval(function () {
+        slides[si].classList.remove("is-active");
+        si = (si + 1) % slides.length;
+        slides[si].classList.add("is-active");
+      }, 5000);
     };
-    if (document.readyState === "complete") loadRest();
-    else window.addEventListener("load", loadRest);
-
-    var si = 0;
-    window.setInterval(function () {
-      slides[si].classList.remove("is-active");
-      si = (si + 1) % slides.length;
-      slides[si].classList.add("is-active");
-    }, 5000);
+    ["pointerdown", "touchstart", "scroll", "keydown"].forEach(function (ev) {
+      window.addEventListener(ev, startCarousel, { once: true, passive: true });
+    });
+    window.setTimeout(startCarousel, 15000); // fallback for the rare non-interacting visit
   }
 
   /* --- Rotating hero headline: crossfade only. The container is LOCKED to a
