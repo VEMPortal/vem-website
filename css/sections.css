@@ -31,14 +31,6 @@
 .section--gray  {
   background-color: var(--vem-gray);
   color: var(--vem-ink);
-  /* Subtle texture so the flat gray reads as a material, not a block: a faint
-     navy hairline grid (echoes the navy sections' blueprint) + fine grain.
-     Layered into the background, so it always sits behind the content. */
-  background-image:
-    linear-gradient(rgba(11, 31, 68, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 31, 68, 0.035) 1px, transparent 1px),
-    radial-gradient(rgba(11, 31, 68, 0.05) 0.5px, transparent 0.6px);
-  background-size: 64px 64px, 64px 64px, 5px 5px;
 }
 .section--navy  {
   background: var(--vem-navy-dark);
@@ -47,7 +39,7 @@
   overflow: clip;
 }
 /* Depth for navy sections: a soft navy glow top-right + a whisper of gold
-   bottom-left, plus a faint hairline grid — so they aren't flat blocks. */
+   bottom-left, so they aren't flat blocks. */
 .section--navy::before {
   content: "";
   position: absolute;
@@ -58,20 +50,8 @@
     radial-gradient(115% 80% at 88% -10%, rgba(34, 49, 104, 0.65), transparent 58%),
     radial-gradient(90% 70% at -5% 110%, rgba(185, 155, 95, 0.06), transparent 55%);
 }
-.section--navy::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(120% 100% at 80% 0%, #000 30%, transparent 75%);
-          mask-image: radial-gradient(120% 100% at 80% 0%, #000 30%, transparent 75%);
-}
+/* (Old white hairline grid removed — the navy crushed-paper texture now carries
+   the surface detail on dark sections.) */
 .section--navy > .container { position: relative; z-index: 1; }
 
 /* §05 process — graphite "command center" ground.
