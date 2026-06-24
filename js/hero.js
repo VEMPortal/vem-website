@@ -51,7 +51,9 @@
      next standby. Reduced-motion users keep the still poster (we never play). */
   var vidA = document.querySelector(".hero__video--a");
   var vidB = document.querySelector(".hero__video--b");
-  if (vidA && vidB && !prefersReduced) {
+  // Desktop only: on phones (<=760px) the decorative clip costs ~2MB and wrecks
+  // mobile LCP for motion almost no one notices, so we keep the still poster.
+  if (vidA && vidB && !prefersReduced && window.innerWidth > 760) {
     var FADE = 0.9;                 // seconds of dissolve
     var vis = vidA, hid = vidB;     // vis = visible/playing, hid = standby @ frame 0
     var fading = false;
