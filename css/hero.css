@@ -789,6 +789,12 @@
     opacity: 0; transition: opacity 1.2s ease-in-out;
   }
   .hero__bgslide.is-active { opacity: 1; }
+  /* First slide is a <picture>; size its inner <img> to fill the same box. */
+  .hero__bgslide img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
   /* Keep the image clean — only the very bottom darkens, just enough for the
      headline/CTAs to read. No blue wash over the upper image. */
   .hero__scrim {

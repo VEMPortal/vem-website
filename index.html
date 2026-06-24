@@ -66,7 +66,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/tokens.css?v=51" />
-  <link rel="stylesheet" href="css/hero.css?v=70" />
+  <link rel="stylesheet" href="css/hero.css?v=71" />
   <link rel="stylesheet" href="css/sections.css?v=69" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
 
@@ -381,8 +381,8 @@
 
         <div class="explorer__body">
           <div class="explorer__media">
-            <img class="explorer__img is-active" data-for="equity" src="assets/img/manage-equity.jpg" alt="Modern corporate towers at blue hour" />
-            <img class="explorer__img" data-for="tactical" src="assets/img/manage-tactical.jpg" alt="A brass globe on a walnut desk" />
+            <img loading="lazy" decoding="async" class="explorer__img is-active" data-for="equity" src="assets/img/manage-equity.jpg" alt="Modern corporate towers at blue hour" />
+            <img loading="lazy" decoding="async" class="explorer__img" data-for="tactical" src="assets/img/manage-tactical.jpg" alt="A brass globe on a walnut desk" />
           </div>
 
           <div class="explorer__panels">
@@ -473,7 +473,7 @@
       <figure class="phil__feature reveal" data-parallax>
         <picture>
           <source srcset="assets/img/philosophy-study.webp" type="image/webp" />
-          <img src="assets/img/philosophy-study.jpg"
+          <img loading="lazy" decoding="async" src="assets/img/philosophy-study.jpg"
                alt="A quiet private study at golden hour — books, a globe, warm light"
                onerror="this.closest('.phil__feature').classList.add('is-missing');" />
         </picture>
@@ -593,7 +593,7 @@
 
       <div class="diff-grid">
         <figure class="diff-figure reveal">
-          <img src="assets/img/aaron-vann-office.jpg"
+          <img loading="lazy" decoding="async" src="assets/img/aaron-vann-office.jpg"
                alt="Aaron J. Vann in the VEM office at dusk, city skyline beyond"
                onerror="this.classList.add('is-missing');" />
           <figcaption>Aaron J. Vann &middot; Chief Investment Officer</figcaption>
@@ -639,22 +639,22 @@
       <!-- Circles across — tap a person to open their detail panel -->
       <div class="team__people reveal" data-delay="2">
         <button class="person" type="button" data-key="aaron" aria-expanded="true" aria-controls="panel-aaron">
-          <span class="person__photo" data-initials="AV"><img src="assets/img/team/aaron-vann.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
+          <span class="person__photo" data-initials="AV"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Aaron J. Vann</span>
           <span class="person__role">Chief Investment Officer · Partner</span>
         </button>
         <button class="person" type="button" data-key="ryan" aria-expanded="false" aria-controls="panel-ryan">
-          <span class="person__photo" data-initials="RM"><img src="assets/img/team/ryan-mcdonald.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
+          <span class="person__photo" data-initials="RM"><img loading="lazy" decoding="async" src="assets/img/team/ryan-mcdonald.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Ryan McDonald</span>
           <span class="person__role">Portfolio Manager · Financial Advisor</span>
         </button>
         <button class="person" type="button" data-key="dharani" aria-expanded="false" aria-controls="panel-dharani">
-          <span class="person__photo" data-initials="DG"><img src="assets/img/team/dharani-gundla.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
+          <span class="person__photo" data-initials="DG"><img loading="lazy" decoding="async" src="assets/img/team/dharani-gundla.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Dharani Gundla</span>
           <span class="person__role">Quantitative Analyst</span>
         </button>
         <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
-          <span class="person__photo" data-initials="BH"><img src="assets/img/team/brandy-holder.jpg?v=78" alt="" onerror="this.classList.add('is-missing');" /></span>
+          <span class="person__photo" data-initials="BH"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=78" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Brandy Holder</span>
           <span class="person__role">Director of Client Operations &amp; Compliance</span>
         </button>
@@ -662,7 +662,7 @@
 
       <div class="team__panels">
         <article class="member-panel is-open" id="panel-aaron" data-key="aaron">
-          <div class="member-panel__photo"><img src="assets/img/team/aaron-vann.jpg" alt="Aaron J. Vann" /></div>
+          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="Aaron J. Vann" /></div>
           <div class="member-panel__body">
             <h3>Aaron J. Vann, AAMS, FPQP</h3>
             <p class="member-panel__role">Chief Investment Officer · Partner</p>
@@ -671,7 +671,7 @@
           </div>
         </article>
         <article class="member-panel" id="panel-ryan" data-key="ryan" hidden>
-          <div class="member-panel__photo"><img src="assets/img/team/ryan-mcdonald.jpg" alt="Ryan McDonald" /></div>
+          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/ryan-mcdonald.jpg" alt="Ryan McDonald" /></div>
           <div class="member-panel__body">
             <h3>Ryan McDonald</h3>
             <p class="member-panel__role">Portfolio Manager · Financial Advisor</p>
@@ -680,7 +680,7 @@
           </div>
         </article>
         <article class="member-panel" id="panel-dharani" data-key="dharani" hidden>
-          <div class="member-panel__photo"><img src="assets/img/team/dharani-gundla.jpg" alt="Dharani Gundla" /></div>
+          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/dharani-gundla.jpg" alt="Dharani Gundla" /></div>
           <div class="member-panel__body">
             <h3>Dharani Gundla</h3>
             <p class="member-panel__role">Quantitative Analyst</p>
@@ -689,7 +689,7 @@
           </div>
         </article>
         <article class="member-panel" id="panel-brandy" data-key="brandy" hidden>
-          <div class="member-panel__photo"><img src="assets/img/team/brandy-holder.jpg?v=78" alt="Brandy Holder" /></div>
+          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=78" alt="Brandy Holder" /></div>
           <div class="member-panel__body">
             <h3>Brandy Holder</h3>
             <p class="member-panel__role">Director of Client Operations &amp; Compliance</p>
@@ -707,7 +707,7 @@
   <section id="contact" class="cta-band" data-parallax aria-labelledby="contact-title">
     <picture class="cta-band__media" aria-hidden="true">
       <source srcset="assets/img/cta-office.webp" type="image/webp" />
-      <img src="assets/img/cta-office.jpg" alt="" width="1920" height="1072" />
+      <img loading="lazy" decoding="async" src="assets/img/cta-office.jpg" alt="" width="1920" height="1072" />
     </picture>
     <div class="cta-band__scrim" aria-hidden="true"></div>
     <div class="container cta-band__inner">
@@ -727,7 +727,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer__top">
       <div class="footer__brand">
-        <img class="footer__logo" src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+        <img loading="lazy" decoding="async" class="footer__logo" src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
         <p class="footer__tagline">Disciplined, fiduciary equity management for individuals, institutions, endowments, and family offices.</p>
         <div class="footer__actions">
           <a class="btn btn--gold" href="contact.html">Schedule a consultation</a>
@@ -916,7 +916,7 @@
   <!-- ===================== /STICKY CTA PROTOTYPE ====================== -->
 
   <script src="js/nav.js?v=52" defer></script>
-  <script src="js/hero.js?v=67" defer></script>
+  <script src="js/hero.js?v=68" defer></script>
   <script src="js/halo.js?v=6" defer></script>
   <script src="js/sections.js?v=51" defer></script>
   <script src="js/process.js?v=56" defer></script>

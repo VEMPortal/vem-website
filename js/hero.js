@@ -99,6 +99,9 @@
     var startCarousel = function () {
       if (started) return;
       started = true;
+      // Load the deferred slides (those with data-src). The first slide is a
+      // <picture> with a media-scoped source, so it loads itself in HTML on
+      // mobile and not at all on desktop - it has no data-src and is skipped.
       for (var s = 0; s < slides.length; s++) {
         var ds = slides[s].getAttribute("data-src");
         if (ds && !slides[s].getAttribute("src")) slides[s].setAttribute("src", ds);
