@@ -126,6 +126,14 @@
       cursor: grabbing;
     }
 
+    /* On touch devices, let a single finger scroll the page vertically over the
+       canvas (pan-y) instead of trapping it for 3D tilt. Tap-to-select and
+       two-finger pinch-zoom still work. Desktop (pointer: fine) keeps
+       touch-action: none above, unchanged. */
+    @media (pointer: coarse) {
+      .universe-canvas { touch-action: pan-y; }
+    }
+
     .vignette {
       position: absolute;
       inset: 0;
@@ -2468,8 +2476,14 @@
 
     canvas.addEventListener("pointerdown", (event) => {
       if (event.button !== undefined && event.button !== 0) return;
-      event.preventDefault();
-      canvas.setPointerCapture(event.pointerId);
+      /* Touch: let the browser own single-finger vertical scrolling (pan-y).
+         Don't preventDefault or capture the pointer, or the page can't scroll.
+         A tap still selects a stage; a 2nd finger still starts pinch-zoom.
+         Mouse/pen keep the original drag-to-tilt behavior (desktop unchanged). */
+      if (event.pointerType !== "touch") {
+        event.preventDefault();
+        canvas.setPointerCapture(event.pointerId);
+      }
       activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       view.dragging = true;
       view.userControlled = true;
@@ -2495,6 +2509,9 @@
 
     canvas.addEventListener("pointermove", (event) => {
       if (!activePointers.has(event.pointerId)) return;
+      /* Single-finger touch = page scroll; don't hijack it. Only intervene for
+         pinch (2 fingers) or a mouse/pen drag. */
+      if (event.pointerType === "touch" && activePointers.size < 2) return;
       event.preventDefault();
       activePointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       if (activePointers.size >= 2 && pinchStart) {
@@ -2523,8 +2540,11 @@
         }
       }
       if (activePointers.size === 0) {
-        /* A click (no drag, single pointer) on a ring jumps to that stage. */
-        if (!tapMoved && !tapMulti && event && event.clientX !== undefined) {
+        /* A click (no drag, single pointer) on a ring jumps to that stage.
+           A pointercancel means the browser took over for scrolling — never
+           treat that as a tap. */
+        var isCancel = event && event.type === "pointercancel";
+        if (!isCancel && !tapMoved && !tapMulti && event && event.clientX !== undefined) {
           const s = stageFromPoint(event);
           if (s !== null) setStage(s);
         }
