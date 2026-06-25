@@ -1723,6 +1723,11 @@
        graphic reads as real depth out in space, not a flat field. The same code
        improves the standalone firm-overview page too. */
     const STAR_REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    /* On phones (touch) the smaller canvas makes the faint inactive rings hard to
+       see before you drill into them — brighten their resting opacity there.
+       Desktop keeps the subtler look. */
+    const IS_TOUCH = window.matchMedia("(pointer: coarse)").matches;
+    const RING_REST_OPACITY = IS_TOUCH ? 0.34 : 0.1;
     const starParallax = { x: 0, y: 0 };
 
     function makeStarTex() {
@@ -2762,7 +2767,7 @@
 
       stageRingMeshes.forEach((ringMesh, i) => {
         const isActive = i === activeStage && activeStage < 4;
-        const targetOp = isActive ? 0.85 : 0.1;
+        const targetOp = isActive ? 0.85 : RING_REST_OPACITY;
         ringMesh.material.opacity += (targetOp - ringMesh.material.opacity) * 0.12;
         const s = isActive ? 1 + pulse * 0.012 : 1;
         ringMesh.scale.set(ringRadii[i] * s, ringRadii[i] * ellipseZ * s, 1);
