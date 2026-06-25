@@ -540,11 +540,20 @@
 
 @media (max-width: 760px) {
   .process-stage__frame { height: min(86vh, 700px); }
-  /* Phone: the overlaid "From nine thousand names to forty" heading + intro pile
-     on top of an already-busy, cramped 3D image (under the browser + nav bars).
-     Hide the homepage overlay here — the universe carries the section on its own;
-     the heading still appears in the page source (SEO) and on desktop. */
-  .process-stage__head { display: none; }
+  /* Phone: SHOW the "From 9,000 names to 40" intro before the tour — it now
+     fades out the instant the tour starts (the iframe posts vem-tour → the
+     heading gets .tour-hidden, opacity 0, with the 0.8s transition), exactly
+     like desktop, so it doesn't fight the cinematic 3D. Keep it compact:
+     overline + headline only, centered up top; drop the longer intro line. */
+  .process-stage__head {
+    top: clamp(16px, 4vh, 40px);
+    left: 16px;
+    right: 16px;
+    max-width: none;
+    text-align: center;
+  }
+  .process-stage__head h2 { font-size: clamp(2rem, 8.5vw, 3rem); }
+  .process-stage__intro { display: none; }
 }
 
 .pdash__note { margin-top: clamp(16px, 2vw, 24px); font-size: var(--fs-100); color: var(--on-dark-40); }

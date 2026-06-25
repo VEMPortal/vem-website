@@ -1374,103 +1374,23 @@
     }
 
     /* ============================================================
-       PHONE PROCESS STEPPER — a vertical "you are here" rail on the
-       RIGHT edge, in BOTH orientations, so people always see where
-       they are on the process (top = Universe, bottom = Portfolio).
-       The bulky stage card stays off; the rail fades out while the
-       guided tour plays (is-touring), like the desktop HUD clears.
-       Desktop (tall viewports) is untouched.
-       Matches: phones in portrait (<=560w) OR any phone in landscape
-       (landscape orientation AND <=960w — the homepage floors the
-       iframe height at 640px, so we key off width, not height, to
-       tell a phone from the desktop). Desktop (>960w) is untouched.
+       PHONE PROCESS HUD — keep it minimal. No side stepper, no stage
+       cards: the universe plus the "From 9,000 names to 40" intro
+       (overlaid by the homepage, and faded out the moment the tour
+       starts) carry the section, and Play launches the cinematic
+       tour. So on phones we hide BOTH the big stage card and the
+       stage tabs, in both orientations. Desktop (>960w) is untouched.
        ============================================================ */
     @media (max-width: 560px), (orientation: landscape) and (max-width: 960px) {
-      .stage-panel { display: none; }                 /* card off on phones, both ways */
-
-      /* Dissolve the rail's own box so its children anchor to the CARD, not the
-         rail (which sits at the bottom). Now top:50% on the stepper = card
-         center, and the Play button can pin to the card's bottom edge. */
-      .rail { display: contents; }
-
-      /* Play button pinned to the bottom (full-width in portrait). */
-      .hero-copy {
-        position: absolute;
-        left: 14px;
-        right: 14px;
-        bottom: 12px;
-        top: auto;
-        width: auto;
-        z-index: 6;
-      }
-
-      /* Stand the 5 stage tabs up on the right edge, vertically centered. */
-      .stage-tabs {
-        position: absolute;
-        left: auto;
-        right: 10px;
-        top: 50%;
-        bottom: auto;
-        transform: translateY(-50%);
-        width: 80px;
-        grid-template-columns: 1fr;                   /* one column = vertical stack */
-        gap: 7px;
-        z-index: 6;
-        transition: opacity 260ms ease, transform 260ms ease;
-      }
-
-      /* Faint connector line down the rail — the funnel axis. */
-      .stage-tabs::before {
-        content: "";
-        position: absolute;
-        left: 15px;
-        top: 10px;
-        bottom: 10px;
-        width: 2px;
-        background: linear-gradient(180deg, rgba(132, 174, 226, 0.04), rgba(132, 174, 226, 0.34), rgba(132, 174, 226, 0.04));
-        z-index: -1;
-      }
-
-      .stage-tabs button {
-        height: auto;
-        min-height: 0;
-        padding: 7px 8px 7px 26px;                    /* left room for the dot on the axis */
-        display: block;
-        text-align: left;
-        border-radius: 8px;
-      }
-
-      .tab-index { padding: 0; font-size: 0.6rem; line-height: 1; }
-      .tab-label { padding: 1px 0 0; font-size: 0.66rem; line-height: 1.05; }
-
-      /* Per-stage dot sits ON the connector line at the left of each stop. */
-      .tab-dot {
-        right: auto;
-        left: 9px;
-        bottom: auto;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 9px;
-        height: 9px;
-        opacity: 0.5;
-      }
-      .stage-tabs button[aria-selected="true"] .tab-dot { opacity: 1; }
-
-      /* Play pressed → clear the rail (slide + fade), like the desktop HUD. */
-      .brochure-card.is-touring .stage-tabs {
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-50%) translateX(10px);
-      }
+      .stage-panel,
+      .stage-tabs { display: none; }
     }
 
-    /* Landscape phone (on its side): the desktop card layout doesn't fit in
-       the short height — strip it down to universe + Play + the right rail. */
+    /* Landscape phone (on its side): the desktop card layout doesn't fit the
+       short height — strip it down to just the universe + the Play button. */
     @media (orientation: landscape) and (max-width: 960px) {
-      /* The card's min-height (560px) can exceed a short landscape viewport,
-         throwing off the 50% centering and pushing Play off-screen. Pin both
-         to the actual viewport height so the rail centers and Play sits at the
-         real bottom edge. */
+      /* The card's min-height (560px) can exceed a short landscape viewport;
+         pin card/page to the viewport so Play sits at the real bottom edge. */
       .page,
       .brochure-card { height: 100dvh; min-height: 0; }
 
@@ -1486,10 +1406,9 @@
       .view-controls,
       .recenter-btn { display: none; }
 
-      /* Play button: bottom-left, compact (the rail box is dissolved on phones,
-         so position the Play wrapper itself). */
+      /* Play button: pin the rail bottom-left, compact. */
+      .rail { right: auto; left: 12px; bottom: 12px; top: auto; width: auto; max-height: none; }
       .hero-copy {
-        left: 12px; right: auto; top: auto; bottom: 12px;
         width: auto;
         padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none;
       }
@@ -1499,10 +1418,6 @@
       .hero-copy .metric-row { display: none; }
       .hero-actions { margin-top: 0; }
       .hero-copy .tour-btn { margin-top: 0; width: auto; padding: 11px 18px; font-size: 0.8rem; }
-
-      /* Tighten the rail's vertical rhythm so all 5 stops fit the short height. */
-      .stage-tabs { gap: 6px; }
-      .stage-tabs button { padding-top: 6px; padding-bottom: 6px; }
     }
   </style>
 </head>
