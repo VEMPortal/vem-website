@@ -148,8 +148,12 @@
               ============================================================
             -->
             <form class="contact-form" id="consultForm" novalidate
-                  data-endpoint=""
+                  data-endpoint="https://api.web3forms.com/submit"
                   data-fallback-email="info@vannequitymanagement.com">
+
+              <!-- Web3Forms: public access key + email subject, sent in the JSON payload -->
+              <input type="hidden" name="access_key" value="77fd2500-2daf-4dec-82f1-d4f6c67dbde3" />
+              <input type="hidden" name="subject" value="New consultation request from vannequitymanagement.com" />
 
               <div class="field-row">
                 <div class="field">
