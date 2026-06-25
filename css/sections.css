@@ -539,7 +539,10 @@
 .process--immersive > .container { padding-block: clamp(34px, 5vw, 64px) 0; }
 
 @media (max-width: 760px) {
-  .process-stage__frame { height: min(86vh, 700px); }
+  /* dvh (not vh) so the section fits the *visible* viewport — otherwise the
+     iframe runs ~14% taller than the screen and its bottom (the Play CTA) hides
+     under the mobile browser's bottom toolbar. */
+  .process-stage__frame { height: min(86dvh, 700px); }
   /* Phone: SHOW the "From 9,000 names to 40" intro before the tour — it now
      fades out the instant the tour starts (the iframe posts vem-tour → the
      heading gets .tour-hidden, opacity 0, with the 0.8s transition), exactly

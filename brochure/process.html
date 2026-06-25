@@ -1361,7 +1361,9 @@
          whole screen. The card was 77% of the frame — it buried the dots and
          pushed the tabs off-screen. The tabs label the stages and the tour
          narration carries the detail. */
-      .rail { top: auto; bottom: 10px; max-height: none; gap: 10px; }
+      /* Lift the Play CTA off the very bottom edge + clear the home-indicator
+         bar, so it isn't tucked under the phone's bottom UI. */
+      .rail { top: auto; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); max-height: none; gap: 10px; }
       .hero-copy { padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none; }
       .hero-copy .eyebrow, .hero-copy h1, .hero-copy .lead, .hero-copy .metric-row { display: none; }
       .hero-actions { margin-top: 0; }
@@ -1406,8 +1408,8 @@
       .view-controls,
       .recenter-btn { display: none; }
 
-      /* Play button: pin the rail bottom-left, compact. */
-      .rail { right: auto; left: 12px; bottom: 12px; top: auto; width: auto; max-height: none; }
+      /* Play button: pin the rail bottom-left, compact (+ home-indicator clearance). */
+      .rail { right: auto; left: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); top: auto; width: auto; max-height: none; }
       .hero-copy {
         width: auto;
         padding: 0; border: 0; background: none; backdrop-filter: none; box-shadow: none;
