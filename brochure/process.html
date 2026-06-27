@@ -2121,6 +2121,78 @@
     core.renderOrder = 3;
     root.add(core);
 
+    /* ===== Optional textured globe core (?globe=earth | ?globe=brand) =====
+       Procedural CanvasTexture — no external assets — swapping the glass crystal
+       for a lit, slowly-rotating globe. One shared scene, so it lands on mobile
+       AND desktop. Default (no param) keeps the original glass core. ===== */
+    const GLOBE = (new URLSearchParams(location.search).get("globe") || "").toLowerCase();
+    const coreTextured = GLOBE === "earth" || GLOBE === "brand";
+
+    function _globeNoise() {
+      const hash = (x, y) => { const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return n - Math.floor(n); };
+      const vn = (x, y) => {
+        const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+        const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+        const a = hash(xi, yi), b = hash(xi + 1, yi), c2 = hash(xi, yi + 1), d2 = hash(xi + 1, yi + 1);
+        return a + (b - a) * u + (c2 - a) * v + (a - b - c2 + d2) * u * v;
+      };
+      return (x, y) => { let s = 0, amp = 0.5, f = 1; for (let o = 0; o < 5; o++) { s += amp * vn(x * f, y * f); f *= 2; amp *= 0.5; } return s; };
+    }
+    /* seamless (periodic-in-longitude) continent field, ~0..1 */
+    function _continents(fbm, ang, lat) {
+      return 0.5 * fbm(Math.sin(ang) * 1.8 + 4, lat * 3.4) + 0.5 * fbm(Math.cos(ang) * 1.8 + 12, lat * 3.4 + 7);
+    }
+    function makeEarthTexture() {
+      const W = 1024, H = 512, c = document.createElement("canvas"); c.width = W; c.height = H;
+      const g = c.getContext("2d"), img = g.createImageData(W, H), d = img.data, fbm = _globeNoise();
+      for (let py = 0; py < H; py++) {
+        const lat = py / H, ice = Math.max(0, (Math.abs(lat - 0.5) - 0.40) / 0.10);
+        for (let px = 0; px < W; px++) {
+          const ang = (px / W) * Math.PI * 2, n = _continents(fbm, ang, lat), i = (py * W + px) * 4;
+          let r, gg, bl;
+          if (n > 0.54) { const h = Math.min(1, (n - 0.54) / 0.30); r = 70 + h * 95; gg = 100 + h * 55; bl = 58 + h * 30; }
+          else { const sh = Math.min(1, (0.54 - n) / 0.40); r = 14 + (1 - sh) * 26; gg = 52 + (1 - sh) * 52; bl = 96 + (1 - sh) * 52; }
+          if (ice > 0) { const w = Math.min(1, ice); r += (236 - r) * w; gg += (240 - gg) * w; bl += (246 - bl) * w; }
+          d[i] = r; d[i + 1] = gg; d[i + 2] = bl; d[i + 3] = 255;
+        }
+      }
+      g.putImageData(img, 0, 0);
+      const t = new THREE.CanvasTexture(c); t.wrapS = THREE.RepeatWrapping; return t;
+    }
+    function makeBrandGlobeTexture() {
+      const W = 1024, H = 512, c = document.createElement("canvas"); c.width = W; c.height = H;
+      const g = c.getContext("2d"); g.fillStyle = "#0e2350"; g.fillRect(0, 0, W, H);
+      const img = g.getImageData(0, 0, W, H), d = img.data, fbm = _globeNoise();
+      for (let py = 0; py < H; py++) { const lat = py / H; for (let px = 0; px < W; px++) {
+        const ang = (px / W) * Math.PI * 2, n = _continents(fbm, ang, lat);
+        if (n > 0.55) { const i = (py * W + px) * 4, h = Math.min(1, (n - 0.55) / 0.30); d[i] = 150 + h * 60; d[i + 1] = 124 + h * 42; d[i + 2] = 74 + h * 20; d[i + 3] = 255; }
+      } }
+      g.putImageData(img, 0, 0);
+      g.strokeStyle = "rgba(185,155,95,0.26)"; g.lineWidth = 1.4;
+      for (let k = 0; k <= 12; k++) { const x = k / 12 * W; g.beginPath(); g.moveTo(x, 0); g.lineTo(x, H); g.stroke(); }
+      for (let k = 1; k < 6; k++) { const y = k / 6 * H; g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+      const t = new THREE.CanvasTexture(c); t.wrapS = THREE.RepeatWrapping; return t;
+    }
+
+    if (coreTextured) {
+      const isBrand = GLOBE === "brand";
+      const tex = isBrand ? makeBrandGlobeTexture() : makeEarthTexture();
+      if ("colorSpace" in tex && THREE.SRGBColorSpace) tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = 8;
+      core.material = new THREE.MeshStandardMaterial({
+        map: tex, emissiveMap: tex,
+        roughness: isBrand ? 0.78 : 0.92, metalness: 0.0,
+        emissive: new THREE.Color(isBrand ? 0x10243f : 0x0a2742),
+        emissiveIntensity: 0.16
+      });
+      /* thin atmosphere rim so it still reads as the glowing focal point */
+      const atm = new THREE.Mesh(
+        new THREE.SphereGeometry(1.17, 48, 48),
+        new THREE.MeshBasicMaterial({ color: isBrand ? 0xB99B5F : 0x5aa6ff, transparent: true, opacity: 0.22, side: THREE.BackSide, blending: THREE.AdditiveBlending, depthWrite: false })
+      );
+      core.add(atm);
+    }
+
     const haloGeometry = new THREE.SphereGeometry(1.82, 48, 48);
     const haloMaterial = new THREE.MeshBasicMaterial({
       color: 0x65b5ff,
@@ -2795,16 +2867,22 @@
          A cool-blue tint with depth (attenuation) keeps it on-brand and stops the
          red rings showing through. At Portfolio it thins into a clear vessel so the
          atoms inside read. */
-      coreMaterial.opacity = 1.0;
-      coreMaterial.transmission = 1.0;
-      coreMaterial.thickness = atomMode ? 0.7 : 2.4;
-      coreMaterial.attenuationDistance = atomMode ? 6.0 : 1.5;
-      /* Zoomed far out (mobile stage 1) the small glass globe reads dark — lift
-         its inner glow + reflections the farther the camera sits so it stays
-         visible on a phone; no change up close. */
       const zoomBoost = clamp((view.distance - 30) / 55, 0, 1);
-      coreMaterial.emissiveIntensity = (atomMode ? 0.08 : (0.2 + pulse * 0.1)) + zoomBoost * 0.55;
-      coreMaterial.envMapIntensity = 1.25 + zoomBoost * 0.9;
+      if (coreTextured) {
+        /* Earth / brand globe: keep it readable when the camera sits far (mobile
+           stage 1) by lifting its self-illumination a touch. */
+        core.material.emissiveIntensity = 0.16 + zoomBoost * 0.5;
+      } else {
+        coreMaterial.opacity = 1.0;
+        coreMaterial.transmission = 1.0;
+        coreMaterial.thickness = atomMode ? 0.7 : 2.4;
+        coreMaterial.attenuationDistance = atomMode ? 6.0 : 1.5;
+        /* Zoomed far out (mobile stage 1) the small glass globe reads dark — lift
+           its inner glow + reflections the farther the camera sits so it stays
+           visible on a phone; no change up close. */
+        coreMaterial.emissiveIntensity = (atomMode ? 0.08 : (0.2 + pulse * 0.1)) + zoomBoost * 0.55;
+        coreMaterial.envMapIntensity = 1.25 + zoomBoost * 0.9;
+      }
 
       /* Halo stays small, steady, cool — no big glow outside the circle. */
       haloMaterial.opacity = 0.11 + pulse * 0.05;
