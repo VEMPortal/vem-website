@@ -1933,7 +1933,11 @@
     heroGalaxy.frustumCulled = false;
     scene.add(heroGalaxy);
 
-    const intro = { active: false, t: 0, dur: 8.5 };   /* cinematic zoom-in */
+    const intro = { active: false, t: 0, dur: 1.8 };   /* cinematic zoom-in — short
+       so the fly-in + bloom finish well inside the ~2.9s hook, leaving the outer
+       (Universe) ring settled and visible before the tour advances to Quant.
+       (Was 8.5s, tuned for the old 2.5-min tour — it overran the short hook and
+       skipped the outer ring.) */
     let lastNow = 0;
 
     /* Heat ramp: red universe -> orange -> yellow -> green -> bright-blue core.
