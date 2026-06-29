@@ -1050,6 +1050,13 @@
     /* Embedded (iframe) on the homepage: drop the page chrome + cursor halo so
        it reads as a clean inline graphic, not a full page. */
     .is-embedded .brandbar { display: none; }
+    /* Homepage embed = a pure cinematic 3D tour. The whole side rail (Play card,
+       stage panel, tabs) has no job here — the homepage poster drives Play and the
+       homepage's own X drives exit — so remove it entirely (no flash, no clutter)
+       and re-center the universe (sceneFocusX()=0 + --scene-center-x:50%) so the 3D
+       fills the frame instead of leaving a gap where the rail used to sit. */
+    .is-embedded .rail { display: none; }
+    .is-embedded .brochure-card { --scene-center-x: 50%; }
     /* Embedded on the homepage: hide the title-card text (the homepage has its own
        "Our Process" header), but KEEP the Play CTA — it shows at the top of the
        embed's panel. */
@@ -1087,6 +1094,45 @@
     .is-intro .core-leader,
     .is-intro .explore-hint,
     .is-intro .core-label { opacity: 0 !important; transition: opacity 240ms ease; }
+
+    /* During the GUIDED TOUR, clear the whole HUD so it plays as a pure
+       cinematic — just the 3D universe + narration. Everything fades back in
+       when the tour ends so visitors can click through the stages manually. */
+    .brochure-card.is-touring .hero-copy,
+    .brochure-card.is-touring .stage-panel,
+    .brochure-card.is-touring .stage-tabs,
+    .brochure-card.is-touring .view-controls,
+    .brochure-card.is-touring .recenter-btn,
+    .brochure-card.is-touring .core-label,
+    .brochure-card.is-touring .core-leader,
+    .brochure-card.is-touring .explore-hint,
+    .brochure-card.is-touring .ring-callout,
+    .brochure-card.is-touring .ring-tag,
+    .brochure-card.is-touring .brandbar { opacity: 0 !important; pointer-events: none !important; transition: opacity 450ms ease; }
+
+    /* Per-beat band label, pinned to the TOP of the frame so it's always in view
+       as the page scrolls. Names the active band; a leader line (the ring-callout)
+       links it down to that band. One at a time, fading as the tour descends. */
+    .tour-caption {
+      position: absolute; left: 0; right: 0; top: 5%; z-index: 9;
+      text-align: center; padding: 0 26px; pointer-events: none;
+      opacity: 0; transform: translateY(-8px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .tour-caption .tc-kicker {
+      display: block; margin: 0 0 .55em;
+      font: 700 .7rem/1 Arial, sans-serif; letter-spacing: .32em; text-transform: uppercase;
+      color: #c9ab73;
+    }
+    .tour-caption .tc-title {
+      display: block;
+      font-family: Cinzel, "Cormorant Garamond", Georgia, serif; font-weight: 600;
+      font-size: clamp(1.4rem, 3.4vw, 2.35rem); line-height: 1.05; color: #f7fbff;
+      text-shadow: 0 2px 24px rgba(0,0,0,.72);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tour-caption { transition: opacity .2s ease; transform: none; }
+    }
 
     @media (max-width: 1180px) {
       .page {
@@ -1377,7 +1423,7 @@
 
     /* ============================================================
        PHONE PROCESS HUD — keep it minimal. No side stepper, no stage
-       cards: the universe plus the "From 9,000 names to 40" intro
+       cards: the universe plus the "From 9,000 names to 80" intro
        (overlaid by the homepage, and faded out the moment the tour
        starts) carry the section, and Play launches the cinematic
        tour. So on phones we hide BOTH the big stage card and the
@@ -1453,6 +1499,14 @@
       </svg>
       <div class="ring-tag" id="ringTag" aria-hidden="true">Universe</div>
 
+      <!-- Cinematic per-beat label shown ONLY during the guided tour (one ring at
+           a time, cross-fading as the camera moves inward). Deliberately NOT in
+           the .is-touring hide list above. -->
+      <div class="tour-caption" id="tourCaption" aria-hidden="true">
+        <span class="tc-kicker"></span>
+        <span class="tc-title"></span>
+      </div>
+
       <!-- Bottom-left interaction hint with a mouse glyph. -->
       <div class="explore-hint" aria-hidden="true">
         <svg class="explore-hint__mouse" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1477,7 +1531,7 @@
         <div class="metric-row" aria-label="Portfolio process metrics">
           <div class="metric"><strong>8,000-9,000</strong><span>pass initial structure</span></div>
           <div class="metric"><strong>900-1,000</strong><span>pass financial tests</span></div>
-          <div class="metric"><strong>40-60</strong><span>managed holdings</span></div>
+          <div class="metric"><strong>80</strong><span>managed holdings</span></div>
         </div>
       </article>
 
@@ -1529,7 +1583,7 @@
         <div class="legend-step" style="--step-color:#65b5ff"><strong>Quant</strong><span>Screen and rank</span></div>
         <div class="legend-step" style="--step-color:#55d68b"><strong>Fundamentals</strong><span>Business quality</span></div>
         <div class="legend-step" style="--step-color:#2f7fd2"><strong>Selection</strong><span>Strongest names</span></div>
-        <div class="legend-step" style="--step-color:#b9d7ff"><strong>Portfolio</strong><span>40-60 holdings</span></div>
+        <div class="legend-step" style="--step-color:#b9d7ff"><strong>Portfolio</strong><span>80 holdings</span></div>
       </footer>
 
     </section>
@@ -1572,7 +1626,7 @@
         body: "The Investment Committee validates earnings potential and sustainability through business analysis, peer comparison, growth durability, and management evaluation.",
         evidence: ["Business quality", "Economic analysis", "Peer comparison", "Management review"],
         stat: { count: "~150", share: "~1.7%", conviction: "Building" },
-        next: { name: "Selection", names: "~40 names" }
+        next: { name: "Selection", names: "~80 names" }
       },
       {
         number: "04",
@@ -1581,17 +1635,17 @@
         count: "Growth 50-60 | Value 40-50 | Intl ADR 55-65",
         body: "Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.",
         evidence: ["Growth vs value", "Domestic vs ADR", "Always re-tested", "Fit before it's added"],
-        stat: { count: "~40-60", share: "~0.6%", conviction: "High" },
-        next: { name: "Portfolio", names: "40-60 held" }
+        stat: { count: "~80", share: "~0.9%", conviction: "High" },
+        next: { name: "Portfolio", names: "80 held" }
       },
       {
         number: "05",
         kicker: "The destination and discipline",
         title: "Managed Portfolio",
-        count: "40-60 holdings | risk-controlled | continuously monitored",
+        count: "80 holdings | risk-controlled | continuously monitored",
         body: "A diversified portfolio holds companies that possess and maintain competitive financial characteristics, with sector, industry, and position-size limits.",
         evidence: ["Risk controls", "Position sizing", "Sector limits", "Sell discipline"],
-        stat: { count: "40-60", share: "~0.6%", conviction: "Held" },
+        stat: { count: "80", share: "~0.9%", conviction: "Held" },
         next: null
       }
     ];
@@ -1684,7 +1738,9 @@
       ringTag.textContent = stageTags[activeStage];
       /* Final stage: the ring has collapsed into the core, so the callout + tag
          would sit on the glass sphere. Hide them (the right panel already names
-         "Managed Portfolio"); the core label beside the globe carries the label. */
+         "Managed Portfolio"); the core label beside the globe carries the label.
+         During the guided tour the whole callout is hidden by CSS anyway — the
+         top caption (#tourCaption) is the band label. */
       const hideCallout = activeStage === 4 ? "0" : "";
       ringTag.style.opacity = hideCallout;
       calloutPath.style.opacity = hideCallout;
@@ -2207,6 +2263,10 @@
     root.add(halo);
 
     function sceneFocusX() {
+      /* Desktop normally nudges the universe left (-3.7) to clear the right rail.
+         On the homepage embed the rail is hidden, so center it (0) — and on narrow
+         screens it's centered anyway. */
+      if (document.documentElement.classList.contains("is-embedded")) return 0;
       return card.getBoundingClientRect().width < 760 ? 0 : -3.7;
     }
 
@@ -2349,6 +2409,32 @@
            zoom inward, ending on the Fundamentals Core sphere. */
         view.targetDistance = view.defaultDistance * STAGE_ZOOM[index];
       }
+      /* During the guided tour, surface this ring's name as a cinematic caption. */
+      if (card.classList.contains("is-touring")) showTourCaption(index);
+    }
+
+    /* Cross-fading per-beat label during the tour. Fades the previous name out,
+       then swaps in the new ring's name (the narration for the new beat is just
+       starting, so the brief fade reads as a clean transition). */
+    /* Drive the fade with inline opacity/transform (the .tour-caption CSS
+       transition animates it). Inline styles always win the cascade, so the
+       label is guaranteed to show regardless of stylesheet ordering. */
+    function showTourCaption(i) {
+      var c = document.getElementById("tourCaption");
+      if (!c) return;
+      var d = stages[i];
+      if (!d) { hideTourCaption(); return; }
+      c.style.opacity = "0"; c.style.transform = "translateY(10px)";
+      clearTimeout(c._swap);
+      c._swap = setTimeout(function () {
+        c.querySelector(".tc-kicker").textContent = d.kicker;
+        c.querySelector(".tc-title").textContent = d.title;
+        c.style.opacity = "1"; c.style.transform = "translateY(0)";
+      }, 340);
+    }
+    function hideTourCaption() {
+      var c = document.getElementById("tourCaption");
+      if (c) { clearTimeout(c._swap); c.style.opacity = "0"; c.style.transform = "translateY(10px)"; }
     }
 
     tabs.forEach((tab) => {
@@ -2375,11 +2461,11 @@
        serve as the browser-voice fallback if a clip is ever missing, so the tour
        stays ~35s either way. */
     const TOUR = [
-      "A universe of stocks. Nine thousand companies. We choose forty to sixty.",
+      "A universe of stocks. Nine thousand companies. We choose eighty.",
       "First, the field gets cut - our screens rank every name on growth, structure, and risk.",
       "Then the machines step aside. We study each survivor by hand.",
       "Most won't make it. Only the highest conviction earns a place.",
-      "What's left: forty to sixty companies - chosen by process, not by chance."
+      "What's left: eighty companies - chosen by process, not by chance."
     ];
 
     /* A quick "multi-factor ranking" beat that plays on the Quant ring after the
@@ -2502,7 +2588,7 @@
       tourAudio.pause();
       tourAudio.onended = () => advanceFrom(i);
       tourAudio.onerror = () => speakBrowser(i);   /* no MP3 yet -> browser voice */
-      tourAudio.src = `../assets/audio/tour-${i + 1}.mp3?v=3`;
+      tourAudio.src = `../assets/audio/tour-${i + 1}.mp3?v=5`;
       const p = tourAudio.play();
       if (p && p.catch) p.catch(() => speakBrowser(i));   /* blocked/missing -> browser voice */
     }
@@ -2511,12 +2597,13 @@
        his desk) + play the closing line (tour-6), then end the tour. */
     function playOutro() {
       if (!tourPlaying) return;
+      hideTourCaption();   /* no ring label over Aaron's portrait */
       if (window.__vemOutro) window.__vemOutro();
       if (synth) synth.cancel();
       tourAudio.pause();
       tourAudio.onended = endTour;
       tourAudio.onerror = function () { setTimeout(function () { if (tourPlaying) endTour(); }, 3200); };
-      tourAudio.src = "../assets/audio/tour-6.mp3?v=3";
+      tourAudio.src = "../assets/audio/tour-6.mp3?v=5";
       const pr = tourAudio.play();
       if (pr && pr.catch) pr.catch(function () { setTimeout(function () { if (tourPlaying) endTour(); }, 3200); });
     }
@@ -2555,6 +2642,7 @@
     }
     function pauseTour() {           /* user paused — drop into manual mode */
       tourPlaying = false;
+      hideTourCaption();
       postTour("stop");
       if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
       setTourBtn(false);
@@ -2565,23 +2653,27 @@
       if (window.__vemOutroReset) window.__vemOutroReset();   /* clear the ending overlay */
       intro.active = false; root.scale.setScalar(1); card.classList.remove("is-intro");
     }
-    function endTour() {             /* reached the portfolio — reset to start */
+    function endTour() {             /* cinematic finished — hold on Aaron */
       tourPlaying = false;
-      postTour("stop");
       setTourBtn(false);
-      card.classList.remove("is-touring");
       if (synth) synth.cancel();
       tourAudio.pause();
       /* keep the music going a beat after the narration, then fade out gently */
       if (tourEndTimer) clearTimeout(tourEndTimer);
       tourEndTimer = setTimeout(() => fadeBed(0, 7000), 4500);
-      tourStage = 0;
+      /* Stay on Aaron ("keep it on air"). The outro's "Read our complete
+         approach" button hands off to the homepage's card view; the HUD stays
+         hidden the whole time. */
     }
 
     /* MP3 clips drive the tour, so it no longer depends on the browser voice. */
     if (tourBtn) {
       tourBtn.addEventListener("click", () => { tourPlaying ? pauseTour() : startTour(); });
     }
+    /* Let the outro's "Replay tour" button restart the whole cinematic. startTour
+       already clears the ending overlay (__vemOutroReset) and replays from the
+       full open. */
+    window.__vemReplayTour = function () { startTour(); };
 
     /* Any manual interaction during the tour pauses it so the user takes over. */
     tabs.forEach((t) => t.addEventListener("click", () => { if (tourPlaying) pauseTour(); }));
@@ -3190,6 +3282,17 @@
 
     setStage(0);
     requestAnimationFrame(animate);
+
+    /* Homepage poster was clicked (?autoplay=1): bring the universe up and run
+       the guided tour immediately. The iframe has allow="autoplay", so the
+       narration plays without a second click. */
+    if (new URLSearchParams(location.search).get("autoplay") === "1") {
+      /* Hide the stage panel / HUD from the very first paint so the embed never
+         flashes the cards before the cinematic zoom begins — a clean cut straight
+         into the tour. startTour() re-asserts is-touring (idempotent). */
+      card.classList.add("is-touring");
+      setTimeout(function () { if (!tourPlaying) startTour(); }, 220);
+    }
   </script>
   <script src="../js/halo.js?v=7" defer></script>
 
@@ -3223,6 +3326,13 @@
       + '#outro .cap h2 em{font-style:italic;color:#cDb487}'
       + '#outro .cap .who{margin:1.1em 0 0;font:700 .82rem/1 Arial,sans-serif;letter-spacing:.06em;color:#b9c8e0}'
       + '#outro .cap .rule{width:54px;height:2px;margin:1.1em auto 0;background:#B99B5F}'
+      + '#outro .octa-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:1.5em}'
+      + '#outro .octa{padding:13px 26px;border-radius:999px;border:0;cursor:pointer;pointer-events:auto;'
+      + 'font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0B1F44;background:#B99B5F;opacity:0}'
+      + '#outro .octa--ghost{background:transparent;color:#e9eefc;border:1px solid rgba(201,171,115,.6)}'
+      + '#outro.go .octa{animation:opIn .9s ease 3.8s forwards}'
+      + '#outro.go .octa:not(.octa--ghost){animation:opIn .9s ease 3.8s forwards,octaPulse 2.4s ease-out 4.7s infinite}'
+      + '@keyframes octaPulse{0%{box-shadow:0 0 0 0 rgba(185,155,95,.6)}70%{box-shadow:0 0 0 20px rgba(185,155,95,0)}100%{box-shadow:0 0 0 0 rgba(185,155,95,0)}}'
       + '.universe-canvas.outroPush{animation:opCanvas 2.6s ease-in forwards}'
       + '@keyframes opCanvas{to{transform:scale(1.7);filter:blur(7px);opacity:0}}'
       + '#outro.go .flash{animation:opFlash .8s ease-out .15s}'
@@ -3259,21 +3369,45 @@
         +   '<h2>Managed by <em>people.</em></h2>'
         +   '<div class="rule"></div>'
         +   '<p class="who">Aaron J. Vann &middot; Chief Investment Officer</p>'
+        +   '<div class="octa-row">'
+        +     '<button type="button" class="octa octa--ghost octa-replay">&#8634; Replay tour</button>'
+        +     '<button type="button" class="octa">Read our complete approach</button>'
+        +   '</div>'
         + '</div>';
       document.body.appendChild(wrap);
+      wrap.style.display = "none";   /* fully inert until play(); no invisible buttons over the tour */
       canvas = document.querySelector(".universe-canvas");
+      var octa = wrap.querySelector(".octa:not(.octa--ghost)");
+      if (octa) octa.addEventListener("click", function () {
+        try { if (window.parent && window.parent !== window) window.parent.postMessage({ type: "vem-cards" }, location.origin); } catch (e) {}
+      });
+      var rep = wrap.querySelector(".octa-replay");
+      if (rep) rep.addEventListener("click", function () {
+        try { if (window.__vemReplayTour) window.__vemReplayTour(); } catch (e) {}
+      });
     }
     function play() {
       build();
+      wrap.style.display = "";
       wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush");
       void wrap.offsetWidth;                       /* reflow so animations restart */
       wrap.classList.add("go"); if (canvas) canvas.classList.add("outroPush");
     }
-    function reset() { if (built) { wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush"); } }
+    function reset() { if (built) { wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush"); wrap.style.opacity = ""; wrap.style.transition = ""; wrap.style.display = "none"; } }
+    /* Graceful end: cross-dissolve the ending out, revealing the universe (the
+       canvas returns to normal beneath) — used when the tour finishes. */
+    function fadeOut() {
+      if (!built) return;
+      if (canvas) canvas.classList.remove("outroPush");   /* universe back to normal beneath */
+      wrap.style.transition = "opacity .8s ease";
+      wrap.style.opacity = "0";
+      setTimeout(function () { wrap.classList.remove("go"); wrap.style.opacity = ""; wrap.style.transition = ""; }, 820);
+    }
     /* Exposed so the guided tour can preload + trigger + clear the ending. */
     window.__vemOutroPrep = build;
     window.__vemOutro = play;
     window.__vemOutroReset = reset;
+    window.__vemOutroFadeOut = fadeOut;
 
     /* Standalone preview button (only with ?outro=1). */
     if (new URLSearchParams(location.search).get("outro") === "1") {
