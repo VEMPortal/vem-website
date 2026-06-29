@@ -2375,11 +2375,11 @@
        serve as the browser-voice fallback if a clip is ever missing, so the tour
        stays ~35s either way. */
     const TOUR = [
-      "Nine thousand companies. We choose forty. It begins with the entire market - nothing excluded by opinion.",
-      "First, the field gets cut. Proprietary screens rank every name on growth, structure, and risk - only the strongest advance.",
-      "Then the machines step aside. Our committee studies each survivor by hand - earnings, durability, the people in charge.",
-      "Most won't make it. Only the highest-conviction names earn a place. Nothing is owned by default.",
-      "What's left is rare: forty to sixty companies - each one earned, and watched every day."
+      "A universe of stocks. Nine thousand companies. We choose forty to sixty.",
+      "First, the field gets cut - our screens rank every name on growth, structure, and risk.",
+      "Then the machines step aside. We study each survivor by hand.",
+      "Most won't make it. Only the highest conviction earns a place.",
+      "What's left: forty to sixty companies - chosen by process, not by chance."
     ];
 
     /* A quick "multi-factor ranking" beat that plays on the Quant ring after the
@@ -2451,7 +2451,7 @@
       /* Multi-factor detour removed — keep the hooks chaining straight through
          for the ~35s cut (tour-2b.mp3 stays on disk, just no longer called). */
       if (i < TOUR.length - 1) { tourStage = i + 1; setStage(tourStage); speakStage(tourStage); }
-      else { endTour(); }
+      else { playOutro(); }
     }
 
     /* ---- Multi-factor ranking beat (stays on the Quant ring) ---- */
@@ -2502,9 +2502,23 @@
       tourAudio.pause();
       tourAudio.onended = () => advanceFrom(i);
       tourAudio.onerror = () => speakBrowser(i);   /* no MP3 yet -> browser voice */
-      tourAudio.src = `../assets/audio/tour-${i + 1}.mp3?v=2`;
+      tourAudio.src = `../assets/audio/tour-${i + 1}.mp3?v=3`;
       const p = tourAudio.play();
       if (p && p.catch) p.catch(() => speakBrowser(i));   /* blocked/missing -> browser voice */
+    }
+
+    /* Final beat: trigger the cinematic outro (push into the city, then Aaron at
+       his desk) + play the closing line (tour-6), then end the tour. */
+    function playOutro() {
+      if (!tourPlaying) return;
+      if (window.__vemOutro) window.__vemOutro();
+      if (synth) synth.cancel();
+      tourAudio.pause();
+      tourAudio.onended = endTour;
+      tourAudio.onerror = function () { setTimeout(function () { if (tourPlaying) endTour(); }, 3200); };
+      tourAudio.src = "../assets/audio/tour-6.mp3?v=3";
+      const pr = tourAudio.play();
+      if (pr && pr.catch) pr.catch(function () { setTimeout(function () { if (tourPlaying) endTour(); }, 3200); });
     }
 
     /* Tell the parent (homepage embed) when the tour runs, so it can fade its
@@ -2520,6 +2534,8 @@
     function startTour() {
       tourPlaying = true;
       postTour("start");
+      if (window.__vemOutroReset) window.__vemOutroReset();   /* clear any prior ending */
+      if (window.__vemOutroPrep) window.__vemOutroPrep();     /* preload the outro art during the tour */
       if (tourEndTimer) { clearTimeout(tourEndTimer); tourEndTimer = null; }
       setTourBtn(true);
       card.classList.add("is-touring");
@@ -2546,6 +2562,7 @@
       if (synth) synth.cancel();
       tourAudio.pause();
       fadeBed(0, 600);
+      if (window.__vemOutroReset) window.__vemOutroReset();   /* clear the ending overlay */
       intro.active = false; root.scale.setScalar(1); card.classList.remove("is-intro");
     }
     function endTour() {             /* reached the portfolio — reset to start */
@@ -3189,7 +3206,7 @@
        ============================================================ -->
   <script>
   (function () {
-    if (new URLSearchParams(location.search).get("outro") !== "1") return;
+    var built = false, wrap = null, canvas = null;
 
     var css = ''
       + '#outro{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden}'
@@ -3224,35 +3241,48 @@
       + 'font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0B1F44;background:#B99B5F;'
       + 'border:0;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,.4)}'
       + '@media (prefers-reduced-motion:reduce){.universe-canvas.outroPush,#outro.go *{animation-duration:.01ms!important}}';
-    var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
-
-    var wrap = document.createElement("div");
-    wrap.id = "outro"; wrap.setAttribute("aria-hidden", "true");
-    wrap.innerHTML =
-        '<div class="flash"></div>'
-      + '<div class="shot city" style="background-image:url(../assets/img/hero-dallas.jpg)"></div>'
-      + '<div class="shot desk" style="background-image:url(../assets/img/aaron-vann-office.jpg)"></div>'
-      + '<div class="glow"></div><span class="caret"></span>'
-      + '<div class="cap">'
-      +   '<p class="ov">Chosen by process</p>'
-      +   '<h2>Managed by <em>people.</em></h2>'
-      +   '<div class="rule"></div>'
-      +   '<p class="who">Aaron J. Vann &middot; Chief Investment Officer</p>'
-      + '</div>';
-    document.body.appendChild(wrap);
-
-    var btn = document.createElement("button");
-    btn.id = "outroBtn"; btn.type = "button"; btn.textContent = "▶ Preview the ending";
-    document.body.appendChild(btn);
-
-    var canvas = document.querySelector(".universe-canvas");
+    /* Lazy-build: nothing is injected (and no art is loaded) until the tour
+       reaches its end or the ?outro=1 preview button is used, so the default
+       page is untouched. */
+    function build() {
+      if (built) return; built = true;
+      var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+      wrap = document.createElement("div");
+      wrap.id = "outro"; wrap.setAttribute("aria-hidden", "true");
+      wrap.innerHTML =
+          '<div class="flash"></div>'
+        + '<div class="shot city" style="background-image:url(../assets/img/hero-dallas.jpg)"></div>'
+        + '<div class="shot desk" style="background-image:url(../assets/img/aaron-vann-office.jpg)"></div>'
+        + '<div class="glow"></div><span class="caret"></span>'
+        + '<div class="cap">'
+        +   '<p class="ov">Chosen by process</p>'
+        +   '<h2>Managed by <em>people.</em></h2>'
+        +   '<div class="rule"></div>'
+        +   '<p class="who">Aaron J. Vann &middot; Chief Investment Officer</p>'
+        + '</div>';
+      document.body.appendChild(wrap);
+      canvas = document.querySelector(".universe-canvas");
+    }
     function play() {
-      btn.textContent = "↺ Replay ending";
+      build();
       wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush");
       void wrap.offsetWidth;                       /* reflow so animations restart */
       wrap.classList.add("go"); if (canvas) canvas.classList.add("outroPush");
     }
-    btn.addEventListener("click", play);
+    function reset() { if (built) { wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush"); } }
+    /* Exposed so the guided tour can preload + trigger + clear the ending. */
+    window.__vemOutroPrep = build;
+    window.__vemOutro = play;
+    window.__vemOutroReset = reset;
+
+    /* Standalone preview button (only with ?outro=1). */
+    if (new URLSearchParams(location.search).get("outro") === "1") {
+      build();
+      var btn = document.createElement("button");
+      btn.id = "outroBtn"; btn.type = "button"; btn.textContent = "▶ Preview the ending";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", function () { btn.textContent = "↺ Replay ending"; play(); });
+    }
   })();
   </script>
 </body>
