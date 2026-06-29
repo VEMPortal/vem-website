@@ -20,6 +20,10 @@
   // otherwise the parent's halo and the iframe's halo both render and "double up"
   // at the iframe edge. The parent halo handles the whole viewport instead.
   if (window.self !== window.top) return;
+  // The full-screen 3D process universe has its own interactions + a heavy WebGL
+  // render loop. The halo isn't needed there and only competes for frames (and
+  // its trailing glow reads as a "double cursor" over the dark scene). Skip it.
+  if (document.querySelector(".universe-canvas")) return;
 
   var css =
     ".vem-halo{position:fixed;inset:0;z-index:49;pointer-events:none;opacity:0;" +
@@ -88,13 +92,12 @@
 
     function render() {
       raf = null;
-      cx += (hx - cx) * 0.22;   // core catches up quickly (leads)
+      cx += (hx - cx) * 0.22;   // single eased glow follows the cursor
       cy += (hy - cy) * 0.22;
-      tx += (hx - tx) * 0.10;   // trail lags further behind
-      ty += (hy - ty) * 0.10;
+      tx = cx; ty = cy;          // soft trail rides WITH the core — no lagging "double" glow
       core.style.transform  = "translate3d(" + cx.toFixed(1) + "px," + cy.toFixed(1) + "px,0)";
       trail.style.transform = "translate3d(" + tx.toFixed(1) + "px," + ty.toFixed(1) + "px,0)";
-      if (active || Math.abs(hx - tx) > 0.4 || Math.abs(hy - ty) > 0.4) request();
+      if (active || Math.abs(hx - cx) > 0.4 || Math.abs(hy - cy) > 0.4) request();
     }
     function request() { if (raf == null) raf = window.requestAnimationFrame(render); }
 
