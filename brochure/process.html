@@ -3175,5 +3175,85 @@
     requestAnimationFrame(animate);
   </script>
   <script src="../js/halo.js?v=6" defer></script>
+
+  <!-- ============================================================
+       OUTRO PREVIEW (opt-in via ?outro=1) — the cinematic ending:
+       the universe whites out, pushes into the city, and settles on
+       Aaron at his desk (the human behind the process). Fully
+       self-contained + non-destructive; does nothing without the
+       param, so the live tour is untouched. A "Preview the ending"
+       button plays it over the real scene, with one-click Replay.
+       (Uses existing art: hero-dallas.jpg + aaron-vann-office.jpg.
+       Swap in a real over-the-shoulder "typing" shot/clip later to
+       make the computer beat literal.)
+       ============================================================ -->
+  <script>
+  (function () {
+    if (new URLSearchParams(location.search).get("outro") !== "1") return;
+
+    var css = ''
+      + '#outro{position:fixed;inset:0;z-index:60;pointer-events:none;overflow:hidden}'
+      + '#outro .shot{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;will-change:opacity,transform;transform:scale(1.04)}'
+      + '#outro .city{background-position:center 38%}'
+      + '#outro .desk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,14,30,.12),rgba(6,14,30,.30) 46%,rgba(6,14,30,.82))}'
+      + '#outro .flash{position:absolute;inset:0;background:#fff;opacity:0}'
+      + '#outro .glow{position:absolute;right:9%;bottom:30%;width:24%;height:24%;border-radius:50%;background:radial-gradient(ellipse,rgba(120,170,240,.55),transparent 70%);opacity:0;mix-blend-mode:screen;filter:blur(2px)}'
+      + '#outro .caret{position:absolute;right:17%;bottom:41%;width:3px;height:3.4%;background:#dCEBFF;box-shadow:0 0 8px rgba(150,190,255,.9);opacity:0}'
+      + '#outro .cap{position:absolute;left:0;right:0;bottom:11%;text-align:center;padding:0 26px;opacity:0;transform:translateY(16px);color:#f7fbff;text-shadow:0 2px 22px rgba(0,0,0,.7)}'
+      + '#outro .cap .ov{margin:0 0 .5em;font:700 .72rem/1 Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#cDb487}'
+      + '#outro .cap h2{margin:0;font-family:Cinzel,"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(1.8rem,4.4vw,3.2rem);line-height:1.04}'
+      + '#outro .cap h2 em{font-style:italic;color:#cDb487}'
+      + '#outro .cap .who{margin:1.1em 0 0;font:700 .82rem/1 Arial,sans-serif;letter-spacing:.06em;color:#b9c8e0}'
+      + '#outro .cap .rule{width:54px;height:2px;margin:1.1em auto 0;background:#B99B5F}'
+      + '.universe-canvas.outroPush{animation:opCanvas 2.6s ease-in forwards}'
+      + '@keyframes opCanvas{to{transform:scale(1.7);filter:blur(7px);opacity:0}}'
+      + '#outro.go .flash{animation:opFlash .8s ease-out .15s}'
+      + '@keyframes opFlash{0%{opacity:0}22%{opacity:.92}100%{opacity:0}}'
+      + '#outro.go .city{animation:opIn .9s ease .45s forwards,opKbCity 3.4s ease-out .45s forwards}'
+      + '@keyframes opKbCity{from{transform:scale(1.05)}to{transform:scale(1.22)}}'
+      + '#outro.go .desk{animation:opIn 1s ease 2s forwards,opKbDesk 3.8s ease-out 2s forwards}'
+      + '@keyframes opKbDesk{from{transform:scale(1.02)}to{transform:scale(1.15)}}'
+      + '#outro.go .glow{animation:opGlow 1s ease 2.6s forwards,opPulse 1.7s ease-in-out 3.6s infinite}'
+      + '@keyframes opGlow{to{opacity:.85}}@keyframes opPulse{0%,100%{opacity:.5}50%{opacity:.95}}'
+      + '#outro.go .caret{animation:opCaretIn .1s ease 2.8s forwards,opBlink 1.05s step-end 2.8s infinite}'
+      + '@keyframes opCaretIn{to{opacity:1}}@keyframes opBlink{50%{opacity:0}}'
+      + '#outro.go .cap{animation:opCap 1.2s ease 3.3s forwards}'
+      + '@keyframes opCap{to{opacity:1;transform:translateY(0)}}'
+      + '@keyframes opIn{to{opacity:1}}'
+      + '#outroBtn{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:62;pointer-events:auto;'
+      + 'font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0B1F44;background:#B99B5F;'
+      + 'border:0;border-radius:999px;padding:13px 22px;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,.4)}'
+      + '@media (prefers-reduced-motion:reduce){.universe-canvas.outroPush,#outro.go *{animation-duration:.01ms!important}}';
+    var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+
+    var wrap = document.createElement("div");
+    wrap.id = "outro"; wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML =
+        '<div class="flash"></div>'
+      + '<div class="shot city" style="background-image:url(../assets/img/hero-dallas.jpg)"></div>'
+      + '<div class="shot desk" style="background-image:url(../assets/img/aaron-vann-office.jpg)"></div>'
+      + '<div class="glow"></div><span class="caret"></span>'
+      + '<div class="cap">'
+      +   '<p class="ov">Chosen by process</p>'
+      +   '<h2>Managed by <em>people.</em></h2>'
+      +   '<div class="rule"></div>'
+      +   '<p class="who">Aaron J. Vann &middot; Chief Investment Officer</p>'
+      + '</div>';
+    document.body.appendChild(wrap);
+
+    var btn = document.createElement("button");
+    btn.id = "outroBtn"; btn.type = "button"; btn.textContent = "▶ Preview the ending";
+    document.body.appendChild(btn);
+
+    var canvas = document.querySelector(".universe-canvas");
+    function play() {
+      btn.textContent = "↺ Replay ending";
+      wrap.classList.remove("go"); if (canvas) canvas.classList.remove("outroPush");
+      void wrap.offsetWidth;                       /* reflow so animations restart */
+      wrap.classList.add("go"); if (canvas) canvas.classList.add("outroPush");
+    }
+    btn.addEventListener("click", play);
+  })();
+  </script>
 </body>
 </html>
