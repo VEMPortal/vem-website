@@ -27,7 +27,7 @@
   <title>Vann Equity Management — Disciplined, Fiduciary Equity Management</title>
   <meta name="description" content="Vann Equity Management is an independent, SEC-registered, GIPS-verified fiduciary managing equity and tactical asset-allocation portfolios for individuals, institutions, endowments, and family offices in Plano and Austin, Texas." />
 
-  <!-- Production domain: www.vannequitymanagement.com (preview deploys use a separate host URL) -->
+  <!-- Production domain: www.vannequitymanagement.com -->
   <link rel="canonical" href="https://www.vannequitymanagement.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Vann Equity Management, LLC" />
@@ -75,6 +75,9 @@
   <link rel="stylesheet" href="css/hero.css?v=72" />
   <link rel="stylesheet" href="css/sections.css?v=71" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
+  <!-- Reuses the contact.html form styling (.contact-form/.field/.form-status) for the
+       inline consultation form added to the CTA band in this preview. -->
+  <link rel="stylesheet" href="css/contact.css?v=9" />
 
   <!-- Structured data (Schema.org) — helps Google rich results + AI answer engines
        understand VEM as an entity. Add "sameAs" social URLs once they're live. -->
@@ -163,8 +166,6 @@
             </button>
             <ul class="nav__menu">
               <li><a href="#about">Our Story</a></li>
-              <li><a href="#philosophy">Our Approach</a></li>
-              <li><a href="#difference">The Difference</a></li>
               <li><a href="#team">Our Team</a></li>
             </ul>
           </li>
@@ -289,13 +290,6 @@
           <a class="btn btn--gold" href="contact.html">Schedule a consultation</a>
           <a class="btn btn--ghost" href="#portfolios">Explore our portfolios</a>
         </div>
-
-        <div class="hero__trust fade-up">
-          <span class="hero__trust-mark">GIPS&reg; Verified</span>
-          <span>Fiduciary firm-wide</span>
-          <span>High-net-worth &amp; institutional</span>
-          <span>Plano, Texas</span>
-        </div>
       </div>
 
       <!-- Credentials card — firm facts only (no performance claim) -->
@@ -352,17 +346,64 @@
             process.
           </p>
         </div>
-
-        <figure class="about__quote reveal" data-delay="2">
-          <blockquote>We combine the intellectual rigor of institutional investing with the personal accountability of a boutique firm. Our goal is straightforward &mdash; protect, grow, and deliver on the trust our clients place in us, quarter after quarter, year after year.</blockquote>
-          <figcaption>Our vision</figcaption>
-        </figure>
       </div>
     </div>
   </section>
 
+  <!-- ==================== §05b — PERFORMANCE (moved up: proof-early) ==================== -->
+  <section id="performance" class="section section--gray performance" data-section="performance" aria-labelledby="perf-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="overline">Performance</p>
+        <h2 id="perf-title">Held to the <em>global standard.</em></h2>
+      </div>
+      <p class="perf__intro reveal" data-delay="1">
+        The Global Investment Performance Standards (GIPS&reg;) are the world&rsquo;s benchmark for how
+        investment results are calculated and presented &mdash; built to keep performance complete,
+        comparable, and free of cherry-picking. Vann Equity Management claims compliance firm-wide, reports
+        every figure net of fees, and has been <strong>independently verified</strong> by a third party for
+        June&nbsp;1, 2018 through December&nbsp;31, 2024.
+      </p>
+
+      <div class="perf-cred reveal" data-delay="1">
+        <div class="credstat">
+          <p class="credstat__val">GIPS&reg;</p>
+          <p class="credstat__label">Verified, firm-wide</p>
+        </div>
+        <div class="credstat">
+          <p class="credstat__val">Verified</p>
+          <p class="credstat__label">Independently, 2018&ndash;2024</p>
+        </div>
+        <div class="credstat">
+          <p class="credstat__val tnum">$231M</p>
+          <p class="credstat__label">Discretionary AUM &middot; 12/31/2025</p>
+        </div>
+        <div class="credstat">
+          <p class="credstat__val">Net of fees</p>
+          <p class="credstat__label">Every figure we report</p>
+        </div>
+      </div>
+
+      <div class="perf__cta reveal">
+        <a class="btn btn--gold" href="gips-report.html">View the GIPS Verified Report</a>
+        <span class="perf__cta-note">Every composite, every period, gross &amp; net &mdash; with full disclosures (PDF download inside).</span>
+      </div>
+
+      <p class="perf__disc reveal">
+        Vann Equity Management claims compliance with the Global Investment Performance Standards (GIPS&reg;)
+        and has been independently verified for June&nbsp;1, 2018 through December&nbsp;31, 2024; the
+        verification report is available on request. All performance is reported net of fees. Past performance
+        is not indicative of future results, and investing involves risk, including the possible loss of
+        principal. A complete list of the firm&rsquo;s composites and their standardized performance &mdash;
+        gross and net, every period, each against its benchmark &mdash; is published in our
+        <a href="gips-report.html">GIPS Verified Report</a> or available on request at
+        <a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a>.
+      </p>
+    </div>
+  </section>
+
   <!-- ============ §03 — WHAT WE MANAGE (interactive explorer) ============ -->
-  <section id="portfolios" class="section section--gray manage" data-section="manage" aria-labelledby="manage-title">
+  <section id="portfolios" class="section section--light manage" data-section="manage" aria-labelledby="manage-title">
     <div class="container">
       <div class="section-head reveal">
         <p class="overline">What we manage</p>
@@ -467,46 +508,28 @@
     </div>
   </section>
 
-  <!-- ====== §04 — OUR APPROACH (Conviction · Clarity · Commitment) ====== -->
-  <section id="philosophy" class="section section--light philosophy" data-section="philosophy" aria-labelledby="philosophy-title">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <p class="overline">Our Approach</p>
-        <h2 id="philosophy-title">Conviction. Clarity.<br /><em>Commitment.</em></h2>
-        <p class="phil__lead">Three principles guide every decision we make &mdash; and every portfolio we build.</p>
-      </div>
-
-      <figure class="phil__feature reveal" data-parallax>
-        <picture>
-          <source srcset="assets/img/philosophy-study.webp" type="image/webp" />
-          <img loading="lazy" decoding="async" src="assets/img/philosophy-study.jpg"
-               alt="A quiet private study at golden hour — books, a globe, warm light"
-               onerror="this.closest('.phil__feature').classList.add('is-missing');" />
-        </picture>
-      </figure>
-
-      <ol class="phil__stages">
-        <li class="phil-stage reveal reveal--pop" data-delay="1">
-          <span class="phil-stage__num tnum">01</span>
-          <h3>Conviction</h3>
-          <p>We own companies while their earnings and revenues exceed the market&rsquo;s expectations &mdash; capitalizing on the inefficiencies of traditional Wall Street forecasting, and holding that conviction through a full market cycle.</p>
-        </li>
-        <li class="phil-stage reveal reveal--pop" data-delay="2">
-          <span class="phil-stage__num tnum">02</span>
-          <h3>Clarity</h3>
-          <p>Every position is the output of a disciplined, repeatable process: proprietary quantitative screens, fundamental validation, and visible risk controls. No black boxes, no story stocks.</p>
-        </li>
-        <li class="phil-stage reveal reveal--pop" data-delay="3">
-          <span class="phil-stage__num tnum">03</span>
-          <h3>Commitment</h3>
-          <p>We are fiduciaries firm-wide, with the personal accountability of a boutique. We measure ourselves by the trust you place in us &mdash; protected and grown, quarter after quarter.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <!-- ================== §05 — INVESTMENT PROCESS ================== -->
   <section id="process" class="section section--navy process process--immersive" data-section="process" aria-labelledby="process-title">
+
+    <!-- Three principles (folded in from the former standalone "Our Approach") -->
+    <style>
+      .proc-principles{list-style:none;margin:clamp(18px,3.5vh,36px) auto clamp(26px,5vh,52px);padding:0;max-width:1040px;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px)}
+      .proc-principles li{border-top:2px solid rgba(201,171,115,.5);padding-top:14px}
+      .proc-principles__num{font:700 .78rem/1 Arial,sans-serif;letter-spacing:.12em;color:#c9ab73}
+      .proc-principles h3{margin:.5em 0 .35em;font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:1.15rem;color:#fff}
+      .proc-principles p{margin:0;font-size:.92rem;line-height:1.55;color:#c4d2ea}
+      @media (max-width:760px){.proc-principles{grid-template-columns:1fr;gap:16px}}
+    </style>
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="overline">Our approach</p>
+      </div>
+      <ul class="proc-principles reveal" data-delay="1">
+        <li><span class="proc-principles__num tnum">01</span><h3>Conviction</h3><p>We own companies while their earnings exceed the market&rsquo;s expectations &mdash; and hold that conviction through a full market cycle.</p></li>
+        <li><span class="proc-principles__num tnum">02</span><h3>Clarity</h3><p>Every position is the output of a disciplined, repeatable process: quantitative screens, fundamental validation, visible risk controls. No black boxes.</p></li>
+        <li><span class="proc-principles__num tnum">03</span><h3>Commitment</h3><p>We are fiduciaries firm-wide, with the personal accountability of a boutique &mdash; measured by the trust you place in us.</p></li>
+      </ul>
+    </div>
 
     <!-- Performance: the heavy 3D/WebGL universe (and its assets) do NOT load
          until the visitor clicks Play. Before that it's a lightweight navy poster,
@@ -601,18 +624,18 @@
       </div>
 
       <!-- State B: the interactive 3D universe (loads only when the tour is played) -->
-      <iframe class="process-stage__frame" data-src="brochure/process.html?v=38&amp;autoplay=1"
+      <iframe class="process-stage__frame" data-src="brochure/process.html?v=39&amp;autoplay=1"
               title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
               allow="autoplay; fullscreen"></iframe>
 
       <!-- Section heading (poster state only) -->
       <div class="process-stage__head">
         <p class="overline">Our process</p>
-        <h2 id="process-title">From 9,000 names<br /><em>to 80.</em></h2>
+        <h2 id="process-title">A universe of stocks.<br /><em>9,000 names to 80.</em></h2>
         <p class="process-stage__intro">
-          A global universe of public equities, distilled through five
-          disciplined stages &mdash; quantitative, fundamental, and continuous
-          &mdash; to the few dozen companies we choose to own.
+          Distilled through five disciplined stages &mdash; quantitative,
+          fundamental, and continuous &mdash; down to the few dozen companies
+          we choose to own.
         </p>
       </div>
 
@@ -659,7 +682,7 @@
           { step:"The starting point", title:"Universe of Equity Securities", count:"Global &middot; every publicly traded candidate", body:"Every listed equity starts as a candidate until evidence says otherwise. More names live on the outer edge &mdash; none are owned by default.", stat:[["~9,000","Companies"],["100%","of universe"],["Screening","Conviction"]] },
           { step:"The evidence filter", title:"Quantitative Analysis", count:"~8,000&ndash;9,000 pass structure &middot; 900&ndash;1,000 pass financial tests", body:"Proprietary screens filter for structure, risk, growth/value characteristics, and multi-factor ranking &mdash; before judgment enters the process.", stat:[["~900","Names"],["~10%","of universe"],["Ranking","Conviction"]] },
           { step:"The human test", title:"Fundamental Analysis", count:"Semi-finalists: Growth ~150 &middot; Value ~150 &middot; Intl ADR ~250", body:"The Investment Committee validates earnings potential and sustainability through business analysis, peer comparison, growth durability, and management evaluation.", stat:[["~150","Names"],["~1.7%","of universe"],["Building","Conviction"]] },
-          { step:"The final cut", title:"Stock Selection", count:"Growth 50&ndash;60 &middot; Value 40&ndash;50 &middot; Intl ADR 55&ndash;65", body:"Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.", stat:[["~80","Names"],["~0.9%","of universe"],["High","Conviction"]] },
+          { step:"The final cut", title:"Stock Selection", count:"Across the Growth, Value, and International ADR sleeves", body:"Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.", stat:[["~80","Names"],["~0.9%","of universe"],["High","Conviction"]] },
           { step:"The destination &amp; discipline", title:"Managed Portfolio", count:"80 holdings &middot; risk-controlled &middot; continuously monitored", body:"A diversified portfolio holds companies that possess and maintain competitive financial characteristics &mdash; with sector, industry, and position-size limits.", stat:[["80","Holdings"],["~0.9%","of universe"],["Held","Conviction"]] }
         ];
         var idx = 0;
@@ -709,98 +732,6 @@
         });
       })();
     </script>
-  </section>
-
-  <!-- ==================== §05b — PERFORMANCE ==================== -->
-  <section id="performance" class="section section--gray performance" data-section="performance" aria-labelledby="perf-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="overline">Performance</p>
-        <h2 id="perf-title">Held to the <em>global standard.</em></h2>
-      </div>
-      <p class="perf__intro reveal" data-delay="1">
-        The Global Investment Performance Standards (GIPS&reg;) are the world&rsquo;s benchmark for how
-        investment results are calculated and presented &mdash; built to keep performance complete,
-        comparable, and free of cherry-picking. Vann Equity Management claims compliance firm-wide, reports
-        every figure net of fees, and has been <strong>independently verified</strong> by a third party for
-        June&nbsp;1, 2018 through December&nbsp;31, 2024.
-      </p>
-
-      <div class="perf-cred reveal" data-delay="1">
-        <div class="credstat">
-          <p class="credstat__val">GIPS&reg;</p>
-          <p class="credstat__label">Verified, firm-wide</p>
-        </div>
-        <div class="credstat">
-          <p class="credstat__val">Verified</p>
-          <p class="credstat__label">Independently, 2018&ndash;2024</p>
-        </div>
-        <div class="credstat">
-          <p class="credstat__val tnum">$231M</p>
-          <p class="credstat__label">Discretionary AUM &middot; 12/31/2025</p>
-        </div>
-        <div class="credstat">
-          <p class="credstat__val">Net of fees</p>
-          <p class="credstat__label">Every figure we report</p>
-        </div>
-      </div>
-
-      <div class="perf__cta reveal">
-        <a class="btn btn--gold" href="gips-report.html">View the GIPS Verified Report</a>
-        <span class="perf__cta-note">Every composite, every period, gross &amp; net &mdash; with full disclosures (PDF download inside).</span>
-      </div>
-
-      <p class="perf__disc reveal">
-        Vann Equity Management claims compliance with the Global Investment Performance Standards (GIPS&reg;)
-        and has been independently verified for June&nbsp;1, 2018 through December&nbsp;31, 2024; the
-        verification report is available on request. All performance is reported net of fees. Past performance
-        is not indicative of future results, and investing involves risk, including the possible loss of
-        principal. A complete list of the firm&rsquo;s composites and their standardized performance &mdash;
-        gross and net, every period, each against its benchmark &mdash; is published in our
-        <a href="gips-report.html">GIPS Verified Report</a> or available on request at
-        <a href="mailto:info@vannequitymanagement.com">info@vannequitymanagement.com</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ==================== §06 — THE DIFFERENCE ==================== -->
-  <section id="difference" class="section section--light difference" data-section="difference" aria-labelledby="difference-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="overline">The Difference</p>
-        <h2 id="difference-title">Built around you,<br /><em>not a template.</em></h2>
-      </div>
-
-      <div class="diff-grid">
-        <figure class="diff-figure reveal">
-          <img loading="lazy" decoding="async" src="assets/img/aaron-vann-office.jpg"
-               alt="Aaron J. Vann in the VEM office at dusk, city skyline beyond"
-               onerror="this.classList.add('is-missing');" />
-          <figcaption>Aaron J. Vann &middot; Chief Investment Officer</figcaption>
-        </figure>
-
-        <div class="diff-content reveal" data-delay="1">
-          <p class="diff-lead phil__lead">
-            We believe that since every client is unique, every client portfolio
-            should be unique. That conviction shapes how we work &mdash; and the two
-            ways we serve.
-          </p>
-
-          <div class="diff-models">
-            <div class="diff-model">
-              <h3>Custom-designed portfolios</h3>
-              <p>Managed by your personal advisor and built to your life &mdash; integrating tax planning, your risk tolerance, and even your social and ethical priorities into the portfolio&rsquo;s design.</p>
-            </div>
-            <div class="diff-model">
-              <h3>Company-sponsored SMA portfolios</h3>
-              <p>For those best served by institutional scale, three separately managed strategies run by VEM&rsquo;s founding partners &mdash; with twenty-plus years of institutional portfolio management.</p>
-            </div>
-          </div>
-
-          <p class="diff-note">Both are held to the same fiduciary standard &mdash; your best interest, above all else.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ====================== §07 — THE TEAM ======================= -->
@@ -879,25 +810,109 @@
         </article>
       </div>
 
+      <!-- Personalization (merged from the former "The Difference" section) -->
+      <div class="section-head section-head--center reveal" style="margin-top:clamp(34px,6vh,64px)">
+        <p class="overline">The difference</p>
+        <h3 style="font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.9rem);margin:.2em 0 0">Built around you, <em>not a template.</em></h3>
+      </div>
+      <p class="diff-lead phil__lead reveal" data-delay="1" style="text-align:center;max-width:60ch;margin-inline:auto">We believe that since every client is unique, every client portfolio should be unique &mdash; and that shapes the two ways we serve.</p>
+      <div class="diff-models reveal" data-delay="2">
+        <div class="diff-model">
+          <h3>Custom-designed portfolios</h3>
+          <p>Managed by your personal advisor and built to your life &mdash; integrating tax planning, your risk tolerance, and even your social and ethical priorities.</p>
+        </div>
+        <div class="diff-model">
+          <h3>Company-sponsored SMA portfolios</h3>
+          <p>For those best served by institutional scale, three separately managed strategies run by VEM&rsquo;s founding partners &mdash; with twenty-plus years of institutional portfolio management.</p>
+        </div>
+      </div>
+      <p class="diff-note reveal" style="text-align:center">Both are held to the same fiduciary standard &mdash; your best interest, above all else.</p>
+
       <p class="team__closing reveal">Decades of experience. One shared commitment.</p>
     </div>
   </section>
 
   <!-- ============= §08 — CTA BAND + CONTACT ============= -->
-  <section id="contact" class="cta-band" data-parallax aria-labelledby="contact-title">
+  <section id="contact" class="cta-band cta-band--form" data-parallax aria-labelledby="contact-title">
+    <!-- Inline consultation form (PREVIEW addition): converts this closing CTA from a
+         link-out into a one-step form, reusing the exact same Web3Forms endpoint as
+         contact.html. This does NOT add a new "Schedule a consultation" instance —
+         it replaces the two link buttons that used to live here, so the page's total
+         CTA count is unchanged. -->
+    <style>
+      .cta-band--form .cta-band__inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+      @media (max-width:980px){.cta-band--form .cta-band__inner{grid-template-columns:1fr}}
+      .cta-band__phone{margin-top:var(--space-4);font-size:var(--fs-300);color:var(--on-dark-80)}
+      .cta-band__phone a{color:var(--vem-gold);text-decoration:underline;text-underline-offset:2px}
+      .cta-band__form{background:rgba(11,31,68,.80);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+        border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);
+        padding:clamp(22px,2.6vw,34px);box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+      .cta-band__form .field label{color:var(--on-dark-100,#fff)}
+      .cta-band__form .field .opt{color:var(--on-dark-80)}
+      .cta-band__form .field--consent label{color:var(--on-dark-80)}
+      .cta-band__form .field--consent a{color:var(--vem-gold)}
+      .cta-band__form .contact-actions{margin-top:0}
+      .cta-band__form .contact-actions .btn{width:100%}
+      @media (max-width:760px){.cta-band__form .field-row{grid-template-columns:1fr}}
+    </style>
     <picture class="cta-band__media" aria-hidden="true">
       <source srcset="assets/img/cta-office.webp" type="image/webp" />
       <img loading="lazy" decoding="async" src="assets/img/cta-office.jpg" alt="" width="1920" height="1072" />
     </picture>
     <div class="cta-band__scrim" aria-hidden="true"></div>
     <div class="container cta-band__inner">
-      <p class="overline">Begin the conversation</p>
-      <h2 id="contact-title">See our approach<br /><em>for yourself.</em></h2>
-      <p class="cta-band__lead">An unhurried conversation about your goals &mdash; and how a disciplined, fiduciary process can serve them.</p>
-      <div class="cta-band__actions">
-        <a class="btn btn--gold" href="contact.html">Schedule a consultation</a>
-        <a class="btn btn--ghost" href="tel:+12149830346">Call 214-983-0346</a>
+      <div class="cta-band__copy">
+        <p class="overline">Begin the conversation</p>
+        <h2 id="contact-title">See our approach<br /><em>for yourself.</em></h2>
+        <p class="cta-band__lead">An unhurried conversation about your goals &mdash; and how a disciplined, fiduciary process can serve them.</p>
+        <p class="cta-band__phone">Prefer to talk now? Call <a href="tel:+12149830346">214-983-0346</a>, Mon&ndash;Fri 8:30&ndash;5:00 CT.</p>
       </div>
+
+      <form class="contact-form cta-band__form" id="homeConsultForm" novalidate
+            data-endpoint="https://api.web3forms.com/submit"
+            data-fallback-email="info@vannequitymanagement.com"
+            aria-label="Request a consultation">
+
+        <!-- Same Web3Forms key + recipient routing as contact.html -->
+        <input type="hidden" name="access_key" value="77fd2500-2daf-4dec-82f1-d4f6c67dbde3" />
+        <input type="hidden" name="subject" value="New consultation request from vannequitymanagement.com (homepage)" />
+
+        <div class="field-row">
+          <div class="field">
+            <label for="hcFirstName">First name <span class="req" aria-hidden="true">&lowast;</span></label>
+            <input type="text" id="hcFirstName" name="first_name" autocomplete="given-name" placeholder="Jane" required />
+            <span class="error-text">Please enter your first name.</span>
+          </div>
+          <div class="field">
+            <label for="hcLastName">Last name <span class="req" aria-hidden="true">&lowast;</span></label>
+            <input type="text" id="hcLastName" name="last_name" autocomplete="family-name" placeholder="Doe" required />
+            <span class="error-text">Please enter your last name.</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="hcEmail">Email <span class="req" aria-hidden="true">&lowast;</span></label>
+            <input type="email" id="hcEmail" name="email" autocomplete="email" placeholder="jane@example.com" required />
+            <span class="error-text">Please enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="hcPhone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="hcPhone" name="phone" autocomplete="tel" placeholder="(214) 555-0123" />
+          </div>
+        </div>
+
+        <div class="field field--consent">
+          <input type="checkbox" id="hcConsent" name="consent" required />
+          <label for="hcConsent">I understand that submitting this form does not create an advisory relationship and is not a request for personalized investment advice. I consent to be contacted by Vann Equity Management regarding my inquiry. <span class="req" aria-hidden="true">&lowast;</span></label>
+        </div>
+
+        <div class="form-status" id="homeFormStatus" role="status" aria-live="polite"></div>
+
+        <div class="contact-actions">
+          <button type="submit" class="btn btn--gold">Schedule a consultation</button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -942,8 +957,6 @@
             <h3>Who We Are</h3>
             <ul>
               <li><a href="#about">Our Story</a></li>
-              <li><a href="#philosophy">Our Approach</a></li>
-              <li><a href="#difference">The Difference</a></li>
               <li><a href="#team">Our Team</a></li>
             </ul>
           </div>
@@ -1072,17 +1085,23 @@
       var cta = document.getElementById('stickyCta');
       if (!cta) return;
       if (sessionStorage.getItem('vemCtaDismissed') === '1') return;
-      var footer = document.querySelector('.site-footer, footer');
+      /* PREVIEW: the closing #contact section now has its own embedded
+         consultation form, so the floating pill should disappear the moment
+         that section comes into view — not wait for the footer (which used
+         to be the only other CTA below it). Hiding on footer-proximity alone
+         left a brief window, on shorter viewports, where the pill and the
+         new on-page form were both visible at once. */
+      var ctaSection = document.getElementById('contact');
       var dismissed = false;
       function update() {
         if (dismissed) return;
         var pastHero = window.scrollY > window.innerHeight * 0.85;
-        var nearFooter = false;
-        if (footer) {
-          var fr = footer.getBoundingClientRect();
-          nearFooter = fr.top < window.innerHeight - 40;   // footer entering view
+        var reachedCtaSection = false;
+        if (ctaSection) {
+          var cr = ctaSection.getBoundingClientRect();
+          reachedCtaSection = cr.top < window.innerHeight;   // its own CTA/form is now visible
         }
-        cta.classList.toggle('is-shown', pastHero && !nearFooter);
+        cta.classList.toggle('is-shown', pastHero && !reachedCtaSection);
       }
       cta.querySelector('.vem-sticky-cta__close').addEventListener('click', function () {
         dismissed = true; cta.classList.remove('is-shown');
@@ -1114,6 +1133,100 @@
         head.classList.toggle('tour-hidden', e.data.state === 'start');
       });
     })();
+  </script>
+
+  <!-- ============================================================
+       HOMEPAGE CONSULTATION FORM — validation + submit
+       Mirrors contact.html's #consultForm handler exactly (same Web3Forms
+       endpoint, same validation, same mailto fallback), scoped to this
+       form's own IDs so both can exist independently if ever on one page.
+       ============================================================ -->
+  <script>
+  (function () {
+    var form = document.getElementById('homeConsultForm');
+    if (!form) return;
+    var statusEl = document.getElementById('homeFormStatus');
+
+    function setStatus(kind, msg) {
+      statusEl.className = 'form-status is-visible form-status--' + kind;
+      statusEl.textContent = msg;
+    }
+    function clearFieldErrors() {
+      form.querySelectorAll('.field.has-error').forEach(function (f) { f.classList.remove('has-error'); });
+    }
+    function markError(input) {
+      var field = input.closest('.field');
+      if (field) field.classList.add('has-error');
+    }
+
+    function validate() {
+      clearFieldErrors();
+      var ok = true, firstBad = null;
+      form.querySelectorAll('[required]').forEach(function (el) {
+        var bad = (el.type === 'checkbox') ? !el.checked : !String(el.value).trim();
+        if (!bad && el.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (bad) { ok = false; markError(el); if (!firstBad) firstBad = el; }
+      });
+      if (firstBad) firstBad.focus();
+      return ok;
+    }
+
+    function collect() {
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      data.consent = form.querySelector('#hcConsent').checked ? 'Yes' : 'No';
+      return data;
+    }
+
+    function mailtoFallback(data) {
+      var to = form.getAttribute('data-fallback-email') || 'info@vannequitymanagement.com';
+      var subject = 'Consultation request — ' + (data.first_name || '') + ' ' + (data.last_name || '');
+      var lines = [
+        'Name: ' + (data.first_name || '') + ' ' + (data.last_name || ''),
+        'Email: ' + (data.email || ''),
+        'Phone: ' + (data.phone || ''),
+        '',
+        'Submitted from the homepage consultation form.'
+      ];
+      window.location.href = 'mailto:' + to +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) {
+        setStatus('err', 'Please complete the required fields highlighted above.');
+        return;
+      }
+      var data = collect();
+      var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+
+      if (!endpoint) {
+        setStatus('ok', 'Opening your email app to send your request. If nothing happens, email us at ' + (form.getAttribute('data-fallback-email') || 'info@vannequitymanagement.com') + '.');
+        mailtoFallback(data);
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      var label = btn.textContent; btn.textContent = 'Sending…';
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Bad status ' + r.status);
+        form.reset();
+        setStatus('ok', 'Thank you — your request has been received. A member of our team will be in touch within one business day.');
+      }).catch(function () {
+        setStatus('err', 'Something went wrong sending your request. Please call 214-983-0346 or email info@vannequitymanagement.com and we&rsquo;ll take care of you.');
+      }).finally(function () {
+        btn.disabled = false; btn.textContent = label;
+      });
+    });
+  }());
   </script>
 </body>
 </html>
