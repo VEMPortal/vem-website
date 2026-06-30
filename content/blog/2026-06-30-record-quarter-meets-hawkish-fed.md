@@ -5,7 +5,7 @@ date: 2026-06-30
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-06-30.jpg
-status: draft
+status: published
 summary: "U.S. stocks just closed their best quarter in six years even as the Federal Reserve dropped its rate-cut outlook and signaled possible hikes. How long-term investors can hold both facts at once — educational only, not a recommendation."
 ---
 
