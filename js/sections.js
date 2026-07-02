@@ -22,9 +22,40 @@
 
   els.forEach(function (el) { io.observe(el); });
 
-  /* --- Subtle parallax for [data-parallax] images (e.g. §06 portrait) --- */
-  var pEls = document.querySelectorAll("[data-parallax]");
+  /* --- Count-up for [data-countup] stats (one-shot, reduced-motion safe).
+     The static value already lives in the HTML, so no-JS/reduced-motion users
+     simply keep it; this only animates 0 -> target on first scroll-in. --- */
+  var counts = document.querySelectorAll("[data-countup]");
+  if (counts.length && !reduce) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        cio.unobserve(entry.target);
+        var el = entry.target;
+        var target = parseFloat(el.getAttribute("data-countup"));
+        var prefix = el.getAttribute("data-prefix") || "";
+        var suffix = el.getAttribute("data-suffix") || "";
+        var t0 = null, DUR = 1100;
+        function tick(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / DUR, 1);
+          var eased = 1 - Math.pow(1 - p, 3);           /* easeOutCubic */
+          el.textContent = prefix + Math.round(target * eased) + suffix;
+          if (p < 1) window.requestAnimationFrame(tick);
+        }
+        window.requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counts.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* --- Subtle parallax for [data-parallax] images + scroll-linked white-sheet
+     wipe for [data-wipe] frames (e.g. the About family panel). One rAF-batched
+     pass, one rect read per element. --- */
+  var pEls = document.querySelectorAll("[data-parallax], [data-wipe]");
   if (pEls.length && !reduce) {
+    /* Arm the wipe overlays only when JS runs — no-JS visitors see the image plain. */
+    document.querySelectorAll("[data-wipe]").forEach(function (el) { el.classList.add("wipe-armed"); });
     var pTicking = false;
     var run = function () {
       pTicking = false;
@@ -33,8 +64,20 @@
         var r = el.getBoundingClientRect();
         if (r.bottom < 0 || r.top > vh) return;
         var progress = (r.top + r.height / 2 - vh / 2) / vh; // ~ -0.8 .. 0.8
-        var img = el.querySelector("img");
-        if (img) img.style.transform = "translate3d(0," + (progress * -42).toFixed(1) + "px,0)";
+        if (el.hasAttribute("data-parallax")) {
+          var img = el.querySelector("img");
+          if (img) img.style.transform = "translate3d(0," + (progress * -42).toFixed(1) + "px,0)";
+        }
+        if (el.hasAttribute("data-wipe")) {
+          /* The white sheet retreats toward the words as the panel scrolls in:
+             starts as soon as it enters (progress ~0.72), fully revealed a bit
+             before viewport center. The angled trailing edge itself is drawn
+             in CSS (clip-path: polygon(...) using this --wipe value) — a
+             pseudo-element's clip-path can't be set directly from JS. */
+          var w = (0.72 - progress) / 0.55;
+          if (w < 0) w = 0; if (w > 1) w = 1;
+          el.style.setProperty("--wipe", w.toFixed(3));
+        }
       });
     };
     var onScrollP = function () {

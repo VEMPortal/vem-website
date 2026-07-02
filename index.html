@@ -57,8 +57,8 @@
   <!-- Preload the LCP hero image, scoped by viewport so each only fetches what it
        shows. Desktop (>=761px) = colonnade poster (video's first frame). Mobile
        (<=760px) = the first crossfade slide (Dallas skyline). -->
-  <link rel="preload" as="image" href="assets/img/hero-colonnade.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="assets/img/hero-dallas-skyline.webp" type="image/webp" media="(max-width: 760px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor.jpg" type="image/jpeg" media="(min-width: 761px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor-mobile.jpg" type="image/jpeg" media="(max-width: 760px)" fetchpriority="high" />
 
   <!-- Fonts: self-hosted (Cinzel logo · Cormorant display · Hanken Grotesk body).
        The external Google Fonts stylesheet was the ONLY render-blocking resource
@@ -71,9 +71,9 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-400.woff2" crossorigin />
   <link rel="stylesheet" href="css/fonts.css?v=1" />
 
-  <link rel="stylesheet" href="css/tokens.css?v=51" />
-  <link rel="stylesheet" href="css/hero.css?v=72" />
-  <link rel="stylesheet" href="css/sections.css?v=71" />
+  <link rel="stylesheet" href="css/tokens.css?v=84" />
+  <link rel="stylesheet" href="css/hero.css?v=84" />
+  <link rel="stylesheet" href="css/sections.css?v=88" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
   <!-- Reuses the contact.html form styling (.contact-form/.field/.form-status) for the
        inline consultation form added to the CTA band in this preview. -->
@@ -217,7 +217,7 @@
         <div class="nav__actions">
           <a class="nav__phone" href="tel:+12149830346" aria-label="Call Vann Equity Management at 214-983-0346">214-983-0346</a>
           <a class="btn btn--ghost btn--sm" href="https://login.orionadvisor.com/login.html?g=3fdf2732-eb7b-49bb-adb7-77f8efb3243c" target="_blank" rel="noopener noreferrer">Client Login</a>
-          <a class="btn btn--gold btn--sm" href="contact.html">Schedule a Consultation</a>
+          <a class="btn btn--ghost btn--sm" href="contact.html">Schedule a Consultation</a>
         </div>
       </div>
     </nav>
@@ -229,18 +229,20 @@
   <section class="hero" data-section="hero" aria-label="Introduction">
 
     <div class="hero__media" aria-hidden="true">
-      <!-- Poster still = the video's first frame. It shows until the loop is
-           ready, and is the reduced-motion / no-autoplay fallback. -->
+      <!-- Hero still — a principal at the window over a city skyline at dusk
+           (navy pinstripe + gold tie = the VEM palette). Figure weighted right,
+           headline sits over the darker sky on the left. -->
       <picture>
-        <source srcset="assets/img/hero-colonnade.webp" type="image/webp" />
-        <img class="hero__poster" src="assets/img/hero-colonnade.jpg"
+        <source media="(max-width: 760px)" srcset="assets/img/hero-advisor-mobile.jpg" />
+        <img class="hero__poster" src="assets/img/hero-advisor.jpg"
              alt="" width="1280" height="720" fetchpriority="high" />
       </picture>
-      <!-- Cinematic loop — two stacked copies that crossfade at the seam so the
-           clip always plays FORWARD with no jump (no boomerang rewind). No `loop`
-           and no `autoplay`: js/hero.js drives playback + the dissolve, and only
-           when prefers-reduced-motion is NOT set (else the poster still shows).
-           Muted + playsinline for mobile autoplay. -->
+      <!-- PREVIEW: still-only hero. The looping video's footage was intrinsically
+           blue, forcing a heavy overlay to keep the headline readable; a still
+           image fixes the blue at the source and removes a 2.19MB video decode
+           from the interactive-readiness window. Restore for video: uncomment
+           below (js/hero.js already guards `if (vidA && vidB && ...)`, so with
+           these removed that block simply no-ops).
       <video class="hero__video hero__video--a" muted playsinline preload="none"
              poster="assets/img/hero-colonnade.jpg" aria-hidden="true">
         <source src="assets/video/hero-colonnade.mp4" type="video/mp4" />
@@ -248,18 +250,10 @@
       <video class="hero__video hero__video--b" muted playsinline preload="none" aria-hidden="true">
         <source src="assets/video/hero-colonnade.mp4" type="video/mp4" />
       </video>
-      <!-- Mobile-only hero crossfade (<=760px). Desktop is untouched: these slides
-           are display:none above 760px and the video above handles desktop. The
-           first slide is the LCP (preloaded); the other two lazy-load after first
-           paint (data-src) so they never compete with it. Dallas -> Arch -> Colonnade. -->
-      <div class="hero__bgslides" aria-hidden="true">
-        <img class="hero__bgslide is-active" src="assets/img/hero-dallas-skyline.webp"
-             alt="" width="864" height="1535" fetchpriority="high" decoding="async" />
-        <img class="hero__bgslide" data-src="assets/img/hero-arch.webp"
-             alt="" width="1280" height="694" decoding="async" />
-        <img class="hero__bgslide" data-src="assets/img/hero-colonnade.webp"
-             alt="" width="1280" height="720" decoding="async" />
-      </div>
+      -->
+      <!-- Mobile (<=760px) now shows the same advisor image via the <source>
+           above (portrait crop) — the old 3-slide crossfade is retired so
+           desktop and mobile tell one brand story. -->
     </div>
 
     <div class="hero__scrim" aria-hidden="true"></div>
@@ -292,18 +286,8 @@
         </div>
       </div>
 
-      <!-- Credentials card — firm facts only (no performance claim) -->
-      <aside class="hero__card" aria-label="Firm credentials">
-        <p class="hcard__eyebrow">SEC-Registered &middot; GIPS&reg;-Verified</p>
-        <p class="hcard__title">Discipline you can <em>verify.</em></p>
-        <p class="hcard__stat tnum">$231M</p>
-        <p class="hcard__caption">Client assets under management, as of December&nbsp;31, 2025</p>
-        <div class="hcard__bench tnum">
-          <span class="hcard__benchrow"><span>GIPS&reg;-verified</span><b>Firm-wide</b></span>
-          <span class="hcard__benchrow"><span>Independently verified</span><b>2018&ndash;2024</b></span>
-        </div>
-        <p class="hcard__disc">An independent, fiduciary investment adviser &mdash; your interest, first &middot; <a href="#performance">Our standards &amp; disclosures</a></p>
-      </aside>
+      <!-- Credentials card removed from the hero (it covered the image); the
+           $231M AUM figure now lives in the stats bar directly below. -->
     </div>
 
     <a class="hero__cue fade-up" href="#about" aria-label="Scroll to learn more">
@@ -314,18 +298,19 @@
 
   <!-- ===== Stats bar — deep navy band directly below the hero ===== -->
   <section class="stats-bar" aria-label="Vann Equity Management at a glance">
-    <div class="container stats-bar__grid">
+    <div class="container stats-bar__grid stats-bar__grid--5">
       <div class="stat reveal"><span class="stat__num tnum">2015</span><span class="stat__label">Founded</span></div>
       <div class="stat reveal" data-delay="1"><span class="stat__num">SEC</span><span class="stat__label">Registered Investment Adviser</span></div>
-      <div class="stat reveal" data-delay="2"><span class="stat__num">Fiduciary</span><span class="stat__label">Standard, firm-wide</span></div>
-      <div class="stat reveal" data-delay="3"><span class="stat__num tnum">8</span><span class="stat__label">GIPS&reg; verified strategies</span></div>
+      <div class="stat reveal" data-delay="2"><span class="stat__num tnum" data-countup="231" data-prefix="$" data-suffix="M">$231M</span><span class="stat__label">Client AUM, as of 12/31/2025</span></div>
+      <div class="stat reveal" data-delay="3"><span class="stat__num">Fiduciary</span><span class="stat__label">Standard, firm-wide</span></div>
+      <div class="stat reveal" data-delay="4"><span class="stat__num tnum" data-countup="8">8</span><span class="stat__label">GIPS&reg; verified strategies</span></div>
     </div>
   </section>
 
   <!-- ====================== §02 — WHO WE ARE ====================== -->
   <section id="about" class="section section--light" data-section="about" aria-labelledby="about-title">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal--pop">
         <p class="overline">Who we are</p>
         <h2 id="about-title">Independent by design.<br /><em>Fiduciary by commitment.</em></h2>
       </div>
@@ -346,14 +331,23 @@
             process.
           </p>
         </div>
+        <!-- Multigenerational family at golden hour — the "legacy / your family's
+             future" payoff below the hero (landscape; see .about__media ratio in CSS). -->
+        <div class="about__media media-wipe" data-parallax data-wipe aria-hidden="true">
+          <img src="assets/img/about-family.jpg"
+               alt="" width="1400" height="788" decoding="async" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== §05b — PERFORMANCE (moved up: proof-early) ==================== -->
   <section id="performance" class="section section--gray performance" data-section="performance" aria-labelledby="perf-title">
+    <div class="performance__bg" data-parallax aria-hidden="true">
+      <img src="assets/img/performance-globe.jpg" alt="" width="1800" height="1013" loading="lazy" decoding="async" />
+    </div>
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal--pop">
         <p class="overline">Performance</p>
         <h2 id="perf-title">Held to the <em>global standard.</em></h2>
       </div>
@@ -405,7 +399,7 @@
   <!-- ============ §03 — WHAT WE MANAGE (interactive explorer) ============ -->
   <section id="portfolios" class="section section--light manage" data-section="manage" aria-labelledby="manage-title">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal--pop">
         <p class="overline">What we manage</p>
         <h2 id="manage-title">Two ways to invest with us.<br /><em>One disciplined process.</em></h2>
       </div>
@@ -521,13 +515,13 @@
       @media (max-width:760px){.proc-principles{grid-template-columns:1fr;gap:16px}}
     </style>
     <div class="container">
-      <div class="section-head section-head--center reveal">
+      <div class="section-head section-head--center reveal reveal--pop">
         <p class="overline">Our approach</p>
       </div>
-      <ul class="proc-principles reveal" data-delay="1">
-        <li><span class="proc-principles__num tnum">01</span><h3>Conviction</h3><p>We own companies while their earnings exceed the market&rsquo;s expectations &mdash; and hold that conviction through a full market cycle.</p></li>
-        <li><span class="proc-principles__num tnum">02</span><h3>Clarity</h3><p>Every position is the output of a disciplined, repeatable process: quantitative screens, fundamental validation, visible risk controls. No black boxes.</p></li>
-        <li><span class="proc-principles__num tnum">03</span><h3>Commitment</h3><p>We are fiduciaries firm-wide, with the personal accountability of a boutique &mdash; measured by the trust you place in us.</p></li>
+      <ul class="proc-principles">
+        <li class="reveal reveal--pop" data-delay="1"><span class="proc-principles__num tnum">01</span><h3>Conviction</h3><p>We own companies while their earnings exceed the market&rsquo;s expectations &mdash; and hold that conviction through a full market cycle.</p></li>
+        <li class="reveal reveal--pop" data-delay="2"><span class="proc-principles__num tnum">02</span><h3>Clarity</h3><p>Every position is the output of a disciplined, repeatable process: quantitative screens, fundamental validation, visible risk controls. No black boxes.</p></li>
+        <li class="reveal reveal--pop" data-delay="3"><span class="proc-principles__num tnum">03</span><h3>Commitment</h3><p>We are fiduciaries firm-wide, with the personal accountability of a boutique &mdash; measured by the trust you place in us.</p></li>
       </ul>
     </div>
 
@@ -540,7 +534,9 @@
          poster (A), 3D tour (B), read-the-cards (C). Exactly one overlay is
          visible at a time, so nothing overlaps. The heavy 3D loads only for the
          tour and unloads when you leave it. ===== */
-      .process-stage{position:relative;background:#0a1633 url('assets/img/process-poster.jpg') center/cover no-repeat}
+      .process-stage{position:relative;background:#0a1633}
+      .process-stage__bg{position:absolute;inset:-6% 0 -6% 0;z-index:0;overflow:hidden;pointer-events:none}
+      .process-stage__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;will-change:transform}
       .process-stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
         background:linear-gradient(180deg,rgba(8,18,42,.30),rgba(8,18,42,.18) 45%,rgba(8,18,42,.5));transition:background .5s ease}
       .process-stage[data-state="cards"]::before{background:rgba(7,16,38,.76)}
@@ -562,16 +558,16 @@
       .process-poster__playbtn{display:flex;flex-direction:column;align-items:flex-end;gap:12px;text-align:right;
         background:none;border:0;color:inherit;cursor:pointer;font-family:inherit}
       .process-poster__play{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;
-        background:rgba(185,155,95,.16);border:2px solid #B99B5F;box-shadow:0 0 0 0 rgba(185,155,95,.5);
-        animation:posterPulse 2.6s ease-out infinite}
+        background:rgba(185,155,95,.16);border:2px solid var(--accent);box-shadow:0 0 0 0 rgba(185,155,95,.5);
+        animation:posterPulse 2.6s ease-out 3 forwards}
       .process-poster__play::after{content:"";margin-left:7px;border-style:solid;border-width:15px 0 15px 25px;
-        border-color:transparent transparent transparent #B99B5F}
+        border-color:transparent transparent transparent var(--accent)}
       @keyframes posterPulse{0%{box-shadow:0 0 0 0 rgba(185,155,95,.5)}70%{box-shadow:0 0 0 24px rgba(185,155,95,0)}100%{box-shadow:0 0 0 0 rgba(185,155,95,0)}}
       .process-poster__label{font-family:'Cinzel',Georgia,serif;font-size:1.18rem;letter-spacing:.04em}
       .process-poster__sub{font-size:.86rem;line-height:1.5;max-width:30ch;color:#aebbd6}
       .process-poster__read{margin-top:8px;background:none;border:0;cursor:pointer;font-family:inherit;
-        font-size:.82rem;letter-spacing:.05em;color:#c9ab73;transition:color .2s}
-      .process-poster__read:hover{color:#dcc18c;text-decoration:underline}
+        font-size:.82rem;letter-spacing:.05em;color:var(--accent-soft);transition:color .2s}
+      .process-poster__read:hover{color:var(--accent);text-decoration:underline}
 
       /* --- Card deck (C): centered over the galaxy, no 3D --- */
       .process-cards{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;
@@ -589,13 +585,14 @@
       .pcard__stat div{text-align:center}
       .pcard__stat b{display:block;font-family:'Cinzel',Georgia,serif;font-size:1.18rem;color:#fff}
       .pcard__stat span{display:block;margin-top:3px;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#9fb2d6}
-      .pcard__cta{display:inline-flex;margin-top:1.5em;padding:13px 26px;border-radius:999px;background:#B99B5F;color:#0B1F44;text-decoration:none;font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+      .pcard__cta{display:inline-flex;margin-top:1.5em;padding:13px 26px;border-radius:999px;background:var(--accent-deep);color:#fff;text-decoration:none;font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:background var(--dur-fast) var(--ease-soft)}
+      .pcard__cta:hover{background:var(--accent)}
       .pcards__nav{position:absolute;left:0;right:0;bottom:clamp(12px,3vh,28px);display:flex;align-items:center;justify-content:center;gap:16px}
       .pcards__arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(132,174,226,.4);background:rgba(9,20,44,.72);color:#cfe0f5;font-size:1.25rem;line-height:1;cursor:pointer;display:grid;place-items:center}
       .pcards__arrow[disabled]{opacity:.3;cursor:default}
       .pcards__dots{display:flex;gap:8px;align-items:center}
       .pcards__dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(174,187,214,.4);cursor:pointer;padding:0;transition:width .2s,background .2s}
-      .pcards__dot.is-on{background:#B99B5F;width:22px;border-radius:4px}
+      .pcards__dot.is-on{background:var(--accent);width:22px;border-radius:4px}
       .pcards__close{position:absolute;top:clamp(14px,3vh,26px);right:clamp(16px,4vw,42px);width:40px;height:40px;border-radius:50%;border:1px solid rgba(132,174,226,.4);background:rgba(9,20,44,.72);color:#cfe0f5;font-size:1.2rem;line-height:1;cursor:pointer}
       /* Top-right X shown during the tour: stops the 3D and returns to the start poster ("9,000 to 80"). */
       .process-stage__close{position:absolute;top:clamp(14px,3vh,26px);right:clamp(16px,4vw,42px);z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid rgba(201,171,115,.45);background:rgba(9,20,44,.72);color:#e9eefc;font-size:1.25rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(6px)}
@@ -609,6 +606,10 @@
       }
     </style>
     <div class="process-stage reveal" id="processStage" data-state="poster">
+
+      <div class="process-stage__bg" data-parallax aria-hidden="true">
+        <img src="assets/img/process-galaxy.jpg" alt="" width="1920" height="1280" loading="lazy" decoding="async" />
+      </div>
 
       <!-- Exit the tour: stop the 3D and return to the start poster -->
       <button type="button" class="process-stage__close" id="stageClose" aria-label="Stop the tour and return to the start">&times;</button>
@@ -737,7 +738,7 @@
   <!-- ====================== §07 — THE TEAM ======================= -->
   <section id="team" class="section section--gray team" data-section="team" aria-labelledby="team-title">
     <div class="container">
-      <div class="section-head section-head--center reveal">
+      <div class="section-head section-head--center reveal reveal--pop">
         <p class="overline">The Team</p>
         <h2 id="team-title">Institutional Pedigree.<br /><em>Direct Access.</em></h2>
       </div>
@@ -811,7 +812,7 @@
       </div>
 
       <!-- Personalization (merged from the former "The Difference" section) -->
-      <div class="section-head section-head--center reveal" style="margin-top:clamp(34px,6vh,64px)">
+      <div class="section-head section-head--center reveal reveal--pop" style="margin-top:clamp(34px,6vh,64px)">
         <p class="overline">The difference</p>
         <h3 style="font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.9rem);margin:.2em 0 0">Built around you, <em>not a template.</em></h3>
       </div>
@@ -856,19 +857,18 @@
       @media (max-width:760px){.cta-band__form .field-row{grid-template-columns:1fr}}
     </style>
     <picture class="cta-band__media" aria-hidden="true">
-      <source srcset="assets/img/cta-office.webp" type="image/webp" />
-      <img loading="lazy" decoding="async" src="assets/img/cta-office.jpg" alt="" width="1920" height="1072" />
+      <img loading="lazy" decoding="async" src="assets/img/cta-planning.jpg" alt="" width="1920" height="1072" />
     </picture>
     <div class="cta-band__scrim" aria-hidden="true"></div>
     <div class="container cta-band__inner">
-      <div class="cta-band__copy">
+      <div class="cta-band__copy reveal">
         <p class="overline">Begin the conversation</p>
         <h2 id="contact-title">See our approach<br /><em>for yourself.</em></h2>
         <p class="cta-band__lead">An unhurried conversation about your goals &mdash; and how a disciplined, fiduciary process can serve them.</p>
         <p class="cta-band__phone">Prefer to talk now? Call <a href="tel:+12149830346">214-983-0346</a>, Mon&ndash;Fri 8:30&ndash;5:00 CT.</p>
       </div>
 
-      <form class="contact-form cta-band__form" id="homeConsultForm" novalidate
+      <form class="contact-form cta-band__form reveal reveal--pop" data-delay="2" id="homeConsultForm" novalidate
             data-endpoint="https://api.web3forms.com/submit"
             data-fallback-email="info@vannequitymanagement.com"
             aria-label="Request a consultation">
@@ -1055,10 +1055,10 @@
       font-size: .92rem; font-weight: 600; letter-spacing: .01em; color: #fff;
       white-space: nowrap;
     }
-    .vem-sticky-cta__link svg { width: 16px; height: 16px; color: #B99B5F; flex: none; }
+    .vem-sticky-cta__link svg { width: 16px; height: 16px; color: var(--accent); flex: none; }
     .vem-sticky-cta__eyebrow {
       display: block; font-size: .62rem; font-weight: 600; letter-spacing: .14em;
-      text-transform: uppercase; color: #B99B5F; margin-bottom: 1px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1px;
     }
     .vem-sticky-cta__close {
       display: inline-flex; align-items: center; justify-content: center;
@@ -1093,7 +1093,13 @@
          new on-page form were both visible at once. */
       var ctaSection = document.getElementById('contact');
       var dismissed = false;
+      /* PERF: this handler used to run raw on every 'scroll' event and read
+         getBoundingClientRect() unbatched (a forced layout reflow up to 60x/s) —
+         the single biggest contributor to a poor Interaction-to-Next-Paint score.
+         rAF-batching caps the layout read to once per animation frame. */
+      var ctaRaf = null;
       function update() {
+        ctaRaf = null;
         if (dismissed) return;
         var pastHero = window.scrollY > window.innerHeight * 0.85;
         var reachedCtaSection = false;
@@ -1103,21 +1109,22 @@
         }
         cta.classList.toggle('is-shown', pastHero && !reachedCtaSection);
       }
+      function onCtaScroll() { if (ctaRaf === null) ctaRaf = requestAnimationFrame(update); }
       cta.querySelector('.vem-sticky-cta__close').addEventListener('click', function () {
         dismissed = true; cta.classList.remove('is-shown');
         try { sessionStorage.setItem('vemCtaDismissed', '1'); } catch (e) {}
       });
-      window.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update, { passive: true });
+      window.addEventListener('scroll', onCtaScroll, { passive: true });
+      window.addEventListener('resize', onCtaScroll, { passive: true });
       update();
     })();
   </script>
   <!-- ===================== /STICKY CTA PROTOTYPE ====================== -->
 
   <script src="js/nav.js?v=52" defer></script>
-  <script src="js/hero.js?v=69" defer></script>
+  <script src="js/hero.js?v=77" defer></script>
   <script src="js/halo.js?v=7" defer></script>
-  <script src="js/sections.js?v=51" defer></script>
+  <script src="js/sections.js?v=54" defer></script>
   <script src="js/process.js?v=56" defer></script>
   <script>
     /* Fade the overlaid "Our Process" heading out while the embedded tour runs

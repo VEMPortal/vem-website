@@ -17,11 +17,14 @@
               box-shadow var(--dur-mid) var(--ease-soft),
               padding var(--dur-mid) var(--ease-soft);
 }
-/* Once scrolled past the hero lip → translucent "see-through blue" bar */
+/* Once scrolled past the hero lip → solid navy bar. (No backdrop-filter: a
+   fixed, blurred header sampling the actively-transforming hero parallax
+   underneath it on every composited frame was the confirmed cause of scroll
+   judder — removed rather than tuned, since blur intensity can't guarantee
+   the cost goes away, only reduce it. Opacity raised from 0.82 to compensate
+   for the lost frosted-glass depth.) */
 .site-header.is-scrolled {
-  background: rgba(9, 18, 38, 0.82);   /* deep navy, see-through (less saturated) */
-  -webkit-backdrop-filter: blur(14px) saturate(105%);
-  backdrop-filter: blur(14px) saturate(105%);
+  background: rgba(9, 18, 38, 0.94);
   box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 10px 30px -18px rgba(0,0,0,0.55);
   padding-top: 14px;
   padding-bottom: 14px;
@@ -355,52 +358,7 @@
   text-shadow: 0 1px 3px rgba(11, 31, 68, 0.45);
 }
 
-/* CTA button (gold = the rationed accent) */
-.btn {
-  --btn-fg: var(--vem-navy-dark);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: var(--fs-200);
-  letter-spacing: 0.01em;
-  padding: 12px 22px;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  white-space: nowrap;
-  border: 1px solid transparent;
-  transition: transform var(--dur-fast) var(--ease-soft),
-              background var(--dur-fast) var(--ease-soft),
-              box-shadow var(--dur-fast) var(--ease-soft),
-              border-color var(--dur-fast) var(--ease-soft);
-}
-.btn--gold {
-  background: var(--accent-deep);
-  color: #fff;
-  box-shadow: 0 10px 30px -12px var(--accent-glow);
-}
-.btn--gold:hover {
-  background: var(--accent);          /* lightens to a brighter blue */
-  transform: translateY(-1px);
-  animation: btnPulse 1.8s var(--ease-soft) infinite;
-}
-.btn--gold:active { transform: translateY(0) scale(0.99); }
-@keyframes btnPulse {
-  0%   { box-shadow: 0 0 0 0 var(--accent-glow), 0 12px 30px -12px var(--accent-glow); }
-  70%  { box-shadow: 0 0 0 8px rgba(92,124,184,0), 0 12px 30px -12px var(--accent-glow); }
-  100% { box-shadow: 0 0 0 0 rgba(92,124,184,0), 0 12px 30px -12px var(--accent-glow); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn--gold:hover { animation: none; }
-}
-.btn--ghost {
-  background: rgba(255,255,255,0.04);
-  color: var(--on-dark-100);
-  border-color: rgba(255,255,255,0.22);
-}
-.btn--ghost:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.4); }
-.btn--sm { padding: 10px 18px; }
+/* .btn/.btn--gold/.btn--ghost/.btn--sm now live in tokens.css (single source of truth) */
 
 /* mobile menu toggle (hamburger) */
 .nav__toggle {
@@ -440,43 +398,60 @@
 /* Video / poster sits on the back parallax layer */
 .hero__media {
   position: absolute;
-  inset: -8% 0 -8% 0;      /* bleed for parallax travel */
+  /* ALL parallax bleed at the BOTTOM. A top bleed (-8% previously) parked the
+     top ~74px of the photo — the subject's head — above the viewport. The JS
+     parallax only drifts this layer DOWN (see the translate3d magnitude in
+     js/hero.js — currently 55% max) and the page scrolls away faster than the
+     drift, so the top edge never needs bleed. */
+  inset: 0 0 -16% 0;
   z-index: 0;
   will-change: transform;
 }
-.hero__video,
+/* Hero parallax is driven by js/hero.js (scrollY-only, rAF, passive — INP-safe)
+   rather than CSS `animation-timeline: scroll()`, because that feature isn't yet
+   universal and Firefox/older Safari would otherwise show no parallax at all.
+   `will-change: transform` above keeps the JS transform on its own layer. */
 .hero__poster {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* `top`: if any viewport ratio ever forces a vertical crop (e.g. ultrawide),
+     it comes off the bottom — never the top of the subject's head. */
+  object-position: center top;
+  z-index: 0;
+  /* Own compositor layer, independent of .hero__media's scroll-driven layer
+     above it. Without this, the browser has to repaint the poster's pixels
+     into the parent layer on every Ken-Burns tick AND every scroll-driven
+     parent transform — the two compounding is what caused the scroll judder.
+     Promoting this element lets both transforms be pure GPU recomposites. */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-.hero__poster { z-index: 0; }
-/* Two stacked video layers crossfade at the loop seam (js/hero.js manages the
-   z-index swap; this just gives the dissolve its timing). */
-.hero__video  { z-index: 1; opacity: 1; transition: opacity 0.9s linear; }
-.hero__video--b { opacity: 0; }
-/* When reduced motion or no-video, the poster shows through */
-
-/* Mobile-only image crossfade. Hidden on desktop — the video handles it there.
-   Turned on inside the max-width:760px block below. (Distinct class from the
-   headline rotator's .hero__slide — do not merge the two.) */
-.hero__bgslides { display: none; }
+/* (.hero__video rules removed — the video is commented out in index.html; its
+   markup is kept there as the documented revert path.) */
 
 /* Ken-Burns: the still breathes — a very slow, barely-there push so the hero
    never looks frozen. Lives on the poster (inner layer) so it composes cleanly
-   with the JS scroll/cursor parallax written to .hero__media. Whisper, not zoom. */
+   with the JS scroll/cursor parallax written to .hero__media. Whisper, not zoom.
+   HARD CONSTRAINT: the top of the image (the subject's head) must NEVER crop.
+   transform-origin Y is 0% — the top edge is the scale anchor, so zooming can
+   only push the image down/sideways, never up — and the pan has no upward
+   component. Drift is horizontal-only. */
 @media (prefers-reduced-motion: no-preference) {
   .hero__poster {
-    transform-origin: 58% 42%;
-    animation: heroKenBurns 32s var(--ease-soft) infinite alternate;
+    transform-origin: 55% 0%;
+    animation: heroKenBurns 34s var(--ease-soft) infinite alternate;
   }
 }
 @keyframes heroKenBurns {
-  from { transform: scale(1.04) translate3d(0, 0, 0); }
-  to   { transform: scale(1.09) translate3d(-1.4%, -1%, 0); }
+  from { transform: scale(1.01) translate3d(0, 0, 0); }
+  /* pan capped at -1.2%: at scale 1.035 anything past ~-1.5% pulls the image's
+     right edge inside the frame and exposes a navy sliver. Y pan stays 0 —
+     any negative Y would crop the top of the subject's head. */
+  to   { transform: scale(1.035) translate3d(-1.2%, 0, 0); }
 }
 
 /* Scrim stack: directional left-dark for the headline landing zone,
@@ -485,17 +460,22 @@
   position: absolute;
   inset: 0;
   z-index: 2;
+  /* PREVIEW: single left-anchored gradient only (no top-to-bottom pass, no
+     flat full-surface wash) — the still image now supplies its own dark
+     negative space on the left, so only the headline zone needs darkening
+     and the right side of the image is left to breathe. */
   background:
     linear-gradient(90deg,
-      rgba(11,31,68,0.82) 0%,
-      rgba(11,31,68,0.56) 32%,
-      rgba(11,31,68,0.22) 64%,
-      rgba(11,31,68,0.10) 100%),
+      rgba(11,31,68,0.74) 0%,
+      rgba(11,31,68,0.46) 34%,
+      rgba(11,31,68,0.16) 60%,
+      rgba(11,31,68,0.00) 100%),
+    /* top pass — the hero image's upper-left is a bright dusk sky, exactly
+       where the headline sits, so darken the top band (fades out by ~68%). */
     linear-gradient(180deg,
-      rgba(11,31,68,0.42) 0%,
-      rgba(11,31,68,0.05) 40%,
-      rgba(11,31,68,0.64) 100%),
-    rgba(34,49,104,0.10);  /* faint navy unify */
+      rgba(11,31,68,0.46) 0%,
+      rgba(11,31,68,0.10) 42%,
+      rgba(11,31,68,0.00) 68%);
   pointer-events: none;
 }
 /* Faint grain for depth (no extra request — pure CSS) */
@@ -509,6 +489,11 @@
     radial-gradient(rgba(255,255,255,0.6) 0.5px, transparent 0.6px);
   background-size: 3px 3px;
   mix-blend-mode: overlay;
+  /* Promotes the static grain texture to its own layer so it's rasterized
+     once instead of repainted alongside the poster/media layers moving
+     beneath it — the blend step itself still runs every frame (inherent to
+     mix-blend-mode), but this removes the repaint half of that cost. */
+  will-change: opacity;
 }
 
 /* Content */
@@ -520,109 +505,22 @@
   margin-inline: auto;
   padding: clamp(120px, 16vh, 200px) var(--gutter) clamp(72px, 12vh, 140px);
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.8fr);
+  grid-template-columns: 1fr;   /* card removed — content sits left over the image */
   gap: clamp(32px, 5vw, 72px);
   align-items: center;
 }
-.hero__content { max-width: 60ch; }
-@media (max-width: 980px) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__card { max-width: 440px; }
+.hero__content {
+  max-width: 54ch;
+  /* Also scroll-driven (see js/hero.js) — own layer for the same reason as
+     .hero__poster above: avoids repainting a large text block every frame. */
+  will-change: transform;
 }
+/* Soft navy text-shadow — legibility insurance for white text over the hero
+   photo's brighter/varied areas (the dusk sky), without a harsh drop-shadow. */
+.hero__eyebrow, .hero__title, .hero__lead { text-shadow: 0 2px 18px rgba(11, 31, 68, 0.45); }
 
-/* ---- Hero performance stat card ---- */
-.hero__card {
-  background: rgba(11, 31, 68, 0.80);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: clamp(24px, 2.4vw, 38px);
-  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7);
-  color: var(--on-dark-100);
-}
-.hcard__eyebrow {
-  font-size: var(--fs-100);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--vem-blue-soft);
-}
-.hcard__title {
-  margin-top: var(--space-4);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--fs-600);
-  line-height: 1.16;
-  color: var(--vem-white);
-}
-.hcard__title em { font-style: italic; color: var(--vem-blue-soft); }
-.hcard__stat {
-  margin-top: var(--space-5);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(3.2rem, 6vw, 4.6rem);
-  line-height: 0.95;
-  color: var(--vem-white);
-  display: flex;
-  align-items: flex-start;
-  letter-spacing: -0.01em;
-}
-.hcard__sign { font-size: 0.48em; color: var(--vem-blue-soft); margin-right: 0.04em; line-height: 1.2; }
-.hcard__pct  { font-size: 0.40em; color: var(--vem-blue-soft); margin-top: 0.18em; }
-.hcard__caption {
-  margin-top: var(--space-4);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--fs-300);
-  line-height: 1.4;
-  color: var(--on-dark-60);
-}
-.hcard__row {
-  margin-top: var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-4);
-  font-size: var(--fs-200);
-  color: var(--on-dark-80);
-}
-.hcard__row b { font-weight: 600; color: var(--vem-white); }
-/* Benchmark comparison rows (composite net vs benchmarks) */
-.hcard__bench {
-  margin-top: var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  font-size: var(--fs-200);
-  color: var(--on-dark-80);
-}
-.hcard__benchrow { display: flex; justify-content: space-between; gap: var(--space-4); }
-.hcard__benchrow b { font-weight: 600; color: var(--vem-white); }
-.hcard__disc {
-  margin-top: var(--space-4);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1.5;
-  color: var(--on-dark-40);
-}
-.hcard__disc a { color: var(--vem-blue-soft); text-decoration: underline; text-underline-offset: 2px; }
-.hcard__disc a:hover { color: var(--vem-white); }
-
-/* Zoom-in-from-the-right on load, after the headline flight */
-.hero__card {
-  opacity: 0;
-  transform: translateX(46px) scale(0.95);
-  animation: cardIn 1s var(--ease-out) 0.85s forwards;
-}
-@keyframes cardIn { to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .hero__card { opacity: 1 !important; transform: none !important; animation: none !important; }
-}
+/* (Hero credentials card CSS removed — the card element was deleted from the
+   hero; the $231M AUM stat now lives in the stats bar below.) */
 
 .hero__eyebrow {
   display: inline-flex;
@@ -693,38 +591,8 @@
   gap: var(--space-4);
 }
 
-/* Trust strip under the CTAs */
-.hero__trust {
-  margin-top: var(--space-7);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-3) var(--space-5);
-  font-size: var(--fs-100);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--on-dark-60);
-}
-.hero__trust span { display: inline-flex; align-items: center; gap: var(--space-3); }
-/* GIPS mark — the strongest credibility signal, given quiet emphasis */
-.hero__trust-mark {
-  font-weight: 700;
-  color: var(--vem-white);                 /* crisp on the dark hero (was dark blue) */
-  background: rgba(92, 124, 184, 0.18);    /* faint blue fill so the pill reads as a mark */
-  padding: 5px 11px;
-  border: 1px solid var(--accent-soft);
-  border-radius: 999px;
-  letter-spacing: 0.08em;
-}
-.hero__trust .hero__trust-mark + span::before { display: none; }
-.light-hero .hero__trust-mark { color: var(--vem-blue-deep); border-color: rgba(52, 81, 140, 0.5); background: rgba(92, 124, 184, 0.08); }
-.hero__trust span + span::before {
-  content: "";
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin-right: var(--space-2);
-}
+/* (Trust-strip CSS removed — the .hero__trust element was cut from the hero
+   during the "clean + proof-early" trim.) */
 
 /* Scroll cue, bottom-left */
 .hero__cue {
@@ -770,29 +638,12 @@
     padding-bottom: clamp(40px, 8vh, 72px);
     gap: 0;
   }
-  .hero__card  { display: none; }   /* AUM/credentials live in the stats bar below */
-  .hero__trust { display: none; }   /* declutter so the footage breathes */
   .hero__content { max-width: none; }
-  /* Portrait crop favors the right of the frame so the bright atrium windows
-     stay in view instead of being cut off. */
-  .hero__video, .hero__poster { object-position: 68% center; }
-
-  /* Mobile hero = lightweight image crossfade (no video). Hide the desktop
-     video + poster here; three slides dissolve Dallas -> Arch -> Colonnade.
-     Absolutely positioned + fixed hero height = zero layout shift (no CLS). */
-  .hero__video, .hero__poster { display: none; }
-  .hero__bgslides { display: block; position: absolute; inset: 0; z-index: 1; }
-  .hero__bgslide {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-    opacity: 0;
-  }
-  .hero__bgslide.is-active { opacity: 1; }
-  /* The fade transition is added ONLY once the carousel starts (after first paint,
-     on interaction). That keeps the first/LCP slide a static, non-animating element
-     so Chrome counts the hero image as the LCP instead of falling back to text. */
-  .hero__bgslides--animating .hero__bgslide { transition: opacity 1.2s ease-in-out; }
+  /* Mobile hero = the SAME advisor still as desktop, via the <picture> mobile
+     <source> (portrait crop, hero-advisor-mobile.jpg). The legacy 3-slide
+     crossfade is retired. Nudge the framing toward the figure. */
+  /* Vertical `top`: any crop comes off the bottom — never the subject's head. */
+  .hero__poster { display: block; object-position: 72% top; }
   /* Keep the image clean — only the very bottom darkens, just enough for the
      headline/CTAs to read. No blue wash over the upper image. */
   .hero__scrim {
@@ -805,28 +656,27 @@
 }
 
 /* ------------------------- Entrance motion ------------------------- */
-/* Headline flight: each line starts off to the RIGHT, lands LEFT. */
+/* Headline mask-rise: each line wipes UP from behind its own overflow:hidden
+   clip box (a premium reveal — crisper and more "grabbing" than a sideways
+   fly-in). Pure transform, no opacity fade (the mask does the hiding). */
 .hero__title .line > span {
-  opacity: 0;
-  transform: translateX(14vw);
-  animation: flyInLeft var(--dur-slow) var(--ease-out) forwards;
+  transform: translateY(112%);
+  animation: lineRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 .hero__title .line:nth-child(1) > span { animation-delay: 0.15s; }
 .hero__title .line:nth-child(2) > span { animation-delay: 0.30s; }
 .hero__title .line:nth-child(3) > span { animation-delay: 0.45s; }
 
 /* Supporting elements: soft rise-fade, staggered after the headline */
-.fade-up { opacity: 0; transform: translateY(16px); animation: riseFade 0.8s var(--ease-out) forwards; }
+.fade-up { opacity: 0; transform: translateY(22px); animation: riseFade 0.8s var(--ease-out) forwards; }
 .hero__eyebrow.fade-up { animation-delay: 0.05s; }
 .hero__lead.fade-up    { animation-delay: 0.62s; }
 .hero__actions.fade-up { animation-delay: 0.74s; }
-.hero__trust.fade-up   { animation-delay: 0.86s; }
 .hero__cue.fade-up     { animation-delay: 1.0s; }
 
-@keyframes flyInLeft {
-  from { opacity: 0; transform: translateX(14vw); }
-  60%  { opacity: 1; }
-  to   { opacity: 1; transform: translateX(0); }
+@keyframes lineRise {
+  from { transform: translateY(112%); }
+  to   { transform: translateY(0); }
 }
 @keyframes riseFade {
   to { opacity: 1; transform: translateY(0); }
@@ -944,8 +794,6 @@
   }
 }
 .light-hero .hero__lead { color: var(--vem-gray-text); }
-.light-hero .hero__trust { color: var(--vem-gray-text); }
-.light-hero .hero__trust span + span::before { background: var(--vem-blue-deep); }
 .light-hero .hero__cue { color: var(--vem-navy); }
 .light-hero .hero__cue-line { background: rgba(34, 49, 104, 0.30); }
 .light-hero .hero__cue-line::after { background: var(--vem-blue-deep); }

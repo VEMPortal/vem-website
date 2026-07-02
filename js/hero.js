@@ -4,42 +4,64 @@
   "use strict";
 
   var header = document.querySelector(".site-header");
-  var media  = document.querySelector(".hero__media");
   var hero   = document.querySelector(".hero");
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* --- See-through → translucent navy header on scroll --- */
+  /* --- See-through → translucent navy header on scroll ---
+     A single classList.toggle isn't layout-forcing, so this stays outside the
+     rAF gate (it's cheap, and gating it would delay the header's own CSS
+     transition by up to a frame for no benefit). It no longer has a
+     backdrop-filter to contend with — that was the actual scroll-judder
+     source (see css/hero.css .site-header.is-scrolled), removed separately. */
   function onScrollHeader() {
     if (!header) return;
-    if (window.scrollY > 40) header.classList.add("is-scrolled");
-    else header.classList.remove("is-scrolled");
+    header.classList.toggle("is-scrolled", window.scrollY > 40);
   }
 
-  /* --- Parallax: the background drifts slower than the page on scroll while the
-         hero is in view. Scroll-only (no cursor reactivity), reduced-motion safe.
-         Transform/opacity only, scheduled on rAF — no layout thrash. --- */
-  var ticking = false;
+  /* --- Hero parallax (cross-browser, INP-safe) ------------------------------
+     Two layers move at different speeds for depth: the background drifts down
+     up to 55% while the foreground content rises up to 8% as the hero scrolls
+     away. Downward-only drift is head-safe by construction: it can only
+     REVEAL more of the image's top edge, never hide it (and .hero__media now
+     has zero top bleed — all travel room is at the bottom). Driven by
+     scrollY only (NEVER getBoundingClientRect — that per-frame layout read is
+     what previously hurt Interaction-to-Next-Paint), rAF-batched and passive.
+     We drive it in JS rather than CSS `animation-timeline: scroll()` because
+     that feature isn't yet universal (Firefox/older Safari would show NO
+     parallax at all).
+
+     NOTE: a lerp/easing version of this was tried and reverted — smoothing
+     the transform toward scrollY instead of setting it directly trades
+     "possible snap on fast scroll" for "guaranteed input lag" (the layer
+     visibly dragging a beat behind your scroll on every scroll, since the
+     rest of the page has zero-latency native scroll right next to it) — a
+     worse trade. The real judder fix was removing `.site-header.is-scrolled`'s
+     backdrop-filter (see css/hero.css) — a fixed, blurred element re-sampling
+     this actively-moving layer on every frame. Direct, unsmoothed scrollY
+     coupling is correct here; do not reintroduce lerp/easing. */
+  var hMedia   = document.querySelector(".hero__media");
+  var hContent = document.querySelector(".hero__content");
+  var pTick = false;
   function applyParallax() {
-    ticking = false;
-    if (!media || !hero || prefersReduced) return;
-    var rect = hero.getBoundingClientRect();
-    if (rect.bottom < 0 || rect.top > window.innerHeight) return; // off-screen
-    var offset = window.scrollY * 0.35;          // back layer moves at 35%
-    media.style.transform = "translate3d(0," + offset.toFixed(2) + "px,0)";
+    pTick = false;
+    var vh = window.innerHeight || 1;
+    var p = window.scrollY / vh;           // 0..1 across the first viewport
+    if (p < 0) p = 0; if (p > 1) p = 1;
+    if (hMedia)   hMedia.style.transform   = "translate3d(0," + (p * 55).toFixed(2) + "%,0)";
+    if (hContent) hContent.style.transform = "translate3d(0," + (p * -8).toFixed(2) + "%,0)";
   }
   function requestParallax() {
-    if (!ticking) { window.requestAnimationFrame(applyParallax); ticking = true; }
+    if (!prefersReduced && !pTick) { window.requestAnimationFrame(applyParallax); pTick = true; }
   }
-
   function onScroll() {
     onScrollHeader();
     requestParallax();
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", applyParallax, { passive: true });
+  window.addEventListener("resize", requestParallax, { passive: true });
   onScrollHeader();
-  applyParallax();
+  if (!prefersReduced) applyParallax();
 
   /* Cursor halo is now a site-wide effect — see js/halo.js. */
 
@@ -83,44 +105,8 @@
     var p0 = vidA.play(); if (p0 && p0.catch) p0.catch(function () { /* poster stays */ });
   }
 
-  /* --- Mobile hero crossfade (<=760px) ---------------------------------
-     Desktop is untouched (it uses the video above). On phones we dissolve
-     between three stills. The first slide is the LCP (preloaded); slides 2+3
-     carry data-src and are loaded only AFTER first paint so they never compete
-     with the LCP image. Reduced-motion users keep the single first slide. */
-  var slides = document.querySelectorAll(".hero__bgslide");
-  if (slides.length > 1 && window.innerWidth <= 760 && !prefersReduced) {
-    // Start the fade ONLY on first interaction (or a long fallback). A later
-    // slide fading in counts as a new largest paint, so auto-advancing during
-    // load pushes LCP out to ~10s on throttled mobile. A synthetic test never
-    // interacts, so it measures just the first slide; real visitors scroll/tap
-    // within a second and get the fade. Slides 2+3 load only when it starts.
-    var started = false;
-    var startCarousel = function () {
-      if (started) return;
-      started = true;
-      // Enable the fade transition now (after the LCP has been recorded), so the
-      // first slide stayed a static element for LCP eligibility.
-      var box = document.querySelector(".hero__bgslides");
-      if (box) box.classList.add("hero__bgslides--animating");
-      // Load the deferred slides (those with data-src). The first slide already
-      // has a real src in the HTML, so it has no data-src and is skipped here.
-      for (var s = 0; s < slides.length; s++) {
-        var ds = slides[s].getAttribute("data-src");
-        if (ds && !slides[s].getAttribute("src")) slides[s].setAttribute("src", ds);
-      }
-      var si = 0;
-      window.setInterval(function () {
-        slides[si].classList.remove("is-active");
-        si = (si + 1) % slides.length;
-        slides[si].classList.add("is-active");
-      }, 5000);
-    };
-    ["pointerdown", "touchstart", "scroll", "keydown"].forEach(function (ev) {
-      window.addEventListener(ev, startCarousel, { once: true, passive: true });
-    });
-    window.setTimeout(startCarousel, 15000); // fallback for the rare non-interacting visit
-  }
+  /* (Mobile 3-slide crossfade removed — mobile now shows the same advisor still
+     as desktop via a <picture> mobile <source> in index.html.) */
 
   /* --- Rotating hero headline: crossfade only. The container is LOCKED to a
          fixed height (the tallest slide) and never animates, so rotating the

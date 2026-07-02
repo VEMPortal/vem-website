@@ -284,7 +284,6 @@
       border-radius: 999px;
       background: rgba(69, 128, 202, 0.34);
       backdrop-filter: blur(14px);
-      animation: tourPulse 1.8s ease-in-out infinite;
       transition: background 180ms ease, border-color 180ms ease;
     }
     .hero-copy .tour-btn:hover,
@@ -293,11 +292,9 @@
       border-color: #b6d6ff;
     }
     .hero-copy .tour-btn[aria-pressed="true"] {
-      animation: none;
       background: rgba(69, 128, 202, 0.44);
       border-color: rgba(160, 200, 245, 0.9);
     }
-    @media (prefers-reduced-motion: reduce) { .hero-copy .tour-btn { animation: none; } }
 
     /* Play + Recenter sit side by side; the hint sits directly under them. */
     .hero-actions {
@@ -1068,12 +1065,6 @@
     .is-embedded .hero-copy .lead,
     .is-embedded .hero-copy .metric-row { display: none; }
     .is-embedded .hero-copy .tour-btn { margin-top: 0; }
-
-    /* Heavy pulse for the Play CTA — a strong ring + scale so it's impossible to miss. */
-    @keyframes tourPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(92, 124, 184, 0.65), 0 0 18px rgba(92, 124, 184, 0.5); transform: scale(1); }
-      50%      { box-shadow: 0 0 0 18px rgba(92, 124, 184, 0), 0 0 46px rgba(120, 170, 240, 1); transform: scale(1.07); }
-    }
 
     /* Embedded: tighten the stage card to its content (no empty stretch) and
        enlarge the text + evidence chips so the panel reads bold, not sparse. */

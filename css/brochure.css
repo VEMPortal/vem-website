@@ -4,6 +4,18 @@
    system — same blue accent language as the website (no gold).
    Loads AFTER tokens.css. Self-contained: no homepage CSS.
 
+   The site-wide --accent token was flipped to gold (tokens.css); this deck
+   is scoped back to blue below so it stays true to the comment above
+   regardless of that flip — the ~65 var(--accent...) consumers throughout
+   this file were silently rendering gold until this override was added. */
+body.bro {
+  --accent:       var(--vem-blue);
+  --accent-soft:  var(--vem-blue-soft);
+  --accent-deep:  var(--vem-blue-deep);
+  --accent-hover: #43649C;
+  --accent-glow:  rgba(92, 124, 184, 0.45);
+}
+
    Centerpiece: the 3D "process orbit" on the Investment Process slide —
    a tilted concentric-ring scene (universe outside -> portfolio core)
    that responds to the pointer and opens stage explanations on click.
@@ -899,19 +911,7 @@
   .slide--cover .slide__media img { transform: none; }
 }
 
-/* ---------- Buttons (site blue, mirrors gips.css) --------------------- */
-.btn {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font-family: var(--font-body); font-weight: 600; font-size: var(--fs-200);
-  letter-spacing: 0.01em; padding: 13px 24px; border-radius: var(--radius-pill);
-  cursor: pointer; white-space: nowrap; border: 1px solid transparent; text-decoration: none;
-  transition: transform var(--dur-fast) var(--ease-soft), background var(--dur-fast) var(--ease-soft),
-              box-shadow var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
-}
-.btn--gold { background: var(--accent-deep); color: #fff; box-shadow: 0 10px 30px -12px var(--accent-glow); }
-.btn--gold:hover { background: var(--accent); transform: translateY(-1px); }
-.btn--ghost { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.30); }
-.btn--ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.55); }
+/* ---------- Buttons: .btn/.btn--gold/.btn--ghost now live in tokens.css (single source of truth) ---------- */
 
 /* ---------- Deck chrome ------------------------------------------------ */
 .bro-top {
@@ -1000,7 +1000,7 @@
    PRINT — the same page becomes a clean PDF handout
    =================================================================== */
 @media print {
-  .bro-top, .bro-edge, .bro-foot, .cover__hint, .bgrains, .orbit__hint { display: none !important; }
+  .bro-top, .bro-edge, .bro-foot, .cover__hint, .pgrains, .orbit__hint { display: none !important; }
   .bro { overflow: visible; }
   .deck { display: block; width: auto; height: auto; overflow: visible; scroll-snap-type: none; }
   html, body, .bro { background: #fff !important; color: #111 !important; }
