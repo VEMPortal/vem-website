@@ -122,7 +122,9 @@ body {
 img, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 :focus-visible {
-  outline: 2px solid var(--vem-gold);
+  outline: 2px solid var(--accent);   /* was var(--vem-gold) — bypassed the brochure's scoped
+                                          blue override, leaking a gold ring onto ~38 focusable
+                                          elements there on Tab. var(--accent) follows scope. */
   outline-offset: 3px;
   border-radius: 2px;
 }
