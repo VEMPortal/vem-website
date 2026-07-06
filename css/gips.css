@@ -11,18 +11,7 @@
   text-transform: uppercase; color: var(--accent);
 }
 .overline::before { content: ""; width: 34px; height: 1px; background: var(--accent); }
-.btn {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font-family: var(--font-body); font-weight: 600; font-size: var(--fs-200);
-  letter-spacing: 0.01em; padding: 13px 24px; border-radius: var(--radius-pill);
-  cursor: pointer; white-space: nowrap; border: 1px solid transparent; text-decoration: none;
-  transition: transform var(--dur-fast) var(--ease-soft), background var(--dur-fast) var(--ease-soft),
-              box-shadow var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
-}
-.btn--gold { background: var(--accent-deep); color: #fff; box-shadow: 0 10px 30px -12px var(--accent-glow); }
-.btn--gold:hover { background: var(--accent); transform: translateY(-1px); }
-.btn--ghost { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.30); }
-.btn--ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.55); }
+/* .btn/.btn--gold/.btn--ghost now live in tokens.css (single source of truth) */
 
 /* ---- Full-bleed GIPS hero (background image + navy scrim + download CTA) ---- */
 .report-hero {
