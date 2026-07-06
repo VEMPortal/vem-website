@@ -1791,9 +1791,24 @@
       return tex;
     }
     const pmrem = new THREE.PMREMGenerator(renderer);
-    const _equirect = makeStudioEquirect();
-    scene.environment = pmrem.fromEquirectangular(_equirect).texture;
-    _equirect.dispose();
+
+    function applyEquirectEnv(tex) {
+      tex.mapping = THREE.EquirectangularReflectionMapping;
+      tex.colorSpace = THREE.SRGBColorSpace;
+      scene.environment = pmrem.fromEquirectangular(tex).texture;
+      tex.dispose();
+    }
+
+    /* Seed with the procedural gradient synchronously so first paint is never
+       blank, then swap in the real AI-generated environment map once it loads
+       (falls back silently to the procedural version on any load error). */
+    applyEquirectEnv(makeStudioEquirect());
+    new THREE.TextureLoader().load(
+      "../assets/env/universe-env.jpg",
+      (tex) => applyEquirectEnv(tex),
+      undefined,
+      () => applyEquirectEnv(makeStudioEquirect())
+    );
 
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 700); /* far bumped for the deep-space backdrop */
     camera.position.set(0, 9.6, 23);
@@ -1900,6 +1915,20 @@
       nebula = new THREE.Mesh(new THREE.SphereGeometry(520, 32, 32), nmat);
       nebula.frustumCulled = false;
       scene.add(nebula);
+
+      /* Swap the procedural gradient for a real AI-generated nebula backdrop
+         once it loads; keep the canvas version as the always-available
+         fallback (already on screen, so a load failure is invisible). */
+      new THREE.TextureLoader().load(
+        "../assets/env/nebula-dome.jpg",
+        (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
+          nmat.map = tex;
+          nmat.needsUpdate = true;
+        },
+        undefined,
+        () => {}
+      );
     }
 
     /* ---------- Distant galaxies + cinematic intro state ----------
@@ -1944,6 +1973,8 @@
     const GAL_REST = 0.22;                 /* faint resting visibility */
     const galaxyGroup = new THREE.Group();
     const _galaxyTex = makeGalaxyTex();
+    const _galaxySpriteMats = [];          /* every material built from _galaxyTex,
+       so the real texture can be swapped into all of them once it loads */
     [
       { pos: [-260, 120, -360], scale: 240, op: 0.9 },
       { pos: [320, -80, -420],  scale: 300, op: 0.7 },
@@ -1958,6 +1989,7 @@
     ].forEach((d) => {
       const m = new THREE.SpriteMaterial({ map: _galaxyTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: d.op * GAL_REST });
       m.fog = false;
+      _galaxySpriteMats.push(m);
       const s = new THREE.Sprite(m);
       s.position.set(d.pos[0], d.pos[1], d.pos[2]);
       s.scale.set(d.scale, d.scale, 1);
@@ -1975,10 +2007,27 @@
       blending: THREE.AdditiveBlending, opacity: 0
     }));
     heroGalaxy.material.fog = false;
+    _galaxySpriteMats.push(heroGalaxy.material);
     heroGalaxy.position.set(110, 40, 120);
     heroGalaxy.scale.set(300, 300, 1);
     heroGalaxy.frustumCulled = false;
     scene.add(heroGalaxy);
+
+    /* Swap in the real AI-generated galaxy art once it loads; the procedural
+       spiral sprite (already applied to every sprite above) stays as the
+       fallback if the load fails. */
+    new THREE.TextureLoader().load(
+      "../assets/env/galaxy.jpg",
+      (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
+        _galaxySpriteMats.forEach((mat) => {
+          mat.map = tex;
+          mat.needsUpdate = true;
+        });
+      },
+      undefined,
+      () => {}
+    );
 
     const intro = { active: false, t: 0, dur: 1.8 };   /* cinematic zoom-in — short
        so the fly-in + bloom finish well inside the ~2.9s hook, leaving the outer
@@ -2167,6 +2216,46 @@
     const core = new THREE.Mesh(coreGeometry, coreMaterial);
     core.renderOrder = 3;
     root.add(core);
+
+    /* Silhouette edge for the glass core — a fresnel rim confined to the
+       sphere's own surface (bright only where the surface turns away from the
+       camera), so the globe's outer edge reads against the black backdrop on
+       phones and desktop. Deliberately NOT a halo/glow sprite: nothing renders
+       beyond the sphere's geometry (a warm halo was tried previously and
+       rejected). Child of `core` so it tracks the stage-5 scale-up and spin. */
+    const rimMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        uColor: { value: new THREE.Color(0xcfe2ff) },   /* cool blue-white, matches the star tint */
+        uIntensity: { value: IS_TOUCH ? 1.0 : 0.85 }    /* phones need the extra push */
+      },
+      vertexShader: [
+        "varying vec3 vNormal;",
+        "varying vec3 vView;",
+        "void main() {",
+        "  vNormal = normalize(normalMatrix * normal);",
+        "  vec4 mv = modelViewMatrix * vec4(position, 1.0);",
+        "  vView = normalize(-mv.xyz);",
+        "  gl_Position = projectionMatrix * mv;",
+        "}"
+      ].join("\n"),
+      fragmentShader: [
+        "uniform vec3 uColor;",
+        "uniform float uIntensity;",
+        "varying vec3 vNormal;",
+        "varying vec3 vView;",
+        "void main() {",
+        "  float fr = 1.0 - abs(dot(normalize(vNormal), normalize(vView)));",
+        "  float edge = smoothstep(0.72, 0.96, fr);",   /* tight band hugging the silhouette */
+        "  gl_FragColor = vec4(uColor, edge * uIntensity);",
+        "}"
+      ].join("\n"),
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.NormalBlending                    /* an edge line, not additive glow */
+    });
+    const coreRim = new THREE.Mesh(new THREE.SphereGeometry(1.08 * 1.004, 64, 64), rimMaterial);
+    coreRim.renderOrder = 4;                            /* draws just after the glass */
+    core.add(coreRim);
 
     /* ===== Optional textured globe core (?globe=earth | ?globe=brand) =====
        Procedural CanvasTexture — no external assets — swapping the glass crystal

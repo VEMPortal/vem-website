@@ -215,73 +215,227 @@
       </div>
     </section>
 
-    <!-- 05 — INVESTMENT PROCESS: 3D ORBIT -->
+    <!-- 05 — INVESTMENT PROCESS: the same immersive tour as the homepage's
+         "Our Process" section (poster -> in-place 3D tour -> read-the-cards).
+         Markup/styles/script mirror index.html §05; only the asset paths and
+         the iframe target differ (this page lives one level down). -->
     <section class="slide slide--navy" id="process" data-label="Investment Process" aria-label="Investment Process">
-      <div class="slide__bg" aria-hidden="true">
-        <img src="../assets/img/process-bg.jpg?v=70" alt="" loading="lazy" />
-      </div>
-      <div class="slide__inner slide__inner--wide">
-        <p class="bro-eyebrow">How We Do It — Equity Process</p>
-        <h2 class="bro-h">From Broad Universe <em>to Managed Portfolio</em></h2>
-        <p class="bro-lead">One disciplined funnel takes a global universe of equities down to a focused, risk-controlled portfolio. Explore it as a full-screen, interactive 3-D universe &mdash; or follow the five stages alongside.</p>
+      <style>
+        /* This deck is blue-accented (brochure.css re-pins --accent); the tour
+           must look exactly like the homepage, so re-pin gold inside this
+           slide only. */
+        #process{--accent:var(--vem-gold);--accent-soft:var(--vem-gold-soft);--accent-deep:#8A6E39;--accent-hover:#C7A96B;--accent-glow:rgba(185,155,95,0.45);padding:0}
 
-        <div class="uni-gate">
-          <!-- Launch card: CSS rings echo the universe, button opens the real thing -->
-          <a class="uni-launch" href="process.html" aria-label="Open the full-screen interactive universe">
-            <span class="uni-rings" aria-hidden="true">
-              <span class="uni-ring uni-ring--1"></span>
-              <span class="uni-ring uni-ring--2"></span>
-              <span class="uni-ring uni-ring--3"></span>
-              <span class="uni-ring uni-ring--4"></span>
-              <span class="uni-core"></span>
-            </span>
-            <span class="uni-launch__copy">
-              <span class="uni-launch__k">Interactive</span>
-              <span class="uni-launch__t">The full-screen universe</span>
-              <span class="uni-launch__cta">Explore the process <span aria-hidden="true">&rarr;</span></span>
-            </span>
-          </a>
+        /* ===== Same three-state machine as the homepage: poster (A),
+           3D tour (B), read-the-cards (C) over one galaxy background.
+           Here the stage fills the whole 100svh slide. ===== */
+        #process .process-stage{position:absolute;inset:0;background:#0a1633}
+        .process-stage__bg{position:absolute;inset:-6% 0 -6% 0;z-index:0;overflow:hidden;pointer-events:none}
+        .process-stage__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;will-change:transform}
+        .process-stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+          background:linear-gradient(180deg,rgba(8,18,42,.30),rgba(8,18,42,.18) 45%,rgba(8,18,42,.5));transition:background .5s ease}
+        .process-stage[data-state="cards"]::before{background:rgba(7,16,38,.76)}
 
-          <!-- Five-stage narrowing ladder (static; the live walkthrough is in process.html) -->
-          <ol class="uni-steps">
-            <li class="uni-step">
-              <span class="uni-step__n tnum">01</span>
-              <span class="uni-step__body">
-                <span class="uni-step__name">Universe of Securities</span>
-                <span class="uni-step__count tnum">Global &middot; every publicly traded candidate</span>
-              </span>
-            </li>
-            <li class="uni-step">
-              <span class="uni-step__n tnum">02</span>
-              <span class="uni-step__body">
-                <span class="uni-step__name">Quantitative Analysis</span>
-                <span class="uni-step__count tnum">&approx;900&ndash;1,000 pass the financial tests</span>
-              </span>
-            </li>
-            <li class="uni-step">
-              <span class="uni-step__n tnum">03</span>
-              <span class="uni-step__body">
-                <span class="uni-step__name">Fundamental Analysis</span>
-                <span class="uni-step__count tnum">Semi-finalists &middot; Committee-validated</span>
-              </span>
-            </li>
-            <li class="uni-step">
-              <span class="uni-step__n tnum">04</span>
-              <span class="uni-step__body">
-                <span class="uni-step__name">Stock Selection</span>
-                <span class="uni-step__count tnum">Only the strongest earn a place</span>
-              </span>
-            </li>
-            <li class="uni-step uni-step--core">
-              <span class="uni-step__n tnum">05</span>
-              <span class="uni-step__body">
-                <span class="uni-step__name">Portfolio</span>
-                <span class="uni-step__count tnum">40&ndash;60 holdings &middot; risk-controlled &middot; monitored</span>
-              </span>
-            </li>
-          </ol>
+        /* 3D iframe — visible only during the tour (fills the slide) */
+        .process-stage__frame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;opacity:0;pointer-events:none;transition:opacity .45s ease}
+        .process-stage[data-state="tour"] .process-stage__frame{opacity:1;pointer-events:auto}
+
+        /* heading shows on the poster only */
+        .process-stage[data-state="tour"] .process-stage__head,
+        .process-stage[data-state="cards"] .process-stage__head{opacity:0!important;pointer-events:none}
+
+        /* Section heading overlaid upper-left (same as homepage) */
+        .process-stage__head{position:absolute;top:clamp(26px,6vh,70px);left:clamp(20px,5vw,76px);z-index:3;
+          max-width:min(44ch,40vw);pointer-events:none;transition:opacity .8s ease}
+        #process .overline{display:inline-flex;align-items:center;gap:var(--space-3);font-size:var(--fs-100);
+          font-weight:600;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--accent);margin:0}
+        #process .overline::before{content:"";width:34px;height:1px;background:var(--accent)}
+        .process-stage__head h2{margin:.35em 0 0;font-family:var(--font-display);font-weight:600;
+          font-size:clamp(2.3rem,4.7vw,4.4rem);line-height:1.0;letter-spacing:var(--tracking-tight);color:var(--vem-white);
+          text-shadow:0 2px 30px rgba(4,12,28,.75),0 1px 4px rgba(4,12,28,.6)}
+        .process-stage__head h2 em{font-style:italic;color:var(--accent-soft,#94abd6)}
+        .process-stage__intro{margin-top:clamp(14px,1.6vw,22px);max-width:34ch;font-size:var(--fs-400);
+          line-height:1.6;color:var(--on-dark-70);text-shadow:0 1px 16px rgba(4,12,28,.8)}
+        .process-stage__head::before{content:"";position:absolute;inset:-40px -60px -60px -50px;z-index:-1;
+          background:radial-gradient(120% 110% at 18% 22%,rgba(6,16,34,.62) 0%,rgba(6,16,34,.32) 45%,transparent 78%);pointer-events:none}
+
+        /* --- Poster (A): primary Play + secondary Read link, upper-right --- */
+        .process-poster{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+          align-items:flex-end;justify-content:flex-start;gap:8px;text-align:right;color:#eaf2ff;
+          padding:clamp(26px,6.5vh,74px) clamp(22px,5vw,76px);transition:opacity .5s ease;
+          background:radial-gradient(70% 58% at 80% 26%,rgba(8,18,42,.58) 0%,rgba(8,18,42,0) 70%)}
+        .process-stage:not([data-state="poster"]) .process-poster{opacity:0;pointer-events:none}
+        .process-poster__playbtn{display:flex;flex-direction:column;align-items:flex-end;gap:12px;text-align:right;
+          background:none;border:0;color:inherit;cursor:pointer;font-family:inherit}
+        .process-poster__play{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;
+          background:rgba(185,155,95,.16);border:2px solid var(--accent);box-shadow:0 0 0 0 rgba(185,155,95,.5);
+          animation:posterPulse 2.6s ease-out 3 forwards}
+        .process-poster__play::after{content:"";margin-left:7px;border-style:solid;border-width:15px 0 15px 25px;
+          border-color:transparent transparent transparent var(--accent)}
+        @keyframes posterPulse{0%{box-shadow:0 0 0 0 rgba(185,155,95,.5)}70%{box-shadow:0 0 0 24px rgba(185,155,95,0)}100%{box-shadow:0 0 0 0 rgba(185,155,95,0)}}
+        .process-poster__label{font-family:'Cinzel',Georgia,serif;font-size:1.18rem;letter-spacing:.04em}
+        .process-poster__sub{font-size:.86rem;line-height:1.5;max-width:30ch;color:#aebbd6}
+        .process-poster__read{margin-top:8px;background:none;border:0;cursor:pointer;font-family:inherit;
+          font-size:.82rem;letter-spacing:.05em;color:var(--accent-soft);transition:color .2s}
+        .process-poster__read:hover{color:var(--accent);text-decoration:underline}
+
+        /* --- Card deck (C): centered over the galaxy, no 3D --- */
+        .process-cards{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;
+          padding:clamp(20px,5vw,60px);opacity:0;pointer-events:none;transition:opacity .5s ease}
+        .process-stage[data-state="cards"] .process-cards{opacity:1;pointer-events:auto}
+        .pcard{position:relative;width:min(620px,94%);color:#eaf2ff;border-radius:14px;
+          padding:clamp(24px,3.4vw,40px);border:1px solid rgba(132,174,226,.22);
+          background:linear-gradient(160deg,rgba(11,26,56,.93),rgba(9,20,44,.95));
+          box-shadow:0 30px 80px rgba(0,0,0,.5);backdrop-filter:blur(8px)}
+        .pcard__step{margin:0 0 .85em;font:700 .7rem/1 Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#c9ab73}
+        .pcard__title{margin:0;font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.08}
+        .pcard__count{margin:.75em 0 0;font-size:.84rem;font-weight:600;color:#9fb2d6}
+        .pcard__body{margin:1.05em 0 0;font-size:1rem;line-height:1.6;color:#d4def0}
+        .pcard__stat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:1.5em;padding-top:1.35em;border-top:1px solid rgba(132,174,226,.16)}
+        .pcard__stat div{text-align:center}
+        .pcard__stat b{display:block;font-family:'Cinzel',Georgia,serif;font-size:1.18rem;color:#fff}
+        .pcard__stat span{display:block;margin-top:3px;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#9fb2d6}
+        .pcard__cta{display:inline-flex;margin-top:1.5em;padding:13px 26px;border-radius:999px;background:var(--accent-deep);color:#fff;text-decoration:none;font:800 .8rem/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:background var(--dur-fast) var(--ease-soft)}
+        .pcard__cta:hover{background:var(--accent)}
+        .pcards__nav{position:absolute;left:0;right:0;bottom:clamp(12px,3vh,28px);display:flex;align-items:center;justify-content:center;gap:16px}
+        .pcards__arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(132,174,226,.4);background:rgba(9,20,44,.72);color:#cfe0f5;font-size:1.25rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+        .pcards__arrow[disabled]{opacity:.3;cursor:default}
+        .pcards__dots{display:flex;gap:8px;align-items:center}
+        .pcards__dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(174,187,214,.4);cursor:pointer;padding:0;transition:width .2s,background .2s}
+        .pcards__dot.is-on{background:var(--accent);width:22px;border-radius:4px}
+        .pcards__close{position:absolute;top:clamp(14px,3vh,26px);right:clamp(16px,4vw,42px);width:40px;height:40px;border-radius:50%;border:1px solid rgba(132,174,226,.4);background:rgba(9,20,44,.72);color:#cfe0f5;font-size:1.2rem;line-height:1;cursor:pointer}
+        /* Top-right X shown during the tour: stops the 3D and returns to the start poster. */
+        .process-stage__close{position:absolute;top:clamp(14px,3vh,26px);right:clamp(16px,4vw,42px);z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid rgba(201,171,115,.45);background:rgba(9,20,44,.72);color:#e9eefc;font-size:1.25rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(6px)}
+        .process-stage[data-state="tour"] .process-stage__close{opacity:1;pointer-events:auto}
+        .process-stage__close:hover{border-color:rgba(201,171,115,.9);background:rgba(20,36,70,.85)}
+        @media (prefers-reduced-motion:reduce){.process-poster__play{animation:none}}
+        @media (max-width:760px){
+          .process-poster{align-items:center;justify-content:center;text-align:center;padding:24px}
+          .process-poster__playbtn{align-items:center;text-align:center}
+          .process-poster__sub{text-align:center;max-width:32ch}
+          .process-stage__head{top:clamp(16px,4vh,40px);left:16px;right:16px;max-width:none;text-align:center}
+          .process-stage__head h2{font-size:clamp(2rem,8.5vw,3rem)}
+          .process-stage__intro{display:none}
+        }
+      </style>
+      <div class="process-stage" id="processStage" data-state="poster">
+
+        <div class="process-stage__bg" data-parallax aria-hidden="true">
+          <img src="../assets/img/process-galaxy.jpg" alt="" width="1920" height="1280" loading="lazy" decoding="async" />
+        </div>
+
+        <!-- Exit the tour: stop the 3D and return to the start poster -->
+        <button type="button" class="process-stage__close" id="stageClose" aria-label="Stop the tour and return to the start">&times;</button>
+
+        <!-- State A: poster (the galaxy background lives on .process-stage) -->
+        <div class="process-poster" id="processPoster">
+          <button type="button" class="process-poster__playbtn" id="posterPlay" aria-label="Play the guided tour">
+            <span class="process-poster__play" aria-hidden="true"></span>
+            <span class="process-poster__label">Play the guided tour</span>
+            <span class="process-poster__sub">See how a universe of stocks becomes a focused portfolio &middot; about 30 seconds</span>
+          </button>
+          <button type="button" class="process-poster__read" id="posterRead">Read our approach &rarr;</button>
+        </div>
+
+        <!-- State B: the interactive 3D universe (loads only when the tour is played) -->
+        <iframe class="process-stage__frame" data-src="process.html?v=40&amp;autoplay=1"
+                title="Interactive 3D view of our five-stage equity process — tap a stage or band to explore"
+                allow="autoplay; fullscreen"></iframe>
+
+        <!-- Section heading (poster state only) -->
+        <div class="process-stage__head">
+          <p class="overline">Our process</p>
+          <h2 id="process-title">A universe of stocks.<br /><em>9,000 names to 80.</em></h2>
+          <p class="process-stage__intro">
+            Distilled through five disciplined stages &mdash; quantitative,
+            fundamental, and continuous &mdash; down to the few dozen companies
+            we choose to own.
+          </p>
+        </div>
+
+        <!-- State C: the stage cards, over the galaxy (no 3D) -->
+        <div class="process-cards" id="processCards" aria-hidden="true">
+          <button type="button" class="pcards__close" id="cardsClose" aria-label="Close the approach cards">&times;</button>
+          <article class="pcard" id="pcard" aria-live="polite"></article>
+          <nav class="pcards__nav" aria-label="Process stages">
+            <button type="button" class="pcards__arrow" id="cardPrev" aria-label="Previous stage">&#8249;</button>
+            <span class="pcards__dots" id="cardDots"></span>
+            <button type="button" class="pcards__arrow" id="cardNext" aria-label="Next stage">&#8250;</button>
+          </nav>
         </div>
       </div>
+
+      <script>
+        /* Process section state machine — poster (A) / 3D tour (B) / cards (C).
+           Identical to the homepage's; the heavy 3D loads only for the tour and
+           unloads when you leave it. */
+        (function () {
+          var stage = document.getElementById("processStage");
+          if (!stage) return;
+          var frame = stage.querySelector(".process-stage__frame");
+          var posterPlay = document.getElementById("posterPlay");
+          var posterRead = document.getElementById("posterRead");
+          var pcard = document.getElementById("pcard");
+          var dotsEl = document.getElementById("cardDots");
+          var prevB = document.getElementById("cardPrev");
+          var nextB = document.getElementById("cardNext");
+          var closeB = document.getElementById("cardsClose");
+          var stageCloseB = document.getElementById("stageClose");
+
+          var CARDS = [
+            { step:"The starting point", title:"Universe of Equity Securities", count:"Global &middot; every publicly traded candidate", body:"Every listed equity starts as a candidate until evidence says otherwise. More names live on the outer edge &mdash; none are owned by default.", stat:[["~9,000","Companies"],["100%","of universe"],["Screening","Conviction"]] },
+            { step:"The evidence filter", title:"Quantitative Analysis", count:"~8,000&ndash;9,000 pass structure &middot; 900&ndash;1,000 pass financial tests", body:"Proprietary screens filter for structure, risk, growth/value characteristics, and multi-factor ranking &mdash; before judgment enters the process.", stat:[["~900","Names"],["~10%","of universe"],["Ranking","Conviction"]] },
+            { step:"The human test", title:"Fundamental Analysis", count:"Semi-finalists: Growth ~150 &middot; Value ~150 &middot; Intl ADR ~250", body:"The Investment Committee validates earnings potential and sustainability through business analysis, peer comparison, growth durability, and management evaluation.", stat:[["~150","Names"],["~1.7%","of universe"],["Building","Conviction"]] },
+            { step:"The final cut", title:"Stock Selection", count:"Across the Growth, Value, and International ADR sleeves", body:"Semi-finalists are sorted against new candidates moving through the model. Only the strongest earn a place in a strategy.", stat:[["~80","Names"],["~0.9%","of universe"],["High","Conviction"]] },
+            { step:"The destination &amp; discipline", title:"Managed Portfolio", count:"80 holdings &middot; risk-controlled &middot; continuously monitored", body:"A diversified portfolio holds companies that possess and maintain competitive financial characteristics &mdash; with sector, industry, and position-size limits.", stat:[["80","Holdings"],["~0.9%","of universe"],["Held","Conviction"]] }
+          ];
+          var idx = 0;
+          function render(i) {
+            idx = Math.max(0, Math.min(CARDS.length - 1, i));
+            var c = CARDS[idx];
+            var stat = c.stat.map(function (s) { return '<div><b>' + s[0] + '</b><span>' + s[1] + '</span></div>'; }).join("");
+            var cta = idx === CARDS.length - 1 ? '<a class="pcard__cta" href="process.html">Read the process &rarr;</a>' : '';
+            pcard.innerHTML =
+              '<p class="pcard__step">0' + (idx + 1) + ' / 0' + CARDS.length + ' &middot; ' + c.step + '</p>'
+              + '<h3 class="pcard__title">' + c.title + '</h3>'
+              + '<p class="pcard__count">' + c.count + '</p>'
+              + '<p class="pcard__body">' + c.body + '</p>'
+              + '<div class="pcard__stat">' + stat + '</div>' + cta;
+            var dh = "";
+            for (var d = 0; d < CARDS.length; d++) dh += '<button type="button" class="pcards__dot' + (d === idx ? ' is-on' : '') + '" data-i="' + d + '" aria-label="Stage ' + (d + 1) + '"></button>';
+            dotsEl.innerHTML = dh;
+            prevB.disabled = idx === 0; nextB.disabled = idx === CARDS.length - 1;
+          }
+          function setState(s) { stage.setAttribute("data-state", s); }
+          function loadTour() { if (!frame.getAttribute("src")) frame.setAttribute("src", frame.getAttribute("data-src")); setState("tour"); }
+          function openCards() { render(0); setState("cards"); }
+          function closeCards() { setState("poster"); }
+
+          /* Stop the tour (unload the 3D) and return to the start poster. */
+          function exitToStart() { frame.removeAttribute("src"); setState("poster"); }
+
+          posterPlay.addEventListener("click", loadTour);
+          posterRead.addEventListener("click", openCards);
+          closeB.addEventListener("click", closeCards);
+          if (stageCloseB) stageCloseB.addEventListener("click", exitToStart);
+          prevB.addEventListener("click", function () { render(idx - 1); });
+          nextB.addEventListener("click", function () { render(idx + 1); });
+          dotsEl.addEventListener("click", function (e) { var b = e.target.closest(".pcards__dot"); if (b) render(+b.getAttribute("data-i")); });
+          document.addEventListener("keydown", function (e) {
+            if (stage.getAttribute("data-state") !== "cards") return;
+            if (e.key === "ArrowRight") render(idx + 1);
+            else if (e.key === "ArrowLeft") render(idx - 1);
+            else if (e.key === "Escape") closeCards();
+          });
+
+          /* The tour's Aaron ending posts "vem-cards" when its "Read our complete
+             approach" button is clicked -> unload the 3D and show the cards. */
+          window.addEventListener("message", function (e) {
+            if (e.origin !== location.origin || !e.data) return;
+            if (e.data.type === "vem-cards") { frame.removeAttribute("src"); openCards(); }
+          });
+        })();
+      </script>
     </section>
 
     <!-- 06 — STRATEGY PLATFORM (model-lineup funnel) -->
@@ -690,7 +844,7 @@
 
   </main>
 
-  <script src="../js/brochure.js?v=77" defer></script>
+  <script src="../js/brochure.js?v=78" defer></script>
   <script src="../js/halo.js?v=7" defer></script>
 </body>
 </html>

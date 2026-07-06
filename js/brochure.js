@@ -53,9 +53,17 @@
     activate(i); /* drive choreography from intent — never wait on scroll events */
   }
 
+  /* The process slide's tour owns wheel + keyboard input while it's playing
+     or its cards are open; deck navigation resumes on the poster state. */
+  function tourActive() {
+    var ps = document.getElementById("processStage");
+    return !!(ps && ps.getAttribute("data-state") !== "poster");
+  }
+
   /* ---- Wheel -> horizontal advance (one slide per gesture) ---- */
   var wheelLock = false;
   deck.addEventListener("wheel", function (e) {
+    if (tourActive()) return;
     var d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
     if (Math.abs(d) < 12) return;
     e.preventDefault();
@@ -73,6 +81,7 @@
   document.addEventListener("keydown", function (e) {
     var tag = (e.target && e.target.tagName) || "";
     if (tag === "INPUT" || tag === "TEXTAREA") return;
+    if (tourActive()) return;
     switch (e.key) {
       case "ArrowRight": case "ArrowDown": case "PageDown":
         e.preventDefault(); goTo(current + 1); break;
