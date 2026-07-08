@@ -33,9 +33,11 @@ Work the phases in order. Phase 0 is a human gate — do not skip it or rush it.
 Phase 1 runs the bundled script to get an objective snapshot. Phases 2–6 are the
 actions, with the script re-run at the end to confirm.
 
-The site lives at: `C:\Users\alpha\OneDrive\Attachments\Desktop\vem web sight v001`
-(adjust if the user is working from a different checkout). Most checks assume
-that path; pass it explicitly when running the script.
+The site lives at: `C:\Users\alpha\vem-site-link` (a directory junction —
+follow it, it resolves to the real checkout). The user has reorganized the
+Desktop before, so if that path 404s, search `Desktop\**\vem web sight v001`
+rather than assuming the old bare-Desktop path still works. Most checks assume
+this path; pass it explicitly when running the script.
 
 ---
 
@@ -65,7 +67,15 @@ Run the bundled script to get a pass/fail report on every mechanical check. It i
 read-only — it inspects files, it never changes them.
 
 ```powershell
-& "<skill-dir>/scripts/verify-launch.ps1" -SitePath "C:\Users\alpha\OneDrive\Attachments\Desktop\vem web sight v001"
+& "<skill-dir>/scripts/verify-launch.ps1" -SitePath "C:\Users\alpha\vem-site-link"
+```
+
+For the deeper code/GEO layer (JSON validation, CSS integrity, JSON-LD, AI
+crawler policy, llms.txt, site mapping), also run the global `site-code-check`
+skill's scanner alongside this script:
+
+```
+python "C:\Users\alpha\.claude\skills\site-code-check\scripts\site_check.py" "C:\Users\alpha\vem-site-link" --base-url https://www.vannequitymanagement.com
 ```
 
 Read its output with the user. It reports the robots mode, sitemap/noindex
@@ -85,7 +95,7 @@ served** — it's a source-of-truth file. "Swapping" therefore means copying its
 *contents* into `robots.txt` (not renaming, which would just un-ignore it).
 
 ```powershell
-$site = "C:\Users\alpha\OneDrive\Attachments\Desktop\vem web sight v001"
+$site = "C:\Users\alpha\vem-site-link"
 Copy-Item (Join-Path $site "robots.production.txt") (Join-Path $site "robots.txt") -Force
 ```
 
@@ -141,12 +151,40 @@ Once deployed and crawlable, verify the site as a search engine sees it.
 - **Smoke test** the live site: homepage, one blog post, one insight, the contact
   page, and a couple of `vercel.json` redirects all load without errors.
 
+## Phase 5b — Post-launch 404 monitoring (first weeks)
+
+The Phase 1 script's internal-link check only catches broken links *within*
+the built site — it can't predict which old bookmarked or Google-indexed URLs
+from the previous WordPress/GHL site will get hit after cutover. That's a
+separate, ongoing job, not a one-time launch check:
+
+- Log into the WordPress admin backend — the `wp.vannequitymanagement.com`
+  install where DNS historically lived. Per the DNS cutover plan, this
+  install stays live post-cutover (only `A @` and `CNAME www` move to Vercel),
+  so its admin panel and plugins remain reachable.
+- **Tools → Redirection → 404s tab.** This logs every real visitor/crawler hit
+  to a URL that doesn't resolve. Check it on a schedule: daily for the first
+  week after go-live, then weekly for the first month. Traffic to stale URLs
+  tends to taper off but rarely stops immediately (old backlinks, cached
+  search results, bookmarks).
+- For each logged 404 that maps to real migrated content, add a redirect —
+  either directly in the Redirection plugin, or mirror it into `vercel.json`
+  if the static site should own the canonical redirect table going forward.
+  Either location works; duplicating the rule in both isn't harmful.
+- This step is complementary to, not a replacement for, the Phase 1
+  internal-link check: Phase 1 catches broken links *inside* the new site
+  before launch; this catches broken *inbound* links from the outside world
+  after launch. Claude has no API/login access to the WordPress admin or its
+  plugins, so this specific check is a human step — walk the user through it
+  rather than trying to automate it.
+
 ## Phase 6 — Final report
 
 Summarize for the user: what passed, what was changed (the robots swap), what
-still needs a human (GSC submission, CCO confirmations), and the live URLs to
-spot-check. End with an explicit **"GO" or "NO-GO"** call based on whether any
-Phase-0 gate or Phase-1 `FAIL` is unresolved.
+still needs a human (GSC submission, CCO confirmations, Phase 5b's WordPress
+404-log schedule), and the live URLs to spot-check. End with an explicit
+**"GO" or "NO-GO"** call based on whether any Phase-0 gate or Phase-1 `FAIL`
+is unresolved.
 
 ---
 
@@ -160,6 +198,8 @@ Phase-0 gate or Phase-1 `FAIL` is unresolved.
 - Contact form `data-endpoint` is set (or fallback confirmed working).
 - Analytics firing on production.
 - CCO sign-off on record.
+- WordPress Redirection 404 log checked on a schedule for the first few weeks
+  post-launch (daily → weekly), with any real stale-URL hits redirected.
 
 If the user wants to re-audit at any time, the Phase 1 script is safe to run
 repeatedly — it changes nothing.
