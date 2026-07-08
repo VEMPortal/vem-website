@@ -13,10 +13,10 @@
   Path to the site root. Defaults to the known VEM checkout.
 
 .EXAMPLE
-  ./verify-launch.ps1 -SitePath "C:\Users\alpha\OneDrive\Attachments\Desktop\vem web sight v001"
+  ./verify-launch.ps1 -SitePath "C:\Users\alpha\vem-site-link"
 #>
 param(
-    [string]$SitePath = "C:\Users\alpha\OneDrive\Attachments\Desktop\vem web sight v001"
+    [string]$SitePath = "C:\Users\alpha\vem-site-link"
 )
 
 $ErrorActionPreference = "Stop"

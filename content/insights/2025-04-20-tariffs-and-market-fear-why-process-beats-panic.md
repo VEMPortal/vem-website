@@ -1,0 +1,160 @@
+---
+title: "Tariffs and Market Fear: Why Process Beats Panic"
+slug: "tariffs-and-market-fear-why-process-beats-panic"
+date: 2025-04-20
+author: "Vann Equity Management"
+category: "Financial Market Insight"
+hero: assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-1.png
+pdf: assets/docs/VEM-Financial-Market-Insight-2025-04-20.pdf
+status: published
+summary: "At the time of writing this, Monday morning Futures are sharply lower again (down close to 2%) as there was no meaningful tariff relief over the weekend while…"
+---
+### Highlights
+
+#### Key Takeaways
+
+- Important Read
+- Bull vs. Bear: Which Argument Makes More Sense?
+- Market Preview: Will There Be Any Tariff Relief?
+- Economic Cheat Sheet: Focus Turns to Inflation (CPI on Thursday)
+- What the Tariff Announcement Means for Markets
+- The Bull Case vs. the Bear Case Post Tariffs
+
+At the time of writing this, Monday morning Futures are sharply lower again (down close to 2%) as there was no meaningful tariff relief over the weekend while administration officials reiterated their support for the current tariff policy. The stock market got absolutely pummeled last week thanks to a material escalation in the global trade war initiated by President Trump’s tariff announcement that shocked us and the markets with much larger than expected tariffs. Stagflationary¹ economic data did not help either, and when the dust settled last Friday the S&amp;P 500 plunged 9.08% for the week and is now down 13.73% YTD.
+
+So far, tariff concerns do not appear to have significantly impacted U.S. economic activity. Most real‑time barometers of GDP growth have decreased, but only slightly. Earnings estimates generally have held up; but we have seen an enormous increase in business uncertainty. This means the potential impact could dwarf what was seen in 2017. Then, the effective tariff rate that the U.S. imposed on all imports only rose from 1.6% to 3.1%. However, this time around, even if deals are made with numerous trading partners, the effective tariff rate is likely to be substantially higher. The measures announced by President Trump on April 2nd would move the rate above 20%, even higher than the peak levels seen in the 1930s. Trade uncertainty is higher than at any time since at least the mid‑1980s; and one widely followed index of economic policy uncertainty has spiked to a level previously only eclipsed at the height of the COVID pandemic.
+
+The bottom line is that higher tariffs pose a significant risk to the current economic outlook. While this risk may ultimately prove to be temporary, we think concerns are likely to get worse before they get better; but they ultimately will get better. Depending on where tariffs end up over the next 6-12 months will determine to what extent inflationary pressures will be transitory or more persistent. The market is currently begging and screaming for clarity around growth and inflation; but fiscal policy is now playing a game of chicken with the entire world trade economies and our Fed. We think many countries will cave in this game, but one thing for sure is that the US Fed is waiting to see more before making any decisions on rate moves; which may now become a foregone conclusion for any hope at a soft landing.
+
+As a result, businesses and consumers appear to be putting some major spending decisions on hold. If this level of uncertainty persists, a U.S. recession—and, probably, a global one as well—are the most likely outlook.
+
+### The Important Read
+
+From the individual investor to the experienced fund manager, we are all looking at red across the financial screens, every investor's mind is focused on this one question. Markets are crashing, fear is everywhere, so what does the savvy investor do now? Fear is invading portfolios, distorting judgments, and dragging some of the more experienced investors off track. Every member of our investment team and many of our long-term clients have seen this before, in 2000, 2008, and 2020. And for the long-term investors, we have always made it through, and the market has ended up higher than where we started. Now while on the surface each collision seemed distinct, but beneath each bear market ran the same emotional script: panic first and opportunity second. A time during which history discreetly reveals a pattern for those with selectivity and discernment, the headlines exude a sense of impending doom.
+
+Here is what to know:
+
+#### The Nature of Fear in Markets—It Distorts Reality
+
+Fear makes smart investors emotional ones. It substitutes survival instinct with solid planning, and regardless of experience, anxiety whispers that this time may truly be different when the market declines rapidly and hard.
+
+We have seen this script before. The dot-com bubble broke in 2000, therefore eradicating ideas of infinite expansion. The financial crisis tore confidence in institutions in 2008. In 2020, a virus crippled global markets in a matter of months. Every moment set off the same response: broad panic, indiscriminate selling, and a dash to safety; which usually comes too late; and each event was followed by a significant market recovery.
+
+"Short run, the market is a voting machine," Warren Buffett said. Long-term, the market functions as a weighing machine. Most investors overlook the fact that anxiety, when it gets louder, becomes a major sign of forced selling. That is not a justification for running. It motivates one to start working.
+
+#### Common Investor Fears During Crashes
+
+Rational thinking gives place to emotional survival when markets collapse quickly. Fear takes over control; it does not simply occupy the room. We have observed the same repeating worries afflicting investors during every significant downturn, and every time these are the questions that we get asked:
+
+- “Am I going to lose everything?” Most extreme fear generates this question; but the answer is Rarely does it ever capture reality. A downturn is volatility, not finality; it is not a catastrophic loss unless you are overleveraged or focused on structurally flawed assets. These are none of our clients.
+- "It is different this time…." Every crash in the moment seems unheard of. Beneath the headlines, though, the causes are usually excess, leverage, and false expectations and they become painfully known. Many times, believing "this time is different" results in the rejection of tried-for solutions. We have a quantitative process that has generated decades of positive returns over a market cycle. Likely now after the decline many forecasters will jump on the fear wagon and advocate further downside. 10%-20% is a normal correction and we are well within that tolerance.
+- “Should I sell now and buy back lower?” This is an illusion with peril. Accurately timed market movements rely more on chance than skill. Most who try end up buying back at more expensive rates, selling low, and missing the recovery. We do not try to time the markets, we let earnings dictate the direction of our portfolios.
+- "Am I missing better prospects somewhere else?" One develops a dread of missing out and then worries about being left behind. Often hunting safer assets already overvalued, investors migrate out of quality into comfort.
+
+They are behavioral traps, loss aversion, recency bias, and herd mentality that drive investors into emotional decisions, irreversibly damaging capital. The long-term winners are the ones that interpret fear as a signal, not as a justification.
+
+#### The Practical Response
+
+When markets fall, most investors react, but really, they should reassess and make sure they have a process or have a financial advisor that owns a process. Every position in the Vann Equity Management portfolios begin with quantitative metrics and a qualitative catalyst. During times of volatility our team stops and goes back over each and every thesis of every holding instead of panicking. We ask ourselves, “Has the plot changed?” “Has the brink vanished?” “Should we not hold or double down?” If so, we cut it quickly and redistribute it. Our process does not sell on dread. We sell when the sales, earnings, margin or thesis disappear. It is very rare that once cash is raised the individual investor will jump back into the market anywhere near where the bottom is…. Therefore, missing the recovery and locking in unnecessary losses.
+
+Opportunity quantitative screening, not the comfort of cash will win the game of long-term. Volatility causes mispricing. That is when we search for spinoffs, insider-heavy turnarounds, restructurings, and dislocations—that is when we run the most aggressive of our screening process. History supports this: in the twelve months following significant market lows, the S&amp;P 500 has averaged over thirty-five percent. The secret is to use the data and draw from experience.
+
+Live by Smart Money - Insiders buying amid a crisis are not guessing; they are expressing certainty. We monitor management changes, insider buying trends, and dropped spinoffs often missed by other institutional investors. These are choices supported by data, not emotional ones.
+
+#### The Power of Process Over Panic
+
+In falling markets, the process serves as the shield while emotion is the enemy. There should be no guessing. Volatility sharpens our research-driven, quantitative-led approach; it does not disturb it. Others rush for comfort or cash, but Vann Equity Management follows discipline: spotting dislocations, verifying catalysts, and precisely allocating within the equity markets. This process is about adapting to what is working, not working, and what will work; not about forecasting the bottom. Every crisis we have negotiated has made us more careful, more focused, and surer of our capacity to identify value when the noise level is highest. Anxiety vanishes. Process lives.
+
+Remember, it is time in the market; not timing of the market that accumulates true wealth.
+
+#### What You Should Do Now
+
+Some investors seek an exit when fear rules the market. The brighter one’s search for opportunities. If you only learn one lesson from this month’s issue, let it be this: sell a portion of your equity portfolio up to 25% if you are retired and need ALL of your money and plan to only live the next five years, but do not sell if it is simply because you are afraid. There is a difference.
+
+At Vann Equity Management, our investment team pays more attention to what is misinterpreted than to what is falling. This is the time to monitor insider buying since, although the public withdraws, insiders are often acting with conviction rather than emotion. This is also the moment to hone our attention to spinoffs, restructurings, and businesses experiencing true internal transformation rather than merely following what seems low-cost. We are using this crash to construct a future-oriented portfolio rather than to fix a faulty one. The market will bounce back, as it always does, but only those who used the drawdown sensibly will stand ahead. Get ready to observe the process. Relax. See the panic as an advantage. Understand we have a repeatable, not reactive, approach that will help you be more suited for what lies ahead than merely surviving what is now.
+
+#### Final Words
+
+Panic is noise. You are supposed to pick up the signal. Do not herd like others. When others pause, look for mispriced opportunities, separate actual triggers, and act with confidence. While bad judgments do, crashes do not kill investors. Process, patience, and preparation set long-term winners apart from the rest, not luck or timing. If you do need cash and cannot withstand the volatility, please reach out, and let us open another account and decide what amount of cash is right for you to move to the sidelines; based on your individual and family needs, not fear.
+
+### Stocks
+
+<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-2.png" alt="S&amp;P 500 Chart"><figcaption>S&amp;P 500 Chart</figcaption></figure>
+
+Stocks collapsed last week as the Trump administration’s reciprocal tariff announcement was much worse than feared and the S&amp;P 500 plunged on Thursday and Friday to fresh YTD lows.
+
+✓ What is Outperforming: Defensive sectors, minimum volatility, and sectors linked to higher rates have been relatively outperformed recently as markets have become more volatile.
+
+✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
+
+#### Bulls vs. Bear: Which Argument Makes More Sense?
+
+The bullish argument is: 1) It is not a total washout (the S&amp;P 500 is down sharply but defensive sectors and minimum volatility factors are only down modestly), 2) The Trump Put still exists and 3) The “worst-case” tariff news is now known, and a large wall of worry has been constructed.
+
+The bearish argument is: 1) It is the 1970s again (rampant stagflation driven by a huge policy error), 2) The market is still overvalued and 3) The Trump Put exists but may be in the low 4,000s in the S&amp;P 500.
+
+In the short term, the bearish argument takes it with ease, because the bullish argument is extremely weak in the near term. Essentially, the bullish argument is based on the logic that 1) It cannot get any worse on tariffs, 2) It is all still a negotiation and 3) Eventually Trump will see the error of his ways. The problem with that is it can always get worse (retaliation) and that means a possible constant drip of more tariff threats in the coming weeks.
+
+At this point, even optimists have to doubt the “negotiation” tactic as nothing has been negotiated lower in four months of tariff threats. Then, waiting for Trump to admit an error and change could be an expensive position. Bottom line, the near-term outlook for markets is not good and even if there is tariff reduction this week, we should expect continued volatility after a short-term bounce.
+
+So, why are we not declaring this a bearish game changer?
+
+Because the bullish argument is more compelling in the medium/long term (three-to-six months and beyond). The simple truth is the U.S. economy is stronger than the shock. This policy will either work (which would be very unexpected and defy the known laws of economics) or the pressure from the economy will force the change, either with the president making that change, or the Congress, or election results forcing him to do it. Additionally, unless this policy is a total success, we would be shocked if, within the next two years, the presidential ability to levy tariffs is not removed and requires Congressional approval (something akin to the War Powers Act, only for tariffs).
+
+Bottom line: in the near term we do think it makes sense to continue to hide in defensive and low-volatility equities in our portfolios. However, if these tariffs stay in place for an extended period and the S&amp;P 500 does fall another 10%-20%, our team believes that will present a substantial long-term opportunity. So, while we do not hope that happens, we do think this disruption will present another long-term buying opportunity.
+
+### Economic Data (What You Need to Know in Plain English)
+
+Tariffs obviously dominated the market narrative last week but while there are valid economic concerns moving forward, the reality is that March economic data was mostly “fine” and that while the U.S. economy may be losing some forward momentum, the major reports did not show a sudden drop-in activity. Put plainly, U.S. economic data is not that bad and if it were not for tariffs, this week’s data would have been perfectly Goldilocks.
+
+Inflation will come back into focus this week, and we will also get some important updates on growth. Given last week’s tariff announcements, any data that points to stagflation will only add to the already considerable, near-term market headwinds.
+
+Bottom line: This market needs some good news and the sooner the better. Benign CPI readings and better-than-expected jobless claims will not erase stagflation concerns (especially since the impact of tariffs will not show up fully in the data until April and May) but it will push back against them; and at this point, even that could help stocks stabilize.
+
+### Special Reports and Editorial
+
+#### What the Tariff Announcement Means for Markets
+
+Last week’s tariff announcement fell under our “worse-than-feared” scenario as President Trump announced a 10% baseline tariff for all imports and dramatically higher tariffs for major trading partners including China and the EU, which saw the imposition of 34% and 20% tariffs, respectively.
+
+Regarding the belief that reciprocal tariffs are tools to usher in global tariff reduction, that door was left open by the administration as the reciprocal tariffs are based on a proprietary formula that includes tariffs, other monetary barriers such as Value Added Taxes (VAT), and a subjective measure for “cheating,” such as currency manipulation. The point being, it appears that as tariffs on U.S. goods are lowered, so too would U.S. reciprocal tariffs from the U.S. While it wasn’t expressly said that these reciprocal tariffs can lead to tariff reduction, it was strongly implied (and that is a mild silver lining).
+
+From a market standpoint, the big issues now are 1) How long are these tariffs in place and 2) Are there any meaningful exemptions to these substantial tariff increases? If the answers to those questions are “a long time” and “no,” then fears of a dramatic economic slowdown will surge and that will continue to pressure stocks.
+
+From a positioning standpoint, the tariff announcements are worse than feared but they are not, as of yet, a definitive bearish game changer. Our team says that simply because we again do not know how long they will last or whether there will be enough exemptions to remove some of the sting. That said, clearly this is an incremental negative for markets and we do not expect the recent lows to hold in the S&amp;P 500.
+
+Bottom line: While the tariff announcement was not a worst-case scenario (that would have happened if there was no hope of global tariff reduction), it was an incremental negative and we should expect more market volatility in the near term (although we would not take this as a signal to materially de-risk from stocks, at least not yet).
+
+#### The Bull Case vs. the Bear Case Post Tariffs
+
+Reasonably, there is a lot of confusion and worry from investors about this market, so now that we know the tariff plans, we want to step back and lay out the bullish case for stocks (yes one still exists) and the bearish argument for stocks, so that 1) We are all well versed on these two outcomes and 2) Can confidently and clearly discuss them with clients or prospects.
+
+The Bullish Case
+
+It is not a total washout. The market is not as bad as the index performance implies and it has not been a total market wipeout. For much of yesterday, defensive sectors (XLV/XLU/XLP) were higher on the day and YTD, as each of those sectors is up about 5% YTD. Here is the point: Tech and consumer stocks are getting crushed, but this market remains far from a total wipeout that we see in typical bear markets. The index declines aside, this is still a market that is rotating from tech and consumer names to the rest of the market, and that is encouraging.
+
+The Trump Put Still Exists. This current market calamity is very different from two recent ones (the pandemic and financial crisis), in that, it is manufactured by government policy. President Trump initiated these tariffs with the stroke of a pen and he can reverse them with that same pen or via a post on Truth Social. This is not some existential crisis we cannot solve and if it is a policy error, it can be corrected. To that point, the “Trump Put” still exists, although it may be lurking with the S&amp;P 500 down 20% or 25% YTD (not a great outcome but still, it exists). More to that point, yesterday, two Senators (a Republican and a Democrat) introduced legislation for new tariffs to require Congressional approval. And while that bill will not pass, clearly Congress has taken notice of what is happening. So, while Trump may not be up for re-election, virtually everyone in Congress is, and even Republicans will only tolerate this policy for so long if it fulfills fears and causes a recession.
+
+At Least Now We Know. After three months of speculation, we now know the worst-case tariff scenario. Yes, the president can raise tariffs further if other countries retaliate, but at this point, that is not going to make a difference—We mean, the economic fallout from 56% tariffs on China or 76% tariffs on China will not be that different! The unknown tariff overhang has now been removed and while it has been replaced by worse-than-feared tariffs, the incremental direction for tariffs is now lower, not higher. To that point, as long as it is reasonable to assume these tariffs will be reduced or eliminated in three-to-six months, then this is not a bearish game changer.
+
+Obviously, tariffs are a headwind for stocks and slowdown fears are surging and markets will be under pressure for the near term. But at the same time, the tariff policy is now known, removing a major unknown, and the incremental direction could be towards fewer tariffs, not more. Finally, an economic slowdown is not a guaranteed outcome and, after all, this policy can be reversed with the stroke of a pen. Markets will stay volatile, but the bulls should view this as a long-term opportunity.
+
+The Bearish Case
+
+Welcome to the 1970s. Trump’s tariff declaration will bring back memories of President Nixon’s price controls and go down in history and a colossal policy mistake, but not before it revives stagflation as prices surge and growth slows, putting the nation in an economic vice. First, CPI and other inflation measures will jump on a combination of 1) Consumers front-running tariffs and price increases and 2) Actual price increases. And even if those are one-time disruptions and do not fuel continued inflation (which is dubious at best), the jump in prices will keep the Fed from cutting rates, leaving the economy “on its own.” In sum, it is a repeat of the 1970s, where the Fed could not help support growth and self-inflicted policy mistake after mistake pummels the U.S. economy.
+
+This market is way overvalued. At the start of the year, the consensus earnings estimate for the S&amp;P 500 was about $270/share. That is borderline laughable now. Even if the administration’s goals of a return to U.S. manufacturing are realized, it will take quarters and years for that to occur. In the meantime, corporate earnings will suffer from either 1) Margin compression as they eat tariffs, 2) Revenue reduction as consumers simply do not buy or 3) A combination of the two. Meanwhile, even if we use that $270/year EPS figure, at 5,400 the S&amp;P 500 is still trading at 20X earnings, which is easily 10% too high for a looming stagflationary environment, and we could make a credible case that if these tariffs stay on at current levels, a 15X multiple is more appropriate. That means “fair value” in the S&amp;P 500 could be more than 20% lower from here!
+
+Good news is meaningless in the near term. The administration has basically guaranteed that any good economic data or earnings results (which include the Q1 earnings season that starts next week) will be viewed as meaningless because it all happened before these tariffs. If data is good, it will be ignored for this entire month and, likely, next month as well. Meanwhile, any strong earnings are also now useless as we will have to see how companies perform in the new reality. Bad news, however, is even more meaningful. Investors are scared, so any news that contains even a hint of stagflation will only serve to exacerbate recession concerns and further pressure stocks.
+
+The Trump Put may be in the 4,000s for the S&amp;P 500. Even bears will concede this policy error can be corrected, but it appears that President Trump has a very high pain tolerance with markets and it may take a 20%-25% decline to make the policy error evident. Using history as a guide, the last time the Trump Put was elected was December 2018, when the S&amp;P 500 still fell another 10% past that and it’s not unreasonable to think we could see a 30% decline in stocks if these policies stay in place.
+
+Bottom line: This is a colossal policy mistake and the only question now is, how bad does it get? Unless these policies are reversed soon, the likely answer is… a lot worse.
+
+Our professional thought is that we have found technical support here at around 4850 +/- on the SP500 and are looking for anywhere from a 6-10% of completely oversold conditions. We are beginning to see a washout of supply and believe demand will pick up very quickly and violently.
+
+<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-3.png" alt="Market Multiple Levels Chart"><figcaption>Market Multiple Levels Chart</figcaption></figure>
+
+### Ready to Navigate These Markets Together?
+
+Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

@@ -98,6 +98,13 @@
   --dur-mid:  280ms;
   --dur-slow: 900ms;
 
+  /* Shared "shine" band for the site-wide hero-text sweep (see
+     @keyframes vemGoldSweep below). A soft light highlight; consumers
+     recolor the underlying text via background-color, not this gradient. */
+  --shine-band: linear-gradient(105deg,
+    transparent 38%, rgba(207,222,248,0.55) 47%, #EAF2FF 50%,
+    rgba(207,222,248,0.55) 53%, transparent 62%);
+
   /* ---- z-index scale --------------------------------------------- */
   --z-base: 1;
   --z-hero-content: 20;
@@ -127,6 +134,20 @@ a { color: inherit; text-decoration: none; }
                                           elements there on Tab. var(--accent) follows scope. */
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* ===== Hero-text "shine" — single source of truth for the whole site =====
+   One soft light band sweeps once across the gold/blue fill, then rests
+   (off-screen at both loop ends, so the restart is invisible). Ration this:
+   true hero/display headlines only — one or two signature moments per page,
+   never section headings, buttons, or body copy. Consumers supply their own
+   fill via background-color + var(--shine-band) and this shared timing
+   curve; see css/hero.css .light-hero .hero__title em for the reference
+   consumer, or css/brochure.css .bro-h em for a gated (on-reveal) one. */
+@keyframes vemGoldSweep {
+  0%   { background-position: 90% 0; }   /* band off the LEFT edge */
+  45%  { background-position: 10% 0; }   /* swept across to off the RIGHT edge */
+  100% { background-position: 10% 0; }   /* rest (solid fill) before looping */
 }
 
 /* ===== Buttons — single source of truth for every page ===== */

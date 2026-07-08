@@ -16,7 +16,7 @@ body.bro {
   --accent-glow:  rgba(92, 124, 184, 0.45);
 }
 
-   Centerpiece: the 3D "process orbit" on the Investment Process slide —
+/* Centerpiece: the 3D "process orbit" on the Investment Process slide —
    a tilted concentric-ring scene (universe outside -> portfolio core)
    that responds to the pointer and opens stage explanations on click.
    Print stylesheet at the bottom turns the same page into a handout.
@@ -138,22 +138,46 @@ body.bro {
   line-height: 1.04; letter-spacing: var(--tracking-tight);
   font-size: clamp(2rem, 1rem + 3.4vw, 3.5rem);
   margin: 0;
+  /* Explicit pin (not just inherited from .bro) so a future regression can't
+     silently darken headings on dark slides again. */
+  color: var(--vem-white);
 }
-/* Light-blue heading accents carry the same animated "shine" sweep as the cover. */
+.slide--light .bro-h { color: var(--vem-ink); }
+/* Gold heading accents on dark slides — the site-wide gold "shine" signature
+   (see css/tokens.css --shine-band / @keyframes vemGoldSweep), triggered the
+   first time the deck marks a slide .is-in (sticky — stays lit after that).
+   Static gold is the fallback before that class lands (first paint, no-JS). */
 .bro-h em {
   font-style: italic;
-  background: linear-gradient(100deg, var(--vem-blue-soft) 20%, #DCE7F7 40%, var(--vem-blue) 55%, var(--vem-blue-soft) 75%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text; background-clip: text;
+  color: var(--vem-gold);
+}
+.slide.is-in:not(.slide--light) .bro-h em {
   color: transparent;
-  animation: blueSweep 7s var(--ease-soft) infinite;
+  background-color: var(--vem-gold);
+  background-image: var(--shine-band);
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: vemGoldSweep 5.5s var(--ease-soft) infinite;
 }
 .slide--light .bro-h em {
-  /* deeper blues so the shine still reads on white slides.
-     NB: the `background` shorthand resets background-clip, so re-assert it here. */
+  /* Gold-on-white fails AA for this size, so light slides keep the deep-blue
+     shine instead. NB: the base rule's fallback `color: var(--vem-gold)` is
+     opaque now (it needs to be, for the dark-slide pre-.is-in fallback), so
+     this must re-assert `color: transparent` itself — it can no longer rely
+     on inheriting it from the base rule. */
+  color: transparent;
   background: linear-gradient(100deg, var(--accent-deep) 20%, var(--vem-blue) 50%, var(--accent-deep) 80%);
   background-size: 220% 100%;
   -webkit-background-clip: text; background-clip: text;
+  animation: blueSweep 7s var(--ease-soft) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-in:not(.slide--light) .bro-h em {
+    animation: none; background: none;
+    color: var(--vem-gold); -webkit-text-fill-color: var(--vem-gold);
+  }
 }
 
 .bro-lead {
@@ -186,14 +210,28 @@ body.bro {
   font-size: clamp(2.2rem, 1.2rem + 3.1vw, 3.7rem); line-height: 1.04;
   letter-spacing: var(--tracking-tight); margin: 0; max-width: 14ch;
   text-shadow: 0 2px 18px rgba(4,10,22,0.55);
+  /* Explicit pin — the cover is always a dark image slide. */
+  color: var(--vem-white);
 }
 .cover__title em {
   font-style: italic;
-  background: linear-gradient(100deg, var(--vem-blue-soft) 20%, #DCE7F7 40%, var(--vem-blue) 55%, var(--vem-blue-soft) 75%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text; background-clip: text;
+  color: var(--vem-gold);
+}
+.slide.is-in .cover__title em {
   color: transparent;
-  animation: blueSweep 7s var(--ease-soft) infinite;
+  background-color: var(--vem-gold);
+  background-image: var(--shine-band);
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: vemGoldSweep 5.5s var(--ease-soft) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-in .cover__title em {
+    animation: none; background: none;
+    color: var(--vem-gold); -webkit-text-fill-color: var(--vem-gold);
+  }
 }
 @keyframes blueSweep { 0%,100%{ background-position: 0% 0; } 50%{ background-position: 100% 0; } }
 .cover__line {
