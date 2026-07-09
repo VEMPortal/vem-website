@@ -639,10 +639,10 @@
    navy gradient — so the upper screen is clean, readable footage and the
    headline stays legible at the bottom. */
 @media (max-width: 760px) {
-  .hero { min-height: 100svh; align-items: flex-end; }
+  .hero { min-height: 100svh; align-items: center; }
   .hero__inner {
     grid-template-columns: 1fr;
-    padding-top: clamp(84px, 15vh, 120px);
+    padding-top: clamp(64px, 9vh, 88px);
     padding-bottom: clamp(40px, 8vh, 72px);
     gap: 0;
   }
