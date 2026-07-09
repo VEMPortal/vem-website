@@ -136,7 +136,7 @@
         slides[idx].classList.add("is-active");
         slides[idx].removeAttribute("aria-hidden");
         // NOTE: height is intentionally NOT touched here — the box stays fixed.
-      }, 7000);
+      }, 10000);
     }
   }
 
