@@ -661,6 +661,12 @@
       rgba(11, 31, 68, 0.28) 72%,
       rgba(11, 31, 68, 0.72) 100%);
   }
+  /* Eyebrow sits over the brighter upper zone of the mobile crop — gold
+     reads poorly there; switch to the same blue desktop's light-hero mode
+     already uses. The gold headline emphasis (.hero__title em) stays gold
+     per house style — it uses the base (non-light-hero) gold-shine rule. */
+  .hero__eyebrow { color: var(--vem-blue-deep); }
+  .hero__eyebrow::before { background: var(--vem-blue-deep); }
 }
 
 /* ------------------------- Entrance motion ------------------------- */
@@ -715,20 +721,27 @@
    Same colonnade image — bright frosted-glass overlay, navy text,
    blue accents. The navy stat card stays and pops against the light.
    ===================================================================== */
-.light-hero .hero__scrim {
-  background:
-    linear-gradient(90deg,
-      rgba(245, 247, 250, 0.68) 0%,
-      rgba(245, 247, 250, 0.44) 40%,
-      rgba(245, 247, 250, 0.14) 74%,
-      rgba(245, 247, 250, 0.04) 100%),
-    linear-gradient(180deg,
-      rgba(245, 247, 250, 0.00) 58%,
-      rgba(245, 247, 250, 0.26) 100%);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
+/* Desktop only (min-width: 761px, the exact complement of the mobile
+   @media (max-width: 760px) block above) — on mobile these rules were
+   unguarded and silently overrode the mobile dark scrim / light text
+   colors that mobile legibility depends on, since they carry equal
+   specificity and sit later in source order. */
+@media (min-width: 761px) {
+  .light-hero .hero__scrim {
+    background:
+      linear-gradient(90deg,
+        rgba(245, 247, 250, 0.68) 0%,
+        rgba(245, 247, 250, 0.44) 40%,
+        rgba(245, 247, 250, 0.14) 74%,
+        rgba(245, 247, 250, 0.04) 100%),
+      linear-gradient(180deg,
+        rgba(245, 247, 250, 0.00) 58%,
+        rgba(245, 247, 250, 0.26) 100%);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+  }
+  .light-hero .hero__grain { mix-blend-mode: multiply; opacity: 0.04; }
 }
-.light-hero .hero__grain { mix-blend-mode: multiply; opacity: 0.04; }
 
 /* Over the light hero (not scrolled): soft LIGHT vignette + NAVY logo/nav.
    On scroll → see-through blue bar → white logo/nav (base rules). */
@@ -766,44 +779,48 @@
   }
 }
 
-/* Text → navy, accents → blue */
-.light-hero .hero__eyebrow { color: var(--vem-blue-deep); }
-.light-hero .hero__eyebrow::before { background: var(--vem-blue-deep); }
-.light-hero .hero__title { color: var(--vem-navy); }
-/* Gold/blue "shine" — the site-wide signature (see css/tokens.css
-   --shine-band / @keyframes vemGoldSweep). This was the original reference
-   implementation the sweep was standardized from. */
-.light-hero .hero__title em {
-  color: transparent;
-  background-color: var(--accent);
-  background-image: var(--shine-band);
-  background-size: 300% 100%;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: vemGoldSweep 5.5s var(--ease-soft) infinite;
+/* Text → navy, accents → blue. Desktop only (min-width: 761px) — see the
+   note above the .light-hero .hero__scrim block for why these must not
+   apply on mobile. */
+@media (min-width: 761px) {
+  .light-hero .hero__eyebrow { color: var(--vem-blue-deep); }
+  .light-hero .hero__eyebrow::before { background: var(--vem-blue-deep); }
+  .light-hero .hero__title { color: var(--vem-navy); }
+  /* Gold/blue "shine" — the site-wide signature (see css/tokens.css
+     --shine-band / @keyframes vemGoldSweep). This was the original reference
+     implementation the sweep was standardized from. */
+  .light-hero .hero__title em {
+    color: transparent;
+    background-color: var(--accent);
+    background-image: var(--shine-band);
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: vemGoldSweep 5.5s var(--ease-soft) infinite;
+  }
+  .light-hero .hero__lead { color: var(--vem-gray-text); }
+  .light-hero .hero__cue { color: var(--vem-navy); }
+  .light-hero .hero__cue-line { background: rgba(34, 49, 104, 0.30); }
+  .light-hero .hero__cue-line::after { background: var(--vem-blue-deep); }
+
+  /* Ghost button becomes dark-on-light IN THE HERO ONLY (other ghosts unaffected) */
+  .light-hero .hero__actions .btn--ghost {
+    background: transparent;
+    color: var(--vem-navy);
+    border-color: rgba(34, 49, 104, 0.35);
+  }
+  .light-hero .hero__actions .btn--ghost:hover {
+    background: rgba(34, 49, 104, 0.06);
+    border-color: rgba(34, 49, 104, 0.6);
+  }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (min-width: 761px) and (prefers-reduced-motion: reduce) {
   .light-hero .hero__title em {
     animation: none;
     background: none;
     color: var(--accent);
     -webkit-text-fill-color: var(--accent);
   }
-}
-.light-hero .hero__lead { color: var(--vem-gray-text); }
-.light-hero .hero__cue { color: var(--vem-navy); }
-.light-hero .hero__cue-line { background: rgba(34, 49, 104, 0.30); }
-.light-hero .hero__cue-line::after { background: var(--vem-blue-deep); }
-
-/* Ghost button becomes dark-on-light IN THE HERO ONLY (other ghosts unaffected) */
-.light-hero .hero__actions .btn--ghost {
-  background: transparent;
-  color: var(--vem-navy);
-  border-color: rgba(34, 49, 104, 0.35);
-}
-.light-hero .hero__actions .btn--ghost:hover {
-  background: rgba(34, 49, 104, 0.06);
-  border-color: rgba(34, 49, 104, 0.6);
 }

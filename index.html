@@ -57,8 +57,8 @@
   <!-- Preload the LCP hero image, scoped by viewport so each only fetches what it
        shows. Desktop (>=761px) = colonnade poster (video's first frame). Mobile
        (<=760px) = the first crossfade slide (Dallas skyline). -->
-  <link rel="preload" as="image" href="assets/img/hero-advisor.jpg" type="image/jpeg" media="(min-width: 761px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="assets/img/hero-advisor-mobile.jpg" type="image/jpeg" media="(max-width: 760px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor.jpg?v=2" type="image/jpeg" media="(min-width: 761px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor-mobile.jpg?v=2" type="image/jpeg" media="(max-width: 760px)" fetchpriority="high" />
 
   <!-- Fonts: self-hosted (Cinzel logo · Cormorant display · Hanken Grotesk body).
        The external Google Fonts stylesheet was the ONLY render-blocking resource
@@ -72,7 +72,7 @@
   <link rel="stylesheet" href="css/fonts.css?v=1" />
 
   <link rel="stylesheet" href="css/tokens.css?v=86" />
-  <link rel="stylesheet" href="css/hero.css?v=88" />
+  <link rel="stylesheet" href="css/hero.css?v=92" />
   <link rel="stylesheet" href="css/sections.css?v=89" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
   <!-- Reuses the contact.html form styling (.contact-form/.field/.form-status) for the
@@ -233,8 +233,8 @@
            (navy pinstripe + gold tie = the VEM palette). Figure weighted right,
            headline sits over the darker sky on the left. -->
       <picture>
-        <source media="(max-width: 760px)" srcset="assets/img/hero-advisor-mobile.jpg" />
-        <img class="hero__poster" src="assets/img/hero-advisor.jpg"
+        <source media="(max-width: 760px)" srcset="assets/img/hero-advisor-mobile.jpg?v=2" />
+        <img class="hero__poster" src="assets/img/hero-advisor.jpg?v=2"
              alt="" width="1280" height="720" fetchpriority="high" />
       </picture>
       <!-- PREVIEW: still-only hero. The looping video's footage was intrinsically
