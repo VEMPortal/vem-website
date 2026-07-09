@@ -57,9 +57,6 @@
   color: var(--on-dark-80);
   white-space: nowrap;
 }
-@media (max-width: 1340px) and (min-width: 1181px) {
-  .brand__word { display: none; }   /* icon-only logo when the bar gets tight */
-}
 @media (max-width: 560px) {
   /* Logo + name on mobile — larger & bolder so it reads clearly */
   .brand__word { font-size: 0.74rem; letter-spacing: 0.03em; font-weight: 700; }
