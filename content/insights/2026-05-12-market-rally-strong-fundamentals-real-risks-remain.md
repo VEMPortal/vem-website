@@ -29,11 +29,11 @@ disclosure: |
 <figure>
   <picture>
     <source type="image/webp" srcset="/assets/img/insights/sp500-may-2026.webp?v=4" />
-    <img src="/assets/img/insights/sp500-may-2026.png?v=4" alt="S&amp;P 500 technical summary. Technical View: the S&amp;P 500 surged to new record highs in mid-April, shifting the primary trend back to bullish but amid a sense of caution regarding sustainability. Primary Trend: bullish since the week of April 13, 2026. Key Resistance Range: 7440 to 7540. Key Support Range: 7235 to 7126. The panel includes a weekly candlestick chart showing the rally toward a recent high near 7,401." />
+    <img src="/assets/img/insights/sp500-may-2026.png?v=4" alt="S&amp;P 500 technical summary. Technical View: the S&amp;P 500 surged to new record highs in mid-April, shifting the primary trend back to bullish but amid a sense of caution regarding sustainability. Primary Trend: bullish since the week of April 13, 2026. Key Resistance Range: 7440 to 7540. Key Support Range: 7235 to 7126. The panel includes a weekly candlestick chart showing the rally toward a recent high near 7,401." loading="lazy" />
   </picture>
 </figure>
 
-## Market Rally: Strong Fundamentals, But Real Risks Remain
+## Three Risks That Could Threaten This Rally
 
 The market rally over the past six weeks has been impressive, not only because of its size, with the S&P 500 rising nearly 20% from its recent low, but also because the rally has had fundamental support behind it.
 

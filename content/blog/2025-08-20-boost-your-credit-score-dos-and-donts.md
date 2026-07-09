@@ -39,7 +39,7 @@ If you have a credit card with a $10,000 limit, try to keep your balance below $
 - Don't Apply for Too Much New Credit at Once: Multiple hard inquiries in a short time can signal financial distress, potentially lowering your score by 5-10 points per inquiry. Space out applications by at least 6 months when possible.
 - Don't Ignore Your Debt: Ignoring debt can lead to collections, which can severely damage your credit score for up to 7 years. If you're struggling to pay, reach out to your lenders to discuss payment plans or hardship options.
 
-#### Warning Signs to Avoid:
+### Warning Signs to Avoid:
 
 - Missing even one payment (can drop score by 60-110 points)
 - Maxing out credit cards

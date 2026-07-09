@@ -9,9 +9,9 @@ pdf: assets/docs/VEM-Financial-Market-Insight-2024-08-21.pdf
 status: published
 summary: "The week of August 5, 2024, begins with a major global market sell-off following the Bank of Japan's decision to tighten monetary policy."
 ---
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - The Growth Scare Is Here (What It Means for Markets)
 - Weekly Market Preview: How Far Can This Pullback Go?
@@ -24,9 +24,9 @@ The interconnectedness of global financial markets means that Japan's financial 
 
 Despite the recent pullback and selling pressures, the analyst community remains sanguine over earnings prospects, not just for U.S. companies, but for global markets as well. Earnings are expected to grow over the next two years for the major markets (U.S., Japan, Europe, and Emerging Markets) even if that growth trajectory starts to slow down. Near-term liquidity-driven selling could eventually give way to long-term earnings growth reality.
 
-### Stocks
+## Stocks
 
-#### S&amp;P 500
+### S&amp;P 500
 
 - Technical View: The medium-term trend in the S&amp;P 500 has shifted from bullish to neutral as the uptrend line off the October 2023 lows was violated last week.
 - Dow Theory: Bullish (since the week of July 10, 2023)
@@ -35,17 +35,17 @@ Despite the recent pullback and selling pressures, the analyst community remains
 
 The S&amp;P 500 fell sharply last week thanks to disappointing economic data as the economic growth scare finally arrived and pushed the S&amp;P 500 to multi-week lows.
 
-<figure><img src="/assets/img/insights/2024-08-21-financial-market-insight-2024-08-21-2.png" alt="S&amp;P 500 Weekly Candle Chart"><figcaption>S&amp;P 500 Weekly Candle Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-08-21-financial-market-insight-2024-08-21-2.png" alt="S&amp;P 500 Weekly Candle Chart" loading="lazy"><figcaption>S&amp;P 500 Weekly Candle Chart</figcaption></figure>
 
 ✓ What is Outperforming: Defensive sector, minimum volatility, and sectors linked to higher rates have relatively outperformed recently as markets have become more volatile.
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-### Market Recap
+## Market Recap
 
 Domestic stocks attempted to stabilize into the middle of last week as tech earnings suggested Al-driven growth prospects were still intact; however, bad economic data Thursday and Friday led to a resurgence in recession concerns that saw the S&amp;P 500 roll over to end the week down 2.06%. The index is now up 12.09% YTD.
 
-#### The Growth Scare is Here
+### The Growth Scare is Here
 
 The growth scare that our investment team has been worried about finally appeared last week courtesy of the soft ISM Manufacturing PMI and jobs report and the result was a sharp drop in the S&amp;P 500 and a collapse in Treasury yields (to nearly six-month lows). Additionally, on Friday we heard countless mentions across the financial media of recession risks and possibilities.
 
@@ -61,7 +61,7 @@ Looking forward, is a recession that hits stocks hard possible? Absolutely, and 
 
 Bottom line: The growth scare is here. We are reducing volatility in our equity portfolios via defensive sectors and lower volatile names because we doubt it is over yet. Last week's data just told us, unequivocally, that growth is slowing, and the market finally had to listen. That does not mean a contraction or recession is imminent and as such we do not think de-risking via raising cash is appropriate unless you are sure you can get back in appropriately, because the outlook for this market has not significantly changed as much as the price action implies.
 
-### Economic Data (What You Need to Know in Plain English)
+## Economic Data (What You Need to Know in Plain English)
 
 Economic data was almost universally disappointing last week, and two of the three major monthly economic reports pointed to an economy now losing momentum and those weak readings spiked economic growth concerns and sent stocks lower and Treasuries higher. The big report last week was on July jobs, and it was the weakest report in a long time. Job adds were 114k, far below the 170k estimate and the lowest number in several years. The unemployment rate, meanwhile, rose to 4.3%, above the 4.1% expectation and the highest reading since October 2021. Perhaps most disconcertingly, the U-6 under-employment rate rose to 7.8% from 7.4%, the highest level in several years.
 
@@ -79,6 +79,6 @@ However, looking beyond the next several weeks, the Fed's increased urgency rega
 
 The Fed is going to cut more because they are worried about growth. The market is not worried about growth at all. That setup does not usually end well in our estimation and as such, we do think it is best to continue to gradually and systematically reduce volatility in our tactical holdings while maintaining long exposure because if we get a growth scare, Fed rate cuts will not be able to stop the correction and high-beta and cyclical will get hit hard.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - When Could the Selling Stop?
 - Weekly Economic Cheat Sheet
@@ -36,13 +36,13 @@ President Biden and St. Louis Fed President, Jim Bullard, both downplayed the th
 
 For this morning's relief rally to continue today the market will need to see stable price action in bond markets, economic data meet or beat expectations, and Fed officials to maintain an optimistic tone as that could see the S&amp;P 500 test near term resistance between 3,780 and 3,840.
 
-### Stocks
+## Stocks
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities is bearish confirmed by the most-recent drop to new 52-week lows for the S&amp;P 500. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3790, 3901, 4018. Key Support Levels: 3627, 3534, 3369.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities is bearish confirmed by the most-recent drop to new 52-week lows for the S&amp;P 500. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3790, 3901, 4018. Key Support Levels: 3627, 3534, 3369.</figcaption></figure>
 
-#### When Could THE SELLING STOP????
+### When Could THE SELLING STOP????
 
 As we all are painfully aware if you have been watching your investment accounts, stocks were hammered last week because of two main reasons: A bigger-than-expected rate hike and exploding expectations of an imminent recession. Those two forces combined with extreme negativity and investor hopelessness sent the major indices to fresh lows of 3,666 on the S&amp;P 500.
 
@@ -56,11 +56,11 @@ Beyond the short term, our "Gets Worse If" target range in the S&amp;P 500 has b
 
 From a catalyst standpoint to regain a bullish longer term uptrend, our "Three Keys to a Bottom" remain in effect and none have been reached yet. Those three keys remain: peak Fed hawkishness, peak inflation, and declining geopolitical risk; so, we can't say a bottom is in YET. In the short term for stocks to bounce from here, oil dropping would be a material positive, as it would take pressure off inflation metrics and potentially lay the foundation for disinflation in the coming months. If oil can sustainably drop, stocks can rally (but again that's not a bottom).
 
-<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas table"><figcaption>Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%). "Stocks collapsed again last week thanks to a bigger-than-expected rate hike and increasing expectations for an imminent recession." Tactical Allocation Ideas — What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas table" loading="lazy"><figcaption>Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%). "Stocks collapsed again last week thanks to a bigger-than-expected rate hike and increasing expectations for an imminent recession." Tactical Allocation Ideas — What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 The Fed was the market's main focus last week as the 75-bps rate hike was the largest in 28 years; however, there were notable, and mostly negative, economic developments as well. The combination of an increasingly hawkish and aggressive Fed and deteriorating economic data, weighed heavily on risk assets over the course of the week as recession and stagflation fears rose considerably.
 
@@ -70,13 +70,13 @@ Regarding economic projections, the Fed expects the labor market to remain stron
 
 Finally, Powell said that 75-bps hikes are not going to be typical going forward, which is the comment that the market most strongly reacted to as it rallied to session highs shortly after, but he also noted that a soft landing is becoming increasingly difficult to envision.
 
-#### Bottom Line
+### Bottom Line
 
 It is becoming increasingly apparent that the two possible paths forward are 1) The Fed doesn't hike enough and falls behind the curve entrenching inflation for the foreseeable future, or 2) They overtighten and choke off growth sending the economy into a recession. That binary outcome is largely the reason stocks dropped so sharply on Thursday.
 
 Last week's developments were not positive for markets as the Fed confirmed it is getting more aggressive in its inflation fight while economic data very clearly showed a loss of positive momentum in growth and sentiment in the face of the highest inflation pressures in decades. As such, it is going to be increasingly difficult for the Fed to pull off a soft landing and not trigger a recession in the months and quarters ahead.
 
-#### Important Economic Data This Week
+### Important Economic Data This Week
 
 The economic data for this week slows significantly; however, there are a slew of Fed officials speaking over the course of the next few days. What the market does not want to hear is increasing concerns about a recession given recent economic data, or hints, that the Fed may not get to its year-end fed funds target; as that would result in renewed fears that the Fed will fall behind the curve and allow 1970s-style inflation.
 
@@ -86,9 +86,9 @@ For stocks to stabilize we will want to see jobless claims fall back from recent
 
 Bottom line, investor doubts about the Fed's ability to pull off a soft landing have grown considerably over the last two weeks and that is a clear negative for stocks and other risk assets. But if data begins to reverse those doubts in the near term with inflation fears easing, and economic data firming, stocks could stabilize as the prospects of a soft landing would improve. Given the latest economic data, however, that is becoming a long shot.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
-<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-4.png" alt="Commodities outlook table with intro commentary"><figcaption>Commodities: Neutral. "Commodities were volatile last week with industrial metals and energy declining sharply on growth fears and a firming dollar while precious metals relatively outperformed due to rising demand for safe havens. If growth fears persist and the dollar continues to rally, we could be nearing the end of the longer-term uptrend in commodities."</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-4.png" alt="Commodities outlook table with intro commentary" loading="lazy"><figcaption>Commodities: Neutral. "Commodities were volatile last week with industrial metals and energy declining sharply on growth fears and a firming dollar while precious metals relatively outperformed due to rising demand for safe havens. If growth fears persist and the dollar continues to rally, we could be nearing the end of the longer-term uptrend in commodities."</figcaption></figure>
 
 Commodities were volatile last week as industrial metals and energy were hit hard on recession fears and a rising dollar, while gold declined but relatively outperformed thanks to elevated demand for safe havens amid the broader market turmoil.
 
@@ -96,16 +96,16 @@ WTI crude oil futures dropped a sizeable 9.62% after testing the early March hig
 
 Copper dropped sharply on Friday amid increasing concerns about a looming global recession. Copper ended down 6.24% on the week. The drop below support at $4.08 was a negative anecdotal signal from the industrial metals market that the global economy is not only losing momentum, but we may indeed be on the brink of a recession. We will look for copper to stabilize as one factor that could suggest we are nearing a bottom in the latest equity rout.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-3.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: The rally in the gold market has lost momentum in Q2; however, the medium- to longer-term trend remains bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1875, $1900, $1924. Key Support Levels: $1810, $1792, $1769.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-3.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: The rally in the gold market has lost momentum in Q2; however, the medium- to longer-term trend remains bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1875, $1900, $1924. Key Support Levels: $1810, $1792, $1769.</figcaption></figure>
 
 Gold fell to a more modest 1.78% on the week and unlike copper, gold futures were able to hold above near-term technical support at $1,810. The pullback in bond yields into the end of the week helped offset a rise in the dollar and fading inflation expectations due to the Fed's 75-bps hike. The odds of a breakdown in gold will rise in lockstep with the dollar and yields as they are the two biggest headwinds for yield-less safe havens right now.
 
-### Oil Market Update
+## Oil Market Update
 
 The oil market has begun to take another breather from the rally that occurred over the last five weeks or so thanks to growth concerns weighing on the demand outlook. However, the ongoing war in Ukraine will likely keep a bid under the market from a supply standpoint until we see some resolution in the conflict as there is still no replacement for Russian exports that have been suppressed by sanctions since Russia invaded Ukraine.
 
-#### Chart 1: Current Valuation
+### Chart 1: Current Valuation
 
-<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-5.png" alt="Chart 1 Current Valuation: normalized distribution of quarterly forward operating P/E histogram since 1988"><figcaption>Chart 1 — Current Valuation: Normalized Distribution of Quarterly Forward Operating P/E Since 1988 (updated as of 6/16/2022, 2Q 2022). Mean: 18.08. Median: 17.00. Mode: 15. Current FOPE: 15.63. Standard Deviation: 4.69. Previous Qtr FOPE: 20.18. FOPE Qtr Change: -4.55. Source data is provided by Standard &amp; Poor's Financial Services, LLC. The above normalized histogram of data is calculated using the most recent Quarter end S&amp;P 500 Index value divided by S&amp;P 500 Index forward operating earnings estimates.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-06-21-financial-market-insight-2022-06-21-5.png" alt="Chart 1 Current Valuation: normalized distribution of quarterly forward operating P/E histogram since 1988" loading="lazy"><figcaption>Chart 1 — Current Valuation: Normalized Distribution of Quarterly Forward Operating P/E Since 1988 (updated as of 6/16/2022, 2Q 2022). Mean: 18.08. Median: 17.00. Mode: 15. Current FOPE: 15.63. Standard Deviation: 4.69. Previous Qtr FOPE: 20.18. FOPE Qtr Change: -4.55. Source data is provided by Standard &amp; Poor's Financial Services, LLC. The above normalized histogram of data is calculated using the most recent Quarter end S&amp;P 500 Index value divided by S&amp;P 500 Index forward operating earnings estimates.</figcaption></figure>

@@ -9,9 +9,9 @@ pdf: assets/docs/VEM-Financial-Market-Insight-2026-01-14.pdf
 status: published
 summary: "Technical View: The January rally to record highs shifted the technical outlook from cautious to bullish, albeit with only moderate conviction given momentum…"
 ---
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - How Much Uncertainty Can Markets Withstand?
 - Market Preview: Can Treasury Yields Remain Stable? (CPI, Possible SCOTUS decision, Fed concerns)
@@ -19,9 +19,9 @@ summary: "Technical View: The January rally to record highs shifted the technica
 - What is Cheap and What is Not at the Start of 2026
 - What Could Make Markets Decline in 2026?
 
-### Stocks
+## Stocks
 
-##### S&amp;P 500
+### S&amp;P 500
 
 Technical View: The January rally to record highs shifted the technical outlook from cautious to bullish, albeit with only moderate conviction given momentum readings.
 
@@ -41,7 +41,7 @@ Stocks rallied last week on the first full 'back to work' week of the year, as e
 
 ✓ What is Underperforming: Defensive sectors, energy.
 
-#### How Much Uncertainty Can the Market Withstand?
+### How Much Uncertainty Can the Market Withstand?
 
 Markets are often said to dislike uncertainty. That view has been tested over the past year, as stocks have advanced despite rising uncertainty around trade policy, immigration, geopolitics, and, more recently, the government's relationship with industries and corporations. Even if markets can absorb a meaningful amount of uncertainty, it is not clear that they can absorb unlimited uncertainty. Policy volatility from Washington could become a headwind for stocks in the year ahead.
 
@@ -60,9 +60,9 @@ To be clear, many of these proposals cannot be implemented by decree and would r
 
 So far, markets have remained resilient, helped by offsets such as stimulus. However, persistent and widening uncertainty can eventually take a toll. We are not there yet, but the risk is rising and deserves close attention.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 Goldilocks economic data remained a key support for the rally so far as we kick off the year 2026. The latest releases pointed out steady, unspectacular growth that reduced slowdown concerns without forcing a more hawkish shift in rate cut expectations.
 
@@ -76,11 +76,11 @@ This month's data continued the "stable but not overheating" backdrop. That comb
 
 Looking ahead, the same two variables will matter most for the remainder of the month: inflation and the consumer. Softer CPI and Core CPI readings would improve the odds of additional rate cuts and add support for stocks, while retail sales and jobless claims will tell us whether consumer demand and the labor market are holding up. Goldilocks data was an underappreciated tailwind in 2025, and the market will need that balance to continue in 2026.
 
-### What is Cheap and What is Not at the Start of 2026
+## What is Cheap and What is Not at the Start of 2026
 
 What is cheap and what is expensive in our current market? That is a question many investors ask at the start of the year as they consider allocation decisions. Our investment team reviewed sector valuations to identify where there is meaningful value and where valuations look stretched as 2026 begins.
 
-#### How we evaluate valuations
+### How we evaluate valuations
 
 While we rely on several metrics for simplicity, we want to focus on just two metrics:
 
@@ -90,7 +90,7 @@ Price to earnings to growth (P/E/G): Forward P/E alone can be misleading because
 
 A sector looks most attractively valued when it ranks in the lower portion of both forward PE and PEG. Based on that screen, three sectors stand out as attractively valued: Financials (XLF), Communication Services (XLC), and Utilities (XLU).
 
-##### Sector Valuations to Start 2026
+#### Sector Valuations to Start 2026
 
 | Sector | Forward P/E Ratio | PEG Ratio | Assessment |
 |---|---|---|---|
@@ -106,27 +106,27 @@ A sector looks most attractively valued when it ranks in the lower portion of bo
 | XLP Consumer Staples | 18.8X | 5.19 | Richly Valued |
 | XLRE Real Estate | 34.6X | 6.80 | Richly Valued |
 
-#### Sectors that look attractively valued
+### Sectors that look attractively valued
 
-##### Financials (XLF)
+#### Financials (XLF)
 
 Financials trade is at the second-lowest forward P/E at 16.8 times, well below the S&amp;P 500 near 22 times. More importantly, financials are the cheapest of the 11 sector SPDRs on a P/E/G basis and the only sector below 2.0. That combination is notable given the sector's strong 2025 and supportive fundamentals, including solid employment, elevated interest rates, generally low delinquency levels, and potential cost savings from AI adoption.
 
-##### Communication Services (XLC)
+#### Communication Services (XLC)
 
 Communication Services is also screened as relatively inexpensive despite heavy exposure to major AI leaders. XLC trades at the third-lowest forward P/E at 18.1 times and the fourth-lowest P/E/G at 2.39. META, GOOGL, and NFLX comprise roughly half of the ETF, yet overall sector valuation remains anchored by slower growth, more traditional media and cable businesses. The result is a more valuation-conscious way to maintain exposure to large platform companies as 2026 unfolds.
 
-##### Utilities (XLU)
+#### Utilities (XLU)
 
 Utilities rank well in both measures, with the fourth-lowest forward P/E and the fifth-lowest P/E/G out of 11 sectors. Utilities have benefited from AI-related power demand themes, but the sector has pulled back from its heights. Valuations are not deeply discounted, but they look reasonable for investors who want income, stability, and more defensive characteristics.
 
-#### Sectors that look richly valued
+### Sectors that look richly valued
 
 On the other end of the spectrum, three sectors screen as relatively expensive based on being in the upper range of forward PE, PEG, or both: Consumer Discretionary (XLY), Industrials (XLI), and Consumer Staples (XLP). Rich valuation does not prevent future outperformance, but it does raise the bar and is worth considering when sizing exposure.
 
 Our valuation work suggests Financials, Communication Services, and Utilities offer a more attractive balance of price and growth entering 2026, while Consumer Discretionary, Industrials, and Consumer Staples look more fully valued.
 
-### What Could Make Markets Decline in 2026?
+## What Could Make Markets Decline in 2026?
 
 Can anything make the market go down? Some investors are asking that question because the S&amp;P 500 has started 2026 the way it ended 2025, pushing higher while shrugging off unsettling headlines, persistent geopolitical risk, and mixed economic signals. The answer is simple. Yes, several things can drive stocks lower.
 
@@ -134,19 +134,19 @@ You may not hear much about those risks right now. Bloomberg reported that none 
 
 With that in mind, here are three developments that could realistically pressure stocks in 2026. Our investment team is not predicting these outcomes, but they are worth monitoring.
 
-#### 1. A sharp, sustained rise in Treasury yields
+### 1. A sharp, sustained rise in Treasury yields
 
 The last time yields rose quickly and unexpectedly, in 2022, stocks suffered a major drawdown. Several forces could push yields higher in 2026, including uncertainty around the Supreme Court IEEPA tariff decision and the selection of the next Federal Reserve chair. The larger risk is confidence in Fed independence. If markets start to believe monetary policy is becoming more politically influenced, long-term inflation expectations and term premiums can rise, which tends to lift Treasury yields and compress equity valuations.
 
 Inflation is still above the Fed's 2 percent target, and tariffs are likely to remain in some form. In that environment, premature easing or reduced confidence in Fed independence could create conditions for a meaningful yield spike. If yields move sustainably above 4.50 percent, that can become a direct headwind for stocks.
 
-#### 2. A faster-than-expected economic slowdown
+### 2. A faster-than-expected economic slowdown
 
 The labor market is currently in a no-hire, no-fire posture, which can change quickly if growth weakens. Households are still dealing with the effects of elevated inflation, and employment risk is rising as technology continues to reshape hiring. We also saw evidence of slowing momentum in the second half of 2025.
 
 Employment has been the stabilizer that has helped consumers absorb higher prices. If the unemployment rate rises to 5% or higher in early 2026, the probability of a broader slowdown increases, and that would likely weigh on equities. Economic contractions are not rare historical events. They can happen, and markets reprice quickly when they do.
 
-#### 3. A reset in AI expectations
+### 3. A reset in AI expectations
 
 AI has been a major driver of market performance for nearly three years, but expectations are now very high. Investors are increasingly demanding proof of returns on the massive spending underway in AI infrastructure. As first-quarter earnings approach, large technology firms will face tougher questions about how hundreds of billions in capital spending will convert into measurable, durable profitability.
 
@@ -154,6 +154,6 @@ Even if the rest of the market initially holds up, AI-related capital spending h
 
 These are plausible paths to a market decline in 2026, especially with bullish sentiment elevated. If any of these risks begin to materialize, the adjustment could be faster and more painful than many investors expect.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

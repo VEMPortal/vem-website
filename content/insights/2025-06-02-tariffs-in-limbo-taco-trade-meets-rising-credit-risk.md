@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Where Do We Stand with Tariffs and How Important Are They for Markets?
 - Economic Preview: ISM Data and May Jobs Report in Focus
@@ -33,7 +33,7 @@ disclosure: >
 - What is the TACO Trade? (And Why It Matters to You)
 - Credit Spreads: Some Deterioration Warrants Attention
 
-### Stocks
+## Stocks
 
 “Stocks rose modestly last week thanks to several positive trade-war headlines, including President Trump delaying increased tariffs on the EU and after a court ruling invalidated many of the 2025 tariffs.”
 
@@ -41,9 +41,9 @@ disclosure: >
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2025-06-02-financial-market-insight-2025-06-02-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The trend in the S&amp;P 500 shifted from bearish to neutral in mid-May after the index broke above the March highs and approached its records. Dow Theory: Bearish since the week-ending March 14, 2025. Key Resistance Levels: 5969, 6025, 6115. Key Support Levels: 5803, 5687, 5561.</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-06-02-financial-market-insight-2025-06-02-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The trend in the S&amp;P 500 shifted from bearish to neutral in mid-May after the index broke above the March highs and approached its records. Dow Theory: Bearish since the week-ending March 14, 2025. Key Resistance Levels: 5969, 6025, 6115. Key Support Levels: 5803, 5687, 5561.</figcaption></figure>
 
 SOURCE: Factset and Vann Equity Management Research Team
 
@@ -67,9 +67,9 @@ In summary, our investment team continues to maintain a cautious stance on the m
 
 Given this outlook, we continue to favor a defensive positioning within portfolios. Our preference is to remain long, as we believe the intermediate to long-term backdrop remains supportive. In this environment, defensive positioning offers participation in potential upside while mitigating exposure to the kind of volatility that could accompany a deeper economic contraction. A 10% drop in the S&amp;P 500 remains a very real possibility should macro conditions deteriorate further, and that risk must be respected.
 
-### Economic Data
+## Economic Data
 
-#### Economic Data (What You Need to Know in Plain English)
+### Economic Data (What You Need to Know in Plain English)
 
 After several weeks of quiet on the economic front, this June kicks off with several potentially important economic reports and will provide a lot more insight into just how much damage the tariffs and policy volatility have done to the economy. From a market standpoint, the better the data, the better for stocks, especially given the suspension of the tariffs late last week, as the potential elimination of tariffs makes an economic slowdown less likely.
 
@@ -81,9 +81,9 @@ In addition to the jobs report, there are several other labor market indicators 
 
 Bottom line: Whether the economy can hold on is the key question for markets beyond the short term. And while bears will dismiss solid data as still not having enough time to reflect the impact of the tariffs (and to a point that is fair, although it has been two solid months of tariff chaos), the reality is that if the totality of the labor market is solid, the chances for an economic slowdown near term will remain low.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Assessing the Market’s Performance Since the April Lows
+### Assessing the Market’s Performance Since the April Lows
 
 We recently received a press inquiry regarding the strong performance in “riskier” and “lower quality” stocks since the April lows were established, and specifically, if that strength in riskier corners of the market suggested a new leg of the bull market had commenced. The short answer is “no,” as the outperformance of growth-focused and technology-oriented equities since April is masking the deeper drawdowns those names suffered during the late-Q1/early-Q2 market rout. We are simply seeing high-beta stocks live up to that label as they underperformed on the way down and have since outperformed on the way up.
 
@@ -93,7 +93,7 @@ Starting with investment styles, it is true that growth has handily outperformed
 
 Looking at individual market sector performance so far this year furthers the point as traditional defensives are maintaining solid outperformance over their cyclical peers YTD, despite giving up some ground since the April lows. The more-than-8% performance gap between Consumer Discretionary (XLY: -4.22% YTD) and Consumer Staples (XLP: +4.03% YTD) points to clear defensive positioning and highlights investor concerns about the outlook for consumer spending and the economy more broadly in H2’25, while the strength in Utilities (XLU: +6.39% YTD) and weakness in Tech stocks (XLK: -0.55% YTD) more deeply underpin the fact that risk appetites remain suppressed despite the risk-on rally we have seen off the early Q2 lows. And without renewed leadership from mega-cap tech, other growth-focused segments, and inherently riskier corners of the market, it will be hard for the major indexes to mount a sustainable advance to new highs in 2025.
 
-#### What is the TACO Trade? (And Why It Matters to You)
+### What is the TACO Trade? (And Why It Matters to You)
 
 The five years seem to have produced the never-ending acronyms traders come up with to describe the markets, and they have done it again with the newly coined “TACO” trade. To that point, the TACO trade is being bounced around by the bulls to help explain why they remain bullish despite tariffs and more trade uncertainty.
 
@@ -115,13 +115,13 @@ Does the TACO trade mean we do not need to worry about tariffs or the trade war?
 
 As such, while the TACO trade has worked and likely will continue to work in the short term when Trump makes bold tariff threats, it doesn’t eliminate the reality that the tariff burden for the U.S. economy and globally is at a multi-decade high and that will 1) Slow growth and 2) Boost inflation. What will determine a rally or decline in stocks is how much of an impact there will be.
 
-#### Credit Spreads: Some Deterioration Warrants Attention
+### Credit Spreads: Some Deterioration Warrants Attention
 
 In volatile and headline-driven markets that are characterized by extreme swings in sentiment, applying a cross-asset approach to confirm opinions or interpret data can be essential in identifying the dominant market trend and filtering out the day-to-day noise. That principle has proven especially relevant so far in 2025, and it is one of the reasons our investment team is closely monitoring the continued deterioration in credit spreads. If this trend persists, it may begin to signal rising risks to economic growth.
 
 As a refresher, credit spreads represent the difference in yields between two bonds of similar maturities but differing credit qualities. For example, the spread between the yield on a 10-year Treasury bond, which remains the benchmark for a risk-free rate, and the yield on a 10-year corporate bond, or more commonly, an index of similarly dated corporate bonds. Analysts track credit spreads because they reflect bond investors’ expectations for future economic conditions.
 
-<figure><img src="/assets/img/insights/2025-06-02-financial-market-insight-2025-06-02-2.png" alt="Moody's Seasoned Baa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity chart from FRED"><figcaption>Credit Spreads: The bond market has quietly shown increased concerns about future U.S. growth. While this isn’t a “warning sign” yet from credit spreads, it shouldn’t be ignored.</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-06-02-financial-market-insight-2025-06-02-2.png" alt="Moody's Seasoned Baa Corporate Bond Yield Relative to Yield on 10-Year Treasury Constant Maturity chart from FRED" loading="lazy"><figcaption>Credit Spreads: The bond market has quietly shown increased concerns about future U.S. growth. While this isn’t a “warning sign” yet from credit spreads, it shouldn’t be ignored.</figcaption></figure>
 
 Currently, the Baa spread stands at 1.88%. While this is not as elevated as it was immediately following what has become known as “Liberation Day,” it remains significantly higher than the levels observed throughout much of the past year. This suggests that the bond market is becoming increasingly aware of downside risks to growth.
 
@@ -133,6 +133,6 @@ This increase in spreads is beginning to create a divergence between the bond an
 
 At this stage, a spread of 1.88% is not yet a clear warning signal, but it is evidence that bond investors are becoming more cautious regarding economic risks. If the spread over Treasuries were to move consistently above 2.00%, that would represent a more serious warning that markets are beginning to price in the increasing probability of a hard landing. Should that occur, and depending on the catalysts behind the move, we would need to evaluate and potentially implement a more defensive positioning within our equity strategies. Given the recent rise in spreads, we intend to continue monitoring this metric very closely. Credit spreads have historically served as a reliable early indicator of economic stress, and this is one warning that our investment team does not intend to overlook.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

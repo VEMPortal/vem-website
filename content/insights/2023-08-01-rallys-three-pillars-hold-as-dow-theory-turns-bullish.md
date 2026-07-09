@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Weekly Market Preview: Why Too Hot &amp; Too Cold Data is Negative for Markets
 - Weekly Economic Cheat Sheet: Flash PMIs and Core PCE the Key Reports This Week
@@ -34,17 +34,17 @@ disclosure: >
   - Dow Theory Update: Bullish Reversal in July
   - What the Fed Decision Means for Markets
 
-### Stocks
+## Stocks
 
 ✓ What's Outperforming: Growth factors, tech consumer discretionary and communication services, the worst performers in 2022, have outperformed YTD. However, higher yields remain a headwind and as such we do not think this outperformance will last over the longer term.
 
 ✓ What's underperforming: Defensive sectors and value have underperformed YTD but are still massively outperforming since the bear market started in 2022, and since our primary concern in 2023 is economic growth, we think this underperformance will be temporary.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2023-08-01-financial-market-insight-2023-08-01-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>Technical View: The medium-term trend in equities has turned bullish as the S&amp;P 500 just hit fresh YTD highs; however, we maintain caution due to weak internals. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4228, 4274, 4386. Key Support Levels: 4180, 4061, 3960.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-08-01-financial-market-insight-2023-08-01-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>Technical View: The medium-term trend in equities has turned bullish as the S&amp;P 500 just hit fresh YTD highs; however, we maintain caution due to weak internals. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4228, 4274, 4386. Key Support Levels: 4180, 4061, 3960.</figcaption></figure>
 
-#### Why Too Hot &amp; Too Cold Data is Negative for Markets
+### Why Too Hot &amp; Too Cold Data is Negative for Markets
 
 Unlike the January-through-May advance in the S&amp;P 500, the rally since June has not been driven primarily by bearish sentiment or the impact of seven stocks on the S&amp;P 500 (while the other 493 did nothing). Instead, the rally since June has been quite logical: Solid growth, falling inflation, and looming end of Fed rate hikes. We call these the "Three Pillars" of the rally: Soft/No Landing, Disinflation, and Fed Done (or Almost Done) with Rate Hikes, and as long as these pillars stay in place and are confirmed by the economic data, the outlook for stocks is positive near-term.
 
@@ -58,9 +58,9 @@ Bottom line, we and others said at the start of the year that economic data woul
 
 For now, the outlook for stocks remains positive and we continue to think cyclicals, small caps, and Value can continue to close the performance gap with tech. It is important to remember that this is not a serendipitous rally—it has been driven by data, and if the data turns more negative, there is nothing to support stocks, especially at these valuations. That is why we will continue to closely watch the data.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 For the past two weeks, economic data has been Goldilocks enough to support the rally in stocks, and that largely continued last week as data was mostly solid (in some cases slightly too good) while the Fed decision met expectations, last week's hike is likely the last one.
 
@@ -72,7 +72,7 @@ Looking at growth data, it was mixed but generally stable. The July Flash Compos
 
 Finally, the one number that was Too Hot last week was weekly jobless claims, which fell to 221k vs. (E) 235k. That's a bit Too Hot and the claims reading pushed yields higher on Thursday and weighed on stocks, because if claims stay that low (and unemployment remains low) then another rate hike in September may be more likely than markets think (that's a possible near-term headwind).
 
-#### Important Economic Data This Week
+### Important Economic Data This Week
 
 Goldilocks economic data has powered the S&amp;P 500 to current levels since June, and it is going to take more Goldilocks economic data to sustain this rally and possibly prime for an extension of it in the coming weeks and months, so this week will be important because we get the "Big Three" monthly economic reports: Jobs Report, ISM Manufacturing PMI, and ISM Services PMI.
 
@@ -84,11 +84,11 @@ Next in importance this week is Tuesday's ISM Manufacturing PMI and Thursday's I
 
 Bottom line, the S&amp;P 500 needs Goldilocks economic data to hold current levels, because markets are not at all pricing in a chance for a hard landing, nor are they pricing in another rate hike. Data that makes either more likely will be negative, given current valuations.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Dow Theory Update: Bullish Reversal in July
+### Dow Theory Update: Bullish Reversal in July
 
-<figure><img src="/assets/img/insights/2023-08-01-financial-market-insight-2023-08-01-2.png" alt="Dow Jones Industrial Average and Dow Jones Transportation Average weekly candle charts"><figcaption>Dow Jones Industrial Average (weekly) notching a new closing high above 34,430 in the second week of July, confirming the uptrend already established by the Dow Jones Transportation Average, which closed above its prior high of 15,518.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-08-01-financial-market-insight-2023-08-01-2.png" alt="Dow Jones Industrial Average and Dow Jones Transportation Average weekly candle charts" loading="lazy"><figcaption>Dow Jones Industrial Average (weekly) notching a new closing high above 34,430 in the second week of July, confirming the uptrend already established by the Dow Jones Transportation Average, which closed above its prior high of 15,518.</figcaption></figure>
 
 Several emails have come in over the last two weeks regarding Dow Theory as both the Industrials (DJI) and Transports (DJT) have rallied to respective 52-week highs. So we wanted to provide an update on the bullish reversal in the investment strategy that has occurred this month.
 
@@ -106,7 +106,7 @@ In times like the first half of 2023, where leadership in the equity markets was
 
 Bottom line, Dow Theory turning bullish is not only a positive for the broader equity markets but also a fundamental nod to the health and resilience of the economy in 2023. Looking ahead, the equity rally should have room to run here based on the historical performance of Dow Theory, in spite of still-elevated recession risks based on historical indicators such as the yield curve. If Dow Theory is correct here, we should be on the brink of an additional multi-month rise in the broader market.
 
-#### What the Fed Decision Means for Markets
+### What the Fed Decision Means for Markets
 
 Prior to last week's FOMC decision, the market's expectation that the Fed is very close to being done with rate hikes was one of the three pillars of the 2023 stock market rally, and following the FOMC decision that pillar remains in place, and that is positive because it further reinforces most of the YTD gains in stocks. More tactically, that means that what we saw in the markets prior to the Fed should continue as long as there are no major surprises in the data, namely: 1) Cyclical sectors closing the performance gap with tech, 2) equal weighted indices outperforming market cap weighted and 3) A general broadening of the stock market rally, where the S&amp;P 500 may churn sideways but laggard sectors such as small caps and value can continue to outperform.
 

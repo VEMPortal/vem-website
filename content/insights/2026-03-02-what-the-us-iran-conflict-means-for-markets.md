@@ -46,12 +46,12 @@ Away from immediate geopolitical concerns, this is an important week for economi
 <figure>
   <picture>
     <source type="image/webp" srcset="/assets/img/insights/fmi-2026-03-02-sp500.webp?v=12" />
-    <img src="/assets/img/insights/fmi-2026-03-02-sp500.png?v=12" alt="S&amp;P 500 technical summary panel. Technical View: the January rally to record highs shifted the technical outlook from cautious to bullish; however, recent volatility has kept conviction notably low. Primary Trend: bullish since the week of December 22, 2025. Key Resistance Range: 6946 to 6975. Key Support Range: 6838 to 6798. Includes the S&amp;P 500 Weekly Candle Chart with the recent high near 7,002 highlighted." />
+    <img src="/assets/img/insights/fmi-2026-03-02-sp500.png?v=12" alt="S&amp;P 500 technical summary panel. Technical View: the January rally to record highs shifted the technical outlook from cautious to bullish; however, recent volatility has kept conviction notably low. Primary Trend: bullish since the week of December 22, 2025. Key Resistance Range: 6946 to 6975. Key Support Range: 6838 to 6798. Includes the S&amp;P 500 Weekly Candle Chart with the recent high near 7,002 highlighted." loading="lazy" />
   </picture>
   <figcaption>Source: Factset and Vann Equity Management Research Team</figcaption>
 </figure>
 
-## What the U.S./Iran Conflict Means for Markets
+## The Iran Strike: What Happened and What It Means for Markets
 
 The U.S and Israel launched a large-scale attack on Iran aimed at regime change, and the operation adds more geopolitical uncertainty to the global markets, although, unless the situation deteriorates, we do not expect it to be a material influence on stocks.
 

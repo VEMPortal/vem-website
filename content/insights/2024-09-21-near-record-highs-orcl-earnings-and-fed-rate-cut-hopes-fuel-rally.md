@@ -9,15 +9,15 @@ pdf: assets/docs/VEM-Financial-Market-Insight-2024-09-21.pdf
 status: published
 summary: "Stocks rallied and the S&P 500 climbed close to previous all-time highs thanks to solid tech earnings from ORCL and increased expectations for a 50-bps…"
 ---
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - How to Explain This Market (September Update)
 - Weekly Market Preview: Two Key Central Bank Decisions (Fed on Wednesday, BOJ on Thursday)
 - Weekly Economic Cheat Sheet: Important Growth Updates This Week
 
-### Stocks
+## Stocks
 
 Stocks rallied and the S&amp;P 500 climbed close to previous all-time highs thanks to solid tech earnings from ORCL and increased expectations for a 50-bps rate cut from the Fed.
 
@@ -25,7 +25,7 @@ Stocks rallied and the S&amp;P 500 climbed close to previous all-time highs than
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-#### How to Explain This Market
+### How to Explain This Market
 
 Over the weekend our investment team spoke to several investors who were in somewhat of disbelief that stocks remained so resilient in the face of political uncertainty and, what is to them a slowing economy; and in those discussions, we pushed back on some of their negative expectations, and it was very well received, so we wanted to share our points with you below.
 
@@ -46,13 +46,13 @@ The combination of these looming risks and the very elevated valuations make thi
 
 Bottom line: The risks currently facing this market (economic growth, earnings, geopolitics) are tectonic risks. They do not present themselves all at once or in a flash, they evolve over time until they become sustainable and that is when bear markets occur. This market is facing those risks but facing them does NOT mean they will happen. That is why our investment team believes the right way to navigate this market is that we closely monitor these risks, while not prematurely abandoning the long side. Our team has advocated this management strategy throughout 2024, and it has been working, and it is what we continue to believe is the right way to successfully navigate this current market. If and when the facts change, our outlook will change and you will hear it first, loudly and clearly.
 
-### Economic Data (What You Need to Know in Plain English)
+## Economic Data (What You Need to Know in Plain English)
 
 Inflation was the focus of last week’s data, and the message was remarkably consistent: The decline in inflation slowed, not to the point where it would be a problem for markets or the economy, but it could push back on any Fed member’s desire to very aggressively cut rates (they are still going to cut this week, but maybe not as much as before).
 
 The key inflation report was CPI, and it was firmer than expected. Headline CPI dropped sharply to 2.5% y/y (down from 2.9%) but most of that drop was energy-related (lower oil prices). The more important Core CPI was flat vs. July, rising 3.2% y/y. The monthly increase was a touch high, rising 0.3% vs. (E) 0.2%. These inflation numbers are not bad in the broad sense, and they do not imply inflation is bouncing back (it is not) but for those hoping for very aggressive rate cuts.
 
-<figure><img src="/assets/img/insights/2024-09-21-financial-market-insight-2024-09-21-2.png" alt="S&amp;P 500 Chart"><figcaption>S&amp;P 500 Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-09-21-financial-market-insight-2024-09-21-2.png" alt="S&amp;P 500 Chart" loading="lazy"><figcaption>S&amp;P 500 Chart</figcaption></figure>
 
 Part of what is supporting stocks is investor expectations for aggressive interest rate cuts, and last week’s inflation data legitimately reduces the case for 50-bps Wednesday. It may still happen, but the hawks on the FOMC have some fresh data to point to if they want to advocate “going slowly.” The question “Is the Fed behind the curve” is becoming the most important question in this market. The freer the Fed is to cut rates aggressively, the smaller the chances it falls behind the curve and we get a deeper-than-expected slowdown. The firm CPI reduces some of the Fed’s flexibility to be aggressive and while that is not a near-term negative, it reduces the margin of error for the Fed and that is something we need to keep in mind as we move towards the end of the year.
 
@@ -60,11 +60,11 @@ Looking at actual hard data, we have a lot of potentially important economic rep
 
 We are going to learn a lot this week about actual Fed rate cuts vs. expectations and the current state of economic growth. A dovish Fed and solid data will increase soft landing hopes and imply the Fed is not behind the curve, at least for now, and stocks should rally.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 Commodities were mixed to start last week as demand fears persisted in the wake of several weak industry reports. However, dovish bets for a 50 bps cut from the Fed this week rekindled soft landing hopes and shored-up demand expectations, driving the complex higher into the weekend with metals and energy all notching weekly gains.
 
-<figure><img src="/assets/img/insights/2024-09-21-financial-market-insight-2024-09-21-3.png" alt="Gold Weekly Chart"><figcaption>Gold Weekly Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-09-21-financial-market-insight-2024-09-21-3.png" alt="Gold Weekly Chart" loading="lazy"><figcaption>Gold Weekly Chart</figcaption></figure>
 
 The outlook for oil remains bearish despite a mid-September relief rally beginning last week. Fundamentals are pointing to an increased likely surplus emerging in the physical markets in the months or quarters ahead and recession fears continue to simmer despite a resurgence in soft-landing hopes. On the charts, last week’s low close of $66.31 will be looked to for initial support while previous support at $72.50 will present initial resistance.
 
@@ -86,6 +86,6 @@ Turning to Treasuries, yields hit fresh 52-week lows, again, but the 10-year yie
 
 Bottom line: Stability is needed in the Treasury markets for stocks to lift and that is what we got in the back half of last week. Looking forward, more stability is needed in yields if the S&amp;P 500 is going to test those old highs because a continued decline in yields will just be a louder warning on growth and increase concerns the Fed is behind the curve.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

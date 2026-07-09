@@ -11,9 +11,9 @@ summary: "“August 2025 Investment Insights: Inflation, Fed Rate Cuts, Commodit
 ---
 “August 2025 Investment Insights: Inflation, Fed Rate Cuts, Commodities, and the Future of AI”
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Two Events That Could Actually Cause a Pullback
 - Weekly Market Preview: All About the Fed (Does Powell Signal a September Cut on Friday?)
@@ -21,9 +21,9 @@ summary: "“August 2025 Investment Insights: Inflation, Fed Rate Cuts, Commodit
 - What Happens if AI Starts to Lose Momentum?
 - The Hot PPI Threatens Multiple Pillars of the Rally
 
-### Stocks
+## Stocks
 
-<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-2.png" alt="S&amp;P 500 Chart"><figcaption>S&amp;P 500 Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-2.png" alt="S&amp;P 500 Chart" loading="lazy"><figcaption>S&amp;P 500 Chart</figcaption></figure>
 
 Stocks rallied last week despite hotter-than-expected inflation data (in total) and some disappointing tech/AI earnings, as stable growth and still-high expectations for Fed rate cuts powered stocks to new all-time highs.
 
@@ -31,7 +31,7 @@ Stocks rallied last week despite hotter-than-expected inflation data (in total) 
 
 ✓ What is Underperforming: Defensive sectors, energy.
 
-#### Two Events That Could Actually Cause a Pullback
+### Two Events That Could Actually Cause a Pullback
 
 The S&amp;P 500 has pushed to new all-time highs month-to-date, even as the flow of news has been more negative than positive. Inflation metrics remain stubborn: CPI was mixed but still above the Fed’s 2% target, while PPI came in hot. Corporate earnings in the AI sector were also uneven—AMAT issued soft guidance, and both C3.ai (AI) and Core Weave (CRVW) sold off sharply. Geopolitical tensions persist, and expectations for Fed rate cuts have been trimmed, though markets still broadly anticipate a September cut.
 
@@ -49,9 +49,9 @@ Bottom line: There is plenty of noise—conflicted inflation data, questions abo
 
 So far, the answer to both remains “no.” As long as that holds, volatility is possible, but the market trend should remain higher.
 
-### Economic Data (What You Need to Know in Plain English)
+## Economic Data (What You Need to Know in Plain English)
 
-<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-3.png" alt="Economic Data Chart"><figcaption>Economic Data Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-3.png" alt="Economic Data Chart" loading="lazy"><figcaption>Economic Data Chart</figcaption></figure>
 
 August was squarely on inflation, and the data delivered a rollercoaster ride for investors. CPI came in relatively tame, sparking optimism for Fed rate cuts and pushing the S&amp;P 500 to fresh all-time highs above 6,400. But enthusiasm was quickly checked by a much hotter-than-expected PPI report, which erased some of the gains and reminded investors that the path to lower inflation remains uneven.
 
@@ -67,11 +67,11 @@ Looking ahead, we are looking for clarity from the Fed. Chair Powell’s speech 
 
 Bottom line: August remains a month defined by the tug-of-war between inflation, Fed policy expectations, and growth. Last week’s data kept the hope of near-term rate cuts alive while reminding investors that risks have not disappeared. As long as confidence in Fed easing and consumer resilience holds, the market’s momentum should remain intact.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 Commodities were mostly lower last week as economic data continued to point to rising stagflation risks, a negative for growth-sensitive energy futures, while hot inflation data in the back half of the week weighed on gold.
 
-<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-4.png" alt="Commodities Chart"><figcaption>Commodities Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-4.png" alt="Commodities Chart" loading="lazy"><figcaption>Commodities Chart</figcaption></figure>
 
 Commodities were mostly lower in August as gold pulled back from record highs and oil slid to multi-month lows. The move was driven by a hot PPI report, easing geopolitical fears, and renewed questions about demand. Copper continued to churn sideways after July’s historic collapse, leaving broad weakness across energy and metals. The commodity ETF (DBC) fell 0.32% for the week.
 
@@ -85,11 +85,11 @@ Treasuries: The 10-year yield remains in the 4.20%–4.30% range, remaining broa
 
 Bottom line: Commodities have softened, the dollar is lower, and Treasuries stay range-bound as markets balance inflation fears with Fed cut expectations. The picture remains one of consolidation rather than breakdown, with the Fed’s next signals likely to dictate whether these trends extend or reverse.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-5.png" alt="Special Report Chart"><figcaption>Special Report Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-08-21-financial-market-insight-2025-08-21-5.png" alt="Special Report Chart" loading="lazy"><figcaption>Special Report Chart</figcaption></figure>
 
-#### What Happens if AI Starts to Lose Momentum?
+### What Happens if AI Starts to Lose Momentum?
 
 While most of last week’s attention was on CPI and Fed policy, two high-profile AI bellwethers posted disappointing results. C3.ai (AI) dropped 25% after soft guidance, while Core Weave (CRWV) fell 21% following weak earnings. Those sharp declines raise an important question: What happens to this market if AI loses momentum?
 
@@ -99,7 +99,7 @@ The parallel matters now. The current rally has been disproportionately fueled b
 
 Bottom line: The market is acutely vulnerable to a loss of enthusiasm in AI. Even if the broader economy remains resilient, whether in a soft-landing or stagflation-light scenario, a slowdown in AI momentum would represent a real headwind for equities. The declines in C3.ai and Core Weave serve as reminders that execution, not just narrative, now matters for AI companies, and by extension, for the market as a whole.
 
-#### The Hot PPI Threatens Multiple Pillars of the Rally
+### The Hot PPI Threatens Multiple Pillars of the Rally
 
 The July Producer Price Index (PPI) surged by the most since March 2022, rising more than four times the consensus estimate. That surprise matters because it threatens several of the “pillars” currently supporting the 2025 stock market rally.
 
@@ -111,6 +111,6 @@ Pillar 3: Corporate Earnings Are Seen Growing Solidly into 2026 Corporate guidan
 
 Bottom line: The July PPI report represents more than a one-off surprise. It directly challenges expectations for falling inflation, steady Fed easing, and resilient earnings—all of which underpin the current market rally. With the S&amp;P 500 trading at 22x 2026 earnings estimates, any shift toward stagflation in the back half of 2025 would leave equities looking stretched.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

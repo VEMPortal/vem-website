@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Bottom Line: Real Focus Remains on the Fed and Growth
 - Weekly Economic Cheat Sheet: Rising Threat of Stagflation?
@@ -38,15 +38,15 @@ disclosure: >
 - Russian President Putin recognized the independence of two "breakaway" regions in eastern Ukraine yesterday, but the risk of a full-scale invasion of Ukraine remains low.
 - Regarding Ukraine, investors will await the announcement of new sanctions from the west against Russia and depending on how severe they are, it most likely will add to selling pressure on stocks today. Additionally, as of now, Secretary of State Anthony Blinken and his counterpart Sergey Lavrov are still scheduled to meet this week; however if the meeting is canceled it would suggest a more severe conflict is imminent, resulting in more risk-off money flows.
 
-### Stocks
+## Stocks
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas panel"><figcaption>Near Term Stock Market Outlook: Neutral. SPHB: 50% SPLV: 50%. Stocks dropped again last week following further deterioration in the Russia/Ukraine situation. Understanding future Fed policy and what that means for economic growth will remain the major focus of markets as we progress through the year, and we should continue to expect elevated volatility. Tactical Allocation Ideas: What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas panel" loading="lazy"><figcaption>Near Term Stock Market Outlook: Neutral. SPHB: 50% SPLV: 50%. Stocks dropped again last week following further deterioration in the Russia/Ukraine situation. Understanding future Fed policy and what that means for economic growth will remain the major focus of markets as we progress through the year, and we should continue to expect elevated volatility. Tactical Allocation Ideas: What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 break down to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4429, 4504, 4659. Key Support Levels: 4290, 4166, 4063.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 break down to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4429, 4504, 4659. Key Support Levels: 4290, 4166, 4063.</figcaption></figure>
 
-#### Last Week (Needed Context as We Start a New Week)
+### Last Week (Needed Context as We Start a New Week)
 
 Equity markets remained volatile last week as investors eyed escalating geopolitical tensions surrounding Russia/Ukraine and digested mixed economic data ahead of monthly options expiration on Friday. The S&amp;P 500 fell 1.58% on the week and is down 8.76% YTD.
 
@@ -80,11 +80,11 @@ Russia/Ukraine will continue to dominate markets in the short term and until the
 
 Instead, the bigger impacts on this market remain Fed policy and economic growth. Those are the factors that ultimately decide whether the January lows are the bottom, or not. So, while we're monitoring Russia/Ukraine, our main focus remains the Fed.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
-##### Need to Know Econ from Last Week
+#### Need to Know Econ from Last Week
 
 Economic data was mixed last week while inflation pressures stayed firm, and while it's too early to begin to worry about a whiff of stagflation, the data last week implies we could be seeing a slowing of activity and as a result we will be watching economic data much more closely in the coming weeks.
 
@@ -98,7 +98,7 @@ The data from January was solid, and it doesn't imply at all that a slowdown is 
 
 Finally, looking at last week's FOMC minutes, they caused a mild rally not because they were dovish, but instead because they weren't as hawkish as feared; and revealed nothing new on the policy front that changes the outlook for 75-100 basis points of rate hikes by June and balance sheet reduction (Quantitative Tightening) starting this summer. Looking forward, confirmation of the number of rate hikes and the QT plan will be the next major Fed catalysts, although we likely won't get any material news on those fronts until March, via Powell's semi-annual testimony to Congress and the March FOMC meeting.
 
-##### Important Economic Data This Week
+#### Important Economic Data This Week
 
 The two most important reports this week come today and Friday, via the February flash PMIs (out later this morning) and the Core PCE Price Index (out Friday). Of the two, the Core PCE Price Index is the more important report because inflation is the key variable for this market right now, and if that number again runs "Hot" like the January CPI did, then that will add to fears the Fed is going to get even more hawkish (and that will hit markets).
 
@@ -110,9 +110,9 @@ Other notable data this week includes the revised Q4 GDP report (Thursday) but w
 
 This week's data provides an opportunity to either increase stagflation worries or help ease those concerns, and the bulls will be looking for solid data and hints of a peak in inflation via the Core PCE Price Index. If we get that, and there is no Russia/Ukraine conflict, then stocks can rally. However, if the flash PMIs are underwhelming and, like the January CPI report, the core PCE Price Index implies inflation pressures are not easing, that will add another headwind on stocks and we should expect continued volatility.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-4.png" alt="Commodities outlook table with neutral rating"><figcaption>Commodities: Neutral. Commodities were mixed last week as oil prices pulled back for the first time in eight weeks amid the prospects of a new Iran nuclear deal, while mostly upbeat economic data kept a bid under copper while gold outperformed thanks to safe-haven money flows. The outlook for commodities remains broadly positive as the recovery is still seen as intact, while there is a lack of evidence that inflation has peaked yet.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-4.png" alt="Commodities outlook table with neutral rating" loading="lazy"><figcaption>Commodities: Neutral. Commodities were mixed last week as oil prices pulled back for the first time in eight weeks amid the prospects of a new Iran nuclear deal, while mostly upbeat economic data kept a bid under copper while gold outperformed thanks to safe-haven money flows. The outlook for commodities remains broadly positive as the recovery is still seen as intact, while there is a lack of evidence that inflation has peaked yet.</figcaption></figure>
 
 Commodities were mixed last week as improving prospects of a new Iran nuclear deal caused oil to sell-off despite the ongoing tensions between Ukraine and Russia, which fueled a fear bid in gold. Copper, meanwhile, traded relatively well given the cautious investor sentiment as economic data was mostly upbeat. The commodity ETF, DBC, edged up 0.30% on the week.
 
@@ -124,17 +124,17 @@ Such a deal would mean anywhere from 500K to 1MM bbls of crude hitting the globa
 
 While the long-term trend remains bullish for now, some profit taking given the Iran developments is expected with key initial support at $85/barrel in WTI.
 
-#### Copper
+### Copper
 
 Turning to metals, copper held up surprisingly well last week as futures gained 1.63%. The fact that copper futures did not react in a more negative manner to the Ukraine tensions suggests the conflict is not going to be a bearish game changer for risk assets, at least not yet. The copper market is choppy but trending slightly higher right now and until that changes the industrial metals market will be indicating that the global economic recovery remains healthy.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-3.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1911, $1947, $2010. Key Support Levels: $1874, $1834, $1797.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-3.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1911, $1947, $2010. Key Support Levels: $1874, $1834, $1797.</figcaption></figure>
 
 Gold was the upside standout last week as safe-haven and money flows supported a move to and through $1,900/oz. for the first time since last summer. Gold ended near the highs of the week with a gain of 2.16%. On the charts, gold has broken out and the outlook is now bullish, which is supported fundamentally by a likely continuation of safe-haven flows amid broad market volatility as well as fading real interest rates (also largely linked to volatility and geopolitics).
 
-#### U.S. Dollar Index
+### U.S. Dollar Index
 
 The Dollar Index declined modestly last week as the FOMC minutes weren't as hawkish as feared while economic data was underwhelming. The Dollar Index fell 0.35%.
 
@@ -144,11 +144,11 @@ In the short term, the Russia/Ukraine situation will continue to cause risk-on/r
 
 The Dollar Index in the mid 90's is appropriate given expected Fed tightening, ECB tightening and BOE tightening, and expectations for that future policy will have to change before we can expect the Dollar Index to sustainably break out or break down from the current mid-90's trading range.
 
-#### 10-Year T-Note Yield
+### 10-Year T-Note Yield
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-5.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield has turned positive after the early 2022 break to fresh two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 2.033, 2.058, 2.122. Key Support Levels: 1.921, 1.848, 1.735.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-5.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart" loading="lazy"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield has turned positive after the early 2022 break to fresh two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 2.033, 2.058, 2.122. Key Support Levels: 1.921, 1.848, 1.735.</figcaption></figure>
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-6.png" alt="Treasuries outlook table with bearish rating"><figcaption>Treasuries: Bearish. The 10-year Treasury yield declined modestly following a mild risk-off move following the escalation of Russia/Ukraine headlines, although the trend in rates is still clearly higher.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-6.png" alt="Treasuries outlook table with bearish rating" loading="lazy"><figcaption>Treasuries: Bearish. The 10-year Treasury yield declined modestly following a mild risk-off move following the escalation of Russia/Ukraine headlines, although the trend in rates is still clearly higher.</figcaption></figure>
 
 Turning to the 10-year Treasury yield, it declined last week on a combination of risk-off money flows following the deterioration of Russia/Ukraine headlines, combined with the underwhelming economic data and as-expected FOMC minutes. The 10-year yield fell to 1.92%.
 
@@ -156,9 +156,9 @@ The headlines on Russia/Ukraine will continue to cause short-term rallies and de
 
 Regarding the 10s-2s spread, it widened out to 46 basis points this week as the FOMC minutes failed to present any big surprises. Looking forward, the recent lows of 41 basis points are the next support level to watch, although if the Core PCE Price Index is hot this week and growth is underwhelming, we'd expect those lows to be broken, as the trend in 10s-2s is currently towards inversion.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Is a Russian Invasion of Donbas a Bearish Game Changer?
+### Is a Russian Invasion of Donbas a Bearish Game Changer?
 
 One of the most cited reasons stocks dropped last week was because Russia accused Ukraine of shelling Russian rebels in the Ukrainian territory of Donbas, specifically in the Donetsk and Luhansk regions. Those regions are disputed territories, where Russian rebels want to break away from Ukraine, while Ukraine wants to keep the area as part of the country. Here's why that matters.
 
@@ -174,7 +174,7 @@ Now, there is the possibility Russia reduces energy exports to Europe, or furthe
 
 A limited invasion of Donbas would be a temporary headwind on risk assets, but we would not view that as a bearish game changer unless it spiraled into a broader conflict between Russia and the NATO (which again is unlikely at this point).
 
-#### Understanding Fed Hawks vs. Fed Doves
+### Understanding Fed Hawks vs. Fed Doves
 
 The amount of noise and conflicting commentary coming from the Fed is rapidly increasing, as over the past several days we have had multiple Fed officials openly contracting each other about the future path of policy, and as long as that's the case, it's going to lead to more volatility (as we saw last Thursday). Given that reality, we think it's important that we all understand the relative importance of various Fed speakers, because all Fed commentary is not created equally.
 
@@ -192,7 +192,7 @@ Second, if a regional Fed president makes a comment that is out of Fed consensus
 
 We wanted to provide you with a quick and easy reference to help determine what Fed speak is truly market moving, and what can be generally dismissed, even if there is a short-term reaction. So, in the table below, we've listed 1) Fed leadership and 2) Voting members for 2022, so you can quickly and easily identify if a Fed comment is coming from a potentially market-moving Fed member, or just someone voicing an opinion that can't actually vote this year.
 
-<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-7.png" alt="Fed Leadership and Voting Members table showing hawk, dove, or neutral stance"><figcaption>Fed Leadership and Voting Members. Leadership — Hawk, Dove, Neutral?: Jerome Powell (Dove), Lael Brainard (Dove), John Williams (Dove), John Waller (Hawk), Michelle Bowman (Dove). Voting Regional Fed Presidents: James Bullard (Hawk), Esther George (Hawk), Loretta Mester (Hawk), Patrick Harker (Hawk).</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-02-22-financial-market-insight-2022-02-22-7.png" alt="Fed Leadership and Voting Members table showing hawk, dove, or neutral stance" loading="lazy"><figcaption>Fed Leadership and Voting Members. Leadership — Hawk, Dove, Neutral?: Jerome Powell (Dove), Lael Brainard (Dove), John Williams (Dove), John Waller (Hawk), Michelle Bowman (Dove). Voting Regional Fed Presidents: James Bullard (Hawk), Esther George (Hawk), Loretta Mester (Hawk), Patrick Harker (Hawk).</figcaption></figure>
 
 Looking forward, there are three takeaways from this Fed reality.
 
@@ -206,7 +206,7 @@ Finally, if a Fed official is not on this list, then it's unlikely their comment
 
 Over the past 36 hours we've had three Fed officials make comments, and two were hawkish (George and Bullard) and one was dovish (Daly). We can expect that type of variance going forward, but this table will help us cut through that noise and know, right away, if a Fed comment is really something that could sustainably move markets, or if it's just generated a short-term trading reaction. I am going to print out this table and tape it to my desk so I can use it as a quick reference for Fed commentary, and I'd encourage you to do the same.
 
-##### Fed Wildcard: Appointments
+#### Fed Wildcard: Appointments
 
 You may have read over the past couple of months about the topic of Fed appointments, and I want to explain why that matters to markets.
 
@@ -214,7 +214,7 @@ Normally, there are 12 voting members on the FOMC. That consists of seven Federa
 
 Because of a delay in confirmation of Fed Board members by the Senate, there are currently only five Fed governors, so there are only 10 Fed officials voting instead of 12 going forward. That will change later this year as the Senate confirms these officials, but the bottom line is that those appointments could change the relative "hawk/dove" mix at the Fed, although it's too early to tell by how much. As those appointments take hold, we'll update this table accordingly and make sure you know the new names to watch, because "Fed watching" will remain the primary "sport" for investors this year, and especially so in the coming months (until we have clarity on rate hikes and balance sheet reduction).
 
-#### FOMC Minutes Takeaways
+### FOMC Minutes Takeaways
 
 The minutes from the January meeting were no more hawkish than feared.
 
@@ -232,9 +232,9 @@ The market was braced for more hawkish FOMC minutes, so when they failed to reve
 
 The Fed is hawkish, they are raising rates starting in March, and Quantitative Tightening will begin in the summer (sometime between June and August). But the minutes provided no additional clarity to the two current Fed questions: Will the Fed hike 25 or 50 bps in March? How quickly will the Fed reduce the balance sheet? Those answers will determine whether the Fed is viewed as more hawkish (and that would hit stocks) or not as hawkish (which would spark a rally). For now, we'll have to wait until there's more clarity either from Fed speeches between now and the March 16 meeting, or from the meeting itself.
 
-#### Oil Market Update
+### Oil Market Update
 
-##### Weekly EIA Data and Oil Market Update
+#### Weekly EIA Data and Oil Market Update
 
 The weekly EIA report was a very mixed bag. On the headlines, commercial crude oil stockpiles rose by +1.1MM bbls vs. (E) -600K (API: -1.1MM) last week, which was dually bearish, albeit only modestly so, while gasoline stocks dropped by -1.3MM bbls vs. (E) +500K (API -900K) and distillate inventories fell -1.6MM vs. (E) -1.7MM (API: -500K), both of which were slightly bullish. Inventories at the major oil hub in Cushing, OK, however, extended a recent decline for a sixth consecutive week with another -1.9MM bbls to just 25.8MM last week. This development compounded fears that supply levels at Cushing are fast approaching an operational minimum, which could cause reverberating issues across the physical oil market.
 

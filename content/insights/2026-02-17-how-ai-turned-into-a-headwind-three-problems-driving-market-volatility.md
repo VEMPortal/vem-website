@@ -48,7 +48,7 @@ In our view, markets are also working through a much-needed pause after strong g
 <figure>
   <picture>
     <source type="image/webp" srcset="/assets/img/insights/fmi-2026-02-17-sp500.webp?v=15" />
-    <img src="/assets/img/insights/fmi-2026-02-17-sp500.png?v=15" alt="S&amp;P 500 technical summary panel. Technical View: the January rally to record highs shifted the technical outlook from cautious to bullish; however, recent volatility has kept conviction notably low. Primary Trend: bullish since the week of December 22, 2025. Key Resistance Range: 6910 to 6975. Key Support Range: 6820 to 6795. Includes the S&amp;P 500 Weekly Candle Chart with the recent high near 6,836 highlighted." />
+    <img src="/assets/img/insights/fmi-2026-02-17-sp500.png?v=15" alt="S&amp;P 500 technical summary panel. Technical View: the January rally to record highs shifted the technical outlook from cautious to bullish; however, recent volatility has kept conviction notably low. Primary Trend: bullish since the week of December 22, 2025. Key Resistance Range: 6910 to 6975. Key Support Range: 6820 to 6795. Includes the S&amp;P 500 Weekly Candle Chart with the recent high near 6,836 highlighted." loading="lazy" />
   </picture>
   <figcaption>Source: Factset and Vann Equity Management Research Team</figcaption>
 </figure>

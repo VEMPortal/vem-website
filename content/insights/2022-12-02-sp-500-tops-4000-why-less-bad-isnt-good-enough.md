@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Less Bad Isn't Good (Especially at these Valuations)
 - Oil Market Update
@@ -36,7 +36,7 @@ disclosure: >
   - Weekly Market Preview: Can the S&amp;P 500 Hold Recent Gains?
   - Weekly Economic Cheat Sheet: More Signs of Dis-Inflation This Week?
 
-### Stocks
+## Stocks
 
 Stocks rallied last week and the S&amp;P 500 briefly hit 4,100 for the first time in several months, and while Friday's jobs report was clearly "Too Hot" the bottom line is a lot of positive events occurred last week:
 
@@ -49,9 +49,9 @@ While these catalysts aided the rally that started in early November, following 
 
 Here is Our Take on Why: While estimates for earnings on S&amp;P 500 for 2023 are in a bit of fluctuation (specifically how much should they fall), $225 seems like a fair middle ground between the $235 optimists and the $215 (or lower) pessimists. At those earnings, the S&amp;P 500 is trading at an 18X multiple. Certainly, the recent disinflation and decline in yields (Treasury yields are 20 bps off the highs) do provide a boost to the market multiple up from the 16X-ish level at the lows. However, this modest decline in yields does not justify these valuations. Meanwhile, the outlook for future growth has deteriorated, which adds extra downside pressure to the market multiple (remember, a "typical" recession valuation is around 15X).
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-12-02-financial-market-insight-2022-12-02-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bearish despite the latest relief rally that has seen the S&amp;P 500 climb more than 15% off the YTD lows. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4110, 4199, 4274. Key Support Levels: 4046, 3964, 3828.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-12-02-financial-market-insight-2022-12-02-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bearish despite the latest relief rally that has seen the S&amp;P 500 climb more than 15% off the YTD lows. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4110, 4199, 4274. Key Support Levels: 4046, 3964, 3828.</figcaption></figure>
 
 Over the past three weeks, the macro environment has become "less bad" and that does justify some rally. But our Investment Committee does not want anyone to confuse year-end seasonals and positioning, combined with a sudden burst of optimism, to imply the last few weeks have sown the seeds for a sustainable rally and an end to this volatility. Because we believe they have not.
 
@@ -63,9 +63,9 @@ Finally, it is important to be aware of periods in the market of falling earning
 
 Bottom line, we are not not trying to be over pessimistic. Good things have happened in the markets over the past few weeks. But they have also been very aggressively priced in at these levels, and we are still facing major headwinds for risk assets including rising rates, slowing growth, high inflation and falling earnings. That is simply not an environment we want to be aggressively invested in, especially with equities, and amidst this sudden boost in optimism, we will stay focused on those facts. This is why we have raised cash in all of our model portfolio's and continue to sit and wait…. And we cannot wait for them to change, and to say loudly and joyously, "The coast is clearing." But we are not there yet.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 Economically speaking, last month was going well for both stocks and bonds as data showed slowing growth and evidence of disinflation, at least until Friday's jobs report, which met our "Too Hot" scenario analysis and caused a sharp drop in stocks.
 
@@ -77,7 +77,7 @@ Looking at the rest of the month-end data, it was generally positive as it showe
 
 Bottom line, it is becoming clear that 1) Economic growth is slowing as the impact of higher rates moves through the economy and 2) Inflation has likely peaked and disinflation is taking hold. But until we see real, tangible progress that the labor market is moving into better labor supply/labor demand balance, it'll be very hard for the Fed to even think about a pivot.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 Commodities were mixed last week as oil broke down on renewed growth concerns weighing on the demand outlook while the mentals were little changed amid fading inflation expectations and economic uncertainties.
 
@@ -87,21 +87,21 @@ Looking ahead, that will leave the market focused on the demand side with concer
 
 In Treasuries, yields fell last week, but like the dollar, the losses were reduced thanks to Friday's jobs report. The 2-year yield fell 11 basis points, while the 10-year yield fell 7 basis points. The reasons for the declines were the same as the dollar drop: Powell was not as hawkish as expected, underwhelming economic data and growing evidence of global disinflation. The 10s-2s spread remained in deeply negative territory at -76 bps, as the rally in yields did nothing to stop the yield curve from screaming that a material economic slowdown is coming in the next several months or quarters.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-12-02-financial-market-insight-2022-12-02-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: The outlook for gold turned neutral in the wake of the October CPI report as prices jumped to fresh multi-month highs. Proprietary Model: Neutral (since the week of November 7, 2022). Key Resistance Levels: $1824, $1875, $1922. Key Support Levels: $1782, $1741, $1710.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-12-02-financial-market-insight-2022-12-02-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: The outlook for gold turned neutral in the wake of the October CPI report as prices jumped to fresh multi-month highs. Proprietary Model: Neutral (since the week of November 7, 2022). Key Resistance Levels: $1824, $1875, $1922. Key Support Levels: $1782, $1741, $1710.</figcaption></figure>
 
-#### Oil Market Update
+### Oil Market Update
 
-##### EIA Data and Oil Market Update
+#### EIA Data and Oil Market Update
 
 Downbeat domestic economic data and uncertainties about the path forward for the Chinese economy given their still-strict Covid policies weighed heavily on oil prices in the latter part of November. But so far, WTI has held on to key support at $76/barrel leaving the market rangebound with resistance at $93/barrel.
 
 Looking ahead, OPEC+ data will come into focus this weekend as the group is set to hold their December policy meeting virtually. The consensus opinion is for no change to the collective production target; however, the risk is that they cut output by 500K b/d, which would be bullish. Beyond OPEC+, focus will be on economic data into year-end as hopes for a soft landing could further bolster WTI prices back for a test of recent highs in the low $90s, while renewed worries of a potentially deep and lengthy recession could send oil futures to new 52-week lows.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Current Fed Expectations
+### Current Fed Expectations
 
 In early November, the softer-than-expected CPI rekindled hopes of a less-hawkish Fed and that hope has largely underwritten this multi-week rally. In contradiction to that hope, over the past few weeks Fed rhetoric has pushed back against that idea and that continued Monday with a trifecta of Fed officials stating more rate hikes are coming.
 
@@ -123,7 +123,7 @@ As we begin to look towards 2023, focus of the markets will eventually turn towa
 
 Understanding the current expectations for Fed rate hikes over the next four months will be critical to understanding whether Fed rhetoric and headlines are positive or negative for markets. As a general rule, anything that makes Fed rate hike expectations higher than the numbers in the above table will be a negative for markets, while anything that causes Fed rate hike expectations to fall below these numbers will be a positive (and get us closer to the Fed pivot). As such, we suggest printing this table/section and keeping it as a reference, especially into the Fed meeting on December 13, because the "dots" will confirm or refute the above expectations, and the market impact could be significant.
 
-#### More Signs of Disinflation
+### More Signs of Disinflation
 
 - German CPI declined -0.5% vs. (E) -0.2% m/m and rose 10.0% vs. (E) 10.4% y/y.
 - Spanish CPI rose 6.6% vs. (E) 7.3% y/y.
@@ -143,7 +143,7 @@ The reason this is important is because housing makes up 40% of CPI. One of the 
 
 Bottom line, the fastest way to a Fed pivot is via quick and widespread disinflation, not just in the U.S., but globally. These statistics will only further reinforce the idea that inflation has peaked, and while it's still much, much too high for a pivot anytime soon, the more evidence of disinflation the sooner the pivot comes, and that's why the German and Spanish CPIs and Case-Shiller were positives.
 
-#### Were Powell's Comments That Positive? No. Here's Why
+### Were Powell's Comments That Positive? No. Here's Why
 
 Fed Chair Powell's speech sparked a significant rally Wednesday afternoon thanks to a speech that was less hawkish than feared. But despite the big rally Powell didn't alter the Fed's position on rate hikes and didn't bring us any closer to a pivot. As such, we don't see the comments as a material bullish catalyst.
 
@@ -159,7 +159,7 @@ Second, Powell wasn't really less hawkish. While it's true the phrase "somewhat 
 
 That essentially means that the Fed pivot may be farther off than expected, although rates may not go as high as feared. That's not a materially positive catalyst, unfortunately, and while we certainty enjoyed the rally, we want to stress loudly and clearly that Powell was not less hawkish and we are not any closer to a Fed pivot.
 
-#### Signs of Falling Inflation and Falling Growth Are Growing
+### Signs of Falling Inflation and Falling Growth Are Growing
 
 Stocks largely held Wednesday's gains as markets benefitted from a "bad data is good for stocks" mentality. Specifically, the Challenger job cuts data exploded higher to 76,835 from 33,843, the ISM Manufacturing PMI dropped solidly into contraction territory and the Core PCE Price Index wasn't as high as feared on a monthly basis.
 

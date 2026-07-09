@@ -23,7 +23,7 @@ disclosure: |
 
 <figure>
   <picture>
-    <img src="/assets/img/insights/fmi-2025-07-15-sp500.png?v=4" alt="S&amp;P 500 summary panel. Technical View: the trend shifted back to cautiously bullish after fresh record highs in June. Dow Theory bearish since the week ending March 14, 2025. Key resistance levels 6269, 6290, 6325; key support levels 6225, 6104, 6049. The panel includes a weekly candlestick chart showing the index climbing from below 4,000 in 2023 to a recent high of 6,290.22, with a rising green trendline support and a horizontal resistance line near the current 6,259.75 level." />
+    <img src="/assets/img/insights/fmi-2025-07-15-sp500.png?v=4" alt="S&amp;P 500 summary panel. Technical View: the trend shifted back to cautiously bullish after fresh record highs in June. Dow Theory bearish since the week ending March 14, 2025. Key resistance levels 6269, 6290, 6325; key support levels 6225, 6104, 6049. The panel includes a weekly candlestick chart showing the index climbing from below 4,000 in 2023 to a recent high of 6,290.22, with a rising green trendline support and a horizontal resistance line near the current 6,259.75 level." loading="lazy" />
   </picture>
 </figure>
 

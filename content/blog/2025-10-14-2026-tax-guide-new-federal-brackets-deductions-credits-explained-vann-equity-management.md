@@ -146,7 +146,7 @@ With the standard deduction amounts increasing significantly, fewer people will 
 
 However, this opens the door for strategic giving methods. Strategies like "bunching" charitable contributions—where you donate two or three years' worth of gifts in a single year—can help you surpass the itemization threshold in that year, allowing you to get the tax benefit while still supporting the causes you care about.
 
-#### Don't Forget the AMT
+### Don't Forget the AMT
 
 The Alternative Minimum Tax (AMT) exemption amounts have also increased for 2026, meaning fewer taxpayers will be affected. For married couples, the exemption is now $140,200 and the phase-out doesn't begin until $1,000,000 in income.
 

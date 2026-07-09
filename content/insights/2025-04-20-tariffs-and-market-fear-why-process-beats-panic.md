@@ -9,9 +9,9 @@ pdf: assets/docs/VEM-Financial-Market-Insight-2025-04-20.pdf
 status: published
 summary: "At the time of writing this, Monday morning Futures are sharply lower again (down close to 2%) as there was no meaningful tariff relief over the weekend while…"
 ---
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Important Read
 - Bull vs. Bear: Which Argument Makes More Sense?
@@ -28,13 +28,13 @@ The bottom line is that higher tariffs pose a significant risk to the current ec
 
 As a result, businesses and consumers appear to be putting some major spending decisions on hold. If this level of uncertainty persists, a U.S. recession—and, probably, a global one as well—are the most likely outlook.
 
-### The Important Read
+## The Important Read
 
 From the individual investor to the experienced fund manager, we are all looking at red across the financial screens, every investor's mind is focused on this one question. Markets are crashing, fear is everywhere, so what does the savvy investor do now? Fear is invading portfolios, distorting judgments, and dragging some of the more experienced investors off track. Every member of our investment team and many of our long-term clients have seen this before, in 2000, 2008, and 2020. And for the long-term investors, we have always made it through, and the market has ended up higher than where we started. Now while on the surface each collision seemed distinct, but beneath each bear market ran the same emotional script: panic first and opportunity second. A time during which history discreetly reveals a pattern for those with selectivity and discernment, the headlines exude a sense of impending doom.
 
 Here is what to know:
 
-#### The Nature of Fear in Markets—It Distorts Reality
+### The Nature of Fear in Markets—It Distorts Reality
 
 Fear makes smart investors emotional ones. It substitutes survival instinct with solid planning, and regardless of experience, anxiety whispers that this time may truly be different when the market declines rapidly and hard.
 
@@ -42,7 +42,7 @@ We have seen this script before. The dot-com bubble broke in 2000, therefore era
 
 "Short run, the market is a voting machine," Warren Buffett said. Long-term, the market functions as a weighing machine. Most investors overlook the fact that anxiety, when it gets louder, becomes a major sign of forced selling. That is not a justification for running. It motivates one to start working.
 
-#### Common Investor Fears During Crashes
+### Common Investor Fears During Crashes
 
 Rational thinking gives place to emotional survival when markets collapse quickly. Fear takes over control; it does not simply occupy the room. We have observed the same repeating worries afflicting investors during every significant downturn, and every time these are the questions that we get asked:
 
@@ -53,7 +53,7 @@ Rational thinking gives place to emotional survival when markets collapse quickl
 
 They are behavioral traps, loss aversion, recency bias, and herd mentality that drive investors into emotional decisions, irreversibly damaging capital. The long-term winners are the ones that interpret fear as a signal, not as a justification.
 
-#### The Practical Response
+### The Practical Response
 
 When markets fall, most investors react, but really, they should reassess and make sure they have a process or have a financial advisor that owns a process. Every position in the Vann Equity Management portfolios begin with quantitative metrics and a qualitative catalyst. During times of volatility our team stops and goes back over each and every thesis of every holding instead of panicking. We ask ourselves, “Has the plot changed?” “Has the brink vanished?” “Should we not hold or double down?” If so, we cut it quickly and redistribute it. Our process does not sell on dread. We sell when the sales, earnings, margin or thesis disappear. It is very rare that once cash is raised the individual investor will jump back into the market anywhere near where the bottom is…. Therefore, missing the recovery and locking in unnecessary losses.
 
@@ -61,25 +61,25 @@ Opportunity quantitative screening, not the comfort of cash will win the game of
 
 Live by Smart Money - Insiders buying amid a crisis are not guessing; they are expressing certainty. We monitor management changes, insider buying trends, and dropped spinoffs often missed by other institutional investors. These are choices supported by data, not emotional ones.
 
-#### The Power of Process Over Panic
+### The Power of Process Over Panic
 
 In falling markets, the process serves as the shield while emotion is the enemy. There should be no guessing. Volatility sharpens our research-driven, quantitative-led approach; it does not disturb it. Others rush for comfort or cash, but Vann Equity Management follows discipline: spotting dislocations, verifying catalysts, and precisely allocating within the equity markets. This process is about adapting to what is working, not working, and what will work; not about forecasting the bottom. Every crisis we have negotiated has made us more careful, more focused, and surer of our capacity to identify value when the noise level is highest. Anxiety vanishes. Process lives.
 
 Remember, it is time in the market; not timing of the market that accumulates true wealth.
 
-#### What You Should Do Now
+### What You Should Do Now
 
 Some investors seek an exit when fear rules the market. The brighter one’s search for opportunities. If you only learn one lesson from this month’s issue, let it be this: sell a portion of your equity portfolio up to 25% if you are retired and need ALL of your money and plan to only live the next five years, but do not sell if it is simply because you are afraid. There is a difference.
 
 At Vann Equity Management, our investment team pays more attention to what is misinterpreted than to what is falling. This is the time to monitor insider buying since, although the public withdraws, insiders are often acting with conviction rather than emotion. This is also the moment to hone our attention to spinoffs, restructurings, and businesses experiencing true internal transformation rather than merely following what seems low-cost. We are using this crash to construct a future-oriented portfolio rather than to fix a faulty one. The market will bounce back, as it always does, but only those who used the drawdown sensibly will stand ahead. Get ready to observe the process. Relax. See the panic as an advantage. Understand we have a repeatable, not reactive, approach that will help you be more suited for what lies ahead than merely surviving what is now.
 
-#### Final Words
+### Final Words
 
 Panic is noise. You are supposed to pick up the signal. Do not herd like others. When others pause, look for mispriced opportunities, separate actual triggers, and act with confidence. While bad judgments do, crashes do not kill investors. Process, patience, and preparation set long-term winners apart from the rest, not luck or timing. If you do need cash and cannot withstand the volatility, please reach out, and let us open another account and decide what amount of cash is right for you to move to the sidelines; based on your individual and family needs, not fear.
 
-### Stocks
+## Stocks
 
-<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-2.png" alt="S&amp;P 500 Chart"><figcaption>S&amp;P 500 Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-2.png" alt="S&amp;P 500 Chart" loading="lazy"><figcaption>S&amp;P 500 Chart</figcaption></figure>
 
 Stocks collapsed last week as the Trump administration’s reciprocal tariff announcement was much worse than feared and the S&amp;P 500 plunged on Thursday and Friday to fresh YTD lows.
 
@@ -87,7 +87,7 @@ Stocks collapsed last week as the Trump administration’s reciprocal tariff ann
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-#### Bulls vs. Bear: Which Argument Makes More Sense?
+### Bulls vs. Bear: Which Argument Makes More Sense?
 
 The bullish argument is: 1) It is not a total washout (the S&amp;P 500 is down sharply but defensive sectors and minimum volatility factors are only down modestly), 2) The Trump Put still exists and 3) The “worst-case” tariff news is now known, and a large wall of worry has been constructed.
 
@@ -103,7 +103,7 @@ Because the bullish argument is more compelling in the medium/long term (three-t
 
 Bottom line: in the near term we do think it makes sense to continue to hide in defensive and low-volatility equities in our portfolios. However, if these tariffs stay in place for an extended period and the S&amp;P 500 does fall another 10%-20%, our team believes that will present a substantial long-term opportunity. So, while we do not hope that happens, we do think this disruption will present another long-term buying opportunity.
 
-### Economic Data (What You Need to Know in Plain English)
+## Economic Data (What You Need to Know in Plain English)
 
 Tariffs obviously dominated the market narrative last week but while there are valid economic concerns moving forward, the reality is that March economic data was mostly “fine” and that while the U.S. economy may be losing some forward momentum, the major reports did not show a sudden drop-in activity. Put plainly, U.S. economic data is not that bad and if it were not for tariffs, this week’s data would have been perfectly Goldilocks.
 
@@ -111,9 +111,9 @@ Inflation will come back into focus this week, and we will also get some importa
 
 Bottom line: This market needs some good news and the sooner the better. Benign CPI readings and better-than-expected jobless claims will not erase stagflation concerns (especially since the impact of tariffs will not show up fully in the data until April and May) but it will push back against them; and at this point, even that could help stocks stabilize.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What the Tariff Announcement Means for Markets
+### What the Tariff Announcement Means for Markets
 
 Last week’s tariff announcement fell under our “worse-than-feared” scenario as President Trump announced a 10% baseline tariff for all imports and dramatically higher tariffs for major trading partners including China and the EU, which saw the imposition of 34% and 20% tariffs, respectively.
 
@@ -125,7 +125,7 @@ From a positioning standpoint, the tariff announcements are worse than feared bu
 
 Bottom line: While the tariff announcement was not a worst-case scenario (that would have happened if there was no hope of global tariff reduction), it was an incremental negative and we should expect more market volatility in the near term (although we would not take this as a signal to materially de-risk from stocks, at least not yet).
 
-#### The Bull Case vs. the Bear Case Post Tariffs
+### The Bull Case vs. the Bear Case Post Tariffs
 
 Reasonably, there is a lot of confusion and worry from investors about this market, so now that we know the tariff plans, we want to step back and lay out the bullish case for stocks (yes one still exists) and the bearish argument for stocks, so that 1) We are all well versed on these two outcomes and 2) Can confidently and clearly discuss them with clients or prospects.
 
@@ -153,8 +153,8 @@ Bottom line: This is a colossal policy mistake and the only question now is, how
 
 Our professional thought is that we have found technical support here at around 4850 +/- on the SP500 and are looking for anywhere from a 6-10% of completely oversold conditions. We are beginning to see a washout of supply and believe demand will pick up very quickly and violently.
 
-<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-3.png" alt="Market Multiple Levels Chart"><figcaption>Market Multiple Levels Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2025-04-20-financial-market-insight-2025-04-20-3.png" alt="Market Multiple Levels Chart" loading="lazy"><figcaption>Market Multiple Levels Chart</figcaption></figure>
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

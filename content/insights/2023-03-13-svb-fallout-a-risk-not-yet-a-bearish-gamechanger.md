@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - What's Happened with the Bank Failures?
 - What the Government Response Means for Markets
@@ -36,11 +36,11 @@ disclosure: >
   - What Powell's Comments Mean for Markets
   - Fed Pause Playbook
 
-### Stocks
+## Stocks
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2023-03-13-financial-market-insight-2023-03-13-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>Technical View: The medium-term trend in equities has been neutral since stocks rallied to multi-month highs to start 2023 but signs of a breakdown are emerging. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3951, 4048, 4180. Key Support Levels: 3808, 3733, 3670.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-03-13-financial-market-insight-2023-03-13-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>Technical View: The medium-term trend in equities has been neutral since stocks rallied to multi-month highs to start 2023 but signs of a breakdown are emerging. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3951, 4048, 4180. Key Support Levels: 3808, 3733, 3670.</figcaption></figure>
 
 The fallout from the Silicon Valley Bank failure has dominated market news over the past weekend and as such we are reaching out to focus on:
 
@@ -50,7 +50,7 @@ The fallout from the Silicon Valley Bank failure has dominated market news over 
 4) Impact on monetary policy and inflation
 5) If this is a bearish gamechanger.
 
-#### What's Happened with the Bank Failures?
+### What's Happened with the Bank Failures?
 
 On Friday Silicon Valley Bank, the 16th largest bank in the U.S., failed and was seized by the FDIC, marking the largest bank failure in the U.S. since Washington Mutual during the financial crisis. Then, on Sunday, Signature Bank of New York (SBNY) also failed and was taken over by the FDIC. Like Silvergate Capital and SVB, Signature Bank had a lot of crypto exposure. In sum, three large banks failed in less than a week.
 
@@ -92,9 +92,9 @@ That said, we do not think the volatility of the last week is a bearish gamechan
 
 Going forward, we will be watching for any further signs of contagion in markets, and if they appear we will take selling action loudly and clearly to "Get out!" For now, this appears to us more of a targeted risk for regional banks and an earnings headwind for financials more broadly, but not a systemic issue that requires abandoning long-term financial goals for preserving capital.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 CPI Preview: The Good, Bad and Ugly
 
@@ -104,11 +104,11 @@ Disinflation stalled in February (and in some cases reversed) and stocks and bon
 - **"Bad" CPI: 5.5%.** A 50-bps hike is very possible. If Core CPI doesn't decline from last month that will be further evidence that disinflation has stalled, and while this number should not create a massive selloff, it would likely weigh on stocks and bonds. We would expect broad weakness (but not intense selling) with defensive sectors relatively outperforming. Treasury yields would likely rise following last week's late decline, led by the 2-year yield as it would keep a 50-bps hike possible. The Dollar Index should rally modestly.
 - **"Ugly" Core CPI: &gt; 5.6%.** 50-bps becomes very likely. This number would further imply that disinflation has not just stalled, it has reversed, and the market reaction would be ugly. We would expect steep drops in stocks led by tech/growth/financials while defensives should relatively outperform but still decline. Treasury yields should spike as a 50-bps hike becomes fully priced in, with the 2-year yield rising more quickly than the 10-year yield. The Dollar Index should surge, possibly trading to, and through, 106. It shouldn't surprise anyone if the S&amp;P 500 turns negative for 2023 on this result.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2023-03-13-financial-market-insight-2023-03-13-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Technical View: Gold extended fourth-quarter gains into the start of 2023, but the steep uptrend has been violated and the technical outlook has shifted to neutral. Proprietary Model: Neutral (since the week of February 6, 2022). Key Resistance Levels: $1885, $1906, $1939. Key Support Levels: $1818, $1787, $1741.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-03-13-financial-market-insight-2023-03-13-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Technical View: Gold extended fourth-quarter gains into the start of 2023, but the steep uptrend has been violated and the technical outlook has shifted to neutral. Proprietary Model: Neutral (since the week of February 6, 2022). Key Resistance Levels: $1885, $1906, $1939. Key Support Levels: $1818, $1787, $1741.</figcaption></figure>
 
 Risk-off money flows dominated commodity markets last week as the combination of a hawkish reaction to Powell's Congressional testimony and contagion fears linked to the collapse of SVB weighed heavily on industrially sensitive commodities while gold rallied on safe-haven money flows.
 
@@ -120,15 +120,15 @@ Copper also declined last week as China's government growth outlook disappointed
 
 Gold bucked the bearish trend last week as Treasuries caught a fear bid and the dollar pulled back on less-hawkish money flows in the back half of the week. Gold futures gained 0.53% to close at a fresh one-month high. Last week's shift in cross-asset money flows, specifically the drop in the dollar and rise in Treasuries, could be a bullish gamechanger for gold if the trends persist; however, that remains a big "if" right now.
 
-### Oil Market Update
+## Oil Market Update
 
-#### EIA Data and Oil Market Update
+### EIA Data and Oil Market Update
 
 Factoring in all of the various influences on the oil market right now, risks remain skewed to the downside due to the elephant in the room, i.e. the threat of recession. With global supply dynamics as steady as they can be in an environment where the world's previously largest exporter of oil and refined products remains in an active war, demand uncertainties are keeping a lid on prices here. While certain supply side headlines or catalysts have the potential to send WTI through current resistance at $82 and towards $90, we maintain the view that the more likely scenario is a decline into the $60 range for WTI by year end.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What Powell's Comments Mean for Markets
+### What Powell's Comments Mean for Markets
 
 The Fed chair gave markets their first hawkish surprise of 2023, and for what seems like the third or fourth time in a year, Powell basically contradicted his own prior commentary when he stated rates will rise more than previously expected and a 50-bps increase in March is firmly on the table. Stocks and bonds dropped as a result.
 
@@ -146,7 +146,7 @@ Bottom line, yet again, the market has prematurely priced in a Fed pivot/pause, 
 
 The data showed disinflation in February, and the bond markets pushed yields higher as a result. Only after that was done did the Fed acknowledge more rate hikes were coming. Going forward, we must focus on the data, and that includes the looming CPI report Tuesday.
 
-#### Fed Pause Playbook
+### Fed Pause Playbook
 
 The market and investors have widely adopted the idea that a pause in rate hikes will be a positive catalyst for markets. Yet despite that near-unanimous belief, the facts imply the outlook for stocks once the Fed pauses is not nearly as positive as the consensus might think.
 

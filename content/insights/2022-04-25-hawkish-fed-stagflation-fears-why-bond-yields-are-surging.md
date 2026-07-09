@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Stocks: Why Stocks Dropped Last Week
 - Weekly Market Preview: A Key Earnings Week (Results Need to be Good)
@@ -41,7 +41,7 @@ disclosure: >
   - Today there are no economic reports and no notable Fed speakers. Worries about global growth are the reason stocks dropped last week, so markets need some positive news on growth to stabilize in the near term.
   - On the earnings front, this is a very important week and while the most important reports don't come out until later this week, two reports we'll be watching today are KO ($0.58) and WHR ($4.90).
 
-### Stocks
+## Stocks
 
 "Stocks dropped last week thanks to steep declines on Thursday and Friday as markets were again reminded that major global governments are removing stimulus and accommodation."
 
@@ -51,11 +51,11 @@ Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%)
 
 ✓ What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities is still neutral as the early 2022 surge in volatility saw the S&amp;P 500 breakdown to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4391, 4472, 4548. Key Support Levels: 4203, 4075, 3974.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities is still neutral as the early 2022 surge in volatility saw the S&amp;P 500 breakdown to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4391, 4472, 4548. Key Support Levels: 4203, 4075, 3974.</figcaption></figure>
 
-##### Last Week
+#### Last Week
 
 Volatility picked up last week as an early week rally reversed sharply on Thursday amid more data pointing to stagflation, mixed earnings, hawkish Fed speak and a subsequent rise in bond yields. The S&amp;P 500 dropped 2.75% on the week and is down 10.37% YTD.
 
@@ -63,7 +63,7 @@ The rally looked set to resume on Thursday as stocks gapped higher at the openin
 
 The selling continued at the open Friday after some mixed economic data overseas while weak SNAP earnings weighed on tech. The April PMI (basically a number that ranges between 0 to 100. Above 50 represents expansion/Below 50 represents a contraction) came in at 55.1 vs. (E) 57.5, which further stoked stagflation fears and continued to weigh on general market sentiment. Investors continued to price in a more aggressive Fed with four 50-bps rate hikes being priced in between the May and September FOMC meetings, which left the equity market in a "no bid" selloff that lasted through the close, and the S&amp;P 500 ended on the low ticks, down 2.77%.
 
-##### Bottom Line
+#### Bottom Line
 
 Stocks attempted to rally early last week, but global governments continue to take seemingly every available opportunity to remind markets that the global stimulus that sent stocks higher over the past few years is going away quickly and not coming back, and that general idea weighed on stocks on Thursday and Friday.
 
@@ -81,11 +81,11 @@ We remain cautious on the outlook for markets over the medium and longer term an
 
 We continue to favor overweight allocations to 1) Defensive sectors, 2) Minimum volatility 3) Value styles and 4) Cyclicals/inflation securities as we continue to think they can outperform and better weather this still volatile market, as they have all year. Finally, this week earnings will be key. There are major reports from widely held names (AAPL and MSFT) and they need to be solid, otherwise a possible test of the March lows (4,170) shouldn't surprise anyone.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
-##### Need to Know Econ
+#### Need to Know Econ
 
 Economic data last week showed the U.S. economy remained in a solid expansion, but at the same time the data points revealed just how prevalent inflation is in the economy, and while last week's economic readings might now make the Fed more hawkish on its own, they will add fuel to the "hawks" debate about even more aggressive tightening, and that's why stocks dropped.
 
@@ -99,7 +99,7 @@ The other notable manufacturing report last week, the Philly Fed survey, echoed 
 
 The data last week is textbook for an economy that's "running hot" with solid growth and very high inflation. And while last week's data won't make the Fed more aggressive, the case continues to build for even more aggressive tightening and balance sheet reduction, and if the Fed adopts that view, it'll cause more volatility.
 
-##### Important Economic Data This Week
+#### Important Economic Data This Week
 
 Inflation is in focus this week, and if the inflation numbers run "hot" again don't be surprised if the market begins to price in the chance of even more rate hikes by year-end (so potentially above 3% after the December meeting). The key number this week is Friday's Core PCE Price Index, as that's the Fed's preferred measure of inflation. The March CPI was very high, but also the core number didn't beat expectations and that's leading some to hope inflation pressures are peaking—and if we see that echoed in the Core PCE Price Index that hope will grow (although clearly there needs to be a lot more evidence of inflation pressures peaking and receding before the Fed will get less hawkish).
 
@@ -107,7 +107,7 @@ In addition to Friday's Core PCE Price Index, we also get the quarterly Employme
 
 Outside of inflation data, we also get several updates on economic growth including, Durable Goods (Tues) and the first look at Q1 GDP (Thurs). Both numbers will be covered by the financial media, but unless there's a shocking negative surprise (which is unlikely) they shouldn't move markets. Bottom line, to rally, markets need signs of a peak in inflation and solid growth. If we get the opposite (high inflation and wavering growth) expect more declines.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities dropped sharply last week on general global growth concerns as the Russia/Ukraine war dragged on and markets were reminded that major governments are withdrawing stimulus, which will be a headwind on growth."
 
@@ -119,23 +119,23 @@ Natural gas futures pulled back 11.69% last week following a massive rally in th
 
 In metals, copper bled lower last week with futures falling 2.91% as the global growth concerns trumped a drop off in production due to supply chain factors, rising costs, and protests near some mines in Peru. Support at $4.63 was decidedly violated Friday as futures dropped to a five-week low, which is an early warning sign for global risk assets for the weeks ahead.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone, shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1977, $1996, $2036. Key Support Levels: $1919, $1874, $1834.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone, shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1977, $1996, $2036. Key Support Levels: $1919, $1874, $1834.</figcaption></figure>
 
 Gold pulled back 2.26% last week thanks to the combination of a rally in the dollar and rising interest rates. The 10-year TIPS yield notably turned positive for the first time since the pandemic hit, which is becoming an increasing headwind on precious metals. Inflation concerns are keeping the 2022 rally alive as futures held a key support band between $1,920 and $1,940 into the end of last week. A break below that near-term support would shift the trend from bullish to neutral.
 
-#### 10-Year T-Note Yield Futures
+### 10-Year T-Note Yield Futures
 
-<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-3.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield turned positive after the early 2022 break to two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 2.954, 3.077, 3.189. Key Support Levels: 2.828, 2.652, 2.477.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-3.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart" loading="lazy"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield turned positive after the early 2022 break to two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 2.954, 3.077, 3.189. Key Support Levels: 2.828, 2.652, 2.477.</figcaption></figure>
 
 "The 10-year Treasury yield rose modestly last week, but importantly, the 10s-2s spread compressed further and it's fading away from resistance near 30-40 bps."
 
 Turning to Treasuries, the key movement last week was in the 10s-2s spread. After rising to resistance at 40 basis point early in the week, we saw a sharp reversal and decline in the 10s-2s spread following the hawkish Fed rhetoric late in the week. The 10s-2s yield spread fell to 17 basis points by week's end, and if we see a continued decline towards 0% again, that will only further solidify that the bond market is predicting a future slowdown. Looking at the 10-year yield, it came close to breaching 3% last week, but settled just under 2.90%, up 5 basis points on the week. But it remains only a matter of time until 3% is "taken" by the 10-year yield.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Understanding Why Longer-Duration Yields Are Rising So Sharply
+### Understanding Why Longer-Duration Yields Are Rising So Sharply
 
 The rise in global bond yields has accelerated over the past several weeks, as Treasuries and many international bond yields have moved to multi-year highs. We want to make sure everyone understands why that's happening, what it means if it continues, and how to allocate to seize opportunities or protect portfolios.
 
@@ -179,7 +179,7 @@ It means a lot, because it's important for tactical allocations. If 10s-2s conti
 
 However, if 10s-2s rolls over and heads back towards zero, that implies that the market is expecting a slowing of growth, which means we'll want to focus allocations on value over growth. Bottom line, the bond market is in flux and sending important signals to investors about future growth and/or inflation—and we will continue to watch the bond market closely as we continue to believe it is the "smart market" and provides great insight into what's coming next, not just what's happening now.
 
-#### Financial Conditions Update
+### Financial Conditions Update
 
 One of the reasons for the rally in stocks at the beginning of last week has been better-than-expected earnings results, especially from the airlines, as DAL, UAL and AAL all beat estimates and, most importantly, gave very positive commentary on the outlook for travel demand.
 
@@ -189,7 +189,7 @@ Meanwhile, for all the constant discussions about Fed tightening, none of it has
 
 To illustrate this point, we looked at the Chicago Fed National Financial Conditions Index. This is an index that measures four parameters to determine whether financial conditions in the U.S. economy are looser than average (which stimulates the economy) or tighter than average (which would be a headwind on growth). They remain very solidly "looser" than average, meaning that financial conditions (which factors in Fed policy, market interest rates, measure of risk taken in the markets, leverage, credit availability) show that financial conditions are not even neutral, they are still actively stimulating the economy!
 
-<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-4.png" alt="Chicago Fed National Financial Conditions Index (NFCI) stacked area chart showing Risk, Credit and Leverage components"><figcaption>Financial Conditions: The Chicago Fed Financial Conditions Index still shows financial conditions as much more accommodative than normal, and that's despite 8% inflation. This clearly shows that while the Fed is talking tough, it hasn't even started to put a headwind on economic growth yet.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-04-25-financial-market-insight-2022-04-25-4.png" alt="Chicago Fed National Financial Conditions Index (NFCI) stacked area chart showing Risk, Credit and Leverage components" loading="lazy"><figcaption>Financial Conditions: The Chicago Fed Financial Conditions Index still shows financial conditions as much more accommodative than normal, and that's despite 8% inflation. This clearly shows that while the Fed is talking tough, it hasn't even started to put a headwind on economic growth yet.</figcaption></figure>
 
 More specifically, the index is set so that "0" is average, meaning an index reading of 0 means financial conditions are no looser or tighter than average. As of last week reading, financial conditions are solidly negative (-0.37) and have only retraced half of the move from the most accommodative levels back in the summer of 2021 (the index was at -0.72). And over the past week, financial conditions have eased further.
 
@@ -203,7 +203,7 @@ We are not saying an economic turn is imminent, but we are pointing this out to 
 
 Bottom line, we are happy earnings are better than feared so far and we are happy stocks have rebounded, somewhat. But we think it's wise to be skeptical of optimistic macro commentary from airlines and other consumer goods companies because, right now, the business is booming. But I think Jamie Dimon's comments are worth keeping in the back of our mind—that he's nervous about a future slowdown and JPM is building reserves in case that occurs. So, it's not the economy now we're worried about, it's the economy in the coming quarters, and nothing in earnings results so far has reduced that concern.
 
-#### Is Housing Starting to Lose Momentum?
+### Is Housing Starting to Lose Momentum?
 
 ✓ March Existing Home Sales declined to 5.77M vs. (E) 5.86M
 
@@ -237,9 +237,9 @@ That makes the key metric in housing price, not sales; and there are no signs th
 
 Finally, just to be clear, we are not saying we are about to see 2008 again. The 2008 housing crash was a nightmare for virtually all of us and we sincerely hope that is the only housing crisis we ever see in our lifetime. However, that housing bubble was caused by leverage, rampant speculation, and dereliction of duty by underwriters and regulators. The current boom in housing is really a supply phenomenon. There is not enough supply and that is causing prices to spike. Further there is not the enormous amount of leverage in the system anymore, lending standards are still relatively solid, and banks are better capitalized. So, we can have a normal moderation in the housing market alongside an economic slowdown—it doesn't have to be 2008 again.
 
-### Oil Market Update
+## Oil Market Update
 
-#### Natural Gas Update
+### Natural Gas Update
 
 The 2022 rally in natural gas has gone parabolic so far in April with prices up over 100% from the turn of the year as unseasonably cold temperatures are driving elevated spring heating demand in the U.S. amid an already-bullish fundamental backdrop of subdued inventory levels and no real signs of rising production near to medium term.
 
@@ -249,7 +249,7 @@ On top of the traditional bullish fundamentals of low supply and relatively stro
 
 On the charts, the recent new highs in natural gas confirm the current uptrend in prices that began in earnest in mid-March and based on the price action since the October highs, the new upside target for nat gas futures is $9.06/mmBtu. Natural gas futures have become near-term overbought, however, and a pullback on any bearish news should not come as a surprise. In such an event, we should look for initial support near $6.33 and more formidable support down near $5.50, but a drop to either of those targets would likely present a buying opportunity based on both the bullish fundamental backdrop and increasingly positive technical trends.
 
-#### EIA Takeaways and Oil Update
+### EIA Takeaways and Oil Update
 
 With the exception of domestic production data, the weekly EIA report was mostly bullish for energy near term. On the headlines, commercial crude oil stockpiles dropped a sharp 8.0MM bbls last week vs. (E) +2.2MM (API: -4.5MM), which was a rather bullish surprise. Gasoline inventories fell -800K bbls which met estimates but was bullish relative to the API's +2.9MM while distillate supply dropped -2.7MM vs. (E) -900K (API: -1.7MM), also bullish.
 

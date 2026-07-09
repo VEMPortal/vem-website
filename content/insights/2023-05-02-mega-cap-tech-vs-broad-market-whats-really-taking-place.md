@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What is Really Taking Place in the Market?
+### What is Really Taking Place in the Market?
 
 Our Investment Committee thought we would offer up our thoughts on the ongoing comparison of the equal weighted vs market cap weighted saga of the S&amp;P 500; and what is really taking place in the market.
 

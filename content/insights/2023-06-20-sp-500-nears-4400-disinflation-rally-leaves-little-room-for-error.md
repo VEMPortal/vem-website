@@ -23,22 +23,22 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - STOCKS: Markets Price in "Economic Nirvana"
 - Based on Valuations, Cyclical Sectors Poised to Outperform
 - Oil Market Update
 - Special Reports and Editorial: What the Fed Decision Means for Markets
 
-### Stocks
+## Stocks
 
 "Stocks rallied to fresh multi-month highs last week thanks to a further decline in CPI and PPI that increased Immaculate Disinflation hopes that helped markets ignore a hawkish dot plot from the Fed."
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2023-06-20-financial-market-insight-2023-06-20-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bullish as the S&amp;P 500 just hit fresh YTD highs but a sense of investor complacency is a risk for volatility. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4489, 4540, 4632. Key Support Levels: 4294, 4198, 4133.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-06-20-financial-market-insight-2023-06-20-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bullish as the S&amp;P 500 just hit fresh YTD highs but a sense of investor complacency is a risk for volatility. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 4489, 4540, 4632. Key Support Levels: 4294, 4198, 4133.</figcaption></figure>
 
 The S&amp;P 500 reached 4,400 and came very close to our "best case" scenario target, as further declines in CPI/PPI combined with stable economic data to offset a Fed that, if economic data does not change, plans to hike an additional 50 bps by year-end.
 
@@ -56,9 +56,9 @@ On a micro level, corporate America is facing a more challenging environment. Th
 
 We are happy the S&amp;P 500 is at 4,400. We hope it keeps going. Bull markets are better for everyone in our business than bear markets. However, our job is to stay focused on facts and ensure you understand them as they are, not as we hope them to be. That is why we will continue to talk about risks to this market, and defend our current positioning, because those risks are real.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 There were only two notable economic reports last week and both implied a clearly slowing economy (and more Economic data last week was mostly Goldilocks and that offset the hawkish FOMC "pause" for one simple reason: Investors know the data will dictate future Fed policy, not the "dots," and the data last week showed a further decline in inflation (disinflation) and stable enough economic growth.
 
@@ -76,7 +76,7 @@ The only "soft" reading last week was the weekly jobless claims number, which re
 
 Investors have embraced the positive scenario: That disinflation accelerates and declines enough that the Fed will not need to raise rates much higher than current levels, and that the economy will enjoy a soft landing. To be clear, the economic data does not confirm that will occur, but it did not do anything to damage that expectation, either, and stocks rallied as a result.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities surged on a weaker US dollar and on Chinese growth expectations as officials announced more stimulus measures."
 
@@ -86,17 +86,17 @@ Starting with energy, oil prices fell sharply to start last week as GS analysts 
 
 For the fourth time this year, WTI held above key range support at $67/barrel and the American benchmark ended the week higher by 1.89%. Looking ahead, a continued rise with other risk assets amid soft-landing hopes is possible for the oil market, but a move beyond resistance in the low $80s near the 2023 highs is unlikely as it is rather difficult to make a convicted bull case for the quarters ahead as the deeply inverted yield curve continues to flash a historically accurate signal that the economy is on the brink of recession.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2023-06-20-financial-market-insight-2023-06-20-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold futures broke through uptrend support dating back to late 2022 last week, shifting the outlook from bullish to neutral. Proprietary Model: Neutral (since the week of June 12, 2023). Key Resistance Levels: $1995, $2011, $2043. Key Support Levels: $1942, $1919, $1863.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-06-20-financial-market-insight-2023-06-20-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold futures broke through uptrend support dating back to late 2022 last week, shifting the outlook from bullish to neutral. Proprietary Model: Neutral (since the week of June 12, 2023). Key Resistance Levels: $1995, $2011, $2043. Key Support Levels: $1942, $1919, $1863.</figcaption></figure>
 
 Turning to the metals, the new stimulus efforts by the Chinese government announced over the course of the week helped drive copper futures higher. Meanwhile, gold has not participated in the rally but rather declined amid rising Treasury yields as investors priced in a higher-for-longer Fed policy rate after the conclusion of the FOMC meeting. While industrials have enjoyed a solid rebound in recent weeks, copper is testing formidable resistance between $3.85 and $3.95, and a breakout higher, given the fundamentals, is unlikely while gold broke a long-standing uptrend last week shifting the outlook to neutral.
 
 Bottom line for the metals, if we see the Dollar Index hold the 2023 lows and move higher, that will add renewed pressure to metals broadly.
 
-### Oil Market Update
+## Oil Market Update
 
-#### EIA Data and Oil Market Update
+### EIA Data and Oil Market Update
 
 The weekly EIA data revealed an outsized build in commercial crude oil stockpiles and larger-than-expected builds in the refined products. The details actually favored the bulls as demand metrics hit new multi-year highs.
 
@@ -106,9 +106,9 @@ Looking to the details, U.S. oil production held steady at 12.4MM b/d, a post-pa
 
 Consumer gasoline demand remains strong and according to the latest data, it's getting stronger as we start the summer driving season. That is a bullish influence for the broader energy market and in normal economic conditions, would be reason for rallying oil and refined product prices. But we are not in normal economic conditions and oil traders are looking at the macro picture with a still-aggressive Fed threatening the economy and an already deeply inverted Treasury yield curve forecasting a recession within the next few quarters. And the threat of a looming recession is the primary and controlling influence on the global oil markets right now, especially given that OPEC+ appears to be maxed out regarding their ability to support the market with output cuts at this time.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What the Fed Decision Means for Markets
+### What the Fed Decision Means for Markets
 
 The Fed provided a hawkish surprise in the statement, and it caused some temporary declines in stocks, but the declines did not hold and the reason why is clear: The market does not believe the "dots," and it shouldn't. First, the dots have a very dubious track record of accuracy. Second, as we have said all year, it is not up to the Fed this year, it's up to the data.
 

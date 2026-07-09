@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Weekly Market Preview: Do Falling Treasury Yields Fuel More Upside in Stocks?
 - Weekly Economic Cheat Sheet: Is the "Growth Scare" Starting to Appear?
@@ -33,7 +33,7 @@ disclosure: >
 - What the Fed Decision Means for Markets
 - Post-FOMC Technical Levels Update
 
-### Stocks
+## Stocks
 
 "Stocks enjoyed their best week of the year last week thanks to Fed Chair Powell strongly hinting the Fed is done with rate hikes, Goldilocks economic data, and a smaller-than-expected future borrowing estimate by the Treasury."
 
@@ -41,11 +41,11 @@ disclosure: >
 
 ✓ What's underperforming: Defensive sectors and value have underperformed YTD but are still massively outperforming since the bear market started in 2022, and since our primary concern in 2023 is economic growth, we think underperformance will be temporary.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2023-11-07-financial-market-insight-2023-11-07-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bearish but prices are showing signs of stabilizing at support near the H1'23 lows. Dow Theory: Bullish (since the week of July 10, 2023). Key Resistance Levels: 4377, 4435, 4531. Key Support Levels: 4318, 4238, 4160.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-11-07-financial-market-insight-2023-11-07-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities remains bearish but prices are showing signs of stabilizing at support near the H1'23 lows. Dow Theory: Bullish (since the week of July 10, 2023). Key Resistance Levels: 4377, 4435, 4531. Key Support Levels: 4318, 4238, 4160.</figcaption></figure>
 
-#### Things Were Not That Bad, But We Are Not Sure They Are Suddenly This Good
+### Things Were Not That Bad, But We Are Not Sure They Are Suddenly This Good
 
 Over the past two weeks, when the S&amp;P 500 hit the lowest level since May, we received criticism for not being overtly bearish. Instead, we pointed out that most of the factors pushing stocks lower (surging yields and rising geopolitical risks) were likely temporary and did not invalidate the medium-term supports for this market (the "Three Pillars" of the rally, i.e., soft landing, disinflation and the Fed almost done with rate hikes).
 
@@ -63,9 +63,9 @@ From a tactical standpoint, there are better ways we can make ourselves look foo
 
 **Bottom Line:** This is a market searching for "what is next" and that could be either 1) A growth scare or 2) A resumption of the soft landing and disinflation narrative that push stocks higher into Christmas. We will all find out together via the data. Given this is a market searching for "what is next" and not riding a wave of sustainably new information (positive or negative), then that will keep us skeptical of either extreme in the current trading range, and that includes reminding us that fundamentals did not turn that bad two Friday's ago (and as such the market reaction was extreme to the actual events) and that bad economic data does not mean stocks should trade near the high end of the range, either.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 The past week saw Goldilocks economic data that contributed to a strong rally in both stocks and bonds. The key report, the jobs report, was deemed "Just Right" with a moderate increase of 150k jobs, although the September data was revised downward. The unemployment rate rose slightly to 3.9%, and wage increases were slightly below expectations. This data fell within the "Just Right" range, causing a positive reaction in futures and a decline in Treasury yields.
 
@@ -81,13 +81,13 @@ Two notable reports this week are Consumer Credit (on Tuesday) and jobless claim
 
 Turning to jobless claims, a particular focus will be on continuing claims. If they rise much above last week's 1.82M they will have hit the highest level since December 2021. That is notable because layoffs are not occurring broadly if unemployed people are having a harder time finding work, which would be a likely leading indicator of leaving future labor market softness.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities declined modestly again last week thanks to a sharp drop in oil prices, as the geopolitical risks in the Middle East receded and worries about global growth grew."
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2023-11-07-financial-market-insight-2023-11-07-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold became volatile to start Q4, falling to multi-month lows before rallying back to fresh multi-month highs, shifting the technical outlook to neutral. Proprietary Model: Neutral (since the week of October 16, 2023). Key Resistance Levels: $2016, $2042, $2079. Key Support Levels: $1984, $1970, $1933.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-11-07-financial-market-insight-2023-11-07-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold became volatile to start Q4, falling to multi-month lows before rallying back to fresh multi-month highs, shifting the technical outlook to neutral. Proprietary Model: Neutral (since the week of October 16, 2023). Key Resistance Levels: $2016, $2042, $2079. Key Support Levels: $1984, $1970, $1933.</figcaption></figure>
 
 In the realm of precious metals, the rally in gold and other metals recently paused, despite a modest rise in the dollar and falling interest rates.
 
@@ -97,13 +97,13 @@ In the last two weeks, several factors have halted the increase in Treasury yiel
 
 The 10-year yield fell to a six-week low while the 2-year yield retraced the entire August-October increase in yields. The 10-year yield, however, remains about 50 basis points above the August levels (when the rise in yields truly began) so the sooner the 10-year yield can retrace the balance of that move, the better.
 
-### Oil Market Update
+## Oil Market Update
 
 The oil market faces a complex landscape. The continuous rise in domestic oil production has offset the impact of OPEC+ output cuts led by major producers like Saudi Arabia and Russia. Furthermore, fading long-term demand expectations, as indicated by disappointing global economic reports, raise worries about the market tipping into a surplus in the coming months. The ongoing Israel-Hamas conflict remains a significant factor, keeping short-sellers on alert due to the threat of disruptions in oil production, infrastructure, or logistics. Despite a temporary easing of geopolitical fears, the market remains vulnerable to substantial short squeezes.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What the Fed Decision Means for Markets
+### What the Fed Decision Means for Markets
 
 Last week was catalyst-filled for markets, and it had the potential to remind us of two key points. Firstly, a soft landing is still the most likely outcome and secondly, the Fed is likely done with rate hikes. So far, that is exactly what has happened, and stocks have rallied hard as a result. The recent metrics implied a soft landing and while it was not perfect, it was "good enough" to remind us that the economy remains in solid shape.
 
@@ -115,7 +115,7 @@ Our investment team has maintained that as long as the "Three Pillars" of the ra
 
 In the very short term, headlines will likely keep volatility elevated and earnings season is creating a valuation risk. For the S&amp;P 500 to continue to trade above 4,300 we will need positive geopolitical and domestic political headlines, but beyond the short term, the net impact of the Fed meeting (and all of this week's news so far) is to imply that the S&amp;P 500 should remain largely rangebound between 4,350ish on the high end and 4,200ish on the low end, until such time as those "Three Pillars" are either no longer needed or are destroyed.
 
-#### Post-FOMC Technical Levels Update
+### Post-FOMC Technical Levels Update
 
 With markets making big moves since the Fed decision on Wednesday, our investment team wanted to follow up on some of the key technical levels. The S&amp;P 500 closed Wednesday above the initial resistance level of 4,225 that would be in focus after the Fed decision while the VIX closed Wednesday handily lower than Tuesday's settlement of 18.14 (down 7% on the day) indicating a clear easing in volatility/hedging activity. That combination of technical developments opened the door for the S&amp;P 500 to make a run at the next key resistance zone between 4,330 and 4,380 but interestingly, the S&amp;P 500 stalled at 4,320 in the final hour which happens to be the midpoint of the current target range.
 

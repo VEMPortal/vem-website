@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Relief Rally to 3800
 - A Critical Week for Stocks
@@ -37,7 +37,7 @@ disclosure: >
   - Are "Dovish Hikes" The Same Thing as a "Fed Pivot?" No!
   - What the Political News from the U.K. and China Mean for Markets
 
-### Stocks
+## Stocks
 
 - Stocks rallied again last week thanks to the restoration of fiscal credibility in the U.K. and rising hopes that rate hikes will be smaller in the coming months.
 
@@ -47,9 +47,9 @@ Bottom line, none of this is a "Fed pivot" that we really need, but it is better
 
 The second legitimate reason for the stock market rally is that earnings are NOT as bad as feared. Yes, the blowup in Facebook (META) and the disappointing results from MSFT, GOOGL and AMZN all hogged the financial headlines, but outside of tech, earnings are decidedly not as bad as feared, and that is reflected in the performance gap between RSP (the equal weight version of the S&amp;P 500) which rose nearly 5% last week.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-10-31-financial-market-insight-2022-10-31-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>Technical View: The medium-term trend in equities is bearish, confirmed by the latest breakdown to new multi-year lows in the major equity indices. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3941, 4037, 4110. Key Support Levels: 3807, 3746, 3666.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-10-31-financial-market-insight-2022-10-31-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>Technical View: The medium-term trend in equities is bearish, confirmed by the latest breakdown to new multi-year lows in the major equity indices. Dow Theory: Bearish (since the week of May 2, 2022). Key Resistance Levels: 3941, 4037, 4110. Key Support Levels: 3807, 3746, 3666.</figcaption></figure>
 
 The rally of the past two weeks has now largely satisfied our expectation that we could see a relief rally towards 3,800 (currently 3870 at time of writing this) on renewed hopes of a looming Fed pivot (and indeed, as is usually the case, momentum has taken us beyond the levels we think are fundamentally justifiable). But while this price action is certainly better than what we saw at the end of September/early October (tech weakness notwithstanding), we think it is important to temper our enthusiasm and realize that, at these levels, the S&amp;P 500 is now stretching the bounds of justification given the actual market reality.
 
@@ -64,13 +64,13 @@ Looking forward, for any further gains to be fundamentally supported, we need to
 1. The Fed pivot and
 2. Inflation stats start to drop. Regarding the former, if Powell hints at a 50-bps hike in December at this week's meeting that likely would cause a further rally (maybe towards 4,000 in the S&amp;P 500) but we would use that rally to again right size exposure. Regarding the latter, a soft jobs number would help this week but really, we need to see CPI drop meaningfully and the next opportunity for that is Nov. 10.
 
-#### Bottom Line
+### Bottom Line
 
 There has been some macroeconomic improvement, but our "Three Keys to a Bottom" remains unsatisfied. So, we continue to favor overweight allocations to cash and defensive sectors, and value as the most effective way to maintain long exposure and weather the continued market storm.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 To round the month out, data didn't point at stagflation as strongly as the data from two weeks ago; but it did still hint at stagflation, and if it were not for the growing hope that central banks will start to slow rate hikes in the coming months, the data would have weighed on stocks more.
 
@@ -80,7 +80,7 @@ On the inflation front, the data wasn't as bad as two weeks ago, but it wasn't e
 
 In sum, these aren't "bad" inflation numbers, as they didn't imply inflation is getting worse. At the same time, they're not showing inflation is declining rapidly either, and as such, we have clearly slowing growth amidst a buoyant inflation environment. That is stagflation if it continues.
 
-#### Important Economic Data This Week
+### Important Economic Data This Week
 
 This week is full of potentially important events and it is not an exaggeration to say that the events of this week could result in another 5% rally in the S&amp;P 500, or a give back of a lot of the gains of the past two weeks (and possibly a test of the lows).
 
@@ -90,27 +90,27 @@ The second most important event is usually the most important event during the f
 
 The third most important events this week are the ISM Manufacturing PMI (tomorrow) and the ISM Service PMI (Thursday). Inflation needs to fall faster than economic growth, otherwise we have got stagflation and that is not good for stocks at these levels. So, if the ISM PMIs can stay buoyant and not mirror the drop we were seeing in the flash PMIs, that will give markets some confidence that growth remains resilient and it will be a positive for stocks, especially if the price indices decline further.
 
-#### Bottom Line
+### Bottom Line
 
 Stocks have rallied on the hopes of smaller rate hikes on the horizon and resilient U.S. economic growth, and that will either be confirmed this week (and stocks can extend the rally) or contradicted (and if that happens, don't be shocked by a quick 5% pullback).
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 - Commodities were mixed last week as oil posted solid gains, rising along side other risk assets amid renewed peak-inflation hopes while industrial metals declined on negative news flow out of China and gold pulled back on declining inflation expectations.
 
 WTI crude oil futures rallied 3.81% last week thanks to the combination of general risk on money flows amid new peak inflation hopes and government data that pointed to strong demand and tight supplies. The weekly EIA report showed oil exports jumped to a new record high amid strong international demand while a domestic measure of implied demand rose to the highest since August. With the refinery utilization rate well off the summer highs, current trends suggest refined product supplies could get even tighter, and that helped oil prices rally toward the upper end of its recent trading range. The price of oil is still rangebound between support at $78 and resistance at $93/barrel as the "Biden put" (his recent announcement that the DOE will begin to buy back oil for the SPR on dips towards $70/barrel) is keeping a bid under the market while lingering concerns about a looming global recession are capping upside moves.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-10-31-financial-market-insight-2022-10-31-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Technical View: The outlook for gold remains bearish as futures prices recently fell to new 52-week lows, confirming the well-established downtrend. Proprietary Model: Bearish (since the week of September 12, 2022). Key Resistance Levels: $1680, $1707, $1735. Key Support Levels: $1633, $1603, $1583.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-10-31-financial-market-insight-2022-10-31-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Technical View: The outlook for gold remains bearish as futures prices recently fell to new 52-week lows, confirming the well-established downtrend. Proprietary Model: Bearish (since the week of September 12, 2022). Key Resistance Levels: $1680, $1707, $1735. Key Support Levels: $1633, $1603, $1583.</figcaption></figure>
 
 Gold prices declined 0.85% last week despite a pullback in the dollar and a drop in Treasury yields. Digging deeper into the market internals, market-based inflation expectations, specifically the 5-Yr TIPS Breakevens, pulled back following inflation data that came in mildly lower than expected over the course of the week. Looking ahead, the trend in gold is still lower and the fact that futures couldn't rally in the midst of a weaker dollar and drop in interest rates last week is discouraging. Fundamentally, the longer-term uptrends in the dollar and rates remain bearish headwinds for gold leaving the path of least resistance lower.
 
 Turning to industrial metals, copper fell 1.35% last week following the conclusion of China's People's Congress during which Xi Jinping reiterated the government's commitment to its zero-Covid policy. That weighed on demand expectations especially considering that concerns about the global economy are on the rise. Going forward, we will continue to watch copper closely as a new breakdown in prices would underscore deteriorating economic expectations and likely renewed pressure on risk assets globally.
 
-### Oil Market Update
+## Oil Market Update
 
-#### EIA Data Takeaways and Oil Update
+### EIA Data Takeaways and Oil Update
 
 The weekly EIA inventory report was a mixed bag but assessing both the headlines and the details provided a mildly bullish outlook for the near term and WTI futures rallied accordingly in the wake of the release.
 
@@ -122,9 +122,9 @@ More oil is leaving the country than ever before, commercial oil stockpiles rose
 
 Looking ahead, that aforementioned trading range between support at $78/barrel and resistance at $93/barrel is still intact for now with the Biden administration's "put" at $70/barrel acting as fundamental support while any move into the $90s will likely be capped by demand worries linked to recession fears.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### A Tale of Two Markets?
+### A Tale of Two Markets?
 
 Last week poor tech earnings weighed on the major indices, but the reality is that, beyond the tech sector, the performance of the market has been good.
 
@@ -136,7 +136,7 @@ Stepping back, this market and the economy more broadly are starting to remind u
 
 Bottom line, earnings season so far continued to advocate for overweight exposure to defensive sectors, low volatility stocks, and value more broadly, and as we approach what will likely be further deterioration in the macroeconomic environment, we continue to think those sectors are some of the best ways to maintain long exposure while at the same time insulating portfolios for further extreme downside.
 
-#### Are "Dovish Hikes" The Same Thing as a "Fed Pivot?" No!
+### Are "Dovish Hikes" The Same Thing as a "Fed Pivot?" No!
 
 The number of central banks that have executed a "dovish hike" recently increased from one (the Reserve Bank of Australia) to two yesterday, as the Bank of Canada hiked rates just 50 bps, less than the 75-bps expectation. That smaller-than-expected rate hike caused U.S. stocks to temporarily rally last Tuesday.
 
@@ -158,11 +158,11 @@ That's different than a slowing of rate hikes, which is what we are seeing. The 
 
 Now, could less-intense rate hikes lead to a Fed pivot? Absolutely! But that will depend on inflation and specifically how quickly inflation declines. Obviously, we hope that's sooner than later, but we wanted to be crystal clear that "dovish" hikes where the Fed might hike less than expected is not a Fed pivot and as such, we would not chase markets higher even if the Fed hints at 50 bps at next week's FOMC meeting (stocks may rally on that, but we would be skeptical it's sustainable until we get a real drop in CPI).
 
-#### What the Political News from the U.K. and China Mean for Markets
+### What the Political News from the U.K. and China Mean for Markets
 
 Markets were driven last Monday by conflicting influences from foreign politics, namely Rishi Sunak becoming Prime Minster of the U.K. and Chinese President Xi securing a third term as party leader (and taking steps to effectively make him a dictator). Given the recent influence U.K. politics has had on the global markets (including U.S. interest rates) and the utter collapse of Chinese stocks surrounding Xi's consolidating power, we wanted to cover each event and clearly identify what each means for markets.
 
-##### Sunak Becomes PM. Market Impact: Slightly Positive.
+#### Sunak Becomes PM. Market Impact: Slightly Positive.
 
 Boris Johnson's former Chancellor of the Exchequer Rishi Sunak will become the next Prime Minister of the United Kingdom today, and the net impact of this news will be to reduce market anxiety regarding the U.K.'s fiscal situation.
 
@@ -174,7 +174,7 @@ Key Variable to Watch: 10-year Gilt Yields. 10-year Gilt yields have essentially
 
 Last Monday, the 10-year Gilt yield fell 31 basis points and Gilt yields hit their lowest level since September. If the declines continue and 10-year Gilts trade down below 3.50% (and close to 3.00%) that will be a sign that all market fiscal anxiety has dissipated, and it'll be a positive for U.K. stocks and the global bond market (i.e., lower global yields).
 
-##### Xi Strengthens His Hold on Power. Market Impact: Potentially Negative.
+#### Xi Strengthens His Hold on Power. Market Impact: Potentially Negative.
 
 We have long said that China is a country that's run like a company, and keeping that analogy alive, Premier Xi essentially strengthened his hold on power and just became Premier/CEO of China for life. He did this by stuffing the "Politburo Standing Committee," which is essentially like the "Board of Directors of China" with loyalists, as he rid the higher levels of the Chinese government of any potential detractors. This was done mostly silently, although the forcible removal of Xi's predecessor, Hu Jintao, provided a stark visual demonstration of Xi's tightening grip on power.
 

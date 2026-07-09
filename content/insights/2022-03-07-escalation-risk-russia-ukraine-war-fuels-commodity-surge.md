@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Stocks: A Narrowing Path to an Economic Soft Landing
 - Weekly Market Preview: All About Ukraine (Will there be a real cease fire?)
@@ -36,13 +36,13 @@ disclosure: >
   - Update on Value/Growth Rotation
 - Energy Update: OPEC+ Policy Decision and EIA Data
 
-#### Weekly Market Preview: All About Ukraine (Will there be a real cease fire?)
+### Weekly Market Preview: All About Ukraine (Will there be a real cease fire?)
 
 Geopolitically, over the weekend there were attempts at localized cease fires in southern Ukraine to allow citizens to flee the cities, but those efforts have been, so far, a failure. More peace talks are scheduled for today although not much progress is expected.
 
 Today there are no notable economic reports and no Fed speakers, so oil and geo-politics will continue to move markets. If oil continues to rally throughout the day, that will further pressure stocks and it'll take meaningful progress on a cease fire to help markets rebound (and that doesn't seem likely, at least not today).
 
-### Stocks
+## Stocks
 
 "Stocks dropped again last week as the Russia/Ukraine war further intensified, sending commodity prices soaring and increasing the chances of a future slow-down in economic growth. The longer the conflict goes on, the greater the headwind it will become on stocks."
 
@@ -52,11 +52,11 @@ Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%)
 
 ✓ What is Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 breakdown to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4401, 4477, 4589. Key Support Levels: 4289, 4156, 4063.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 breakdown to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4401, 4477, 4589. Key Support Levels: 4289, 4156, 4063.</figcaption></figure>
 
-#### Narrowing the Path to a Soft Landing
+### Narrowing the Path to a Soft Landing
 
 When Russia invaded Ukraine approximately 10 days ago, we and other analysts highlighted that the duration of the conflict would be the key variable for markets—and more directly how long the conflict lasted, and how sustainably high it sent commodity prices, would determine whether the war was a material bearish influence.
 
@@ -72,11 +72,11 @@ Barring a NATO/Russia war (which thankfully remains unlikely) this conflict will
 
 As stated, we still view the S&amp;P 500 in the 4,300-4,600 range. That said, until there's de-escalation, we view this market as a "Hold" and will continue to audit our holdings to ensure we are overweight: 1) Low valuations and even some super-cap tech such as MSFT/CSCO/ORCL etc., and 2) Low volatility. We are not abandoning our call on cyclicals, and if banks/financials continue to get pummeled, we will look to selectively buy on "air pocket" days in the markets. However, at this point downside risks are building and while we still think the market can weather this geopolitical storm, we have got to see signs of geopolitical progress, otherwise the pressure on risk assets will grow and support between 4,200-4,300 will be broken.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
-##### Need to Know Econ from Last Week
+#### Need to Know Econ from Last Week
 
 With commodity prices (oil) surging to multi-year highs in response to the Russia/Ukraine war, analysts are becoming nervous about near-term economic growth, although positively most of last week's data was solid and, for now, the U.S. economy remains on solid footing.
 
@@ -88,13 +88,13 @@ Bottom line, with inflation high, commodity prices surging and the Fed about to 
 
 Powell gave his semi-annual testimony to Congress last week and it didn't contain any material surprises, although he did voice his support for a 25-basis-point rate hike in March (vs. 50 bps) and Friday's jobs report likely confirmed that's what we'll get (barring a huge surge in CPI this Thursday). We are getting closer to learning how quickly the Fed will hike rates (we get new "dots" at next week's meeting) and that will provide some important clarity to markets—although that won't be the positive it otherwise could have been unless we get de-escalation in Ukraine.
 
-##### Important Economic Data This Week
+#### Important Economic Data This Week
 
 The key report this week is Thursday's CPI, and the key here is clear: It has to stop going up every month! That may seem simplistic, but year-over-year CPI has been moving relentlessly higher each month, and for anxiety about inflation to ease, we need to see the acceleration stop. Now, exploding commodity prices will obviously impact future CPI reports, but in the meantime, it will be helpful if we see some signs of a peak in CPI prior to that impact, so again the key for this report is to see hints that inflation pressures are peaking. From a Fed standpoint, this would have to be a very, very high number to get the Fed to hike 50 bps next week given Powell's comments last week and the Goldilocks jobs report, although if CPI prints well above 8%, do not be surprised if a 50-bps hike is back on the table.
 
 The other notable inflation indicator this week is the University of Michigan Inflation Expectations Index, and again that's important because if consumer inflation expectations continue to rise, that will only further the Fed's resolve to quickly remove accommodation, so we'll be watching next Friday's report closely. Bottom line, this week is all about inflation, and if it can give some hints of peaking, that could be a welcomed tailwind for stocks heading into next week's Fed meeting.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities exploded higher as the Russia/Ukraine war intensified and global commodity prices surged on general uncertainty and potential supply concerns."
 
@@ -106,15 +106,15 @@ Bottom line, just about every influence on oil, from geopolitics to storage leve
 
 Looking to metals, copper rallied to new record highs last week with a gain of 9.62% thanks to supply disruptions due to the Ukraine conflict and data that showed lower-than-expected production at the start of the year. From a demand standpoint, strong manufacturing data and the solid BLS report further bolstered the outlook for industrial metals.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone, shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1994, $2037, $2055. Key Support Levels: $1938, $1911, $1874.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold has broken above key resistance in the upper $1,800/oz. zone, shifting the technical outlook from neutral to bullish. Proprietary Model: Bullish (since the week of February 14, 2022). Key Resistance Levels: $1994, $2037, $2055. Key Support Levels: $1938, $1911, $1874.</figcaption></figure>
 
 Switching to precious metals, gold rallied 4.49% on the week as inflation expectations via 5-Yr breakevens blew out to fresh record highs. Ongoing concerns about price pressures and Fed policy expectations being dialed back slightly due to geopolitics are both strong tailwinds behind gold here.
 
-#### 10-Year T-Note Yield Futures
+### 10-Year T-Note Yield Futures
 
-<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-3.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield has turned positive after the early 2022 break to fresh two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 1.844, 1.932, 2.033. Key Support Levels: 1.660, 1.543, 1.419.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-03-07-financial-market-insight-2022-03-07-3.png" alt="10-Year T-Note Yield technical summary panel with weekly candle chart" loading="lazy"><figcaption>10-Year T-Note Yield — Technical View: The medium-term trend in the 10-year yield has turned positive after the early 2022 break to fresh two-year highs. Proprietary Model: Bullish (since the week of January 3, 2022). Key Resistance Levels: 1.844, 1.932, 2.033. Key Support Levels: 1.660, 1.543, 1.419.</figcaption></figure>
 
 "The 10-year Treasury yield fell more than 20 basis points last week and the 10s-2s spread dropped to a fresh low of just 31 basis points as global bond markets are pricing in the increased chances of a broader economic slowdown, courtesy of Russia/Ukraine uncertainty and looming Fed rate hikes."
 
@@ -122,9 +122,9 @@ In Treasuries, the risk-off move in markets pushed the 10-year yield sharply low
 
 Bottom line, as we've said, the longer the Russia/Ukraine conflict continues, the bigger the headwind will be on the global economy, and we are seeing that now in real time, so again the sooner this situation de-escalates, the better.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### It's All About Escalation (And What Can Go Wrong)
+### It's All About Escalation (And What Can Go Wrong)
 
 Stocks dropped last Tuesday despite solid economic data and the announcement of more peace talks, but that didn't offset the reality that the situation in Ukraine is still escalating, and that means the sanctions on Russia also are escalating.
 
@@ -140,7 +140,7 @@ So, what markets need is de-escalation, and we are getting the opposite. We are 
 
 Positively, the sheer weight of the sanctions against Russia will likely prod them towards some sort of ceasefire in the coming days/weeks, so we do not see this as a bearish gamechanger (although clearly this remains a volatile and unpredictable situation).
 
-#### Why the SWIFT Ban and Other Sanctions Matter
+### Why the SWIFT Ban and Other Sanctions Matter
 
 Some subscribers were a bit unclear why Russian banks being banned from SWIFT would cause fears of financial contagion, so I wanted to cover the topic briefly.
 
@@ -152,7 +152,7 @@ Now, this is a very simplistic example but hopefully it illustrates this point: 
 
 In all likelihood, this won't be a problem (central banks will stand ready to provide emergency liquidity to anyone suffering from Russia's partial ejection from SWIFT) but the point is we don't know for sure, and that's why these intense sanctions caused an uptick in anxiety last week. But to be clear, unless there is actual contagion, they should not be a headwind on stocks.
 
-#### Update on Value/Growth Rotation
+### Update on Value/Growth Rotation
 
 The Russia/Ukraine situation has essentially halted the rotation out of growth and into value, as financials, which are large weightings in value sectors, being hit by the dual headwinds of falling yields and sanction uncertainty. And that can continue as long as the Russia/Ukraine situation weighs on financials and other value sectors. Point being, don't be surprised if tech/growth outperforms as the Russia/Ukraine situation evolves.
 
@@ -162,7 +162,7 @@ What is not temporary, however, is the Fed removing accommodation. While a lot o
 
 Bottom line, we think tech/growth can outperform in the short term given the Russia/Ukraine uncertainty, but we would use that outperformance as another opportunity to lighten up on growth and allocate to value sectors to ensure a more balanced portfolio (or even mild overweight to value).
 
-### Oil Market Update
+## Oil Market Update
 
 The recent price action in energy markets has been unprecedented and historic as the Russia/Ukraine conflict has fueled a fear bid across the oil and refined products complex, sending prices to multi-year, and in some regional markets, all-time highs. Energy prices first began to move higher last week after the March OPEC+ meeting concluded with members agreeing to stay on course and raise production by +400K b/d in April, despite the sanctions on Russia and sharp rise in prices in recent weeks. WTI prices are up more than 48% YTD while gasoline futures have rallied more than 25% just this week.
 

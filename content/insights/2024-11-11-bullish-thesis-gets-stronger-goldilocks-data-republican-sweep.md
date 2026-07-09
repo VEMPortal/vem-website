@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Why the Bullish Thesis Got Stronger
 - Market Preview: Does the S&amp;P 500 Breakthrough 6,000?
@@ -33,7 +33,7 @@ disclosure: >
 - What the Trump/Republican Victory Means for Markets
 - What the Fed Rate Cut Means for Markets
 
-### Stocks
+## Stocks
 
 "Stocks surged following more Goldilocks economic data and following the Republican sweep in the election, which will result in more pro-growth economic policies."
 
@@ -41,7 +41,7 @@ disclosure: >
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-#### Why the Bullish Thesis is Stronger Now
+### Why the Bullish Thesis is Stronger Now
 
 Just over two weeks ago, we and other market strategists on the street cautioned that the 2024 rally would be tested in virtually every way as we would get critical updates on growth, earnings, Fed rate cuts and the future of Washington.
 
@@ -71,9 +71,9 @@ Geopolitically, things can get much worse! Obviously trade volatility and trade 
 
 The positive events of the past two weeks plus very strong seasonals mean the path of least resistance is higher, and a move to 6,200 on the S&amp;P 500 before year-end is entirely possible (that is 22* 2025 S&amp;P 500 EPS of $273, plus some additional rally for momentum/chasing). However, do not confuse those moves for a "perfect" market set up, because this market still has risks, it still has problems, and stocks can indeed still go down in 2025 if those risks materialize (now there is virtually zero room for disappointment).
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 In the start to the month, last week's economic data was Goldilocks, and the Fed decision met expectations and as such, both solid growth and Fed policy remain important, positive supports for this powerful YTD rally.
 
@@ -87,15 +87,15 @@ It was a similar message from the other notable economic report last week, weekl
 
 Bottom line: Throughout 2024 the combination of expected (and realized) Fed rate cuts and resilient economic growth have powered stocks higher and that remained the case last week.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities were mixed last week as oil rallied modestly amid the post-election, risk-on money flows while the metals sank amidst the pressure of a stronger dollar. Gold logged as the dollar strength, rising yields, and spike in Inflation expectations all weighed on the precious metal."
 
 After a volatile start to the month of November, commodities ended last week mixed as energy futures eked out gains and industrial metals relatively outperformed precious varieties; but still ended the week lower thanks to the headwinds of a stronger dollar and firming interest rates.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2024-11-11-financial-market-insight-2024-11-11-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: The 2024 gold rally took a breather amid profit taking after the 2024 election results; however, the long-term uptrend remains intact. Primary Trend: Bullish (since the week of November 27, 2023). Key Resistance Levels: $2729, $2753, $2787. Key Support Levels: $2668, $2626, $2547.</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-11-11-financial-market-insight-2024-11-11-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: The 2024 gold rally took a breather amid profit taking after the 2024 election results; however, the long-term uptrend remains intact. Primary Trend: Bullish (since the week of November 27, 2023). Key Resistance Levels: $2729, $2753, $2787. Key Support Levels: $2668, $2626, $2547.</figcaption></figure>
 
 Gold has been the worst performer in the commodity complex to kick off the month. On the charts, gold has recently dipped below established support at $2,750 and decidedly below the uptrend line dating back to the July breakout to new record highs.
 
@@ -103,23 +103,23 @@ Looking ahead, the path forward for gold depends on whether the knee-jerk reacti
 
 Copper plunged more than 5% in the wake of the election due to demand fears linked to the threat of tariffs by the second Trump administration. Looking ahead, whether copper breaks out above $4.50 or below $4.20, last week's price extremes offer insight as to trader sentiment towards the macro environment.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What the Trump/Republican Victory Means for Markets
+### What the Trump/Republican Victory Means for Markets
 
 Donald Trump became the second President to win two non-consecutive terms (the other was Grover Cleveland) after he soundly defeated Kamala Harris. Republicans also flipped the Senate while the House of Representatives remains officially undecided. However, with Trump's sizeable margin of victory and broad Republican outperformance in the Senate, it is likely the Republicans will win the House as well, ultimately creating a Republican sweep and meeting our "Good" scenario analysis.
 
-##### Is this a bullish gamechanger?
+#### Is this a bullish gamechanger?
 
 Not really, because markets are up so much already YTD and trading at stretched valuations. That said, the election results should spur a rally into the year-end, barring any other major surprises. Markets will price in a future pro-growth policy agenda; and price in a likely full extension (and possible increase) of the Tax Cuts and Jobs Act (TCJA). In 2016, the Republican sweep led to a 4.5% rally into year-end and given the currently positive macroeconomic backdrop of solid growth, falling inflation and looming Fed rate cuts, a rally through 6,000 in the S&amp;P 500 before year-end is entirely possible.
 
-##### What should Outperform and Underperform?
+#### What should Outperform and Underperform?
 
 The Republican agenda is characterized by: Pro-growth policies (tax cuts), deregulation, focus on domestic industries and negotiating better trade relationships. The likely market winners from this policy stance are Value, Small-Caps, cyclical sectors, and domestically focused sectors such as Industrials, Defense, Energy/Materials/Commodities, and Transports, Banks/Financials/Insurance.
 
 The relative "losers" (which should underperform, but still rally) from this policy stance are global trades, Large-Cap growth, China/Emerging Markets, defensive sectors, and large importers. Essentially, this should continue the broadening of the rally we have all witnessed since July where the "rest of the market" catches up with (and outperforms) mega-cap tech and growth factors.
 
-##### What are the risks we need to watch going forward?
+#### What are the risks we need to watch going forward?
 
 **Risk 1: Treasury yields.** Correct or not, the market views Republican control of Washington as negative for the debt and deficits. As a result, Treasury yields will rise and continue to be elevated until such time as Republicans calm fears of rising debt and deficits.
 
@@ -131,7 +131,7 @@ What is Next: The results for the House of Representatives are the next major da
 
 Bottom line: This likely "green lights" a solid year-end rally, as long as, growth and the Fed perform as expected. The market will likely view this outcome favorably into year-end and as such, focus will turn back towards the Fed (continued rate cuts?) and growth (still stable). As in 2016, markets will likely look past some of Trump's commentary and as such, do not expect trade volatility or fiscal concerns to impact markets until 2025, but it is reasonable we all brace for a more volatile market in 2025 than we have had in 2024.
 
-#### What the Fed Rate Cut Means for Markets
+### What the Fed Rate Cut Means for Markets
 
 The Fed cut interest rates another 25 basis points on Thursday, meeting market expectations. Most importantly, they also kept expectations elevated for another rate cut in December and additional rate cuts in 2025.
 

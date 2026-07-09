@@ -7,20 +7,20 @@ category: "Financial Market Insight"
 hero: assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-1.png
 pdf: assets/docs/VEM-Financial-Market-Insight-2024-03-20.pdf
 status: published
-summary: "The S&P 500 accelerated to new all-time highs thanks to the Fed upgrading its outlook for economic growth this year (and inflation expectations) while…"
+summary: "The Fed's March decision kept three rate cuts penciled in for 2024 and upgraded its growth outlook, reinforcing the market's soft-landing narrative — plus what the Bitcoin 'halving' means for investors."
 ---
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Market Preview: Updated Risk/Reward Outlook
 - Economic Update: What you need to know in plain English
 - What Is the Bitcoin ‘Halving?’
 - What the Fed Decision Means for Markets: Still All About Growth
 
-### Stocks
+## Stocks
 
-<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-2.png" alt="S&amp;P 500 Chart"><figcaption>S&amp;P 500 Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-2.png" alt="S&amp;P 500 Chart" loading="lazy"><figcaption>S&amp;P 500 Chart</figcaption></figure>
 
 The S&amp;P 500 accelerated to new all-time highs thanks to the Fed upgrading its outlook for economic growth this year (and inflation expectations) while critically keeping three rate cuts penciled in for 2024, which reignited soft/no landing hopes in the back half of the week.
 
@@ -45,7 +45,7 @@ Playing devil's advocate, using the round number of 10% to perform a quick risk-
 
 So, if everything remains perfectly “Goldilocks” between economic growth, inflation, earnings, and Fed policy, there is a case to be made for that next 10% to the upside. However, the number of risks to the overextended rally leaves our investment team a bit skeptical about meaningful further upside and cautious (not bearish) about the YTD gains as one negative catalyst (i.e. a hot inflation print or weak growth report) could spark volatility and a pullback in stocks, which would likely be amplified by the combination of an increased amount of leverage in the long mega-cap tech trade, and a historically overcrowded short-volatility position.
 
-### Economic Data (What You Need to Know in Plain English)
+## Economic Data (What You Need to Know in Plain English)
 
 This month the market’s focus was on the March Fed meeting, which proved to be a bullish catalyst for markets. Economic data was mixed, as several reports met the perfect “Goldilocks” criteria needed for a soft landing, while others were a bit less encouraging.
 
@@ -55,9 +55,9 @@ No material moves in the weekly jobless claims data and a strong Philadelphia Fe
 
 Bottom line: There were a few less-favorable reports sprinkled into the economic data this month, but for the most part, the widely followed economic releases supported the idea that the Fed is on track to cut rates multiple times between now and the end of the year with an initial cut still being priced in for some time in the summer. Any data that challenges that thesis, such as hot inflation or very strong growth will present a risk to the 2024 rally.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
-<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-3.png" alt="Gold and 10-Year Yield Charts"><figcaption>Gold and 10-Year Yield Charts</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-3.png" alt="Gold and 10-Year Yield Charts" loading="lazy"><figcaption>Gold and 10-Year Yield Charts</figcaption></figure>
 
 Commodities traded with a bias to the downside last week with copper the notable laggard with a 3% pullback after previously breaking out to YTD highs. Gold edged higher on dovish money flows while oil retreated from a test of $83/barrel, but the space remains in a long-term uptrend.
 
@@ -77,9 +77,9 @@ The outlook for the dollar remains universally bullish as we approach the end of
 
 The Treasury market reaction to the Fed decision and last week’s economic data was largely dovish and that is an encouraging sign for stocks near term, as it is not just equity investors but also bond traders buying into the idea that the Fed will be able to achieve a soft landing with multiple rate cuts in the second half of the year.
 
-### Special Reports for Advanced Renders
+## Special Reports for Advanced Renders
 
-#### What Is the Bitcoin ‘Halving?’
+### What Is the Bitcoin ‘Halving?’
 
 Our investment committee does not focus a lot on Bitcoin for numerous reasons, primarily because it has been largely an un-investable asset class for most clients (either practically or from a risk management standpoint). However, the approval of the Bitcoin ETFs has changed that, and as such, we will be modestly increasing our Bitcoin analysis in our Vann Equity Market Insight, as it is simply a very popular topic among investors. To be clear, please do not take this as an endorsement or opinion on Bitcoin, it is just our team reacting to the changing investing landscape and wanting to make sure our clients have the analysis. Appropriately, a popular Bitcoin-related topic: “The halving.”
 
@@ -91,7 +91,7 @@ The 2024 halving will reduce the number of new Bitcoins mined (the “block rewa
 
 Now, Bitcoin has gone through three of these cycles so far. The first was in November 2012. The second was in July 2016. The third was in May 2020. And every time, Bitcoin’s price has rallied substantially.
 
-<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-4.png" alt="Bitcoin Halving Chart"><figcaption>Bitcoin Halving Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-4.png" alt="Bitcoin Halving Chart" loading="lazy"><figcaption>Bitcoin Halving Chart</figcaption></figure>
 
 As one can see in the chart above, the value of Bitcoin lifts off in a four-year predictable schedule. Each gain was realized within approximately 12-18 months from the halving trigger date.
 
@@ -103,11 +103,11 @@ The next halving is projected to take place around April 19-20, 2024. So, if the
 
 Again, our investment team is not making a “call” on Bitcoin, but we do want you to know 1) What the halving is and 2) The historical impact of it on Bitcoin prices; because while history does not repeat itself, it often rhymes. At a minimum, our team wants our clients to be able to turn any questions on this topic into opportunities to impress their friends.
 
-#### What the Fed Decision Means for Markets: Still All About Growth
+### What the Fed Decision Means for Markets: Still All About Growth
 
 The Fed decision was essentially “not as hawkish as feared” given the recent firm price data, and the practical impact of last week’s decision was to 1) Keep markets expecting a June rate hike and 2) Keep the “impending Fed rate cuts” part of the bullish mantra powering stocks higher intact. So, a not-as-hawkish-as-feared result combined with a still-intact bullish narrative pushed stocks to fresh highs in the wake of the Fed decision.
 
-<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-5.png" alt="Market Multiple Levels Chart"><figcaption>Market Multiple Levels Chart</figcaption></figure>
+<figure><img src="/assets/img/insights/2024-03-20-financial-market-insight-2024-03-20-5.png" alt="Market Multiple Levels Chart" loading="lazy"><figcaption>Market Multiple Levels Chart</figcaption></figure>
 
 But if there was a “beneath the surface” take away from the Fed, it is that the major focus for investors right now needs to be on growth and specifically whether growth can hold up. There were some small hints that Powell and the Fed may be a bit more worried about growth than the market currently expects, but the bottom line is that the market is not getting more than three rate cuts in 2024 unless growth rolls over and at that point, it is too late anyway. That matters because it implies that rates are indeed going to be mostly higher for longer and higher rates will continue to act as a headwind on growth.
 
@@ -119,6 +119,6 @@ Bottom line: With Fed policy known and major relief on rates not coming in 2024,
 
 For now, the bullish mantra of solid growth, falling inflation, impending Fed rate cuts and AI enthusiasm is alive and well and the S&amp;P 500 has hit new highs. Until multiple points in the mantra are invalidated, the path of least resistance in this market remains higher and pullbacks should be viewed as entry points. While AI headlines have been strong, we expect the rally to continue to broaden.
 
-### Ready to Navigate These Markets Together?
+## Ready to Navigate These Markets Together?
 
 Schedule your portfolio review to discuss how these market dynamics may impact your allocation strategy.

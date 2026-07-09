@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Weekly Market Preview: Separating Short-Term vs. Longer-Term in this Market
 - Weekly Economic Cheat Sheet: Important Context for Economic Data Going Forward
@@ -37,7 +37,7 @@ disclosure: >
   - What Should Outperform In that Environment in Q1/H1
   - OPEC+ Decision Takeaway
 
-### Stocks
+## Stocks
 
 "Stocks rallied again last week thanks mostly to dovish Fed speak, specifically comments for Fed Governor Waller that policy was appropriate (meaning no more hikes) while Fed Chair Powell did not refute those sentiments. Market priced in a greater likelihood of rate cuts in early 2024."
 
@@ -45,11 +45,11 @@ disclosure: >
 
 ✓ What's Underperforming: Defensive sectors and value have underperformed YTD but are still massively outperforming since the bear market started in 2022, and since our primary concern in 2023 is economic growth, we think underperformance will be temporary.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2023-12-05-financial-market-insight-2023-12-05-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities flipped bullish to start December as the S&amp;P 500 rallied to fresh 2023 highs. Dow Theory: Bullish (since the week of July 10, 2023). Key Resistance Levels: 4632, 4726, 4797. Key Support Levels: 4555, 4496, 4415.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-12-05-financial-market-insight-2023-12-05-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities flipped bullish to start December as the S&amp;P 500 rallied to fresh 2023 highs. Dow Theory: Bullish (since the week of July 10, 2023). Key Resistance Levels: 4632, 4726, 4797. Key Support Levels: 4555, 4496, 4415.</figcaption></figure>
 
-#### Separating Short-Term from Longer Term
+### Separating Short-Term from Longer Term
 
 We learned early in our career that end-of-the-year trading, especially when it was a good year with solid returns, was "different." We say that because once Thanksgiving comes into view, traders simply wanted the year to end quietly, with no surprises, and solid gains. The net result is that markets tend to temporarily "ignore" any data or commentary that might jeopardize the gains (as long as it is not too bad) and embrace any data or commentary that helps the bullish narrative, into year-end. We think we are in the midst of that right now and as such, barring a major negative surprise from the jobs report or next week's Fed meeting, we would not be surprised to see the S&amp;P 500 drift sideways to modestly higher into year-end, almost regardless of headlines.
 
@@ -59,9 +59,9 @@ However, the sharp decline in yields could also be signaling something else: A s
 
 As we look forward toward the start of 2024, when markets snap out of this "year-end" temporary fog, that question will be the most important facing investors. Right now, markets think the answer to that question is "Yields are signaling a dovish Fed and not a slowdown." If that answer starts to shift in early 2024 (which it could via economic data) then the decline in yields will shift from a market virtue to a market vice. That is what we will be focused on as we begin the new year.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 As we start 2024, for economic data to be good for stocks and bonds, it has to increase rate cut expectations while simultaneously not increasing hard landing fears. That is an important difference from 2023 when economic data mostly just had to not increase hard landing fears (remember the consensus view at the start of last year was for an imminent recession, so good economic data was welcomed until very late in 2023).
 
@@ -79,37 +79,37 @@ Most of the other potentially market-moving economic indicators focus on employm
 
 Dovish expectations have underwritten the November rally, so those expectations need to be continuously reinforced by economic data going forward, otherwise markets risk giving back a large part of that big rally.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 "Commodities were mixed last week as metals rallied on a weaker dollar while oil pulled back on emerging discord among OPEC+ members. The long-term outlook remains neutral for commodities as the pullback in the Dollar Index has been a strengthening tailwind for the space, but the threat of recession weighing on demand is capping gains."
 
 Commodities were mixed last week as the OPEC+ decision was negatively received by oil traders while a continuation of the November weakness in the dollar saw metals rally with gold notably hitting a record high on Friday.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2023-12-05-financial-market-insight-2023-12-05-2.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold futures broke out to fresh all-time highs to start December shifting the technical outlook decidedly in favor of the bulls. Proprietary Model: Bullish (since the week of November 27, 2023). Key Resistance Levels: $2098, $2119, $2140. Key Support Levels: $2068, $2036, $1980.</figcaption></figure>
+<figure><img src="/assets/img/insights/2023-12-05-financial-market-insight-2023-12-05-2.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold futures broke out to fresh all-time highs to start December shifting the technical outlook decidedly in favor of the bulls. Proprietary Model: Bullish (since the week of November 27, 2023). Key Resistance Levels: $2098, $2119, $2140. Key Support Levels: $2068, $2036, $1980.</figcaption></figure>
 
 The gold futures contract for February expiration ripped 5.46% last week to a new all-time high for an active month futures contract but notably remained below the February contract record high of $2,140 from earlier this year. That will act as initial resistance for gold in the near-term. The new highs in the active-month contract were bullish for gold across all time frames and with the dollar still trending lower and Treasury yields well off cycle highs now, the fundamental outlook supports the case for a further run to the upside in the months ahead.
 
-### Oil Market Update
+## Oil Market Update
 
 Oil has really been in the commodity spotlight all year as prices have been historically volatile amid OPEC+ surprises, geopolitical tensions, and deteriorating demand expectations, and WTI futures fell 2.23% last week to end Friday just off the November closing low of $73.13. OPEC+'s meeting decision on Thursday failed to impress oil traders as total output cuts were near the expected 2 million barrels/day on paper but roughly 1.3MM bbls of that was just an extension of the current output curbs by Saudi Arabia and Russia.
 
 Additionally, the modest new cuts by other nations were to be "voluntary," implying they would not be as tightly regulated and monitored by the group. The addition of Brazil to OPEC+ was mildly bullish as it adds a top-10 global oil producer to the group and added oil supply to the total "pool" that can be limited, but it was not enough to offset the disappointment of the smaller-than-anticipated production cuts.
 
-#### Bottom line
+### Bottom line
 
 Oil ended the month lower as traders appear to be pressing OPEC+ for more concretely bullish policy action, and if they fail to deliver, a test and potential violation of the 2023 lows near $67/barrel will become increasingly likely.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### The Bull Case vs. The Bear Case
+### The Bull Case vs. The Bear Case
 
 Numerous Wall Street firms are unveiling their 2024 S&amp;P 500 targets and as we were reviewing many of them over the past several days, we thought it would be helpful to lay out the bull case underlying positive forecasts, the bear case underlying negative forecasts, and which one we think is more likely.
 
 While outlining the bull and bear cases is a consistently helpful exercise, this also has a very practical application, as, "Are you bullish or bearish" is a question we are asked constantly by people. Having a confident, direct answer (that explains why) can create conversations that ultimately lead to new clients, and we hope this analysis can aid in those conversations.
 
-##### What The Bulls Think Will Happen
+#### What The Bulls Think Will Happen
 
 The bullish argument for stocks can largely be summed up by this statement: Everything that is already priced in happens.
 
@@ -137,7 +137,7 @@ So, how bullish is this? In this scenario, a 20X S&amp;P 500 multiple would be j
 
 The consensus bullish scenario is basically just a fulfilment of what has already been priced into stocks in 2023 and that will result in a modest gain in stocks. However, there is a more aggressive (and positive) scenario lurking out there and to take the risk of being long stocks, our Investment Committee thinks that bulls need to believe in that more aggressive scenario because if it happens, we should expect another year of double-digit stock returns and substantial new all-time highs.
 
-##### What The Bears Think Will Happen
+#### What The Bears Think Will Happen
 
 The bearish argument for stocks can largely be summed up by this statement: Everything we were worried about for 2023 (when most analysts were bearish) actually happens in 2024. We say that, because a lot of the 2023 rally in stocks can be explained by a "not as bad as feared" situation, and not a series of materially positive surprises. So, for stocks to roll over from here, all that has to happen is the worries of 2023 occur because all remain possible.
 
@@ -152,7 +152,7 @@ This macroeconomic environment does not mean an epic market collapse, but it doe
 
 From a market performance standpoint, because the environment above is what was expected at the start of 2023, we can look to where the S&amp;P 500 started 2023 as a guide. The S&amp;P 500 started 2023 just under 3,800, so we think that is a reasonable downside target for the S&amp;P 500 in this expected environment, which would represent a 16% decline from current levels. While that may seem like a long way from current levels, it was about a month ago that the S&amp;P 500 was flirting with breaking 4,000, and the only thing that has changed since then is that markets view the Fed as being more dovish than expected. If that expectation is reversed and we have a growth contraction, do not expect the S&amp;P 500 to hold 4,000 in 2024.
 
-#### Bullish or Bearish? Our Analysis
+### Bullish or Bearish? Our Analysis
 
 As of now, several potential variables will determine, possibly, if the S&amp;P 500 rallies through 5,000 or declines through 4,000, so it is fair to say the stakes are high. Those variables are 1) Economic growth, 2) Timing and size of Fed rate cuts, and 3) Earnings.
 
@@ -160,7 +160,7 @@ If the 20-plus years in the markets have taught us anything, it is that outcomes
 
 Unlike analysts trumpeting the S&amp;P 500 above 5,000 and the bears warning about a looming calamity, as of right now we believe that 2024 will not be as good as the consensus expects it to be right now, but it is not going to be a catastrophe, either. Long before the age of QE and ZIRP (zero interest rate policy), markets were more nuanced and more volatile. In the end, more times than not markets drifted modestly higher, and we think that is a good expectation for 2024. Here is why (using each variable).
 
-##### Variable 1: Economic growth
+#### Variable 1: Economic growth
 
 **What we think:** Based on recent data, we believe that growth will slow more than the consensus and perhaps slightly contract, but it will not collapse into a deep recession.
 
@@ -170,7 +170,7 @@ First, the Fed's balance sheet is still massive and that provides a huge liquidi
 
 **Is this bullish or bearish?** It is bearish, but only because the market is so richly valued. A stagnant or slightly contracting economy is not a recession. It probably equates to a 16X-ish multiple but not an outright disaster.
 
-##### Variable 2: Fed rate cuts
+#### Variable 2: Fed rate cuts
 
 **What we think:** The market is too aggressive in its expectations for Fed rate cuts both in timing (rate cut by May) and in size (100 bps in 2024).
 
@@ -178,7 +178,7 @@ First, the Fed's balance sheet is still massive and that provides a huge liquidi
 
 **Is this bullish or bearish?** Moderately bearish. Most of the recent 500-point rally in the S&amp;P 500 has been driven by the idea that the Fed will be cutting rates by May and that it will cut rates dramatically by the end of 2024. That is possible, but if that expectation must be reversed, then the S&amp;P 500 could easily give back 250-350 of the recent 500-point rally.
 
-##### Variable 3: Earnings
+#### Variable 3: Earnings
 
 **What we think:** Earnings will grow in 2024, but not at the near-10% expectation currently priced on the markets.
 
@@ -186,7 +186,7 @@ First, the Fed's balance sheet is still massive and that provides a huge liquidi
 
 **Is it bullish or bearish?** Mildly bearish. As we have covered in the past, movements in earnings estimates are not as impactful as movements in the market multiple. For instance, expected 2024 S&amp;P 500 earnings falling from $245 to $240 just equates to a reduction in "fair value" for the S&amp;P 500 from 4,655 to 4,560 using a 19X multiple, or about 2%. But it still matters, and this is a potential source of risk for markets as we start 2024.
 
-#### Bull vs. Bear Case: What Does This Mean for Markets?
+### Bull vs. Bear Case: What Does This Mean for Markets?
 
 We want to be clear that we are not raging bears. The Fed balance sheet, a still relatively strong consumer, and strong employment are all positives that should help cushion any substantial drop in growth. But we will say that we are concerned that, in part due to the calendar and the push for a year-end rally, this market is now susceptible to disappointment in early 2024, not unlike it was following 2021 when stocks melted up into year-end only to be smacked across the face once the calendar rolled and they had to confront high inflation, slowing growth and a hawkish Fed.
 
@@ -194,15 +194,15 @@ We do not think this reaction will be that bad, but it does give us pause to see
 
 It is unlikely, barring a major negative surprise, that we see the type of volatility in 2024 that we saw in 2022. At the same time, there is not the negativity and bearish expectations in place that underwrote the 2023 rally. The net result, we believe, will be more volatile, especially at the beginning of the year as investors acknowledge a slowing economy and a less-dovish-than-expected Fed. Moreover, a return of September/October-type declines should not shock anyone. From there, the question will likely shift to: How bad is the slowdown? The answer will either 1) Make more downside possible or 2) Present a buying opportunity.
 
-#### What Should Outperform In that Environment in Q1/H1
+### What Should Outperform In that Environment in Q1/H1
 
 If we do enter an environment during the first quarter and first half of 2024 that is characterized by 1) A weaker-than-expected economy (that increases hard landing worries but does not collapse), 2) A less-dovish-than-expected Fed (so rate cuts eventually but not as soon as expected) and 3) Concerns about earnings growth, then the sectors and factors that should outperform will likely revolve around 1) Quality, 2) Value and 3) Minimum volatility/defensives.
 
-##### Bottom line
+#### Bottom line
 
 Our outlook is not overtly bearish, but it is cautious based mostly on the market getting very optimistic on assumptions there will be no growth scare, no hawkish surprise, and incredibly resilient earnings. That could happen, and because of that, it makes sense to remain allocated to stocks. However, it also could not, which is why we think lowering beta and volatility to start 2024 makes sense, simply because a lot of good news is already priced into stocks and if markets do need to digest disappointing growth, earnings, or Fed commentary, the highest-quality earnings and relative value should outperform the high flyers and cyclicals.
 
-#### OPEC+ Decision Takeaways
+### OPEC+ Decision Takeaways
 
 The postponed OPEC+ policy meeting for 2024 concluded last week, and in typical OPEC fashion, there were some unexpected and ambiguous developments. Ultimately the market was left with more questions than answers about future oil output from the group of global producers who account for about 40% of the world's daily oil supply. The oil futures market initially rallied on reports that total OPEC+ output cuts were to be deepened by 1 million barrels per day in 2024, which saw WTI push up against the $80/barrel threshold. As the meeting outcome was digested, however, the less-certain details of the policy decision saw unconvinced speculative bulls retreat to the sidelines and prices turn negative by midmorning. WTI ended down 2.44%.
 

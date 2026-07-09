@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - What is Really Pressuring Stocks
 - Market Preview: Does Policy Chaos Continue?
@@ -33,7 +33,7 @@ disclosure: >
 - Where Is the Trump Put?
 - Special Reports and Editorial: Is Europe Finally Ready to Grow? (Positive EU Stocks, Negative German and French Bonds)
 
-### Stocks
+## Stocks
 
 "Stocks tumbled and turned negative year to date following the imposition (and then delay) of tariffs on Mexico and Canada as tariff and trade chaos continued to pressure stocks."
 
@@ -41,7 +41,7 @@ disclosure: >
 
 ✓ What is Underperforming: Tech/growth and high valuation stocks have lagged as yields have risen.
 
-#### What is Really Pressuring Stocks
+### What is Really Pressuring Stocks
 
 Stocks are dropping this month on tariff worries, some disappointing tech earnings, and the chaotic flow of scary headlines. Sentiment remains very negative and calls for continued declines in stocks are getting louder and more frequent. To be sure, the outlook for stocks has changed for the worse in the near term. Before the onslaught of tariff headlines that hit markets in early February, stocks enjoyed a near-perfect setup of stable growth, Fed rate cuts, AI enthusiasm, and expected positive fiscal momentum.
 
@@ -67,9 +67,9 @@ HERE IS THE POINT: Our team appreciates the negative scenario, and it is right t
 
 Finally, while the outlook for Washington is reasonably dark right now (and deservedly so), there is a positive path here of 1) Tariff clarity and 2) Passage of pro-growth measures. If that happens (and it can happen quickly), then Washington will go from a headwind to tailwind and a switch to more cyclical sectors. For now, "hiding" in low-beta, low-vol strategies like our Large Cap Value Strategy with broad diversification remains a sound way to stay long but weather the current storm.
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 Growth worries have surged in investors' minds thanks mostly to the policy chaos emanating from Washington, but this month's economic data was generally "solid," and while it does not mean a slowdown cannot happen, it does mean that the data is pointing to an economy that has generally solid growth.
 
@@ -93,9 +93,9 @@ The rest of this week's data focuses on employment via the JOLTS number on Tuesd
 
 Bottom line: There are not a lot of economic reports this week, but the ones we get will provide more color on stagflation risks, and if they can refute both the "stagnant" growth fears and the inflation worries, that will help stocks weather tariff chaos.
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### Where Is the Trump Put?
+### Where Is the Trump Put?
 
 Stocks declined the second week in March due to stagflationary details in the ISM Manufacturing PMI, which furthered fears that policy-related volatility and chaos is slowing economic growth and on Trump reiterating that tariffs will go into effect on Mexico and Canada.
 
@@ -115,7 +115,7 @@ Bottom line: Last time, it took a 10% decline in the S&amp;P 500 for Trump to ch
 
 Positively, if we do see a continued trade/policy-driven decline towards 10%, we think we can expect the broader stock market to continue to relatively outperform along with defensive sectors.
 
-#### Is Europe Finally Ready to Grow? (Positive EU Stocks, Negative German and French Bonds)
+### Is Europe Finally Ready to Grow? (Positive EU Stocks, Negative German and French Bonds)
 
 The past few weeks have roiled geopolitical alliances between the U.S. and Europe, and one of the consequences of that is Europe may, finally, prioritize economic growth and deficit spending, and if it does, that would be foundationally bullish for European stocks and negative for European bonds (which would put peripheral upward pressure on Treasury yields).
 

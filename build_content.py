@@ -25,7 +25,7 @@ import markdown
 
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 SITE       = "https://www.vannequitymanagement.com"
-CACHE      = "82"                      # asset ?v= for blog assets; bump on CSS change
+CACHE      = "83"                      # asset ?v= for blog assets; bump on CSS change
 YEAR       = datetime.datetime.now().year
 TPL_DIR    = os.path.join(ROOT, "templates")
 
@@ -187,7 +187,7 @@ def build_article(sec_key, sec, fm, body, validate_list):
     toc_items = [t for t in getattr(MD, "toc_tokens", []) if t.get("level") == 2]
     if len(toc_items) >= 3:
         links = "\n".join(
-            '            <li><a href="#%s">%s</a></li>' % (t["id"], html.escape(t["name"], quote=False))
+            '            <li><a href="#%s">%s</a></li>' % (t["id"], t["name"])
             for t in toc_items
         )
         toc_html = ('        <nav class="post-toc" aria-label="On this page">\n'

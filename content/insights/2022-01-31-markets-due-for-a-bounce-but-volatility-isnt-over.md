@@ -23,9 +23,9 @@ disclosure: >
   CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS.
 ---
 
-### Highlights
+## Highlights
 
-#### Key Takeaways
+### Key Takeaways
 
 - Why Stocks Can Bounce Further (But Volatility Isn't Over)
 - Technical Update: Important Support and Resistance Levels to Watch
@@ -43,9 +43,9 @@ There are no economic reports today, but there are two Fed speakers, Daly (11:30
 
 On the earnings front, most of the big reports come later this week (FB, GOOGL, AMZN) but after the close today, we get NXPI ($2.98) and markets will be focused on chip availability, and if there's positive commentary there that could be another tailwind on this market.
 
-### Stocks
+## Stocks
 
-#### Last Week (Needed Context as We Start a New Week)
+### Last Week (Needed Context as We Start a New Week)
 
 Equity markets remained volatile amid rate hike fears and simmering geopolitical tensions last week, but a late rally Friday saw the major indexes break a three-week losing streak. The S&amp;P edged up 0.77% on the week and now is down 7.01% YTD.
 
@@ -59,15 +59,15 @@ Stocks gapped higher at the open Thursday as economic data was mostly positive w
 
 Stocks traded with a heavy tone to start Friday despite positive earnings and guidance from AAPL and inflation data that was not as hot as feared (Core PCE was in line and the Employment Cost Index was below expectations). Stocks rallied into the European close but rolled back over in the early afternoon before a late-day rally saw the index surge higher into the close, ending with a sizeable 2.43% gain. AAPL notably rose 7% on the day.
 
-#### S&amp;P 500
+### S&amp;P 500
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 break down to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4568, 4655, 4726. Key Support Levels: 4327, 4166, 4063.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-1.png" alt="S&amp;P 500 technical summary panel with weekly candle chart" loading="lazy"><figcaption>S&amp;P 500 — Technical View: The medium-term trend in equities has shifted to neutral as the early 2022 surge in volatility saw the S&amp;P 500 break down to multi-month lows. Dow Theory: Bullish (since the week of September 9, 2019). Key Resistance Levels: 4568, 4655, 4726. Key Support Levels: 4327, 4166, 4063.</figcaption></figure>
 
-#### Technicals: Support and Resistance Levels to Watch
+### Technicals: Support and Resistance Levels to Watch
 
 Technically speaking, the S&amp;P spent most of last week violently oscillating between roughly 4,300 and 4,450, but Friday's late-day rally that saw the S&amp;P turn positive for the week was encouraging and suggests that, depending on the market catalysts or news flow to start the week, we could see a continuation higher, and a relief rally carry the index back towards the 4,600 area. It would be a mistake to assume that we will automatically return to new all-time highs and that market volatility is over, however, as Fed policy expectations and rate hike fears have proven to be capable of sending the broader market down by more than the 5% dips we saw in 2021, and periodic corrections are not only possible but could be the new normal. It is also worth noting that Friday's rally in the S&amp;P 500 stalled at the 200-day moving average and that price level at 4,435 will be the first hurdle the market will need to clear (on a closing basis) to move higher this week. If the market is able to break higher to start the week, look for support between 4,330 and 4,380 in the S&amp;P to hold on a modest pullback, but a breakdown and close at new multi-month lows would open the door to a swift pullback towards 4,000.
 
-#### Markets Are Due for A Bounce, But Volatility Isn't Over
+### Markets Are Due for A Bounce, But Volatility Isn't Over
 
 Stocks surged Friday and that helped turn the S&amp;P 500 positive for the week, and the reason why was that inflation data (especially the Employment Cost Index) wasn't as bad as feared—and that offered hope that inflation pressures are peaking.
 
@@ -81,11 +81,11 @@ We'd use any sustainable rally (possibly in the coming days) as an opportunity t
 
 This market is due for a bounce if we get a slight dovish shift in expectations, but volatility isn't over.
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas table"><figcaption>Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%). "Stocks rose slightly last week thanks to a big Friday rally, as not-as-bad-as-feared inflation data helped offset a hawkish Fed decision. Understanding future Fed policy and what that means for economic growth will remain the major focus of markets as we progress through the year, and we should continue to expect elevated volatility." Tactical Allocation Ideas — What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-2.png" alt="Near Term Stock Market Outlook and Tactical Allocation Ideas table" loading="lazy"><figcaption>Near Term Stock Market Outlook: Neutral (SPHB: 50%, SPLV: 50%). "Stocks rose slightly last week thanks to a big Friday rally, as not-as-bad-as-feared inflation data helped offset a hawkish Fed decision. Understanding future Fed policy and what that means for economic growth will remain the major focus of markets as we progress through the year, and we should continue to expect elevated volatility." Tactical Allocation Ideas — What's Outperforming: Value and cyclical sectors have given back some of their early year outperformance in recent weeks, but as long as bond yields begin to rebound, value and cyclicals should outpace growth. RSP, XLI, XLV, XLP, XLF. What's Underperforming: Tech and growth stocks have recovered some ground on value recently but we continue to believe that progress in the economic recovery and subsequently higher interest rates will be a headwind for tech and a rotation from growth to value can be utilized to reduce tech overweights, but not abandon super-cap tech holdings altogether.</figcaption></figure>
 
-### Economic Data
+## Economic Data
 
-#### What You Need to Know in Plain English
+### What You Need to Know in Plain English
 
 **Need to Know Econ from Last Edition**
 
@@ -115,7 +115,7 @@ Finally, Fed speak will remain very important, and if Fed speakers continue to t
 
 To stabilize, markets need to see hawkish rhetoric/surprises from the Fed to stop, inflation data to peak and recede, and for economic data to be stable. If that happens this week, stocks can rebound.
 
-### Commodities, Currencies &amp; Bonds
+## Commodities, Currencies &amp; Bonds
 
 Commodities were mixed last week as energy extended recent gains on healthy fundamentals while industrial and precious metals declined on a surging dollar and worries about the Fed getting too aggressive. The commodity ETF, DBC, rose 1.50% to a seven-year high.
 
@@ -129,21 +129,21 @@ In oil, the weekly EIA data showed a dip in U.S. production, underscoring that s
 
 In metals, the hawkishly digested Fed was the major driver as the combination of a renewed upswing in the dollar, slower growth, and potentially fading inflation pressures as a function of new FOMC policy estimates weighed on both industrial (slower growth) and precious metals (easing inflation). Gold fell 2.39% on the week, violating a near-term uptrend line which now leaves the near-term outlook neutral while copper dropped a more-pronounced 4.58%. Copper also broke a key near-term uptrend and is flashing an early macroeconomic warning sign that points to, at a minimum, more volatility if not more weakness across risk assets broadly.
 
-#### Gold
+### Gold
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-3.png" alt="Gold technical summary panel with weekly candle chart"><figcaption>Gold — Technical View: Gold recently pulled back from multi-month highs and we still need to see futures break key resistance at $1,880/oz. before the outlook turns bullish. Proprietary Model: Neutral (since the week of September 20, 2021). Key Resistance Levels: $1813, $1844, $1873. Key Support Levels: $1770, $1734, $1686.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-3.png" alt="Gold technical summary panel with weekly candle chart" loading="lazy"><figcaption>Gold — Technical View: Gold recently pulled back from multi-month highs and we still need to see futures break key resistance at $1,880/oz. before the outlook turns bullish. Proprietary Model: Neutral (since the week of September 20, 2021). Key Resistance Levels: $1813, $1844, $1873. Key Support Levels: $1770, $1734, $1686.</figcaption></figure>
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-4.png" alt="Commodities outlook table, rated Neutral"><figcaption>Commodities — Neutral. "Commodities rose again last week and continued their strong start to 2022, as a rally in energy continued to push commodities indices higher. Looking ahead, industrials and energy should outperform as long as the economic recovery doesn't materially lose momentum while a potential rise in real rates given the recent hawkish shift by central banks remains a risk to an emerging rally in precious metals."</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-4.png" alt="Commodities outlook table, rated Neutral" loading="lazy"><figcaption>Commodities — Neutral. "Commodities rose again last week and continued their strong start to 2022, as a rally in energy continued to push commodities indices higher. Looking ahead, industrials and energy should outperform as long as the economic recovery doesn't materially lose momentum while a potential rise in real rates given the recent hawkish shift by central banks remains a risk to an emerging rally in precious metals."</figcaption></figure>
 
-#### Dollar/Yen
+### Dollar/Yen
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-5.png" alt="USD/JPY technical summary panel with weekly candle chart"><figcaption>Dollar/Yen — Technical View: After trading in a broad range for several years, the USD/JPY has finally broken out and started to trend higher. Proprietary Model: Bullish (since the week of October 4, 2021). Key Resistance Levels: 115.84, 116.52, 117.73. Key Support Levels: 114.58, 113.65, 112.78.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-5.png" alt="USD/JPY technical summary panel with weekly candle chart" loading="lazy"><figcaption>Dollar/Yen — Technical View: After trading in a broad range for several years, the USD/JPY has finally broken out and started to trend higher. Proprietary Model: Bullish (since the week of October 4, 2021). Key Resistance Levels: 115.84, 116.52, 117.73. Key Support Levels: 114.58, 113.65, 112.78.</figcaption></figure>
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-6.png" alt="US Dollar outlook table, rated Neutral"><figcaption>US Dollar — Neutral. "The dollar rose modestly to a new 52-week high last week above 97.00, after Fed Chair Powell hinted there could possibly be five rate hikes in 2022."</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-6.png" alt="US Dollar outlook table, rated Neutral" loading="lazy"><figcaption>US Dollar — Neutral. "The dollar rose modestly to a new 52-week high last week above 97.00, after Fed Chair Powell hinted there could possibly be five rate hikes in 2022."</figcaption></figure>
 
-### Special Reports and Editorial
+## Special Reports and Editorial
 
-#### What Does the FOMC Decision &amp; Powell Commentary Mean for Markets?
+### What Does the FOMC Decision &amp; Powell Commentary Mean for Markets?
 
 Last week's FOMC decision and Powell's presser was both positive and negative for markets, but in the end, it mostly reinforced what we know: The Fed is serious about raising rates, that's going to pressure the market multiple, and it will keep markets volatile (but at this point it isn't enough to end the bull market).
 
@@ -163,7 +163,7 @@ The Fed took some of the biggest threats to the market off the table but did rei
 
 Finally, we acknowledge that an over-aggressive Fed can, and ultimately will, end this bull market. But we think it's a bit pre-mature to declare that now, given 1) Rates remain historically low and will be that way even with a 50-basis-point hike (remember rates were 2.5% in 2019), 2) Unemployment remains very low, and 3) Personal balance sheets remain very strong. All that could change, but at this point, while the financial media and investors are rightly focused on the Fed and the risks of rate hikes, there remain considerable positives. And unless you are very confident in your ability to trade out, and back in, over the next few months, we'd be inclined to continue to "hide" in high-quality, low-volatility names (SPLV, VTV, etc.).
 
-#### Why Are TIPS Down YTD If Inflation Is Such a Concern?
+### Why Are TIPS Down YTD If Inflation Is Such a Concern?
 
 Earlier last week, a long-time colleague emailed our research team with a question on the TIPS market and specifically asked why TIPS tracking ETFs were down YTD? We wanted to provide this email as it is a common topic of interest right now given the big moves in rates and ongoing debate about the inflation outlook.
 
@@ -183,9 +183,9 @@ Once the Fed took a more hawkish pivot in December, however, 5-Yr TIPS yields be
 
 So over the last month, the market has actually become less concerned with the Fed's ability to control inflation which led to profit taking in inflation-protected investments and a rise in TIPS yields, hence the negative YTD return for funds such as VTIP. The chart above offers a good visual of the 5-Yr TIPS yield with the green square encompassing the increased demand for inflation protection via TIPS beginning in 2019 while the red square shows the recent profit taking and the market's vote of confidence that the Fed will be successful in containing inflation.
 
-<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-7.png" alt="FRED chart of the 5-Year Treasury Inflation-Indexed Constant Maturity yield, 2016 to 2022"><figcaption>Market Yield on U.S. Treasury Securities at 5-Year Constant Maturity, Inflation-Indexed. Source: Board of Governors of the Federal Reserve System (US), fred.stlouisfed.org.</figcaption></figure>
+<figure><img src="/assets/img/insights/2022-01-31-financial-market-insight-2022-01-31-7.png" alt="FRED chart of the 5-Year Treasury Inflation-Indexed Constant Maturity yield, 2016 to 2022" loading="lazy"><figcaption>Market Yield on U.S. Treasury Securities at 5-Year Constant Maturity, Inflation-Indexed. Source: Board of Governors of the Federal Reserve System (US), fred.stlouisfed.org.</figcaption></figure>
 
-#### What Could Send 10s-2s Closer to Inversion?
+### What Could Send 10s-2s Closer to Inversion?
 
 At this point, the 10s-2s yield spread is reflecting five rate hikes (the 2-year is currently at 1.13%) as five rate hikes would bring the Fed funds rate to between 1% and 1.25%, so positively the short end of the bond market has priced in the Fed's latest round of hawkish surprises. Given that, what could cause further compression in the 10s-2s yield spread?
 
@@ -195,7 +195,7 @@ Another, and more likely, candidate that could compress the curve is a slowing o
 
 Given we think that is the more likely candidate, we'll be watching inflation expectations and growth very closely, because if they begin to roll over, and the Fed stays hawkish, then the yield curve will compress further and move even closer to inversion, intensifying the "caution" light on the rally.
 
-#### Oil Market Update
+### Oil Market Update
 
 **Weekly EIA Data and Oil Market Update**
 
