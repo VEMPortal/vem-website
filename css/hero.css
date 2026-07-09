@@ -652,21 +652,32 @@
      crossfade is retired. Nudge the framing toward the figure. */
   /* Vertical `top`: any crop comes off the bottom — never the subject's head. */
   .hero__poster { display: block; object-position: 72% top; }
-  /* Keep the image clean — only the very bottom darkens, just enough for the
-     headline/CTAs to read. No blue wash over the upper image. */
+  /* Two-zone overlay: a light frosted wash behind the top zone (eyebrow +
+     "The client's interest," title, both navy/blue) so they read against
+     the busy marble instead of floating directly on it, transitioning to
+     the navy bottom-dark wash behind the lead paragraph + CTAs (white
+     text). Same idea as desktop's light-hero frosted scrim, just split
+     top/bottom instead of left/right since mobile is a portrait crop. */
   .hero__scrim {
-    background: linear-gradient(180deg,
-      rgba(11, 31, 68, 0) 0%,
-      rgba(11, 31, 68, 0) 44%,
-      rgba(11, 31, 68, 0.28) 72%,
-      rgba(11, 31, 68, 0.72) 100%);
+    background:
+      linear-gradient(180deg,
+        rgba(245, 247, 250, 0.55) 0%,
+        rgba(245, 247, 250, 0.32) 24%,
+        rgba(245, 247, 250, 0.00) 42%),
+      linear-gradient(180deg,
+        rgba(11, 31, 68, 0) 44%,
+        rgba(11, 31, 68, 0.28) 72%,
+        rgba(11, 31, 68, 0.72) 100%);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
   }
-  /* Eyebrow sits over the brighter upper zone of the mobile crop — gold
-     reads poorly there; switch to the same blue desktop's light-hero mode
-     already uses. The gold headline emphasis (.hero__title em) stays gold
-     per house style — it uses the base (non-light-hero) gold-shine rule. */
+  /* Eyebrow + title sit over the frosted top zone — navy/blue, matching
+     desktop's light-hero treatment. The gold headline emphasis
+     (.hero__title em) stays gold per house style — it uses the base
+     (non-light-hero) gold-shine rule, unaffected here. */
   .hero__eyebrow { color: var(--vem-blue-deep); }
   .hero__eyebrow::before { background: var(--vem-blue-deep); }
+  .hero__title { color: var(--vem-navy); }
 }
 
 /* ------------------------- Entrance motion ------------------------- */
