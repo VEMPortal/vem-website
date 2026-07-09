@@ -661,9 +661,9 @@
   .hero__scrim {
     background:
       linear-gradient(180deg,
-        rgba(245, 247, 250, 0.55) 0%,
-        rgba(245, 247, 250, 0.32) 24%,
-        rgba(245, 247, 250, 0.00) 42%),
+        rgba(245, 247, 250, 0.60) 0%,
+        rgba(245, 247, 250, 0.40) 30%,
+        rgba(245, 247, 250, 0.00) 50%),
       linear-gradient(180deg,
         rgba(11, 31, 68, 0) 44%,
         rgba(11, 31, 68, 0.28) 72%,
@@ -678,6 +678,15 @@
   .hero__eyebrow { color: var(--vem-blue-deep); }
   .hero__eyebrow::before { background: var(--vem-blue-deep); }
   .hero__title { color: var(--vem-navy); }
+  /* Gold emphasis over the light wash: use the site's gold-on-light token
+     (--accent-deep, AA-safe — same as .section-head h2 em) instead of the
+     on-dark --accent-soft shine, which washes out here. */
+  .hero__title em {
+    color: var(--accent-deep);
+    background: none;
+    -webkit-text-fill-color: var(--accent-deep);
+    animation: none;
+  }
 }
 
 /* ------------------------- Entrance motion ------------------------- */
@@ -738,18 +747,20 @@
    colors that mobile legibility depends on, since they carry equal
    specificity and sit later in source order. */
 @media (min-width: 761px) {
+  /* Minimal-wash version: the navy/deep-gold text colors carry the
+     contrast, so the image shows through vividly. A soft radial glow sits
+     just behind the lead paragraph + CTAs (lower-left), where the image's
+     dark furniture/planting would otherwise swallow the gray lead text. */
   .light-hero .hero__scrim {
     background:
+      radial-gradient(ellipse 60% 55% at 14% 72%,
+        rgba(245, 247, 250, 0.62) 0%,
+        rgba(245, 247, 250, 0.30) 55%,
+        rgba(245, 247, 250, 0.00) 100%),
       linear-gradient(90deg,
-        rgba(245, 247, 250, 0.68) 0%,
-        rgba(245, 247, 250, 0.44) 40%,
-        rgba(245, 247, 250, 0.14) 74%,
-        rgba(245, 247, 250, 0.04) 100%),
-      linear-gradient(180deg,
-        rgba(245, 247, 250, 0.00) 58%,
-        rgba(245, 247, 250, 0.26) 100%);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+        rgba(245, 247, 250, 0.42) 0%,
+        rgba(245, 247, 250, 0.22) 40%,
+        rgba(245, 247, 250, 0.00) 68%);
   }
   .light-hero .hero__grain { mix-blend-mode: multiply; opacity: 0.04; }
 }
@@ -797,19 +808,15 @@
   .light-hero .hero__eyebrow { color: var(--vem-blue-deep); }
   .light-hero .hero__eyebrow::before { background: var(--vem-blue-deep); }
   .light-hero .hero__title { color: var(--vem-navy); }
-  /* Gold/blue "shine" — the site-wide signature (see css/tokens.css
-     --shine-band / @keyframes vemGoldSweep). This was the original reference
-     implementation the sweep was standardized from. */
+  /* Gold emphasis over the light frosted scrim: solid gold-on-light token
+     (--accent-deep, AA-safe — matches .section-head h2 em sitewide). The
+     shine sweep stays the on-dark signature; over a light wash it only
+     washes the gold out (var(--accent) is 2.65:1 on light — fails). */
   .light-hero .hero__title em {
-    color: transparent;
-    background-color: var(--accent);
-    background-image: var(--shine-band);
-    background-size: 300% 100%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: vemGoldSweep 5.5s var(--ease-soft) infinite;
+    color: var(--accent-deep);
+    background: none;
+    -webkit-text-fill-color: var(--accent-deep);
+    animation: none;
   }
   .light-hero .hero__lead { color: var(--vem-gray-text); }
   .light-hero .hero__cue { color: var(--vem-navy); }
@@ -825,13 +832,5 @@
   .light-hero .hero__actions .btn--ghost:hover {
     background: rgba(34, 49, 104, 0.06);
     border-color: rgba(34, 49, 104, 0.6);
-  }
-}
-@media (min-width: 761px) and (prefers-reduced-motion: reduce) {
-  .light-hero .hero__title em {
-    animation: none;
-    background: none;
-    color: var(--accent);
-    -webkit-text-fill-color: var(--accent);
   }
 }
