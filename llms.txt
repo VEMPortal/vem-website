@@ -1,6 +1,6 @@
 # Vann Equity Management
 
-> An independent, SEC-registered, GIPS-compliant fiduciary equity-management firm based in Plano and Austin, Texas (founded 2010). Vann Equity Management serves individuals, institutions, endowments, and family offices, combining institutional investment rigor with boutique accountability.
+> An independent, SEC-registered, GIPS-compliant fiduciary equity-management firm based in Plano and Austin, Texas (founded 2015). Vann Equity Management serves individuals, institutions, endowments, and family offices, combining institutional investment rigor with boutique accountability.
 
 ## About
 Vann Equity Management, LLC is a fiduciary, fee-based registered investment adviser. The firm manages separately managed equity accounts and tactical asset-allocation portfolios through a disciplined, proprietary, risk-controlled process. The firm has been independently verified under the Global Investment Performance Standards (GIPS®) for the periods June 1, 2018 through December 31, 2024.
@@ -19,12 +19,15 @@ Vann Equity Management, LLC is a fiduciary, fee-based registered investment advi
 GIPS-compliant composite performance, independently verified. Returns are presented gross and net of fees with benchmarks. Full standardized GIPS Composite Report: /gips-report.html. Past performance is not indicative of future results.
 
 ## Key pages
-- Home: /
-- GIPS Composite Report: /gips-report.html
+- [Home](https://www.vannequitymanagement.com/)
+- [GIPS Composite Report](https://www.vannequitymanagement.com/gips-report.html)
+- [Contact](https://www.vannequitymanagement.com/contact.html)
+- [Financial Market Insights](https://www.vannequitymanagement.com/insights)
+- [Disclosures](https://www.vannequitymanagement.com/disclosures.html)
 
 ## Contact
 - Phone: 214-983-0346
-- Email: info@vannequity.com
+- Email: info@vannequitymanagement.com
 - Plano (Headquarters): 4975 Preston Park Blvd, Suite 490, Plano, TX 75093
 - Austin: 11824 Jollyville Rd, Suite 500, Austin, TX 78759
 
