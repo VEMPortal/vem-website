@@ -78,5 +78,9 @@
     { "source": "/financial-market-insight-3", "destination": "/insights/markets-at-record-highs-how-much-uncertainty-can-they-withstand.html", "permanent": true },
     { "source": "/financial-market-insight-july-2025", "destination": "/insights/market-valuations-is-the-good-news-all-priced-in.html", "permanent": true },
     { "source": "/february-market-insight-2026", "destination": "/insights/how-ai-turned-into-a-headwind-three-problems-driving-market-volatility.html", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/css/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/js/(.*)",  "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
   ]
 }

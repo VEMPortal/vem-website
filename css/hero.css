@@ -687,26 +687,42 @@
     -webkit-text-fill-color: var(--accent-deep);
     animation: none;
   }
+  /* The lead paragraph sits in the scrim's mid-zone, where the navy wash is
+     still mostly transparent (it only reaches full strength near the very
+     bottom, behind the CTAs) — so wherever the marble image underneath is
+     bright, the white lead text can lose contrast. A faint frosted-glass
+     panel hugging just this block guarantees legibility without needing to
+     darken the whole lower hero. */
+  .hero__lead {
+    background: rgba(11, 31, 68, 0.24);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    margin-left: -14px;
+    width: fit-content;
+  }
 }
 
 /* ------------------------- Entrance motion ------------------------- */
-/* Headline mask-rise: each line wipes UP from behind its own overflow:hidden
-   clip box (a premium reveal — crisper and more "grabbing" than a sideways
-   fly-in). Pure transform, no opacity fade (the mask does the hiding). */
+/* Headline: renders immediately (no mask-rise) — this is the LCP element,
+   and Chrome doesn't count a translated/clipped-out span as "painted" until
+   its reveal animation finishes, which was costing ~1.3s of artificial LCP
+   delay for a flourish most users never consciously register. Supporting
+   elements below still get the rise-fade entrance. */
 .hero__title .line > span {
-  transform: translateY(112%);
-  animation: lineRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: none;
 }
-.hero__title .line:nth-child(1) > span { animation-delay: 0.15s; }
-.hero__title .line:nth-child(2) > span { animation-delay: 0.30s; }
-.hero__title .line:nth-child(3) > span { animation-delay: 0.45s; }
 
-/* Supporting elements: soft rise-fade, staggered after the headline */
-.fade-up { opacity: 0; transform: translateY(22px); animation: riseFade 0.8s var(--ease-out) forwards; }
-.hero__eyebrow.fade-up { animation-delay: 0.05s; }
-.hero__lead.fade-up    { animation-delay: 0.62s; }
-.hero__actions.fade-up { animation-delay: 0.74s; }
-.hero__cue.fade-up     { animation-delay: 1.0s; }
+/* Supporting elements: soft rise-fade, staggered after the headline.
+   Tightened from 0.9s/0.8s durations + up to 1.0s delay — same shape of
+   motion, snappier so it doesn't read as sluggish next to the now-instant
+   headline. */
+.fade-up { opacity: 0; transform: translateY(22px); animation: riseFade 0.5s var(--ease-out) forwards; }
+.hero__eyebrow.fade-up { animation-delay: 0.03s; }
+.hero__lead.fade-up    { animation-delay: 0.18s; }
+.hero__actions.fade-up { animation-delay: 0.26s; }
+.hero__cue.fade-up     { animation-delay: 0.34s; }
 
 @keyframes lineRise {
   from { transform: translateY(112%); }

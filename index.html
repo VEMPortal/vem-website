@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <!-- Resource hints: get DNS/TLS ahead of the analytics scripts below -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.clarity.ms" />
+  <link rel="preconnect" href="https://c.bing.com" />
   <!-- Google tag (gtag.js) - GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSHWSCJNH1"></script>
   <script>
@@ -57,8 +61,8 @@
   <!-- Preload the LCP hero image, scoped by viewport so each only fetches what it
        shows. Desktop (>=761px) = colonnade poster (video's first frame). Mobile
        (<=760px) = the first crossfade slide (Dallas skyline). -->
-  <link rel="preload" as="image" href="assets/img/hero-advisor.jpg?v=2" type="image/jpeg" media="(min-width: 761px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="assets/img/hero-advisor-mobile.jpg?v=2" type="image/jpeg" media="(max-width: 760px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor.webp?v=1" type="image/webp" media="(min-width: 761px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/hero-advisor-mobile.webp?v=1" type="image/webp" media="(max-width: 760px)" fetchpriority="high" />
 
   <!-- Fonts: self-hosted (Cinzel logo · Cormorant display · Hanken Grotesk body).
        The external Google Fonts stylesheet was the ONLY render-blocking resource
@@ -72,8 +76,8 @@
   <link rel="stylesheet" href="css/fonts.css?v=1" />
 
   <link rel="stylesheet" href="css/tokens.css?v=86" />
-  <link rel="stylesheet" href="css/hero.css?v=95" />
-  <link rel="stylesheet" href="css/sections.css?v=89" />
+  <link rel="stylesheet" href="css/hero.min.css?v=2" />
+  <link rel="stylesheet" href="css/sections.min.css?v=1" />
   <link rel="stylesheet" href="css/funnel.css?v=9" />
   <!-- Reuses the contact.html form styling (.contact-form/.field/.form-status) for the
        inline consultation form added to the CTA band in this preview. -->
@@ -144,7 +148,10 @@
   <header class="site-header" data-section="header">
     <a class="brand" href="#top" aria-label="Vann Equity Management — home">
       <span class="brand__icons" aria-hidden="true">
-        <img class="brand__icon brand__icon--navy" src="assets/brand/vann-icon-navy.png?v=52" alt="" width="38" height="38" />
+        <picture>
+          <source type="image/webp" srcset="assets/brand/vann-icon-navy.webp?v=1" />
+          <img class="brand__icon brand__icon--navy" src="assets/brand/vann-icon-navy.png?v=52" alt="" width="38" height="38" />
+        </picture>
         <img class="brand__icon brand__icon--white" src="assets/brand/vann-icon-white.png?v=52" alt="" width="38" height="38" />
       </span>
       <span class="brand__word">Vann Equity Management</span>
@@ -233,7 +240,9 @@
            (navy pinstripe + gold tie = the VEM palette). Figure weighted right,
            headline sits over the darker sky on the left. -->
       <picture>
+        <source media="(max-width: 760px)" type="image/webp" srcset="assets/img/hero-advisor-mobile.webp?v=1" />
         <source media="(max-width: 760px)" srcset="assets/img/hero-advisor-mobile.jpg?v=2" />
+        <source type="image/webp" srcset="assets/img/hero-advisor.webp?v=1" />
         <img class="hero__poster" src="assets/img/hero-advisor.jpg?v=2"
              alt="" width="1280" height="720" fetchpriority="high" />
       </picture>
@@ -334,8 +343,11 @@
         <!-- Multigenerational family at golden hour — the "legacy / your family's
              future" payoff below the hero (landscape; see .about__media ratio in CSS). -->
         <div class="about__media media-wipe" data-parallax data-wipe aria-hidden="true">
-          <img src="assets/img/about-family.jpg"
-               alt="" width="1400" height="788" decoding="async" />
+          <picture>
+            <source type="image/webp" srcset="assets/img/about-family.webp?v=1" />
+            <img src="assets/img/about-family.jpg?v=1"
+                 alt="" width="1400" height="788" decoding="async" />
+          </picture>
         </div>
       </div>
     </div>
@@ -344,7 +356,10 @@
   <!-- ==================== §05b — PERFORMANCE (moved up: proof-early) ==================== -->
   <section id="performance" class="section section--gray performance" data-section="performance" aria-labelledby="perf-title">
     <div class="performance__bg" data-parallax aria-hidden="true">
-      <img src="assets/img/performance-globe.jpg" alt="" width="1800" height="1013" loading="lazy" decoding="async" />
+      <picture>
+        <source type="image/webp" srcset="assets/img/performance-globe.webp?v=1" />
+        <img src="assets/img/performance-globe.jpg?v=1" alt="" width="1800" height="1013" loading="lazy" decoding="async" />
+      </picture>
     </div>
     <div class="container">
       <div class="section-head reveal reveal--pop">
@@ -415,7 +430,7 @@
             <span class="explorer__tab-sub">Separately managed · security-level conviction</span>
           </button>
           <button class="explorer__tab" type="button" data-tab="tactical" role="tab" aria-selected="false" aria-controls="exp-tactical">
-            <span class="explorer__tab-label">Tactical Asset Allocation</span>
+            <span class="explorer__tab-label">Strategic/Tactical Asset Allocation</span>
             <span class="explorer__tab-sub">ETF-based · fully diversified</span>
           </button>
         </div>
@@ -455,7 +470,7 @@
                 </li>
               </ul>
             </div>
-            <div class="explorer__panel" id="exp-tactical" data-panel="tactical" role="tabpanel" aria-label="Tactical Asset Allocation" hidden>
+            <div class="explorer__panel" id="exp-tactical" data-panel="tactical" role="tabpanel" aria-label="Strategic/Tactical Asset Allocation" hidden>
               <ul class="strat-list">
                 <li class="strat">
                   <button class="strat__head" type="button" aria-expanded="false" aria-controls="strat-04">
@@ -753,7 +768,7 @@
         <button class="person" type="button" data-key="aaron" aria-expanded="true" aria-controls="panel-aaron">
           <span class="person__photo" data-initials="AV"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Aaron J. Vann</span>
-          <span class="person__role">Chief Investment Officer · Partner</span>
+          <span class="person__role">Partner · Research &amp; Development</span>
         </button>
         <button class="person" type="button" data-key="ryan" aria-expanded="false" aria-controls="panel-ryan">
           <span class="person__photo" data-initials="RM"><img loading="lazy" decoding="async" src="assets/img/team/ryan-mcdonald.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
@@ -768,7 +783,7 @@
         <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
           <span class="person__photo" data-initials="BH"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=78" alt="" onerror="this.classList.add('is-missing');" /></span>
           <span class="person__name">Brandy Holder</span>
-          <span class="person__role">Director of Client Operations &amp; Compliance</span>
+          <span class="person__role">Client Operations &amp; Business Development</span>
         </button>
       </div>
 
@@ -777,7 +792,7 @@
           <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="Aaron J. Vann" /></div>
           <div class="member-panel__body">
             <h3>Aaron J. Vann, AAMS, FPQP</h3>
-            <p class="member-panel__role">Chief Investment Officer · Partner</p>
+            <p class="member-panel__role">Partner · Research &amp; Development</p>
             <p class="member-panel__bio">Aaron leads VEM&rsquo;s proprietary quantitative models and oversees portfolio construction and stock selection for the firm&rsquo;s equity SMAs. His career spans Rushmore Investment Advisors, Boston Private Bank, and Level Four Advisor Services.</p>
             <p class="member-panel__cred">MBA Valedictorian · SMU Cox School of Business</p>
           </div>
@@ -804,7 +819,7 @@
           <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=78" alt="Brandy Holder" /></div>
           <div class="member-panel__body">
             <h3>Brandy Holder</h3>
-            <p class="member-panel__role">Director of Client Operations &amp; Compliance</p>
+            <p class="member-panel__role">Client Operations &amp; Business Development</p>
             <p class="member-panel__bio">Brandy supports Vann Equity Management&rsquo;s client service, operations, and compliance functions. She helps coordinate account administration, documentation, internal workflows, and regulatory processes to ensure clients receive organized, professional, and consistent service.</p>
             <p class="member-panel__cred">10+ Years · Client Operations</p>
           </div>
@@ -814,13 +829,13 @@
       <!-- Personalization (merged from the former "The Difference" section) -->
       <div class="section-head section-head--center reveal reveal--pop" style="margin-top:clamp(34px,6vh,64px)">
         <p class="overline">The difference</p>
-        <h3 style="font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.9rem);margin:.2em 0 0">Built around you, <em>not a template.</em></h3>
+        <h3 style="font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.9rem);margin:.2em 0 0">Built around you, <em>whichever path you choose.</em></h3>
       </div>
-      <p class="diff-lead phil__lead reveal" data-delay="1" style="text-align:center;max-width:60ch;margin-inline:auto">We believe that since every client is unique, every client portfolio should be unique &mdash; and that shapes the two ways we serve.</p>
+      <p class="diff-lead phil__lead reveal" data-delay="1" style="text-align:center;max-width:60ch;margin-inline:auto">We believe that since every client is unique, every client portfolio allocation needs to also be unique &mdash; and that shapes the two ways we serve.</p>
       <div class="diff-models reveal" data-delay="2">
         <div class="diff-model">
-          <h3>Custom-designed portfolios</h3>
-          <p>Managed by your personal advisor and built to your life &mdash; integrating tax planning, your risk tolerance, and even your social and ethical priorities.</p>
+          <h3>Custom-designed allocation</h3>
+          <p>Your dedicated advisor builds around your life, integrating tax planning, your risk tolerance, and even your social and ethical priorities.</p>
         </div>
         <div class="diff-model">
           <h3>Company-sponsored SMA portfolios</h3>
@@ -843,7 +858,9 @@
     <style>
       .cta-band--form .cta-band__inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
       @media (max-width:980px){.cta-band--form .cta-band__inner{grid-template-columns:1fr}}
-      .cta-band__phone{margin-top:var(--space-4);font-size:var(--fs-300);color:var(--on-dark-80)}
+      .cta-band__phone{margin-top:var(--space-4);font-size:var(--fs-300);color:var(--on-dark-80);
+        display:inline-block;background:rgba(11,31,68,.32);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+        border-radius:var(--radius-md);padding:8px 12px;margin-left:-12px}
       .cta-band__phone a{color:var(--vem-gold);text-decoration:underline;text-underline-offset:2px}
       .cta-band__form{background:rgba(11,31,68,.80);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
         border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);
@@ -922,7 +939,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer__top">
       <div class="footer__brand">
-        <img loading="lazy" decoding="async" class="footer__logo" src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" />
+        <img loading="lazy" decoding="async" class="footer__logo" src="assets/brand/vann-lockup-white.png" alt="Vann Equity Management" width="2000" height="486" />
         <p class="footer__tagline">Disciplined, fiduciary equity management for individuals, institutions, endowments, and family offices.</p>
         <div class="footer__actions">
           <a class="btn btn--gold" href="contact.html">Schedule a consultation</a>
