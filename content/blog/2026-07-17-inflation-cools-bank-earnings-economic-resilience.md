@@ -1,7 +1,7 @@
 ---
 title: "Inflation Cools as Bank Earnings Put Economic Resilience to the Test"
 slug: "inflation-cools-bank-earnings-economic-resilience"
-date: 2026-07-14
+date: 2026-07-17
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-07-14.jpg
