@@ -108,13 +108,14 @@ record_1 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",  # confirm with whoever merged/published on your end
+    "approval_date": "7/17/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/inflation-cools-bank-earnings-economic-resilience.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-07-14.jpg, blog-hero-2026-07-14.webp, blog-hero-2026-07-14-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-001.jpeg"),
 
     "caption_paragraphs": [
         "At a Glance",
@@ -157,8 +158,8 @@ record_1 = {
 
     "approval_log": [
         ("Draft Completed", "Aaron Vann", "7/14/2026"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Compliance Review", "John Vann", "7/17/2026"),
+        ("Approved", "John Vann", "7/17/2026"),
         ("Published", "TBD", "7/17/2026"),
     ],
 
@@ -168,8 +169,7 @@ record_1 = {
     ],
 
     "notes": (
-        "Fields marked TBD still need confirmation: Approval Date, Published By, Screenshot Saved, "
-        "and Archive Folder path. "
+        "Fields marked TBD still need confirmation: Published By, Screenshot Saved, and Archive Folder path. "
         "This record was generated from the site's build source (content/blog/*.md) and live production URL."
     ),
 }
@@ -181,9 +181,9 @@ record_1 = {
 record_2 = {
     "record_id": "Blog 002",
     "post_title": "Cooling Inflation Lifts Stocks, But Chipmakers Split on the Same Day",
-    "status": "Draft -- Pending Compliance Review",
+    "status": "Published",
     "date_created": "7/15/2026",
-    "publish_date": "TBD -- not yet published",
+    "publish_date": "7/17/2026",
     "archive_date": "TBD",
 
     "platforms": WEBSITE_PLATFORM,
@@ -191,16 +191,16 @@ record_2 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
-    "published_url": "Not yet published. Preview sent for compliance review via a temporary Vercel share link (expires; not a permanent record -- do not archive that URL as the Published URL).",
-    "screenshot_saved": "TBD",
+    "approval_date": "7/17/2026",
+    "published_by": "Eric Capo",
+    "published_url": "https://www.vannequitymanagement.com/blog/cooling-inflation-lifts-stocks-chipmakers-split.html",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-07-15.jpg, blog-hero-2026-07-15.webp, blog-hero-2026-07-15-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-002.png"),
 
     "caption_paragraphs": [
-        "DRAFT -- PENDING REVIEW. The text below is the current draft under compliance review, not yet an approved/published version.",
         "At a Glance",
         "Stocks moved higher on Wednesday as a softer-than-expected wholesale inflation reading gave investors more evidence that price pressures are easing. Big Tech names advanced broadly, led by Apple's move to a new all-time high. At the same time, semiconductor stocks told two different stories on the same day: chip equipment maker ASML surged on a raised full-year outlook, while Micron Technology fell sharply. Elsewhere, BlackRock posted its best day in more than a year on a strong earnings beat, while SpaceX shares slipped below their IPO price for the first time. This article is educational only and does not recommend buying, selling, or avoiding any security.",
         "Key Takeaways",
@@ -232,20 +232,19 @@ record_2 = {
 
     "approval_log": [
         ("Draft Completed", "Aaron Vann", "7/15/2026"),
-        ("Compliance Review", "John Vann", "Sent 7/15/2026, link refreshed 7/17/2026 -- approval pending"),
-        ("Approved", "TBD -- pending", "TBD"),
-        ("Published", "TBD -- pending", "TBD"),
+        ("Compliance Review", "John Vann", "7/17/2026"),
+        ("Approved", "John Vann", "7/17/2026"),
+        ("Published", "TBD", "7/17/2026"),
     ],
 
     "revision_history": [
         ("1", "7/15/2026", "Initial draft; sources listed as plain-text citations (no links)"),
-        ("2", "7/17/2026", "Publish date updated to 7/17/2026; sources converted to clickable, verified links per standing house rule"),
+        ("2", "7/17/2026", "Publish date updated to 7/17/2026; sources converted to clickable, verified links per standing house rule; compliance approved and merged to production"),
     ],
 
     "notes": (
-        "NOT YET LIVE. This record is being prepared ahead of publication so it is ready the moment "
-        "compliance approves and the post is merged to production. Do not treat this as a completed "
-        "record until Status is updated to Published and the TBD fields above are filled in."
+        "Fields marked TBD still need confirmation: Published By, Screenshot Saved, and Archive Folder path. "
+        "This record was generated from the site's build source (content/blog/*.md) and live production URL."
     ),
 }
 
@@ -266,13 +265,14 @@ record_3 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
+    "approval_date": "6/9/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/what-spacex-openai-anthropic-ipos-may-signal-about-todays-market.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-09.jpg, blog-hero-2026-06-09.webp, blog-hero-2026-06-09-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-003.jpeg"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -321,9 +321,9 @@ record_3 = {
     ],
 
     "approval_log": [
-        ("Draft Completed", "Aaron Vann", "TBD -- backfilled record, exact draft date unknown"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Draft Completed", "Aaron Vann", "6/9/2026"),
+        ("Compliance Review", "John Vann", "6/9/2026"),
+        ("Approved", "John Vann", "6/9/2026"),
         ("Published", "TBD", "6/9/2026"),
     ],
 
@@ -333,7 +333,10 @@ record_3 = {
 
     "notes": (
         "Backfilled record for a post that was already live before the Marketing Record process started. "
-        "Approval Date, Published By, Screenshot Saved, and Archive Folder are TBD pending confirmation. "
+        "John Vann approved this post at the time it was created and posted, per standing firm practice -- "
+        "this formal Marketing Record template did not exist yet when the site's original content was "
+        "built, so Compliance Review/Approved above are being documented retroactively rather than logged "
+        "in real time. Published By, Screenshot Saved, and Archive Folder are still TBD pending confirmation. "
         "This article has no linked sources -- flagged above for compliance follow-up."
     ),
 }
@@ -355,13 +358,14 @@ record_4 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
+    "approval_date": "6/10/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/ai-ipos-market-impact.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-10.jpg, blog-hero-2026-06-10.webp, blog-hero-2026-06-10-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-004.png"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -398,9 +402,9 @@ record_4 = {
     ],
 
     "approval_log": [
-        ("Draft Completed", "Aaron Vann", "TBD -- backfilled record, exact draft date unknown"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Draft Completed", "Aaron Vann", "6/10/2026"),
+        ("Compliance Review", "John Vann", "6/10/2026"),
+        ("Approved", "John Vann", "6/10/2026"),
         ("Published", "TBD", "6/10/2026"),
     ],
 
@@ -410,7 +414,10 @@ record_4 = {
 
     "notes": (
         "Backfilled record for a post that was already live before the Marketing Record process started. "
-        "Approval Date, Published By, Screenshot Saved, and Archive Folder are TBD pending confirmation. "
+        "John Vann approved this post at the time it was created and posted, per standing firm practice -- "
+        "this formal Marketing Record template did not exist yet when the site's original content was "
+        "built, so Compliance Review/Approved above are being documented retroactively rather than logged "
+        "in real time. Published By, Screenshot Saved, and Archive Folder are still TBD pending confirmation. "
         "Sources and References section lists outlets by name but has no clickable URLs -- flagged above for "
         "compliance follow-up per the standing house rule that all sources must be clickable links."
     ),
@@ -433,13 +440,14 @@ record_5 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
+    "approval_date": "6/10/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/global-energy-markets-2026.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-10-energy.jpg, blog-hero-2026-06-10-energy.webp, blog-hero-2026-06-10-energy-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-005.png"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -483,9 +491,9 @@ record_5 = {
     ],
 
     "approval_log": [
-        ("Draft Completed", "Aaron Vann", "TBD -- backfilled record, exact draft date unknown"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Draft Completed", "Aaron Vann", "6/10/2026"),
+        ("Compliance Review", "John Vann", "6/10/2026"),
+        ("Approved", "John Vann", "6/10/2026"),
         ("Published", "TBD", "6/10/2026"),
     ],
 
@@ -495,7 +503,10 @@ record_5 = {
 
     "notes": (
         "Backfilled record for a post that was already live before the Marketing Record process started. "
-        "Approval Date, Published By, Screenshot Saved, and Archive Folder are TBD pending confirmation. "
+        "John Vann approved this post at the time it was created and posted, per standing firm practice -- "
+        "this formal Marketing Record template did not exist yet when the site's original content was "
+        "built, so Compliance Review/Approved above are being documented retroactively rather than logged "
+        "in real time. Published By, Screenshot Saved, and Archive Folder are still TBD pending confirmation. "
         "Sources are cited by name in-body (EIA, Reuters, IRENA) but have no clickable URLs -- flagged above "
         "for compliance follow-up per the standing house rule that all sources must be clickable links."
     ),
@@ -518,13 +529,14 @@ record_6 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
+    "approval_date": "6/10/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/iran-strait-of-hormuz-markets.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-10-iran.jpg, blog-hero-2026-06-10-iran.webp, blog-hero-2026-06-10-iran-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-006.jpeg"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -559,9 +571,9 @@ record_6 = {
     ],
 
     "approval_log": [
-        ("Draft Completed", "Aaron Vann", "TBD -- backfilled record, exact draft date unknown"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Draft Completed", "Aaron Vann", "6/10/2026"),
+        ("Compliance Review", "John Vann", "6/10/2026"),
+        ("Approved", "John Vann", "6/10/2026"),
         ("Published", "TBD", "6/10/2026"),
     ],
 
@@ -571,7 +583,10 @@ record_6 = {
 
     "notes": (
         "Backfilled record for a post that was already live before the Marketing Record process started. "
-        "Approval Date, Published By, Screenshot Saved, and Archive Folder are TBD pending confirmation. "
+        "John Vann approved this post at the time it was created and posted, per standing firm practice -- "
+        "this formal Marketing Record template did not exist yet when the site's original content was "
+        "built, so Compliance Review/Approved above are being documented retroactively rather than logged "
+        "in real time. Published By, Screenshot Saved, and Archive Folder are still TBD pending confirmation. "
         "This article has no linked sources -- flagged above for compliance follow-up."
     ),
 }
@@ -593,13 +608,14 @@ record_7 = {
     "post_type": "Blog Article",
     "author": "Aaron Vann",
     "compliance_reviewer": "John Vann",
-    "approval_date": "TBD",
-    "published_by": "TBD",
+    "approval_date": "6/30/2026",
+    "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/record-quarter-meets-hawkish-fed.html",
-    "screenshot_saved": "TBD",
+    "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-30.jpg, blog-hero-2026-06-30.webp, blog-hero-2026-06-30-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-007.png"),
 
     "caption_paragraphs": [
         "At a Glance",
@@ -632,9 +648,9 @@ record_7 = {
     ],
 
     "approval_log": [
-        ("Draft Completed", "Aaron Vann", "TBD -- backfilled record, exact draft date unknown"),
-        ("Compliance Review", "John Vann", "TBD"),
-        ("Approved", "TBD", "TBD"),
+        ("Draft Completed", "Aaron Vann", "6/30/2026"),
+        ("Compliance Review", "John Vann", "6/30/2026"),
+        ("Approved", "John Vann", "6/30/2026"),
         ("Published", "TBD", "6/30/2026"),
     ],
 
@@ -644,7 +660,10 @@ record_7 = {
 
     "notes": (
         "Backfilled record for a post that was already live before the Marketing Record process started. "
-        "Approval Date, Published By, Screenshot Saved, and Archive Folder are TBD pending confirmation. "
+        "John Vann approved this post at the time it was created and posted, per standing firm practice -- "
+        "this formal Marketing Record template did not exist yet when the site's original content was "
+        "built, so Compliance Review/Approved above are being documented retroactively rather than logged "
+        "in real time. Published By, Screenshot Saved, and Archive Folder are still TBD pending confirmation. "
         "Sources and References section lists outlets by name but has no clickable URLs -- flagged above for "
         "compliance follow-up per the standing house rule that all sources must be clickable links."
     ),

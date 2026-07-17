@@ -17,7 +17,7 @@ disclosure: >
   limited public operating history, valuation uncertainty, liquidity constraints, volatility, and changes
   in market conditions. Past performance does not guarantee future results. Vann Equity Management does
   not provide tax or legal advice. Investors should consult their financial, tax, or legal professional
-  regarding their individual circumstances.
+  regarding their individual circumstances. AI was used in the creation of these materials.
 ---
 
 ## At-a-Glance

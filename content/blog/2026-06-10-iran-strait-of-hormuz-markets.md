@@ -17,7 +17,7 @@ disclosure: >
   including price volatility, geopolitical risk, regulatory risk, liquidity risk, and changes in supply
   and demand. Past performance does not guarantee future results. Vann Equity Management does not provide
   tax or legal advice. Investors should consult their financial, tax, or legal professional regarding
-  their individual circumstances.
+  their individual circumstances. AI was used in the creation of these materials.
 ---
 
 ## At-a-Glance
