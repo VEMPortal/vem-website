@@ -1,11 +1,11 @@
 ---
 title: "Cooling Inflation Lifts Stocks, But Chipmakers Split on the Same Day"
 slug: "cooling-inflation-lifts-stocks-chipmakers-split"
-date: 2026-07-15
+date: 2026-07-17
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-07-15.jpg
-status: draft
+status: published
 summary: "A softer-than-expected June PPI reading lifted stocks Wednesday, with Big Tech advancing broadly behind a new Apple all-time high. Semiconductor stocks split sharply on the same day — ASML surged on raised guidance while Micron fell. Educational commentary only, not a recommendation."
 ---
 
@@ -57,8 +57,8 @@ Producer price and other inflation data can be revised in subsequent reports, an
 
 ## Sources and References
 
-- Yahoo Finance: end-of-day market recap confirming closing index levels for the S&P 500, Nasdaq Composite, and Dow Jones Industrial Average, and closing moves in Apple, ASML, and Micron Technology.
-- CNBC: Big Tech performance and BlackRock's second-quarter earnings beat.
-- TheStreet: SpaceX shares falling below their IPO price for the first time.
-- 24/7 Wall St.: June producer price index data (headline and core PPI).
-- Benzinga: ASML's raised full-year 2026 revenue guidance and consensus comparison.
+- [Yahoo Finance: "Stock market today: Dow, S&P 500, Nasdaq rise as Apple notches record high"](https://finance.yahoo.com/markets/live/stock-market-today-wednesday-july-15-dow-sp-nasdaq-091813320.html)
+- [CNBC: "Stock market today" live updates, July 15, 2026](https://www.cnbc.com/2026/07/15/stock-market-today-live-updates.html)
+- [TheStreet: "Stock Market Today (July 15, 2026): SpaceX dips below IPO price for first time"](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-15-2026)
+- [24/7 Wall St.: "Fed Rate Hikes Dead? Producer Prices Fall by Largest Amount Since Pandemic"](https://247wallst.com/investing/2026/07/15/fed-rate-hikes-dead-producer-prices-fall-by-largest-amount-since-pandemic/)
+- [Benzinga: "ASML Holding Q2 2026 Earnings Call: Complete Transcript"](https://www.benzinga.com/news/26/07/60488275/asml-holding-q2-2026-earnings-call-complete-transcript)
