@@ -115,7 +115,7 @@ record_1 = {
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-07-14.jpg, blog-hero-2026-07-14.webp, blog-hero-2026-07-14-mobile.jpg",
-    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-001.jpeg"),
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-001.png"),
 
     "caption_paragraphs": [
         "At a Glance",
@@ -272,7 +272,7 @@ record_3 = {
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-09.jpg, blog-hero-2026-06-09.webp, blog-hero-2026-06-09-mobile.jpg",
-    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-003.jpeg"),
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-003.png"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -536,7 +536,7 @@ record_6 = {
     "archive_folder": "TBD",
 
     "media_filenames": "blog-hero-2026-06-10-iran.jpg, blog-hero-2026-06-10-iran.webp, blog-hero-2026-06-10-iran-mobile.jpg",
-    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-006.jpeg"),
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-006.png"),
 
     "caption_paragraphs": [
         "At-a-Glance",
@@ -669,8 +669,106 @@ record_7 = {
     ),
 }
 
+# ---------------------------------------------------------------------------
+# RECORD "Insight 001" — first Marketing Record for a Financial Market
+# Insight (separate numbering sequence from the Blog records, per the
+# multi-channel convention above -- this is a distinct content type/channel).
+# Sourcing differs from the blog records: the content is the firm's own
+# proprietary newsletter PDF (copied verbatim per house rule), not commentary
+# built from external news articles, so "Supporting Documentation" points to
+# that internal source PDF rather than external URLs.
+# ---------------------------------------------------------------------------
+INSIGHT_WEBSITE_PLATFORM = "VEM Website — vannequitymanagement.com/insights"
+
+FMI_DISCLOSURE = (
+    "Disclaimer: The Financial Market Insight is protected by federal and international copyright laws. Vann "
+    "Equity Management is the publisher of the newsletter and owner of all rights therein and retains property "
+    "rights to the newsletter. The Financial Market Insight may not be forwarded, copied, downloaded, stored in "
+    "a retrieval system, or otherwise reproduced or used in any form or by any means without express written "
+    "permission from Vann Equity Management. The information contained in Financial Market Insight is not "
+    "necessarily complete, and its accuracy is not guaranteed. Neither the information contained in Financial "
+    "Market Insight, nor any opinion expressed in it, constitutes a solicitation for the purchase of any future "
+    "or security referred to in the Newsletter. The Newsletter is strictly an informational publication and "
+    "does not provide individual, customized investment or trading advice. READERS SHOULD VERIFY ALL CLAIMS AND "
+    "COMPLETE THEIR OWN RESEARCH AND CONSULT A REGISTERED FINANCIAL PROFESSIONAL BEFORE INVESTING IN ANY "
+    "INVESTMENTS MENTIONED IN THE PUBLICATION. INVESTING IN SECURITIES, OPTIONS, AND FUTURES IS SPECULATIVE AND "
+    "CARRIES A HIGH DEGREE OF RISK, AND SUBSCRIBERS MAY LOSE MONEY TRADING AND INVESTING IN SUCH INVESTMENTS."
+)
+
+record_8 = {
+    "record_id": "Insight 001",
+    "post_title": "Did Markets Pass or Fail the Three Tests?",
+    "status": "Published",
+    "date_created": "7/20/2026",
+    "publish_date": "7/20/2026",
+    "archive_date": "TBD",
+
+    "platforms": INSIGHT_WEBSITE_PLATFORM,
+    "content_category": "Financial Market Insight",
+    "post_type": "Financial Market Insight Newsletter",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "Aaron Vann",
+    "approval_date": "7/20/2026",
+    "published_by": "Eric Capo",
+    "published_url": "https://www.vannequitymanagement.com/insights/did-markets-pass-or-fail-the-three-tests.html",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": (
+        "insights-hero-2026-07-20.jpg, insights-hero-2026-07-20.webp, insights-hero-2026-07-20-mobile.jpg, "
+        "fmi-2026-07-20-sp500.png/.webp, fmi-2026-07-20-inflation.png/.webp, fmi-2026-07-20-oil-metals.png/.webp"
+    ),
+    "screenshot_path": os.path.join(OUT_DIR, "images", "insight-001.png"),
+
+    "caption_paragraphs": [
+        "Highlights",
+        "Did Markets Pass or Fail the Three Tests?",
+        "Economic Cheat Sheet: Important Growth Updates",
+        "Evolution of the AI Trade: ROCs, SOCs and SaaS",
+        "Are Bad IBM Results a Warning for Broader Tech?",
+        "What Is the Copper-Gold Ratio Telling Us?",
+        "Summary",
+        "Our investment committee's three market tests came back mixed: AI infrastructure earnings from ASML and Taiwan Semiconductor raised new questions about spending sustainability, even as inflation data and Fed Chair Warsh's testimony both came in favorably. Also inside: the AI trade's new three-way split (ROCs, SOCs, and SaaS), what IBM's historic one-day selloff means for tech spending broadly, and what the copper-gold ratio is signaling about the economy.",
+        "Full body content copied verbatim from the source PDF (assets/docs/VEM-Financial-Market-Insight-2026-07-20.pdf) per the financial-market-insight skill's hard rule -- see that PDF and the published URL above for the complete text of Stocks, the Three Tests, Economic Data, Commodities & Currencies, the AI Trade section, IBM's Warning, and the Copper-Gold Ratio section.",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Source PDF: assets/docs/VEM-Financial-Market-Insight-2026-07-20.pdf (Vann Equity Management's own "
+        "research newsletter -- body text and all chart/figure images copied verbatim/extracted directly "
+        "from this document, not external news sources).",
+        "S&P 500 technical chart, inflation infographic, and oil/metals infographic: extracted directly "
+        "from the source PDF above via high-DPI render + crop (pixel-for-pixel from the original, not "
+        "recreated) -- credited in-article to 'Factset and Vann Equity Management Research Team.'",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/20/2026"),
+        ("Compliance Review", "Aaron Vann", "7/20/2026"),
+        ("Approved", "Aaron Vann", "7/20/2026"),
+        ("Published", "Eric Capo", "7/20/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/20/2026", "Marketing Record created at time of publish -- first record in the Insight sequence"),
+    ],
+
+    "notes": (
+        "First Marketing Record under the new 'Insight NNN' numbering sequence, kept separate from the "
+        "Blog NNN sequence per the multi-channel convention documented at the top of this file (Financial "
+        "Market Insight is a distinct content type/channel from the blog). Body text and all three chart "
+        "images are copied/extracted verbatim from the firm's own source PDF rather than built from external "
+        "news commentary, so this record's Supporting Documentation section cites that internal PDF instead "
+        "of external article URLs -- there is no compliance gap here, just a different sourcing convention "
+        "for proprietary firm research versus market-commentary blog posts. Published By reflects Eric Capo's "
+        "explicit go-ahead to merge/push live and confirmation that CCO sign-off (Aaron Vann) was already in "
+        "hand at that time."
+    ),
+}
+
 if __name__ == "__main__":
-    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7):
+    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_8):
         doc = build_record(rec)
         prefix = rec["record_id"]
         path = os.path.join(

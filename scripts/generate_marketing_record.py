@@ -64,9 +64,18 @@ def add_log_table(doc, header, entries):
     return table
 
 
-def build_record(data):
-    """data: dict, see RECORDS below for the expected shape."""
-    doc = docx.Document()
+def build_record(data, doc=None):
+    """data: dict, see RECORDS below for the expected shape.
+
+    Pass an existing `doc` to append this record onto it (used to build one
+    combined document containing multiple records, each starting on a new
+    page) instead of creating a standalone Document.
+    """
+    standalone = doc is None
+    if standalone:
+        doc = docx.Document()
+    else:
+        doc.add_page_break()
 
     doc.add_heading("VEM Marketing Record", level=1)
     doc.add_paragraph("Complete one Marketing Record for every published marketing communication.")
