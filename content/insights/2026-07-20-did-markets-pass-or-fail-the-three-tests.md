@@ -6,7 +6,7 @@ author: "Vann Equity Management"
 category: "Financial Market Insight"
 hero: assets/img/insights/insights-hero-2026-07-20.jpg
 pdf: assets/docs/VEM-Financial-Market-Insight-2026-07-20.pdf
-status: draft
+status: published
 summary: "Our investment committee's three market tests came back mixed: AI infrastructure earnings from ASML and Taiwan Semiconductor raised new questions about spending sustainability, even as inflation data and Fed Chair Warsh's testimony both came in favorably. Also inside: the AI trade's new three-way split (ROCs, SOCs, and SaaS), what IBM's historic one-day selloff means for tech spending broadly, and what the copper-gold ratio is signaling about the economy."
 disclosure: >
   Disclaimer: The Financial Market Insight is protected by federal and international copyright laws. Vann
