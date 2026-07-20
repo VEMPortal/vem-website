@@ -11,7 +11,7 @@ summary: "Moonshot AI's Kimi K3 wiped roughly $3 trillion from global semiconduc
 
 ## At a Glance
 
-One product release. Roughly $3 trillion in lost semiconductor value. That is the scale of what unfolded last week after a Chinese AI lab released a new model — and it pushed the sector into a bear market almost overnight. This week answers back: Tesla, Alphabet, IBM, and Intel all report earnings, giving investors their first real, company-specific evidence on whether last week's reaction was proportionate or overdone. This article is educational only and does not recommend buying, selling, or avoiding any security.
+One product release. Roughly $3 trillion in lost semiconductor value. That is the scale of what unfolded last week after a Chinese AI lab released a new model — a reaction that pushed the sector into a bear market almost overnight. This week answers back: Tesla, Alphabet, IBM, and Intel all report earnings, giving investors their first real, company-specific evidence on whether last week's reaction was proportionate or overdone. This article is educational only and does not recommend buying, selling, or avoiding any security.
 
 ## Key Takeaways
 
