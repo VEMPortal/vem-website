@@ -5,7 +5,7 @@ date: 2026-07-20
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-07-20.jpg
-status: draft
+status: published
 summary: "Moonshot AI's Kimi K3 wiped roughly $3 trillion from global semiconductor stocks last week. This week, Tesla, Alphabet, IBM, and Intel report earnings that may help investors judge whether that selloff was overdone — educational only, not a recommendation."
 ---
 
