@@ -23,9 +23,9 @@ Last week, a single AI model release from a Chinese lab helped erase roughly $3 
 
 ## A Model Release That Moved Trillions
 
-On Thursday, Chinese AI lab Moonshot released Kimi K3, an open-weight model with 2.8 trillion parameters — by some measures, the largest open model released to date. The company said the model performs competitively with leading U.S. models on a range of benchmarks, and it plans to make the model freely downloadable starting July 27.
+On Thursday, Chinese AI lab Moonshot released Kimi K3, an open-weight model with 2.8 trillion parameters — by some measures, the largest open model available to date. The company said the model performs competitively with leading U.S. models on a range of benchmarks, and it plans to make the model freely downloadable starting July 27.
 
-The market reaction was immediate and severe. The Philadelphia Semiconductor Index fell as much as 5.7% in a single session and lost roughly 12.5% for the week — its worst weekly performance in more than 15 months. Taiwan Semiconductor Manufacturing Company fell 7% despite reporting a 77% jump in quarterly operating profit. By some estimates, global semiconductor stocks lost approximately $3.3 trillion in combined market value in the weeks since late June.
+The market reaction was immediate and severe. The Philadelphia Semiconductor Index fell as much as 5.7% in a single session and lost roughly 12.5% for the week — its worst weekly performance in more than 15 months. Taiwan Semiconductor Manufacturing Company fell 7% despite reporting a 77% jump in quarterly operating profit. By some estimates, global semiconductor stocks lost approximately $3.3 trillion in combined market value in the weeks since late June — the figure behind this article's roughly $3 trillion headline number.
 
 That is a notable reaction to a single product release. It suggests the selloff was less about any single company's near-term results and more about a broader question: has the market been pricing AI-related growth for perfection, leaving little room for a credible new competitor to enter the picture?
 
@@ -35,9 +35,9 @@ Part of what unsettled markets was the echo of an earlier moment — a similar r
 
 Kimi K3's pricing added to that narrative. Moonshot has priced the model at a fraction of the cost investors associate with leading U.S. models, feeding concern that AI capability may be becoming easier and cheaper to replicate than previously assumed.
 
-At the same time, some analysis pushed back on the more dramatic version of that story. Kimi K3's very large parameter count means it places heavy demands on memory infrastructure, which could continue to support demand for high-bandwidth memory and advanced chipmaking rather than undermine it. In other words, the model may shift where in the AI supply chain investors expect growth to concentrate, rather than eliminating that growth altogether.
+At the same time, some analysts pushed back on the more dramatic version of that story. Kimi K3's very large parameter count means it places heavy demands on memory infrastructure, which could continue to support demand for high-bandwidth memory and advanced chipmaking rather than undermine it. In other words, the model may shift where in the AI supply chain investors expect growth to concentrate, rather than eliminating that growth altogether.
 
-Investors should treat both interpretations as unproven. A single model release, however large its benchmarks, does not settle a question this complex on its own.
+Investors should treat both interpretations as unproven. A single model release, however strong its benchmark results, does not settle a question this complex on its own.
 
 ## A Pivotal Week of Earnings Arrives
 
