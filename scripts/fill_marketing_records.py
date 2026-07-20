@@ -670,6 +670,92 @@ record_7 = {
 }
 
 # ---------------------------------------------------------------------------
+# RECORD 008 — "When a $3 Trillion AI Shock Meets a Make-or-Break Earnings
+# Week" — merged to master and live in production.
+# ---------------------------------------------------------------------------
+KIMI_K3_DISCLOSURE = (
+    "This material is provided for informational and educational purposes only and should not be "
+    "considered investment, legal, or tax advice. The information does not constitute a recommendation "
+    "to buy, sell, or avoid any security, company, sector, asset class, or investment strategy. References "
+    "to Moonshot AI, Kimi K3, IBM, Tesla, Alphabet, Intel, or any other company are for educational market "
+    "commentary only and should not be interpreted as a recommendation. Investing involves risk, including "
+    "the possible loss of principal. Semiconductor and AI-related investments can be more volatile than the "
+    "broader market and may carry concentration risk. Past performance does not guarantee future results. "
+    "Vann Equity Management does not provide tax or legal advice. Investors should consult their financial, "
+    "tax, or legal professional regarding their individual circumstances. AI was used in the creation of "
+    "these materials."
+)
+
+record_9 = {
+    "record_id": "Blog 008",
+    "post_title": "When a $3 Trillion AI Shock Meets a Make-or-Break Earnings Week",
+    "status": "Published",
+    "date_created": "7/20/2026",
+    "publish_date": "7/20/2026",
+    "archive_date": "TBD",
+
+    "platforms": WEBSITE_PLATFORM,
+    "content_category": "Market Commentary",
+    "post_type": "Blog Article",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "Aaron Vann",
+    "approval_date": "7/20/2026",
+    "published_by": "Eric Capo",
+    "published_url": "https://www.vannequitymanagement.com/blog/trillion-dollar-ai-shock-meets-earnings-week.html",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": "blog-hero-2026-07-20.jpg, blog-hero-2026-07-20.webp, blog-hero-2026-07-20-mobile.jpg",
+    "screenshot_path": os.path.join(OUT_DIR, "images", "blog-008.png"),
+
+    "caption_paragraphs": [
+        "At a Glance",
+        "One product release. Roughly $3 trillion in lost semiconductor value. That is the scale of what unfolded last week after a Chinese AI lab released a new model — a reaction that pushed the sector into a bear market almost overnight. This week answers back: Tesla, Alphabet, IBM, and Intel all report earnings, giving investors their first real, company-specific evidence on whether last week's reaction was proportionate or overdone. This article is educational only and does not recommend buying, selling, or avoiding any security.",
+        "Key Takeaways",
+        "Moonshot AI's release of Kimi K3, a 2.8-trillion-parameter open-weight model, triggered a sharp selloff in semiconductor stocks, with the Philadelphia Semiconductor Index falling into bear-market territory. The selloff reflected a change in how the market is willing to price AI-related growth, not a change in near-term company fundamentals. A pivotal earnings week — IBM, Tesla, Alphabet, and Intel all report within a few days of each other — gives investors a chance to weigh company-specific results against last week's broader AI-trade anxiety. Geopolitical tension involving Iran and elevated oil prices remain a separate but related source of market uncertainty. This is market commentary only, not investment advice.",
+        "A Model Release That Moved Trillions",
+        "Thursday started like any other day in AI. It didn't end that way. Chinese lab Moonshot released Kimi K3, an open-weight model built on 2.8 trillion parameters -- by some measures, the largest open model available anywhere. The Philadelphia Semiconductor Index fell as much as 5.7% in a single session and dropped roughly 12.5% for the week -- its worst week in more than 15 months. Taiwan Semiconductor Manufacturing Company fell 7% on Friday despite reporting a 77% jump in quarterly operating profit, a sign that this was a story about expectations, not results.",
+        "A Pivotal Week of Earnings Arrives",
+        "Four companies report earnings within three days of each other, and each one speaks to a different piece of the AI story. IBM goes first, still recovering from a rough prior week. Tesla and Alphabet follow, and Intel closes out the week, with investors watching closely for any real update on its data-center and AI chip roadmap.",
+        "What Long-Term Investors Can Focus On",
+        "Weeks like this separate two kinds of investors: those reacting to a headline, and those evaluating what actually changed. The goal isn't to predict whether Kimi K3 changes the AI competitive landscape, or whether this week's earnings come in strong or weak. The goal is a process that holds up either way.",
+    ],
+
+    "disclosure": KIMI_K3_DISCLOSURE,
+
+    "sources": [
+        "Fortune: 'Markets experience new DeepSeek shock after MoonShot AI releases Kimi K3' -- https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/",
+        "TechCrunch: 'Moonshot's upcoming Kimi 3 is expected to close the gap with Anthropic's Opus 4.8' -- https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/",
+        "Bloomberg: 'Moonshot's Kimi K3 May Be More About Memory Than Compute' -- https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute",
+        "TechTimes: 'Kimi K3 Wipes $3.3T From Chip Stocks: Moonshot Moves Toward Hong Kong IPO' -- https://www.techtimes.com/articles/321066/20260720/kimi-k3-wipes-33t-chip-stocks-moonshot-moves-toward-hong-kong-ipo.htm",
+        "CNBC: 'Earnings playbook: Alphabet and Tesla are among the big companies set to report this week' -- https://www.cnbc.com/2026/07/19/earnings-playbook-alphabet-tesla-headline-this-weeks-big-reports.html",
+        "AskTraders: 'Alphabet, Tesla and Intel Headline Pivotal Earnings Week for Wall Street' -- https://www.asktraders.com/analysis/alphabet-tesla-and-intel-headline-pivotal-earnings-week-for-wall-street/",
+        "Al Jazeera: 'Oil surges as US strikes Iran, reversing return to pre-war prices' -- https://www.aljazeera.com/news/2026/7/8/oil-prices-surge-as-us-strikes-iran-reversing-fall-to-pre-war-levels",
+        "Yahoo Finance: 'Stock market today: Dow, S&P 500, Nasdaq futures edge up as oil turns lower in wait for Big Tech earnings' -- https://finance.yahoo.com/markets/live/stock-market-today-monday-july-20-dow-sp-500-nasdaq-111429441.html",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/20/2026"),
+        ("Compliance Review", "Aaron Vann", "7/20/2026"),
+        ("Approved", "Aaron Vann", "7/20/2026"),
+        ("Published", "Eric Capo", "7/20/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/20/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "All eight sources are real, verifiable, clickable links pulled during two-pass research "
+        "(WebSearch then Firecrawl) per the blog skill's compliance rule. Custom disclosure used instead "
+        "of the standard blog disclosure because this post references specific named companies (Moonshot "
+        "AI, IBM, Tesla, Alphabet, Intel) and carries semiconductor/AI concentration-risk language not "
+        "present in the standard disclosure. Published By reflects Eric Capo's explicit go-ahead to "
+        "merge/push live."
+    ),
+}
+
+# ---------------------------------------------------------------------------
 # RECORD "Insight 001" — first Marketing Record for a Financial Market
 # Insight (separate numbering sequence from the Blog records, per the
 # multi-channel convention above -- this is a distinct content type/channel).
@@ -781,7 +867,7 @@ record_8 = {
 }
 
 if __name__ == "__main__":
-    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_8):
+    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_9, record_8):
         doc = build_record(rec)
         prefix = rec["record_id"]
         # Insight records file into their own dedicated compliance folder;
