@@ -357,3 +357,17 @@ body.post-financial-market-insight-2026-02-17 .report-hero__scrim {
   background:
     linear-gradient(115deg, rgba(7,16,34,0.74) 0%, rgba(7,16,34,0.48) 50%, rgba(7,16,34,0.20) 100%);
 }
+
+/* This hero is already bright top-left (deep navy sky, plenty dark for the
+   white title on its own) and gold/luminous through the rest — keep the
+   overlay minimal so the image itself stays bright, per explicit request. */
+body.post-did-markets-pass-or-fail-the-three-tests .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.24) 45%, rgba(7,16,34,0.08) 100%);
+}
+/* The source photo has a lot of empty sky up top and the skyline concentrated
+   in the bottom third — center-crop was cutting the buildings off. Bias the
+   crop toward the bottom so the skyline stays in frame. */
+body.post-did-markets-pass-or-fail-the-three-tests .report-hero__media img {
+  object-position: center bottom;
+}
