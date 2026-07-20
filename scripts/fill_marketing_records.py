@@ -677,7 +677,20 @@ record_7 = {
 # proprietary newsletter PDF (copied verbatim per house rule), not commentary
 # built from external news articles, so "Supporting Documentation" points to
 # that internal source PDF rather than external URLs.
+#
+# Filing location: per explicit user instruction, Financial Market Insight
+# records are filed in their own dedicated folder -- separate from
+# VEM-Marketing-Records (which stays the blog/social home) -- so future
+# Insight NNN records should save (and their screenshots live) here, not in
+# OUT_DIR above.
 # ---------------------------------------------------------------------------
+INSIGHT_OUT_DIR = (
+    r"C:\Users\alpha\OneDrive\Attachments\Desktop"
+    r"\VEM- compliance-docs-social posts, blogs, financial market insights"
+    r"\Financial  Market Insight Records"
+)
+os.makedirs(os.path.join(INSIGHT_OUT_DIR, "images"), exist_ok=True)
+
 INSIGHT_WEBSITE_PLATFORM = "VEM Website — vannequitymanagement.com/insights"
 
 FMI_DISCLOSURE = (
@@ -718,7 +731,7 @@ record_8 = {
         "insights-hero-2026-07-20.jpg, insights-hero-2026-07-20.webp, insights-hero-2026-07-20-mobile.jpg, "
         "fmi-2026-07-20-sp500.png/.webp, fmi-2026-07-20-inflation.png/.webp, fmi-2026-07-20-oil-metals.png/.webp"
     ),
-    "screenshot_path": os.path.join(OUT_DIR, "images", "insight-001.png"),
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001.png"),
 
     "caption_paragraphs": [
         "Highlights",
@@ -771,8 +784,11 @@ if __name__ == "__main__":
     for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_8):
         doc = build_record(rec)
         prefix = rec["record_id"]
+        # Insight records file into their own dedicated compliance folder;
+        # everything else (Blog, social) stays in OUT_DIR.
+        dest_dir = INSIGHT_OUT_DIR if prefix.startswith("Insight") else OUT_DIR
         path = os.path.join(
-            OUT_DIR,
+            dest_dir,
             prefix + " - " + rec["post_title"][:55].replace(":", "").replace("/", "-") + ".docx",
         )
         doc.save(path)
