@@ -1136,10 +1136,10 @@ record_14 = {
     "post_title": "We Ran Three Tests on This Market. It Only Passed Two. (MailChimp email)",
     "status": "Published",
     "date_created": "7/21/2026",
-    "publish_date": "7/21/2026",
+    "publish_date": "7/20/2026",
     "archive_date": "TBD",
 
-    "platforms": "MailChimp email — July 2026 Financial Market Insight campaign",
+    "platforms": "MailChimp email — July 2026 Financial Market Insight campaign (Sent 7/20/2026 5:43pm, 1,135 recipients)",
     "content_category": "Financial Market Insight",
     "post_type": "Email Campaign",
     "author": "Vann Equity Management",
@@ -1203,11 +1203,13 @@ record_14 = {
         "sent version matches what was approved. Footer merge tags (Company/Organization, mailing "
         "address, unsubscribe/preferences links) are populated from MailChimp's own Audience > "
         "Settings > Required email footer content, confirmed correct earlier in this project -- not "
-        "hand-edited text. Published URL uses the campaign-archive link provided by Eric Capo -- note "
-        "its 'e=__test_email__' query parameter, which typically marks a test-send preview link rather "
-        "than the final recipient-facing archive URL. Flagged here rather than silently treated as the "
-        "definitive public link; confirm with Eric Capo whether a separate live/production archive URL "
-        "exists before relying on this one for external reference."
+        "hand-edited text. Confirmed via MailChimp's own Email Report (Campaigns > Financial Market "
+        "Insight July 2026 > Overview): Status 'Sent', Monday July 20, 2026 5:43pm, 1,135 recipients -- "
+        "publish_date corrected to 7/20/2026 (the actual send date) accordingly. Published URL still "
+        "uses the campaign-archive link with the 'e=__test_email__' query parameter, which typically "
+        "marks a test/preview link rather than the final recipient-facing archive URL -- the true "
+        "public link is reachable via the report's 'View email' button but has not yet been captured. "
+        "Flagged here rather than silently treated as the definitive public link."
     ),
 }
 
