@@ -33,8 +33,13 @@ create a placeholder record for a channel nothing has been posted to.
 import os
 from generate_marketing_record import build_record
 
-OUT_DIR = r"C:\Users\alpha\OneDrive\Attachments\Desktop\Business (VEM)\VEM-Marketing-Records"
+OUT_DIR = (
+    r"C:\Users\alpha\OneDrive\Attachments\Desktop"
+    r"\VEM- compliance-docs-social posts, blogs, financial market insights"
+    r"\VEM-Marketing-Records"
+)
 os.makedirs(OUT_DIR, exist_ok=True)
+os.makedirs(os.path.join(OUT_DIR, "images"), exist_ok=True)
 
 WEBSITE_PLATFORM = "VEM Website — vannequitymanagement.com/blog"
 
