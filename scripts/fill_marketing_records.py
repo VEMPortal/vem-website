@@ -873,8 +873,267 @@ record_8 = {
     ),
 }
 
+# ---------------------------------------------------------------------------
+# Insight 001 social siblings -- same underlying content (the HeyGen avatar
+# video summarizing the Insight), one record per platform per the
+# multi-channel convention. Each sibling's caption is transcribed verbatim
+# from the actual live post screenshot, not re-typed from memory.
+# ---------------------------------------------------------------------------
+INSIGHT_001_VIDEO_MEDIA = (
+    "HeyGen avatar video (Brandi V2 / Brandy voice / Vann Equity Management brand system), "
+    "1:05 runtime, 720p (Seedance/Avatar Shots left off), no subtitles, no background music."
+)
+
+record_10 = {
+    "record_id": "Insight 001-FB",
+    "post_title": "Did Markets Pass or Fail the Three Tests? (Facebook video post)",
+    "status": "Published",
+    "date_created": "7/21/2026",
+    "publish_date": "7/21/2026",
+    "archive_date": "TBD",
+
+    "platforms": "Facebook — facebook.com/VannEquityManagement",
+    "content_category": "Financial Market Insight",
+    "post_type": "Social Video Post",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/21/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": INSIGHT_001_VIDEO_MEDIA,
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001-fb.png"),
+
+    "caption_paragraphs": [
+        "Did this year's market rally just pass its toughest test yet? 📊",
+        "This month, our investment committee sat down to run the AI-driven rally through three key tests — and the results came back mixed.",
+        "✅ Inflation data came in favorable",
+        "✅ Fed Chair Warsh's testimony leaned constructive",
+        "⚠️ AI infrastructure earnings from ASML and Taiwan Semiconductor raised new questions about whether all that AI spending is sustainable",
+        "We're also seeing something bigger shift beneath the surface — the AI trade isn't moving as one group anymore. It's splitting into three distinct camps: the companies receiving the capital, the companies spending it, and software companies now facing new competition from AI itself.",
+        "That shift is part of why IBM's latest report hit so hard — the company posted its worst single-day decline in 115 years.",
+        "And there's a quieter signal worth watching too: what the copper-gold ratio is telling us about the economy right now.",
+        "Watch our video breakdown, and read the full Financial Market Insight here: https://www.vannequitymanagement.com/insights/did-markets-pass-or-fail-the-three-tests.html",
+        "This content is for educational and informational purposes only. It is not a recommendation to buy, sell, or avoid any security, sector, or investment strategy. Investing involves risk, including the possible loss of principal. Past performance does not guarantee future results.",
+        "#FinancialMarketInsight #MarketUpdate #InvestingEducation #WealthManagement #VannEquityManagement #DallasFinance #PlanoTX #MarketCommentary #StockMarket",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Same underlying content as Insight 001 (website record) -- see that record's Supporting "
+        "Documentation for the source PDF citation. This record documents the Facebook video "
+        "repost specifically.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/21/2026"),
+        ("Compliance Review", "John Vann", "7/21/2026"),
+        ("Approved", "John Vann", "7/21/2026"),
+        ("Published", "Eric Capo", "7/21/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/21/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "Caption transcribed verbatim from the live Facebook post screenshot (Published by Eric Capo, "
+        "shown as 'AI content' per Facebook's disclosure labeling). Published URL is TBD pending the "
+        "direct post permalink -- the post is confirmed live via screenshot in the interim."
+    ),
+}
+
+record_11 = {
+    "record_id": "Insight 001-LI",
+    "post_title": "Did Markets Pass or Fail the Three Tests? (LinkedIn video post)",
+    "status": "Published",
+    "date_created": "7/21/2026",
+    "publish_date": "7/21/2026",
+    "archive_date": "TBD",
+
+    "platforms": "LinkedIn — linkedin.com/company/vann-equity-management",
+    "content_category": "Financial Market Insight",
+    "post_type": "Social Video Post",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/21/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": INSIGHT_001_VIDEO_MEDIA,
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001-li.png"),
+
+    "caption_paragraphs": [
+        "Did this year's AI-driven market rally just pass its toughest test yet?",
+        "Our investment committee gathered this month to run the current rally through three key tests — the results were mixed.",
+        "✅ Inflation data came in favorable",
+        "✅ Fed Chair Warsh's testimony leaned constructive",
+        "⚠️ AI infrastructure earnings from ASML and Taiwan Semiconductor raised new questions about whether the spending behind the AI buildout is sustainable",
+        "We're also watching something structural shift beneath the surface: the AI trade is no longer moving as one unified group. It's splitting into three distinct camps —",
+        "→ The companies receiving the capital being invested in AI infrastructure",
+        "→ The companies spending that capital to finance the buildout",
+        "→ Software companies facing new competitive pressure from AI itself",
+        "Each group carries different risks, and leadership is rotating among them — which is part of why IBM's recent report landed as hard as it did. The company posted its worst single-day decline in 115 years, and it raises real questions about technology spending more broadly.",
+        "We also break down a quieter but historically reliable signal in this month's Insight: what the copper-gold ratio is telling us about the broader economy right now.",
+        "Markets rarely move in a straight line, and the evidence rarely lines up perfectly either. That's exactly why we run it through the tests, rather than just following the headlines.",
+        "Watch the video breakdown above, and read the full Financial Market Insight at https://www.vannequitymanagement.com/insights/did-markets-pass-or-fail-the-three-tests.html",
+        "This content is for educational and informational purposes only. It is not a recommendation to buy, sell, or avoid any security, sector, or investment strategy. Investing involves risk, including the possible loss of principal. Past performance does not guarantee future results.",
+        "#FinancialMarketInsight #MarketCommentary #InvestmentManagement #WealthManagement #FiduciaryAdvisor #EquityManagement #MarketAnalysis #AIStocks #TechSpending #FedWatch #InflationData #InvestorEducation #FinancialPlanning #DallasFinance #PlanoTX #VannEquityManagement #InstitutionalInvesting #MarketOutlook #EconomicOutlook #WealthAdvisory",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Same underlying content as Insight 001 (website record) -- see that record's Supporting "
+        "Documentation for the source PDF citation. This record documents the LinkedIn video "
+        "repost specifically.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/21/2026"),
+        ("Compliance Review", "John Vann", "7/21/2026"),
+        ("Approved", "John Vann", "7/21/2026"),
+        ("Published", "Eric Capo", "7/21/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/21/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "Caption transcribed verbatim from the live LinkedIn post screenshot (posted under the Vann "
+        "Equity Management company page). Published URL is TBD pending the direct post permalink -- "
+        "the post is confirmed live via screenshot in the interim."
+    ),
+}
+
+record_12 = {
+    "record_id": "Insight 001-X",
+    "post_title": "Did Markets Pass or Fail the Three Tests? (X post)",
+    "status": "Published",
+    "date_created": "7/21/2026",
+    "publish_date": "7/21/2026",
+    "archive_date": "TBD",
+
+    "platforms": "X (Twitter) — x.com/vannequity",
+    "content_category": "Financial Market Insight",
+    "post_type": "Social Video Post",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/21/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": INSIGHT_001_VIDEO_MEDIA,
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001-x.png"),
+
+    "caption_paragraphs": [
+        "Did this year's AI rally pass its 3 biggest tests? Mixed results, including a historic IBM "
+        "selloff. New Insight is live: "
+        "https://www.vannequitymanagement.com/insights/did-markets-pass-or-fail-the-three-tests.html "
+        "#MarketCommentary",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Same underlying content as Insight 001 (website record) -- see that record's Supporting "
+        "Documentation for the source PDF citation. This record documents the X (Twitter) repost "
+        "specifically.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/21/2026"),
+        ("Compliance Review", "John Vann", "7/21/2026"),
+        ("Approved", "John Vann", "7/21/2026"),
+        ("Published", "Eric Capo", "7/21/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/21/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "Caption transcribed verbatim from the live X post screenshot (posted under @vannequity). "
+        "Note X's own link-shortening (t.co) means the caption as displayed truncates the URL; the "
+        "full destination is the same published URL as the website record. Published URL is TBD "
+        "pending the direct post permalink -- the post is confirmed live via screenshot in the interim."
+    ),
+}
+
+record_13 = {
+    "record_id": "Insight 001-IG",
+    "post_title": "Did Markets Pass or Fail the Three Tests? (Instagram reel)",
+    "status": "Published",
+    "date_created": "7/21/2026",
+    "publish_date": "7/21/2026",
+    "archive_date": "TBD",
+
+    "platforms": "Instagram — instagram.com/vannequitymanagement",
+    "content_category": "Financial Market Insight",
+    "post_type": "Social Video Post (Reel)",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/21/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": INSIGHT_001_VIDEO_MEDIA,
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001-ig.png"),
+
+    "caption_paragraphs": [
+        "Did this year's AI-driven rally just pass its toughest test yet? 📊",
+        "This month, our investment committee ran the market's rally through three key tests — the results came back mixed.",
+        "✅ Inflation data came in favorable",
+        "✅ Fed Chair Warsh's testimony leaned constructive",
+        "⚠️ AI infrastructure earnings from ASML and Taiwan Semiconductor raised new questions about whether the spending behind the AI buildout is sustainable",
+        "We're also watching the AI trade split into three distinct camps — the companies receiving the capital, the companies spending it, and software companies now facing new competition. That shift is part of why IBM's latest report hit so hard: its worst single-day decline in 115 years.",
+        "And there's a quieter signal worth watching too — what the copper-gold ratio is telling us about the economy right now.",
+        "🎥 Watch our video breakdown, and read the full Financial Market Insight — link in bio.",
+        "This content is for educational and informational purposes only. It is not a recommendation to buy, sell, or avoid any security, sector, or strategy. Investing involves risk, including possible loss of principal. Past performance does not guarantee future results.",
+        "#FinancialMarketInsight #MarketUpdate #StockMarket #InvestingEducation #WealthManagement #FinancialPlanning #MarketCommentary #AIStocks #FedWatch #InflationData #InvestorEducation #EquityManagement #MarketAnalysis #FiduciaryAdvisor #DallasFinance #PlanoTX #VannEquityManagement #InvestSmart #MarketTrends #EconomicOutlook",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Same underlying content as Insight 001 (website record) -- see that record's Supporting "
+        "Documentation for the source PDF citation. This record documents the Instagram reel "
+        "repost specifically.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/21/2026"),
+        ("Compliance Review", "John Vann", "7/21/2026"),
+        ("Approved", "John Vann", "7/21/2026"),
+        ("Published", "Eric Capo", "7/21/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/21/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "Caption transcribed verbatim from the live Instagram reel screenshot (posted under "
+        "@vannequitymanagement). Bio link was not yet updated to the specific article URL at the "
+        "time of this recording (still pointed at the homepage) -- flagged so the archive folder "
+        "note captures the actual live state, not an idealized one. Published URL is TBD pending "
+        "the direct post permalink -- the post is confirmed live via screenshot in the interim."
+    ),
+}
+
 if __name__ == "__main__":
-    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_9, record_8):
+    for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_9, record_8,
+                record_10, record_11, record_12, record_13):
         doc = build_record(rec)
         prefix = rec["record_id"]
         # Insight records file into their own dedicated compliance folder;
