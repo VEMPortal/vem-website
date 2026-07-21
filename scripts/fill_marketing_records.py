@@ -1146,7 +1146,7 @@ record_14 = {
     "compliance_reviewer": "John Vann",
     "approval_date": "7/21/2026",
     "published_by": "Eric Capo",
-    "published_url": "TBD",
+    "published_url": "https://us19.campaign-archive.com/?e=__test_email__&u=75ee1d1c588b7b74d8a8feaa0&id=939dd934b8",
     "screenshot_saved": "Yes",
     "archive_folder": "TBD",
 
@@ -1203,8 +1203,11 @@ record_14 = {
         "sent version matches what was approved. Footer merge tags (Company/Organization, mailing "
         "address, unsubscribe/preferences links) are populated from MailChimp's own Audience > "
         "Settings > Required email footer content, confirmed correct earlier in this project -- not "
-        "hand-edited text. Published URL is TBD pending the direct campaign-archive permalink -- the "
-        "email is confirmed sent via screenshot in the interim."
+        "hand-edited text. Published URL uses the campaign-archive link provided by Eric Capo -- note "
+        "its 'e=__test_email__' query parameter, which typically marks a test-send preview link rather "
+        "than the final recipient-facing archive URL. Flagged here rather than silently treated as the "
+        "definitive public link; confirm with Eric Capo whether a separate live/production archive URL "
+        "exists before relying on this one for external reference."
     ),
 }
 
