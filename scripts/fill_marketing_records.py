@@ -1131,9 +1131,86 @@ record_13 = {
     ),
 }
 
+record_14 = {
+    "record_id": "Insight 001-Email",
+    "post_title": "We Ran Three Tests on This Market. It Only Passed Two. (MailChimp email)",
+    "status": "Published",
+    "date_created": "7/21/2026",
+    "publish_date": "7/21/2026",
+    "archive_date": "TBD",
+
+    "platforms": "MailChimp email — July 2026 Financial Market Insight campaign",
+    "content_category": "Financial Market Insight",
+    "post_type": "Email Campaign",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/21/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": (
+        "insights-hero-2026-07-20.jpg (same hero image as the website Insight, used as the email's "
+        "top banner)"
+    ),
+    "screenshot_path": os.path.join(INSIGHT_OUT_DIR, "images", "insight-001-email.png"),
+
+    "caption_paragraphs": [
+        "Subject line / headline: We Ran Three Tests on This Market. It Only Passed Two.",
+        "Every month, our investment committee identifies the specific developments that need to go "
+        "right to keep this market's rally on track. This time, we picked three. Two came back clean. "
+        "The third didn't -- and it's the one tied to the theme that's been driving stocks all year.",
+        "Inflation cooled. The Fed backed off talk of another rate hike. Both were genuinely good news. "
+        "But one test failed hard enough that it's now the single biggest question mark hanging over "
+        "the market, and it showed up in a headline number most investors haven't fully priced in yet.",
+        "Read the full report to see which test failed, why it matters more than the two that passed, "
+        "and what we're watching next.",
+        "[Button] Read the Full Report",
+        "IMPORTANT DISCLOSURE: This publication is provided for informational purposes only and does "
+        "not constitute individualized investment advice. Investing involves risk, including possible "
+        "loss of principal. This material may be protected by copyright laws and may not be forwarded, "
+        "copied, downloaded, stored in a retrieval system, or otherwise reproduced without express "
+        "written permission. [Full disclosure text continues verbatim in the email footer -- see "
+        "screenshot.]",
+        "[Button] Get the Full Breakdown",
+    ],
+
+    "disclosure": FMI_DISCLOSURE,
+
+    "sources": [
+        "Same underlying content as Insight 001 (website record) -- see that record's Supporting "
+        "Documentation for the source PDF citation. This record documents the MailChimp email "
+        "campaign specifically -- the 'held-back teaser' version (per user's explicit direction to "
+        "keep tension/stakes and hold back the payoff, rather than a full-detail summary) drafted "
+        "and approved earlier in this project.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/21/2026"),
+        ("Compliance Review", "John Vann", "7/21/2026"),
+        ("Approved", "John Vann", "7/21/2026"),
+        ("Published", "Eric Capo", "7/21/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/21/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "Caption/body transcribed from the live MailChimp campaign-archive view screenshot "
+        "(us19.campaign-archive.com), not re-typed from the earlier draft -- confirms the actual "
+        "sent version matches what was approved. Footer merge tags (Company/Organization, mailing "
+        "address, unsubscribe/preferences links) are populated from MailChimp's own Audience > "
+        "Settings > Required email footer content, confirmed correct earlier in this project -- not "
+        "hand-edited text. Published URL is TBD pending the direct campaign-archive permalink -- the "
+        "email is confirmed sent via screenshot in the interim."
+    ),
+}
+
 if __name__ == "__main__":
     for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_9, record_8,
-                record_10, record_11, record_12, record_13):
+                record_10, record_11, record_12, record_13, record_14):
         doc = build_record(rec)
         prefix = rec["record_id"]
         # Insight records file into their own dedicated compliance folder;
