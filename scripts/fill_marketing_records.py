@@ -698,7 +698,7 @@ record_9 = {
     "content_category": "Market Commentary",
     "post_type": "Blog Article",
     "author": "Vann Equity Management",
-    "compliance_reviewer": "Aaron Vann",
+    "compliance_reviewer": "John Vann",
     "approval_date": "7/20/2026",
     "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/blog/trillion-dollar-ai-shock-meets-earnings-week.html",
@@ -736,13 +736,14 @@ record_9 = {
 
     "approval_log": [
         ("Draft Completed", "Vann Equity Management", "7/20/2026"),
-        ("Compliance Review", "Aaron Vann", "7/20/2026"),
-        ("Approved", "Aaron Vann", "7/20/2026"),
+        ("Compliance Review", "John Vann", "7/20/2026"),
+        ("Approved", "John Vann", "7/20/2026"),
         ("Published", "Eric Capo", "7/20/2026"),
     ],
 
     "revision_history": [
         ("1", "7/20/2026", "Marketing Record created at time of publish"),
+        ("2", "7/21/2026", "Corrected Compliance Reviewer/Approver from Aaron Vann to John Vann"),
     ],
 
     "notes": (
@@ -806,7 +807,7 @@ record_8 = {
     "content_category": "Financial Market Insight",
     "post_type": "Financial Market Insight Newsletter",
     "author": "Vann Equity Management",
-    "compliance_reviewer": "Aaron Vann",
+    "compliance_reviewer": "John Vann",
     "approval_date": "7/20/2026",
     "published_by": "Eric Capo",
     "published_url": "https://www.vannequitymanagement.com/insights/did-markets-pass-or-fail-the-three-tests.html",
@@ -844,13 +845,14 @@ record_8 = {
 
     "approval_log": [
         ("Draft Completed", "Vann Equity Management", "7/20/2026"),
-        ("Compliance Review", "Aaron Vann", "7/20/2026"),
-        ("Approved", "Aaron Vann", "7/20/2026"),
+        ("Compliance Review", "John Vann", "7/20/2026"),
+        ("Approved", "John Vann", "7/20/2026"),
         ("Published", "Eric Capo", "7/20/2026"),
     ],
 
     "revision_history": [
         ("1", "7/20/2026", "Marketing Record created at time of publish -- first record in the Insight sequence"),
+        ("2", "7/21/2026", "Corrected Compliance Reviewer/Approver from Aaron Vann to John Vann"),
     ],
 
     "notes": (
@@ -861,7 +863,7 @@ record_8 = {
         "news commentary, so this record's Supporting Documentation section cites that internal PDF instead "
         "of external article URLs -- there is no compliance gap here, just a different sourcing convention "
         "for proprietary firm research versus market-commentary blog posts. Published By reflects Eric Capo's "
-        "explicit go-ahead to merge/push live and confirmation that CCO sign-off (Aaron Vann) was already in "
+        "explicit go-ahead to merge/push live and confirmation that CCO sign-off (John Vann) was already in "
         "hand at that time."
     ),
 }
