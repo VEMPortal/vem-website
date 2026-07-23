@@ -1395,9 +1395,110 @@ record_16 = {
     ),
 }
 
+record_17 = {
+    "record_id": "Social 001-LI",
+    "post_title": "Myth vs. Fact: The Truth About Investing (LinkedIn image post)",
+    "status": "Published",
+    "date_created": "7/23/2026",
+    "publish_date": "7/23/2026",
+    "archive_date": "TBD",
+
+    "platforms": "LinkedIn — linkedin.com/company/vann-equity-management",
+    "content_category": "Educational / Investor Education",
+    "post_type": "Social Image Post",
+    "author": "Vann Equity Management",
+    "compliance_reviewer": "John Vann",
+    "approval_date": "7/23/2026",
+    "published_by": "Eric Capo",
+    "published_url": "TBD",
+    "screenshot_saved": "Yes",
+    "archive_folder": "TBD",
+
+    "media_filenames": (
+        "Myth vs Fact.png -- the STATIC infographic. Note this is a different creative from the "
+        "Instagram and Facebook postings (Social 001-IG / -FB), which used the 28-second narrated "
+        "video built from this same image. No voiceover, no music, no video on LinkedIn."
+    ),
+    "screenshot_path": os.path.join(OUT_DIR, "images", "social-001-li.png"),
+
+    "caption_paragraphs": [
+        "MYTH vs. FACT",
+        "Myth: Investing is only for the wealthy.",
+        "One of the most common misconceptions about investing is that it requires a significant "
+        "amount of money to get started.",
+        "In reality, many investment options today allow investors to begin with relatively modest "
+        "contributions. While investment strategies should always align with an individual's "
+        "financial goals, risk tolerance, and time horizon, consistency and long-term discipline "
+        "have historically been important components of wealth accumulation.",
+        "Financial education empowers better decision-making, and understanding common investing "
+        "myths is one step toward building greater financial confidence.",
+        "What investing myths have you heard that deserve a closer look?",
+        "[Transcribed from the live post screenshot. The caption panel was scrollable and the "
+        "visible portion ended at the question above -- any trailing hashtags or disclosure text "
+        "below the fold are not captured here. Verify against the live post before treating this "
+        "as the complete caption.]",
+    ],
+
+    "disclosure": SOCIAL_EDUCATIONAL_DISCLOSURE,
+
+    "sources": [
+        "No external sources cited -- general investor-education content making no factual, "
+        "statistical, or performance claims requiring substantiation. The one quasi-empirical "
+        "statement ('consistency and long-term discipline have historically been important "
+        "components of wealth accumulation') is appropriately hedged and asserts no specific "
+        "return, period, or figure.",
+    ],
+
+    "approval_log": [
+        ("Draft Completed", "Vann Equity Management", "7/23/2026"),
+        ("Compliance Review", "John Vann", "7/23/2026"),
+        ("Approved", "John Vann", "7/23/2026"),
+        ("Published", "Eric Capo", "7/23/2026"),
+    ],
+
+    "revision_history": [
+        ("1", "7/23/2026", "Marketing Record created at time of publish"),
+    ],
+
+    "notes": (
+        "DIFFERENT CREATIVE, not a duplicate of Social 001-IG/-FB. LinkedIn received the static "
+        "infographic with a longer, more formal caption written for a professional audience; "
+        "Instagram and Facebook received the narrated video with a shorter caption. Separate "
+        "records is the correct treatment per the multi-channel convention -- the creative, the "
+        "caption, and the publish time all differ. Screenshot timestamp shows this posted roughly "
+        "three hours ahead of the IG/FB video postings."
+        "\n\n"
+        "CAPTION QUALITY -- POSITIVE: this caption is the most compliance-careful of the three. It "
+        "includes suitability language ('investment strategies should always align with an "
+        "individual's financial goals, risk tolerance, and time horizon') and hedges its one "
+        "historical claim rather than asserting a result. Worth noting as the house standard to "
+        "match on future social captions."
+        "\n\n"
+        "ENGAGEMENT PROMPT -- FLAGGED FOR REVIEW: the caption closes with 'What investing myths have "
+        "you heard that deserve a closer look?', which actively solicits replies. Under the "
+        "Marketing Rule, third-party content can become the adviser's own through adoption "
+        "(endorsing it after the fact) or entanglement (involvement in its creation), and SEC staff "
+        "have taken the view that soliciting responses moves an adviser closer to entanglement. If a "
+        "commenter replies with anything resembling a client experience ('I started small with VEM "
+        "and...'), that is a testimonial, and VEM having invited the response weakens the argument "
+        "that it is purely unsolicited third-party speech. This does not make the prompt improper -- "
+        "engagement questions are ordinary practice -- but it raises the monitoring obligation on "
+        "this specific post. Recommend John Vann confirm: (a) whether solicitation-style prompts are "
+        "acceptable on VEM social, and (b) who monitors this thread and on what cadence. Ties "
+        "directly to the outstanding recommendation that VEM adopt a written social engagement "
+        "policy."
+        "\n\n"
+        "No AI labeling question here -- this is a static image with no synthetic voice, so the "
+        "platform-inconsistency issue noted on Social 001-IG/-FB does not apply to this posting."
+        "\n\n"
+        "Published URL is TBD pending the direct post permalink; the post is confirmed live via "
+        "screenshot in the interim."
+    ),
+}
+
 if __name__ == "__main__":
     for rec in (record_1, record_2, record_3, record_4, record_5, record_6, record_7, record_9, record_8,
-                record_10, record_11, record_12, record_13, record_14, record_15, record_16):
+                record_10, record_11, record_12, record_13, record_14, record_15, record_16, record_17):
         doc = build_record(rec)
         prefix = rec["record_id"]
         # Insight records file into their own dedicated compliance folder;
