@@ -783,6 +783,19 @@ INSIGHT_OUT_DIR = (
 )
 os.makedirs(os.path.join(INSIGHT_OUT_DIR, "images"), exist_ok=True)
 
+# Standalone social content (no blog/insight behind it) files into its own
+# folder. `images/` holds live-post screenshots; `media/` holds the actual
+# published creative -- the video, source graphic, voiceover, music -- because
+# a feed screenshot does not preserve a 28-second video and advertisements
+# carry a five-year retention obligation. See that folder's _README.md.
+SOCIAL_OUT_DIR = (
+    r"C:\Users\alpha\OneDrive\Attachments\Desktop"
+    r"\VEM- compliance-docs-social posts, blogs, financial market insights"
+    r"\Social Post Records"
+)
+os.makedirs(os.path.join(SOCIAL_OUT_DIR, "images"), exist_ok=True)
+os.makedirs(os.path.join(SOCIAL_OUT_DIR, "media"), exist_ok=True)
+
 INSIGHT_WEBSITE_PLATFORM = "VEM Website — vannequitymanagement.com/insights"
 
 FMI_DISCLOSURE = (
@@ -1258,7 +1271,7 @@ record_15 = {
         "'Myth vs Fact.png' infographic plus an ElevenLabs voiceover ('Roger - Laid-Back, Casual, "
         "Resonant') and a royalty-free Pixabay instrumental bed. Source infographic: Myth vs Fact.png."
     ),
-    "screenshot_path": os.path.join(OUT_DIR, "images", "social-001-ig.png"),
+    "screenshot_path": os.path.join(SOCIAL_OUT_DIR, "images", "social-001-ig.png"),
 
     "caption_paragraphs": [
         "MYTH: Investing is only for the wealthy.",
@@ -1348,7 +1361,7 @@ record_16 = {
         "MythvsFactnarrated_WithMusic.mp4 -- identical creative to Social 001-IG (same 28s video, "
         "same voiceover, same music bed). Source infographic: Myth vs Fact.png."
     ),
-    "screenshot_path": os.path.join(OUT_DIR, "images", "social-001-fb.png"),
+    "screenshot_path": os.path.join(SOCIAL_OUT_DIR, "images", "social-001-fb.png"),
 
     "caption_paragraphs": [
         "Same caption text as the Instagram posting (Social 001-IG) -- see that record for the full "
@@ -1419,7 +1432,7 @@ record_17 = {
         "Instagram and Facebook postings (Social 001-IG / -FB), which used the 28-second narrated "
         "video built from this same image. No voiceover, no music, no video on LinkedIn."
     ),
-    "screenshot_path": os.path.join(OUT_DIR, "images", "social-001-li.png"),
+    "screenshot_path": os.path.join(SOCIAL_OUT_DIR, "images", "social-001-li.png"),
 
     "caption_paragraphs": [
         "MYTH vs. FACT",
@@ -1503,7 +1516,12 @@ if __name__ == "__main__":
         prefix = rec["record_id"]
         # Insight records file into their own dedicated compliance folder;
         # everything else (Blog, social) stays in OUT_DIR.
-        dest_dir = INSIGHT_OUT_DIR if prefix.startswith("Insight") else OUT_DIR
+        if prefix.startswith("Insight"):
+            dest_dir = INSIGHT_OUT_DIR
+        elif prefix.startswith("Social"):
+            dest_dir = SOCIAL_OUT_DIR
+        else:
+            dest_dir = OUT_DIR
         path = os.path.join(
             dest_dir,
             prefix + " - " + rec["post_title"][:55].replace(":", "").replace("/", "-") + ".docx",
