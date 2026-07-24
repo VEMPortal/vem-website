@@ -59,12 +59,21 @@ out identical, and so a fix to the writing rules only has to happen once.
    verbal compliance approval is already in hand — don't re-ask. Never set
    `published` on this skill's own initiative.
 
-7. **Create the Marketing Record once live** — see
-   `scripts/MARKETING_RECORD_WORKFLOW.md` and
-   `scripts/fill_marketing_records.py`. This is an SEC recordkeeping
+7. **Create the Marketing Record once live.** This is an SEC recordkeeping
    requirement, not optional paperwork: what went out, when, who approved
    it, and where its sources came from. Capture the live screenshot from
    production, not from a preview URL.
+
+   **Compliance lives OUTSIDE this repo — deliberately.** The record
+   generator and every record it produces are stored locally only, in the
+   OneDrive compliance folder:
+   `Desktop\VEM- compliance-docs-social posts, blogs, financial market
+   insights\` — `_scripts\` holds `fill_marketing_records.py` and
+   `generate_marketing_record.py`; the `.docx` records and screenshots sit
+   in the per-type folders alongside it. This repo deploys to a **public**
+   website, so nothing containing reviewer names, approval logs, or internal
+   compliance analysis may ever be committed here. Run the generator from
+   that OneDrive `_scripts\` folder, never from the site repo.
 
 ## Hero overlay tuning
 

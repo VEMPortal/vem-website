@@ -12,3 +12,11 @@ assets/img/Elegant_*.jpeg
 Thumbs.db
 desktop.ini
 graphify-out/
+
+# Compliance scripts must NEVER live in this public repo — they hold reviewer
+# names and internal compliance analysis, and this repo deploys to a public
+# website. They live locally in the OneDrive compliance folder (_scripts/).
+scripts/fill_marketing_records.py
+scripts/generate_marketing_record.py
+scripts/MARKETING_RECORD_WORKFLOW.md
+scripts/build_combined_records.py
