@@ -5,7 +5,7 @@ date: 2026-07-27
 author: "Vann Equity Management"
 category: "Market Commentary"
 hero: assets/img/blog/blog-hero-2026-07-27.jpg
-status: draft
+status: published
 summary: "A pause in U.S.-Iran strikes lifted markets Monday, but a Chinese chipmaking breakthrough sent equipment stocks lower — and Intel's earnings beat that still cost it 7.9% is a preview of the risk facing this week's flood of mega-cap reports. Educational only, not a recommendation."
 disclosure: >
   This material is provided for informational and educational purposes only and should not be
