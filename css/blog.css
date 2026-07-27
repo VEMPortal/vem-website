@@ -46,6 +46,16 @@ body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
     linear-gradient(115deg, rgba(7,16,34,0.62) 0%, rgba(7,16,34,0.38) 50%, rgba(7,16,34,0.16) 100%);
 }
 
+/* This hero image is already blue (silicon-wafer/circuit photography) —
+   the site's default navy-blue scrim plus blue radial highlight compounds
+   into an overly blue result. Neutral black instead, no color cast, no
+   radial highlight, kept dark enough on the left where the white title
+   sits (the brightest part of this particular image). */
+body.post-cease-fire-rally-meets-chip-sector-scare .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 48%, rgba(0,0,0,0.22) 100%);
+}
+
 .listing { padding-block: clamp(40px, 6vw, 88px); }
 
 /* Section eyebrow above the grid (e.g. "Latest" / count) */
