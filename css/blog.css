@@ -53,6 +53,7 @@ body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
    sits (the brightest part of this particular image). */
 body.post-cease-fire-rally-meets-chip-sector-scare .report-hero__scrim {
   background:
+    radial-gradient(ellipse 60% 80% at 100% 100%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0) 75%),
     linear-gradient(115deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 48%, rgba(0,0,0,0.22) 100%);
 }
 
