@@ -37,7 +37,7 @@
   line-height: 1;
 }
 .brand__icons { display: inline-flex; align-items: center; }
-.brand__icon { height: 38px; width: 46px; object-fit: contain; display: block; flex: none; }
+.brand__icon { height: 52px; width: 64px; object-fit: contain; display: block; flex: none; }
 .brand__icon--navy { display: none; }   /* default = white icon (dark/scrolled header) */
 .brand__icon--white { display: block; }
 .brand__fallback {
@@ -52,15 +52,15 @@
   font-family: var(--font-logo);
   font-weight: 600;
   letter-spacing: 0.11em;
-  font-size: 0.76rem;
+  font-size: 0.92rem;
   text-transform: uppercase;
   color: var(--on-dark-80);
   white-space: nowrap;
 }
 @media (max-width: 560px) {
   /* Logo + name on mobile — larger & bolder so it reads clearly */
-  .brand__word { font-size: 0.74rem; letter-spacing: 0.03em; font-weight: 700; }
-  .brand__icon { height: 34px; width: 42px; }
+  .brand__word { font-size: 0.82rem; letter-spacing: 0.03em; font-weight: 700; }
+  .brand__icon { height: 44px; width: 54px; }
   .brand { gap: var(--space-2); }
 }
 @media (max-width: 360px) {
