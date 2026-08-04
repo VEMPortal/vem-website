@@ -19,12 +19,10 @@ institutional and restrained. Plain HTML/CSS/vanilla JS, token-driven design sys
 1. **Contact email on the marketing site is `info@vannequity.com` only.** Never put
    Aaron Vann's personal email anywhere. (Exception: legal/ADV document text may name
    the filed CCO contact — see "Compliance contacts" below.)
-2. **Never touch the live site, WordPress, Elementor, custom code, or DNS/domains.**
-   The real domains `www.vannequitymanagement.com` and `www.vannequity.com` redirect to
-   the live site. We only ship to the **isolated Vercel preview** (URL below).
-3. **The preview must stay hidden from search** — homepage + every page get
-   `noindex` applied in staging, and staged `robots.txt` is `Disallow: /`. Do this in the
-   STAGED COPY only; the real source files keep production SEO tags.
+2. **Never touch the legacy WordPress/Elementor site or its DNS/domains directly.**
+3. **The site is now live and public** (launched, CCO/compliance sign-off given —
+   `robots.txt` = production `Allow: /` for all crawlers, has been since ~July 2026).
+   Treat every push to `master` as a real public deploy, not a staging preview.
 4. **All performance / GIPS numbers must match the audited GIPS PDF exactly.** Re-verify
    programmatically after any edit (see "Verify GIPS numbers"). Never invent a figure.
 5. **Performance is presented as highlights of outperformance only** (SEC marketing-rule
@@ -161,17 +159,14 @@ Connected to Vercel project `vann-equity-management` → **every `git push origi
 auto-deploys** to **https://vann-equity-management.vercel.app** in ~30s. No more manual CLI/
 `/tmp` staging.
 
-Preview-safety is now baked into the repo (not a staging transform):
-- `robots.txt` = `Disallow: /` keeps the preview out of search. Production version is saved
-  as `robots.production.txt`.
+The site is live: `robots.txt` already carries the production `Allow: /` rules (the
+`robots.production.txt` copy is now identical/redundant — kept for reference only).
 - `.vercelignore` strips sources (`content/`, `templates/`, `build_content.py`, `*.md`,
   `.claude/`) from the public deployment — verified: source `.md`/`.py` return 404 live.
 
-**LAUNCH CHECKLIST (when CCO signs off + going truly public):**
-1. Replace `robots.txt` with the contents of `robots.production.txt` (Allow + Sitemap).
-2. Add `gips-report.html` (and any noindex pages) back into `sitemap.xml`; confirm each
-   public page's meta robots = `index, follow`.
-3. Push. Verify `robots.txt` now allows crawling and pages are indexable.
+**Launch is complete.** Any remaining `noindex` tags (`gips-report.html`, `brochure/`,
+`news.html`) are deliberate per-page choices, not a staging-wide block — confirm intent
+per page before changing, don't assume they should flip to `index, follow`.
 
 Fallback manual deploy (rarely needed): `cd <repo> && npx vercel deploy --prod --yes`.
 
@@ -191,10 +186,11 @@ as `ecapo116@gmail.com` / `Diesel1974`).
   launch — either amend/refile the ADV, or revert the page to John Vann.
 
 ## Known pending items
-- Wire real links: `/news`, `/blog`, `/insights`, `/client-login`, brochure, 4 social
-  profiles (add `sameAs` to homepage JSON-LD once provided). Currently placeholders.
-- Optional "Coming soon" stub pages so Aaron hits no dead ends.
+- `/blog` and `/insights` are live and populated (58+ published articles) and now
+  properly linked from the homepage primary nav + footer, and cross-linked from every
+  article/listing page's header (fixed 2026-08-04 — see SEO fix commit). `/news` remains
+  an intentional "Coming Soon" stub (noindex) pending real content.
+- 4 social profile links still pending (add `sameAs` to homepage JSON-LD once provided).
 - Custom Higgsfield hero images (connector token kept expiring — generate in Imagen/
   Nano Banana instead; prompt style = deep navy architecture, gold accents, left
   negative space, 16:9, no people/text).
-- CCO sign-off on performance + disclosures before true public launch.

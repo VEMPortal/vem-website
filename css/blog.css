@@ -7,6 +7,10 @@
 
 .blog-page { background: var(--vem-white); color: var(--vem-navy-dark); }
 
+/* Header link group — "All X" back-link plus Insights/Blog cross-links. */
+.report-header__links { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); flex-wrap: wrap; }
+@media (max-width: 640px){ .report-header__links { gap: 12px; } }
+
 /* ===================================================================
    LISTING PAGE — hero, grid, cards
    =================================================================== */
