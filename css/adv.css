@@ -5,6 +5,15 @@
 
 .adv-page { background: var(--vem-white); color: var(--vem-navy-dark); }
 
+/* ADV Part 2A hero — pinned to the site's pre-existing faint-scrim formula.
+   Confirmed good as-is; do not let it drift when the shared gips.css base
+   changes for other pages (Privacy Policy shares .adv-page but gets its own
+   rule below, so this only touches ADV). */
+.adv-part2a-page .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.24) 45%, rgba(7,16,34,0.08) 100%);
+}
+
 /* ---- Document body ---- */
 .adv-content { padding-block: clamp(20px, 3vw, 40px) clamp(40px, 5vw, 72px); }
 .adv-content > .container { max-width: 980px; }

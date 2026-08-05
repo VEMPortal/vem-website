@@ -19,46 +19,57 @@
 .listing-hero { min-height: clamp(300px, 42vh, 460px); }
 .listing-hero .report-hero__lead { max-width: 60ch; }
 
-/* Lighter scrim on listing pages — let the photo show through more.
-   Article heroes keep the heavier default (more layered text to protect). */
+/* Almost gone across the board — no blue radial anywhere. Listing pages get
+   the lightest touch since the photo is the point; article heroes match the
+   site-wide near-invisible default from gips.css (no override needed). */
 .listing-hero .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.72) 0%, rgba(7,16,34,0.50) 48%, rgba(7,16,34,0.28) 100%),
-    radial-gradient(120% 110% at 88% -10%, rgba(92,124,184,0.14), transparent 60%);
+    linear-gradient(115deg, rgba(7,16,34,0.14) 0%, rgba(7,16,34,0.07) 48%, rgba(7,16,34,0.02) 100%);
 }
 
-/* Insights listing hero is already very dark — minimal scrim, just enough
-   to guarantee white text contrast on the left while the image reads through. */
+/* Exception to the site-wide near-invisible default: this specific photo
+   (trading floor, rows of bright blue-white monitor screens scattered
+   across the left where the title sits) needs real contrast behind the
+   white "Financial Market Insights" title, or it fights the screens.
+   Faint blue on purpose here, confirmed against the actual image. */
 .insights-listing .listing-hero .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.70) 0%, rgba(7,16,34,0.44) 52%, rgba(7,16,34,0.18) 100%);
+    linear-gradient(115deg, rgba(7,16,34,0.58) 0%, rgba(7,16,34,0.34) 45%, rgba(7,16,34,0.12) 100%);
 }
 
-/* Article hero — lighter scrim than the default report hero so the photo
-   reads through, while the left stays dark enough for the white title.
-   Scoped to article pages only (listings keep their own scrim above). */
-body.blog-page:not(.blog-listing):not(.insights-listing) .report-hero__scrim {
-  background:
-    linear-gradient(115deg, rgba(7,16,34,0.86) 0%, rgba(7,16,34,0.64) 48%, rgba(7,16,34,0.38) 100%),
-    radial-gradient(120% 110% at 88% -10%, rgba(92,124,184,0.18), transparent 60%);
-}
-
-/* Per-post hero tuning — this image is already very dark, so it gets a much
-   lighter scrim (the navy sea on the left still carries the white title). */
+/* Per-post hero tuning — this image is already very dark, so it gets almost
+   no added scrim (the navy sea on the left already carries the white title
+   on its own). */
 body.post-iran-strait-of-hormuz-markets .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.62) 0%, rgba(7,16,34,0.38) 50%, rgba(7,16,34,0.16) 100%);
+    linear-gradient(115deg, rgba(7,16,34,0.15) 0%, rgba(7,16,34,0.08) 50%, rgba(7,16,34,0.03) 100%);
 }
 
-/* This hero image is already blue (silicon-wafer/circuit photography) —
-   the site's default navy-blue scrim plus blue radial highlight compounds
-   into an overly blue result. Neutral black instead, no color cast, no
-   radial highlight, kept dark enough on the left where the white title
-   sits (the brightest part of this particular image). */
+/* The rocket's light trail arcs right through the upper-left area where the
+   title sits, blurring the white text against it. Faint blue, on purpose,
+   confirmed against the actual image. */
+body.post-what-spacex-openai-anthropic-ipos-may-signal-about-todays-market .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.48) 0%, rgba(7,16,34,0.28) 45%, rgba(7,16,34,0.10) 100%);
+}
+
+/* Divergent chart light-trails run bright across the right side of this
+   image, right where "Palantir and Nvidia Held" wraps — was getting a
+   little lost against them. Faint blue, on purpose, confirmed against the
+   actual image. */
+body.post-spacex-beat-revenue-stock-fell-anyway .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.40) 0%, rgba(7,16,34,0.30) 50%, rgba(7,16,34,0.16) 100%);
+}
+
+/* This hero image is blue (silicon-wafer/circuit photography) with a bright
+   glowing hotspot right where the title sits. Since the whole image already
+   reads blue, a navy scrim blends naturally here rather than fighting it —
+   confirmed against the actual image, stronger where the hotspot is. */
 body.post-cease-fire-rally-meets-chip-sector-scare .report-hero__scrim {
   background:
-    radial-gradient(ellipse 60% 80% at 100% 100%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0) 75%),
-    linear-gradient(115deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 48%, rgba(0,0,0,0.22) 100%);
+    radial-gradient(ellipse 55% 70% at 22% 45%, rgba(7,16,34,0.55) 0%, rgba(7,16,34,0.28) 50%, transparent 80%),
+    linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.26) 48%, rgba(7,16,34,0.10) 100%);
 }
 
 .listing { padding-block: clamp(40px, 6vw, 88px); }
@@ -365,20 +376,20 @@ body.post-cease-fire-rally-meets-chip-sector-scare .report-hero__scrim {
 .post-download { margin: clamp(18px, 2.6vw, 28px) 0 0; }
 .post-download .btn { display: inline-flex; align-items: center; }
 
-/* FMI insight heroes — dark images, so a lighter scrim lets the art read
-   while the navy-left keeps the white title crisp. */
+/* FMI insight heroes — matches the site-wide near-invisible default now. */
 body.post-financial-market-insight-2026-03-02 .report-hero__scrim,
 body.post-financial-market-insight-2026-02-17 .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.74) 0%, rgba(7,16,34,0.48) 50%, rgba(7,16,34,0.20) 100%);
+    linear-gradient(115deg, rgba(7,16,34,0.18) 0%, rgba(7,16,34,0.10) 50%, rgba(7,16,34,0.03) 100%);
 }
 
 /* This hero is already bright top-left (deep navy sky, plenty dark for the
-   white title on its own) and gold/luminous through the rest — keep the
-   overlay minimal so the image itself stays bright, per explicit request. */
+   white title on its own) and gold/luminous through the rest — kept almost
+   free of scrim on purpose, just a slight touch, confirmed against the
+   actual image. */
 body.post-did-markets-pass-or-fail-the-three-tests .report-hero__scrim {
   background:
-    linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.24) 45%, rgba(7,16,34,0.08) 100%);
+    linear-gradient(115deg, rgba(7,16,34,0.26) 0%, rgba(7,16,34,0.15) 45%, rgba(7,16,34,0.05) 100%);
 }
 /* The source photo has a lot of empty sky up top and the skyline concentrated
    in the bottom third — center-crop was cutting the buildings off. Bias the
