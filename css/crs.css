@@ -4,6 +4,15 @@
 
 .crs-page { background: var(--vem-white); color: var(--vem-navy-dark); }
 
+/* This hero (lounge chairs by a dusk window) has dark navy paneling behind
+   the title, but the lead text runs into the lamp glow and window bokeh on
+   the right at mobile widths. Faint blue, on purpose, confirmed against the
+   actual image. */
+.crs-page .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.26) 45%, rgba(7,16,34,0.10) 100%);
+}
+
 /* ===================================================================
    PAGE SECTIONS
    =================================================================== */
