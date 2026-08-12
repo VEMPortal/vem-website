@@ -72,6 +72,16 @@ body.post-cease-fire-rally-meets-chip-sector-scare .report-hero__scrim {
     linear-gradient(115deg, rgba(7,16,34,0.42) 0%, rgba(7,16,34,0.26) 48%, rgba(7,16,34,0.10) 100%);
 }
 
+/* This hero is a bright daylight photo (blue sky, sunlit water) — the
+   site-wide near-invisible default leaves white title text fighting the
+   sky. A slight, consistent blue overlay across the whole frame keeps the
+   title readable without darkening the photo into something moodier than
+   the routine, still-record-highs story it illustrates. */
+body.post-record-highs-meet-hormuz-standoff .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.50) 0%, rgba(7,16,34,0.34) 48%, rgba(7,16,34,0.20) 100%);
+}
+
 .listing { padding-block: clamp(40px, 6vw, 88px); }
 
 /* Section eyebrow above the grid (e.g. "Latest" / count) */
