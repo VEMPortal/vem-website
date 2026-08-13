@@ -70,6 +70,8 @@ Weeks with this much scheduled news tend to reward a process-driven approach ove
 - Does this week's Fed decision and inflation data change the underlying case for a long-term financial plan, or does it mainly affect near-term sentiment?
 - If a mega-cap earnings report triggers a sharp single-day move — in either direction — is that a reason to change a long-term plan, or a reminder that individual quarters are noisy?
 
+That first question isn't new. A [Financial Market Insight from May 2023](/insights/mega-cap-tech-vs-broad-market-whats-really-taking-place.html) looked at the same dynamic: index-level gains concentrated in a handful of mega-cap companies can look very different from the return most individual stocks, and most portfolios, actually delivered.
+
 The goal isn't to predict how the Fed decision lands or which earnings report surprises the market. It's to have a plan that doesn't depend on guessing right this week.
 
 ## Risk and Context
