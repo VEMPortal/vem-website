@@ -13,6 +13,7 @@
     { "source": "/strategies", "destination": "/#portfolios", "permanent": true },
     { "source": "/strategies/", "destination": "/#portfolios", "permanent": true },
     { "source": "/resources", "destination": "/insights", "permanent": true },
+    { "source": "/monthly-financial-market-insight/", "destination": "/insights/", "permanent": true },
     { "source": "/resources/", "destination": "/insights", "permanent": true },
     { "source": "/post/financial-market-insight-october", "destination": "/insights", "permanent": true },
     { "source": "/financial-market-insights-jan-2024", "destination": "/insights/feds-pivot-rate-cuts-are-coming-but-timing-remains-uncertain.html", "permanent": true },
