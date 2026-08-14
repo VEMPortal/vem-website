@@ -96,6 +96,9 @@
 .report__toc h2 { font-size: var(--fs-100); letter-spacing: 0.16em; text-transform: uppercase; color: var(--vem-gray-text); font-weight: 600; }
 .report__toc ul { list-style: none; margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: 8px 10px; }
 .report__toc a {
+  /* inline-block keeps the pill in one piece: an inline element that wraps
+     paints its background as two ragged fragments. */
+  display: inline-block;
   font-size: var(--fs-200); padding: 7px 14px; border-radius: 999px;
   background: var(--vem-gray); color: var(--vem-navy); font-weight: 600;
   transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
@@ -129,6 +132,16 @@
   transition: transform var(--dur-base) var(--ease-out);
 }
 .composite[open] .composite__chev { transform: rotate(-135deg); }
+/* Narrow phones: title, tag and chevron cannot all share one line, and because
+   .composite__tag is white-space:nowrap (min-width:auto floors it at its
+   min-content width) it refuses to shrink, so the flex line overflows and
+   pushes the chevron off the right edge of the page.
+   Give the title its own row and let the tag sit beneath it with the chevron
+   still pinned right by its margin-left:auto. */
+@media (max-width: 560px) {
+  .composite__summary { flex-wrap: wrap; row-gap: 6px; }
+  .composite__sumtitle { flex: 1 1 100%; }
+}
 .composite[open] { padding-bottom: clamp(28px, 4vw, 52px); }
 /* subtle reveal of the panel contents */
 .composite[open] > *:not(summary) { animation: gipsReveal 0.4s var(--ease-out) both; }

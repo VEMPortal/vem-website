@@ -1,0 +1,152 @@
+/* =====================================================================
+   VEM — FAQ page
+   Depends on tokens.css and gips.css (report-header / report-hero /
+   report__toc / report-footer come from gips.css — do not duplicate them).
+   Only FAQ-specific blocks live here.
+   ===================================================================== */
+
+.faq-page { background: var(--vem-white); }
+
+/* ---- section rhythm (mirrors .crs-section) ------------------------ */
+.faq-section { padding: var(--space-8) 0; background: var(--vem-white); }
+.faq-section--alt { background: #F7F8FA; }
+
+.faq-section__head { max-width: 62ch; margin-bottom: var(--space-6); }
+.faq-section__over {
+  font-family: var(--font-body);
+  font-size: var(--fs-100);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: var(--space-3);
+}
+.faq-section__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-700);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--vem-navy-dark);
+  text-wrap: balance;
+}
+.faq-section__note {
+  color: var(--vem-gray-text);
+  font-size: var(--fs-300);
+  margin-top: var(--space-3);
+}
+
+/* ---- the Q&A list -------------------------------------------------- */
+.faq-list {
+  max-width: 820px;
+  border-top: 1px solid var(--vem-gray);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--vem-gray);
+  padding: var(--space-6) 0;
+  scroll-margin-top: 96px;   /* anchor links clear the sticky header */
+}
+
+.faq-item__q {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-600);
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  color: var(--vem-navy);
+  margin-bottom: var(--space-4);
+  text-wrap: balance;
+}
+
+.faq-item__a > * + * { margin-top: var(--space-3); }
+.faq-item__a p,
+.faq-item__a li { max-width: 68ch; color: var(--vem-ink); }
+.faq-item__a ul { margin-left: 20px; }
+.faq-item__a li + li { margin-top: 6px; }
+.faq-item__a strong { font-weight: 600; }
+.faq-item__a a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+.faq-item__a a:hover { color: var(--accent); }
+
+/* Source attribution chip under firm-specific answers */
+.faq-item__src {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vem-gray-text);
+  background: var(--vem-gray);
+  padding: 3px 9px;
+  border-radius: 2px;
+  margin-top: var(--space-4);
+}
+
+/* ---- closing contact band ------------------------------------------ */
+.faq-cta {
+  background: var(--vem-navy-dark);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+.faq-cta__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-700);
+  line-height: var(--lh-snug);
+  color: var(--on-dark-100);
+  margin-bottom: var(--space-3);
+  text-wrap: balance;
+}
+.faq-cta__body {
+  color: var(--on-dark-70);
+  max-width: 56ch;
+  margin: 0 auto var(--space-6);
+}
+
+/* ---- hero over the FAQ photograph ----------------------------------
+   The photo ramps from deep shadow at the left edge to a bright window at
+   the right. Sampled across the headline band, luminance crosses the
+   white-text threshold at roughly 55% of frame width — a patch at 59% read
+   only 1.8:1 against white before any treatment. Three measures fix that
+   without dimming the window, which is what makes the image feel light:
+
+     1. the scrim is weighted left and fully gone by 72%
+     2. the headline is width-capped so it never reaches the bright zone
+     3. a soft shadow covers small viewports, where cover-cropping shifts
+        which part of the photo sits behind the text
+
+   Swapping the photo means re-checking all three. */
+.faq-page .report-hero__scrim {
+  background: linear-gradient(100deg,
+    rgba(7, 16, 34, 0.58) 0%,
+    rgba(7, 16, 34, 0.52) 30%,
+    rgba(7, 16, 34, 0.40) 55%,
+    rgba(7, 16, 34, 0.14) 72%,
+    rgba(7, 16, 34, 0.00) 100%);
+}
+.faq-page .report-hero__overline,
+.faq-page .report-hero__title,
+.faq-page .report-hero__lead {
+  text-shadow: 0 1px 20px rgba(7, 16, 34, 0.55);
+}
+.faq-page .report-hero__title { max-width: 15ch; }
+.faq-page .report-hero__lead  { max-width: 44ch; }
+
+@media (max-width: 700px) {
+  .faq-section { padding: var(--space-7) 0; }
+  .faq-item { padding: var(--space-5) 0; }
+  .faq-item__q { font-size: var(--fs-500); }
+  /* Mobile crop is the shadowed left of the frame — ease the scrim back. */
+  .faq-page .report-hero__scrim {
+    background: linear-gradient(180deg,
+      rgba(7, 16, 34, 0.42) 0%,
+      rgba(7, 16, 34, 0.34) 55%,
+      rgba(7, 16, 34, 0.46) 100%);
+  }
+  .faq-page .report-hero__title { max-width: 100%; }
+}
