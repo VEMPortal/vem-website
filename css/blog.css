@@ -82,6 +82,32 @@ body.post-record-highs-meet-hormuz-standoff .report-hero__scrim {
     linear-gradient(115deg, rgba(7,16,34,0.50) 0%, rgba(7,16,34,0.34) 48%, rgba(7,16,34,0.20) 100%);
 }
 
+/* Late-afternoon store interior. Sun through the left-hand windows clipped a
+   patch of the upper left and pooled warm on the floor, so the highlights were
+   pulled in the image file itself rather than here — which is why this needs
+   only a light scrim where the ungraded frame wanted roughly twice as much.
+   Most of the title area is mid-tone concrete and clears 3:1 well before the
+   navy starts fighting the warm light the photo is built on. */
+body.post-three-winning-weeks-one-consumer-that-blinked .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.35) 0%, rgba(7,16,34,0.20) 48%, rgba(7,16,34,0.08) 100%);
+}
+
+/* The cart occupies the right 37% of this hero and is the point of the photo,
+   so the title is kept off the body of it. Unconstrained, this headline sets on
+   two lines running to 81% of the hero width — straight across the basket.
+   Capping the measure at 72% wraps it to three lines ending near 65%: it just
+   touches the cart's front rail and stops, which reads as the type sitting on
+   the photo rather than being blocked away from it. Tighter values (58-68%)
+   clear the cart completely but push it to four lines, and four lines of
+   display serif reads as a slab rather than a headline. Desktop only: below
+   601px a portrait crop is served and the title wants the full measure. */
+@media (min-width: 601px) {
+  body.post-three-winning-weeks-one-consumer-that-blinked .report-hero h1 {
+    max-width: 72%;
+  }
+}
+
 .listing { padding-block: clamp(40px, 6vw, 88px); }
 
 /* Section eyebrow above the grid (e.g. "Latest" / count) */
