@@ -15,28 +15,50 @@
     },
     {
       "name": "Ryan McDonald",
-      "title": "Portfolio Manager · Financial Advisor",
+      "title": "Portfolio Manager · Financial Planner",
       "bio": "Ryan brings 21+ years of financial-planning experience in North Texas, specializing in complex retirement and investment solutions. He builds around the individual — not a template.",
       "credential": "21+ Years · North Texas",
       "photo": "assets/img/team/ryan-mcdonald.jpg"
     },
     {
       "name": "Dharani Gundla",
-      "title": "Quantitative Analyst",
+      "title": "Financial Quantitative Analyst",
       "bio": "Dharani supports trading, performance analysis, and GIPS® composite maintenance. She manages compliance operations and risk analysis across equity and structured-note holdings.",
       "credential": "MS Business Analytics · UT Dallas",
       "photo": "assets/img/team/dharani-gundla.jpg"
     },
     {
       "name": "Brandy Holder",
-      "title": "Director of Client Operations & Compliance",
+      "title": "Operations & Business Development · Financial Advisor",
       "bio": "Brandy supports Vann Equity Management's client service, operations, and compliance functions. She helps coordinate account administration, documentation, internal workflows, and regulatory processes to ensure clients receive organized, professional, and consistent service.",
       "credential": "10+ Years · Client Operations",
-      "photo": "assets/img/team/brandy-holder.jpg"
+      "photo": "assets/img/team/brandy-holder.jpg",
+      "circleLabel": "Operations & Business Development",
+      "_titleNote": "Circle card shows circleLabel (3 lines, matches Ryan/Dharani); detail panel shows the full title."
+    },
+    {
+      "name": "Keith Powell",
+      "title": "Financial Advisor",
+      "bio": "PLACEHOLDER — awaiting approved bio. Currently on site: \"Keith Powell works with Vann Equity Management clients as a financial advisor.\"",
+      "photo": "assets/img/team/keith-powell.jpg"
+    },
+    {
+      "name": "Michael Hughes",
+      "title": "Financial Advisor",
+      "bio": "PLACEHOLDER — awaiting approved bio. Currently on site: \"Michael Hughes works with Vann Equity Management clients as a financial advisor.\"",
+      "photo": "assets/img/team/michael-hughes.jpg"
+    },
+    {
+      "name": "Kristen Fuhrman",
+      "title": "Financial Advisor",
+      "bio": "PLACEHOLDER — awaiting approved bio. Currently on site: \"Kristen Fuhrman works with Vann Equity Management clients as a financial advisor.\"",
+      "photo": "assets/img/team/kristen-fuhrman.jpg"
     }
   ],
   "_pending": {
     "johnVann": "Founder / Financial Advisor / CCO — in the brochure bios but NOT in this team mockup. Confirm whether to include him.",
-    "credentialCheck": "Mockup shows 'FPOP'; brochure shows 'FPQP' (Financial Paraplanner Qualified Professional). Using FPQP — confirm."
+    "credentialCheck": "Mockup shows 'FPOP'; brochure shows 'FPQP' (Financial Paraplanner Qualified Professional). Using FPQP — confirm.",
+    "newMemberBios": "Keith Powell, Michael Hughes and Kristen Fuhrman are live in index.html and brochure/index.html with placeholder bios and no credential line. Replace before deploying. Titles confirmed as Financial Advisor 2026-08-18.",
+    "headshotBackgrounds": "All seven headshots share one synthesized studio backdrop at 640x800. Brandy rebuilt from her 1086x1448 original (in git history) with a halo-removal pass -- the matte was trapping a band of her original light background along her hair. Cache-buster now v=80 in index.html + brochure."
   }
 }
