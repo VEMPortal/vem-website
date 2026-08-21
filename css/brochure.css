@@ -873,12 +873,12 @@ body.bro {
    Tap a circle to open that person's panel; sized compact to fit a deck slide. */
 .team__people {
   display: flex; flex-wrap: wrap; justify-content: center;
-  gap: clamp(16px, 3vw, 46px); margin: clamp(18px, 3vh, 34px) 0 0;
+  gap: clamp(12px, 2vw, 26px); margin: clamp(18px, 3vh, 34px) 0 0;
 }
 .person {
   background: none; border: 0; cursor: pointer; font: inherit;
   display: flex; flex-direction: column; align-items: center; text-align: center;
-  width: clamp(118px, 12vw, 150px);
+  width: clamp(100px, 10vw, 132px);   /* was 118-150px: 7 members must fit one row */
   transition: transform 0.25s var(--ease-soft);
 }
 .person:hover { transform: translateY(-4px); }
