@@ -82,6 +82,16 @@ body.post-record-highs-meet-hormuz-standoff .report-hero__scrim {
     linear-gradient(115deg, rgba(7,16,34,0.50) 0%, rgba(7,16,34,0.34) 48%, rgba(7,16,34,0.20) 100%);
 }
 
+/* Another bright blue-sky-and-water photo (causeway over calm water, hazy
+   pale horizon) with the same problem as the Hormuz-standoff post above:
+   the site-wide near-invisible default leaves white title text fighting a
+   near-white sky in the upper-left, right where the overline and title
+   sit. Same fix, same strength — confirmed against the actual image. */
+body.post-19-year-high-bond-yields-meets-record-august .report-hero__scrim {
+  background:
+    linear-gradient(115deg, rgba(7,16,34,0.50) 0%, rgba(7,16,34,0.34) 48%, rgba(7,16,34,0.20) 100%);
+}
+
 /* Late-afternoon store interior. Sun through the left-hand windows clipped a
    patch of the upper left and pooled warm on the floor, so the highlights were
    pulled in the image file itself rather than here — which is why this needs
