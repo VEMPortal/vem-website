@@ -172,14 +172,13 @@ Single-week index moves say little about longer horizons, and the individual sto
 
 ## Sources
 
-- [Wall St rises on the day but falls for the week; bond yields and Iran in focus](https://www.reuters.com/business/us-stock-futures-rise-after-sharp-losses-prior-session-2026-08-21/), Reuters, August 21, 2026
-- [Tech selloff weighs down Wall Street as bond yields climb](https://www.reuters.com/business/us-stock-futures-drop-fading-iran-peace-hopes-lift-oil-bond-yields-2026-08-18/), Reuters, August 18, 2026
-- [Global bond markets put governments on notice over fiscal, inflation risks](https://www.reuters.com/world/china/selling-grips-bond-markets-us-japan-inflation-fiscal-worries-take-hold-2026-08-18/), Reuters, August 18, 2026
-- [Bond Sell-Off Sends Borrowing Costs to Highest Level Since 2007](https://www.nytimes.com/2026/08/18/business/oil-prices-bonds.html), The New York Times, August 18, 2026
+- [Dow Futures Drop; Nvidia Results and 4.7% Yield Challenge Equities](https://ts2.tech/en/dow-futures-slip-as-nvidia-and-4-7-yield-set-twin-tests-for-stocks/), TechStock2, August 24, 2026 (weekly index closes)
+- [Wall Street closes out week with heady gains](https://www.indiagazette.com/news/279256972/wall-street-closes-out-week-with-heady-gains), India Gazette, August 22, 2026 (Friday session detail)
+- [Tech selloff weighs down Wall Street as bond yields climb](https://www.detroitnews.com/story/business/2026/08/18/tech-stocks-weigh-on-wall-street-as-iran-stalemate-lifts-oil-yields/91351153007/), The Detroit News (Reuters wire), August 18, 2026
 - [Bond sell-off: Why government bond yields soared, and why it matters](https://www.weforum.org/stories/financial-and-monetary-systems/why-global-bond-market-treasury-yields/), World Economic Forum
 - [30-Year Treasury Yield Touches a 19-Year High as US Debt Approaches $40 Trillion](http://www.thefiscaltimes.com/2026/08/18/30-Year-Treasury-Yield-Touches-19-Year-High-US-Debt-Approaches-40-Trillion), The Fiscal Times, August 18, 2026
 - [Global bond markets are getting hammered](https://www.cnn.com/2026/08/18/investing/global-bond-market), CNN, August 18, 2026
-- [Bond market anxiety raises stakes for Warsh's debut Jackson Hole speech](https://www.reuters.com/business/bond-market-anxiety-raises-stakes-warshs-debut-jackson-hole-speech-2026-08-24/), Reuters, August 24, 2026
+- [New Fed chair faces critical test at Jackson Hole as inflation fears mount](https://www.theguardian.com/business/2026/aug/24/fed-chair-kevin-warsh-faces-critical-test-jackson-hole-inflation-fears-mount), The Guardian, August 24, 2026
 - [Week ahead: Nvidia, inflation and Jackson Hole set the tone for Wall Street](https://www.proactiveinvestors.com/companies/news/1097497/week-ahead-nvidia-inflation-and-jackson-hole-set-the-tone-for-wall-street-1097497.html), Proactive Investors, August 24, 2026
 - [Nvidia Earnings and PCE Land Same Day: September Rate Decision Starts Wednesday](https://www.techtimes.com/articles/325293/20260824/nvidia-earnings-pce-land-same-day-september-rate-decision-starts-wednesday.htm), Tech Times, August 24, 2026
 - [S&P 500 (^GSPC) historical data](https://finance.yahoo.com/quote/%5EGSPC/history/), Yahoo Finance (month-end closing levels used in the chart)
