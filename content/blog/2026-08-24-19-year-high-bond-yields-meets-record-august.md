@@ -36,7 +36,7 @@ Last week was a down week inside a year that has gone well, and both halves of t
     </g>
 
     <line x1="60" y1="44" x2="668" y2="44" stroke="#B08D4F" stroke-width="1.5" stroke-dasharray="5 4"/>
-    <text x="668" y="38" font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#B08D4F" text-anchor="end">Record close, August 13: 7,798.99</text>
+    <text x="60" y="38" font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#B08D4F" text-anchor="start">Record close, August 13: 7,798.99</text>
 
     <polyline fill="none" stroke="#0B1F44" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
       points="60,178 135,165 210,173 285,222 360,127 435,75 510,86 585,87 660,62"/>
