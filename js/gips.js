@@ -35,7 +35,7 @@
     var years = [], gross = [], net = [], bench = benchIdxs.map(function () { return []; });
     Array.prototype.forEach.call(table.querySelectorAll("tbody tr"), function (row) {
       var cells = row.children;
-      years.push(cells[0].textContent.replace("*", "").trim());
+      years.push(cells[0].textContent.replace(/\*+/g, "").trim());
       gross.push(num(cells[grossIdx].textContent));
       net.push(num(cells[netIdx].textContent));
       benchIdxs.forEach(function (bi, k) { bench[k].push(num(cells[bi].textContent)); });
