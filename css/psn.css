@@ -1,0 +1,109 @@
+/* VEM — PSN Top Guns / Large Cap Value performance page.
+   Reuses tokens.css + gips.css; this file only adds what those don't cover. */
+
+/* Internal draft bar — temporary, removed at publish along with this rule. */
+.draftbar {
+  background: #B3261E; color: #fff;
+  font-size: var(--fs-100); font-weight: 700; letter-spacing: 0.06em;
+  text-align: center; padding: 10px clamp(16px, 4vw, 40px);
+  line-height: 1.5;
+}
+
+/* Full-bleed hero — reuses .report-hero from gips.css; these are the
+   page-specific tweaks for the bright sunset flyover image. */
+.psn-reporthero__scrim {
+  /* stronger left-side veil than the GIPS default: this photo runs bright
+     orange where the title sits, so white text needs more contrast */
+  background:
+    linear-gradient(100deg, rgba(7,16,34,0.55) 0%, rgba(7,16,34,0.32) 42%, rgba(7,16,34,0.04) 72%);
+}
+.psn-reporthero .report-hero__media img { object-position: 62% center; }
+/* Track the photo's own 3:1 shape above 900px so the full formation —
+   both jets and the sun — stays in frame; the min-height floor below
+   that width re-crops toward the lead jet so the text still fits. */
+@media (min-width: 901px) {
+  .psn-reporthero { aspect-ratio: 2172 / 724; min-height: 380px; max-height: 640px; }
+}
+.psn-reporthero__lead { line-height: 1.75; }
+.psn-summary-anchor { padding-top: clamp(36px, 5vw, 56px); }
+
+/* Section headings */
+.psn-h2 {
+  margin-top: clamp(36px, 5vw, 60px);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-600); color: var(--vem-navy-dark);
+}
+.psn-note { margin-top: var(--space-3); font-size: var(--fs-100); color: var(--vem-gray-text); line-height: 1.6; max-width: 110ch; }
+.psn-body { margin-top: var(--space-4); font-size: var(--fs-300); line-height: 1.65; color: var(--vem-gray-text); max-width: 96ch; }
+
+/* Monthly tables — 14 columns, must scroll inside .gips-tablewrap on mobile */
+.gips-table--monthly { min-width: 880px; }
+.gips-table--monthly th, .gips-table--monthly td { padding: 9px 10px; font-size: var(--fs-100); }
+.gips-table--monthly td.col-ytd, .gips-table--monthly thead th.col-ytd {
+  border-left: 1px solid rgba(11, 31, 68, 0.20); padding-left: 14px;
+}
+.gips-table--monthly td.col-ytd { color: var(--vem-navy-dark); }
+
+/* Summary card: real air below the hero, then its title, then the card */
+.psn-summary-title { margin-top: clamp(48px, 6vw, 80px); }
+.psn-summary { margin-top: var(--space-3); }
+
+/* "See the calculation" widget — tinted card + pill chips, same primitives
+   as the GIPS TOC pills and trailing-table card */
+.psn-calc {
+  margin-top: clamp(24px, 3vw, 36px);
+  padding: clamp(18px, 2.4vw, 28px);
+  background: var(--vem-gray);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+.psn-calc .composite__subhead { margin-top: 0; }
+.psn-calc__chips { margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.psn-calc__chips button {
+  display: inline-block; cursor: pointer; border: 0;
+  font-family: inherit; font-size: var(--fs-200); font-weight: 600;
+  padding: 7px 14px; border-radius: 999px;
+  background: #fff; color: var(--vem-navy);
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+}
+.psn-calc__chips button:hover { background: var(--accent); color: #fff; }
+.psn-calc__chips button.is-active { background: var(--vem-navy-dark); color: #fff; }
+.psn-calc__chips button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.psn-calc__out { margin-top: var(--space-4); }
+.psn-calc__row { font-size: var(--fs-300); color: var(--vem-navy-dark); font-variant-numeric: tabular-nums; }
+.psn-calc__row + .psn-calc__row { margin-top: var(--space-2); }
+.psn-calc__label {
+  display: inline-block; min-width: 8.5em; font-size: var(--fs-100);
+  letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--vem-gray-text);
+}
+.psn-calc__foot { margin-top: var(--space-3); font-size: var(--fs-100); color: var(--vem-gray-text); }
+
+/* Award section: recognition text beside the animated PSN badge */
+.psn-award {
+  display: grid; grid-template-columns: 1fr minmax(250px, 340px);
+  gap: clamp(24px, 3.5vw, 52px); align-items: center;
+  margin-top: var(--space-4);
+}
+.psn-award .psn-body { margin-top: 0; }
+.psn-award__badge { width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
+@media (max-width: 760px) {
+  .psn-award { grid-template-columns: 1fr; }
+  .psn-award__badge { max-width: 340px; justify-self: center; }
+}
+
+/* Pull-quote — gold rule, display italic, same voice as the hero em */
+.psn-quote {
+  margin: clamp(32px, 4.5vw, 56px) 0 0;
+  padding-left: clamp(18px, 2.5vw, 28px);
+  border-left: 3px solid var(--accent);
+  max-width: 62ch;
+}
+.psn-quote blockquote {
+  font-family: var(--font-display); font-style: italic; font-weight: 600;
+  font-size: clamp(1.3rem, 2.1vw, 1.65rem); line-height: 1.45;
+  color: var(--vem-navy-dark);
+}
+.psn-quote figcaption { margin-top: var(--space-3); font-size: var(--fs-200); font-weight: 600; color: var(--vem-gray-text); }
+
+/* Disclosures block: hairline rule above, like the GIPS notes section */
+.report__disclosures { margin-top: clamp(36px, 5vw, 60px); border-top: 1px solid rgba(11, 31, 68, 0.20); padding-block: clamp(24px, 3vw, 40px) clamp(36px, 5vw, 64px); }

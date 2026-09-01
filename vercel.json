@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/psn-top-guns", "destination": "/psn-top-guns.html", "permanent": true },
     { "source": "/disclosure", "destination": "/disclosures.html", "permanent": true },
     { "source": "/disclosures", "destination": "/disclosures.html", "permanent": true },
     { "source": "/adv-part-2a", "destination": "/adv-part-2a.html", "permanent": true },
