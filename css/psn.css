@@ -85,6 +85,8 @@
   margin-top: var(--space-4);
 }
 .psn-award .psn-body { margin-top: 0; }
+.psn-award__text { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 32px); }
+.psn-award__text .psn-quote { margin-top: 0; }
 .psn-award__badge { width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
 .psn-award__media { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
 .psn-award__cta { white-space: nowrap; }
