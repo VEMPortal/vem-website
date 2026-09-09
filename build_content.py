@@ -25,7 +25,7 @@ import markdown
 
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 SITE       = "https://www.vannequitymanagement.com"
-CACHE      = "93"                      # asset ?v= for blog assets; bump on CSS change
+CACHE      = "94"                      # asset ?v= for blog assets; bump on CSS change
 YEAR       = datetime.datetime.now().year
 TPL_DIR    = os.path.join(ROOT, "templates")
 
@@ -206,7 +206,12 @@ def build_article(sec_key, sec, fm, body, validate_list):
     disc = fm.get("disclosure") or sec.get("disclosure")
     if disc:
         paras = [p.strip() for p in re.split(r"\n\s*\n", str(disc).strip()) if p.strip()]
-        disclosure_html = "\n".join("        <p>%s</p>" % html.escape(p, quote=False) for p in paras)
+        # disclosure_html: true -> the disclosure text is trusted inline HTML written in the
+        # front matter (used to mirror a source PDF's bold/colour exactly).
+        if fm.get("disclosure_html"):
+            disclosure_html = "\n".join("        <p>%s</p>" % p for p in paras)
+        else:
+            disclosure_html = "\n".join("        <p>%s</p>" % html.escape(p, quote=False) for p in paras)
     else:
         disclosure_html = DISCLOSURE
 
@@ -267,7 +272,11 @@ def build_article(sec_key, sec, fm, body, validate_list):
         "CROSS_LABEL":  sec["cross_label"],
         "HERO_MEDIA":   hero_media(hero),
         "CATEGORY":     esc(cat),
-        "POST_TITLE":   esc(title),
+        # title_accent: "<word>" wraps that word in <em> in the hero h1 only
+        # (gold italic accent, same treatment as the listing heroes); the
+        # <title>, meta tags, JSON-LD and cards keep the plain title.
+        "POST_TITLE":   (esc(title).replace(esc(fm["title_accent"]), "<em>%s</em>" % esc(fm["title_accent"]), 1)
+                         if fm.get("title_accent") and fm["title_accent"] in title else esc(title)),
         "AUTHOR":       esc(author),
         "AUTHOR_ROLE":  (", " + esc(role)) if role else "",
         "DATE_ISO":     date_iso,

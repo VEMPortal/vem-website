@@ -118,6 +118,36 @@ body.post-three-winning-weeks-one-consumer-that-blinked .report-hero__scrim {
   }
 }
 
+/* Sept 2026 FMI: bright white kitchen with the three jars in the right ~45% of
+   the frame. White display type over white tile needs real help, so a navy
+   scrim runs from the left and is gone by ~70%, before the jars, keeping the
+   photo bright where it matters. The title measure is capped so the headline
+   wraps short of the OIL jar instead of running across all three labels. */
+body.post-recipe-for-a-september-rally .report-hero__scrim {
+  background:
+    linear-gradient(100deg, rgba(7,16,34,0.86) 0%, rgba(7,16,34,0.74) 40%, rgba(7,16,34,0.38) 66%, rgba(7,16,34,0.0) 84%);
+}
+@media (min-width: 601px) {
+  /* A step below the site default (8.5vw) so the 70-character title sets in
+     four lines inside the scrim instead of five. */
+  /* The bowl, cruet and "Recipe for a Rally" card fill the right ~40% of the
+     photo, so the crop is pinned to the right edge: any cover-crop comes off
+     the plain window on the left and the card is never clipped. */
+  body.post-recipe-for-a-september-rally .report-hero__media img { object-position: 100% 50%; }
+  body.post-recipe-for-a-september-rally .report-hero h1 {
+    max-width: 78%;
+    font-size: clamp(2.6rem, 6.4vw, 4.4rem);
+  }
+}
+@media (max-width: 600px) {
+  /* Portrait crop is mostly plain tile with the jars at the right edge; an even
+     scrim keeps the four-line title legible top to bottom. */
+  body.post-recipe-for-a-september-rally .report-hero__scrim {
+    background:
+      linear-gradient(180deg, rgba(7,16,34,0.72) 0%, rgba(7,16,34,0.62) 70%, rgba(7,16,34,0.50) 100%);
+  }
+}
+
 .listing { padding-block: clamp(40px, 6vw, 88px); }
 
 /* Section eyebrow above the grid (e.g. "Latest" / count) */
