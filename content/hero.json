@@ -11,8 +11,7 @@
       { "label": "Portfolios", "href": "#portfolios" },
       { "label": "Process", "href": "#process" },
       { "label": "Performance", "href": "#performance" },
-      { "label": "The Difference", "href": "#difference" },
-      { "label": "Team", "href": "#team" }
+      { "label": "The Difference", "href": "#difference" }
     ],
     "cta": { "label": "Schedule a consultation", "href": "#contact" }
   },

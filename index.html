@@ -112,11 +112,6 @@
     "employee": [
       {
         "@type": "Person",
-        "name": "Aaron J. Vann",
-        "jobTitle": "Business Operator"
-      },
-      {
-        "@type": "Person",
         "name": "John A. Vann",
         "jobTitle": ["Chief Executive Officer", "Chief Compliance Officer", "Chairman"]
       }
@@ -183,7 +178,6 @@
             </button>
             <ul class="nav__menu">
               <li><a href="#about">Our Story</a></li>
-              <li><a href="#team">Our Team</a></li>
             </ul>
           </li>
 
@@ -753,7 +747,7 @@
           else if (e.key === "Escape") closeCards();
         });
 
-        /* The tour's Aaron ending posts "vem-cards" when its "Read our complete
+        /* The tour's ending posts "vem-cards" when its "Read our complete
            approach" button is clicked -> unload the 3D and show the cards. */
         window.addEventListener("message", function (e) {
           if (e.origin !== location.origin || !e.data) return;
@@ -763,121 +757,10 @@
     </script>
   </section>
 
-  <!-- ====================== §07 — THE TEAM ======================= -->
-  <section id="team" class="section section--gray team" data-section="team" aria-labelledby="team-title">
+  <!-- ====================== §07 — THE DIFFERENCE ======================= -->
+  <section id="difference" class="section section--gray team" data-section="difference" aria-label="The difference">
     <div class="container">
-      <div class="section-head section-head--center reveal reveal--pop">
-        <p class="overline">The Team</p>
-        <h2 id="team-title">Institutional Pedigree.<br /><em>Direct Access.</em></h2>
-      </div>
-      <p class="team__sub reveal" data-delay="1">
-        Vann Equity Management is an independently owned and operated registered
-        investment adviser. Our team brings decades of institutional
-        investment-management experience to every client relationship &mdash; with the
-        direct access and personal partnership that only a boutique firm can deliver.
-      </p>
-
-      <!-- Circles across — tap a person to open their detail panel -->
-      <div class="team__people reveal" data-delay="2">
-        <button class="person" type="button" data-key="aaron" aria-expanded="true" aria-controls="panel-aaron">
-          <span class="person__photo" data-initials="AV"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Aaron J. Vann</span>
-          <span class="person__role">Business Operator</span>
-        </button>
-        <button class="person" type="button" data-key="ryan" aria-expanded="false" aria-controls="panel-ryan">
-          <span class="person__photo" data-initials="RM"><img loading="lazy" decoding="async" src="assets/img/team/ryan-mcdonald.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Ryan McDonald</span>
-          <span class="person__role">Portfolio Manager · Financial Planner</span>
-        </button>
-        <button class="person" type="button" data-key="dharani" aria-expanded="false" aria-controls="panel-dharani">
-          <span class="person__photo" data-initials="DG"><img loading="lazy" decoding="async" src="assets/img/team/dharani-gundla.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Dharani Gundla</span>
-          <span class="person__role">Financial Quantitative Analyst</span>
-        </button>
-        <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
-          <span class="person__photo" data-initials="BH"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=82" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Brandy Holder</span>
-          <span class="person__role">Operations &amp; Business Development</span>
-        </button>
-        <button class="person" type="button" data-key="keith" aria-expanded="false" aria-controls="panel-keith">
-          <span class="person__photo" data-initials="KP"><img loading="lazy" decoding="async" src="assets/img/team/keith-powell.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Keith Powell</span>
-          <span class="person__role">Financial Advisor</span>
-        </button>
-        <button class="person" type="button" data-key="michael" aria-expanded="false" aria-controls="panel-michael">
-          <span class="person__photo" data-initials="MH"><img loading="lazy" decoding="async" src="assets/img/team/michael-hughes.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Michael Hughes</span>
-          <span class="person__role">Financial Advisor</span>
-        </button>
-        <button class="person" type="button" data-key="kristen" aria-expanded="false" aria-controls="panel-kristen">
-          <span class="person__photo" data-initials="KF"><img loading="lazy" decoding="async" src="assets/img/team/kristen-fuhrman.jpg" alt="" onerror="this.classList.add('is-missing');" /></span>
-          <span class="person__name">Kristen Fuhrman</span>
-          <span class="person__role">Financial Advisor</span>
-        </button>
-      </div>
-
-      <div class="team__panels">
-        <article class="member-panel is-open" id="panel-aaron" data-key="aaron">
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/aaron-vann.jpg" alt="Aaron J. Vann" /></div>
-          <div class="member-panel__body">
-            <h3>Aaron J. Vann, AAMS, FPQP</h3>
-            <p class="member-panel__role">Business Operator</p>
-            <p class="member-panel__bio">Aaron J. Vann is a Business Operator at Vann Equity Management. He leads the firm&rsquo;s proprietary quantitative models and oversees portfolio construction and stock selection for its equity separately managed accounts. His career spans Rushmore Investment Advisors, Boston Private Bank, and Level Four Advisor Services.</p>
-            <p class="member-panel__cred">MBA Valedictorian · SMU Cox School of Business</p>
-          </div>
-        </article>
-        <article class="member-panel" id="panel-ryan" data-key="ryan" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/ryan-mcdonald.jpg" alt="Ryan McDonald" /></div>
-          <div class="member-panel__body">
-            <h3>Ryan McDonald</h3>
-            <p class="member-panel__role">Portfolio Manager · Financial Planner</p>
-            <p class="member-panel__bio">Ryan brings 21+ years of financial-planning experience in North Texas, specializing in complex retirement and investment solutions. He builds around the individual &mdash; not a template.</p>
-            <p class="member-panel__cred">21+ Years · North Texas</p>
-          </div>
-        </article>
-        <article class="member-panel" id="panel-dharani" data-key="dharani" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/dharani-gundla.jpg" alt="Dharani Gundla" /></div>
-          <div class="member-panel__body">
-            <h3>Dharani Gundla</h3>
-            <p class="member-panel__role">Financial Quantitative Analyst</p>
-            <p class="member-panel__bio">Dharani Gundla is the firm&rsquo;s Financial Quantitative Analyst. She develops and tests the quantitative models used in portfolio risk, performance attribution, and GIPS&reg; composite analysis, and she analyzes structured-note and equity holdings. She holds an M.S. in Business Analytics from The University of Texas at Dallas.</p>
-          </div>
-        </article>
-        <article class="member-panel" id="panel-brandy" data-key="brandy" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/brandy-holder.jpg?v=82" alt="Brandy Holder" /></div>
-          <div class="member-panel__body">
-            <h3>Brandy Holder</h3>
-            <p class="member-panel__role">Operations &amp; Business Development · Financial Advisor</p>
-            <p class="member-panel__bio">Brandy supports Vann Equity Management&rsquo;s client service, operations, and compliance functions. She helps coordinate account administration, documentation, internal workflows, and regulatory processes to ensure clients receive organized, professional, and consistent service.</p>
-            <p class="member-panel__cred">10+ Years · Client Operations</p>
-            </article>
-        <article class="member-panel" id="panel-keith" data-key="keith" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/keith-powell.jpg" alt="Keith Powell" /></div>
-          <div class="member-panel__body">
-            <h3>Keith Powell</h3>
-            <p class="member-panel__role">Financial Advisor</p>
-            <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Keith Powell works with Vann Equity Management clients as a financial advisor.</p>
-          </div>
-        </article>
-        <article class="member-panel" id="panel-michael" data-key="michael" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/michael-hughes.jpg" alt="Michael Hughes" /></div>
-          <div class="member-panel__body">
-            <h3>Michael Hughes</h3>
-            <p class="member-panel__role">Financial Advisor</p>
-            <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Michael Hughes works with Vann Equity Management clients as a financial advisor.</p>
-          </div>
-        </article>
-        <article class="member-panel" id="panel-kristen" data-key="kristen" hidden>
-          <div class="member-panel__photo"><img loading="lazy" decoding="async" src="assets/img/team/kristen-fuhrman.jpg" alt="Kristen Fuhrman" /></div>
-          <div class="member-panel__body">
-            <h3>Kristen Fuhrman</h3>
-            <p class="member-panel__role">Financial Advisor</p>
-            <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Kristen Fuhrman works with Vann Equity Management clients as a financial advisor.</p>
-          </div>
-        </article>
-      </div>
-
-      <!-- Personalization (merged from the former "The Difference" section) -->
+            <!-- Personalization (merged from the former "The Difference" section) -->
       <div class="section-head section-head--center reveal reveal--pop" style="margin-top:clamp(34px,6vh,64px)">
         <p class="overline">The difference</p>
         <h3 style="font-family:'Cinzel','Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.9rem);margin:.2em 0 0">Built around you, <em>whichever path you choose.</em></h3>
@@ -895,7 +778,6 @@
       </div>
       <p class="diff-note reveal" style="text-align:center">Both are held to the same fiduciary standard &mdash; your best interest, above all else.</p>
 
-      <p class="team__closing reveal">Decades of experience. One shared commitment.</p>
     </div>
   </section>
 
@@ -1025,7 +907,6 @@
             <h3>Who We Are</h3>
             <ul>
               <li><a href="#about">Our Story</a></li>
-              <li><a href="#team">Our Team</a></li>
             </ul>
           </div>
           <div class="footer__col">

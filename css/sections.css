@@ -841,7 +841,7 @@
   box-shadow: var(--shadow-card);
 }
 .diff-figure::before {           /* placeholder label, sits behind the photo */
-  content: "Aaron J. Vann";
+  content: "";
   position: absolute; inset: 0;
   display: grid; place-items: center;
   font-family: var(--font-display);

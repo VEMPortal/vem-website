@@ -2686,11 +2686,11 @@
       if (p && p.catch) p.catch(() => speakBrowser(i));   /* blocked/missing -> browser voice */
     }
 
-    /* Final beat: trigger the cinematic outro (push into the city, then Aaron at
+    /* Final beat: trigger the cinematic outro (push into the city, then the closing frame at
        his desk) + play the closing line (tour-6), then end the tour. */
     function playOutro() {
       if (!tourPlaying) return;
-      hideTourCaption();   /* no ring label over Aaron's portrait */
+      hideTourCaption();   /* no ring label over the portrait */
       if (window.__vemOutro) window.__vemOutro();
       if (synth) synth.cancel();
       tourAudio.pause();
@@ -2746,7 +2746,7 @@
       if (window.__vemOutroReset) window.__vemOutroReset();   /* clear the ending overlay */
       intro.active = false; root.scale.setScalar(1); card.classList.remove("is-intro");
     }
-    function endTour() {             /* cinematic finished — hold on Aaron */
+    function endTour() {             /* cinematic finished — hold on the closing frame */
       tourPlaying = false;
       setTourBtn(false);
       if (synth) synth.cancel();
@@ -2754,7 +2754,7 @@
       /* keep the music going a beat after the narration, then fade out gently */
       if (tourEndTimer) clearTimeout(tourEndTimer);
       tourEndTimer = setTimeout(() => fadeBed(0, 7000), 4500);
-      /* Stay on Aaron ("keep it on air"). The outro's "Read our complete
+      /* Stay on the closing frame ("keep it on air"). The outro's "Read our complete
          approach" button hands off to the homepage's card view; the HUD stays
          hidden the whole time. */
     }
@@ -3392,11 +3392,11 @@
   <!-- ============================================================
        OUTRO PREVIEW (opt-in via ?outro=1) — the cinematic ending:
        the universe whites out, pushes into the city, and settles on
-       Aaron at his desk (the human behind the process). Fully
+       the closing desk shot (the human behind the process). Fully
        self-contained + non-destructive; does nothing without the
        param, so the live tour is untouched. A "Preview the ending"
        button plays it over the real scene, with one-click Replay.
-       (Uses existing art: hero-dallas.jpg + aaron-vann-office.jpg.
+       (Uses existing art: hero-dallas.jpg + a desk image.
        Swap in a real over-the-shoulder "typing" shot/clip later to
        make the computer beat literal.)
        ============================================================ -->
@@ -3456,12 +3456,10 @@
       wrap.innerHTML =
           '<div class="flash"></div>'
         + '<div class="shot city" style="background-image:url(../assets/img/hero-dallas.jpg)"></div>'
-        + '<div class="shot desk" style="background-image:url(../assets/img/aaron-vann-office.jpg?v=2)"></div>'
         + '<div class="cap">'
         +   '<p class="ov">Chosen by process</p>'
         +   '<h2>Managed by <em>people.</em></h2>'
         +   '<div class="rule"></div>'
-        +   '<p class="who">Aaron J. Vann &middot; Business Operator</p>'
         +   '<div class="octa-row">'
         +     '<button type="button" class="octa octa--ghost octa-replay">&#8634; Replay tour</button>'
         +     '<button type="button" class="octa">Read our complete approach</button>'

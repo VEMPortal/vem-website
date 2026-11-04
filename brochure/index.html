@@ -47,7 +47,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../css/tokens.css?v=86" />
-  <link rel="stylesheet" href="../css/brochure.css?v=86" />
+  <link rel="stylesheet" href="../css/brochure.css?v=87" />
 </head>
 <body class="bro">
 
@@ -73,7 +73,7 @@
   <div class="bro-foot">
     <nav class="bro-rail" aria-label="Brochure sections"></nav>
     <div class="bro-progress"><div class="bro-progress__bar" id="broBar"></div></div>
-    <div class="bro-count tnum" id="broCount">01 / 12</div>
+    <div class="bro-count tnum" id="broCount">01 / 11</div>
   </div>
 
   <!-- ============ Deck (horizontal) ============ -->
@@ -132,13 +132,6 @@
               </button>
             </div>
           </div>
-          <figure class="bro-portrait">
-            <picture>
-              <source type="image/webp" srcset="../assets/img/aaron-feature.webp?v=70" />
-              <img src="../assets/img/aaron-feature.jpg?v=70" alt="Aaron Vann, Business Operator at Vann Equity Management" width="1100" height="1375" loading="lazy" />
-            </picture>
-            <figcaption><b>Aaron Vann</b> &middot; Business Operator</figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -441,7 +434,7 @@
             else if (e.key === "Escape") closeCards();
           });
 
-          /* The tour's Aaron ending posts "vem-cards" when its "Read our complete
+          /* The tour's ending posts "vem-cards" when its "Read our complete
              approach" button is clicked -> unload the 3D and show the cards. */
           window.addEventListener("message", function (e) {
             if (e.origin !== location.origin || !e.data) return;
@@ -747,115 +740,6 @@
             </ul>
             <p class="note__risk">Structured notes involve risks, including issuer credit risk, market risk, liquidity risk, call risk, complexity risk, and possible loss of principal. They are not suitable for all investors.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 11 — TEAM -->
-    <section class="slide slide--light" data-label="Our Team" aria-label="Our Team">
-      <div class="slide__inner">
-        <p class="bro-eyebrow">Our Team</p>
-        <h2 class="bro-h">The People Behind <em>the Process</em></h2>
-
-        <!-- People circles — tap a person to open their detail panel (cloned from the site) -->
-        <div class="team__people">
-          <button class="person" type="button" data-key="aaron" aria-expanded="true" aria-controls="panel-aaron">
-            <span class="person__photo" data-initials="AV"><img src="../assets/img/team/aaron-vann.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Aaron J. Vann</span>
-            <span class="person__role">Business Operator</span>
-          </button>
-          <button class="person" type="button" data-key="ryan" aria-expanded="false" aria-controls="panel-ryan">
-            <span class="person__photo" data-initials="RM"><img src="../assets/img/team/ryan-mcdonald.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Ryan McDonald</span>
-            <span class="person__role">Portfolio Manager &middot; Financial Planner</span>
-          </button>
-          <button class="person" type="button" data-key="dharani" aria-expanded="false" aria-controls="panel-dharani">
-            <span class="person__photo" data-initials="DG"><img src="../assets/img/team/dharani-gundla.jpg?v=76" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Dharani Gundla</span>
-            <span class="person__role">Financial Quantitative Analyst</span>
-          </button>
-          <button class="person" type="button" data-key="brandy" aria-expanded="false" aria-controls="panel-brandy">
-            <span class="person__photo" data-initials="BH"><img src="../assets/img/team/brandy-holder.jpg?v=82" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Brandy Holder</span>
-            <span class="person__role">Operations &amp; Business Development</span>
-          </button>
-          <button class="person" type="button" data-key="keith" aria-expanded="false" aria-controls="panel-keith">
-            <span class="person__photo" data-initials="KP"><img src="../assets/img/team/keith-powell.jpg?v=79" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Keith Powell</span>
-            <span class="person__role">Financial Advisor</span>
-          </button>
-          <button class="person" type="button" data-key="michael" aria-expanded="false" aria-controls="panel-michael">
-            <span class="person__photo" data-initials="MH"><img src="../assets/img/team/michael-hughes.jpg?v=79" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Michael Hughes</span>
-            <span class="person__role">Financial Advisor</span>
-          </button>
-          <button class="person" type="button" data-key="kristen" aria-expanded="false" aria-controls="panel-kristen">
-            <span class="person__photo" data-initials="KF"><img src="../assets/img/team/kristen-fuhrman.jpg?v=79" alt="" onerror="this.classList.add('is-missing');" /></span>
-            <span class="person__name">Kristen Fuhrman</span>
-            <span class="person__role">Financial Advisor</span>
-          </button>
-        </div>
-
-        <div class="team__panels">
-          <article class="member-panel is-open" id="panel-aaron" data-key="aaron">
-            <div class="member-panel__photo"><img src="../assets/img/team/aaron-vann.jpg?v=76" alt="Aaron J. Vann" /></div>
-            <div class="member-panel__body">
-              <h3>Aaron J. Vann, AAMS, FPQP</h3>
-              <p class="member-panel__role">Business Operator</p>
-              <p class="member-panel__bio">Aaron J. Vann is a Business Operator at Vann Equity Management. He leads the firm&rsquo;s proprietary quantitative models and oversees portfolio construction and stock selection for its equity separately managed accounts. His career spans Rushmore Investment Advisors, Boston Private Bank, and Level Four Advisor Services.</p>
-              <p class="member-panel__cred">MBA Valedictorian &middot; SMU Cox School of Business</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-ryan" data-key="ryan" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/ryan-mcdonald.jpg?v=76" alt="Ryan McDonald" /></div>
-            <div class="member-panel__body">
-              <h3>Ryan McDonald</h3>
-              <p class="member-panel__role">Portfolio Manager &middot; Financial Planner</p>
-              <p class="member-panel__bio">Ryan brings 21+ years of financial-planning experience in North Texas, specializing in complex retirement and investment solutions. He builds around the individual &mdash; not a template.</p>
-              <p class="member-panel__cred">21+ Years &middot; North Texas</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-dharani" data-key="dharani" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/dharani-gundla.jpg?v=76" alt="Dharani Gundla" /></div>
-            <div class="member-panel__body">
-              <h3>Dharani Gundla</h3>
-              <p class="member-panel__role">Financial Quantitative Analyst</p>
-              <p class="member-panel__bio">Dharani Gundla is the firm&rsquo;s Financial Quantitative Analyst. She develops and tests the quantitative models used in portfolio risk, performance attribution, and GIPS&reg; composite analysis, and she analyzes structured-note and equity holdings. She holds an M.S. in Business Analytics from The University of Texas at Dallas.</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-brandy" data-key="brandy" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/brandy-holder.jpg?v=82" alt="Brandy Holder" /></div>
-            <div class="member-panel__body">
-              <h3>Brandy Holder</h3>
-              <p class="member-panel__role">Operations &amp; Business Development &middot; Financial Advisor</p>
-              <p class="member-panel__bio">Brandy supports Vann Equity Management&rsquo;s client service, operations, and compliance functions. She helps coordinate account administration, documentation, internal workflows, and regulatory processes to ensure clients receive organized, professional, and consistent service.</p>
-              <p class="member-panel__cred">10+ Years &middot; Client Operations</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-keith" data-key="keith" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/keith-powell.jpg?v=79" alt="Keith Powell" /></div>
-            <div class="member-panel__body">
-              <h3>Keith Powell</h3>
-              <p class="member-panel__role">Financial Advisor</p>
-              <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Keith Powell works with Vann Equity Management clients as a financial advisor.</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-michael" data-key="michael" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/michael-hughes.jpg?v=79" alt="Michael Hughes" /></div>
-            <div class="member-panel__body">
-              <h3>Michael Hughes</h3>
-              <p class="member-panel__role">Financial Advisor</p>
-              <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Michael Hughes works with Vann Equity Management clients as a financial advisor.</p>
-            </div>
-          </article>
-          <article class="member-panel" id="panel-kristen" data-key="kristen" hidden>
-            <div class="member-panel__photo"><img src="../assets/img/team/kristen-fuhrman.jpg?v=79" alt="Kristen Fuhrman" /></div>
-            <div class="member-panel__body">
-              <h3>Kristen Fuhrman</h3>
-              <p class="member-panel__role">Financial Advisor</p>
-              <p class="member-panel__bio"><!-- TODO: replace with approved bio -->Kristen Fuhrman works with Vann Equity Management clients as a financial advisor.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>

@@ -331,7 +331,7 @@
   .menu-open .nav__toggle span::after { top: 0; transform: rotate(-45deg); }
 }
 
-/* Phone in the header (Aaron's request) */
+/* Phone in the header */
 .nav__phone {
   display: inline-flex;
   align-items: center;

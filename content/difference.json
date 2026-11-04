@@ -1,5 +1,5 @@
 {
-  "_comment": "Content model for §06 The Difference. From brochure p.18 (Our Strengths / The Difference). Aaron portrait used as a parallax feature.",
+  "_comment": "Content model for §06 The Difference. From brochure p.18 (Our Strengths / The Difference).",
   "overline": "The Difference",
   "heading": ["Built around you,", "<em>not a template.</em>"],
   "lead": "We believe that since every client is unique, every client portfolio should be unique. That conviction shapes how we work — and the two ways we serve.",
@@ -13,10 +13,5 @@
       "body": "For those best served by institutional scale, three separately managed strategies run by VEM's founding partners — with twenty-plus years of institutional portfolio management."
     }
   ],
-  "note": "Both are held to the same fiduciary standard — your best interest, above all else.",
-  "figure": {
-    "src": "assets/img/aaron-vann-office.jpg",
-    "alt": "Aaron J. Vann in the VEM office at dusk, city skyline beyond",
-    "caption": "Aaron J. Vann · Business Operator"
-  }
+  "note": "Both are held to the same fiduciary standard — your best interest, above all else."
 }
