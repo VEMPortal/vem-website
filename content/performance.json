@@ -1,6 +1,6 @@
 {
   "_source": "Vann Equity GIPS Report through 12.31.2025 (Updated 2.2.2026). Figures transcribed verbatim from the official GIPS Composite Reports. AUTHORITATIVE source for any performance shown on the site.",
-  "_compliance": "All performance is from the firm's GIPS Composite Reports. Show net-of-fee alongside gross, with the benchmark and the standard trailing periods (1Y/3Y/5Y/Since-Inception). Always pair with 'Past performance is not indicative of future results' and a link to the full GIPS report. CCO (Dharani) must approve any figure shown publicly.",
+  "_compliance": "All performance is from the firm's GIPS Composite Reports. Show net-of-fee alongside gross, with the benchmark and the standard trailing periods (1Y/3Y/5Y/Since-Inception). Always pair with 'Past performance is not indicative of future results' and a link to the full GIPS report. CCO (the firm's analyst) must approve any figure shown publicly.",
   "asOf": "2025-12-31",
   "verification": "Vann Equity has been independently verified for the periods June 1, 2018 through December 31, 2025.",
   "claimStatement": "Vann Equity claims compliance with the Global Investment Performance Standards (GIPS®) and has prepared and presented this report in compliance with the GIPS standards.",
@@ -8,10 +8,10 @@
   "firmAssetsUSD_Millions": {
     "2025": 229.64,
     "2024": 790.04,
-    "_note": "Total Firm Assets fell from $790.04M (2024) to $229.64M (2025) per the report. DO NOT feature firm AUM on the site until Dharani explains this change."
+    "_note": "Total Firm Assets fell from $790.04M (2024) to $229.64M (2025) per the report. DO NOT feature firm AUM on the site until the firm's analyst explains this change."
   },
   "_discrepancies": [
-    "US Large Cap Growth 2025 net: annual table row shows 19.23%, the trailing 1-Year summary shows 19.22% (1 bp). Reconcile with Dharani before publishing a 1-year figure.",
+    "US Large Cap Growth 2025 net: annual table row shows 19.23%, the trailing 1-Year summary shows 19.22% (1 bp). Reconcile with the firm's analyst before publishing a 1-year figure.",
     "Minor 1 bp differences exist between the 2024 and 2025 report versions on a few historical annual rows (e.g., Value 2020 net 7.69%→7.68%, REIT 2021 gross 19.74%→19.73%). The 2025 report values are used here as the most current."
   ],
   "composites": [

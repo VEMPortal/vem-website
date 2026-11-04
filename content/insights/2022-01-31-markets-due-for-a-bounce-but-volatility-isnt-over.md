@@ -167,7 +167,7 @@ Finally, we acknowledge that an over-aggressive Fed can, and ultimately will, en
 
 Earlier last week, a long-time colleague emailed our research team with a question on the TIPS market and specifically asked why TIPS tracking ETFs were down YTD? We wanted to provide this email as it is a common topic of interest right now given the big moves in rates and ongoing debate about the inflation outlook.
 
-*Good Morning Aaron,*
+*Good Morning,*
 
 *How have you been? I have been at this for 40 years now (started with EF Hutton working for your dad…. a long, long time ago) and admittedly, I need a quick refresher on TIPS. I Can't quite figure why the VTIP and open-ended inflation protected funds are negative YTD? Do you mind giving me a quick explanation?*
 
